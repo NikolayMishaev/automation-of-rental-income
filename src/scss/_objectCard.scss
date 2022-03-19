@@ -1,4 +1,5 @@
 @use "./prop-mix" as prop;
+@use "./modal";
 
 .container {
   display: flex;
@@ -133,7 +134,7 @@
 .basic-info {
   padding: 24px 32px 24px;
   margin-bottom: 40px;
-  @include block-border;
+  @include prop.block-border;
 
   &__title {
     margin-bottom: 24px;
