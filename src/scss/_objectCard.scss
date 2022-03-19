@@ -1,13 +1,4 @@
-@mixin block-border {
-  border: 1px solid #e3e7e8;
-  border-radius: 12px;
-  background-color: white;
-}
-@mixin icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@use "./prop-mix" as prop;
 
 .container {
   display: flex;
@@ -16,16 +7,16 @@
 }
 
 .main-content {
-  max-width: 1037px;
+  flex: 1057px;
   margin-right: 32px;
 }
 
 .info-card {
   padding: 24px;
-  max-width: 520px;
+  flex: 721px;
   font-size: 14px;
   height: fit-content;
-  @include block-border;
+  @include prop.block-border;
   &__title {
     margin-bottom: 8px;
   }
@@ -33,6 +24,7 @@
     display: flex;
     margin-bottom: 16px;
     font-size: 14px;
+    color: prop.$grey60;
   }
   &__view {
     display: flex;
@@ -55,6 +47,7 @@
   }
   &__price-per-meter {
     margin-bottom: 12px;
+    color: prop.$grey60;
   }
   &__contact {
     margin-bottom: 32px;
@@ -65,6 +58,9 @@
     height: 60px;
     border-radius: 50%;
   }
+  &__link {
+    color: prop.$accent90;
+  }
   &__position,
   &__avatar,
   &__name,
@@ -74,22 +70,49 @@
   &__btns {
     display: flex;
     font-size: 16px;
+    button {
+      flex: 50%;
+      padding: 12px 0;
+    }
   }
   &__primary-btn {
-    border-radius: 4px;
-    border: none;
+    @include prop.primary-btn(prop.$accent-TCX50);
   }
 
   &__favorite-btn {
     margin-right: 16px;
-    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include prop.secondary-btn;
   }
-  button {
-    width: 333.5px;
-    height: 44px;
+  &__occupied-info {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__error-label {
+    display: inline-flex;
+    padding: 8px;
+    margin-right: 40px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 8px;
+    background-color: prop.$red10;
+    color: prop.$error;
+  }
+  &__offer-btn {
+    display: inline-flex;
+    color: prop.$accent-TCX50;
+    background-color: transparent;
+    border: none;
+    padding: 4px;
+    .icon {
+      margin: 0 0 0 6px;
+      cursor: pointer;
+    }
   }
   .icon {
     display: flex;
@@ -98,6 +121,12 @@
     width: 16px;
     height: 16px;
     margin-right: 6px;
+  }
+  &__icon-bell {
+    width: 24px;
+    height: 24px;
+    @include prop.flex-container;
+    justify-self: end;
   }
 }
 
@@ -110,7 +139,7 @@
     margin-bottom: 24px;
   }
   &__card-icon {
-    @include icon-container;
+    @include prop.flex-container;
     width: 24px;
     height: 24px;
   }
@@ -138,13 +167,13 @@
 .additional-information {
   padding: 24px;
   margin-bottom: 24px;
-  @include block-border;
+  @include prop.block-border;
   &__title {
     margin-bottom: 16px;
   }
 }
 .map-object {
-  @include block-border;
+  @include prop.block-border;
   padding: 24px;
   &__title {
     margin-bottom: 16px;

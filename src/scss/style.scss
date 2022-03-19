@@ -1,4 +1,10 @@
-@import "./_objectCard.scss";
+@use "./_objectCard.scss";
+@use "./prop-mix" as prop;
+
+body {
+  color: prop.$grey80;
+  box-sizing: border-box;
+}
 
 h2 {
   font-size: 28px;
