@@ -1,0 +1,152 @@
+@mixin block-border {
+  border: 1px solid #e3e7e8;
+  border-radius: 12px;
+  background-color: white;
+}
+@mixin icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  max-width: 1800px;
+  margin: auto;
+}
+
+.main-content {
+  max-width: 1037px;
+  margin-right: 32px;
+}
+
+.info-card {
+  padding: 24px;
+  max-width: 520px;
+  font-size: 14px;
+  height: fit-content;
+  @include block-border;
+  &__title {
+    margin-bottom: 8px;
+  }
+  &__subtitle {
+    display: flex;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  &__view {
+    display: flex;
+  }
+  &__number {
+    margin-right: 16px;
+  }
+  &__icon {
+    margin-right: 4px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  &__price-block {
+    margin-bottom: 64px;
+  }
+  &__price {
+    margin-bottom: 8px;
+  }
+  &__price-per-meter {
+    margin-bottom: 12px;
+  }
+  &__contact {
+    margin-bottom: 32px;
+  }
+  &__avatar {
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  &__position,
+  &__avatar,
+  &__name,
+  &__tel {
+    margin-bottom: 8px;
+  }
+  &__btns {
+    display: flex;
+    font-size: 16px;
+  }
+  &__primary-btn {
+    border-radius: 4px;
+    border: none;
+  }
+
+  &__favorite-btn {
+    margin-right: 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  button {
+    width: 333.5px;
+    height: 44px;
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+}
+
+.basic-info {
+  padding: 24px 32px 24px;
+  margin-bottom: 40px;
+  @include block-border;
+
+  &__title {
+    margin-bottom: 24px;
+  }
+  &__card-icon {
+    @include icon-container;
+    width: 24px;
+    height: 24px;
+  }
+  &__card-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  &__card {
+    display: flex;
+    padding: 8px;
+    margin: 0 26px 32px 0;
+  }
+  &__card-title {
+    margin-bottom: 4px;
+  }
+  &__card-icon {
+    margin-right: 11px;
+  }
+  &__card-text {
+    font-size: 14px;
+  }
+}
+
+.additional-information {
+  padding: 24px;
+  margin-bottom: 24px;
+  @include block-border;
+  &__title {
+    margin-bottom: 16px;
+  }
+}
+.map-object {
+  @include block-border;
+  padding: 24px;
+  &__title {
+    margin-bottom: 16px;
+  }
+}

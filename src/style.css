@@ -1,0 +1,243 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1800px;
+  margin: auto;
+}
+
+.main-content {
+  max-width: 1037px;
+  margin-right: 32px;
+}
+
+.info-card {
+  padding: 24px;
+  max-width: 520px;
+  font-size: 14px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid #e3e7e8;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.info-card__title {
+  margin-bottom: 8px;
+}
+
+.info-card__subtitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.info-card__view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.info-card__number {
+  margin-right: 16px;
+}
+
+.info-card__icon {
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info-card__price-block {
+  margin-bottom: 64px;
+}
+
+.info-card__price {
+  margin-bottom: 8px;
+}
+
+.info-card__price-per-meter {
+  margin-bottom: 12px;
+}
+
+.info-card__contact {
+  margin-bottom: 32px;
+}
+
+.info-card__avatar {
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.info-card__position, .info-card__avatar, .info-card__name, .info-card__tel {
+  margin-bottom: 8px;
+}
+
+.info-card__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+}
+
+.info-card__primary-btn {
+  border-radius: 4px;
+  border: none;
+}
+
+.info-card__favorite-btn {
+  margin-right: 16px;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info-card button {
+  width: 333.5px;
+  height: 44px;
+}
+
+.info-card .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+}
+
+.basic-info {
+  padding: 24px 32px 24px;
+  margin-bottom: 40px;
+  border: 1px solid #e3e7e8;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.basic-info__title {
+  margin-bottom: 24px;
+}
+
+.basic-info__card-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.basic-info__card-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.basic-info__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px;
+  margin: 0 26px 32px 0;
+}
+
+.basic-info__card-title {
+  margin-bottom: 4px;
+}
+
+.basic-info__card-icon {
+  margin-right: 11px;
+}
+
+.basic-info__card-text {
+  font-size: 14px;
+}
+
+.additional-information {
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #e3e7e8;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.additional-information__title {
+  margin-bottom: 16px;
+}
+
+.map-object {
+  border: 1px solid #e3e7e8;
+  border-radius: 12px;
+  background-color: white;
+  padding: 24px;
+}
+
+.map-object__title {
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+h5 {
+  font-size: 14px;
+  margin: 0;
+}
+
+P {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
