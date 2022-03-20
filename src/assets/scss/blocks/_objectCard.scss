@@ -1,0 +1,217 @@
+@import "../abstracts/mixins";
+
+.container {
+  display: flex;
+  max-width: 1800px;
+  margin: auto;
+}
+
+.main-content {
+  flex: 1057px;
+  margin-right: 32px;
+}
+
+.info-card {
+  padding: 24px;
+  flex: 721px;
+  font-size: 14px;
+  height: fit-content;
+  @include block-border;
+  &__title {
+    margin-bottom: 8px;
+  }
+  &__subtitle {
+    display: flex;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: $grey60;
+  }
+  &__view {
+    display: flex;
+  }
+  &__number {
+    margin-right: 16px;
+  }
+  &__icon {
+    margin-right: 4px;
+    width: 16px;
+    height: 16px;
+    @include flex-container;
+  }
+  &__price-block {
+    margin-bottom: 64px;
+  }
+  &__price {
+    margin-bottom: 8px;
+  }
+  &__price-per-meter {
+    margin-bottom: 12px;
+    color: $grey60;
+  }
+  &__contact {
+    margin-bottom: 32px;
+  }
+  &__avatar {
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  &__link {
+    color: $accent90;
+  }
+  &__position,
+  &__avatar,
+  &__name,
+  &__tel {
+    margin-bottom: 8px;
+  }
+  &__btns {
+    display: flex;
+    font-size: 16px;
+    button {
+      flex: 50%;
+      padding: 12px 0;
+    }
+  }
+  &__primary-btn {
+    @include primary-btn($accent-TCX50);
+  }
+
+  &__favorite-btn {
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include secondary-btn;
+  }
+  &__occupied-info {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__error-label {
+    display: inline-flex;
+    padding: 8px;
+    margin-right: 40px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 8px;
+    background-color: $red10;
+    color: $error;
+  }
+  &__offer-btn {
+    font-size: 16px;
+    line-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    color: $accent-TCX50;
+    background-color: transparent;
+    border: none;
+    padding: 4px;
+    .icon {
+      margin: 0 0 0 6px;
+      cursor: pointer;
+    }
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+  &__icon-bell {
+    width: 24px;
+    height: 24px;
+    fill: $grey-50;
+    @include flex-container;
+    justify-self: end;
+    cursor: pointer;
+    &.active svg {
+      fill: $accent-TCX50;
+    }
+  }
+  &__row {
+    display: flex;
+  }
+}
+
+.basic-info {
+  padding: 24px 32px 24px;
+  margin-bottom: 40px;
+  @include block-border;
+
+  &__title {
+    margin-bottom: 24px;
+  }
+  &__card-icon {
+    @include flex-container;
+    width: 24px;
+    height: 24px;
+  }
+  &__card-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  &__card {
+    display: flex;
+    padding: 8px;
+    margin: 0 26px 32px 0;
+  }
+  &__card-title {
+    margin-bottom: 4px;
+  }
+  &__card-icon {
+    margin-right: 11px;
+  }
+  &__card-text {
+    font-size: 14px;
+    color: $grey60;
+  }
+}
+
+.additional-information {
+  padding: 24px;
+  margin-bottom: 24px;
+  @include block-border;
+  &__title {
+    margin-bottom: 16px;
+  }
+}
+.map-object {
+  @include block-border;
+  padding: 24px;
+  &__title {
+    margin-bottom: 16px;
+  }
+}
+
+.contact-form {
+  .group-radio-btn {
+    padding: 24px 0;
+    border-bottom: 1px solid $grey30;
+    label + label {
+      margin-left: 16px;
+    }
+  }
+  &__first-option {
+    display: flex;
+    margin-top: 24px;
+  }
+  .custom-text-input {
+    flex: auto;
+  }
+  .custom-text-input + .custom-text-input {
+    margin-left: 16px;
+  }
+  &__time-info {
+    color: $grey60;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}
