@@ -348,7 +348,7 @@
                 class="group-radio-btn__radio"
                 type="radio"
                 name="lol"
-                value="one"
+                value="two"
               />
               <div class="group-radio-btn__inner">
                 <span class="group-radio-btn__title-radio"
@@ -362,7 +362,7 @@
                 class="group-radio-btn__radio"
                 type="radio"
                 name="lol"
-                value="one"
+                value="three"
               />
               <div class="group-radio-btn__inner">
                 <span class="group-radio-btn__title-radio"
@@ -373,7 +373,11 @@
             </label>
           </div>
           <div class="contact-form">
-            <form class="contact-form__first-option" action="">
+            <form
+              class="contact-form__first-option"
+              action=""
+              id="contact-form"
+            >
               <div class="custom-text-input custom-text-input_name">
                 <span class="custom-text-input__label">Ваше имя *</span>
                 <input type="text" maxlength="50" />
@@ -395,10 +399,13 @@
         </div>
         <div class="modal__footer">
           <button class="modal__cancel-btn">Отмена</button>
-          <button type="submit" class="modal__login-btn">Отправить</button>
+          <button form="contact-form" type="submit" class="modal__login-btn">
+            Отправить
+          </button>
         </div>
       </div>
     </div>
     <script src="./src/js/modal.js"></script>
+    <script src="./src/js/togglerContactForm.js"></script>
   </body>
 </html>
