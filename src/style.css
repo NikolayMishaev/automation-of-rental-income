@@ -198,6 +198,10 @@
   align-items: center;
   justify-content: center;
   justify-self: end;
+  cursor: pointer;
+}
+.info-card__icon-bell.active svg {
+  fill: #2a9b43;
 }
 
 .basic-info {

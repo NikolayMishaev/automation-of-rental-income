@@ -126,8 +126,13 @@
   &__icon-bell {
     width: 24px;
     height: 24px;
+    fill: $grey-50;
     @include prop.flex-container;
     justify-self: end;
+    cursor: pointer;
+    &.active svg {
+      fill: prop.$accent-TCX50;
+    }
   }
 }
 
