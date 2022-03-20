@@ -416,10 +416,7 @@ button {
   margin-left: 16px;
 }
 
-.contact-form__first-option {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.contact-form__first-option, .contact-form__second-option, .contact-form__third-option {
   margin-top: 24px;
 }
 
@@ -437,6 +434,49 @@ button {
   color: #6d7678;
   margin-top: 8px;
   font-size: 12px;
+}
+
+.contact-form__time-info {
+  display: block;
+}
+
+.contact-form__first-option {
+  display: block;
+}
+
+.contact-form__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-form__second-option, .contact-form__third-option {
+  display: none;
+}
+
+.contact-form__route-to-btn {
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: #2a9b43;
+  line-height: 24px;
+  padding: 4px 0;
+  width: 200px;
+  display: block;
+  text-align: center;
+  margin: 16px 0;
+}
+
+.contact-form__route-to-btn:hover {
+  text-decoration: none;
+}
+
+.modal-form .modal-content {
+  max-width: 800px;
+}
+
+.modal-form .custom-text-input_text {
+  margin-top: 24px;
 }
 
 @use "./prop-mix" as *;
@@ -630,4 +670,19 @@ button {
   position: absolute;
   top: 4px;
   left: 12px;
+}
+
+.custom-text-input textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 20px 12px 4px;
+  scrollbar-color: #6969dd #e0e0e0;
+  scrollbar-width: thin;
+  background-color: transparent;
+  resize: vertical;
+}
+
+.custom-text-input textarea:focus {
+  outline: none;
 }

@@ -199,8 +199,9 @@
       margin-left: 16px;
     }
   }
-  &__first-option {
-    display: flex;
+  &__first-option,
+  &__second-option,
+  &__third-option {
     margin-top: 24px;
   }
   .custom-text-input {
@@ -213,5 +214,38 @@
     color: $grey60;
     margin-top: 8px;
     font-size: 12px;
+  }
+  &__time-info {
+    display: block;
+  }
+  &__first-option {
+    display: block;
+  }
+  &__row {
+    display: flex;
+  }
+  &__second-option,
+  &__third-option {
+    display: none;
+  }
+  &__route-to-btn {
+    @include primary-btn($accent-TCX50);
+    padding: 4px 0;
+    width: 200px;
+    display: block;
+    text-align: center;
+    margin: 16px 0;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.modal-form {
+  .modal-content {
+    max-width: 800px;
+  }
+  .custom-text-input_text {
+    margin-top: 24px;
   }
 }

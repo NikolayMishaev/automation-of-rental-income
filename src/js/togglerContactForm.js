@@ -7,20 +7,20 @@ let currValue = "one";
 for (let index = 0; index < radio.length; index++) {
   radio[index].addEventListener("change", function (e) {
     const value = e.target.value;
+    clear();
     if (value === "one") {
-      clear();
       const currentForm = document.querySelector(".contact-form__first-option");
-      currentForm.style.display = "flex";
+      currentForm.style.display = "block";
     }
     if (value === "two") {
-      clear();
-      const currentForm = document.querySelector("contact-form__second-option");
-      currentForm.style.display = "flex";
+      const currentForm = document.querySelector(
+        ".contact-form__second-option"
+      );
+      currentForm.style.display = "block";
     }
     if (value === "three") {
-      clear();
-      const currentForm = document.querySelector("contact-form__third-option");
-      currentForm.style.display = "flex";
+      const currentForm = document.querySelector(".contact-form__third-option");
+      currentForm.style.display = "block";
     }
   });
 }
