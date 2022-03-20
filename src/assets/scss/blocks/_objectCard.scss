@@ -190,3 +190,28 @@
     margin-bottom: 16px;
   }
 }
+
+.contact-form {
+  .group-radio-btn {
+    padding: 24px 0;
+    border-bottom: 1px solid $grey30;
+    label + label {
+      margin-left: 16px;
+    }
+  }
+  &__first-option {
+    display: flex;
+    margin-top: 24px;
+  }
+  .custom-text-input {
+    flex: auto;
+  }
+  .custom-text-input + .custom-text-input {
+    margin-left: 16px;
+  }
+  &__time-info {
+    color: $grey60;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}
