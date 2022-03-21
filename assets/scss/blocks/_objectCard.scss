@@ -243,9 +243,30 @@
 
 .modal-form {
   .modal-content {
-    max-width: 800px;
+    width: 800px;
   }
   .custom-text-input_text {
     margin-top: 24px;
+  }
+}
+
+.modal {
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $grey30;
+    padding-bottom: 16px;
+  }
+}
+
+.content-offer-price {
+  width: 600px;
+  &__row {
+    margin-top: 16px;
+    line-height: 24px;
+  }
+  &__price {
+    font-weight: 500;
   }
 }
