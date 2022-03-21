@@ -1,9 +1,19 @@
 .icon {
-  transition: all .5s;
+  transition: $transition;
   &_logo {
-    @media (max-width: 768px) {
-      width: 79px;
-      height: 16px;
+    width: rem(198px);
+    height: rem(40px);
+   @media #{$screen-tablet} {
+      width: rem(138px);
+      height: rem(28px);
     }
+   @media #{$screen-mobile} {
+      width: rem(79px);
+      height: rem(16px);
+    }
+  }
+  &_header-select {
+    width: rem(12px);
+    height: rem(12px);
   }
 }

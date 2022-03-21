@@ -1,18 +1,18 @@
 .menu {
-  width: 136px;
-  min-height: 40px;
+  width: rem(136px);
+  min-height: rem(40px);
   display: flex;
+  overflow: hidden;
+  margin-left: auto;
 
-  @media screen and (max-width: 768px) {
+  @media #{$screen-tablet} {
     &_place_header {
-      margin-left: 50px;
       box-sizing: border-box;
     }
   }
 
-  @media screen and (max-width: 676px) {
+  @media #{$screen-mobile} {
     &_place_header {
-      margin-left: auto;
       border: unset;
       width: unset;
       min-height: unset;
@@ -31,39 +31,41 @@
 
   &__profile:hover {
     cursor: pointer;
-    box-shadow: -3px 0px 40px rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(164, 164, 164, 0.03);
+    box-shadow: rem(-3px) rem(0px) rem(40px) rgba(0, 0, 0, 0.1), rem(0px) rem(0px) rem(10px) rgba(164, 164, 164, 0.03);
     border-radius: 0 35% 35% 0;
   }
 
 
   &__profile-name {
-    margin-right: 8px;
+    margin-right: rem(8px);
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: rem(14px);
+    line-height: rem(16px);
     letter-spacing: 0.08px;
     color: $grey80;
-    padding-top: 2px;
+    padding-top: rem(2px);
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    transition: $transition;
     @media #{$screen-mobile} {
-      display: none;
+      opacity: 0;
     }
   }
 
 
   &__profile-avatar {
-    width: 40px;
-    height: 40px;
+    flex-shrink: 0;
+    width: rem(40px);
+    height: rem(40px);
     border-radius: 50%;
-    background: url("./../images/avatar-photo.png")
-      no-repeat center/cover;
-      @media #{$screen-mobile} {
-        width: 24px;
-        height: 24px;
-      }
+    background: url("./../images/avatar-photo.png") no-repeat center/cover;
+    transition: $transition;
+    @media #{$screen-mobile} {
+      width: rem(24px);
+      height: rem(24px);
+    }
   }
 
 }
