@@ -1,0 +1,69 @@
+.menu {
+  width: 136px;
+  min-height: 40px;
+  display: flex;
+
+  @media screen and (max-width: 768px) {
+    &_place_header {
+      margin-left: 50px;
+      box-sizing: border-box;
+    }
+  }
+
+  @media screen and (max-width: 676px) {
+    &_place_header {
+      margin-left: auto;
+      border: unset;
+      width: unset;
+      min-height: unset;
+    }
+  }
+
+  &__profile {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    transition: all 0.5s;
+    text-decoration: none;
+  }
+
+  &__profile:hover {
+    cursor: pointer;
+    box-shadow: -3px 0px 40px rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(164, 164, 164, 0.03);
+    border-radius: 0 35% 35% 0;
+  }
+
+
+  &__profile-name {
+    margin-right: 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.08px;
+    color: $grey80;
+    padding-top: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    @media #{$screen-mobile} {
+      display: none;
+    }
+  }
+
+
+  &__profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url("./../images/avatar-photo.png")
+      no-repeat center/cover;
+      @media #{$screen-mobile} {
+        width: 24px;
+        height: 24px;
+      }
+  }
+
+}

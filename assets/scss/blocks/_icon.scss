@@ -1,0 +1,9 @@
+.icon {
+  transition: all .5s;
+  &_logo {
+    @media (max-width: 768px) {
+      width: 79px;
+      height: 16px;
+    }
+  }
+}
