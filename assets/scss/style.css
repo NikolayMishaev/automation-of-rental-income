@@ -107,21 +107,20 @@ button {
 }
 
 .main-content {
-  -webkit-box-flex: 1057px;
-      -ms-flex: 1057px;
-          flex: 1057px;
+  width: 58%;
   margin-right: 32px;
 }
 
 .info-card {
   padding: 24px;
-  -webkit-box-flex: 721px;
-      -ms-flex: 721px;
-          flex: 721px;
+  width: 40%;
   font-size: 14px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  position: fixed;
+  top: 204px;
+  left: calc(58% + 32px - 20px);
   border: 1px solid #e3e7e8;
   border-radius: 12px;
   background-color: white;

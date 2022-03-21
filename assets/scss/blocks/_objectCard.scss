@@ -7,15 +7,19 @@
 }
 
 .main-content {
-  flex: 1057px;
+  width: 58%;
   margin-right: 32px;
 }
 
 .info-card {
   padding: 24px;
-  flex: 721px;
+  width: 40%;
   font-size: 14px;
   height: fit-content;
+  position: fixed;
+  top: 204px;
+  // уточнить отступы контейнера
+  left: calc(58% + 32px - 20px);
   @include block-border;
   &__title {
     margin-bottom: 8px;
