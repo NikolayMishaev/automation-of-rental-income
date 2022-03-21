@@ -11,8 +11,18 @@
 @import "base/generic";
 
 // Components
+
 @import "./blocks/example";
+
+// Second-screen
 @import "./blocks/objectCard";
 @import "./blocks/modal";
 @import "./blocks/radio-btn";
 @import "./blocks/custom-text-input";
+
+// Main-page
+@import "./blocks/body";
+@import "./blocks/page";
+@import "./blocks/header";
+@import "./blocks/logo";
+@import "./blocks/menu";
