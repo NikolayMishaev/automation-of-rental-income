@@ -1,0 +1,13 @@
+.example {
+  font-weight: $font-weight-medium;
+  color: $error;
+  &test {
+    color:blue;
+    @media #{$screen-tablet} {
+      color: orange;
+    }
+    @media #{$screen-mobile} {
+      color: green;
+    }
+  }
+}
