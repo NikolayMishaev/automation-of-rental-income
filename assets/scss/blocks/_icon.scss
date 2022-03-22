@@ -3,17 +3,17 @@
   &_logo {
     width: rem(198px);
     height: rem(40px);
-   @media #{$screen-tablet} {
+    @media #{$screen-tablet} {
       width: rem(138px);
       height: rem(28px);
     }
-   @media #{$screen-mobile} {
+    @media #{$screen-mobile} {
       width: rem(79px);
       height: rem(16px);
     }
   }
   &_header-select {
-    width: rem(12px);
-    height: rem(12px);
+    width: rem(10px);
+    height: rem(10px);
   }
 }

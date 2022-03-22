@@ -1,29 +1,26 @@
-
-
 @mixin primary-btn($color) {
-    border-radius: 4px;
-    border: none;
-    color: white;
-    background-color: $color;
-    line-height: 24px;
-  }
-  
-  @mixin secondary-btn {
-    border-radius: 4px;
-    border: 1px solid $grey30;
-    color: $grey100;
-    background-color: white;
-    line-height: 22px;
-  }
-  
-  @mixin block-border {
-    border: 1px solid #e3e7e8;
-    border-radius: 12px;
-    background-color: white;
-  }
-  @mixin flex-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: $color;
+  line-height: 24px;
+}
+
+@mixin secondary-btn {
+  border-radius: 4px;
+  border: 1px solid $grey30;
+  color: $grey100;
+  background-color: white;
+  line-height: 22px;
+}
+
+@mixin block-border {
+  border: 1px solid #e3e7e8;
+  border-radius: 12px;
+  background-color: white;
+}
+@mixin flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

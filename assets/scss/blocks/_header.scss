@@ -16,7 +16,7 @@
   }
   @media #{$screen-mobile} {
     height: rem(40px);
-    padding: rem(12px) rem(16px);
+    padding: rem(24px) rem(16px);
   }
   &__content {
     display: flex;
@@ -34,16 +34,34 @@
     letter-spacing: rem(0.08px);
     color: $grey60;
     transition: $transition;
+    margin-right: 4px;
+    padding-top: 2px;
     @media #{$screen-mobile} {
       display: none;
     }
   }
   &__city {
+    padding-top: 2px;
     color: $grey80;
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(14px);
+    line-height: rem(16px);
+    letter-spacing: rem(0.08px);
+    color: $grey80;
+    @media #{$screen-mobile} {
+        font-size: rem(12px);
+        padding-top: 0;
+    }
   }
   &__button-select-city {
     background-color: transparent;
     border: none;
-    padding: 0 4px;
+    padding: 0 rem(4px);
+    margin-left: rem(5px);
+    @media #{$screen-mobile} {
+        padding-top: 0;
+        margin-left: rem(3px);
+    }
   }
 }

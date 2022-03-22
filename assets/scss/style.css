@@ -715,7 +715,7 @@ button {
 @media (max-width: 40rem) {
   .header {
     height: 2.5rem;
-    padding: 0.75rem 1rem;
+    padding: 1.5rem 1rem;
   }
 }
 
@@ -744,6 +744,8 @@ button {
   color: #6d7678;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  margin-right: 4px;
+  padding-top: 2px;
 }
 
 @media (max-width: 40rem) {
@@ -753,17 +755,47 @@ button {
 }
 
 .header__city {
+  padding-top: 2px;
   color: #3c4142;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  letter-spacing: 0.005rem;
+  color: #3c4142;
+}
+
+@media (max-width: 40rem) {
+  .header__city {
+    font-size: 0.75rem;
+    padding-top: 0;
+  }
 }
 
 .header__button-select-city {
   background-color: transparent;
   border: none;
-  padding: 0 4px;
+  padding: 0 0.25rem;
+  margin-left: 0.3125rem;
+}
+
+@media (max-width: 40rem) {
+  .header__button-select-city {
+    padding-top: 0;
+    margin-left: 0.1875rem;
+  }
 }
 
 .logo_place_header {
   margin-right: 2.5rem;
+  height: 2.5rem;
+}
+
+@media (max-width: 40rem) {
+  .logo_place_header {
+    height: 1rem;
+    margin-right: 1.25rem;
+  }
 }
 
 .menu {
@@ -880,7 +912,7 @@ button {
 }
 
 .icon_header-select {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.625rem;
+  height: 0.625rem;
 }
 /*# sourceMappingURL=style.css.map */

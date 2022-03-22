@@ -1,5 +1,10 @@
 .logo {
-  &_place_header {
-    margin-right: rem(40px);
-  }
+    &_place_header {
+        margin-right: rem(40px);
+        height: rem(40px);
+        @media #{$screen-mobile} {
+            height: rem(16px);
+            margin-right: rem(20px);
+        }
+    }
 }
