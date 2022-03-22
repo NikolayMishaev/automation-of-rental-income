@@ -107,13 +107,13 @@ button {
   color: blue;
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
   .exampletest {
     color: orange;
   }
 }
 
-@media (max-width: 22.5rem) {
+@media (max-width: 40rem) {
   .exampletest {
     color: green;
   }
@@ -708,14 +708,14 @@ button {
   transition: all 0.5s;
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
   .header {
     height: 4rem;
     padding: 0rem 1.25rem;
   }
 }
 
-@media (max-width: 22.5rem) {
+@media (max-width: 40rem) {
   .header {
     height: 2.5rem;
     padding: 0.75rem 1rem;
@@ -745,6 +745,15 @@ button {
   line-height: 1rem;
   letter-spacing: 0.005rem;
   color: #6d7678;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media (max-width: 40rem) {
+  .header__city-select {
+    opacity: 0;
+    position: absolute;
+  }
 }
 
 .header__city {
@@ -771,14 +780,14 @@ button {
   margin-left: auto;
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
   .menu_place_header {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
 }
 
-@media (max-width: 22.5rem) {
+@media (max-width: 40rem) {
   .menu_place_header {
     border: unset;
     width: unset;
@@ -826,7 +835,7 @@ button {
   transition: all 0.5s;
 }
 
-@media (max-width: 22.5rem) {
+@media (max-width: 40rem) {
   .menu__profile-name {
     opacity: 0;
   }
@@ -843,7 +852,7 @@ button {
   transition: all 0.5s;
 }
 
-@media (max-width: 22.5rem) {
+@media (max-width: 40rem) {
   .menu__profile-avatar {
     width: 1.5rem;
     height: 1.5rem;
@@ -860,14 +869,14 @@ button {
   height: 2.5rem;
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
   .icon_logo {
     width: 8.625rem;
     height: 1.75rem;
   }
 }
 
-@media (max-width: 22.5rem) {
+@media (max-width: 40rem) {
   .icon_logo {
     width: 4.9375rem;
     height: 1rem;

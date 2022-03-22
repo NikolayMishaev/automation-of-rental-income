@@ -28,18 +28,23 @@
   }
   &__city-select {
     font-style: normal;
-font-weight: 400;
-font-size: rem(14px);
-line-height: rem(16px);
-letter-spacing: rem(0.08px);
-color: $grey60;
+    font-weight: 400;
+    font-size: rem(14px);
+    line-height: rem(16px);
+    letter-spacing: rem(0.08px);
+    color: $grey60;
+    transition: $transition;
+    @media #{$screen-mobile} {
+      opacity: 0;
+      position: absolute;
+    }
   }
   &__city {
-   color: $grey80
+    color: $grey80;
   }
   &__button-select-city {
     background-color: transparent;
     border: none;
-    padding: 0 4px
+    padding: 0 4px;
   }
 }
