@@ -12,6 +12,12 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(60, 65, 66, 0.6);
+  &_type_header {
+      transition: $transition;
+    opacity: 0;
+    display: flex;
+    z-index: -1
+  }
   &__content {
     border-radius: 12px;
     width: fit-content;

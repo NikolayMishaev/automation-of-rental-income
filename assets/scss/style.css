@@ -478,6 +478,16 @@ button {
   background-color: rgba(60, 65, 66, 0.6);
 }
 
+.modal_type_header {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: -1;
+}
+
 .modal__content {
   border-radius: 12px;
   width: -webkit-fit-content;
@@ -985,5 +995,54 @@ button {
 .icon_header-select {
   width: 0.625rem;
   height: 0.625rem;
+}
+
+.list-positions {
+  color: #222429;
+  min-width: 11.5rem;
+  height: 19.5rem;
+  overflow: scroll;
+}
+
+.list-positions_style_main {
+  margin: 0.5rem 0.3125rem 0.5rem 0;
+}
+
+.list-positions__wrapper {
+  margin-right: 5px;
+}
+
+.list-positions__item {
+  padding: 0.375rem 0.75rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.list-positions__item:hover {
+  background-color: #2a9b43;
+  color: white;
+}
+
+.list-positions__item_active {
+  background-color: #2a9b43;
+  color: white;
+}
+
+.list-positions__item_active:hover {
+  opacity: 0.7;
+}
+
+.list-positions::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list-positions::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+.list-positions::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
 }
 /*# sourceMappingURL=style.css.map */
