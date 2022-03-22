@@ -86,7 +86,7 @@ a:hover, a:focus {
 }
 
 a:active {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 img {
@@ -772,18 +772,18 @@ button {
   }
 }
 
-.header__button-select-city {
-  background-color: transparent;
-  border: none;
-  padding: 0 0.25rem;
-  margin-left: 0.3125rem;
+.header__city:hover {
+  text-decoration: none;
+  opacity: 0.7;
 }
 
-@media (max-width: 40rem) {
-  .header__button-select-city {
-    padding-top: 0;
-    margin-left: 0.1875rem;
-  }
+.logo {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.logo:hover {
+  opacity: 0.7;
 }
 
 .logo_place_header {
@@ -805,20 +805,17 @@ button {
 }
 
 .menu {
-  width: 8.5rem;
+  position: relative;
   min-height: 2.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
   margin-left: auto;
 }
 
 .menu__profile {
+  display: none;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -876,6 +873,89 @@ button {
     width: 1.5rem;
     height: 1.5rem;
   }
+}
+
+.menu__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__list:first-child {
+  margin-right: 16px;
+}
+
+.menu__link {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.0075rem;
+  padding: 0.4375rem 0.9375rem;
+  border: 0.0625rem solid transparent;
+  border-radius: 0.25rem;
+  background-color: #2a9b43;
+  color: white;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.menu__link:hover {
+  border: 0.0625rem solid #cfd4dc;
+  color: #222429;
+  background-color: transparent;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+@media (max-width: 40rem) {
+  .menu__link {
+    padding: 0.1875rem 0.6875rem;
+    font-size: 0.75rem;
+  }
+}
+
+.menu__link_type_register:hover + .menu__link-message {
+  opacity: 1;
+}
+
+.menu__link-message {
+  opacity: 0;
+  position: absolute;
+  top: 115%;
+  right: 50%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 467px;
+  background-color: #2a2e33;
+  border-radius: 4px;
+  color: white;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.08px;
+  padding: 10px 12px;
+}
+
+.menu__link-paragraph {
+  margin-bottom: 10px;
+}
+
+.menu__item-message {
+  list-style-type: disc;
+  margin-left: 25px;
+}
+
+.menu__link-cursor {
+  position: absolute;
+  top: -4px;
+  left: 96%;
 }
 
 .icon {

@@ -35,25 +35,24 @@ h2 {
     font-size: rem(28px);
     font-weight: 500;
     margin: 0;
-  }
-  
-  h3 {
+}
+
+h3 {
     font-size: rem(20px);
     font-weight: 500;
     margin: 0;
-  }
-  
-  h4 {
+}
+
+h4 {
     font-size: rem(16px);
     font-weight: 500;
     margin: 0;
-  }
+}
 
-  h5 {
+h5 {
     font-size: rem(14px);
     margin: 0;
-  }
-  
+}
 
 p {
     margin: 0;
@@ -76,7 +75,7 @@ a {
     }
 
     &:active {
-        opacity: .5;
+        opacity: 0.5;
     }
 }
 
@@ -87,4 +86,4 @@ img {
 
 button {
     cursor: pointer;
-  }
+}

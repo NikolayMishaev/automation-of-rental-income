@@ -53,15 +53,9 @@
             font-size: rem(12px);
             padding-top: 0;
         }
-    }
-    &__button-select-city {
-        background-color: transparent;
-        border: none;
-        padding: 0 rem(4px);
-        margin-left: rem(5px);
-        @media #{$screen-mobile} {
-            padding-top: 0;
-            margin-left: rem(3px);
+        &:hover {
+            text-decoration: none;
+            opacity: 0.7;
         }
     }
 }
