@@ -14,4 +14,11 @@
             margin-right: rem(20px);
         }
     }
+    &_place_footer {
+        flex: 1;
+        @media (max-width: 1660px) {
+            width: 50%;
+            flex: unset;
+        }
+    }
 }

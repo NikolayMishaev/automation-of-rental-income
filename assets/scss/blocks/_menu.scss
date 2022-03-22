@@ -61,6 +61,9 @@
     &__list {
         &:first-child {
             margin-right: 16px;
+            @media #{$screen-mobile} {
+                margin-right: rem(8px);
+            }
         }
     }
     &__link {
@@ -84,7 +87,7 @@
             text-decoration-line: none;
         }
         @media #{$screen-mobile} {
-            padding: rem(3px) rem(11px);
+            padding: rem(2px) rem(8px);
             font-size: rem(12px);
         }
         &_type_register:hover + .menu__link-message {
