@@ -35,8 +35,7 @@
     color: $grey60;
     transition: $transition;
     @media #{$screen-mobile} {
-      opacity: 0;
-      position: absolute;
+      display: none;
     }
   }
   &__city {

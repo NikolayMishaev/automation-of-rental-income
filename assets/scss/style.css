@@ -748,8 +748,7 @@ button {
 
 @media (max-width: 40rem) {
   .header__city-select {
-    opacity: 0;
-    position: absolute;
+    display: none;
   }
 }
 
