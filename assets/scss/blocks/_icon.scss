@@ -1,19 +1,19 @@
 .icon {
-  transition: $transition;
-  &_logo {
-    width: rem(198px);
-    height: rem(40px);
-    @media #{$screen-tablet} {
-      width: rem(138px);
-      height: rem(28px);
+    transition: $transition;
+    &_logo {
+        width: rem(198px);
+        height: rem(40px);
+        @media #{$screen-tablet} {
+            width: rem(138px);
+            height: rem(28px);
+        }
+        @media #{$screen-mobile} {
+            width: rem(79px);
+            height: rem(16px);
+        }
     }
-    @media #{$screen-mobile} {
-      width: rem(79px);
-      height: rem(16px);
+    &_header-select {
+        width: rem(10px);
+        height: rem(10px);
     }
-  }
-  &_header-select {
-    width: rem(10px);
-    height: rem(10px);
-  }
 }

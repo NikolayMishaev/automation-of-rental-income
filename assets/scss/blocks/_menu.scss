@@ -1,68 +1,55 @@
 .menu {
-  width: rem(136px);
-  min-height: rem(40px);
-  display: flex;
-  overflow: hidden;
-  margin-left: auto;
-
-  @media #{$screen-tablet} {
-    &_place_header {
-      box-sizing: border-box;
-    }
-  }
-
-  @media #{$screen-mobile} {
-    &_place_header {
-      border: unset;
-      width: unset;
-      min-height: unset;
-    }
-  }
-
-  &__profile {
-    margin: auto;
+    width: rem(136px);
+    min-height: rem(40px);
     display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-    transition: all 0.5s;
-    text-decoration: none;
-  }
-
-  &__profile:hover {
-    cursor: pointer;
-    box-shadow: rem(-3px) rem(0px) rem(40px) rgba(0, 0, 0, 0.1), rem(0px) rem(0px) rem(10px) rgba(164, 164, 164, 0.03);
-    border-radius: 0 35% 35% 0;
-  }
-
-  &__profile-name {
-    margin-right: rem(8px);
-    font-style: normal;
-    font-weight: normal;
-    font-size: rem(14px);
-    line-height: rem(16px);
-    letter-spacing: 0.08px;
-    color: $grey80;
-    padding-top: rem(2px);
-    text-overflow: ellipsis;
-    white-space: nowrap;
     overflow: hidden;
-    transition: $transition;
-    @media #{$screen-mobile} {
-      opacity: 0;
-    }
-  }
+    margin-left: auto;
 
-  &__profile-avatar {
-    flex-shrink: 0;
-    width: rem(40px);
-    height: rem(40px);
-    border-radius: 50%;
-    background: url("./../images/avatar-photo.png") no-repeat center/cover;
-    transition: $transition;
-    @media #{$screen-mobile} {
-      width: rem(24px);
-      height: rem(24px);
+    &__profile {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        transition: $transition;
+        text-decoration: none;
     }
-  }
+
+    &__profile:hover {
+        cursor: pointer;
+        box-shadow: rem(-3px) rem(0px) rem(40px) rgba(0, 0, 0, 0.1),
+            rem(0px) rem(0px) rem(10px) rgba(164, 164, 164, 0.03);
+        border-radius: 0 35% 35% 0;
+    }
+
+    &__profile-name {
+        margin-right: rem(8px);
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(14px);
+        line-height: rem(16px);
+        letter-spacing: 0.08px;
+        color: $grey80;
+        padding-top: rem(2px);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: $transition;
+        @media #{$screen-mobile} {
+            opacity: 0;
+        }
+    }
+
+    &__profile-avatar {
+        flex-shrink: 0;
+        width: rem(40px);
+        height: rem(40px);
+        border-radius: 50%;
+        background: url("./../images/avatar-photo.png") no-repeat center/cover;
+        transition: $transition;
+        @media #{$screen-mobile} {
+            width: rem(24px);
+            height: rem(24px);
+        }
+    }
 }

@@ -814,21 +814,6 @@ button {
   margin-left: auto;
 }
 
-@media (max-width: 80rem) {
-  .menu_place_header {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-}
-
-@media (max-width: 40rem) {
-  .menu_place_header {
-    border: unset;
-    width: unset;
-    min-height: unset;
-  }
-}
-
 .menu__profile {
   margin: auto;
   display: -webkit-box;

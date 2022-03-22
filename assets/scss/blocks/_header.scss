@@ -1,67 +1,67 @@
 .header {
-  padding: rem(24px) rem(60px);
-  display: flex;
-  background: #fff;
-  box-shadow: inset rem(0px) rem(-1px) rem(0px) $grey-20;
-  align-items: center;
-  justify-content: center;
-  transition: $transition;
-  width: 100%;
-  height: rem(88px);
-  box-sizing: border-box;
-  transition: $transition;
-  @media #{$screen-tablet} {
-    height: rem(64px);
-    padding: rem(12px) rem(16px);
-  }
-  @media #{$screen-mobile} {
-    height: rem(48px);
-    padding: rem(12px) rem(16px);
-  }
-  &__content {
+    padding: rem(24px) rem(60px);
     display: flex;
+    background: #fff;
+    box-shadow: inset rem(0px) rem(-1px) rem(0px) $grey-20;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: rem(1800px);
-    box-sizing: border-box;
-  }
-  &__city-select {
-    font-style: normal;
-    font-weight: 400;
-    font-size: rem(14px);
-    line-height: rem(16px);
-    letter-spacing: rem(0.08px);
-    color: $grey60;
+    justify-content: center;
     transition: $transition;
-    margin-right: 4px;
-    padding-top: 2px;
-    @media #{$screen-mobile} {
-      display: none;
+    width: 100%;
+    height: rem(88px);
+    box-sizing: border-box;
+    transition: $transition;
+    @media #{$screen-tablet} {
+        height: rem(64px);
+        padding: rem(12px) rem(16px);
     }
-  }
-  &__city {
-    padding-top: 2px;
-    color: $grey80;
-    font-style: normal;
-    font-weight: 400;
-    font-size: rem(14px);
-    line-height: rem(16px);
-    letter-spacing: rem(0.08px);
-    color: $grey80;
     @media #{$screen-mobile} {
-        font-size: rem(12px);
-        padding-top: 0;
+        height: rem(48px);
+        padding: rem(12px) rem(16px);
     }
-  }
-  &__button-select-city {
-    background-color: transparent;
-    border: none;
-    padding: 0 rem(4px);
-    margin-left: rem(5px);
-    @media #{$screen-mobile} {
-        padding-top: 0;
-        margin-left: rem(3px);
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: rem(1800px);
+        box-sizing: border-box;
     }
-  }
+    &__city-select {
+        font-style: normal;
+        font-weight: 400;
+        font-size: rem(14px);
+        line-height: rem(16px);
+        letter-spacing: rem(0.08px);
+        color: $grey60;
+        transition: $transition;
+        margin-right: 4px;
+        padding-top: 2px;
+        @media #{$screen-mobile} {
+            display: none;
+        }
+    }
+    &__city {
+        padding-top: 2px;
+        color: $grey80;
+        font-style: normal;
+        font-weight: 400;
+        font-size: rem(14px);
+        line-height: rem(16px);
+        letter-spacing: rem(0.08px);
+        color: $grey80;
+        @media #{$screen-mobile} {
+            font-size: rem(12px);
+            padding-top: 0;
+        }
+    }
+    &__button-select-city {
+        background-color: transparent;
+        border: none;
+        padding: 0 rem(4px);
+        margin-left: rem(5px);
+        @media #{$screen-mobile} {
+            padding-top: 0;
+            margin-left: rem(3px);
+        }
+    }
 }
