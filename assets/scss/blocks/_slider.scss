@@ -1,0 +1,76 @@
+.slider {
+  margin-bottom: 40px;
+  &__next-btn,
+  &__prev-btn {
+    height: 100%;
+    background-color: rgba(43, 48, 48, 0.34);
+    border-radius: 0px 12px 12px 0px;
+    border: none;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    @media #{$screen-mobile} {
+      display: none;
+    }
+    &_track {
+      border-radius: 4px;
+      border: 1px solid $grey30;
+      background-color: white;
+    }
+  }
+  &__track {
+    display: flex;
+    @media #{$screen-mobile} {
+      display: none;
+    }
+  }
+  &__prev-btn {
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    &_track {
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+  }
+  &__inner {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  &__items {
+    @media #{$screen-mobile} {
+      height: 175px;
+    }
+    img {
+      border-radius: 8px;
+    }
+  }
+  &__next-btn {
+    right: 0;
+  }
+  img {
+    display: block;
+    object-fit: cover;
+  }
+  &__track-list {
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin: 0 16px;
+    height: 110px;
+  }
+  &__track-item {
+    flex: 20%;
+    img {
+      border: 1px solid $grey30;
+    }
+    &_active {
+      img {
+        border: 3px solid $accent-TCX50;
+      }
+    }
+    img {
+      border-radius: 4px;
+    }
+  }
+  &__track-item + &__track-item {
+    margin-left: 16px;
+  }
+}

@@ -6,39 +6,57 @@
   margin: auto;
   @media #{$screen-mobile} {
     max-width: 328px;
-    display: block;
-    margin: 0 16px;
+    flex-direction: column;
   }
 }
 
 .main-content {
-  width: 58%;
+  flex: 1037px;
   margin-right: 32px;
   margin-top: 40px;
   @media #{$screen-mobile} {
     width: 100%;
-    margin-right: 0;
+    margin: 0;
+    order: 3;
+    flex: auto;
+  }
+  .slider {
+    @media #{$screen-mobile} {
+      margin-bottom: 12px;
+    }
   }
 }
 
 .info-card {
   padding: 24px;
-  width: 40%;
+  flex: 731px;
   font-size: 14px;
   height: fit-content;
-  position: fixed;
-  top: 204px;
-  // уточнить отступы контейнера
-  left: calc(58% + 32px - 20px);
+  position: sticky;
+  margin-top: 40px;
+  top: 40px;
   @media #{$screen-mobile} {
+    display: none;
+  }
+  &_mobile {
     position: static;
     width: 100%;
     border: none;
     padding: 0;
+    order: 2;
+    margin-top: 0;
+    flex: auto;
+    display: none;
+    @media #{$screen-mobile} {
+      display: block;
+    }
   }
   @include block-border;
   &__title {
     margin-bottom: 8px;
+    @media #{$screen-mobile} {
+      margin-bottom: 12px;
+    }
   }
   &__subtitle {
     display: flex;
@@ -82,7 +100,9 @@
   }
   &__price,
   &__price-per-meter {
-    margin: 0;
+    @media #{$screen-mobile} {
+      margin: 0;
+    }
   }
 
   &__price-icon {
@@ -93,7 +113,12 @@
     margin-right: 4px;
     color: $accent-TCX50;
     @media #{$screen-mobile} {
-      display: inline-block;
+      display: inline;
+    }
+    &_desk {
+      @media #{$screen-mobile} {
+        display: none;
+      }
     }
   }
   &__contact {
@@ -117,6 +142,10 @@
   }
   &__link {
     color: $accent90;
+    line-height: 24px;
+    @media #{$screen-mobile} {
+      font-size: $font-size-normal;
+    }
   }
   &__position,
   &__avatar,
@@ -161,6 +190,11 @@
       height: 32px;
       margin-right: 8px;
     }
+    svg {
+      @media #{$screen-mobile} {
+        transform: scale(1.6);
+      }
+    }
     span {
       @media #{$screen-mobile} {
         display: none;
@@ -172,15 +206,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media #{$screen-mobile} {
-      display: none;
-    }
     &_mobile {
       display: none;
       @media #{$screen-mobile} {
         display: flex;
         margin-top: 16px;
-        margin-bottom: 8px;
       }
     }
   }
@@ -230,7 +260,9 @@
   &__icon-bell {
     width: 24px;
     height: 24px;
-    fill: $grey-50;
+    svg {
+      fill: $grey-50;
+    }
     @include flex-container;
     justify-self: end;
     cursor: pointer;
@@ -249,6 +281,9 @@
     @media #{$screen-mobile} {
       flex-direction: column;
     }
+  }
+  sup {
+    font-size: 8px;
   }
 }
 
