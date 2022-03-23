@@ -12,6 +12,11 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(60, 65, 66, 0.6);
+  &__title {
+      &_style_main {
+          margin-bottom: rem(12px);
+      }
+  }
   &_type_header {
       transition: $transition;
       transform: scale(4);
@@ -25,11 +30,18 @@
     background-color: white;
     margin: auto;
     box-shadow: $shadow-100;
+    &_style_main {
+        display: flex;
+        padding: 0 rem(24px)
+    }
   }
   &__header {
     display: flex;
     justify-content: space-between;
     padding: 20px 20px 16px 24px;
+    &_style_main {
+        flex-wrap: wrap;
+    }
   }
   &__close-btn {
     width: 24px;
@@ -37,6 +49,11 @@
     @include flex-container;
     background-color: transparent;
     border: none;
+    transition: $transition;
+    &:hover {
+        opacity: .7;
+        transform: scale(1.2)
+    }
   }
   &__body {
     padding: 0 24px 24px;
