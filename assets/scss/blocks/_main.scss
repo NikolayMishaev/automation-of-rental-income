@@ -15,12 +15,11 @@
         flex-direction: column;
         justify-content: flex-start;
     }
-&__control-panel {
-    @include flex-container;
-    background-color: lightgray;
-    height: 32px;
-
-}
+    &__control-panel {
+        @include flex-container;
+        background-color: lightgray;
+        height: 32px;
+    }
     &__container {
         padding: rem(16px) rem(60px);
         @include flex-container;
@@ -30,15 +29,21 @@
         }
     }
     &__column {
-        flex: 1;
         &_type_price {
+            width: 67%;
             flex: unset;
+            @media #{$screen-tablet} {
+                width: 50%;
+            }
             @media #{$screen-mobile} {
                 width: 100%;
             }
         }
         &_type_filters {
-            max-width: 33%;
+            width: 33%;
+            @media #{$screen-tablet} {
+                width: 50%;
+            }
             text-align: center;
             background-color: lightgray;
         }

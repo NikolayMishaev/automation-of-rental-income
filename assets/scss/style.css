@@ -1207,16 +1207,17 @@ button {
   }
 }
 
-.main__column {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
 .main__column_type_price {
+  width: 67%;
   -webkit-box-flex: unset;
       -ms-flex: unset;
           flex: unset;
+}
+
+@media (max-width: 80rem) {
+  .main__column_type_price {
+    width: 50%;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -1226,9 +1227,15 @@ button {
 }
 
 .main__column_type_filters {
-  max-width: 33%;
+  width: 33%;
   text-align: center;
   background-color: lightgray;
+}
+
+@media (max-width: 80rem) {
+  .main__column_type_filters {
+    width: 50%;
+  }
 }
 
 .main__control-panel {
@@ -1471,7 +1478,6 @@ button {
 .card-price_style_main {
   margin: 1.5rem 0;
   width: unset;
-  min-height: 14.375rem;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -1491,8 +1497,10 @@ button {
 .card-price__photo_style_main {
   max-width: 25.625rem;
   max-height: 14.375rem;
-  width: 100%;
-  height: 100%;
+  width: 21vw;
+  height: 13vw;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .card-price__description {
@@ -1528,6 +1536,7 @@ button {
 
 @media (max-width: 80rem) {
   .card-price__description_style_main {
+    min-width: unset;
     font-size: 20px;
     line-height: 26px;
   }

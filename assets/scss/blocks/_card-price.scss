@@ -23,7 +23,6 @@
     &_style_main {
         margin: rem(24px) 0;
         width: unset;
-        min-height: rem(230px);
         align-items: flex-start;
         &:after {
             border: unset;
@@ -37,8 +36,9 @@
         &_style_main {
             max-width: rem(410px);
             max-height: rem(230px);
-            width: 100%;
-            height: 100%;
+            width: 21vw;
+            height: 13vw;
+            object-fit: cover;
         }
     }
     &__description {
@@ -62,6 +62,7 @@
             line-height: 36px;
             color: $grey80;
             @media #{$screen-tablet} {
+                min-width: unset;
                 font-size: 20px;
                 line-height: 26px;
             }
