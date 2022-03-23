@@ -20,11 +20,26 @@
         border-right: 1px solid $grey-20_2;
         position: absolute;
     }
+    &_style_main {
+        margin: rem(24px) 0;
+        width: unset;
+        min-height: rem(230px);
+        align-items: flex-start;
+        &:after {
+            border: unset;
+        }
+    }
     &__photo {
         border-radius: rem(8px);
         display: block;
         width: 80px;
         height: 60px;
+        &_style_main {
+            max-width: rem(410px);
+            max-height: rem(230px);
+            width: 100%;
+            height: 100%;
+        }
     }
     &__description {
         @include flex-container;
@@ -36,6 +51,30 @@
         line-height: 20px;
         letter-spacing: 0.12px;
         color: #3c4142;
+        &_style_main {
+            min-width: rem(600px);
+            margin-left: rem(24px);
+            justify-content: unset;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 36px;
+            color: $grey80;
+            @media #{$screen-tablet} {
+                font-size: 20px;
+                line-height: 26px;
+            }
+            @media #{$screen-mobile} {
+                min-width: unset;
+                margin-left: unset;
+                width: 100%;
+            }
+        }
+    }
+    &__adress {
+        &_style_main {
+            margin-left: rem(8px);
+        }
     }
     &__forex {
         font-style: normal;
@@ -49,6 +88,11 @@
         &_type_square {
             padding-right: 6px;
         }
+        &_style_main {
+            padding-right: 0;
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
     &__price {
         border-right: 1px solid $grey-20_2;
@@ -56,6 +100,16 @@
         margin-right: rem(20px);
         &_type_square {
             border-right: none;
+        }
+        &_style_main {
+            width: 100%;
+            border: unset;
+            font-size: 20px;
+            line-height: 24px;
+            @media #{$screen-tablet} {
+                font-size: 16px;
+                line-height: 20px;
+            }
         }
     }
     &__text {
@@ -68,6 +122,15 @@
         &_super {
             vertical-align: super;
             font-size: 10px;
+            &_style_main {
+                vertical-align: super;
+                font-size: 12px !important;
+                font-weight: bold;
+            }
+        }
+        &_style_main {
+            font-size: 20px;
+            line-height: 24px;
         }
     }
 }
