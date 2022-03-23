@@ -30,17 +30,17 @@
     }
     &__column {
         &_type_price {
-            width: 67%;
+            width: 66%;
             flex: unset;
             @media #{$screen-tablet} {
                 width: 50%;
             }
-            @media #{$screen-mobile} {
+            @media (max-width: rem(900px)) {
                 width: 100%;
             }
         }
         &_type_filters {
-            width: 33%;
+            width: 34%;
             @media #{$screen-tablet} {
                 width: 50%;
             }
