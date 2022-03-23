@@ -241,8 +241,39 @@
     .icon {
       margin: 0 0 0 6px;
       cursor: pointer;
+      position: relative;
       @include flex-container;
+      &:hover .tooltip {
+        opacity: 1;
+      }
     }
+    .tooltip {
+      width: 346px;
+      display: inline-flex;
+      bottom: 100%;
+      margin-bottom: 5px;
+      left: calc(50%);
+      transform: translateX(-50%);
+      text-align: left;
+      svg {
+        position: absolute;
+        bottom: -4px;
+        right: calc(50% - 4px);
+      }
+      @media (max-width: 1600px) {
+        left: -10vh;
+        svg {
+          right: 18.5%;
+        }
+      }
+      @media (max-width: 1330px) {
+        left: -15vh;
+        svg {
+          right: 4.5%;
+        }
+      }
+    }
+
     @media #{$screen-mobile} {
       text-align: left;
       display: inline-flex;
@@ -260,6 +291,14 @@
   &__icon-bell {
     width: 24px;
     height: 24px;
+    border-radius: 100%;
+    &:hover {
+      svg {
+        transition: $transition;
+        fill: $accent-TCX50;
+      }
+    }
+
     svg {
       fill: $grey-50;
     }
