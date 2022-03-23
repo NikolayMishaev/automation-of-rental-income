@@ -29,7 +29,7 @@ for (let index = 0; index < cancelBtn.length; index++) {
 }
 
 window.onclick = function (event) {
-  if (event.target == modal) {
+  if (event.target == modalOfferPrice) {
     modalOfferPrice.style.display = "none";
   }
   if (event.target == modalForm) {

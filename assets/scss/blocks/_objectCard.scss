@@ -4,6 +4,7 @@
   display: flex;
   max-width: 1800px;
   margin: auto;
+  padding: 0 60px;
   @media #{$screen-mobile} {
     max-width: 328px;
     flex-direction: column;
@@ -14,6 +15,7 @@
   flex: 1037px;
   margin-right: 32px;
   margin-top: 40px;
+  min-width: 0;
   @media #{$screen-mobile} {
     width: 100%;
     margin: 0;
@@ -245,11 +247,13 @@
       @include flex-container;
       &:hover .tooltip {
         opacity: 1;
+        display: inline-flex;
       }
     }
     .tooltip {
+      opacity: 0;
+      display: none;
       width: 346px;
-      display: inline-flex;
       bottom: 100%;
       margin-bottom: 5px;
       left: calc(50%);

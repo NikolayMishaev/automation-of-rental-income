@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -69,119 +73,80 @@
       <div class="main-content">
         <!-- Нужны картинки для слайдера -->
         <div class="slider">
-          <div class="slider__inner">
-            <div class="slider__items">
-              <img src="./assets/img/slider-item.jpg" class="slider__item" />
+          <div class="swiper track-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/slider-item.jpg" />
+              </div>
             </div>
-            <button class="slider__prev-btn">
-              <div class="slider__icon">
-                <svg
-                  width="8"
-                  height="12"
-                  viewBox="0 0 8 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.29006 2.12002L5.17006 6.00002L1.29006 9.88002C0.900059 10.27 0.900059 10.9 1.29006 11.29C1.68006 11.68 2.31006 11.68 2.70006 11.29L7.29006 6.70002C7.68006 6.31002 7.68006 5.68002 7.29006 5.29002L2.70006 0.70002C2.31006 0.310019 1.68006 0.310019 1.29006 0.70002C0.910058 1.09002 0.900058 1.73002 1.29006 2.12002Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
-            </button>
-            <button class="slider__next-btn">
-              <div class="slider__icon">
-                <svg
-                  width="8"
-                  height="12"
-                  viewBox="0 0 8 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.29006 2.12002L5.17006 6.00002L1.29006 9.88002C0.900059 10.27 0.900059 10.9 1.29006 11.29C1.68006 11.68 2.31006 11.68 2.70006 11.29L7.29006 6.70002C7.68006 6.31002 7.68006 5.68002 7.29006 5.29002L2.70006 0.70002C2.31006 0.310019 1.68006 0.310019 1.29006 0.70002C0.910058 1.09002 0.900058 1.73002 1.29006 2.12002Z"
-                    fill="white"
-                  />
-                </svg>
-              </div>
-            </button>
+            <div class="swiper-button-next slider__next-btn"></div>
+            <div class="swiper-button-prev slider__prev-btn"></div>
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="slider__track">
-            <button class="slider__prev-btn_track">
-              <svg
-                width="8"
-                height="12"
-                viewBox="0 0 8 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.29006 2.12002L5.17006 6.00002L1.29006 9.88002C0.900059 10.27 0.900059 10.9 1.29006 11.29C1.68006 11.68 2.31006 11.68 2.70006 11.29L7.29006 6.70002C7.68006 6.31002 7.68006 5.68002 7.29006 5.29002L2.70006 0.70002C2.31006 0.31002 1.68006 0.31002 1.29006 0.70002C0.910059 1.09002 0.900059 1.73002 1.29006 2.12002Z"
-                  fill="#50565E"
-                />
-              </svg>
-            </button>
-            <div class="slider__track-list">
-              <div class="slider__track-item slider__track-item_active">
-                <img
-                  src="./assets/img/slider-item.jpg"
-                  width="175.4"
-                  height="110"
-                  class=""
-                  alt=""
-                />
-              </div>
-              <div class="slider__track-item">
-                <img
-                  src="./assets/img/slider-item.jpg"
-                  class=""
-                  alt=""
-                  width="175.4"
-                  height="110"
-                />
-              </div>
-              <div class="slider__track-item">
-                <img
-                  src="./assets/img/slider-item.jpg"
-                  class=""
-                  alt=""
-                  width="175.4"
-                  height="110"
-                />
-              </div>
-              <div class="slider__track-item">
-                <img
-                  src="./assets/img/slider-item.jpg"
-                  class=""
-                  alt=""
-                  width="175.4"
-                  height="110"
-                />
-              </div>
-              <div class="slider__track-item">
-                <img
-                  src="./assets/img/slider-item.jpg"
-                  class=""
-                  alt=""
-                  width="175.4"
-                  height="110"
-                />
+          <div class="mainSwiper__wrapper">
+            <div thumbsSlider="" class="swiper mainSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
               </div>
             </div>
-            <button class="slider__next-btn_track">
-              <svg
-                width="8"
-                height="12"
-                viewBox="0 0 8 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.29006 2.12002L5.17006 6.00002L1.29006 9.88002C0.900059 10.27 0.900059 10.9 1.29006 11.29C1.68006 11.68 2.31006 11.68 2.70006 11.29L7.29006 6.70002C7.68006 6.31002 7.68006 5.68002 7.29006 5.29002L2.70006 0.70002C2.31006 0.31002 1.68006 0.31002 1.29006 0.70002C0.910059 1.09002 0.900059 1.73002 1.29006 2.12002Z"
-                  fill="#50565E"
-                />
-              </svg>
-            </button>
+            <div class="swiper-button-next slider__next-btn_track"></div>
+            <div class="swiper-button-prev slider__prev-btn_track"></div>
           </div>
         </div>
         <!-- Повторный блок  -->
@@ -855,5 +820,7 @@
     <script src="./assets/js/modal.js"></script>
     <script src="./assets/js/togglerContactForm.js"></script>
     <script src="./assets/js/toggleBell.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="module" src="./assets/js/swiper.js"></script>
   </body>
 </html>

@@ -119,6 +119,7 @@ button {
   display: flex;
   max-width: 1800px;
   margin: auto;
+  padding: 0 60px;
 }
 
 @media (max-width: 40rem) {
@@ -137,6 +138,7 @@ button {
           flex: 1037px;
   margin-right: 32px;
   margin-top: 40px;
+  min-width: 0;
 }
 
 @media (max-width: 40rem) {
@@ -515,13 +517,15 @@ button {
 
 .info-card__offer-btn .icon:hover .tooltip {
   opacity: 1;
-}
-
-.info-card__offer-btn .tooltip {
-  width: 346px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+}
+
+.info-card__offer-btn .tooltip {
+  opacity: 0;
+  display: none;
+  width: 346px;
   bottom: 100%;
   margin-bottom: 5px;
   left: calc(50%);
@@ -975,7 +979,7 @@ button {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
-  z-index: 1;
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
@@ -1350,10 +1354,9 @@ button {
 .slider__next-btn, .slider__prev-btn {
   height: 100%;
   background-color: rgba(43, 48, 48, 0.34);
-  border-radius: 0px 12px 12px 0px;
   border: none;
   position: absolute;
-  top: 0;
+  top: 23px;
   width: 50px;
 }
 
@@ -1382,13 +1385,7 @@ button {
 }
 
 .slider__prev-btn {
-  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-          transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-
-.slider__prev-btn_track {
-  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-          transform: matrix(-1, 0, 0, 1, 0, 0);
+  left: 0;
 }
 
 .slider__inner {
@@ -1446,6 +1443,158 @@ button {
 
 .slider__track-item + .slider__track-item {
   margin-left: 16px;
+}
+
+.track-swiper {
+  max-height: 520px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  min-width: 0;
+}
+
+.track-swiper .slider__next-btn,
+.track-swiper .slider__prev-btn {
+  height: 100%;
+  top: 22px;
+  width: 50px;
+}
+
+.track-swiper .slider__next-btn {
+  right: 0;
+}
+
+.track-swiper .slider__prev-btn {
+  left: 0;
+}
+
+.track-swiper .slider__next-btn:after,
+.track-swiper .slider__prev-btn:after {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+.track-swiper .swiper-pagination {
+  background-color: rgba(59, 64, 71, 0.6);
+  color: white;
+  padding: 4px 8px;
+  width: auto;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.track-swiper .swiper-wrapper {
+  max-height: 520px;
+}
+
+.track-swiper .swiper-slide {
+  max-height: 520px;
+}
+
+.slider {
+  display: block;
+}
+
+.mainSwiper {
+  margin: 0 48px;
+  max-height: 110px;
+}
+
+.mainSwiper .swiper-slide {
+  border-radius: 8px;
+}
+
+.mainSwiper .swiper-button-next {
+  right: -48px;
+  z-index: 100;
+}
+
+.mainSwiper .swiper-button-prev {
+  left: -48px;
+}
+
+.mainSwiper .swiper-free-mode > .swiper-wrapper {
+  width: 80%;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mainSwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.mainSwiper .swiper-slide img {
+  border-radius: 8px;
+}
+
+.mainSwiper .swiper-slide-thumb-active img {
+  border: 3px solid #2a9b43;
+}
+
+.mainSwiper__wrapper {
+  position: relative;
+  min-width: 0;
+  margin: 0 48px;
+}
+
+.mainSwiper__wrapper .swiper-button-next .slider__next-btn_track {
+  height: 100%;
+}
+
+.mainSwiper__wrapper .swiper-slide img {
+  height: 110px;
+  cursor: pointer;
+}
+
+.mainSwiper__wrapper .swiper-button-next .slider__next-btn_track {
+  height: 100%;
+}
+
+.mainSwiper__wrapper .slider__next-btn_track,
+.mainSwiper__wrapper .slider__prev-btn_track {
+  border-radius: 4px;
+  border: 1px solid #cfd4dc;
+  height: 100%;
+  width: 32px;
+  top: auto;
+  bottom: 0;
+}
+
+.mainSwiper__wrapper .slider__next-btn_track::after,
+.mainSwiper__wrapper .slider__prev-btn_track::after {
+  font-size: 12px;
+  color: #50565e;
+  font-weight: 700;
+}
+
+.mainSwiper__wrapper .slider__next-btn_track {
+  right: -48px;
+}
+
+.mainSwiper__wrapper .slider__prev-btn_track {
+  left: -48px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 520px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-content .mainSwiper .slider__next-btn_track .swiper-button-next {
+  height: 100%;
+  top: 23px;
+  color: #3c4142;
 }
 
 .tooltip {
