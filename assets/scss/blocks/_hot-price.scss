@@ -1,6 +1,6 @@
 .hot-price {
+    position: relative;
     overflow: scroll;
-    max-width: rem(1920px);
     padding: rem(20px) 0;
     width: 100%;
     background-color: $grey-5;
@@ -8,15 +8,34 @@
     transition: $transition;
     display: flex;
     flex-wrap: wrap;
+    &::-webkit-scrollbar {
+        display: none;
+    }
     @media #{$screen-tablet} {
         padding: rem(12px) rem(16px);
-        height: rem(120px);
+        height: 145px;
+    }
+    @media #{$screen-mobile} {
+        padding: rem(8px) rem(10px);
+        height: 120px;
     }
     &__header {
+        position: sticky;
+        top:0;
+        left: 0;
         padding: 0 rem(60px);
         display: flex;
         width: 100%;
         margin-bottom: rem(16px);
+        @media #{$screen-tablet} {
+            padding: 0;
+            margin-bottom: rem(10px);
+        }
+        @media #{$screen-tablet} {
+            left: rem(10px);
+            padding: 0;
+            margin-bottom: 0;
+        }
     }
     &__title {
         font-style: normal;
@@ -29,53 +48,7 @@
             font-size: 16px;
         }
     }
-    &__photo {
-        border-radius: rem(8px);
-        display: block;
-        width: 80px;
-        height: 60px;
-    }
     &__container {
-    }
-    &__card {
-        margin-left: 40px;
-        width: rem(461px);
-        background-color: white;
-        padding: rem(12px);
-        border-radius: 12px;
         @include flex-container;
-        border: 1px solid $grey-20_2;
-        flex-wrap: wrap;
-        position: relative;
-        &:after {
-            content: "";
-            height: 80%;
-            right: -40px;
-            display: block;
-            border-right: 1px solid $grey-20_2;
-            position: absolute;
-        }
-    }
-    &__description {
-        @include flex-container;
-        flex: 1;
-        flex-wrap: wrap;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 20px;
-        letter-spacing: 0.12px;
-        color: #3c4142;
-    }
-    &__forex {
-        font-style: normal;
-        font-weight: 500;
-        font-size: rem(20px);
-        line-height: rem(24px);
-        text-align: center;
-        letter-spacing: rem(0.12px);
-        color: $accent-TCX50;
-        border-right: 1px solid $grey-20_2;
-        padding-right: 20px;
     }
 }

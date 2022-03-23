@@ -1,0 +1,73 @@
+.card-price {
+    margin-left: 40px;
+    margin-right: 40px;
+    width: rem(461px);
+    background-color: white;
+    padding: rem(12px);
+    border-radius: 12px;
+    @include flex-container;
+    border: 1px solid $grey-20_2;
+    flex-wrap: wrap;
+    position: relative;
+    @media #{$screen-mobile} {
+        padding: rem(8px);
+    }
+    &:after {
+        content: "";
+        height: 80%;
+        right: -40px;
+        display: block;
+        border-right: 1px solid $grey-20_2;
+        position: absolute;
+    }
+    &__photo {
+        border-radius: rem(8px);
+        display: block;
+        width: 80px;
+        height: 60px;
+    }
+    &__description {
+        @include flex-container;
+        flex: 1;
+        flex-wrap: wrap;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.12px;
+        color: #3c4142;
+    }
+    &__forex {
+        font-style: normal;
+        font-weight: 500;
+        font-size: rem(20px);
+        line-height: rem(24px);
+        text-align: center;
+        letter-spacing: rem(0.12px);
+        color: $accent-TCX50;
+        padding-right: 20px;
+        &_type_square {
+            padding-right: 6px;
+        }
+    }
+    &__price {
+        border-right: 1px solid $grey-20_2;
+        padding-right: rem(20px);
+        margin-right: rem(20px);
+        &_type_square {
+            border-right: none;
+        }
+    }
+    &__text {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.08px;
+        color: #3c4142;
+        &_super {
+            vertical-align: super;
+            font-size: 10px;
+        }
+    }
+}
