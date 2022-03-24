@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="./assets/scss/style.css" />
     <link
       rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <title>Document</title>
@@ -79,7 +85,9 @@
                 <img src="./assets/img/slider-item.jpg" />
               </div>
               <div class="swiper-slide">
-                <img src="./assets/img/slider-item.jpg" />
+                <img
+                  src="https://static.mk.ru/upload/entities/2021/09/21/19/articles/detailPicture/3a/f2/a9/44/5b3925061932d862eb31129f17379649.jpg"
+                />
               </div>
               <div class="swiper-slide">
                 <img src="./assets/img/slider-item.jpg" />
@@ -194,7 +202,11 @@
           <a href="#" class="info-card__link">Посмотреть на карте</a>
           <div class="info-card__contact">
             <!-- нужна картинка аватара  -->
-            <img src="" alt="Фото" class="info-card__avatar" />
+            <img
+              src="./assets/img/Ellipse 1.jpg"
+              alt="Фото"
+              class="info-card__avatar"
+            />
             <!-- конец  -->
             <div class="info-card__contact-text">
               <!-- все поля temlate  -->
@@ -403,6 +415,7 @@
         </div>
         <div class="map-object">
           <h3 class="map-object__title">Объект на карте</h3>
+          <div class="map-container"></div>
         </div>
       </div>
       <div class="info-card">
@@ -531,7 +544,11 @@
         <a href="#" class="info-card__link">Посмотреть на карте</a>
         <div class="info-card__contact">
           <!-- нужна картинка аватара  -->
-          <img src="" alt="Фото" class="info-card__avatar" />
+          <img
+            src="./assets/img/Ellipse 1.jpg"
+            alt="Фото"
+            class="info-card__avatar"
+          />
           <!-- конец -->
           <div class="info-card__contact-text">
             <!-- template  -->
@@ -822,5 +839,10 @@
     <script src="./assets/js/toggleBell.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="./assets/js/swiper.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
   </body>
 </html>
