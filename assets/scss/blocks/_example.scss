@@ -2,7 +2,7 @@
   font-weight: $font-weight-medium;
   color: $error;
   &test {
-    color:blue;
+    color: blue;
     @media #{$screen-tablet} {
       color: orange;
     }
@@ -11,3 +11,4 @@
     }
   }
 }
+

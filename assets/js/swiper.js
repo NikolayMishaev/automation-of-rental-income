@@ -1,4 +1,5 @@
 import Swiper from "https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js";
+
 const swiper = new Swiper(".mainSwiper", {
   loop: false,
   spaceBetween: 16,
@@ -12,7 +13,6 @@ const swiper = new Swiper(".mainSwiper", {
 });
 const swiper2 = new Swiper(".track-swiper", {
   loop: false,
-  autoHeight: true,
   spaceBetween: 10,
   navigation: {
     nextEl: ".slider__next-btn",

@@ -75,10 +75,7 @@
   border-radius: 12px;
   margin-bottom: 16px;
   min-width: 0;
-  // aspect-ratio: 16 / 9;
-  @media #{$screen-mobile} {
-    height: 250px;
-  }
+  aspect-ratio: 16 / 9;
   .slider__next-btn,
   .slider__prev-btn {
     height: 100%;
