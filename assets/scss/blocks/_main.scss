@@ -64,9 +64,17 @@
             width: 32px;
             height: 32px;
             &_search {
+                position: relative;
                 background: url("./../images/icons/main-page-icon-search.svg") no-repeat center;
                 &-active {
                     background-image: url("./../images/icons/main-page-icon-search-active.svg");
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+                &:hover  .main-submenu {
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
             &_filters {
@@ -75,6 +83,9 @@
                 &-active {
                     background-image: url("./../images/icons/main-page-icon-filters-active.svg");
                     margin-left: 15px;
+                }
+                &:hover {
+                    cursor:pointer;
                 }
             }
         }

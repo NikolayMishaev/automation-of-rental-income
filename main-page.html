@@ -331,20 +331,46 @@
             <div class="control-panel__column main__control-panel-column-two">
                 <div class="main__control-panel-desktop">
                 <p class="main-text">Сортировать: </p>
-                <div class="main-search main-search_style_main"> Сначала выгодные
-                    <svg class="icon icon_cursor-select" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.58665 1.19335L3.99999 3.78002L1.41332 1.19335C1.15332 0.933352 0.73332 0.933352 0.47332 1.19335C0.21332 1.45335 0.21332 1.87335 0.47332 2.13335L3.53332 5.19335C3.79332 5.45335 4.21332 5.45335 4.47332 5.19335L7.53332 2.13335C7.79332 1.87335 7.79332 1.45335 7.53332 1.19335C7.27332 0.940019 6.84665 0.933352 6.58665 1.19335V1.19335Z" fill="#6C737D"/>
-                        </svg>
+                <div  class="main-search main-search_style_main main-search_style_sort"> <span id="main-sort-desktop">Сначала выгодные</span>
+                    <div class="main-submenu main-submenu_style_sort">
+                        <ul class="main-submenu__list">
+                            <li aria-label="sort-desktop" class="main-submenu__item">Все</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item">Сначала выгодные</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item">От меньшей площади</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item main-submenu__item_active">От большей площади</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item">Сначала дорогие</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item">Сначала дешевые</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item">Сначала популярные</li>
+                        </ul>
+                    </div>
                 </div>
                 <p class="main-text main__control-panel-text">Показывать объектов на странице:</p>
-                <div class="main-search main-search_style_main"> 10
-                    <svg class="icon icon_cursor-select" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.58665 1.19335L3.99999 3.78002L1.41332 1.19335C1.15332 0.933352 0.73332 0.933352 0.47332 1.19335C0.21332 1.45335 0.21332 1.87335 0.47332 2.13335L3.53332 5.19335C3.79332 5.45335 4.21332 5.45335 4.47332 5.19335L7.53332 2.13335C7.79332 1.87335 7.79332 1.45335 7.53332 1.19335C7.27332 0.940019 6.84665 0.933352 6.58665 1.19335V1.19335Z" fill="#6C737D"/>
-                        </svg>
+                <div class="main-search main-search_style_main"> <span id="main-number-cards" >10</span>
+                    <div class="main-submenu main-submenu_style_number-cards">
+                        <ul class="main-submenu__list">
+                            <li aria-label="number-cards" class="main-submenu__item">5</li>
+                            <li aria-label="number-cards" class="main-submenu__item main-submenu__item_active">10</li>
+                            <li aria-label="number-cards" class="main-submenu__item">20</li>
+                            <li aria-label="number-cards" class="main-submenu__item">50</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="main__control-panel-mobile">
-                <div class="main__control-panel-icon main__control-panel-icon_search"></div>
+                <div class="main__control-panel-icon main__control-panel-icon_search">
+                    <div class="main-submenu main-submenu_style_sort-mobile">
+                        <ul class="main-submenu__list">
+                            <li class="main-submenu__item main-submenu__item_title">Сортировка</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item">Все</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item">Сначала выгодные</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item">От меньшей площади</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item main-submenu__item_active">От большей площади</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item">Сначала дорогие</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item">Сначала дешевые</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item">Сначала популярные</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="main__control-panel-icon main__control-panel-icon_filters"></div>
             </div>
         </div>
@@ -352,7 +378,7 @@
         <div class="main__control-panel-section-two">
             <div class="control-panel__column">
                 <div class="main__control-panel-desktop">
-                <div class="main-search main-search_style_main main-search_style_main-border-none"> Фильтры: </div>
+                <div class="main-search main-search_style_main main-search_style_main-filters"> Фильтры: </div>
                 </div>
                 <div class="main__control-panel-mobile">
 

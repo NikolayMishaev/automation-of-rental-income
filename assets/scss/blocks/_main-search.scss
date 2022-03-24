@@ -10,8 +10,26 @@
     border-radius: 4px;
     &_style_main {
         margin-left: 4px;
-        &-border-none {
+        position: relative;
+        min-width: 76px;
+        text-align: center;
+        background: url('./../images/icons/main-cursor-down.svg') no-repeat 77%;
+        &-filters {
             border: none;
+            margin-left: 21px;
+            background: unset
         }
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover .main-submenu {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &_style_sort {
+        min-width: 230px;
+        text-align: start;
+        background-position-x: 90%;
     }
 }
