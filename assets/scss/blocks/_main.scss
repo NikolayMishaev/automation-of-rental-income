@@ -27,17 +27,14 @@
         &_type_price {
             width: 66%;
             flex: unset;
-            @media #{$screen-tablet} {
-                width: 50%;
-            }
-            @media (max-width: rem(900px)) {
+            @media (max-width: rem(1500px)) {
                 width: 100%;
             }
         }
         &_type_filters {
             width: 34%;
-            @media #{$screen-tablet} {
-                width: 50%;
+            @media (max-width: rem(1500px)) {
+                display: none;
             }
             text-align: center;
             background-color: lightgray;
@@ -49,12 +46,37 @@
             width: 66%;
             @include flex-container;
             justify-content: flex-start;
+            @media (max-width: 1500px) {
+                width: 100%;
+            }
         }
         &-section-two {
             width: 34%;
+            @media (max-width: 1500px) {
+                width: 0;
+            }
         }
         &-text {
             margin-left: 40px;
+        }
+        &-icon {
+            border-radius: 4px;
+            width: 32px;
+            height: 32px;
+            &_search {
+                background: url("./../images/icons/main-page-icon-search.svg") no-repeat center;
+                &-active {
+                    background-image: url("./../images/icons/main-page-icon-search-active.svg");
+                }
+            }
+            &_filters {
+                background: url("./../images/icons/main-page-icon-filters.svg") no-repeat center;
+                margin-left: 15px;
+                &-active {
+                    background-image: url("./../images/icons/main-page-icon-filters-active.svg");
+                    margin-left: 15px;
+                }
+            }
         }
     }
     &__control-panel-column-one {
@@ -64,7 +86,19 @@
     }
     &__control-panel-column-two {
         margin-left: auto;
+    }
+    &__control-panel-desktop {
         @include flex-container;
+        justify-content: flex-start;
+        @media (max-width: 1500px) {
+            display: none;
+        }
+    }
+    &__control-panel-mobile {
+        display: none;
+        @media (max-width: 1500px) {
+            display: flex;
+        }
     }
     &__map {
         width: 100%;
