@@ -110,6 +110,12 @@
             letter-spacing: 0.08px;
             padding: 10px 12px;
             z-index: 1;
+            @media #{$screen-mobile} {
+                width: 69vw;
+            }
+            @media (max-width: 360px) {
+                width: 200px;
+            }
         }
     }
     &__link-paragraph {
