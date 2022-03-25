@@ -493,7 +493,82 @@
             </li>
         </ul>
     </div>
-    <div class="main__column  main__column_type_filters">фильтры</div>
+    <div class="main__column  main__column_type_filters">
+        <div class="main-filters">
+            <form class="main-form">
+                <input type="text" class="main-form__input main-form__input_type_search" placeholder="Общий поиск">
+                <label class="main-form__label main-form__label_type_select">
+                    Адрес
+                    <input type="text" class="main-form__input" placeholder="Введите адрес">
+                </label>
+                <label class="main-form__label">
+                    Размер площади
+                    <div class="main-form__two-column">
+                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                        <p class="main-form__text-value">м<span class="main-form__text-upper-index">2</span></p>
+                    </div>
+                </label>
+                <label class="main-form__label">
+                    Размер арендной платы (за объект)
+                    <div class="main-form__two-column">
+                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                        <p class="main-form__text-value">&#8381;</p>
+                    </div>
+                </label>
+                <label class="main-form__label">
+                    <p class="main-form__text-value main-form__text-value_style_label">Размер арендной ставки (м<span class="main-form__text-upper-index">2</span>)</p>
+                    <div class="main-form__two-column">
+                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                        <p class="main-form__text-value">&#8381;</p>
+                    </div>
+                </label>
+                <label class="main-form__label">
+                    Тип помещения
+                    <input type="text" class="main-form__input main-form__input_style_select" placeholder="Выберите тип">
+                </label>
+                <label class="main-form__label">
+                    Этажность
+                    <div class="main-form__two-column">
+                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                        <input type="text" class="main-form__input main-form__input_style_two-column main-form__input_style_no-right-margin" placeholder="До">
+                    </div>
+                </label>
+                <label class="main-form__label">
+                    Классификация помещения
+                    <input type="text" class="main-form__input main-form__input_style_select" placeholder="Выберите классификацию">
+                </label>
+                <label class="main-form__label">
+                    Ремонт
+                    <div class="main-form__two-column">
+                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Без отделки</label>
+                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">С отделкой</label>
+                    </div>
+                </label>
+                <label class="main-form__label">
+                    Статус площади
+                    <div class="main-form__two-column">
+                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Свободная площадь</label>
+                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Скоро освободится</label>
+                    </div>
+                </label>
+                <label class="main-form__label">
+                    Подвал
+                    <div class="main-form__two-column">
+                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Наличие подвала</label>
+                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Цокольный этаж</label>
+                    </div>
+                </label>
+                <button class="main-form__button main-form__button_type_minimize">Свернуть фильтры</button>
+                <div class="main-form__two-column main-form__two-column_style_buttons">
+                    <button class="main-form__button main-form__button_type_reset">Сбросить</button>
+                    <button class="main-form__button main-form__button_type_submit">Применить</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 </div>
 </main>

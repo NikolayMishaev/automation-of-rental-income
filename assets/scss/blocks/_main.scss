@@ -18,6 +18,7 @@
     &__container {
         padding: rem(16px) rem(60px);
         @include flex-container;
+        align-items: unset;
         flex-wrap: wrap;
         @media #{$screen-mobile} {
             padding: rem(16px) rem(16px);
@@ -32,12 +33,12 @@
             }
         }
         &_type_filters {
+            padding: 16px 0 0 32px;
             width: 34%;
             @media (max-width: rem(1500px)) {
                 display: none;
             }
             text-align: center;
-            background-color: lightgray;
         }
     }
     &__control-panel {
