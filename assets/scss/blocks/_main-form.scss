@@ -6,6 +6,9 @@
     line-height: 24px;
     letter-spacing: 0.12px;
     color: #6c737d;
+    @media #{$screen-mobile} {
+        padding: rem(12px) rem(8px);
+    }
     &__label {
         margin-top: 16px;
         display: flex;
@@ -61,6 +64,9 @@
         border: 1px solid #cfd4dc;
         box-sizing: border-box;
         border-radius: 4px;
+        @media #{$screen-mobile} {
+            height: 32px;
+        }
         &_type_search {
             padding-left: 37px;
             background-image: url("./../images/icons/main-filters-search.svg");

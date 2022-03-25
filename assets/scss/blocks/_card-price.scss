@@ -279,6 +279,11 @@
         position: absolute;
         right: rem(14px);
         bottom: rem(14px);
+        transition: $transition;
+        &:hover{
+            cursor: pointer;
+            opacity: .7;
+        }
         @include flex-container;
         background: url("./../images/icons/card-like.svg") no-repeat center;
         &_active {

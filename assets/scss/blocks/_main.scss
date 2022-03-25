@@ -37,6 +37,15 @@
             width: 34%;
             @media (max-width: rem(1500px)) {
                 display: none;
+                width: 70%;
+                min-width: 312px;
+            }
+            @media #{$screen-tablet} {
+                width: 100%;
+            }
+            @media #{$screen-mobile} {
+                padding: rem(16px);
+                width: 100%;
             }
             text-align: center;
         }
