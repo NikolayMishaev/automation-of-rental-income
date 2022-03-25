@@ -73,6 +73,7 @@
             border-radius: 4px;
             width: 32px;
             height: 32px;
+            transition: $transition;
             &_search {
                 position: relative;
                 background: url("./../images/icons/main-page-icon-search.svg") no-repeat center;
@@ -96,6 +97,7 @@
                 }
                 &:hover {
                     cursor:pointer;
+                    opacity: .7;
                 }
             }
         }

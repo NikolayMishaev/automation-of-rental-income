@@ -1318,6 +1318,8 @@ button {
   border-radius: 4px;
   width: 32px;
   height: 32px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .main__control-panel-icon_search {
@@ -1350,6 +1352,7 @@ button {
 
 .main__control-panel-icon_filters:hover {
   cursor: pointer;
+  opacity: .7;
 }
 
 .main__control-panel-column-one {
