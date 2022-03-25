@@ -1555,6 +1555,48 @@ button {
   }
 }
 
+@-webkit-keyframes animation-hot-price {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes animation-hot-price {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
 .hot-price {
   position: relative;
   overflow: scroll;
@@ -1643,6 +1685,47 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.hot-price__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: animation-hot-price 10s infinite;
+          animation: animation-hot-price 10s infinite;
+}
+
+.hot-price__wrapper:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+@-webkit-keyframes animation-scroll-adress {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+  }
+}
+
+@keyframes animation-scroll-adress {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+  }
 }
 
 .card-price {
@@ -1757,7 +1840,7 @@ button {
 }
 
 .card-price__description {
-  overflow: auto;
+  overflow: hidden;
   margin-left: 0.8125rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1773,6 +1856,10 @@ button {
   line-height: 20px;
   letter-spacing: 0.12px;
   color: #3c4142;
+}
+
+.card-price__description::-webkit-scrollbar {
+  display: none;
 }
 
 .card-price__description_style_main {
@@ -1820,8 +1907,16 @@ button {
 }
 
 .card-price__adress {
+  -webkit-animation: animation-scroll-adress 2s infinite alternate;
+          animation: animation-scroll-adress 2s infinite alternate;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
   white-space: nowrap;
-  overflow: scroll;
+}
+
+.card-price__adress:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 .card-price__adress::-webkit-scrollbar {

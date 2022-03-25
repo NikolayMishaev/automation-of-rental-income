@@ -1,3 +1,21 @@
+@keyframes animation-hot-price {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-1000px);
+        opacity: 0;
+     }
+  }
+
 .hot-price {
     position: relative;
     overflow: scroll;
@@ -51,5 +69,12 @@
     }
     &__container {
         @include flex-container;
+    }
+    &__wrapper {
+        @include flex-container;
+        animation: animation-hot-price 10s infinite;
+        &:hover {
+            animation-play-state: paused;
+        }
     }
 }
