@@ -334,13 +334,13 @@
                 <div  id="main-search-sort-cards-desktop" class="main-search main-search_style_main main-search_style_sort"> <span id="main-sort-desktop">Сначала выгодные</span>
                     <div class="main-submenu main-submenu_style_sort">
                         <ul class="main-submenu__list">
-                            <li aria-label="sort-desktop" class="main-submenu__item">Все</li>
-                            <li aria-label="sort-desktop" class="main-submenu__item">Сначала выгодные</li>
-                            <li aria-label="sort-desktop" class="main-submenu__item">От меньшей площади</li>
-                            <li aria-label="sort-desktop" class="main-submenu__item main-submenu__item_active">От большей площади</li>
-                            <li aria-label="sort-desktop" class="main-submenu__item">Сначала дорогие</li>
-                            <li aria-label="sort-desktop" class="main-submenu__item">Сначала дешевые</li>
-                            <li aria-label="sort-desktop" class="main-submenu__item">Сначала популярные</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item main-submenu__item_type_sort">Все</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item main-submenu__item_type_sort">Сначала выгодные</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item main-submenu__item_type_sort">От меньшей площади</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">От большей площади</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item main-submenu__item_type_sort">Сначала дорогие</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item main-submenu__item_type_sort">Сначала дешевые</li>
+                            <li aria-label="sort-desktop" class="main-submenu__item main-submenu__item_type_sort">Сначала популярные</li>
                         </ul>
                     </div>
                 </div>
@@ -348,10 +348,10 @@
                 <div id="main-search-number-cards" class="main-search main-search_style_main"> <span id="main-number-cards" >10</span>
                     <div class="main-submenu main-submenu_style_number-cards">
                         <ul class="main-submenu__list">
-                            <li aria-label="number-cards" class="main-submenu__item">5</li>
-                            <li aria-label="number-cards" class="main-submenu__item main-submenu__item_active">10</li>
-                            <li aria-label="number-cards" class="main-submenu__item">20</li>
-                            <li aria-label="number-cards" class="main-submenu__item">50</li>
+                            <li aria-label="number-cards" class="main-submenu__item main-submenu__item_type_sort">5</li>
+                            <li aria-label="number-cards" class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">10</li>
+                            <li aria-label="number-cards" class="main-submenu__item main-submenu__item_type_sort">20</li>
+                            <li aria-label="number-cards" class="main-submenu__item main-submenu__item_type_sort">50</li>
                         </ul>
                     </div>
                 </div>
@@ -361,13 +361,13 @@
                     <div class="main-submenu main-submenu_style_sort-mobile">
                         <ul class="main-submenu__list">
                             <li class="main-submenu__item main-submenu__item_title">Сортировка</li>
-                            <li aria-label="sort-desktop"class="main-submenu__item">Все</li>
-                            <li aria-label="sort-desktop"class="main-submenu__item">Сначала выгодные</li>
-                            <li aria-label="sort-desktop"class="main-submenu__item">От меньшей площади</li>
-                            <li aria-label="sort-desktop"class="main-submenu__item main-submenu__item_active">От большей площади</li>
-                            <li aria-label="sort-desktop"class="main-submenu__item">Сначала дорогие</li>
-                            <li aria-label="sort-desktop"class="main-submenu__item">Сначала дешевые</li>
-                            <li aria-label="sort-desktop"class="main-submenu__item">Сначала популярные</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item main-submenu__item_type_sort">Все</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item main-submenu__item_type_sort">Сначала выгодные</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item main-submenu__item_type_sort">От меньшей площади</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">От большей площади</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item main-submenu__item_type_sort">Сначала дорогие</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item main-submenu__item_type_sort">Сначала дешевые</li>
+                            <li aria-label="sort-desktop"class="main-submenu__item main-submenu__item_type_sort">Сначала популярные</li>
                         </ul>
                     </div>
                 </div>
@@ -538,15 +538,30 @@
         <div class="main-filters">
             <form class="main-form">
                 <input type="text" class="main-form__input main-form__input_type_search" placeholder="Общий поиск">
-                <label class="main-form__label main-form__label_type_select">
+                <label class="main-form__label">
                     Адрес
+                    <div id="main-form-cursor-adress" class="main-form__cursor"></div>
                     <input type="text" class="main-form__input" placeholder="Введите адрес">
-                    <div class="main-submenu main-submenu_style_number-cards">
-                        <ul class="main-submenu__list">
-                            <li aria-label="number-cards" class="main-submenu__item">5</li>
-                            <li aria-label="number-cards" class="main-submenu__item main-submenu__item_active">10</li>
-                            <li aria-label="number-cards" class="main-submenu__item">20</li>
-                            <li aria-label="number-cards" class="main-submenu__item">50</li>
+                    <div class="main-form__adress">
+                        <ul class="main-form__list">
+                            <li class="main-form__item">
+                                <div class="main-form__wrapper-input">
+                                    <div class="main-form__cursor main-form__cursor_style_input"></div>
+                    <input type="text" id="main-form-adress-city" class="main-form__input" placeholder="Город">
+                                </div>
+                            </li>
+                            <li class="main-form__item">
+                                <div class="main-form__wrapper-input">
+                                    <div class="main-form__cursor main-form__cursor_style_input"></div>
+                    <input type="text" class="main-form__input" placeholder="Улица">
+                                </div>
+                            </li>
+                            <li class="main-form__item">
+                                <div class="main-form__wrapper-input">
+                                    <div class="main-form__cursor main-form__cursor_style_input"></div>
+                    <input type="text" class="main-form__input" placeholder="Метро">
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </label>
@@ -566,54 +581,67 @@
                         <p class="main-form__text-value">&#8381;</p>
                     </div>
                 </label>
-                <label class="main-form__label">
-                    <p class="main-form__text-value main-form__text-value_style_label">Размер арендной ставки (м<span class="main-form__text-upper-index">2</span>)</p>
-                    <div class="main-form__two-column">
-                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="До">
-                        <p class="main-form__text-value">&#8381;</p>
+                <div class="main-form__wrapper-fields main-form__wrapper-fields_active">
+                    <label class="main-form__label">
+                        <p class="main-form__text-value main-form__text-value_style_label">Размер арендной ставки (м<span class="main-form__text-upper-index">2</span>)</p>
+                        <div class="main-form__two-column">
+                            <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                            <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                            <p class="main-form__text-value">&#8381;</p>
+                        </div>
+                    </label>
+                    <label class="main-form__label main-form__label_type_change-type">
+                        Тип помещения
+                        <div class="main-form__wrapper-input">
+                            <div id="main-form-cursor-change-type" class="main-form__cursor main-form__cursor_style_input"></div>
+                            <input id="main-form-filter-input-change-type" type="text" disabled="true" class="main-form__input" placeholder="Выберите тип">
+                        </div>
+                        <div class="main-submenu main-submenu_style_main-form-change-type">
+                            <ul class="main-submenu__list">
+                                <li class="main-submenu__item main-submenu__item_type_change-type">Торговый центр</li>
+                                <li class="main-submenu__item main-submenu__item_type_change-type">Отдельно стоящее здание</li>
+                                <li class="main-submenu__item main-submenu__item_type_change-type">Встроенной здание</li>
+                                <li class="main-submenu__item main-submenu__item_type_change-type main-submenu__item_active">Пристроенное здание</li>
+                            </ul>
                     </div>
-                </label>
-                <label class="main-form__label">
-                    Тип помещения
-                    <input type="text" class="main-form__input main-form__input_style_select" placeholder="Выберите тип">
-                </label>
-                <label class="main-form__label">
-                    Этажность
-                    <div class="main-form__two-column">
-                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                        <input type="text" class="main-form__input main-form__input_style_two-column main-form__input_style_no-right-margin" placeholder="До">
-                    </div>
-                </label>
-                <label class="main-form__label">
-                    Классификация помещения
-                    <input type="text" class="main-form__input main-form__input_style_select" placeholder="Выберите классификацию">
-                </label>
-                <label class="main-form__label">
-                    Ремонт
-                    <div class="main-form__two-column">
-                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Без отделки</label>
-                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">С отделкой</label>
-                    </div>
-                </label>
-                <label class="main-form__label">
-                    Статус площади
-                    <div class="main-form__two-column">
-                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Свободная площадь</label>
-                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Скоро освободится</label>
-                    </div>
-                </label>
-                <label class="main-form__label">
-                    Подвал
-                    <div class="main-form__two-column">
-                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Наличие подвала</label>
-                        <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Цокольный этаж</label>
-                    </div>
-                </label>
+                    </label>
+                    <label class="main-form__label">
+                        Этажность
+                        <div class="main-form__two-column">
+                            <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                            <input type="text" class="main-form__input main-form__input_style_two-column main-form__input_style_no-right-margin" placeholder="До">
+                        </div>
+                    </label>
+                    <label class="main-form__label">
+                        Классификация помещения
+                        <input type="text" class="main-form__input" placeholder="Выберите классификацию">
+                    </label>
+                    <label class="main-form__label">
+                        Ремонт
+                        <div class="main-form__two-column">
+                            <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Без отделки</label>
+                            <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">С отделкой</label>
+                        </div>
+                    </label>
+                    <label class="main-form__label">
+                        Статус площади
+                        <div class="main-form__two-column">
+                            <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Свободная площадь</label>
+                            <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Скоро освободится</label>
+                        </div>
+                    </label>
+                    <label class="main-form__label">
+                        Подвал
+                        <div class="main-form__two-column">
+                            <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Наличие подвала</label>
+                            <label class="main-form__label-checkbox"><input type="checkbox" class="main-form__input main-form__input_type_checkbox">Цокольный этаж</label>
+                        </div>
+                    </label>
+                </div>
                 <button class="main-form__button main-form__button_type_minimize">Свернуть фильтры</button>
                 <div class="main-form__two-column main-form__two-column_style_buttons">
-                    <button class="main-form__button main-form__button_type_reset">Сбросить</button>
-                    <button class="main-form__button main-form__button_type_submit">Применить</button>
+                    <button type="reset" class="main-form__button main-form__button_type_reset">Сбросить</button>
+                    <button type="submit" class="main-form__button main-form__button_type_submit">Применить</button>
                 </div>
             </form>
         </div>

@@ -1,7 +1,10 @@
 (function () {
-    // стейт
+    // стейты
     const stateMain = {
         currentOpenLeftBlock: null,
+    };
+    const valueInputFilters = {
+        changeType: [],
     };
 
     // логика открытия/закрытия попапа выбора городов "Ваш город"
@@ -72,7 +75,9 @@
     );
 
     // логика выбора значения сортировки в полях: "Сортировать" "Кол-во карточек для показа"
-    const itemsSubmenuSort = document.querySelectorAll(".main-submenu__item");
+    const itemsSubmenuSort = document.querySelectorAll(
+        ".main-submenu__item_type_sort"
+    );
     const currentValueSort = document.querySelector("#main-sort-desktop");
     const currentValueNumberCards =
         document.querySelector("#main-number-cards");
@@ -233,4 +238,88 @@
             e.target.classList.toggle("card-price__like_active");
         }
     });
+
+    // логика аккордеона адреса
+    const cursorAdressMainForm = document.querySelector(
+        "#main-form-cursor-adress"
+    );
+    const submenuAdressMainForm = document.querySelector(".main-form__adress");
+
+    cursorAdressMainForm.addEventListener("click", (e) => {
+        if (e.target.classList.contains("main-form__cursor")) {
+            if (submenuAdressMainForm.closest(".main-form__adress_active")) {
+                submenuAdressMainForm.classList.remove(
+                    "main-form__adress_active"
+                );
+                cursorAdressMainForm.classList.remove(
+                    "main-form__cursor_active"
+                );
+            } else {
+                submenuAdressMainForm.classList.add("main-form__adress_active");
+                cursorAdressMainForm.classList.add("main-form__cursor_active");
+            }
+        }
+    });
+
+    // логика аккордеона фильтров (свернуть фильтры)
+    const buttonMinimizeFilters = document.querySelector(
+        ".main-form__button_type_minimize"
+    );
+    const AllFilters = document.querySelector(".main-form__wrapper-fields");
+
+    buttonMinimizeFilters.addEventListener("click", () => {
+        if (AllFilters.closest(".main-form__wrapper-fields_active")) {
+            AllFilters.classList.remove("main-form__wrapper-fields_active");
+            buttonMinimizeFilters.textContent = "Все фильтры";
+        } else {
+            AllFilters.classList.add("main-form__wrapper-fields_active");
+            buttonMinimizeFilters.textContent = "Свернуть фильтры";
+        }
+    });
+
+    // логика работы всплывающего меню по клике на курсор в фильтре "тип помещения"
+    const cursorChangeTypeMainForm = document.querySelector(
+        "#main-form-cursor-change-type"
+    );
+    const submenuFilterChangeType = document.querySelector(
+        ".main-submenu_style_main-form-change-type"
+    );
+
+    cursorChangeTypeMainForm.addEventListener("click", () => {
+        if (submenuFilterChangeType.closest(".mix-visible")) {
+            submenuFilterChangeType.classList.remove("mix-visible");
+            cursorChangeTypeMainForm.classList.remove(
+                "main-form__cursor_active"
+            );
+        } else {
+            submenuFilterChangeType.classList.add("mix-visible");
+            cursorChangeTypeMainForm.classList.add("main-form__cursor_active");
+        }
+    });
+    // изменение значения value инпута после клика по значению поля селекта
+    const itemsSumenuFilterChangeType = document.querySelectorAll(
+        ".main-submenu__item_type_change-type"
+    );
+    const valueInputChangeType = document.querySelector(
+        "#main-form-filter-input-change-type"
+    );
+
+    itemsSumenuFilterChangeType.forEach((i) =>
+        i.addEventListener("click", (e) => {
+            e.target.classList.toggle("main-submenu__item_active");
+            let countActiveItmes = 0;
+            itemsSumenuFilterChangeType.forEach((j) => {
+                if (j.closest(".main-submenu__item_active")) {
+                    countActiveItmes += 1;
+                    valueInputChangeType.value = j.textContent;
+                }
+                if (countActiveItmes > 1) {
+                    valueInputChangeType.value = "Выбрано несколько значений";
+                }
+                if (countActiveItmes === 0) {
+                    valueInputChangeType.value = "";
+                }
+            });
+        })
+    );
 })();
