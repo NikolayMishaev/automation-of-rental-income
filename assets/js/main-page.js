@@ -286,40 +286,73 @@
     );
 
     cursorChangeTypeMainForm.addEventListener("click", () => {
-        if (submenuFilterChangeType.closest(".mix-visible")) {
-            submenuFilterChangeType.classList.remove("mix-visible");
-            cursorChangeTypeMainForm.classList.remove(
-                "main-form__cursor_active"
-            );
-        } else {
-            submenuFilterChangeType.classList.add("mix-visible");
-            cursorChangeTypeMainForm.classList.add("main-form__cursor_active");
-        }
+        toggleActiveClass(submenuFilterChangeType, cursorChangeTypeMainForm);
     });
+
+    function toggleActiveClass(submenu, cursor) {
+        if (submenu.closest(".mix-visible")) {
+            submenu.classList.remove("mix-visible");
+            cursor.classList.remove("main-form__cursor_active");
+        } else {
+            submenu.classList.add("mix-visible");
+            cursor.classList.add("main-form__cursor_active");
+        }
+    }
+
     // изменение значения value инпута после клика по значению поля селекта
-    const itemsSumenuFilterChangeType = document.querySelectorAll(
+    const itemsSubmenuFilterChangeType = document.querySelectorAll(
         ".main-submenu__item_type_change-type"
     );
     const valueInputChangeType = document.querySelector(
         "#main-form-filter-input-change-type"
     );
 
-    itemsSumenuFilterChangeType.forEach((i) =>
-        i.addEventListener("click", (e) => {
-            e.target.classList.toggle("main-submenu__item_active");
-            let countActiveItmes = 0;
-            itemsSumenuFilterChangeType.forEach((j) => {
-                if (j.closest(".main-submenu__item_active")) {
-                    countActiveItmes += 1;
-                    valueInputChangeType.value = j.textContent;
-                }
-                if (countActiveItmes > 1) {
-                    valueInputChangeType.value = "Выбрано несколько значений";
-                }
-                if (countActiveItmes === 0) {
-                    valueInputChangeType.value = "";
-                }
-            });
-        })
+    changeValueInputSelect(itemsSubmenuFilterChangeType, valueInputChangeType);
+
+    function changeValueInputSelect(items, valueInput) {
+        items.forEach((i) =>
+            i.addEventListener("click", (e) => {
+                e.target.classList.toggle("main-submenu__item_active");
+                let countActiveItmes = 0;
+                items.forEach((j) => {
+                    if (j.closest(".main-submenu__item_active")) {
+                        countActiveItmes += 1;
+                        valueInput.value = j.textContent;
+                    }
+                    if (countActiveItmes > 1) {
+                        valueInput.value = "Выбрано несколько значений";
+                    }
+                    if (countActiveItmes === 0) {
+                        valueInput.value = "";
+                    }
+                });
+            })
+        );
+    }
+
+    // логика работы всплывающего меню по клике на курсор в фильтре "классификация помещения"
+    const cursorChangeClassMainForm = document.querySelector(
+        "#main-form-cursor-change-class"
+    );
+
+    const submenuFilterChangeClass = document.querySelector(
+        ".main-submenu_style_main-form-change-class"
+    );
+
+    cursorChangeClassMainForm.addEventListener("click", () => {
+        toggleActiveClass(submenuFilterChangeClass, cursorChangeClassMainForm);
+    });
+
+    // изменение значения value инпута после клика по значению поля селекта
+    const itemsSubmenuFilterChangeClass = document.querySelectorAll(
+        ".main-submenu__item_type_change-class"
+    );
+    const valueInputChangeClass = document.querySelector(
+        "#main-form-filter-input-change-class"
+    );
+
+    changeValueInputSelect(
+        itemsSubmenuFilterChangeClass,
+        valueInputChangeClass
     );
 })();

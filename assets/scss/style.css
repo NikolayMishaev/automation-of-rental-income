@@ -2196,6 +2196,13 @@ button {
   margin: 0 16px;
 }
 
+.main-submenu_style_main-form-change-class {
+  left: 0;
+  right: 0;
+  top: 105px;
+  margin: 0 16px;
+}
+
 .main-submenu__item {
   font-style: normal;
   font-weight: 400;
@@ -2204,7 +2211,7 @@ button {
   letter-spacing: 0.12px;
   color: #222429;
   padding: 6px 12px;
-  white-space: nowrap;
+  white-space: wrap;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -2316,7 +2323,7 @@ button {
   cursor: pointer;
 }
 
-.main-form__label_type_change-type {
+.main-form__label_type_select {
   overflow: unset;
 }
 

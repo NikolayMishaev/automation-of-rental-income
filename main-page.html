@@ -568,16 +568,16 @@
                 <label class="main-form__label">
                     Размер площади
                     <div class="main-form__two-column">
-                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                        <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                        <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="До">
                         <p class="main-form__text-value">м<span class="main-form__text-upper-index">2</span></p>
                     </div>
                 </label>
                 <label class="main-form__label">
                     Размер арендной платы (за объект)
                     <div class="main-form__two-column">
-                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                        <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                        <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                        <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="До">
                         <p class="main-form__text-value">&#8381;</p>
                     </div>
                 </label>
@@ -585,12 +585,12 @@
                     <label class="main-form__label">
                         <p class="main-form__text-value main-form__text-value_style_label">Размер арендной ставки (м<span class="main-form__text-upper-index">2</span>)</p>
                         <div class="main-form__two-column">
-                            <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                            <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                            <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                            <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="До">
                             <p class="main-form__text-value">&#8381;</p>
                         </div>
                     </label>
-                    <label class="main-form__label main-form__label_type_change-type">
+                    <label class="main-form__label main-form__label_type_select">
                         Тип помещения
                         <div class="main-form__wrapper-input">
                             <div id="main-form-cursor-change-type" class="main-form__cursor main-form__cursor_style_input"></div>
@@ -600,21 +600,33 @@
                             <ul class="main-submenu__list">
                                 <li class="main-submenu__item main-submenu__item_type_change-type">Торговый центр</li>
                                 <li class="main-submenu__item main-submenu__item_type_change-type">Отдельно стоящее здание</li>
-                                <li class="main-submenu__item main-submenu__item_type_change-type">Встроенной здание</li>
-                                <li class="main-submenu__item main-submenu__item_type_change-type main-submenu__item_active">Пристроенное здание</li>
+                                <li class="main-submenu__item main-submenu__item_type_change-type">Встроенное/пристроенное здание</li>
                             </ul>
                     </div>
                     </label>
                     <label class="main-form__label">
                         Этажность
                         <div class="main-form__two-column">
-                            <input type="text" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                            <input type="text" class="main-form__input main-form__input_style_two-column main-form__input_style_no-right-margin" placeholder="До">
+                            <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="От">
+                            <input type="number" class="main-form__input main-form__input_style_two-column main-form__input_style_no-right-margin" placeholder="До">
                         </div>
                     </label>
-                    <label class="main-form__label">
+                    <label class="main-form__label main-form__label_type_select">
                         Классификация помещения
-                        <input type="text" class="main-form__input" placeholder="Выберите классификацию">
+                        <div class="main-form__wrapper-input">
+                            <div id="main-form-cursor-change-class" class="main-form__cursor main-form__cursor_style_input"></div>
+                        <input id="main-form-filter-input-change-class" disabled="false" type="text" class="main-form__input" placeholder="Выберите классификацию">
+                        </div>
+                        <div class="main-submenu main-submenu_style_main-form-change-class">
+                            <ul class="main-submenu__list">
+                                <li class="main-submenu__item main-submenu__item_type_change-class">Находится внутри торгового зала</li>
+                                <li class="main-submenu__item main-submenu__item_type_change-class">Прикассовая зона</li>
+                                <li class="main-submenu__item main-submenu__item_type_change-class">Места общего пользования</li>
+                                <li class="main-submenu__item main-submenu__item_type_change-class">Отдельный вход с внешней стороны здания </li>
+                                <li class="main-submenu__item main-submenu__item_type_change-class">Нет</li>
+                                <li class="main-submenu__item main-submenu__item_type_change-class">Не стандарт</li>
+                            </ul>
+                    </div>
                     </label>
                     <label class="main-form__label">
                         Ремонт

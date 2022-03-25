@@ -26,6 +26,12 @@
         top: 105px;
         margin: 0 16px;
     }
+    &_style_main-form-change-class {
+        left:0;
+        right: 0;
+        top: 105px;
+        margin: 0 16px;
+    }
     &__item {
         font-style: normal;
         font-weight: 400;
@@ -34,7 +40,7 @@
         letter-spacing: 0.12px;
         color: #222429;
         padding: 6px 12px;
-        white-space: nowrap;
+        white-space: wrap;
         transition: $transition;
         &:hover {
             background-color: $accent-TCX50;
