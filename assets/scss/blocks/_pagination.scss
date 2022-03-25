@@ -1,0 +1,36 @@
+.pagination {
+    &__list {
+        @include flex-container;
+    }
+    &__item {
+        margin-right: rem(16px);
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__button {
+        width: rem(32px);
+        height: rem(32px);
+        background: #ffffff;
+        border: 1px solid #cfd4dc;
+        box-sizing: border-box;
+        border-radius: 4px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.08px;
+        &_type_arrow-left {
+            background: url("./../images/icons/pagination-button-left.svg") no-repeat center;
+            color: #50565e;
+        }
+        &_type_arrow-right {
+            background: url("./../images/icons/pagination-button-right.svg") no-repeat center;
+        }
+        &_active {
+            border: none;
+            background-color: $accent-TCX50;
+            color: white;
+        }
+    }
+}

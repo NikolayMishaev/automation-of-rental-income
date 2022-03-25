@@ -11,7 +11,7 @@
 
     headerCity.addEventListener("click", (e) => {
         modalWidow.style.opacity = "1";
-        modalWidow.style.zIndex = "0";
+        modalWidow.style.zIndex = "1";
         modalWidow.style.transform = "scale(1)";
     });
 
@@ -206,21 +206,21 @@
 
     window.addEventListener("resize", function (e) {
         if (
-            e.target.innerWidth > 1500 &&
+            e.target.innerWidth > 1280 &&
             iconFilters.classList.contains(
                 "main__control-panel-icon_filters-active"
             )
         ) {
             leftMainColumnPrice.style.display = "block";
         } else if (
-            e.target.innerWidth < 1500 &&
+            e.target.innerWidth < 1280 &&
             iconFilters.classList.contains(
                 "main__control-panel-icon_filters-active"
             )
         ) {
             leftMainColumnPrice.style.display = "none";
         }
-        if (e.target.innerWidth > 1500) {
+        if (e.target.innerWidth > 1280) {
             rightMainColumnFilters.style.display = "block";
         }
     });
