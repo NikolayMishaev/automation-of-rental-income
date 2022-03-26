@@ -1,85 +1,108 @@
-@use "./prop-mix" as *;
+// @use "./prop-mix" as *;
 
 .modal {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(60, 65, 66, 0.6);
-
-  &__content {
-    border-radius: 12px;
-    background-color: white;
-    margin: auto;
-    box-shadow: $shadow-100;
-    @media #{$screen-mobile} {
-      width: 100%;
-      margin: 0 16px;
-    }
-  }
-  &__header {
-    display: flex;
-    justify-content: space-between;
+    display: none;
+    justify-content: center;
     align-items: center;
-    padding: 20px 20px 16px 24px;
-    @media #{$screen-mobile} {
-      padding: 16px 12px 16px 24px;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(60, 65, 66, 0.6);
+    &__title {
+        &_style_main {
+            margin-bottom: rem(12px);
+        }
     }
-  }
-  &__close-btn {
-    width: 24px;
-    height: 24px;
-    @include flex-container;
-    background-color: transparent;
-    border: none;
-  }
-  &__body {
-    padding: 0 24px 24px;
-    @media #{$screen-mobile} {
-      padding: 0 24px 20px;
+    &_type_header {
+        transition: $transition;
+        transform: scale(4);
+        opacity: 0;
+        display: flex;
+        z-index: -1;
     }
-  }
-  &__footer {
-    display: flex;
-    justify-content: end;
-    padding: 20px 24px;
-    border-top: 1px solid $grey-20;
-  }
-  &__cancel-btn {
-    @include secondary-btn;
-    margin-right: 8px;
-    padding: 4px 12px;
-    @media #{$screen-mobile} {
-      flex: 50%;
+    &__content {
+        border-radius: 12px;
+        background-color: white;
+        margin: auto;
+        box-shadow: $shadow-100;
+        @media #{$screen-mobile} {
+            width: 100%;
+            margin: 0 16px;
+            &_style_main {
+                display: flex;
+                padding: 0 rem(24px);
+            }
+        }
     }
-  }
-  &__login-btn {
-    @include primary-btn($accent-TCX50);
-    padding: 4px 12px;
-    @media #{$screen-mobile} {
-      flex: 50%;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px 16px 24px;
+        @media #{$screen-mobile} {
+            padding: 16px 12px 16px 24px;
+            &_style_main {
+                flex-wrap: wrap;
+            }
+        }
     }
-  }
-  &__row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid $grey30;
-    padding-bottom: 16px;
-    @media #{$screen-mobile} {
-      flex-direction: column;
-      align-items: flex-start;
+    &__close-btn {
+        width: 24px;
+        height: 24px;
+        @include flex-container;
+        background-color: transparent;
+        border: none;
+        transition: $transition;
+        &:hover {
+            opacity: 0.7;
+            transform: scale(1.2);
+        }
     }
-  }
-  &__text-info {
-    @media #{$screen-mobile} {
-      font-size: 14px;
+    &__body {
+        padding: 0 24px 24px;
+        @media #{$screen-mobile} {
+            padding: 0 24px 20px;
+        }
     }
-  }
+    &__footer {
+        display: flex;
+        justify-content: end;
+        padding: 20px 24px;
+        border-top: 1px solid $grey-20;
+    }
+    &__cancel-btn {
+        @include secondary-btn;
+        margin-right: 8px;
+        padding: 4px 12px;
+        @media #{$screen-mobile} {
+            flex: 50%;
+        }
+    }
+    &__login-btn {
+        @include primary-btn($accent-TCX50);
+        padding: 4px 12px;
+        @media #{$screen-mobile} {
+            flex: 50%;
+        }
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $grey30;
+        padding-bottom: 16px;
+        @media #{$screen-mobile} {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__text-info {
+        @media #{$screen-mobile} {
+            font-size: 14px;
+        }
+    }
 }

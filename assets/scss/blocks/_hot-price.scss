@@ -1,0 +1,80 @@
+@keyframes animation-hot-price {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-1000px);
+        opacity: 0;
+     }
+  }
+
+.hot-price {
+    position: relative;
+    overflow: scroll;
+    padding: rem(20px) 0;
+    width: 100%;
+    background-color: $grey-5;
+    height: 164px;
+    transition: $transition;
+    display: flex;
+    flex-wrap: wrap;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    @media #{$screen-tablet} {
+        padding: rem(12px) rem(16px);
+        height: 145px;
+    }
+    @media #{$screen-mobile} {
+        padding: rem(8px) rem(10px);
+        height: 120px;
+    }
+    &__header {
+        position: sticky;
+        top:0;
+        left: 0;
+        padding: 0 rem(60px);
+        display: flex;
+        width: 100%;
+        margin-bottom: rem(16px);
+        @media #{$screen-tablet} {
+            padding: 0;
+            margin-bottom: rem(10px);
+        }
+        @media #{$screen-tablet} {
+            left: rem(10px);
+            padding: 0;
+            margin-bottom: 0;
+        }
+    }
+    &__title {
+        margin-left: 4px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.12px;
+        color: #3c4142;
+        @media #{$screen-mobile} {
+            font-size: 16px;
+        }
+    }
+    &__container {
+        @include flex-container;
+    }
+    &__wrapper {
+        @include flex-container;
+        animation: animation-hot-price 10s infinite;
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+}

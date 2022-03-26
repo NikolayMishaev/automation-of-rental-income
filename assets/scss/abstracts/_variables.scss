@@ -7,12 +7,16 @@ $grey-20: #e1e5eb;
 $grey30: #cfd4dc;
 $grey-50: #919c9e;
 $grey60: #6d7678;
+$grey60-2: #6C737D;
 $grey70: #50565e;
 $grey80: #3c4142;
 $grey90: #2b3030;
 $grey100: #222429;
 $red10: #feebee;
 $error: #f44336;
+$grey-5: #F5F7F7;
+$grey-20_2: #E3E7E8;
+$yellow90:#F9A825;
 
 // Dynamic color variables
 
@@ -44,7 +48,7 @@ $line-height-small: 117%;
 
 // Breakpoints
 $screen-mobile: "(max-width: #{rem(640px)})";
-$screen-tablet: "(max-width: #{rem(1024px)})";
+$screen-tablet: "(max-width: #{rem(1280px)})";
 
 // Layout
 
