@@ -144,7 +144,9 @@
             overflow: unset;
             margin-top: 4px;
             white-space: unset;
+            animation: none;
             &-active {
+                animation: none;
                 margin-left: rem(34px);
                 margin-top: rem(2px);
                 position: relative;

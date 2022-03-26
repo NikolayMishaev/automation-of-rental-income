@@ -1936,9 +1936,13 @@ button {
   overflow: unset;
   margin-top: 4px;
   white-space: unset;
+  -webkit-animation: none;
+          animation: none;
 }
 
 .card-price__adress_style_main-active {
+  -webkit-animation: none;
+          animation: none;
   margin-left: 2.125rem;
   margin-top: 0.125rem;
   position: relative;

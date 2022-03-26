@@ -267,13 +267,25 @@
     );
     const AllFilters = document.querySelector(".main-form__wrapper-fields");
 
+    const mainContainer = document.querySelector(".main__container");
+
+    const mainFiltersContainer = document.querySelector(".main-filters");
+
     buttonMinimizeFilters.addEventListener("click", () => {
         if (AllFilters.closest(".main-form__wrapper-fields_active")) {
             AllFilters.classList.remove("main-form__wrapper-fields_active");
             buttonMinimizeFilters.textContent = "Все фильтры";
+            mainContainer.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
         } else {
             AllFilters.classList.add("main-form__wrapper-fields_active");
             buttonMinimizeFilters.textContent = "Свернуть фильтры";
+            mainFiltersContainer.scrollIntoView({
+                behavior: "smooth",
+                block: "end",
+            });
         }
     });
 
@@ -281,11 +293,16 @@
     const cursorChangeTypeMainForm = document.querySelector(
         "#main-form-cursor-change-type"
     );
+
+    const wrapperInputChangeType = document.querySelector(
+        ".main-form__wrapper-input_type_change-type"
+    );
+
     const submenuFilterChangeType = document.querySelector(
         ".main-submenu_style_main-form-change-type"
     );
 
-    cursorChangeTypeMainForm.addEventListener("click", () => {
+    wrapperInputChangeType.addEventListener("click", () => {
         toggleActiveClass(submenuFilterChangeType, cursorChangeTypeMainForm);
     });
 
@@ -303,11 +320,12 @@
     const itemsSubmenuFilterChangeType = document.querySelectorAll(
         ".main-submenu__item_type_change-type"
     );
-    const valueInputChangeType = document.querySelector(
+
+    const inputChangeType = document.querySelector(
         "#main-form-filter-input-change-type"
     );
 
-    changeValueInputSelect(itemsSubmenuFilterChangeType, valueInputChangeType);
+    changeValueInputSelect(itemsSubmenuFilterChangeType, inputChangeType);
 
     function changeValueInputSelect(items, valueInput) {
         items.forEach((i) =>
@@ -335,11 +353,15 @@
         "#main-form-cursor-change-class"
     );
 
+    const wrapperInputChangeClass = document.querySelector(
+        ".main-form__wrapper-input_type_change-class"
+    );
+
     const submenuFilterChangeClass = document.querySelector(
         ".main-submenu_style_main-form-change-class"
     );
 
-    cursorChangeClassMainForm.addEventListener("click", () => {
+    wrapperInputChangeClass.addEventListener("click", () => {
         toggleActiveClass(submenuFilterChangeClass, cursorChangeClassMainForm);
     });
 
@@ -347,12 +369,9 @@
     const itemsSubmenuFilterChangeClass = document.querySelectorAll(
         ".main-submenu__item_type_change-class"
     );
-    const valueInputChangeClass = document.querySelector(
+    const InputChangeClass = document.querySelector(
         "#main-form-filter-input-change-class"
     );
 
-    changeValueInputSelect(
-        itemsSubmenuFilterChangeClass,
-        valueInputChangeClass
-    );
+    changeValueInputSelect(itemsSubmenuFilterChangeClass, InputChangeClass);
 })();
