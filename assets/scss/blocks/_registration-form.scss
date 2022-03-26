@@ -1,0 +1,26 @@
+.registration-form {
+  margin-top: 40px;
+  &__tabs {
+    display: flex;
+    border-radius: 12px 12px 0 0;
+    border: 1px solid $grey-20;
+    background-color: $grey5;
+    margin-bottom: 24px;
+  }
+  &__tab {
+    color: $grey60;
+    flex: auto;
+    padding: 8px 0;
+    text-align: center;
+  }
+  .active {
+    color: $grey100;
+    border-bottom: 1px solid $accent-TCX50;
+  }
+  &__content {
+    padding: 0 24px;
+    h3 {
+      margin-bottom: 16px;
+    }
+  }
+}

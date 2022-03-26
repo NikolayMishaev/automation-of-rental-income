@@ -1,15 +1,399 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/scss/style.css">
-    <title>objectCard</title>
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- Поменять -->
+    <title>Document</title>
   </head>
   <body>
     <div class="container">
+      <!-- повторный блок. для отображения, нужен свободный статус помещения -->
+      <div class="info-card__occupied-info info-card__occupied-info_mobile">
+        <div class="info-card__row">
+          <div class="info-card__error-label">
+            <div class="info-card__icon">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.99992 0.333252C3.31992 0.333252 0.333252 3.31992 0.333252 6.99992C0.333252 10.6799 3.31992 13.6666 6.99992 13.6666C10.6799 13.6666 13.6666 10.6799 13.6666 6.99992C13.6666 3.31992 10.6799 0.333252 6.99992 0.333252ZM6.99992 12.3333C4.05992 12.3333 1.66659 9.93992 1.66659 6.99992C1.66659 4.05992 4.05992 1.66659 6.99992 1.66659C9.93992 1.66659 12.3333 4.05992 12.3333 6.99992C12.3333 9.93992 9.93992 12.3333 6.99992 12.3333ZM6.99992 2.99992C4.79992 2.99992 2.99992 4.79992 2.99992 6.99992C2.99992 9.19992 4.79992 10.9999 6.99992 10.9999C9.19992 10.9999 10.9999 9.19992 10.9999 6.99992C10.9999 4.79992 9.26659 2.99992 6.99992 2.99992ZM8.33325 7.66659H5.66659C5.29992 7.66659 4.99992 7.36659 4.99992 6.99992C4.99992 6.63325 5.29992 6.33325 5.66659 6.33325H8.33325C8.69992 6.33325 8.99992 6.63325 8.99992 6.99992C8.99992 7.36659 8.69992 7.66659 8.33325 7.66659Z"
+                  fill="#F44336"
+                />
+              </svg>
+            </div>
+            <span>Скоро освободится</span>
+          </div>
+          <button class="info-card__offer-btn">
+            <span>Предложить свою стоимость</span>
+            <div class="icon">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7 12.87C10.2419 12.87 12.87 10.2419 12.87 7C12.87 3.75809 10.2419 1.13 7 1.13C3.75809 1.13 1.13 3.75809 1.13 7C1.13 10.2419 3.75809 12.87 7 12.87ZM7 14C10.866 14 14 10.866 14 7C14 3.13401 10.866 0 7 0C3.13401 0 0 3.13401 0 7C0 10.866 3.13401 14 7 14ZM5.85858 4.58019C5.64258 4.88018 5.56506 5.25714 5.56506 5.50006C5.56506 5.8121 5.3121 6.06506 5.00006 6.06506C4.68802 6.06506 4.43506 5.8121 4.43506 5.50006C4.43506 5.07631 4.55753 4.45327 4.94154 3.91993C5.34629 3.35777 6.01591 2.93506 7.00006 2.93506C7.96754 2.93506 8.63542 3.32031 9.04683 3.85176C9.43804 4.35712 9.56506 4.95109 9.56506 5.36023C9.56506 5.90444 9.39211 6.31316 9.11336 6.63276C8.88956 6.88935 8.60144 7.07724 8.38493 7.21842L8.38493 7.21843C8.35929 7.23514 8.33467 7.2512 8.31127 7.26664C8.06313 7.4304 7.89228 7.55838 7.77082 7.72679C7.6612 7.8788 7.56506 8.10331 7.56506 8.50006C7.56506 8.8121 7.3121 9.06506 7.00006 9.06506C6.68802 9.06506 6.43506 8.8121 6.43506 8.50006C6.43506 7.8968 6.58892 7.43382 6.85429 7.06583C7.10784 6.71425 7.43698 6.48973 7.68885 6.32352L7.75067 6.28277L7.75068 6.28277C7.99331 6.123 8.14655 6.0221 8.26176 5.89C8.35801 5.77965 8.43506 5.63593 8.43506 5.36023C8.43506 5.14931 8.36207 4.81319 8.15328 4.54348C7.9647 4.29987 7.63258 4.06506 7.00006 4.06506C6.3842 4.06506 6.05383 4.30901 5.85858 4.58019ZM7.02505 11.45C7.42546 11.45 7.75005 11.1254 7.75005 10.725C7.75005 10.3246 7.42546 10 7.02505 10C6.62464 10 6.30005 10.3246 6.30005 10.725C6.30005 11.1254 6.62464 11.45 7.02505 11.45Z"
+                  fill="#55B465"
+                />
+              </svg>
+            </div>
+          </button>
+        </div>
+        <!-- Нужно ставить класс active, если включены уведомления  -->
+        <div class="info-card__icon-bell active">
+          <svg
+            width="16"
+            height="20"
+            viewBox="0 0 16 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.2901 15.29L14.0001 14V9C14.0001 5.93 12.3601 3.36 9.50005 2.68V2C9.50005 1.17 8.83005 0.5 8.00005 0.5C7.17005 0.5 6.50005 1.17 6.50005 2V2.68C3.63005 3.36 2.00005 5.92 2.00005 9V14L0.710051 15.29C0.0800515 15.92 0.520051 17 1.41005 17H14.5801C15.4801 17 15.9201 15.92 15.2901 15.29ZM12.0001 15H4.00005V9C4.00005 6.52 5.51005 4.5 8.00005 4.5C10.4901 4.5 12.0001 6.52 12.0001 9V15ZM8.00005 20C9.10005 20 10.0001 19.1 10.0001 18H6.00005C6.00005 19.1 6.89005 20 8.00005 20Z"
+            />
+          </svg>
+        </div>
+        <!-- end  -->
+      </div>
+
       <div class="main-content">
+        <div class="slider">
+          <div class="swiper track-swiper">
+            <div class="swiper-wrapper">
+              <!-- Нужны картинки для слайдера. Начало слайда -->
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для пк  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+              <!-- конец слайда  -->
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для пк  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="
+                      https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                    "
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для пк  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="
+                      https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                    "
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для пк  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="
+                      https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                    "
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для пк  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="
+                      https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                    "
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для пк  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="
+                      https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                    "
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для пк  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="
+                      https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                    "
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для пк  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="
+                      https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                    "
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="
+                      https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                    "
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(max-width: 640px)"
+                    srcset="./assets/img/slider-item.jpg"
+                  />
+                  <!-- картика для телефонов  -->
+                  <source
+                    media="(min-width: 641px)"
+                    srcset="
+                      https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                    "
+                  />
+                  <img src="elva-800w.jpg" />
+                </picture>
+              </div>
+            </div>
+            <div class="swiper-button-next slider__next-btn"></div>
+            <div class="swiper-button-prev slider__prev-btn"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="mainSwiper__wrapper">
+            <div thumbsSlider="" class="swiper mainSwiper">
+              <div class="swiper-wrapper">
+                <!-- Нужны картинки для слайдера. Такие же как на слайде выше. Повторная часть -->
+                <div class="swiper-slide">
+                  <picture>
+                    <!-- картика для телефонов  -->
+                    <source
+                      media="(max-width: 640px)"
+                      srcset="./assets/img/slider-item.jpg"
+                    />
+                    <!-- картика для телефонов  -->
+                    <source
+                      media="(min-width: 641px)"
+                      srcset="
+                        https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                      "
+                    />
+                    <img src="elva-800w.jpg" />
+                  </picture>
+                </div>
+                <!-- Конец слайда -->
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./assets/img/slider-item.jpg" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next slider__next-btn_track"></div>
+            <div class="swiper-button-prev slider__prev-btn_track"></div>
+          </div>
+        </div>
+        <!-- Повторный блок  -->
+        <div class="info-card info-card_mobile">
+          <h2 class="info-card__title">
+            <!-- template  -->
+            С Москва, Ул. Льва Толстого, дом 23, корп.1
+          </h2>
+          <div class="info-card__subtitle">
+            <span class="info-card__number">
+              <!-- template  -->
+              №231151313</span
+            >
+            <span class="info-card__view"
+              ><div class="info-card__icon">
+                <svg
+                  width="16"
+                  height="11"
+                  viewBox="0 0 16 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.99996 2.00008C10.5266 2.00008 12.78 3.42008 13.88 5.66675C12.78 7.91341 10.5266 9.33342 7.99996 9.33342C5.47329 9.33342 3.21996 7.91341 2.11996 5.66675C3.21996 3.42008 5.47329 2.00008 7.99996 2.00008ZM7.99996 0.666748C4.66663 0.666748 1.81996 2.74008 0.666626 5.66675C1.81996 8.59341 4.66663 10.6667 7.99996 10.6667C11.3333 10.6667 14.18 8.59341 15.3333 5.66675C14.18 2.74008 11.3333 0.666748 7.99996 0.666748ZM7.99996 4.00008C8.91996 4.00008 9.66663 4.74675 9.66663 5.66675C9.66663 6.58675 8.91996 7.33342 7.99996 7.33342C7.07996 7.33342 6.33329 6.58675 6.33329 5.66675C6.33329 4.74675 7.07996 4.00008 7.99996 4.00008ZM7.99996 2.66675C6.34663 2.66675 4.99996 4.01341 4.99996 5.66675C4.99996 7.32008 6.34663 8.66675 7.99996 8.66675C9.65329 8.66675 11 7.32008 11 5.66675C11 4.01341 9.65329 2.66675 7.99996 2.66675Z"
+                    fill="#55B465"
+                  />
+                </svg>
+              </div>
+              <!-- template  -->
+              215(+23)</span
+            >
+          </div>
+          <div class="info-card__price-block">
+            <h3 class="info-card__price">
+              <span class="info-card__price-icon">₽</span>44 287
+              <span class="info-card__price-icon_desk">₽</span> в месяц
+            </h3>
+            <p class="info-card__price-per-meter">
+              <!-- template  -->
+              1200
+              <!-- end -->
+              ₽ в месяц за м <sup>2</sup>
+            </p>
+          </div>
+          <a href="#" class="info-card__link">Посмотреть на карте</a>
+          <div class="info-card__contact">
+            <!-- нужна картинка аватара  -->
+            <img
+              src="./assets/img/Ellipse 1.jpg"
+              alt="Фото"
+              class="info-card__avatar"
+            />
+            <!-- конец  -->
+            <div class="info-card__contact-text">
+              <!-- все поля temlate  -->
+              <p class="info-card__position">Менеджер</p>
+              <h5 class="info-card__name">Фомина Анастасия</h5>
+              <h3 class="info-card__tel">8-929-926-49-40</h3>
+              <p class="info-card__email">email@email.email</p>
+              <!-- end  -->
+            </div>
+          </div>
+          <div class="info-card__btns">
+            <button class="info-card__favorite-btn">
+              <div class="icon">
+                <svg
+                  width="14"
+                  height="12"
+                  viewBox="0 0 14 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.3566 0.659948C10.5966 -0.540052 8.42331 0.0199478 7.24998 1.39328C6.07665 0.0199478 3.90331 -0.546719 2.14331 0.659948C1.20998 1.29995 0.623313 2.37995 0.583313 3.51995C0.489979 6.10661 2.78331 8.17995 6.28331 11.3599L6.34998 11.4199C6.85665 11.8799 7.63665 11.8799 8.14331 11.4133L8.21665 11.3466C11.7166 8.17328 14.0033 6.09995 13.9166 3.51328C13.8766 2.37995 13.29 1.29995 12.3566 0.659948ZM7.31665 10.3666L7.24998 10.4333L7.18331 10.3666C4.00998 7.49328 1.91665 5.59328 1.91665 3.66661C1.91665 2.33328 2.91665 1.33328 4.24998 1.33328C5.27665 1.33328 6.27665 1.99328 6.62998 2.90661H7.87665C8.22331 1.99328 9.22331 1.33328 10.25 1.33328C11.5833 1.33328 12.5833 2.33328 12.5833 3.66661C12.5833 5.59328 10.49 7.49328 7.31665 10.3666Z"
+                    fill="#6D7678"
+                  />
+                </svg>
+              </div>
+              <span>Добавить в избранное</span>
+            </button>
+            <button class="info-card__primary-btn">
+              Связаться с менеджером
+            </button>
+          </div>
+        </div>
         <div class="basic-info">
           <h3 class="basic-info__title">Основные сведения</h3>
           <div class="basic-info__card-row">
@@ -29,7 +413,12 @@
                 </svg>
               </div>
               <div class="basic-info__card-body">
-                <h4 class="basic-info__card-title">50 м2</h4>
+                <h4 class="basic-info__card-title">
+                  <!-- temlate  -->
+                  50
+                  <!-- end  -->
+                  м2
+                </h4>
                 <p class="basic-info__card-text">Площадь</p>
               </div>
             </div>
@@ -49,7 +438,11 @@
                 </svg>
               </div>
               <div class="basic-info__card-body">
-                <h4 class="basic-info__card-title">Свободно</h4>
+                <h4 class="basic-info__card-title">
+                  <!-- template  -->
+                  Свободно
+                  <!-- end  -->
+                </h4>
                 <p class="basic-info__card-text">Статус помещения</p>
               </div>
             </div>
@@ -69,7 +462,11 @@
                 </svg>
               </div>
               <div class="basic-info__card-body">
-                <h4 class="basic-info__card-title">2 из 3</h4>
+                <h4 class="basic-info__card-title">
+                  <!-- template  -->
+                  2 из 3
+                  <!-- end  -->
+                </h4>
                 <p class="basic-info__card-text">Этаж</p>
               </div>
             </div>
@@ -93,7 +490,11 @@
                 </svg>
               </div>
               <div class="basic-info__card-body">
-                <h4 class="basic-info__card-title">С отделкой</h4>
+                <h4 class="basic-info__card-title">
+                  <!-- template  -->
+                  С отделкой
+                  <!-- template  -->
+                </h4>
                 <p class="basic-info__card-text">Ремонт</p>
               </div>
             </div>
@@ -113,7 +514,11 @@
                 </svg>
               </div>
               <div class="basic-info__card-body">
-                <h4 class="basic-info__card-title">Отдельно стоящее здание</h4>
+                <h4 class="basic-info__card-title">
+                  <!-- template  -->
+                  Отдельно стоящее здание
+                  <!-- end -->
+                </h4>
                 <p class="basic-info__card-text">Тип помещения</p>
               </div>
             </div>
@@ -134,7 +539,9 @@
               </div>
               <div class="basic-info__card-body">
                 <h4 class="basic-info__card-title">
+                  <!-- template  -->
                   Отдельный вход с внешней стороны здания
+                  <!-- end  -->
                 </h4>
                 <p class="basic-info__card-text">Классификация помещения</p>
               </div>
@@ -144,6 +551,7 @@
         <div class="additional-information">
           <h3 class="additional-information__title">Дополнительные сведения</h3>
           <p class="additional-information__text">
+            <!-- template  -->
             Предлагаем Вам снять в аренду офисное помещение в Москве: 0т 52 м2
             до 738 м2, в трехэтажном полностью функционирующем здании, со всеми
             инженерными коммуникациями. Площади сдаются целиком и
@@ -156,13 +564,18 @@
             Рябиновая, дом 47, строение 13 (округ ЗАО, район
             Очаково-Матвеевское, ближайшие станции метро Озерная и Кунцевская).
             Добро пожаловать!
+            <!-- end  -->
           </p>
         </div>
-        <div class="map-object">
+        <div class="map-object map">
           <h3 class="map-object__title">Объект на карте</h3>
+          <div class="map-container" id="map"></div>
+
+          <div id="cities"></div>
         </div>
       </div>
       <div class="info-card">
+        <!-- для блока нужно получить, что помещение свободно  -->
         <div class="info-card__occupied-info">
           <div class="info-card__row">
             <div class="info-card__error-label">
@@ -199,11 +612,31 @@
                     fill="#55B465"
                   />
                 </svg>
+                <div class="tooltip">
+                  <svg
+                    width="8"
+                    height="4"
+                    viewBox="0 0 8 4"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.6364 3.3636L8 4.76837e-07L3.49691e-07 -2.22545e-07L3.3636 3.3636C3.71508 3.71508 4.28492 3.71508 4.6364 3.3636Z"
+                      fill="#2A2E33"
+                    />
+                  </svg>
+
+                  <p class="tooltip__inner">
+                    Вы можете занять данную площадь, предложив более высокую
+                    стоимость
+                  </p>
+                </div>
               </div>
             </button>
           </div>
-
+          <!-- Нужно ставить класс active, если включены уведомления  -->
           <div class="info-card__icon-bell active">
+            <!-- end  -->
             <svg
               width="16"
               height="20"
@@ -217,11 +650,18 @@
             </svg>
           </div>
         </div>
+        <!-- end  -->
         <h2 class="info-card__title">
+          <!-- template  -->
           Москва, Ул. Льва Толстого, дом 23, корп.1
+          <!-- end  -->
         </h2>
         <div class="info-card__subtitle">
-          <span class="info-card__number">№231151313</span>
+          <span class="info-card__number">
+            <!-- template  -->
+            №231151313
+            <!-- end  -->
+          </span>
           <span class="info-card__view"
             ><div class="info-card__icon">
               <svg
@@ -237,20 +677,43 @@
                 />
               </svg>
             </div>
-            215(+23)</span
-          >
+            <!-- template  -->
+            215(+23)
+            <!-- end  -->
+          </span>
         </div>
         <div class="info-card__price-block">
-          <h3 class="info-card__price">44 287 ₽ в месяц</h3>
-          <p class="info-card__price-per-meter">1200 ₽ в месяц за м2</p>
-          <a href="#" class="info-card__link">Посмотреть на карте</a>
+          <h3 class="info-card__price">
+            <span class="info-card__price-icon">₽</span>
+            <!-- template  -->
+            44 287
+            <!-- end  -->
+            <span class="info-card__price-icon_desk">₽</span> в месяц
+          </h3>
+          <p class="info-card__price-per-meter">
+            <!-- template  -->
+            1200
+            <!-- end  -->
+            ₽ в месяц за м <sup>2</sup>
+          </p>
         </div>
+        <a href="#" class="info-card__link">Посмотреть на карте</a>
         <div class="info-card__contact">
-          <img src="" alt="avatar" class="info-card__avatar" />
-          <p class="info-card__position">Менеджер</p>
-          <h5 class="info-card__name">Фомина Анастасия</h5>
-          <h3 class="info-card__tel">8-929-926-49-40</h3>
-          <p class="info-card__email">email@email.email</p>
+          <!-- нужна картинка аватара  -->
+          <img
+            src="./assets/img/Ellipse 1.jpg"
+            alt="Фото"
+            class="info-card__avatar"
+          />
+          <!-- конец -->
+          <div class="info-card__contact-text">
+            <!-- template  -->
+            <p class="info-card__position">Менеджер</p>
+            <h5 class="info-card__name">Фомина Анастасия</h5>
+            <h3 class="info-card__tel">8-929-926-49-40</h3>
+            <p class="info-card__email">email@email.email</p>
+            <!-- end  -->
+          </div>
         </div>
         <div class="info-card__btns">
           <button class="info-card__favorite-btn">
@@ -270,14 +733,13 @@
             </div>
             <span>Добавить в избранное</span>
           </button>
-          <button class="info-card__primary-btn" onclick="">
-            Связаться с менеджером
-          </button>
+          <button class="info-card__primary-btn">Связаться с менеджером</button>
         </div>
       </div>
     </div>
-    <div class="modal" style="display: none">
-      <div class="modal__content">
+    <!-- модальное окно "Предложить свою стоимость" -->
+    <div class="modal modal-offer-price">
+      <div class="modal__content content-offer-price">
         <div class="modal__header">
           <h3>Предложить свою стоимость</h3>
           <button class="modal__close-btn">
@@ -296,7 +758,76 @@
           </button>
         </div>
         <div class="modal__body">
-          <p>Чтобы предложить стоимость, вы должны быть авторизованы!</p>
+          <form action="" id="modal-offer-price">
+            <div class="modal__row">
+              <p class="content-offer-price__text">
+                Введите размер арендной ставки за м2
+              </p>
+              <div class="input-container">
+                <div class="custom-text-input">
+                  <span class="custom-text-input__label">Арендная ставка</span>
+                  <input
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                    type="text"
+                    maxlength="10"
+                    required
+                  />
+                </div>
+                <div class="custom-text-input__icon">₽</div>
+              </div>
+            </div>
+            <p class="content-offer-price__row">
+              <span class="content-offer-price__price-container"
+                >Плата за площадь в месяц:
+                <span class="content-offer-price__price">
+                  <!-- template  -->
+                  44 780
+                  <!-- end  -->
+                  ₽</span
+                ></span
+              >
+              <span class="content-offer-price__aside"
+                >(высчитывается автоматически)</span
+              >
+            </p>
+          </form>
+        </div>
+        <div class="modal__footer">
+          <button class="modal__cancel-btn">Отмена</button>
+          <button
+            type="submit"
+            class="modal__login-btn"
+            form="modal-offer-price"
+          >
+            Предложить
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- модальное окно без авторизации. Нужно получать статус авторизации-->
+    <div class="modal modal-offer-price">
+      <div class="modal__content content-offer-price">
+        <div class="modal__header">
+          <h3>Предложить свою стоимость</h3>
+          <button class="modal__close-btn">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                fill="#6C737D"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="modal__body">
+          <p class="modal__text-info">
+            Чтобы предложить стоимость, вы должны быть авторизованы!
+          </p>
         </div>
         <div class="modal__footer">
           <button class="modal__cancel-btn">Отмена</button>
@@ -304,7 +835,8 @@
         </div>
       </div>
     </div>
-    <div class="modal" style="display: flex">
+    <!-- модальное окно с формой. Нужно получать статус авторизации -->
+    <div class="modal modal-form">
       <div class="modal__content">
         <div class="modal__header">
           <h3>Связаться с менеджером</h3>
@@ -332,7 +864,7 @@
               ><input
                 class="group-radio-btn__radio"
                 type="radio"
-                name="lol"
+                name="radio-select"
                 value="one"
                 checked="checked"
               />
@@ -347,7 +879,7 @@
               ><input
                 class="group-radio-btn__radio"
                 type="radio"
-                name="lol"
+                name="radio-select"
                 value="two"
               />
               <div class="group-radio-btn__inner">
@@ -361,7 +893,7 @@
               ><input
                 class="group-radio-btn__radio"
                 type="radio"
-                name="lol"
+                name="radio-select"
                 value="three"
               />
               <div class="group-radio-btn__inner">
@@ -373,39 +905,103 @@
             </label>
           </div>
           <div class="contact-form">
+            <!-- первая форма -->
             <form
               class="contact-form__first-option"
               action=""
-              id="contact-form"
+              id="contact-form1"
             >
-              <div class="custom-text-input custom-text-input_name">
-                <span class="custom-text-input__label">Ваше имя *</span>
-                <input type="text" maxlength="50" />
+              <div class="contact-form__row">
+                <div class="custom-text-input custom-text-input_name">
+                  <span class="custom-text-input__label">Ваше имя *</span>
+                  <input type="text" maxlength="50" required />
+                </div>
+                <div class="custom-text-input custom-text-input_tel">
+                  <span class="custom-text-input__label">Ваш телефон</span>
+                  <input
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                    type="text"
+                    class="input-tel"
+                    maxlength="11"
+                  />
+                </div>
               </div>
-              <div class="custom-text-input custom-text-input_tel">
-                <span class="custom-text-input__label">Ваш телефон</span>
-                <input
-                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                  type="text"
-                  class="input-tel"
-                  maxlength="11"
-                />
-              </div>
+              <p class="contact-form__time-info">
+                *Срок обработки заявки 1 рабочий день
+              </p>
             </form>
-            <p class="contact-form__time-info">
-              *Срок обработки заявки 1 рабочий день
-            </p>
+            <!-- вторая форма -->
+            <form
+              class="contact-form__second-option"
+              action=""
+              id="contact-form2"
+            >
+              <div class="contact-form__row">
+                <div class="custom-text-input custom-text-input_name">
+                  <span class="custom-text-input__label">Ваше имя *</span>
+                  <input type="text" maxlength="50" required />
+                </div>
+                <div class="custom-text-input custom-text-input_tel">
+                  <span class="custom-text-input__label">Ваш телефон</span>
+                  <input
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                    type="text"
+                    class="input-tel"
+                    maxlength="11"
+                  />
+                </div>
+                <div class="custom-text-input custom-text-input_tel">
+                  <span class="custom-text-input__label">Ваш E-mail*</span>
+                  <input
+                    type="email"
+                    class="input-email"
+                    required
+                    maxlength="100"
+                  />
+                </div>
+              </div>
+              <div class="custom-text-input custom-text-input_text">
+                <textarea name="" id="" cols="30" rows="5" required></textarea>
+                <span class="custom-text-input__label">Ваше сообщение*</span>
+              </div>
+              <p class="contact-form__time-info">
+                *Срок обработки заявки 3 рабочих дня
+              </p>
+            </form>
+            <!-- третья форма -->
+            <form class="contact-form__third-option">
+              <p class="contact-form__text">
+                Вам необходимо заполнить анкету для проверки
+              </p>
+              <a href="" class="contact-form__route-to-btn">Перейти к анкете</a>
+              <p class="contact-form__time-info">
+                *Срок обработки заявки 5 рабочих дней
+              </p>
+            </form>
           </div>
         </div>
         <div class="modal__footer">
           <button class="modal__cancel-btn">Отмена</button>
-          <button form="contact-form" type="submit" class="modal__login-btn">
+          <button form="contact-form1" type="submit" class="modal__login-btn">
             Отправить
           </button>
         </div>
       </div>
     </div>
-    <script src="./src/js/modal.js"></script>
-    <script src="./src/js/togglerContactForm.js"></script>
+    <!-- конец модального окна с формой -->
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="module" src="./assets/js/script.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=yourkey&libraries=places"
+    ></script>
+    <script src="./assets/js/map.js"></script>
   </body>
 </html>

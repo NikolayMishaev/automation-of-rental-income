@@ -1,0 +1,20 @@
+.regisrtation-page {
+  max-width: 824px;
+  margin: 40px 60px;
+  h1 {
+    margin-bottom: 40px;
+  }
+  .group-radio-btn {
+    padding-bottom: 40px;
+    border-bottom: 1px solid $grey30;
+    &__container {
+      flex: 50%;
+    }
+    &__inner {
+      width: 100%;
+    }
+  }
+  .group-radio-btn__container + .group-radio-btn__container {
+    margin-left: 16px;
+  }
+}
