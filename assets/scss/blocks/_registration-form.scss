@@ -7,7 +7,7 @@
     display: flex;
     border-radius: 12px 12px 0 0;
     border: 1px solid $grey-20;
-    background-color: $grey5;
+    background-color: $grey-5;
     @media #{$screen-mobile} {
       display: inline-flex;
       overflow-x: scroll;

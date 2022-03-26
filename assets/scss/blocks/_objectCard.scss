@@ -1,14 +1,14 @@
 @import "../abstracts/mixins";
 
-.container {
+main .container {
   display: flex;
   max-width: 1920px;
-  margin: auto;
-  padding: 0 60px;
+  padding: 0 60px 40px;
   @media #{$screen-mobile} {
     max-width: 360px;
     flex-direction: column;
     padding: 0 16px;
+    margin: auto;
   }
 }
 
@@ -125,7 +125,7 @@
     }
   }
   &__contact {
-    margin: 64px 0 32px;
+    margin: 25px 0 32px;
     @media #{$screen-mobile} {
       display: flex;
       margin: 20px 0;
@@ -252,14 +252,12 @@
       cursor: pointer;
       position: relative;
       @include flex-container;
-      &:hover .tooltip {
+      & svg:hover + .tooltip {
         opacity: 1;
-        display: inline-flex;
       }
     }
     .tooltip {
       opacity: 0;
-      display: none;
       width: 346px;
       bottom: 100%;
       margin-bottom: 5px;

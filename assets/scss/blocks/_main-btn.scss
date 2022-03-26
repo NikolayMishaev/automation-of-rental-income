@@ -1,0 +1,22 @@
+.main-btn {
+    background: $accent-TCX5;
+    border-radius: 50px;
+    color: $grey60-2;
+    border: unset;
+    padding: rem(6px) rem(24px);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.12px;
+    transition: $transition;
+    &:hover {
+        opacity: .7;
+    }
+    @media #{$screen-mobile} {
+        padding: rem(4px) rem(24px);
+    }
+    &_active {
+        background: $accent-TCX50;
+        color: white;
+    }
+}

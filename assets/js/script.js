@@ -135,19 +135,19 @@ for (let index = 0; index < inputDate.length; index++) {
 }
 
 const regRadioBtn = document.querySelectorAll(".regisrtation-page .group-radio-btn__radio");
-const regFormList = document.querySelectorAll(".registration-form");
 
 for (let index = 0; index < regRadioBtn.length; index++) {
   regRadioBtn[index].addEventListener("change", function (e) {
     const value = e.target.value;
-    clear(regFormList);
     if (value === "one") {
       const currentForm = document.querySelector(".registration-form_natural");
+      document.querySelector(".registration-form_juridical").style.display = "none";
       currentForm.style.display = "block";
       //sendBtn.setAttribute("form", currentForm.id);
     }
     if (value === "two") {
       const currentForm = document.querySelector(".registration-form_juridical");
+      document.querySelector(".registration-form_natural").style.display = "none";
       currentForm.style.display = "block";
       // sendBtn.setAttribute("form", currentForm.id);
     }
