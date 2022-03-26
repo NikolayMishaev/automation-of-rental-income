@@ -2,35 +2,82 @@
 
 .container {
   display: flex;
-  max-width: 1800px;
+  max-width: 1860px;
   margin: auto;
+  padding: 0 30px;
+  @media #{$screen-mobile} {
+    max-width: 344px;
+    flex-direction: column;
+    padding: 0 16px;
+  }
 }
 
 .main-content {
-  flex: 1057px;
+  flex: 1037px;
   margin-right: 32px;
+  margin-top: 40px;
+  min-width: 0;
+  @media #{$screen-mobile} {
+    width: 100%;
+    margin: 0;
+    order: 3;
+    flex: auto;
+  }
+  .slider {
+    @media #{$screen-mobile} {
+      margin-bottom: 12px;
+    }
+  }
 }
 
 .info-card {
   padding: 24px;
-  flex: 721px;
+  flex: 731px;
   font-size: 14px;
   height: fit-content;
+  position: sticky;
+  margin-top: 40px;
+  top: 40px;
+  @media #{$screen-mobile} {
+    display: none;
+  }
+  &_mobile {
+    position: static;
+    width: 100%;
+    border: none;
+    padding: 0;
+    order: 2;
+    margin-top: 0;
+    flex: auto;
+    display: none;
+    @media #{$screen-mobile} {
+      display: block;
+    }
+  }
   @include block-border;
   &__title {
     margin-bottom: 8px;
+    @media #{$screen-mobile} {
+      margin-bottom: 12px;
+    }
   }
   &__subtitle {
     display: flex;
     margin-bottom: 16px;
     font-size: 14px;
     color: $grey60;
+    @media #{$screen-mobile} {
+      margin-bottom: 12px;
+    }
   }
   &__view {
     display: flex;
   }
   &__number {
     margin-right: 16px;
+    @media #{$screen-mobile} {
+      margin-left: 4px;
+    }
   }
   &__icon {
     margin-right: 4px;
@@ -39,8 +86,14 @@
     @include flex-container;
   }
   &__price-block {
-    margin-bottom: 64px;
+    @media #{$screen-mobile} {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 12px;
+    }
   }
+
   &__price {
     margin-bottom: 8px;
   }
@@ -48,8 +101,41 @@
     margin-bottom: 12px;
     color: $grey60;
   }
+  &__price,
+  &__price-per-meter {
+    @media #{$screen-mobile} {
+      margin: 0;
+    }
+  }
+
+  &__price-icon {
+    display: none;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    margin-right: 4px;
+    color: $accent-TCX50;
+    @media #{$screen-mobile} {
+      display: inline;
+    }
+    &_desk {
+      @media #{$screen-mobile} {
+        display: none;
+      }
+    }
+  }
   &__contact {
-    margin-bottom: 32px;
+    margin: 64px 0 32px;
+    @media #{$screen-mobile} {
+      display: flex;
+      margin: 20px 0;
+    }
+  }
+  &__contact-text {
+    @media #{$screen-mobile} {
+      display: block;
+      margin-left: 12px;
+    }
   }
   &__avatar {
     vertical-align: middle;
@@ -59,23 +145,41 @@
   }
   &__link {
     color: $accent90;
+    line-height: 24px;
+    @media #{$screen-mobile} {
+      font-size: $font-size-normal;
+    }
   }
   &__position,
   &__avatar,
   &__name,
   &__tel {
     margin-bottom: 8px;
+    @media #{$screen-mobile} {
+      margin-bottom: 4px;
+    }
+  }
+  &__position,
+  &__email {
+    @media #{$screen-mobile} {
+      font-size: 12px;
+    }
   }
   &__btns {
     display: flex;
     font-size: 16px;
     button {
-      flex: 50%;
       padding: 12px 0;
+      flex: 50%;
+      @media #{$screen-mobile} {
+        padding: 4px 0;
+        flex: none;
+      }
     }
   }
   &__primary-btn {
     @include primary-btn($accent-TCX50);
+    width: calc(100% - 40px);
   }
 
   &__favorite-btn {
@@ -84,12 +188,34 @@
     align-items: center;
     justify-content: center;
     @include secondary-btn;
+    @media #{$screen-mobile} {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+    }
+    svg {
+      @media #{$screen-mobile} {
+        transform: scale(1.6);
+      }
+    }
+    span {
+      @media #{$screen-mobile} {
+        display: none;
+      }
+    }
   }
   &__occupied-info {
     margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &_mobile {
+      display: none;
+      @media #{$screen-mobile} {
+        display: flex;
+        margin-top: 16px;
+      }
+    }
   }
 
   &__error-label {
@@ -101,6 +227,10 @@
     border-radius: 8px;
     background-color: $red10;
     color: $error;
+    @media #{$screen-mobile} {
+      width: fit-content;
+      margin-bottom: 12px;
+    }
   }
   &__offer-btn {
     font-size: 16px;
@@ -114,29 +244,91 @@
     .icon {
       margin: 0 0 0 6px;
       cursor: pointer;
+      position: relative;
+      @include flex-container;
+      &:hover .tooltip {
+        opacity: 1;
+        display: inline-flex;
+      }
+    }
+    .tooltip {
+      opacity: 0;
+      display: none;
+      width: 346px;
+      bottom: 100%;
+      margin-bottom: 5px;
+      left: calc(50%);
+      transform: translateX(-50%);
+      text-align: left;
+      svg {
+        position: absolute;
+        bottom: -4px;
+        right: calc(50% - 4px);
+      }
+      @media (max-width: 1600px) {
+        left: -10vh;
+        svg {
+          right: 18.5%;
+        }
+      }
+      @media (max-width: 1330px) {
+        left: -15vh;
+        svg {
+          right: 4.5%;
+        }
+      }
+    }
+
+    @media #{$screen-mobile} {
+      text-align: left;
+      display: inline-flex;
     }
   }
   .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-container;
     width: 16px;
     height: 16px;
     margin-right: 6px;
+    @media #{$screen-mobile} {
+      margin-right: 0;
+    }
   }
   &__icon-bell {
     width: 24px;
     height: 24px;
-    fill: $grey-50;
+    border-radius: 100%;
+    &:hover {
+      svg {
+        transition: $transition;
+        fill: $accent-TCX50;
+      }
+    }
+
+    svg {
+      fill: $grey-50;
+    }
     @include flex-container;
     justify-self: end;
     cursor: pointer;
     &.active svg {
       fill: $accent-TCX50;
     }
+    @media #{$screen-mobile} {
+      align-self: flex-start;
+      padding: 4px 0;
+      width: 32px;
+      height: 32px;
+    }
   }
   &__row {
     display: flex;
+    flex-wrap: wrap;
+    @media #{$screen-mobile} {
+      flex-direction: column;
+    }
+  }
+  sup {
+    font-size: 8px;
   }
 }
 
@@ -144,6 +336,10 @@
   padding: 24px 32px 24px;
   margin-bottom: 40px;
   @include block-border;
+  @media #{$screen-mobile} {
+    padding: 16px;
+    margin: 24px 0;
+  }
 
   &__title {
     margin-bottom: 24px;
@@ -157,11 +353,18 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    @media #{$screen-mobile} {
+      flex-direction: column;
+    }
   }
   &__card {
     display: flex;
     padding: 8px;
     margin: 0 26px 32px 0;
+    @media #{$screen-mobile} {
+      padding: 3px;
+      margin: 0 0 16px;
+    }
   }
   &__card-title {
     margin-bottom: 4px;
@@ -182,6 +385,10 @@
   &__title {
     margin-bottom: 16px;
   }
+  @media #{$screen-mobile} {
+    padding: 16px;
+    margin-bottom: 24px;
+  }
 }
 .map-object {
   @include block-border;
@@ -189,29 +396,150 @@
   &__title {
     margin-bottom: 16px;
   }
+  @media #{$screen-mobile} {
+    padding: 16px;
+    margin-bottom: 24px;
+  }
 }
 
 .contact-form {
   .group-radio-btn {
     padding: 24px 0;
     border-bottom: 1px solid $grey30;
+    @media #{$screen-mobile} {
+      padding: 16px 0;
+    }
     label + label {
       margin-left: 16px;
+      @media #{$screen-mobile} {
+        margin: 12px 0 0;
+      }
+    }
+    @media #{$screen-mobile} {
+      flex-direction: column;
+    }
+    &__inner {
+      @media #{$screen-mobile} {
+        width: 100%;
+      }
     }
   }
-  &__first-option {
-    display: flex;
+  &__first-option,
+  &__second-option,
+  &__third-option {
     margin-top: 24px;
+    @media #{$screen-mobile} {
+      margin-top: 16px;
+    }
+  }
+  &__title {
+    @media #{$screen-mobile} {
+      font-size: 14px;
+    }
   }
   .custom-text-input {
     flex: auto;
   }
   .custom-text-input + .custom-text-input {
     margin-left: 16px;
+    @media #{$screen-mobile} {
+      margin: 16px 0 0;
+    }
   }
   &__time-info {
     color: $grey60;
     margin-top: 8px;
     font-size: 12px;
+  }
+  &__time-info {
+    display: block;
+  }
+  &__first-option {
+    display: block;
+  }
+  &__row {
+    display: flex;
+    @media #{$screen-mobile} {
+      flex-direction: column;
+    }
+  }
+  &__second-option,
+  &__third-option {
+    display: none;
+  }
+  &__route-to-btn {
+    @include primary-btn($accent-TCX50);
+    padding: 4px 0;
+    width: 200px;
+    display: block;
+    text-align: center;
+    margin: 16px 0;
+    &:hover {
+      text-decoration: none;
+    }
+    @media #{$screen-mobile} {
+      width: 100%;
+    }
+  }
+  &__text {
+    @media #{$screen-mobile} {
+      font-size: 14px;
+    }
+  }
+}
+
+.modal-form {
+  .modal-content {
+    width: 800px;
+    @media #{$screen-mobile} {
+      width: 328px;
+    }
+  }
+  .custom-text-input_text {
+    margin-top: 24px;
+  }
+}
+
+.content-offer-price {
+  width: 600px;
+  &__row {
+    margin-top: 16px;
+    line-height: 24px;
+    color: $grey60;
+    @media #{$screen-mobile} {
+      font-size: 14px;
+    }
+  }
+  &__price {
+    font-weight: 500;
+    color: $grey100;
+    font-size: 16px;
+  }
+  &__text {
+    @media #{$screen-mobile} {
+      font-size: 14px;
+      margin: 8px 0 16px;
+    }
+  }
+  .custom-text-input {
+    @media #{$screen-mobile} {
+      width: calc(100% - 42px);
+    }
+  }
+  .input-container {
+    @media #{$screen-mobile} {
+      width: 100%;
+    }
+  }
+  &__price-container {
+    @media #{$screen-mobile} {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__aside {
+    @media #{$screen-mobile} {
+      font-size: 12px;
+    }
   }
 }
