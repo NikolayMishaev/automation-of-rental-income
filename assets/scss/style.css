@@ -981,10 +981,12 @@ button {
 
 .menu__link_type_register:hover + .menu__link-message {
   opacity: 1;
+  visibility: visible;
 }
 
 .menu__link-message {
   opacity: 0;
+  visibility: hidden;
   position: absolute;
   top: 115%;
   right: 50%;

@@ -92,9 +92,11 @@
         }
         &_type_register:hover + .menu__link-message {
             opacity: 1;
+            visibility: visible;
         }
         &-message {
             opacity: 0;
+            visibility: hidden;
             position: absolute;
             top: 115%;
             right: 50%;
