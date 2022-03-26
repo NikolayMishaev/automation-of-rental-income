@@ -88,25 +88,21 @@ for (let index = 0; index < bellBtn.length; index++) {
   });
 }
 
-const radio = document.querySelectorAll(
-  ".contact-form .group-radio-btn__radio"
-);
+const radio = document.querySelectorAll(".contact-form .group-radio-btn__radio");
 const sendBtn = document.querySelector(".modal-form .modal__login-btn");
 const formList = document.querySelectorAll(".contact-form form");
 
 for (let index = 0; index < radio.length; index++) {
   radio[index].addEventListener("change", function (e) {
     const value = e.target.value;
-    clear();
+    clear(formList);
     if (value === "one") {
       const currentForm = document.querySelector(".contact-form__first-option");
       currentForm.style.display = "block";
       sendBtn.setAttribute("form", currentForm.id);
     }
     if (value === "two") {
-      const currentForm = document.querySelector(
-        ".contact-form__second-option"
-      );
+      const currentForm = document.querySelector(".contact-form__second-option");
       currentForm.style.display = "block";
       console.log(currentForm.id);
       sendBtn.setAttribute("form", currentForm.id);
@@ -119,9 +115,41 @@ for (let index = 0; index < radio.length; index++) {
   });
 }
 
-function clear() {
-  for (let index = 0; index < formList.length; index++) {
-    const element = formList[index];
+function clear(list) {
+  for (let index = 0; index < list.length; index++) {
+    const element = list[index];
     element.style.display = "none";
   }
+}
+
+const inputDate = document.querySelectorAll(".input-date__container input");
+for (let index = 0; index < inputDate.length; index++) {
+  const element = inputDate[index];
+  element.addEventListener("blur", function (e) {
+    if (e.target.value) {
+      e.target.nextElementSibling.style.display = "none";
+    } else {
+      e.target.nextElementSibling.style.display = "flex";
+    }
+  });
+}
+
+const regRadioBtn = document.querySelectorAll(".regisrtation-page .group-radio-btn__radio");
+const regFormList = document.querySelectorAll(".registration-form");
+
+for (let index = 0; index < regRadioBtn.length; index++) {
+  regRadioBtn[index].addEventListener("change", function (e) {
+    const value = e.target.value;
+    clear(regFormList);
+    if (value === "one") {
+      const currentForm = document.querySelector(".registration-form_natural");
+      currentForm.style.display = "block";
+      //sendBtn.setAttribute("form", currentForm.id);
+    }
+    if (value === "two") {
+      const currentForm = document.querySelector(".registration-form_juridical");
+      currentForm.style.display = "block";
+      // sendBtn.setAttribute("form", currentForm.id);
+    }
+  });
 }
