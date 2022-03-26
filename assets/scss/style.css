@@ -43,7 +43,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 28px;
   font-weight: 500;
   margin: 0;
 }
@@ -55,7 +55,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 500;
   margin: 0;
 }
@@ -67,13 +67,13 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 500;
   margin: 0;
 }
 
 h5 {
-  font-size: 0.875rem;
+  font-size: 14px;
   margin: 0;
   font-weight: 500;
 }
@@ -111,27 +111,6 @@ img {
 
 button {
   cursor: pointer;
-}
-
-.example {
-  font-weight: 500;
-  color: #f44336;
-}
-
-.exampletest {
-  color: blue;
-}
-
-@media (max-width: 80rem) {
-  .exampletest {
-    color: orange;
-  }
-}
-
-@media (max-width: 40rem) {
-  .exampletest {
-    color: green;
-  }
 }
 
 .container {
@@ -865,91 +844,27 @@ button {
   font-size: 12px;
 }
 
-.modal {
-  display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(60, 65, 66, 0.6);
+.contact-form__time-info {
+  display: block;
 }
 
-.modal__title_style_main {
-  margin-bottom: 0.75rem;
+.contact-form__first-option {
+  display: block;
 }
 
-.modal_type_header {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform: scale(4);
-          transform: scale(4);
-  opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  z-index: -1;
-}
-
-.modal__content {
-  border-radius: 12px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: white;
-  margin: auto;
-  -webkit-box-shadow: 0px 24px 38px rgba(80, 86, 94, 0.04), 0px 9px 46px rgba(80, 86, 94, 0.04), 0px 11px 15px rgba(80, 86, 94, 0.1);
-          box-shadow: 0px 24px 38px rgba(80, 86, 94, 0.04), 0px 9px 46px rgba(80, 86, 94, 0.04), 0px 11px 15px rgba(80, 86, 94, 0.1);
-}
-
-.modal__content_style_main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0 1.5rem;
-}
-
-.modal__header {
+.contact-form__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.modal__header_style_main {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.modal__close-btn {
-  width: 24px;
-  height: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: transparent;
-  border: none;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.modal__close-btn:hover {
-  opacity: .7;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+@media (max-width: 40rem) {
+  .contact-form__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .contact-form__second-option, .contact-form__third-option {
@@ -1057,7 +972,6 @@ button {
   }
 }
 
-@use "./prop-mix" as *;
 .modal {
   display: none;
   -webkit-box-pack: center;
@@ -1076,6 +990,22 @@ button {
   background-color: rgba(60, 65, 66, 0.6);
 }
 
+.modal__title_style_main {
+  margin-bottom: 0.75rem;
+}
+
+.modal_type_header {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(4);
+          transform: scale(4);
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: -1;
+}
+
 .modal__content {
   border-radius: 12px;
   background-color: white;
@@ -1088,6 +1018,12 @@ button {
   .modal__content {
     width: 100%;
     margin: 0 16px;
+  }
+  .modal__content_style_main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 1.5rem;
   }
 }
 
@@ -1108,6 +1044,10 @@ button {
   .modal__header {
     padding: 16px 12px 16px 24px;
   }
+  .modal__header_style_main {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .modal__close-btn {
@@ -1124,6 +1064,14 @@ button {
           justify-content: center;
   background-color: transparent;
   border: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.modal__close-btn:hover {
+  opacity: 0.7;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .modal__body {
@@ -2075,7 +2023,7 @@ button {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   width: 467px;
-  background-color: #2a2e33;
+  background-color: #2b3030;
   border-radius: 4px;
   color: white;
   font-style: normal;
