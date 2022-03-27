@@ -1,14 +1,14 @@
 @import "../abstracts/mixins";
 
-.container {
+main .container {
   display: flex;
-  max-width: 1860px;
-  margin: auto;
-  padding: 0 30px;
+  max-width: 1920px;
+  padding: 0 60px 40px;
   @media #{$screen-mobile} {
-    max-width: 344px;
+    max-width: 360px;
     flex-direction: column;
     padding: 0 16px;
+    margin: auto;
   }
 }
 
@@ -125,7 +125,7 @@
     }
   }
   &__contact {
-    margin: 64px 0 32px;
+    margin: 25px 0 32px;
     @media #{$screen-mobile} {
       display: flex;
       margin: 20px 0;
@@ -171,7 +171,7 @@
     button {
       padding: 12px 0;
       flex: 50%;
-      @media #{$screen-mobile} {
+      @media #{$screen-tablet} {
         padding: 4px 0;
         flex: none;
       }
@@ -181,6 +181,11 @@
     @include primary-btn($accent-TCX50);
     width: calc(100% - 40px);
   }
+  &__favorite-icon {
+    @media #{$screen-tablet} {
+      margin-right: 0;
+    }
+  }
 
   &__favorite-btn {
     margin-right: 16px;
@@ -188,18 +193,19 @@
     align-items: center;
     justify-content: center;
     @include secondary-btn;
-    @media #{$screen-mobile} {
+    @media #{$screen-tablet} {
       width: 32px;
       height: 32px;
       margin-right: 8px;
     }
+
     svg {
-      @media #{$screen-mobile} {
+      @media #{$screen-tablet} {
         transform: scale(1.6);
       }
     }
     span {
-      @media #{$screen-mobile} {
+      @media #{$screen-tablet} {
         display: none;
       }
     }
@@ -246,14 +252,12 @@
       cursor: pointer;
       position: relative;
       @include flex-container;
-      &:hover .tooltip {
+      & svg:hover + .tooltip {
         opacity: 1;
-        display: inline-flex;
       }
     }
     .tooltip {
       opacity: 0;
-      display: none;
       width: 346px;
       bottom: 100%;
       margin-bottom: 5px;
@@ -289,7 +293,7 @@
     width: 16px;
     height: 16px;
     margin-right: 6px;
-    @media #{$screen-mobile} {
+    @media #{$screen-tablet} {
       margin-right: 0;
     }
   }

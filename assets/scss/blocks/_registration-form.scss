@@ -1,26 +1,193 @@
 .registration-form {
   margin-top: 40px;
+  @media #{$screen-mobile} {
+    margin-top: 16px;
+  }
   &__tabs {
     display: flex;
     border-radius: 12px 12px 0 0;
     border: 1px solid $grey-20;
-    background-color: $grey5;
-    margin-bottom: 24px;
+    background-color: $grey-5;
+    @media #{$screen-mobile} {
+      display: inline-flex;
+      overflow-x: scroll;
+      width: 100%;
+    }
   }
   &__tab {
     color: $grey60;
     flex: auto;
     padding: 8px 0;
     text-align: center;
+    cursor: pointer;
+    @media #{$screen-mobile} {
+      min-width: 76px;
+    }
+    &_filled {
+      background-color: $accent-TCX5;
+    }
   }
   .active {
     color: $grey100;
     border-bottom: 1px solid $accent-TCX50;
   }
   &__content {
-    padding: 0 24px;
+    padding: 24px 24px;
+    border: 1px solid $grey-20;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    margin-bottom: 40px;
+    @media #{$screen-mobile} {
+      padding: 16px;
+    }
+
     h3 {
-      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $grey-20;
     }
   }
+  .custom-text-input_text {
+    @media #{$screen-mobile} {
+      margin-top: 4px;
+    }
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    &_textarea {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      @media #{$screen-mobile} {
+        flex-direction: column;
+        align-items: baseline;
+      }
+    }
+    @media #{$screen-mobile} {
+      flex-direction: column;
+      align-items: baseline;
+    }
+  }
+  &__label {
+    flex: 336px;
+    line-height: 24px;
+    color: $grey80;
+    @media #{$screen-mobile} {
+      flex: auto;
+      margin-bottom: 4px;
+    }
+    &_textarea {
+      width: 100%;
+      max-width: 204px;
+      line-height: 24px;
+      @media #{$screen-mobile} {
+        max-width: 100%;
+      }
+    }
+  }
+  .custom-text-input {
+    width: 100%;
+    max-width: 552px;
+  }
+  &__input {
+    flex: 428px;
+    border: 1px solid $grey30;
+    border-radius: 4px;
+    line-height: 24px;
+    @media #{$screen-mobile} {
+      flex: auto;
+      width: 100%;
+    }
+  }
+  &__btn-group {
+    display: flex;
+  }
+  &__cancel-btn {
+    @include secondary-btn;
+    margin-right: 16px;
+    width: 205px;
+    height: 40px;
+    @media #{$screen-mobile} {
+      height: 32px;
+    }
+  }
+  &__next-btn {
+    @include primary-btn($accent-TCX50);
+    width: 205px;
+    height: 40px;
+    @media #{$screen-mobile} {
+      height: 32px;
+    }
+  }
+  &__submit-btn {
+    @include primary-btn($accent-TCX50);
+    display: none;
+    width: 205px;
+    height: 40px;
+    @media #{$screen-mobile} {
+      height: 32px;
+    }
+  }
+  &__add-btn {
+    @include secondary-btn;
+    width: 100%;
+    margin-top: 16px;
+    padding: 4px;
+    &_del {
+      margin-right: 16px;
+    }
+  }
+  &__link {
+    color: $accent90;
+  }
+  &__user-agreement {
+    display: none;
+    font-size: $font-size-small;
+    margin-bottom: 24px;
+  }
+  input:focus {
+    outline: none;
+  }
+
+  &__download-btn {
+    display: flex;
+    align-items: center;
+    @include secondary-btn;
+    padding: 8px 16px 8px 8px;
+    @media #{$screen-mobile} {
+      padding: 4px 12px 4px 4px;
+    }
+  }
+  &__download-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    @include flex-container;
+  }
+  &__subtitle {
+    font-size: $font-size-small;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  &__download-container {
+    margin-top: 16px;
+  }
+  &__label-subtitle {
+    display: block;
+    font-size: $font-size-very-small;
+    color: $grey60;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(/assets/images/icons/calendar.svg) no-repeat;
+    border-width: thin;
+  }
+}
+
+.registration-form_juridical {
+  display: none;
 }
