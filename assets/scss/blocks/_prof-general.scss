@@ -50,6 +50,10 @@
         background-color: transparent;
         color: $grey60-2;
         padding: rem(8px) rem(16px);
+        transition: $transition;
+        &:hover {
+            opacity: .7;
+        }
         &_active {
             border-bottom: 1px solid $accent-TCX50;
             color: $grey100;
@@ -68,5 +72,17 @@
     }
     &__content {
         padding: rem(24px);
+    }
+    &__message {
+        margin-top: rem(16px);
+    }
+    &__section {
+        padding: rem(24px);
+        border: $border-E3E7E8;
+        border-radius: rem(12px);
+        margin-bottom: rem(24px);
+    }
+    &__text {
+        margin-top: rem(16px);
     }
 }

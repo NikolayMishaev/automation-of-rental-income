@@ -2135,6 +2135,8 @@ button {
 .icon {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 .icon_logo {
@@ -2216,35 +2218,39 @@ button {
 }
 
 .icon_message {
-  background: url("./../images/icons/profile-message.svg") no-repeat center;
+  background: url("./../images/icons/profile-message.svg");
 }
 
 .icon_message_active {
-  background: url("./../images/icons/profile-message-active.svg") no-repeat center;
+  background: url("./../images/icons/profile-message-active.svg");
 }
 
 .icon_ring {
-  background: url("./../images/icons/profile-ring.svg") no-repeat center;
+  background: url("./../images/icons/profile-ring.svg");
 }
 
 .icon_ring_active {
-  background: url("./../images/icons/profile-ring-active.svg") no-repeat center;
+  background: url("./../images/icons/profile-ring-active.svg");
 }
 
 .icon_document {
-  background: url("./../images/icons/profile-document.svg") no-repeat center;
+  background: url("./../images/icons/profile-document.svg");
 }
 
 .icon_document_active {
-  background: url("./../images/icons/profile-document-active.svg") no-repeat center;
+  background: url("./../images/icons/profile-document-active.svg");
 }
 
 .icon_send-message {
-  background: url("./../images/icons/profile-send-message.svg") no-repeat center;
+  background: url("./../images/icons/profile-send-message.svg");
 }
 
 .icon_edit-avatar {
-  background: url("./../images/icons/profile-edit-avatar.svg") no-repeat center;
+  background: url("./../images/icons/profile-edit-avatar.svg");
+}
+
+.icon_on-checking {
+  background: url("./../images/icons/profile-status-on-checking.svg");
 }
 
 .list-positions {
@@ -4160,6 +4166,12 @@ button {
   background-color: transparent;
   color: #6C737D;
   padding: 0.5rem 1rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.prof-general__button:hover {
+  opacity: .7;
 }
 
 .prof-general__button_active {
@@ -4190,6 +4202,21 @@ button {
 
 .prof-general__content {
   padding: 1.5rem;
+}
+
+.prof-general__message {
+  margin-top: 1rem;
+}
+
+.prof-general__section {
+  padding: 1.5rem;
+  border: 1px solid #E3E7E8;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.prof-general__text {
+  margin-top: 1rem;
 }
 
 .prof-item {
@@ -4246,5 +4273,35 @@ button {
   background-color: transparent;
   border: 0.0625rem solid #cfd4dc;
   border-radius: 0.25rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.prof-item__button:hover {
+  opacity: .7;
+}
+
+.prof-item__button_type_form {
+  background-color: #2a9b43;
+  color: white;
+  border: none;
+}
+
+.prof-item__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.prof-item__status {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding-left: 1.0625rem;
+  background-position: 0 1px !important;
 }
 /*# sourceMappingURL=style.css.map */
