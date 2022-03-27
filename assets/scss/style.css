@@ -981,7 +981,6 @@ main .container {
   }
 }
 
-@use "./prop-mix" as *;
 .modal {
   display: none;
   -webkit-box-pack: center;
@@ -1000,6 +999,22 @@ main .container {
   background-color: rgba(60, 65, 66, 0.6);
 }
 
+.modal__title_style_main {
+  margin-bottom: 0.75rem;
+}
+
+.modal_type_header {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(4);
+          transform: scale(4);
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: -1;
+}
+
 .modal__content {
   border-radius: 12px;
   background-color: white;
@@ -1012,6 +1027,12 @@ main .container {
   .modal__content {
     width: 100%;
     margin: 0 16px;
+  }
+  .modal__content_style_main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 1.5rem;
   }
 }
 
@@ -1032,6 +1053,10 @@ main .container {
   .modal__header {
     padding: 16px 12px 16px 24px;
   }
+  .modal__header_style_main {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .modal__close-btn {
@@ -1048,6 +1073,14 @@ main .container {
           justify-content: center;
   background-color: transparent;
   border: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.modal__close-btn:hover {
+  opacity: 0.7;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .modal__body {
@@ -4120,3 +4153,4 @@ main .container {
   background-color: #2a9b43;
   color: white;
 }
+/*# sourceMappingURL=style.css.map */
