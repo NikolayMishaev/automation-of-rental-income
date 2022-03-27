@@ -7,6 +7,9 @@
     opacity: 0;
     cursor: pointer;
   }
+  @media #{$screen-mobile} {
+    flex-direction: column;
+  }
   &__custom-checkmark {
     width: 16px;
     height: 16px;
@@ -28,6 +31,7 @@
       position: absolute;
     }
   }
+
   &__container
     input:checked
     ~ .group-radio-btn__inner
