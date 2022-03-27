@@ -2253,6 +2253,14 @@ button {
   background: url("./../images/icons/profile-status-on-checking.svg");
 }
 
+.icon_add-file {
+  background: url("./../images/icons/profile-add-file.svg");
+}
+
+.icon_delete {
+  background: url("./../images/icons/profile-delte-file.svg");
+}
+
 .list-positions {
   position: relative;
   color: #222429;
@@ -3746,6 +3754,10 @@ button {
   height: 990px;
 }
 
+.mix-display-none {
+  display: none !important;
+}
+
 .mix-visible {
   opacity: 1 !important;
   visibility: visible !important;
@@ -4200,6 +4212,13 @@ button {
           align-items: flex-start;
 }
 
+.prof-general__list-sections_direction_row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .prof-general__content {
   padding: 1.5rem;
 }
@@ -4234,6 +4253,10 @@ button {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.prof-item_direction_row {
+  margin-right: 1rem;
 }
 
 .prof-item__content {
@@ -4278,13 +4301,44 @@ button {
 }
 
 .prof-item__button:hover {
-  opacity: .7;
+  cursor: pointer;
+  opacity: 0.7;
 }
 
 .prof-item__button_type_form {
   background-color: #2a9b43;
   color: white;
   border: none;
+}
+
+.prof-item__button_type_add-file {
+  position: relative;
+  height: 2rem;
+  padding-right: 12px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0;
+  margin-top: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10rem;
+  color: #222429;
+  background-position: 10px 9px !important;
+}
+
+.prof-item__button_type_hidden {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .prof-item__group {
@@ -4303,5 +4357,11 @@ button {
   margin-top: 0.5rem;
   padding-left: 1.0625rem;
   background-position: 0 1px !important;
+}
+
+.prof-item__icon-delete {
+  width: 0.5625rem;
+  height: 0.5625rem;
+  margin-left: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

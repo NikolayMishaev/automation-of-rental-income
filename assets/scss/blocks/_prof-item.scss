@@ -5,6 +5,9 @@
         flex-direction: column;
         align-items: flex-start;
     }
+    &_direction_row {
+        margin-right: rem(16px);
+    }
     &__content {
         height: rem(80px);
         border: $border-CFD4DC;
@@ -35,12 +38,35 @@
         border-radius: rem(4px);
         transition: $transition;
         &:hover {
-            opacity: .7;
+            cursor: pointer;
+            opacity: 0.7;
         }
         &_type_form {
             background-color: $accent-TCX50;
             color: white;
             border: none;
+        }
+        &_type_add-file {
+            position: relative;
+            height: rem(32px);
+            padding-right: 12px;
+            justify-content: flex-end;
+            margin: 0;
+            margin-top: rem(20px);
+            display: flex;
+            align-items: center;
+            width: rem(160px);
+            color: $grey100;
+            background-position: 10px 9px !important;
+        }
+        &_type_hidden {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
     }
     &__group {
@@ -52,6 +78,11 @@
         width: 100%;
         margin-top: rem(8px);
         padding-left: rem(17px);
-        background-position: 0 1px !important
+        background-position: 0 1px !important;
+    }
+    &__icon-delete {
+        width: rem(9px);
+        height: rem(9px);
+        margin-left: rem(16px);
     }
 }

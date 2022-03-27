@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/scss/style.css" />
     <title>ЛК. Физическое лицо</title>
-    <script defer src="./assets/js/main-page.js"></script>
+    <script defer src="./assets/js/personal-account-private-person.js"></script>
 </head>
 
 <body class="body">
@@ -163,11 +163,12 @@
                             <nav class="prof-general__navigation">
                                 <!-- активный таб имеет класс: prof-general__button_active -->
                                 <button type="button"
-                                    class="prof-general__button prof-general__button_active text-p1">Документы</button>
-                                <button type="button" class="prof-general__button text-p1">Избранные объекты</button>
-                                <button type="button" class="prof-general__button text-p1">О себе</button>
+                                    aria-label="documents" class="prof-general__button prof-general__button_active text-p1">Документы</button>
+                                <button aria-label="favourites" type="button" class="prof-general__button text-p1">Избранные объекты</button>
+                                <button aria-label="about-me" type="button" class="prof-general__button text-p1">О себе</button>
                             </nav>
-                            <!-- <div class="prof-general__content">
+
+                            <div aria-label="documents" id="documents" class="prof-general__content">
                                 <h3 class="prof-general__subtitle heading-h3">Анкета контрагента</h3>
                                 <ul class="prof-general__list-sections">
                                     <li class="prof-item">
@@ -226,9 +227,11 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </div> -->
+                            </div>
 
-                            <div class="prof-general__content">
+                            <div aria-label="favourites" id="favourites" class="prof-general__content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, voluptas expedita labore perferendis eligendi molestias quo culpa natus velit officia?</div>
+
+                            <div aria-label="about-me" id="about-me" class="prof-general__content">
                                 <div class="prof-general__section">
                                     <h3 class="prof-general__subtitle heading-h3">Вид деятельности</h3>
                                     <p class="prof-general__text text-p1">Продаю орехи. В свободное время делаю ключи</p>
@@ -247,26 +250,32 @@
                                     <p class="prof-general__text text-p1">Добро пожаловать!</p>
                                 </div>
                                 <h3 class="prof-general__subtitle heading-h3">Дополнительные вложения</h3>
-                                <ul class="prof-general__list-sections prof-general__list-sections_size_small">
-                                    <li class="prof-item prof-item_size_small">
+                                <ul class="prof-general__list-sections prof-general__list-sections_size_small prof-general__list-sections_direction_row">
+                                    <li class="prof-item prof-item_size_small prof-item_direction_row">
                                         <div class="prof-item__content prof-item__content_size_small">
                                             <div class="prof-item__icon icon icon_document_active"></div>
                                             <h4 class="prof-item__title-file heading-h4">scan_inn.jpg</h4>
+                                            <div class="prof-item__icon-delete icon icon_delete"></div>
                                         </div>
                                     </li>
-                                    <li class="prof-item prof-item_size_small">
+                                    <li class="prof-item prof-item_size_small prof-item_direction_row">
                                         <div class="prof-item__content prof-item__content_size_small">
                                             <div class="prof-item__icon icon icon_document_active"></div>
                                             <h4 class="prof-item__title-file heading-h4">scan_inn.jpg</h4>
+                                            <div class="prof-item__icon-delete icon icon_delete"></div>
                                         </div>
                                     </li>
-                                    <li class="prof-item prof-item_size_small">
+                                    <li class="prof-item prof-item_size_small prof-item_direction_row">
                                         <div class="prof-item__content prof-item__content_size_small">
                                             <div class="prof-item__icon icon icon_document_active"></div>
                                             <h4 class="prof-item__title-file heading-h4">scan_inn.jpg</h4>
+                                            <div class="prof-item__icon-delete icon icon_delete"></div>
                                         </div>
                                     </li>
                                     </ul>
+                                    <label class="prof-item__button prof-item__button_type_add-file text-p1 icon icon_add-file">Добавить файл
+                                        <input type="file" class="prof-item__button prof-item__button_type_hidden"></input>
+                                    </label>
                             </div>
 
                         </div>
