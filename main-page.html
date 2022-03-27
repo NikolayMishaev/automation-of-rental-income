@@ -571,16 +571,16 @@
                 <label class="main-form__label">
                     Размер площади
                     <div class="main-form__two-column">
-                        <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                        <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                        <input type="number" class="main-form__input main-form__input_style_two-column" min="0" step="5" placeholder="От">
+                        <input type="number" class="main-form__input main-form__input_style_two-column" min="0" step="5" placeholder="До">
                         <p class="main-form__text-value">м<span class="main-form__text-upper-index">2</span></p>
                     </div>
                 </label>
                 <label class="main-form__label">
                     Размер арендной платы (за объект)
                     <div class="main-form__two-column">
-                        <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                        <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                        <input type="number" class="main-form__input main-form__input_style_two-column" min="0" step="1000" placeholder="От">
+                        <input type="number" class="main-form__input main-form__input_style_two-column" min="0" step="1000" placeholder="До">
                         <p class="main-form__text-value">&#8381;</p>
                     </div>
                 </label>
@@ -588,8 +588,8 @@
                     <label class="main-form__label">
                         <p class="main-form__text-value main-form__text-value_style_label">Размер арендной ставки (м<span class="main-form__text-upper-index">2</span>)</p>
                         <div class="main-form__two-column">
-                            <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                            <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="До">
+                            <input type="number" class="main-form__input main-form__input_style_two-column" min="0" step="1000" placeholder="От">
+                            <input type="number" class="main-form__input main-form__input_style_two-column" min="0" step="1000" placeholder="До">
                             <p class="main-form__text-value">&#8381;</p>
                         </div>
                     </label>
@@ -610,8 +610,8 @@
                     <label class="main-form__label">
                         Этажность
                         <div class="main-form__two-column">
-                            <input type="number" class="main-form__input main-form__input_style_two-column" placeholder="От">
-                            <input type="number" class="main-form__input main-form__input_style_two-column main-form__input_style_no-right-margin" placeholder="До">
+                            <input type="number" class="main-form__input main-form__input_style_two-column" min="-3" placeholder="От">
+                            <input type="number" class="main-form__input main-form__input_style_two-column main-form__input_style_no-right-margin" min="-3" placeholder="До">
                         </div>
                     </label>
                     <label class="main-form__label main-form__label_type_select">

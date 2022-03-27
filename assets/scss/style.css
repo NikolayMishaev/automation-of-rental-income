@@ -2742,7 +2742,7 @@ main .container {
   }
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
   .main__column_type_price {
     width: 100%;
   }
@@ -2756,13 +2756,12 @@ main .container {
 
 @media (max-width: 93.75rem) {
   .main__column_type_filters {
-    display: none;
     width: 40%;
     min-width: 312px;
   }
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 80rem) {
   .main__column_type_filters {
     width: 100%;
   }
@@ -2770,7 +2769,7 @@ main .container {
 
 @media (max-width: 40rem) {
   .main__column_type_filters {
-    padding: 1rem;
+    padding: 1.5rem 0 0.5rem;
     width: 100%;
   }
 }
@@ -3889,6 +3888,12 @@ main .container {
   color: #3c4142;
 }
 
+@media (max-width: 40rem) {
+  .main-form__label {
+    padding: 0.75rem;
+  }
+}
+
 .main-form__label-checkbox {
   padding-right: 16px;
   border: 1px solid #e3e7e8;
@@ -3907,6 +3912,12 @@ main .container {
   line-height: 24px;
   letter-spacing: 0.12px;
   color: #6c737d;
+}
+
+@media (max-width: 40rem) {
+  .main-form__label-checkbox {
+    padding-right: 0;
+  }
 }
 
 .main-form__label-checkbox:first-child {
@@ -3959,6 +3970,8 @@ main .container {
   width: 16px;
   height: 16px;
   margin: 15px 8px 15px 12px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .main-form__two-column {
@@ -3978,6 +3991,7 @@ main .container {
 }
 
 .main-form__text-value {
+  margin-top: 1rem;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -3990,6 +4004,7 @@ main .container {
 }
 
 .main-form__text-value_style_label {
+  margin-top: 0;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
