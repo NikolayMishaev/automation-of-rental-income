@@ -28,6 +28,11 @@
         bottom: 0;
         width: rem(12px);
         height: rem(12px);
+        transition: $transition;
+        &:hover {
+            cursor: pointer;
+            opacity: .7;
+        }
     }
     &__body {
         border: rem(1px) solid #d0d7d9;
@@ -43,10 +48,25 @@
         height: rem(40px);
         border: none;
         background-color: transparent;
-        color: $grey100;
+        color: $grey60-2;
         padding: rem(8px) rem(16px);
         &_active {
-
+            border-bottom: 1px solid $accent-TCX50;
+            color: $grey100;
         }
+    }
+    &__list-sections {
+        padding-bottom: rem(24px);
+        display: flex;
+        flex-direction: column;
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+        &_size_small {
+            align-items: flex-start;
+        }
+    }
+    &__content {
+        padding: rem(24px);
     }
 }
