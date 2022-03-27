@@ -7,4 +7,43 @@
         opacity: 0 !important;
         visibility: hidden !important;
     }
+    &-scrollbar {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
+    &-scrollbar-only-horizontal {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:vertical {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
+    &-scrollbar-only-vertical {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
 }

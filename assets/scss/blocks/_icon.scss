@@ -56,4 +56,28 @@
         height: rem(11px);
         margin-left: rem(13px);
     }
+    &_message {
+        background: url('./../images/icons/profile-message.svg') no-repeat center;
+        &_active {
+            background: url('./../images/icons/profile-message-active.svg') no-repeat center;
+        }
+    }
+    &_ring {
+        background: url('./../images/icons/profile-ring.svg') no-repeat center;
+        &_active {
+            background: url('./../images/icons/profile-ring-active.svg') no-repeat center;
+        }
+    }
+    &_document {
+        background: url('./../images/icons/profile-document.svg') no-repeat center;
+        &_active {
+            background: url('./../images/icons/profile-document-active.svg') no-repeat center;
+        }
+    }
+    &_send-message {
+        background: url('./../images/icons/profile-send-message.svg') no-repeat center;
+    }
+    &_edit-avatar {
+        background: url('./../images/icons/profile-edit-avatar.svg') no-repeat center;
+    }
 }
