@@ -49,23 +49,30 @@
                   <h3>Общая информация</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Фамилия</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите фамилию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фамилию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Имя</span>
-                    <input class="registration-form__input" type="text" placeholder="Введите имя" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите имя</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Отчество</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите отчество"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите отчество</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Дата рождения</div>
@@ -83,52 +90,57 @@
                   <h3>Данные контрагента</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Место рождения</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите место рождения"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите место рождения</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Адрес регистрации</span>
-                    <input
-                      required
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите адрес регистрации"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите адрес регистрации</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Адрес проживания</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите адрес проживания"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите адрес проживания</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">ИНН</span>
-                    <input
-                      class="registration-form__input"
-                      placeholder="Введите ИНН*"
-                      type="text"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ИНН</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Серия паспорта</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите серию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите серию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Кем паспорт выдан</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите организацию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите организацию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Дата выдачи паспорта</span>
@@ -143,98 +155,127 @@
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Телефон</span>
-                    <input
-                      class="registration-form__input"
-                      placeholder="Введите телефон*"
-                      type="text"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        maxlength="11"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        type="text"
+                      />
+                      <span class="custom-text-input__label">Введите телефон*</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Факс</span>
-                    <input
-                      class="registration-form__input"
-                      placeholder="Введите факс"
-                      type="text"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите факс</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">E-mail</span>
-                    <input
-                      type="email"
-                      class="registration-form__input"
-                      placeholder="Введите E-mail*"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите E-mail*</span>
+                    </label>
                   </div>
                 </div>
                 <div class="registration-form__step3 registration-form__step" style="display: none">
                   <h3>Реквизиты</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Наименование получателя платежа</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите получателя платежа"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите получателя платежа</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Страна банка</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите страну банка*"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите страну банка</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Наименование банка</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите наименование банка*"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите наименование банка*</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Адрес банка</span>
-                    <input
-                      class="registration-form__input"
-                      placeholder="Введите адрес"
-                      type="text"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите адрес</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">БИК банка</span>
-                    <input type="text" class="registration-form__input" placeholder="Введите БИК" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите БИК</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Расчётный счёт</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите расчётный счёт"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите расчетный счет</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Корр счёт банка</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите корр счёт"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите корр счет</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">SWIFT</span>
-                    <input class="registration-form__input" placeholder="Введите SWIFT" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите SWIFT</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">IBAN</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите IBAN"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите IBAN</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">ABA</span>
-                    <input type="text" class="registration-form__input" placeholder="Введите ABA" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ABA</span>
+                    </label>
                   </div>
                 </div>
                 <div class="registration-form__step4 registration-form__step" style="display: none">
@@ -413,9 +454,9 @@
               <a class="registration-form__link" href="#">Пользовательское соглашение</a>
             </p>
             <div class="registration-form__btn-group">
-              <button class="registration-form__cancel-btn">Отмена</button>
-              <button class="registration-form__next-btn">Далее</button>
-              <button class="registration-form__submit-btn">Сохранить</button>
+              <div class="registration-form__cancel-btn">Отмена</div>
+              <div class="registration-form__next-btn">Далее</div>
+              <div class="registration-form__submit-btn">Сохранить</div>
             </div>
           </form>
           <form class="registration-form_juridical" action="">
@@ -436,19 +477,40 @@
                   <h3>Регистрационные данные компании/ИП</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Признак компании</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите фамилию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_select registration-form__input"
+                    >
+                      <input type="text" disabled />
+                      <span class="custom-text-input__label">Выберите признак</span>
+                      <div class="registration-form__select-icon">
+                        <svg
+                          width="12"
+                          height="8"
+                          viewBox="0 0 12 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9.87998 1.29055L5.99998 5.17055L2.11998 1.29055C1.72998 0.900547 1.09998 0.900547 0.70998 1.29055C0.31998 1.68055 0.31998 2.31055 0.70998 2.70055L5.29998 7.29055C5.68998 7.68055 6.31998 7.68055 6.70998 7.29055L11.3 2.70055C11.69 2.31055 11.69 1.68055 11.3 1.29055C10.91 0.910547 10.27 0.900547 9.87998 1.29055Z"
+                            fill="#6C737D"
+                          />
+                        </svg>
+                      </div>
+                      <ul class="custom-text-input__option-list">
+                        <!-- заполнить Список -->
+                        <li data-value="1" class="custom-text-input__option">1</li>
+                        <li data-value="2" class="custom-text-input__option">2</li>
+                      </ul>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Полное наименование</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите полное наименование"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите полное наименование</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label"
@@ -457,67 +519,75 @@
                         >(только для нерезидентов)</span
                       >
                     </span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите наименование на английском"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите наименование</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Сокращённое наименование</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите сокращенное наименование"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите сокращенное наименование</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Форма собственности</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите сокращенное наименование"
-                    />
-                  </div>
-                  <div class="registration-form__row">
-                    <div class="registration-form__label">Введите форму собственности</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите сокращенное наименование"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите форму собственности</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">ОГРН/ОГРНИП</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите ОГРН/ОГРНИП"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ОГРН/ОГРНИП</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">ИНН</div>
-                    <input class="registration-form__input" type="text" placeholder="Введите ИНН" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ИНН</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">КПП</div>
-                    <input class="registration-form__input" type="text" placeholder="Введите КПП" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите КПП</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">ОКПО</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите ОКПО"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ОКПО</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">ОКВЭД</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите ОКВЭД"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ОКВЭД</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">
@@ -526,19 +596,21 @@
                         >(для нерезидентов - на английском)</span
                       >
                     </div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите юридический адрес"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите юридический адрес</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Фактический адрес</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите фактический адрес"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фактический адрес</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Дата регистрации</div>
@@ -555,35 +627,43 @@
                     <div class="registration-form__label">
                       Наименование и номер регистрирующего органа
                     </div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите наименование и номер"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите наименование и номер</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Телефон</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите телефон*"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        type="text"
+                        maxlength="11"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                      />
+                      <span class="custom-text-input__label">Введите телефон*</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Факс</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите факс"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите факс</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">E-mail</div>
-                    <input
-                      class="registration-form__input"
-                      type="email"
-                      placeholder="Введите E-mail*"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите E-mail*</span>
+                    </label>
                   </div>
                 </div>
                 <div class="registration-form__step2 registration-form__step" style="display: none">
@@ -595,11 +675,12 @@
                         >(если не совпадает с названием)</span
                       >
                     </span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите получателя платежа"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите получателя платежа</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label"
@@ -608,12 +689,12 @@
                         >(для нерезидентов - на английском)</span
                       >
                     </span>
-                    <input
-                      required
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите страну банка*"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите страну банка*</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label"
@@ -622,11 +703,12 @@
                         >(для нерезидентов - на английском)</span
                       ></span
                     >
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите наименование банка*"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите наименование банка*</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label"
@@ -635,74 +717,96 @@
                         >(для нерезидентов - на английском)</span
                       ></span
                     >
-                    <input
-                      class="registration-form__input"
-                      placeholder="Введите адрес"
-                      type="text"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите адрес</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">БИК банка</span>
-                    <input class="registration-form__input" placeholder="Введите БИК" type="text" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите БИК</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Расчётный счёт</span>
-                    <input
-                      class="registration-form__input"
-                      placeholder="Введите расчётный счёт"
-                      type="text"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите расчетный счет</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Корр счёт банка</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите корр счёт"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите корр счет</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">SWIFT</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите SWIFT"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите SWIFT</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">IBAN</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите IBAN"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите IBAN</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">ABA</span>
-                    <input type="text" class="registration-form__input" placeholder="Введите ABA" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ABA</span>
+                    </label>
                   </div>
                 </div>
                 <div class="registration-form__step3 registration-form__step" style="display: none">
                   <h3>Генеральный директор/Руководитель</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Фамилия</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите фамилию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фамилию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Имя</span>
-                    <input class="registration-form__input" type="text" placeholder="Введите имя" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите имя</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Отчество</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите отчество"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите отчество</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Дата рождения</span>
@@ -716,19 +820,21 @@
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Серия паспорта</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите серию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите серию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Кем паспорт выдан</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите организацию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите организацию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Дата выдачи паспорта</span>
@@ -745,23 +851,30 @@
                   <h3>Доверенное лицо</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Фамилия</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите фамилию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фамилию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Имя</span>
-                    <input class="registration-form__input" type="text" placeholder="Введите имя" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите имя</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Отчество</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите отчество"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите отчество</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Дата рождения</span>
@@ -775,19 +888,21 @@
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Серия паспорта</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите серию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите серию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Кем паспорт выдан</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите организацию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите организацию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Дата выдачи паспорта</span>
@@ -804,23 +919,30 @@
                   <h3>Конечный бенефициар (физическое лицо)</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Фамилия</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите фамилию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фамилию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Имя</span>
-                    <input class="registration-form__input" type="text" placeholder="Введите имя" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите имя</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Отчество</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите отчество"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите отчество</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Дата рождения</span>
@@ -834,19 +956,21 @@
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Серия паспорта</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите серию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите серию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Кем паспорт выдан</span>
-                    <input
-                      type="text"
-                      class="registration-form__input"
-                      placeholder="Введите организацию"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите организацию</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Дата выдачи паспорта</span>
@@ -858,94 +982,88 @@
                       /><span class="label-date">Дата выдачи</span></label
                     >
                   </div>
-                  <button class="registration-form__add-btn">Добавить бенефициара</button>
+                  <div class="registration-form__row">
+                    <!-- эту кнопку видно при каких то условиях.  -->
+                    <button class="registration-form__add-btn registration-form__add-btn_del">
+                      Удалить бенефициара
+                    </button>
+                    <!-- конец -->
+                    <button class="registration-form__add-btn">Добавить бенефициара</button>
+                  </div>
                 </div>
                 <div class="registration-form__step6 registration-form__step" style="display: none">
                   <h3>Конечный бенефициар (юридическое лицо)</h3>
                   <div class="registration-form__row">
-                    <span class="registration-form__label">Признак компании</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите фамилию"
-                    />
-                  </div>
-                  <div class="registration-form__row">
                     <span class="registration-form__label">Полное наименование</span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите полное наименование"
-                    />
-                  </div>
-                  <div class="registration-form__row">
-                    <span class="registration-form__label"
-                      >Наименование на английском языке
-                      <span class="registration-form__label-subtitle"
-                        >(только для нерезидентов)</span
-                      >
-                    </span>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите наименование на английском"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите наименование</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Сокращённое наименование</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите сокращенное наименование"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите сокращенное наименование</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Форма собственности</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите сокращенное наименование"
-                    />
-                  </div>
-                  <div class="registration-form__row">
-                    <div class="registration-form__label">Введите форму собственности</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите сокращенное наименование"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите форму собственности</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">ОГРН/ОГРНИП</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите ОГРН/ОГРНИП"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ОГРН/ОГРНИП</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">ИНН</div>
-                    <input class="registration-form__input" type="text" placeholder="Введите ИНН" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ИНН</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">КПП</div>
-                    <input class="registration-form__input" type="text" placeholder="Введите КПП" />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите КПП</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">ОКПО</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите ОКПО"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ОКПО</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">ОКВЭД</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите ОКВЭД"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ОКВЭД</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">
@@ -954,19 +1072,21 @@
                         >(для нерезидентов - на английском)</span
                       >
                     </div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите юридический адрес"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите юридический адрес</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Фактический адрес</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите фактический адрес"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фактический адрес</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Дата регистрации</div>
@@ -983,35 +1103,50 @@
                     <div class="registration-form__label">
                       Наименование и номер регистрирующего органа
                     </div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите наименование и номер"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите наименование и номер</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Телефон</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите телефон*"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        type="text"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                      />
+                      <span class="custom-text-input__label">Введите наименование и номер</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">Факс</div>
-                    <input
-                      class="registration-form__input"
-                      type="text"
-                      placeholder="Введите факс"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите факс</span>
+                    </label>
                   </div>
                   <div class="registration-form__row">
                     <div class="registration-form__label">E-mail</div>
-                    <input
-                      class="registration-form__input"
-                      type="email"
-                      placeholder="Введите E-mail*"
-                    />
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите E-mail</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <!-- эту кнопку видно при каких то условиях.  -->
+                    <button class="registration-form__add-btn registration-form__add-btn_del">
+                      Удалить бенефициара
+                    </button>
+                    <!-- конец -->
+                    <button class="registration-form__add-btn">Добавить бенефициара</button>
                   </div>
                 </div>
                 <div class="registration-form__step7 registration-form__step" style="display: none">
@@ -1190,14 +1325,47 @@
               <a class="registration-form__link" href="#">Пользовательское соглашение</a>
             </p>
             <div class="registration-form__btn-group">
-              <button class="registration-form__cancel-btn">Отмена</button>
-              <button class="registration-form__next-btn">Далее</button>
-              <button class="registration-form__submit-btn">Сохранить</button>
+              <div class="registration-form__cancel-btn">Отмена</div>
+              <div class="registration-form__next-btn">Далее</div>
+              <div class="registration-form__submit-btn">Сохранить</div>
             </div>
           </form>
         </div>
       </div>
+      <div class="modal modal-warning-registration">
+        <div class="modal__content content-offer-price">
+          <div class="modal__header">
+            <h3>Предупреждение</h3>
+            <button class="modal__close-btn">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                  fill="#6C737D"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="modal__body">
+            <p class="modal__text-info">
+              Не все поля заполнены! <br /><br />
+              Вы можете сохранить анкету и дополнить её позже. Все ваши данные будут сохранены
+            </p>
+          </div>
+          <div class="modal__footer">
+            <button class="modal__cancel-btn">Отмена</button>
+            <button class="modal__secondary-btn">Дополнить</button>
+            <button class="modal__login-btn">Сохранить</button>
+          </div>
+        </div>
+      </div>
     </div>
+
     <script src="./assets/js/tabs.js"></script>
     <script type="module" src="./assets/js/script.js"></script>
   </body>

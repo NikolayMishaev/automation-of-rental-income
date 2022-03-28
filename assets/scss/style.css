@@ -1227,13 +1227,13 @@ main .container {
   border-radius: 4px;
   background-color: white;
   position: relative;
+  display: block;
 }
 
 .custom-text-input input {
   width: 100%;
   height: 100%;
   border: none;
-  height: 48px;
   padding: 20px 12px 4px;
   font-size: 16px;
   color: #222429;
@@ -1244,8 +1244,32 @@ main .container {
   outline: none;
 }
 
-.custom-text-input__label {
+.custom-text-input input:focus + span {
   color: #6d7678;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 12px;
+  position: absolute;
+  top: 4px;
+  left: 12px;
+  line-height: 16px;
+}
+
+.custom-text-input__label {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #6d7678;
+  font-size: 16px;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  line-height: 24px;
+}
+
+.custom-text-input__label_full {
+  color: #6d7678;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   font-size: 12px;
   position: absolute;
   top: 4px;
@@ -1268,9 +1292,20 @@ main .container {
   outline: none;
 }
 
+.custom-text-input textarea:focus + span {
+  color: #6d7678;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 12px;
+  position: absolute;
+  top: 1px;
+  left: 12px;
+  line-height: 16px;
+}
+
 .custom-text-input textarea ~ span {
   background-color: white;
-  top: 0;
+  top: 1px;
   padding-top: 4px;
   width: calc(100% - 24px);
 }
@@ -1405,7 +1440,6 @@ main .container {
         -ms-flex: auto;
             flex: auto;
     width: 100%;
-    height: 34px;
   }
 }
 
@@ -1434,12 +1468,24 @@ main .container {
 @media (max-width: 40rem) {
   .regisrtation-page .input-date__container .label-date {
     top: 1px;
-    height: 32px;
   }
+}
+
+.regisrtation-page .input-date__container .registration-form__input {
+  padding: 12px;
 }
 
 .regisrtation-page .registration-form__input:focus + .label-date {
   display: none !important;
+}
+
+.regisrtation-page .modal__secondary-btn {
+  border-radius: 4px;
+  border: 1px solid #cfd4dc;
+  color: #222429;
+  background-color: white;
+  line-height: 22px;
+  margin-right: 8px;
 }
 
 .registration-form {
@@ -1450,6 +1496,25 @@ main .container {
   .registration-form {
     margin-top: 16px;
   }
+}
+
+.registration-form__select-icon {
+  position: absolute;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  right: 10px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .registration-form__tabs {
@@ -1602,14 +1667,53 @@ main .container {
   max-width: 552px;
 }
 
+.registration-form .custom-text-input_select {
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.registration-form .custom-text-input__option-list {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-top: 4px;
+  width: calc(100%);
+  z-index: 1;
+  padding: 12px 0;
+  background-color: white;
+  -webkit-box-shadow: 0px 6px 10px rgba(80, 86, 94, 0.02), 0px 2px 18px rgba(80, 86, 94, 0.12), 0px 4px 5px rgba(80, 86, 94, 0.12);
+          box-shadow: 0px 6px 10px rgba(80, 86, 94, 0.02), 0px 2px 18px rgba(80, 86, 94, 0.12), 0px 4px 5px rgba(80, 86, 94, 0.12);
+  border-radius: 8px;
+}
+
+.registration-form .custom-text-input .custom-text-input__option-list_active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.registration-form .custom-text-input__option {
+  padding: 0 12px;
+}
+
+.registration-form .custom-text-input__option:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #2a9b43;
+  color: white;
+}
+
 .registration-form__input {
   -webkit-box-flex: 428px;
       -ms-flex: 428px;
           flex: 428px;
   border: 1px solid #cfd4dc;
   border-radius: 4px;
-  padding: 12px;
   line-height: 24px;
+  height: 44px;
+  overflow: hidden;
 }
 
 @media (max-width: 40rem) {
@@ -1617,7 +1721,6 @@ main .container {
     -webkit-box-flex: 1;
         -ms-flex: auto;
             flex: auto;
-    padding: 4px 12px;
     width: 100%;
   }
 }
@@ -1637,6 +1740,16 @@ main .container {
   margin-right: 16px;
   width: 205px;
   height: 40px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 40rem) {
@@ -1653,6 +1766,16 @@ main .container {
   line-height: 24px;
   width: 205px;
   height: 40px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 40rem) {
@@ -1667,9 +1790,19 @@ main .container {
   color: white;
   background-color: #2a9b43;
   line-height: 24px;
+  cursor: pointer;
   display: none;
   width: 205px;
   height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 40rem) {
@@ -1689,6 +1822,10 @@ main .container {
   padding: 4px;
 }
 
+.registration-form__add-btn_del {
+  margin-right: 16px;
+}
+
 .registration-form__link {
   color: #1565c0;
 }
@@ -1701,10 +1838,6 @@ main .container {
 
 .registration-form input:focus {
   outline: none;
-}
-
-.registration-form .custom-text-input__label {
-  padding-top: 12px;
 }
 
 .registration-form__download-btn {
@@ -1757,6 +1890,14 @@ main .container {
   display: block;
   font-size: 0.75rem;
   color: #6d7678;
+}
+
+.registration-form input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url(/assets/images/icons/calendar.svg) no-repeat;
+  border-width: thin;
 }
 
 .registration-form_juridical {

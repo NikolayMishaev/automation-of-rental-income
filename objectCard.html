@@ -1209,7 +1209,7 @@
                 Введите размер арендной ставки за м2
               </p>
               <div class="input-container">
-                <div class="custom-text-input">
+                <label class="custom-text-input">
                   <span class="custom-text-input__label">Арендная ставка</span>
                   <input
                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
@@ -1217,7 +1217,7 @@
                     maxlength="10"
                     required
                   />
-                </div>
+                </label>
                 <div class="custom-text-input__icon">₽</div>
               </div>
             </div>
@@ -1357,19 +1357,18 @@
               id="contact-form1"
             >
               <div class="contact-form__row">
-                <div class="custom-text-input custom-text-input_name">
-                  <span class="custom-text-input__label">Ваше имя *</span>
+                <label class="custom-text-input custom-text-input_name">
                   <input type="text" maxlength="50" required />
-                </div>
-                <div class="custom-text-input custom-text-input_tel">
-                  <span class="custom-text-input__label">Ваш телефон</span>
+                  <span class="custom-text-input__label">Ваше имя *</span>
+                </label>
+                <label class="custom-text-input custom-text-input_tel">
                   <input
                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                     type="text"
                     class="input-tel"
                     maxlength="11"
-                  />
-                </div>
+                  /><span class="custom-text-input__label">Ваш телефон</span>
+                </label>
               </div>
               <p class="contact-form__time-info">
                 *Срок обработки заявки 1 рабочий день
@@ -1382,33 +1381,33 @@
               id="contact-form2"
             >
               <div class="contact-form__row">
-                <div class="custom-text-input custom-text-input_name">
-                  <span class="custom-text-input__label">Ваше имя *</span>
+                <label class="custom-text-input custom-text-input_name">
                   <input type="text" maxlength="50" required />
-                </div>
-                <div class="custom-text-input custom-text-input_tel">
+                  <span class="custom-text-input__label">Ваше имя *</span>
+                </label>
+                <label class="custom-text-input custom-text-input_tel">
+                  <input
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                  type="text"
+                  class="input-tel"
+                  maxlength="11"
+                />
                   <span class="custom-text-input__label">Ваш телефон</span>
+                </label>
+                <label class="custom-text-input custom-text-input_tel">
                   <input
-                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                    type="text"
-                    class="input-tel"
-                    maxlength="11"
-                  />
-                </div>
-                <div class="custom-text-input custom-text-input_tel">
+                  type="email"
+                  class="input-email"
+                  required
+                  maxlength="100"
+                />
                   <span class="custom-text-input__label">Ваш E-mail*</span>
-                  <input
-                    type="email"
-                    class="input-email"
-                    required
-                    maxlength="100"
-                  />
-                </div>
+                </label>
               </div>
-              <div class="custom-text-input custom-text-input_text">
-                <textarea name="" id="" cols="30" rows="5" required></textarea>
+              <label class="custom-text-input custom-text-input_text">
+                <textarea name="" cols="30" rows="5" required></textarea>
                 <span class="custom-text-input__label">Ваше сообщение*</span>
-              </div>
+              </label>
               <p class="contact-form__time-info">
                 *Срок обработки заявки 3 рабочих дня
               </p>
@@ -1455,10 +1454,10 @@
                   />
                 </svg>
               </button>
-              <div class="custom-text-input custom-text-input_name custom-text-input_style_main">
+              <label class="custom-text-input custom-text-input_name custom-text-input_style_main">
                 <span class="custom-text-input__label">Введите название города</span>
                 <input type="text" maxlength="50" />
-              </div>
+              </label>
             </div>
         <div class="modal__content modal__content_style_main">
             <ul class="list-positions list-positions_style_main list-positions_style_main-favorite-city">

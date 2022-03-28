@@ -3,6 +3,15 @@
   @media #{$screen-mobile} {
     margin-top: 16px;
   }
+  &__select-icon {
+    position: absolute;
+    transition: $transition;
+    right: 10px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+    @include flex-container;
+  }
   &__tabs {
     display: flex;
     border-radius: 12px 12px 0 0;
@@ -90,16 +99,47 @@
   .custom-text-input {
     width: 100%;
     max-width: 552px;
+    &_select {
+      position: relative;
+      overflow: visible;
+      cursor: pointer;
+    }
+    &__option-list {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition;
+      margin-top: 4px;
+      width: calc(100%);
+      z-index: 1;
+      padding: 12px 0;
+      background-color: white;
+      box-shadow: 0px 6px 10px rgba(80, 86, 94, 0.02), 0px 2px 18px rgba(80, 86, 94, 0.12),
+        0px 4px 5px rgba(80, 86, 94, 0.12);
+      border-radius: 8px;
+    }
+    .custom-text-input__option-list_active {
+      opacity: 1;
+      visibility: visible;
+    }
+    &__option {
+      padding: 0 12px;
+      &:hover {
+        transition: $transition;
+        background-color: $accent-TCX50;
+        color: white;
+      }
+    }
   }
   &__input {
     flex: 428px;
     border: 1px solid $grey30;
     border-radius: 4px;
-    padding: 12px;
     line-height: 24px;
+    height: 44px;
+    overflow: hidden;
     @media #{$screen-mobile} {
       flex: auto;
-      padding: 4px 12px;
       width: 100%;
     }
   }
@@ -111,6 +151,8 @@
     margin-right: 16px;
     width: 205px;
     height: 40px;
+    cursor: pointer;
+    @include flex-container;
     @media #{$screen-mobile} {
       height: 32px;
     }
@@ -119,15 +161,19 @@
     @include primary-btn($accent-TCX50);
     width: 205px;
     height: 40px;
+    cursor: pointer;
+    @include flex-container;
     @media #{$screen-mobile} {
       height: 32px;
     }
   }
   &__submit-btn {
     @include primary-btn($accent-TCX50);
+    cursor: pointer;
     display: none;
     width: 205px;
     height: 40px;
+    @include flex-container;
     @media #{$screen-mobile} {
       height: 32px;
     }
@@ -137,6 +183,9 @@
     width: 100%;
     margin-top: 16px;
     padding: 4px;
+    &_del {
+      margin-right: 16px;
+    }
   }
   &__link {
     color: $accent90;
@@ -148,9 +197,6 @@
   }
   input:focus {
     outline: none;
-  }
-  .custom-text-input__label {
-    padding-top: 12px;
   }
 
   &__download-btn {
@@ -180,6 +226,13 @@
     display: block;
     font-size: $font-size-very-small;
     color: $grey60;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(/assets/images/icons/calendar.svg) no-repeat;
+    border-width: thin;
   }
 }
 

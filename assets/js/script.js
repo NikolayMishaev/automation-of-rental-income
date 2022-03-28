@@ -3,29 +3,39 @@ const offerBtn = document.querySelectorAll(".info-card__offer-btn");
 const modalForm = document.querySelector(".modal-form");
 const contactBtn = document.querySelectorAll(".info-card__primary-btn");
 
+// откурыть модалку
 for (let index = 0; index < offerBtn.length; index++) {
   offerBtn[index].addEventListener("click", function () {
     modalOfferPrice.style.display = "flex";
   });
 }
+
+// открыть модалку
 for (let index = 0; index < contactBtn.length; index++) {
   contactBtn[index].addEventListener("click", function () {
     modalForm.style.display = "flex";
   });
 }
 
-modalOfferPrice.addEventListener("click", (e) => {
-  if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
-    modalOfferPrice.style.display = "none";
-  }
-});
+// закрыть модалку
+if (modalOfferPrice) {
+  modalOfferPrice.addEventListener("click", (e) => {
+    if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
+      modalOfferPrice.style.display = "none";
+    }
+  });
+}
 
-modalForm.addEventListener("click", (e) => {
-  if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
-    modalForm.style.display = "none";
-  }
-});
+// закрыть модалку
+if (modalForm) {
+  modalForm.addEventListener("click", (e) => {
+    if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
+      modalForm.style.display = "none";
+    }
+  });
+}
 
+// лькрыть модалку
 contactBtn.onclick = function () {
   modalForm.style.display = "flex";
 };
@@ -71,6 +81,8 @@ const swiper2 = new Swiper(".track-swiper", {
 
 const bellBtn = document.querySelectorAll(".info-card__icon-bell");
 
+// клик по колокольчику
+
 for (let index = 0; index < bellBtn.length; index++) {
   bellBtn[index].addEventListener("click", function () {
     this.classList.toggle("active");
@@ -80,6 +92,8 @@ for (let index = 0; index < bellBtn.length; index++) {
 const radio = document.querySelectorAll(".contact-form .group-radio-btn__radio");
 const sendBtn = document.querySelector(".modal-form .modal__login-btn");
 const formList = document.querySelectorAll(".contact-form form");
+
+// логика радио кнопок
 
 for (let index = 0; index < radio.length; index++) {
   radio[index].addEventListener("change", function (e) {
@@ -93,7 +107,6 @@ for (let index = 0; index < radio.length; index++) {
     if (value === "two") {
       const currentForm = document.querySelector(".contact-form__second-option");
       currentForm.style.display = "block";
-      console.log(currentForm.id);
       sendBtn.setAttribute("form", currentForm.id);
     }
     if (value === "three") {
@@ -104,12 +117,15 @@ for (let index = 0; index < radio.length; index++) {
   });
 }
 
+// скрыть все элементы
+
 function clear(list) {
   for (let index = 0; index < list.length; index++) {
     const element = list[index];
     element.style.display = "none";
   }
 }
+// логика placeholder на datepicker
 
 const inputDate = document.querySelectorAll(".input-date__container input");
 for (let index = 0; index < inputDate.length; index++) {
@@ -122,8 +138,26 @@ for (let index = 0; index < inputDate.length; index++) {
     }
   });
 }
+// логика placeholder на input
+
+const customInput = document.querySelectorAll(
+  ".custom-text-input input, .custom-text-input textarea"
+);
+
+for (let index = 0; index < customInput.length; index++) {
+  const element = customInput[index];
+  element.addEventListener("blur", function (e) {
+    if (e.target.value) {
+      e.target.nextElementSibling.classList.add("custom-text-input__label_full");
+    } else {
+      e.target.nextElementSibling.classList.remove("custom-text-input__label_full");
+    }
+  });
+}
 
 const regRadioBtn = document.querySelectorAll(".regisrtation-page .group-radio-btn__radio");
+
+// логика радио кнопок
 
 for (let index = 0; index < regRadioBtn.length; index++) {
   regRadioBtn[index].addEventListener("change", function (e) {
@@ -153,7 +187,6 @@ const tabListJur = document.querySelectorAll(
   ".registration-form_juridical .registration-form__tab"
 );
 const userAgreement = document.querySelectorAll(".registration-form__user-agreement");
-const tabControl = document.querySelector(".registration-form__tabs");
 const submitRegBtn = document.querySelectorAll(".registration-form__submit-btn");
 
 let currentTab = 0;
@@ -178,23 +211,23 @@ function checkLastStep(radio) {
   if (radio === 0) {
     if (currentTab === 5) {
       userAgreement[radio].style.display = "block";
-      submitRegBtn[radio].style.display = "block";
+      submitRegBtn[radio].style.display = "flex";
       tabNextBtn[radio].style.display = "none";
     } else {
       userAgreement[radio].style.display = "none";
       submitRegBtn[radio].style.display = "none";
-      tabNextBtn[radio].style.display = "block";
+      tabNextBtn[radio].style.display = "flex";
     }
   }
   if (radio === 1) {
     if (currentTabJur === 8) {
       userAgreement[radio].style.display = "block";
-      submitRegBtn[radio].style.display = "block";
+      submitRegBtn[radio].style.display = "flex";
       tabNextBtn[radio].style.display = "none";
     } else {
       userAgreement[radio].style.display = "none";
       submitRegBtn[radio].style.display = "none";
-      tabNextBtn[radio].style.display = "block";
+      tabNextBtn[radio].style.display = "flex";
     }
   }
 }
@@ -223,14 +256,60 @@ function navigateNextBtn() {
 
 const modalRWarningReg = document.querySelector(".modal-warning-registration");
 
+// открыть модалку
+
 for (let index = 0; index < submitRegBtn.length; index++) {
   submitRegBtn[index].addEventListener("click", () => {
     modalRWarningReg.style.display = "flex";
   });
 }
 
-modalRWarningReg.addEventListener("click", (e) => {
-  if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
-    modalRWarningReg.style.display = "none";
+// закрытие модалки
+
+if (modalRWarningReg) {
+  modalRWarningReg.addEventListener("click", (e) => {
+    if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
+      modalRWarningReg.style.display = "none";
+    }
+  });
+}
+
+// слушатель на клик селекта
+
+const selectReg = document.querySelectorAll(".custom-text-input_select");
+let currentSelect = null;
+let currentIcon = null;
+
+document.body.addEventListener("click", function (e) {
+  if (e.target.closest(".custom-text-input_select")) return;
+  if (currentSelect) {
+    currentSelect.classList.remove("custom-text-input__option-list_active");
+    currentIcon.style.transform = "rotate(0deg)";
+    currentSelect = null;
   }
+});
+
+for (let index = 0; index < selectReg.length; index++) {
+  const element = selectReg[index];
+  element.addEventListener("click", function (e) {
+    const select = e.currentTarget.lastElementChild;
+    const icon = document.querySelectorAll(".registration-form__select-icon")[index];
+    select.classList.add("custom-text-input__option-list_active");
+    currentSelect = select;
+    currentIcon = icon;
+    icon.style.transform = "rotate(180deg)";
+  });
+}
+
+const selectItemsReg = document.querySelector(".custom-text-input__option-list");
+
+selectItemsReg.addEventListener("click", function (e) {
+  if (e.target.tagName !== "LI") return;
+  const input = document.querySelector(".custom-text-input_select input");
+  const label = document.querySelector(".custom-text-input_select .custom-text-input__label");
+  input.value = e.target.textContent;
+  e.currentTarget.classList.remove("custom-text-input__option-list_active");
+  currentIcon.style.transform = "rotate(0deg)";
+  e.stopPropagation();
+  label.classList.add("custom-text-input__label_full");
 });
