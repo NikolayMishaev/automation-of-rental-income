@@ -304,7 +304,7 @@
         z-index: 1;
         &:hover{
             cursor: pointer;
-            opacity: .7;
+            transform: scale(1.1)
         }
         @include flex-container;
         background: url("./../images/icons/card-like.svg") no-repeat center;

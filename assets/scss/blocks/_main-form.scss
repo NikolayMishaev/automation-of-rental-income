@@ -61,6 +61,13 @@
             &:hover {
                 cursor: pointer;
             }
+            &_type_select {
+                margin: 0;
+                width: 100%;
+                @media #{$screen-mobile} {
+                    height: unset;
+                }
+            }
         }
         &_type_select {
             overflow: unset;
@@ -99,9 +106,15 @@
             height: 16px;
             margin: 15px 8px 15px 12px;
             flex-shrink: 0;
+            @media #{$screen-mobile} {
+                margin: 7px 8px 7px 12px;
+            }
         }
         &_style_select {
             padding: rem(4px) rem(12px);
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
     &__two-column {
@@ -180,6 +193,12 @@
             background-color: $accent-TCX50;
             margin-bottom: 0;
         }
+        &_type_confirm {
+            color: white;
+            background-color: $accent-TCX50;
+            margin: 5px auto 10px;
+            width: 50%;
+        }
     }
     &__cursor {
         position: absolute;
@@ -220,9 +239,10 @@
         transition: $transition;
         &_active {
             height: 950px;
-        }
-        @media #{$screen-mobile} {
-            height: rem(683px);
+            overflow: unset;
+            @media #{$screen-mobile} {
+                height: rem(683px);
+            }
         }
     }
     &__caption {

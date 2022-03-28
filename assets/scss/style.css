@@ -3774,7 +3774,8 @@ main .container {
 
 .card-price__like:hover {
   cursor: pointer;
-  opacity: .7;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .card-price__like_active {
@@ -3897,6 +3898,13 @@ main .container {
   background-color: white;
   top: 33px;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main-submenu_style_sort {
@@ -3988,6 +3996,16 @@ main .container {
 .main-submenu__item_active {
   background-color: #2a9b43;
   color: white;
+}
+
+.main-submenu__item_type_change-type:hover {
+  opacity: 1;
+  background-color: unset;
+}
+
+.main-submenu__item_type_change-class:hover {
+  opacity: 1;
+  background-color: unset;
 }
 
 .main-filters {
@@ -4091,6 +4109,17 @@ main .container {
   cursor: pointer;
 }
 
+.main-form__label-checkbox_type_select {
+  margin: 0;
+  width: 100%;
+}
+
+@media (max-width: 40rem) {
+  .main-form__label-checkbox_type_select {
+    height: unset;
+  }
+}
+
 .main-form__label_type_select {
   overflow: unset;
 }
@@ -4143,8 +4172,18 @@ main .container {
       flex-shrink: 0;
 }
 
+@media (max-width: 40rem) {
+  .main-form__input_type_checkbox {
+    margin: 7px 8px 7px 12px;
+  }
+}
+
 .main-form__input_style_select {
   padding: 0.25rem 0.75rem;
+}
+
+.main-form__input_style_select:hover {
+  cursor: pointer;
 }
 
 .main-form__two-column {
@@ -4251,6 +4290,13 @@ main .container {
   margin-bottom: 0;
 }
 
+.main-form__button_type_confirm {
+  color: white;
+  background-color: #2a9b43;
+  margin: 5px auto 10px;
+  width: 50%;
+}
+
 .main-form__cursor {
   position: absolute;
   top: 12px;
@@ -4305,10 +4351,11 @@ main .container {
 
 .main-form__wrapper-fields_active {
   height: 950px;
+  overflow: unset;
 }
 
 @media (max-width: 40rem) {
-  .main-form__wrapper-fields {
+  .main-form__wrapper-fields_active {
     height: 42.6875rem;
   }
 }

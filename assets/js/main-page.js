@@ -356,7 +356,7 @@
 
     // изменение значения value инпута после клика по значению поля селекта
     const itemsSubmenuFilterChangeType = document.querySelectorAll(
-        ".main-submenu__item_type_change-type"
+        ".main-form__label-checkbox_type_select"
     );
 
     const inputChangeType = document.querySelector(
@@ -368,12 +368,12 @@
     function changeValueInputSelect(items, valueInput) {
         items.forEach((i) =>
             i.addEventListener("click", (e) => {
-                e.target.classList.toggle("main-submenu__item_active");
+                e.target.classList.toggle("custom-select-active");
                 let countActiveItmes = 0;
                 items.forEach((j) => {
-                    if (j.closest(".main-submenu__item_active")) {
+                    if (j.closest(".custom-select-active")) {
                         countActiveItmes += 1;
-                        valueInput.value = j.textContent.trim();
+                        valueInput.value = j.textContent;
                     }
                     if (countActiveItmes > 1) {
                         valueInput.value = "Выбрано несколько значений";
@@ -453,5 +453,22 @@
     cursorsOpenSubmenuUnderground.addEventListener("click", (e) => {
         containerFiltersAdress.classList.add("mix-visible");
         cursorsOpenSubmenuUndergroundBody.classList.add("mix-visible");
+    });
+
+    // логика закрытия подменю селектов выбора типа помещения и классификация помещения по кнопке "Выбрать"
+
+    const buttonConfirmChangeType = document.querySelector(
+        "#button-filter-confirm-change-type"
+    );
+    const buttonConfirmChangeClass = document.querySelector(
+        "#button-filter-confirm-change-class"
+    );
+
+    buttonConfirmChangeType.addEventListener("click", (e) => {
+        toggleActiveClass(submenuFilterChangeType, cursorChangeTypeMainForm);
+    });
+
+    buttonConfirmChangeClass.addEventListener("click", (e) => {
+        toggleActiveClass(submenuFilterChangeClass, cursorChangeClassMainForm);
     });
 })();
