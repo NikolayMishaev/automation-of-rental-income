@@ -30,6 +30,7 @@
         max-height: 100vh;
         &_type_change-city {
             height: rem(350px);
+            min-width: rem(260px);
         }
         &:hover {
             cursor: auto;

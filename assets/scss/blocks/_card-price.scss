@@ -20,6 +20,7 @@
     border: 1px solid $grey-20_2;
     flex-wrap: wrap;
     position: relative;
+    transition: $transition;
     @media #{$screen-mobile} {
         padding: rem(8px);
     }
@@ -34,6 +35,11 @@
     &_style_main {
         &:first-child {
             margin-top: rem(16px);
+        }
+        &:hover {
+            cursor: pointer;
+            opacity: .8;
+            transform: scale(1.010);
         }
         padding: rem(15px);
         height: unset;

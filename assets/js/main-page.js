@@ -15,7 +15,6 @@
     const popupChangeCity = document.querySelector(
         ".main-popup_type_change-city"
     );
-    // const modalCloseMain = document.querySelector(".modal__close-btn");
 
     popupOverlay.addEventListener("click", (e) => {
         if (
@@ -36,6 +35,13 @@
     const btnMap = document.querySelector("#btn-map");
     const cardsContainer = document.querySelector(".main__cards-container");
     const mapContainer = document.querySelector(".main__map");
+    const AllFiltersPanel = document.querySelector(
+        ".main-form__wrapper-fields"
+    );
+    const buttonMinimizeFiltersPanel = document.querySelector(
+        ".main-form__button_type_minimize"
+    );
+    const mainContainerFilter = document.querySelector(".main__container");
 
     controlPanelBtns.forEach((i) =>
         i.addEventListener("click", (e) => {
@@ -45,12 +51,29 @@
                 cardsContainer.style.display = "none";
                 mapContainer.style.display = "block";
                 stateMain.currentOpenLeftBlock = cardsContainer;
+                AllFiltersPanel.classList.remove(
+                    "main-form__wrapper-fields_active"
+                );
+                buttonMinimizeFiltersPanel.textContent = "Все фильтры";
+                mainContainerFilter.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
             } else {
                 btnList.classList.add("main-btn_active");
                 btnMap.classList.remove("main-btn_active");
                 cardsContainer.style.display = "block";
                 mapContainer.style.display = "none";
                 stateMain.currentOpenLeftBlock = mapContainer;
+
+                AllFiltersPanel.classList.add(
+                    "main-form__wrapper-fields_active"
+                );
+                buttonMinimizeFiltersPanel.textContent = "Свернуть фильтры";
+                mainContainerFilter.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
             }
             console.log(stateMain.currentOpenLeftBlock);
         })
@@ -389,4 +412,17 @@
     );
 
     changeValueInputSelect(itemsSubmenuFilterChangeClass, InputChangeClass);
+
+    // логика перехода по клику на карточку на страницу с карточками
+    const cardPriceContainerBigCards = document.querySelector(
+        ".main__cards-container"
+    );
+    cardPriceContainerBigCards.addEventListener("click", (e) => {
+        if (e.target.closest(".card-price__like")) {
+            return;
+        }
+        if (e.target.closest(".card-price_style_main")) {
+            location.href = "./objectCard.html";
+        }
+    });
 })();
