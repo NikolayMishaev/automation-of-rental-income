@@ -28,6 +28,7 @@
         letter-spacing: 0.12px;
         color: #3c4142;
         @media #{$screen-mobile} {
+            margin-top: rem(8px);
             padding: rem(12px);
         }
         &-checkbox {
@@ -46,9 +47,14 @@
             color: #6c737d;
             @media #{$screen-mobile} {
                 padding-right: 0;
+                margin: rem(12px) 0 0 0;
+                height: rem(32px);
             }
             &:first-child {
                 margin-right: 16px;
+                @media #{$screen-mobile} {
+                    margin-right: 8px;
+                }
             }
             &:hover {
                 cursor: pointer;
@@ -71,6 +77,7 @@
         margin-top: 18px;
         @media #{$screen-mobile} {
             height: 32px;
+            margin-top: rem(12px);
         }
         &_type_search {
             margin-top: 0;
@@ -79,6 +86,10 @@
         }
         &_style_two-column {
             margin-right: 16px;
+            @media #{$screen-mobile} {
+                margin-right: 8px;
+                margin-top: rem(8px);
+            }
         }
         &_style_no-right-margin {
             margin-right: 0;
@@ -107,6 +118,9 @@
         color: #6d7678;
         padding-bottom: 7px;
         min-width: 22px;
+        @media #{$screen-mobile} {
+            margin-top: rem(8px);
+        }
         &_style_label {
             margin-top: 0;
             font-style: normal;
@@ -116,6 +130,9 @@
             letter-spacing: 0.12px;
             color: #3c4142;
             text-align: left;
+            @media #{$screen-mobile} {
+                padding-bottom: 0;
+            }
         }
     }
     &__text-upper-index {
@@ -136,6 +153,10 @@
         border: none;
         border-radius: 4px;
         transition: $transition;
+        @media #{$screen-mobile} {
+            margin: 8px 0;
+            height: rem(32px);
+        }
         &:hover {
             opacity: .7;
         }
@@ -191,6 +212,9 @@
         transition: $transition;
         &_active {
             height: 990px;
+        }
+        @media #{$screen-mobile} {
+            height: rem(683px);
         }
     }
 }

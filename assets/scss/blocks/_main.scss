@@ -22,6 +22,7 @@
         flex-wrap: wrap;
         @media #{$screen-mobile} {
             padding: rem(16px) rem(16px);
+            min-width: rem(360px);
         }
     }
     &__column {
@@ -43,6 +44,7 @@
                 min-width: 312px;
             }
             @media (max-width: rem(1280px)) {
+                display: none;
                 width: 100%;
             }
             @media #{$screen-mobile} {

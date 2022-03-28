@@ -25,12 +25,18 @@
         right: 0;
         top: 105px;
         margin: 0 16px;
+        @media #{$screen-mobile} {
+            top: 78px;
+        }
     }
     &_style_main-form-change-class {
         left:0;
         right: 0;
         top: 105px;
         margin: 0 16px;
+        @media #{$screen-mobile} {
+            top: 78px;
+        }
     }
     &__item {
         font-style: normal;
@@ -44,6 +50,7 @@
         transition: $transition;
         &:hover {
             background-color: $accent-TCX50;
+            opacity: .7;
             color: white;
             cursor: pointer;
         }
