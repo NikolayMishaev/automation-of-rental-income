@@ -3841,6 +3841,12 @@ main .container {
   }
 }
 
+.main-submenu_style_filters-adress {
+  left: 0;
+  right: 0;
+  top: 67px;
+}
+
 .main-submenu__item {
   font-style: normal;
   font-weight: 400;

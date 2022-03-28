@@ -425,4 +425,33 @@
             location.href = "./objectCard.html";
         }
     });
+
+    // логика открытия попапов город улица метро
+    const containerFiltersAdress = document.querySelector(".main-form__label");
+    const cursorsOpenSubmenuCity = document.querySelector("#submenu-city");
+    const cursorsOpenSubmenuStreet = document.querySelector("#submenu-street");
+    const cursorsOpenSubmenuUnderground = document.querySelector(
+        "#submenu-underground"
+    );
+    const cursorsOpenSubmenuCityBody =
+        document.querySelector("#submenu-city-body");
+    const cursorsOpenSubmenuStreetBody = document.querySelector(
+        "#submenu-street-body"
+    );
+    const cursorsOpenSubmenuUndergroundBody = document.querySelector(
+        "#submenu-underground-body"
+    );
+
+    cursorsOpenSubmenuCity.addEventListener("click", (e) => {
+        containerFiltersAdress.classList.toggle("mix-visible");
+        cursorsOpenSubmenuCityBody.classList.toggle("mix-visible");
+    });
+    cursorsOpenSubmenuStreet.addEventListener("click", (e) => {
+        containerFiltersAdress.classList.add("mix-visible");
+        cursorsOpenSubmenuStreetBody.classList.add("mix-visible");
+    });
+    cursorsOpenSubmenuUnderground.addEventListener("click", (e) => {
+        containerFiltersAdress.classList.add("mix-visible");
+        cursorsOpenSubmenuUndergroundBody.classList.add("mix-visible");
+    });
 })();
