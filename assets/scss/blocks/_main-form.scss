@@ -36,7 +36,7 @@
             border: 1px solid #e3e7e8;
             border-radius: 8px;
             width: 50%;
-            margin: 16px 0;
+            margin: 16px 0 0;
             display: flex;
             align-items: center;
             font-style: normal;
@@ -116,12 +116,13 @@
         text-align: center;
         letter-spacing: 0.12px;
         color: #6d7678;
-        padding-bottom: 7px;
+        // padding-bottom: 7px;
         min-width: 22px;
         @media #{$screen-mobile} {
             margin-top: rem(8px);
         }
         &_style_label {
+            height: rem(20px);
             margin-top: 0;
             font-style: normal;
             font-weight: 500;
@@ -211,7 +212,7 @@
         overflow: hidden;
         transition: $transition;
         &_active {
-            height: 990px;
+            height: 950px;
         }
         @media #{$screen-mobile} {
             height: rem(683px);

@@ -81,9 +81,15 @@
     const currentValueSort = document.querySelector("#main-sort-desktop");
     const currentValueNumberCards =
         document.querySelector("#main-number-cards");
+    const currentValueNumberCardsMobile = document.querySelector(
+        "#main-number-cards-mobile"
+    );
 
     const mainSubmenuNumberCards = document.querySelector(
         ".main-submenu_style_number-cards"
+    );
+    const mainSubmenuNumberCardsMobile = document.querySelector(
+        ".main-submenu_style_number-cards-mobile"
     );
     const mainSubmenuSortDesktop = document.querySelector(
         ".main-submenu_style_sort"
@@ -96,6 +102,9 @@
     const mainContainerNumberCards = document.querySelector(
         "#main-search-number-cards"
     );
+    const mainContainerNumberCardsMobile = document.querySelector(
+        "#main-search-number-cards-mobile"
+    );
     const mainContainerSearchDesktop = document.querySelector(
         "#main-search-sort-cards-desktop"
     );
@@ -104,12 +113,14 @@
     );
     const arrayWithContainersSort = [
         mainContainerNumberCards,
+        mainContainerNumberCardsMobile,
         mainContainerSearchDesktop,
         mainContainerSearchMobile,
     ];
     arrayWithContainersSort.forEach((i) =>
         i.addEventListener("mouseover", function () {
             mainSubmenuNumberCards.classList.remove("mix-hidden");
+            mainSubmenuNumberCardsMobile.classList.remove("mix-hidden");
             mainSubmenuSortDesktop.classList.remove("mix-hidden");
             mainSubmenuSortMobile.classList.remove("mix-hidden");
         })
@@ -122,6 +133,9 @@
                 e.target.classList.add("main-submenu__item_active");
                 currentValueNumberCards.textContent = e.target.textContent;
                 mainSubmenuNumberCards.classList.add("mix-hidden");
+                currentValueNumberCardsMobile.textContent =
+                    e.target.textContent;
+                mainSubmenuNumberCardsMobile.classList.add("mix-hidden");
             }
             if (e.target.ariaLabel === "sort-desktop") {
                 deleteActiveClass("sort-desktop");
@@ -227,6 +241,13 @@
         }
         if (e.target.innerWidth > 1280) {
             rightMainColumnFilters.style.display = "block";
+        } else if (
+            e.target.innerWidth < 1280 &&
+            !iconFilters.classList.contains(
+                "main__control-panel-icon_filters-active"
+            )
+        ) {
+            rightMainColumnFilters.style.display = "none";
         }
     });
 
