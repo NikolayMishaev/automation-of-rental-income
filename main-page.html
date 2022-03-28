@@ -712,19 +712,30 @@
                     <div class="main__column  main__column_type_filters">
                         <div class="main-filters">
                             <form class="main-form">
-                                <input type="text" class="main-form__input main-form__input_type_search"
-                                    placeholder="Общий поиск">
+                                <label class="mix-label">
+                                    <input type="text" class="main-form__input main-form__input_type_search mix-input"
+                                    placeholder=" ">
+                                    <span class="main-form__caption_type_general-search mix-caption">Общий поиск</span>
+                                </label>
                                 <label class="main-form__label">
                                     Адрес
                                     <div id="main-form-cursor-adress" class="main-form__cursor"></div>
-                                    <input type="text" class="main-form__input" placeholder="Введите адрес">
+                                    <label class="mix-mt16 mix-label">
+                                        <input type="text" class="main-form__input mix-input" placeholder=" ">
+                                        <span class="main-form__caption_type_general-address mix-caption">Введите адрес</span>
+                                    </label>
+
                                     <div class="main-form__adress">
                                         <ul class="main-form__list">
                                             <li class="main-form__item">
                                                 <div class="main-form__wrapper-input">
                                                     <div id="submenu-city" class="main-form__cursor main-form__cursor_style_input"></div>
-                                                    <input type="text" id="main-form-adress-city"
-                                                        class="main-form__input" placeholder="Город">
+                                                    <label class="mix-mt16 mix-label">
+                                                        <input type="text" id="main-form-adress-city"
+                                                        class="main-form__input mix-input" placeholder=" ">
+                                                        <span class="mix-caption">Город</span>
+                                                      </label>
+
                                                         <div id="submenu-city-body"
                                                         class="main-submenu main-submenu_style_filters-adress">
                                                         <ul class="main-submenu__list">
@@ -744,7 +755,10 @@
                                             <li class="main-form__item">
                                                 <div class="main-form__wrapper-input">
                                                     <div id="submenu-street" class="main-form__cursor main-form__cursor_style_input"></div>
-                                                    <input type="text" class="main-form__input" placeholder="Улица">
+                                                    <label class="mix-mt16 mix-label">
+                                                        <input type="text" class="main-form__input mix-input" placeholder=" ">
+                                                        <span class="mix-caption">Улица</span>
+                                                    </label>
                                                     <div id="submenu-streey-body"
                                                     class="main-submenu main-submenu_style_filters-adress">
                                                     <ul class="main-submenu__list">
@@ -765,7 +779,10 @@
                                                 <div  id="submenu-underground-body"
                                                 class="main-form__wrapper-input">
                                                     <div id="submenu-underground" class="main-form__cursor main-form__cursor_style_input"></div>
-                                                    <input type="text" class="main-form__input" placeholder="Метро">
+                                                    <label class="mix-mt16 mix-label">
+                                                        <input type="text" class="main-form__input mix-input" placeholder=" ">
+                                                        <span class="mix-caption">Метро</span>
+                                                      </label>
                                                     <div
                                                     class="main-submenu main-submenu_style_filters-adress">
                                                     <ul class="main-submenu__list">
@@ -788,10 +805,16 @@
                                 <label class="main-form__label">
                                     Размер площади
                                     <div class="main-form__two-column">
-                                        <input type="number" class="main-form__input main-form__input_style_two-column"
-                                            min="0" step="5" placeholder="От">
-                                        <input type="number" class="main-form__input main-form__input_style_two-column"
-                                            min="0" step="5" placeholder="До">
+                                        <label class="mix-mt16 mix-label">
+                                            <input type="number" class="main-form__input main-form__input_style_two-column mix-input"
+                                            min="0" step="5" placeholder=" ">
+                                            <span class="mix-caption">От</span>
+                                          </label>
+                                          <label class="mix-mt16 mix-label">
+                                            <input type="number" class="main-form__input main-form__input_style_two-column mix-input"
+                                            min="0" step="5" placeholder=" ">
+                                            <span class="mix-caption">До</span>
+                                          </label>
                                         <p class="main-form__text-value">м<span
                                                 class="main-form__text-upper-index">2</span></p>
                                     </div>
@@ -799,10 +822,16 @@
                                 <label class="main-form__label">
                                     Размер арендной платы (за объект)
                                     <div class="main-form__two-column">
-                                        <input type="number" class="main-form__input main-form__input_style_two-column"
-                                            min="0" step="1000" placeholder="От">
-                                        <input type="number" class="main-form__input main-form__input_style_two-column"
-                                            min="0" step="1000" placeholder="До">
+                                        <label class="mix-mt16 mix-label">
+                                            <input type="number" class="main-form__input main-form__input_style_two-column mix-input"
+                                            min="0" step="1000" placeholder=" ">
+                                            <span class="mix-caption">От</span>
+                                          </label>
+                                          <label class="mix-mt16 mix-label">
+                                            <input type="number" class="main-form__input main-form__input_style_two-column mix-input"
+                                            min="0" step="1000" placeholder=" ">
+                                            <span class="mix-caption">До</span>
+                                          </label>
                                         <p class="main-form__text-value">&#8381;</p>
                                     </div>
                                 </label>
@@ -811,12 +840,18 @@
                                         <p class="main-form__text-value main-form__text-value_style_label">Размер
                                             арендной ставки (м<span class="main-form__text-upper-index">2</span>)</p>
                                         <div class="main-form__two-column">
-                                            <input type="number"
-                                                class="main-form__input main-form__input_style_two-column" min="0"
-                                                step="1000" placeholder="От">
-                                            <input type="number"
-                                                class="main-form__input main-form__input_style_two-column" min="0"
-                                                step="1000" placeholder="До">
+                                            <label class="mix-mt16 mix-label">
+                                                <input type="number"
+                                                class="main-form__input main-form__input_style_two-column mix-input" min="0"
+                                                step="1000" placeholder=" ">
+                                                <span class="mix-caption">От</span>
+                                              </label>
+                                              <label class="mix-mt16 mix-label">
+                                                <input type="number"
+                                                class="main-form__input main-form__input_style_two-column mix-input" min="0"
+                                                step="1000" placeholder=" ">
+                                                <span class="mix-caption">До</span>
+                                              </label>
                                             <p class="main-form__text-value">&#8381;</p>
                                         </div>
                                     </label>
@@ -842,12 +877,18 @@
                                     <label class="main-form__label">
                                         Этажность
                                         <div class="main-form__two-column">
-                                            <input type="number"
-                                                class="main-form__input main-form__input_style_two-column" min="-3"
-                                                placeholder="От">
-                                            <input type="number"
-                                                class="main-form__input main-form__input_style_two-column main-form__input_style_no-right-margin"
-                                                min="-3" placeholder="До">
+                                            <label class="mix-mt16 mix-label">
+                                                <input type="number"
+                                                class="main-form__input main-form__input_style_two-column mix-input" min="-3"
+                                                placeholder=" ">
+                                                <span class="mix-caption">От</span>
+                                              </label>
+                                              <label class="mix-mt16 mix-label">
+                                                <input type="number"
+                                                class="main-form__input main-form__input_style_two-column main-form__input_style_no-right-margin mix-input"
+                                                min="-3" placeholder=" ">
+                                                <span class="mix-caption">До</span>
+                                              </label>
                                         </div>
                                     </label>
                                     <label class="main-form__label main-form__label_type_select">
@@ -1021,9 +1062,9 @@
             <button class="main-popup__close"></button>
             <div class="popup-change-city">
                 <h3 class="popup-change-city__title">Укажите свой город</h3>
-                <label class="popup-change-city__label">
-                    <span class="popup-change-city__caption">Введите название города</span>
-                    <input class="popup-change-city__input" type="text" maxlength="50" />
+                <label class="popup-change-city__label mix-label">
+                    <input class="popup-change-city__input mix-input" type="text" maxlength="50" placeholder=" " />
+                    <span class="popup-change-city__caption mix-caption"></span>
                 </label>
                 <div class="popup-change-city__column">
                     <ul class="popup-change-city__list">

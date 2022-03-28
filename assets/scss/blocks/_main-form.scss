@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 .main-form {
     padding: 24px;
     font-style: normal;
@@ -67,17 +69,16 @@
     &__input {
         width: 100%;
         height: 48px;
-        padding: 12px;
+        padding: 20px 12px 4px;
         background-color: #ffffff;
         background-repeat: no-repeat;
         background-position: 12px;
         border: 1px solid #cfd4dc;
         box-sizing: border-box;
         border-radius: 4px;
-        margin-top: 18px;
         @media #{$screen-mobile} {
             height: 32px;
-            margin-top: rem(12px);
+            padding: rem(4px) rem(12px);
         }
         &_type_search {
             margin-top: 0;
@@ -88,7 +89,6 @@
             margin-right: 16px;
             @media #{$screen-mobile} {
                 margin-right: 8px;
-                margin-top: rem(8px);
             }
         }
         &_style_no-right-margin {
@@ -104,7 +104,7 @@
     &__two-column {
         @include flex-container;
         &_style_buttons {
-            border-top: 1px solid #E3E7E8;
+            border-top: 1px solid #e3e7e8;
         }
     }
     &__text-value {
@@ -159,7 +159,7 @@
             height: rem(32px);
         }
         &:hover {
-            opacity: .7;
+            opacity: 0.7;
         }
         &_type_minimize {
             background-color: transparent;
@@ -188,10 +188,10 @@
         transition: $transition;
         &:hover {
             cursor: pointer;
-            opacity: .7;
+            opacity: 0.7;
         }
         &_active {
-            transform: rotate(180deg)
+            transform: rotate(180deg);
         }
         &_style_input {
             top: 43%;
@@ -207,7 +207,7 @@
             height: 198px;
         }
     }
-    &__wrapper-fields{
+    &__wrapper-fields {
         height: 0;
         overflow: hidden;
         transition: $transition;
@@ -216,6 +216,13 @@
         }
         @media #{$screen-mobile} {
             height: rem(683px);
+        }
+    }
+    &__caption {
+        &_type_general-search {
+            padding-left: rem(37px);
+        }
+        &_type_general-address {
         }
     }
 }

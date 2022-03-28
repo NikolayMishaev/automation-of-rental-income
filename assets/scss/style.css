@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(./../normalize.css);
 @font-face {
   font-family: "Roboto";
@@ -118,6 +119,101 @@ img {
 
 button {
   cursor: pointer;
+}
+
+.mix-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.mix-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.mix-visible-scale {
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-transform: scale(1) !important;
+          transform: scale(1) !important;
+}
+
+.mix-label {
+  height: 3rem;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.mix-label:hover {
+  cursor: text;
+}
+
+@media (max-width: 40rem) {
+  .mix-label {
+    height: 2rem;
+  }
+}
+
+.mix-caption {
+  position: absolute;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.12px;
+  color: #6c737d;
+  padding: 4px 12px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  top: 0.5rem;
+}
+
+@media (max-width: 40rem) {
+  .mix-caption {
+    top: 0;
+  }
+}
+
+.mix-input {
+  border: 1px solid #cfd4dc;
+  padding: 20px 12px 4px;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.mix-input:focus + .mix-caption,
+.mix-input:not(:placeholder-shown) + .mix-caption {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.08px;
+  top: 0;
+}
+
+@media (max-width: 40rem) {
+  .mix-input:focus + .mix-caption,
+  .mix-input:not(:placeholder-shown) + .mix-caption {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 40rem) {
+  .mix-input {
+    padding: 0.25rem 0.75rem;
+  }
+}
+
+.mix-mt16 {
+  margin-top: 1rem;
+}
+
+@media (max-width: 40rem) {
+  .mix-mt16 {
+    margin-top: 0.75rem;
+  }
 }
 
 main .container {
@@ -3996,7 +4092,7 @@ main .container {
 .main-form__input {
   width: 100%;
   height: 48px;
-  padding: 12px;
+  padding: 20px 12px 4px;
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: 12px;
@@ -4004,13 +4100,12 @@ main .container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 4px;
-  margin-top: 18px;
 }
 
 @media (max-width: 40rem) {
   .main-form__input {
     height: 32px;
-    margin-top: 0.75rem;
+    padding: 0.25rem 0.75rem;
   }
 }
 
@@ -4027,7 +4122,6 @@ main .container {
 @media (max-width: 40rem) {
   .main-form__input_style_two-column {
     margin-right: 8px;
-    margin-top: 0.5rem;
   }
 }
 
@@ -4056,7 +4150,7 @@ main .container {
 }
 
 .main-form__two-column_style_buttons {
-  border-top: 1px solid #E3E7E8;
+  border-top: 1px solid #e3e7e8;
 }
 
 .main-form__text-value {
@@ -4125,7 +4219,7 @@ main .container {
 }
 
 .main-form__button:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .main-form__button_type_minimize {
@@ -4160,7 +4254,7 @@ main .container {
 
 .main-form__cursor:hover {
   cursor: pointer;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .main-form__cursor_active {
@@ -4203,21 +4297,8 @@ main .container {
   }
 }
 
-.mix-visible {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-.mix-hidden {
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-.mix-visible-scale {
-  opacity: 1 !important;
-  visibility: visible !important;
-  -webkit-transform: scale(1) !important;
-          transform: scale(1) !important;
+.main-form__caption_type_general-search {
+  padding-left: 2.3125rem;
 }
 
 .pagination__list {
@@ -4388,32 +4469,18 @@ main .container {
 }
 
 .popup-change-city__label {
-  height: 3rem;
   border: 1px solid #cfd4dc;
-  border-radius: 4px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
   margin-bottom: 1.25rem;
 }
 
-.popup-change-city__caption {
-  position: absolute;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.08px;
-  color: #6c737d;
-  padding: 4px 12px;
+.popup-change-city__caption:before {
+  content: 'Введите название города';
 }
 
-.popup-change-city__input {
-  padding: 20px 12px 4px;
-  border: none;
-  width: 100%;
-  border-radius: 4px;
+@media (max-width: 40rem) {
+  .popup-change-city__caption:before {
+    content: 'Название города';
+  }
 }
 
 .popup-change-city__column {
