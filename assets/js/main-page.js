@@ -8,33 +8,27 @@
     };
 
     // логика открытия/закрытия попапа выбора городов "Ваш город"
+
+    const popupOverlay = document.querySelector(".main-popup");
+
     const headerCity = document.querySelector(".header__city");
-    const modalWidow = document.querySelector(".modal");
-    const modalCloseMain = document.querySelector(".modal__close-btn");
+    const popupChangeCity = document.querySelector(
+        ".main-popup_type_change-city"
+    );
+    // const modalCloseMain = document.querySelector(".modal__close-btn");
+
+    popupOverlay.addEventListener("click", (e) => {
+        if (
+            e.target.classList.contains("main-popup") ||
+            e.target.classList.contains("main-popup__close")
+        ) {
+            popupChangeCity.classList.remove("mix-visible-scale");
+        }
+    });
 
     headerCity.addEventListener("click", (e) => {
-        modalWidow.style.opacity = "1";
-        modalWidow.style.zIndex = "1";
-        modalWidow.style.transform = "scale(1)";
+        popupChangeCity.classList.add("mix-visible-scale");
     });
-
-    modalWidow.addEventListener("click", (e) => {
-        if (e.target.classList.contains("modal")) {
-            closePopup();
-        }
-    });
-
-    modalCloseMain.addEventListener("click", (e) => {
-        if (e.target.closest(".modal__close-btn")) {
-            closePopup();
-        }
-    });
-
-    function closePopup() {
-        modalWidow.style.opacity = "0";
-        modalWidow.style.zIndex = "-1";
-        modalWidow.style.transform = "scale(4)";
-    }
 
     // логика табов, выбор: "список" или "карта"
     const controlPanelBtns = document.querySelectorAll(".main-btn");
@@ -356,7 +350,7 @@
                 items.forEach((j) => {
                     if (j.closest(".main-submenu__item_active")) {
                         countActiveItmes += 1;
-                        valueInput.value = j.textContent;
+                        valueInput.value = j.textContent.trim();
                     }
                     if (countActiveItmes > 1) {
                         valueInput.value = "Выбрано несколько значений";

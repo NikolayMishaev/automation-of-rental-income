@@ -7,4 +7,9 @@
         opacity: 0 !important;
         visibility: hidden !important;
     }
+    &-visible-scale {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: scale(1) !important;
+    }
 }

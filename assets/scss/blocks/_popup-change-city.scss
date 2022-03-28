@@ -1,0 +1,86 @@
+.popup-change-city {
+    &__title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.12px;
+        color: $grey100;
+        margin-bottom: rem(16px);
+    }
+    &__label {
+        height: rem(48px);
+        border: 1px solid #cfd4dc;
+        border-radius: 4px;
+        display: flex;
+        position: relative;
+        margin-bottom: rem(20px);
+    }
+    &__caption {
+        position: absolute;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.08px;
+        color: #6c737d;
+        padding: 4px 12px;
+    }
+    &__input {
+        padding: 20px 12px 4px;
+        border: none;
+        width: 100%;
+        border-radius: 4px;
+    }
+    &__column {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        @media #{$screen-mobile} {
+            grid-template-columns: 1fr;
+          }
+    }
+    &__list {
+        position: relative;
+        &:last-child {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            @media #{$screen-mobile} {
+                grid-template-columns: 1fr;
+              }
+        }
+    }
+    &__overlay {
+        position: absolute;
+        top: 206px;
+        width: 100%;
+        height: 20px;
+        background-color: white;
+        opacity: 0.7;
+        @media #{$screen-mobile} {
+            top: rem(110px);
+          }
+    }
+    &__item {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.12px;
+        color: $grey100;
+        padding: rem(4px) rem(12px);
+        transition: $transition;
+        white-space: nowrap;
+        &:hover {
+            cursor: pointer;
+            background-color: $accent-TCX50;
+            color: white;
+        }
+        &_type_favorite {
+            font-weight: 500;
+        }
+        &_type_active {
+            background-color: $accent-TCX50;
+            color: white;
+        }
+    }
+}
