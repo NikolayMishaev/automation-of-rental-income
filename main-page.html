@@ -1047,7 +1047,7 @@
                                     placeholder=" ">
                                     <span class="main-form__caption_type_general-search mix-caption">Общий поиск</span>
                                 </label>
-                                <label class="main-form__label">
+                                <label id="container-filters-full-adress" class="main-form__label">
                                     Адрес
                                     <div id="main-form-cursor-adress" class="main-form__cursor"></div>
                                     <label class="mix-mt16 mix-label">
@@ -1085,13 +1085,13 @@
                                             </li>
                                             <li class="main-form__item">
                                                 <div class="main-form__wrapper-input">
-                                                    <div id="submenu-street" class="main-form__cursor main-form__cursor_style_input"></div>
+                                                    <div class="main-form__cursor main-form__cursor_style_input"></div>
                                                     <label class="mix-mt16 mix-label">
-                                                        <div id="submenu-city" class="main-form__cursor main-form__cursor_style_label"></div>
+                                                        <div id="submenu-street" class="main-form__cursor main-form__cursor_style_label"></div>
                                                         <input type="text" class="main-form__input mix-input" placeholder=" ">
                                                         <span class="mix-caption">Улица</span>
                                                     </label>
-                                                    <div id="submenu-streey-body"
+                                                    <div id="submenu-street-body"
                                                     class="main-submenu main-submenu_style_filters-adress">
                                                     <ul class="main-submenu__list">
                                                         <li aria-label="number-cards"
@@ -1108,15 +1108,16 @@
                                                 </div>
                                             </li>
                                             <li class="main-form__item">
-                                                <div  id="submenu-underground-body"
+                                                <div
                                                 class="main-form__wrapper-input">
-                                                    <div id="submenu-underground" class="main-form__cursor main-form__cursor_style_input"></div>
+                                                    <div class="main-form__cursor main-form__cursor_style_input"></div>
                                                     <label class="mix-mt16 mix-label">
-                                                        <div id="submenu-city" class="main-form__cursor main-form__cursor_style_label"></div>
+                                                        <div id="submenu-underground" class="main-form__cursor main-form__cursor_style_label"></div>
                                                         <input type="text" class="main-form__input mix-input" placeholder=" ">
                                                         <span class="mix-caption">Метро</span>
                                                       </label>
-                                                    <div
+
+                                                    <div id="submenu-underground-body"
                                                     class="main-submenu main-submenu_style_filters-adress">
                                                     <ul class="main-submenu__list">
                                                         <li aria-label="number-cards"
@@ -1199,15 +1200,15 @@
                                         <div class="main-submenu main-submenu_style_main-form-change-type">
                                             <ul class="main-submenu__list">
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
-                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select"><input type="checkbox"
+                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input type="checkbox"
                                                         class="main-form__input main-form__input_type_checkbox">Торговый центр</label>
                                                     </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
-                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select"><input type="checkbox"
+                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input type="checkbox"
                                                         class="main-form__input main-form__input_type_checkbox">Отдельно стоящее здание</label>
                                                     </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
-                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select"><input type="checkbox"
+                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input type="checkbox"
                                                         class="main-form__input main-form__input_type_checkbox">Встроенное/пристроенное здание</label>
                                                     </li>
                                             </ul>
@@ -1244,28 +1245,28 @@
                                         <div class="main-submenu main-submenu_style_main-form-change-class">
                                             <ul class="main-submenu__list">
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
-                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select"><input type="checkbox"
+                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input type="checkbox"
                                                         class="main-form__input main-form__input_type_checkbox">Находится внутри торгового зала</label>
                                                     </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
-                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select"><input type="checkbox"
+                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input type="checkbox"
                                                         class="main-form__input main-form__input_type_checkbox">Прикассовая зона</label>
                                                     </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
-                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select"><input type="checkbox"
+                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input type="checkbox"
                                                         class="main-form__input main-form__input_type_checkbox">Места общего пользования</label>
                                                     </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
-                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select"><input type="checkbox"
+                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input type="checkbox"
                                                         class="main-form__input main-form__input_type_checkbox">Отдельный вход с внешней стороны здания</label>
                                                      </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
-                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select"><input type="checkbox"
+                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input type="checkbox"
                                                         class="main-form__input main-form__input_type_checkbox">Нет</label>
 
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
-                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select"><input type="checkbox"
+                                                    <label class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input type="checkbox"
                                                         class="main-form__input main-form__input_type_checkbox">Не стандарт</label>
                                                     </li>
                                             </ul>

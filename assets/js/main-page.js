@@ -278,6 +278,10 @@
     });
 
     // логика аккордеона адреса
+    const containerFiltersAdress = document.querySelector(
+        "#container-filters-full-adress"
+    );
+
     const cursorAdressMainForm = document.querySelector(
         "#main-form-cursor-adress"
     );
@@ -292,9 +296,11 @@
                 cursorAdressMainForm.classList.remove(
                     "main-form__cursor_active"
                 );
+                containerFiltersAdress.classList.remove("mix-overflow-unset");
             } else {
                 submenuAdressMainForm.classList.add("main-form__adress_active");
                 cursorAdressMainForm.classList.add("main-form__cursor_active");
+                containerFiltersAdress.classList.add("mix-overflow-unset");
             }
         }
     });
@@ -324,6 +330,8 @@
                 behavior: "smooth",
                 block: "end",
             });
+            cardsContainer.style.display = "block";
+            mapContainer.style.display = "none";
         }
     });
 
@@ -354,16 +362,16 @@
         }
     }
 
-    // изменение значения value инпута после клика по значению поля селекта
-    const itemsSubmenuFilterChangeType = document.querySelectorAll(
-        ".main-form__label-checkbox_type_select"
+    // изменение значения value инпута после клика по значению поля селекта в фильтре "тип помещения"
+    const labelSelectChangeType = document.querySelectorAll(
+        ".select-change-type"
     );
 
     const inputChangeType = document.querySelector(
         "#main-form-filter-input-change-type"
     );
 
-    changeValueInputSelect(itemsSubmenuFilterChangeType, inputChangeType);
+    changeValueInputSelect(labelSelectChangeType, inputChangeType);
 
     function changeValueInputSelect(items, valueInput) {
         items.forEach((i) =>
@@ -403,15 +411,15 @@
         toggleActiveClass(submenuFilterChangeClass, cursorChangeClassMainForm);
     });
 
-    // изменение значения value инпута после клика по значению поля селекта
-    const itemsSubmenuFilterChangeClass = document.querySelectorAll(
-        ".main-submenu__item_type_change-class"
+    // изменение значения value инпута после клика по значению поля селекта в фильтре "классификация помещения"
+    const labelSelectChangeClass = document.querySelectorAll(
+        ".select-change-class"
     );
     const InputChangeClass = document.querySelector(
         "#main-form-filter-input-change-class"
     );
 
-    changeValueInputSelect(itemsSubmenuFilterChangeClass, InputChangeClass);
+    changeValueInputSelect(labelSelectChangeClass, InputChangeClass);
 
     // логика перехода по клику на карточку на страницу с карточками
     const cardPriceContainerBigCards = document.querySelector(
@@ -427,32 +435,27 @@
     });
 
     // логика открытия попапов город улица метро
-    const containerFiltersAdress = document.querySelector(".main-form__label");
-    const cursorsOpenSubmenuCity = document.querySelector("#submenu-city");
-    const cursorsOpenSubmenuStreet = document.querySelector("#submenu-street");
-    const cursorsOpenSubmenuUnderground = document.querySelector(
-        "#submenu-underground"
-    );
-    const cursorsOpenSubmenuCityBody =
-        document.querySelector("#submenu-city-body");
-    const cursorsOpenSubmenuStreetBody = document.querySelector(
-        "#submenu-street-body"
-    );
-    const cursorsOpenSubmenuUndergroundBody = document.querySelector(
+
+    const cursorCity = document.querySelector("#submenu-city");
+    const cursorStreet = document.querySelector("#submenu-street");
+    const cursorUnderground = document.querySelector("#submenu-underground");
+    const submenuCityBody = document.querySelector("#submenu-city-body");
+    const submenuStreetBody = document.querySelector("#submenu-street-body");
+    const submenuUndergroundBody = document.querySelector(
         "#submenu-underground-body"
     );
 
-    cursorsOpenSubmenuCity.addEventListener("click", (e) => {
+    cursorCity.addEventListener("click", (e) => {
         containerFiltersAdress.classList.toggle("mix-visible");
-        cursorsOpenSubmenuCityBody.classList.toggle("mix-visible");
+        submenuCityBody.classList.toggle("mix-visible");
     });
-    cursorsOpenSubmenuStreet.addEventListener("click", (e) => {
-        containerFiltersAdress.classList.add("mix-visible");
-        cursorsOpenSubmenuStreetBody.classList.add("mix-visible");
+    cursorStreet.addEventListener("click", (e) => {
+        containerFiltersAdress.classList.toggle("mix-visible");
+        submenuStreetBody.classList.toggle("mix-visible");
     });
-    cursorsOpenSubmenuUnderground.addEventListener("click", (e) => {
-        containerFiltersAdress.classList.add("mix-visible");
-        cursorsOpenSubmenuUndergroundBody.classList.add("mix-visible");
+    cursorUnderground.addEventListener("click", (e) => {
+        containerFiltersAdress.classList.toggle("mix-visible");
+        submenuUndergroundBody.classList.toggle("mix-visible");
     });
 
     // логика закрытия подменю селектов выбора типа помещения и классификация помещения по кнопке "Выбрать"
@@ -470,5 +473,18 @@
 
     buttonConfirmChangeClass.addEventListener("click", (e) => {
         toggleActiveClass(submenuFilterChangeClass, cursorChangeClassMainForm);
+    });
+
+    // сброс активных классов у кастомных селектов
+
+    const buttonReset = document.querySelector(".main-form__button_type_reset");
+
+    buttonReset.addEventListener("click", () => {
+        const inputsSelectActive = document.querySelectorAll(
+            ".custom-select-active"
+        );
+        inputsSelectActive.forEach((i) =>
+            i.classList.remove("custom-select-active")
+        );
     });
 })();

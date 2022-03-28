@@ -65,4 +65,7 @@
             margin-top: rem(12px);
         }
     }
+    &-overflow-unset {
+        overflow: unset !important;
+    }
 }

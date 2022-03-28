@@ -216,6 +216,10 @@ button {
   }
 }
 
+.mix-overflow-unset {
+  overflow: unset !important;
+}
+
 main .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2507,6 +2511,8 @@ main .container {
   background: url("./../images/avatar-photo.png") no-repeat center/cover;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (max-width: 40rem) {
@@ -2854,6 +2860,7 @@ main .container {
 .main__column_type_filters {
   padding: 16px 0 0 32px;
   width: 34%;
+  height: 100%;
   text-align: center;
 }
 
@@ -3190,8 +3197,8 @@ main .container {
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateX(-6600px);
-            transform: translateX(-6600px);
+    -webkit-transform: translateX(-6000px);
+            transform: translateX(-6000px);
     opacity: 0;
   }
 }
@@ -3211,8 +3218,8 @@ main .container {
     opacity: 1;
   }
   100% {
-    -webkit-transform: translateX(-6600px);
-            transform: translateX(-6600px);
+    -webkit-transform: translateX(-6000px);
+            transform: translateX(-6000px);
     opacity: 0;
   }
 }

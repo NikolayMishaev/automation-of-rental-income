@@ -40,6 +40,7 @@
         &_type_filters {
             padding: 16px 0 0 32px;
             width: 34%;
+            height: 100%;
             @media (max-width: rem(1500px)) {
                 width: 40%;
                 min-width: 312px;
