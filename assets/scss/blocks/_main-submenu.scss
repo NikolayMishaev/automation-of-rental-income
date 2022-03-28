@@ -9,7 +9,7 @@
     transition: $transition;
     padding: 8px 0;
     background-color: white;
-    top: 36px;
+    top: 33px;
     left: 0;
     &_style_sort {
         min-width: 230px;
@@ -23,7 +23,7 @@
     &_style_main-form-change-type {
         left:0;
         right: 0;
-        top: 105px;
+        top: 103px;
         margin: 0 16px;
         @media #{$screen-mobile} {
             top: 78px;
@@ -32,7 +32,7 @@
     &_style_main-form-change-class {
         left:0;
         right: 0;
-        top: 105px;
+        top: 103px;
         margin: 0 16px;
         @media #{$screen-mobile} {
             top: 78px;
@@ -41,7 +41,10 @@
     &_style_filters-adress {
         left:0;
         right: 0;
-        top: 67px;
+        top: 50px;
+        @media #{$screen-mobile} {
+            top: 34px;
+        }
     }
     &__item {
         font-style: normal;

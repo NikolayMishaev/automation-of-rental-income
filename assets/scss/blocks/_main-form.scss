@@ -100,6 +100,9 @@
             margin: 15px 8px 15px 12px;
             flex-shrink: 0;
         }
+        &_style_select {
+            padding: rem(4px) rem(12px);
+        }
     }
     &__two-column {
         @include flex-container;
@@ -195,6 +198,10 @@
         }
         &_style_input {
             top: 43%;
+        }
+        &_style_label {
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
     &__wrapper-input {
