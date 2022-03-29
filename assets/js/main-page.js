@@ -8,33 +8,26 @@
     };
 
     // логика открытия/закрытия попапа выбора городов "Ваш город"
+
+    const popupOverlay = document.querySelector(".main-popup");
+
     const headerCity = document.querySelector(".header__city");
-    const modalWidow = document.querySelector(".modal");
-    const modalCloseMain = document.querySelector(".modal__close-btn");
+    const popupChangeCity = document.querySelector(
+        ".main-popup_type_change-city"
+    );
+
+    popupOverlay.addEventListener("click", (e) => {
+        if (
+            e.target.classList.contains("main-popup") ||
+            e.target.classList.contains("main-popup__close")
+        ) {
+            popupChangeCity.classList.remove("mix-visible-scale");
+        }
+    });
 
     headerCity.addEventListener("click", (e) => {
-        modalWidow.style.opacity = "1";
-        modalWidow.style.zIndex = "1";
-        modalWidow.style.transform = "scale(1)";
+        popupChangeCity.classList.add("mix-visible-scale");
     });
-
-    modalWidow.addEventListener("click", (e) => {
-        if (e.target.classList.contains("modal")) {
-            closePopup();
-        }
-    });
-
-    modalCloseMain.addEventListener("click", (e) => {
-        if (e.target.closest(".modal__close-btn")) {
-            closePopup();
-        }
-    });
-
-    function closePopup() {
-        modalWidow.style.opacity = "0";
-        modalWidow.style.zIndex = "-1";
-        modalWidow.style.transform = "scale(4)";
-    }
 
     // логика табов, выбор: "список" или "карта"
     const controlPanelBtns = document.querySelectorAll(".main-btn");
@@ -42,6 +35,18 @@
     const btnMap = document.querySelector("#btn-map");
     const cardsContainer = document.querySelector(".main__cards-container");
     const mapContainer = document.querySelector(".main__map");
+    const AllFiltersPanel = document.querySelector(
+        ".main-form__wrapper-fields"
+    );
+    const buttonMinimizeFiltersPanel = document.querySelector(
+        ".main-form__button_type_minimize"
+    );
+    const mainContainerFilter = document.querySelector(".main__container");
+
+    const paginationPage = document.querySelector(".pagination");
+    const controlPanelLeft = document.querySelector(
+        ".main__control-panel-column-two"
+    );
 
     controlPanelBtns.forEach((i) =>
         i.addEventListener("click", (e) => {
@@ -51,12 +56,34 @@
                 cardsContainer.style.display = "none";
                 mapContainer.style.display = "block";
                 stateMain.currentOpenLeftBlock = cardsContainer;
+                AllFiltersPanel.classList.remove(
+                    "main-form__wrapper-fields_active"
+                );
+                buttonMinimizeFiltersPanel.textContent = "Все фильтры";
+                mainContainerFilter.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+                // скрыть панель сортировки, выбора кол-ва страниц, пагинацию
+                paginationPage.classList.add("mix-display-none");
+                controlPanelLeft.classList.add("mix-display-none");
             } else {
                 btnList.classList.add("main-btn_active");
                 btnMap.classList.remove("main-btn_active");
                 cardsContainer.style.display = "block";
                 mapContainer.style.display = "none";
                 stateMain.currentOpenLeftBlock = mapContainer;
+
+                AllFiltersPanel.classList.add(
+                    "main-form__wrapper-fields_active"
+                );
+                buttonMinimizeFiltersPanel.textContent = "Свернуть фильтры";
+                mainContainerFilter.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+                paginationPage.classList.remove("mix-display-none");
+                controlPanelLeft.classList.remove("mix-display-none");
             }
             console.log(stateMain.currentOpenLeftBlock);
         })
@@ -81,9 +108,15 @@
     const currentValueSort = document.querySelector("#main-sort-desktop");
     const currentValueNumberCards =
         document.querySelector("#main-number-cards");
+    const currentValueNumberCardsMobile = document.querySelector(
+        "#main-number-cards-mobile"
+    );
 
     const mainSubmenuNumberCards = document.querySelector(
         ".main-submenu_style_number-cards"
+    );
+    const mainSubmenuNumberCardsMobile = document.querySelector(
+        ".main-submenu_style_number-cards-mobile"
     );
     const mainSubmenuSortDesktop = document.querySelector(
         ".main-submenu_style_sort"
@@ -96,6 +129,9 @@
     const mainContainerNumberCards = document.querySelector(
         "#main-search-number-cards"
     );
+    const mainContainerNumberCardsMobile = document.querySelector(
+        "#main-search-number-cards-mobile"
+    );
     const mainContainerSearchDesktop = document.querySelector(
         "#main-search-sort-cards-desktop"
     );
@@ -104,12 +140,14 @@
     );
     const arrayWithContainersSort = [
         mainContainerNumberCards,
+        mainContainerNumberCardsMobile,
         mainContainerSearchDesktop,
         mainContainerSearchMobile,
     ];
     arrayWithContainersSort.forEach((i) =>
         i.addEventListener("mouseover", function () {
             mainSubmenuNumberCards.classList.remove("mix-hidden");
+            mainSubmenuNumberCardsMobile.classList.remove("mix-hidden");
             mainSubmenuSortDesktop.classList.remove("mix-hidden");
             mainSubmenuSortMobile.classList.remove("mix-hidden");
         })
@@ -122,6 +160,9 @@
                 e.target.classList.add("main-submenu__item_active");
                 currentValueNumberCards.textContent = e.target.textContent;
                 mainSubmenuNumberCards.classList.add("mix-hidden");
+                currentValueNumberCardsMobile.textContent =
+                    e.target.textContent;
+                mainSubmenuNumberCardsMobile.classList.add("mix-hidden");
             }
             if (e.target.ariaLabel === "sort-desktop") {
                 deleteActiveClass("sort-desktop");
@@ -227,6 +268,13 @@
         }
         if (e.target.innerWidth > 1280) {
             rightMainColumnFilters.style.display = "block";
+        } else if (
+            e.target.innerWidth < 1280 &&
+            !iconFilters.classList.contains(
+                "main__control-panel-icon_filters-active"
+            )
+        ) {
+            rightMainColumnFilters.style.display = "none";
         }
     });
 
@@ -240,6 +288,10 @@
     });
 
     // логика аккордеона адреса
+    const containerFiltersAdress = document.querySelector(
+        "#container-filters-full-adress"
+    );
+
     const cursorAdressMainForm = document.querySelector(
         "#main-form-cursor-adress"
     );
@@ -254,9 +306,11 @@
                 cursorAdressMainForm.classList.remove(
                     "main-form__cursor_active"
                 );
+                containerFiltersAdress.classList.remove("mix-overflow-unset");
             } else {
                 submenuAdressMainForm.classList.add("main-form__adress_active");
                 cursorAdressMainForm.classList.add("main-form__cursor_active");
+                containerFiltersAdress.classList.add("mix-overflow-unset");
             }
         }
     });
@@ -286,6 +340,10 @@
                 behavior: "smooth",
                 block: "end",
             });
+            cardsContainer.style.display = "block";
+            mapContainer.style.display = "none";
+            paginationPage.classList.remove("mix-display-none");
+            controlPanelLeft.classList.remove("mix-display-none");
         }
     });
 
@@ -316,24 +374,24 @@
         }
     }
 
-    // изменение значения value инпута после клика по значению поля селекта
-    const itemsSubmenuFilterChangeType = document.querySelectorAll(
-        ".main-submenu__item_type_change-type"
+    // изменение значения value инпута после клика по значению поля селекта в фильтре "тип помещения"
+    const labelSelectChangeType = document.querySelectorAll(
+        ".select-change-type"
     );
 
     const inputChangeType = document.querySelector(
         "#main-form-filter-input-change-type"
     );
 
-    changeValueInputSelect(itemsSubmenuFilterChangeType, inputChangeType);
+    changeValueInputSelect(labelSelectChangeType, inputChangeType);
 
     function changeValueInputSelect(items, valueInput) {
         items.forEach((i) =>
             i.addEventListener("click", (e) => {
-                e.target.classList.toggle("main-submenu__item_active");
+                e.target.classList.toggle("custom-select-active");
                 let countActiveItmes = 0;
                 items.forEach((j) => {
-                    if (j.closest(".main-submenu__item_active")) {
+                    if (j.closest(".custom-select-active")) {
                         countActiveItmes += 1;
                         valueInput.value = j.textContent;
                     }
@@ -365,13 +423,113 @@
         toggleActiveClass(submenuFilterChangeClass, cursorChangeClassMainForm);
     });
 
-    // изменение значения value инпута после клика по значению поля селекта
-    const itemsSubmenuFilterChangeClass = document.querySelectorAll(
-        ".main-submenu__item_type_change-class"
+    // изменение значения value инпута после клика по значению поля селекта в фильтре "классификация помещения"
+    const labelSelectChangeClass = document.querySelectorAll(
+        ".select-change-class"
     );
     const InputChangeClass = document.querySelector(
         "#main-form-filter-input-change-class"
     );
 
-    changeValueInputSelect(itemsSubmenuFilterChangeClass, InputChangeClass);
+    changeValueInputSelect(labelSelectChangeClass, InputChangeClass);
+
+    // логика перехода по клику на карточку на страницу с карточками
+    const cardPriceContainerBigCards = document.querySelector(
+        ".main__cards-container"
+    );
+    cardPriceContainerBigCards.addEventListener("click", (e) => {
+        if (e.target.closest(".card-price__like")) {
+            return;
+        }
+        if (e.target.closest(".card-price__photo")) {
+            return;
+        }
+        if (e.target.closest(".card-price_style_main")) {
+            location.href = "./objectCard.html";
+        }
+    });
+
+    // логика открытия попапов город улица метро
+
+    const cursorCity = document.querySelector("#submenu-city");
+    const cursorStreet = document.querySelector("#submenu-street");
+    const cursorUnderground = document.querySelector("#submenu-underground");
+    const submenuCityBody = document.querySelector("#submenu-city-body");
+    const submenuStreetBody = document.querySelector("#submenu-street-body");
+    const submenuUndergroundBody = document.querySelector(
+        "#submenu-underground-body"
+    );
+
+    cursorCity.addEventListener("click", (e) => {
+        containerFiltersAdress.classList.toggle("mix-visible");
+        submenuCityBody.classList.toggle("mix-visible");
+    });
+    cursorStreet.addEventListener("click", (e) => {
+        containerFiltersAdress.classList.toggle("mix-visible");
+        submenuStreetBody.classList.toggle("mix-visible");
+    });
+    cursorUnderground.addEventListener("click", (e) => {
+        containerFiltersAdress.classList.toggle("mix-visible");
+        submenuUndergroundBody.classList.toggle("mix-visible");
+    });
+
+    // логика закрытия подменю селектов выбора типа помещения и классификация помещения по кнопке "Выбрать"
+
+    const buttonConfirmChangeType = document.querySelector(
+        "#button-filter-confirm-change-type"
+    );
+    const buttonConfirmChangeClass = document.querySelector(
+        "#button-filter-confirm-change-class"
+    );
+
+    buttonConfirmChangeType.addEventListener("click", (e) => {
+        toggleActiveClass(submenuFilterChangeType, cursorChangeTypeMainForm);
+    });
+
+    buttonConfirmChangeClass.addEventListener("click", (e) => {
+        toggleActiveClass(submenuFilterChangeClass, cursorChangeClassMainForm);
+    });
+
+    // сброс активных классов у кастомных селектов
+
+    const buttonReset = document.querySelector(".main-form__button_type_reset");
+
+    buttonReset.addEventListener("click", () => {
+        const inputsSelectActive = document.querySelectorAll(
+            ".custom-select-active"
+        );
+        inputsSelectActive.forEach((i) =>
+            i.classList.remove("custom-select-active")
+        );
+    });
+
+    // логика ввода значение в поля город улица адрес по клику в подменю
+
+    const sumbenuAdressContainers = document.querySelectorAll(
+        ".main-submenu_style_filters-adress"
+    );
+    const inputCity = document.querySelector("#main-form-adress-city");
+    const inputStreet = document.querySelector("#main-form-adress-street");
+    const inputUndergound = document.querySelector(
+        "#main-form-adress-underground"
+    );
+
+    sumbenuAdressContainers.forEach((i) =>
+        i.addEventListener("click", (e) => {
+            if (e.target.classList.contains("main-submenu__item")) {
+                if (e.target.ariaLabel === "city") {
+                    inputCity.value = e.target.textContent.trim();
+                }
+                if (e.target.ariaLabel === "street") {
+                    inputStreet.value = e.target.textContent.trim();
+                }
+                if (e.target.ariaLabel === "underground") {
+                    inputUndergound.value = e.target.textContent.trim();
+                }
+                e.target
+                    .closest(".main-submenu_style_filters-adress")
+                    .classList.remove("mix-visible");
+            }
+        })
+    );
 })();

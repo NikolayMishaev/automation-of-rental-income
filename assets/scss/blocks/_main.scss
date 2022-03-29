@@ -22,33 +22,35 @@
         flex-wrap: wrap;
         @media #{$screen-mobile} {
             padding: rem(16px) rem(16px);
+            min-width: rem(360px);
         }
     }
     &__column {
+        transition: $transition;
         &_type_price {
             width: 66%;
             flex: unset;
             @media (max-width: rem(1500px)) {
                 width: 60%;
             }
-            @media #{$screen-tablet} {
+            @media (max-width: rem(1280px)) {
                 width: 100%;
             }
         }
         &_type_filters {
             padding: 16px 0 0 32px;
             width: 34%;
+            height: 100%;
             @media (max-width: rem(1500px)) {
-                display: none;
                 width: 40%;
                 min-width: 312px;
             }
-            @media #{$screen-tablet} {
+            @media (max-width: rem(1280px)) {
+                display: none;
                 width: 100%;
             }
             @media #{$screen-mobile} {
-                padding: rem(16px);
-                width: 100%;
+                padding: rem(24px) 0 rem(8px);
             }
             text-align: center;
         }
@@ -74,6 +76,9 @@
         }
         &-text {
             margin-left: 40px;
+            &_style_mobile {
+                margin-left: 0;
+            }
         }
         &-icon {
             border-radius: 4px;
@@ -89,7 +94,7 @@
                 &:hover {
                     cursor: pointer;
                 }
-                &:hover  .main-submenu {
+                &:hover .main-submenu {
                     opacity: 1;
                     visibility: visible;
                 }
@@ -102,8 +107,8 @@
                     margin-left: 15px;
                 }
                 &:hover {
-                    cursor:pointer;
-                    opacity: .7;
+                    cursor: pointer;
+                    opacity: 0.7;
                 }
                 @media (max-width: 1500px) {
                     display: none;
@@ -149,5 +154,18 @@
     }
     &__pagination {
         @include flex-container;
+    }
+    &__change-page {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 24px;
+        display: none;
+        @media (max-width: 1500px) {
+            display: flex;
+        }
+    }
+    &__navigation-wrapper {
+        display: flex;
+        align-items: center;
     }
 }

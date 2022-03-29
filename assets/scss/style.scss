@@ -10,10 +10,13 @@
 @import "base/fonts";
 @import "base/generic";
 
+// Mix
+@import "./blocks/mix";
+
 // Components
 @import "./blocks/objectCard";
-@import "./blocks/modal";
 @import "./blocks/radio-btn";
+@import "./blocks/modal";
 @import "./blocks/custom-text-input";
 @import "./blocks/registration-page";
 @import "./blocks/registration-form";
@@ -40,5 +43,6 @@
 @import "./blocks/main-submenu";
 @import "./blocks/main-filters";
 @import "./blocks/main-form";
-@import "./blocks/mix";
 @import "./blocks/pagination";
+@import "./blocks/main-popup";
+@import "./blocks/popup-change-city";
