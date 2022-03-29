@@ -1501,10 +1501,6 @@ main .container {
   margin-right: 8px;
 }
 
-.regisrtation-page a {
-  color: inherit;
-}
-
 @media (max-width: 40rem) {
   .modal-warning-registration .modal__footer {
     -ms-flex-wrap: wrap;

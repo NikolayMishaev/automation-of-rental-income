@@ -420,24 +420,35 @@ for (let index = 0; index < requiredInputList.length; index++) {
   }
 }
 
-function completeForm(stepList, tabList, form, radio, e) {
+function completeForm(radio, e) {
+  let steps, tabs, form;
+  if (radio === 0) {
+    steps = stepList;
+    tabs = tabList;
+    form = formNat;
+  }
+  if (radio === 1) {
+    steps = stepListJur;
+    tabs = tabListJur;
+    form = formJur;
+  }
   const requiredInputList = form.querySelectorAll(
     'input[data-required="true"], textarea[data-required="true"]'
   );
   for (let index = 0; index < requiredInputList.length; index++) {
     const element = requiredInputList[index];
     if (!element.value) {
-      for (let index = 0; index < stepList.length; index++) {
-        const step = stepList[index];
+      for (let index = 0; index < steps.length; index++) {
+        const step = steps[index];
         step.style.display = "none";
       }
       const numStep = +element.closest(".registration-form__step").dataset.step;
       radio === 0 ? (currentTab = numStep) : (currentTabJur = numStep);
-      stepList[numStep].style.display = "block";
-      tabList[stepList.length - 1].classList.remove("active");
-      tabList[numStep].classList.add("active");
-      checkRequiredInput(stepList[numStep].querySelectorAll("input, textarea"));
-      checkLastStep(0);
+      steps[numStep].style.display = "block";
+      tabs[steps.length - 1].classList.remove("active");
+      tabs[numStep].classList.add("active");
+      checkRequiredInput(steps[numStep].querySelectorAll("input, textarea"));
+      checkLastStep(radio);
       break;
     }
   }
@@ -450,8 +461,8 @@ const completeBtnNat = formNat.querySelector(".modal__complete-btn");
 const formJur = document.querySelector(".registration-form_juridical");
 const completeBtnJur = formJur.querySelector(".modal__complete-btn");
 
-completeBtnNat.onclick = (e) => completeForm(stepList, tabList, formNat, 0, e);
-completeBtnJur.onclick = (e) => completeForm(stepListJur, tabListJur, formJur, 1, e);
+completeBtnNat.onclick = (e) => completeForm(0, e);
+completeBtnJur.onclick = (e) => completeForm(1, e);
 
 // страница проверки формы
 
