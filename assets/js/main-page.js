@@ -43,6 +43,11 @@
     );
     const mainContainerFilter = document.querySelector(".main__container");
 
+    const paginationPage = document.querySelector(".pagination");
+    const controlPanelLeft = document.querySelector(
+        ".main__control-panel-column-two"
+    );
+
     controlPanelBtns.forEach((i) =>
         i.addEventListener("click", (e) => {
             if (e.target.ariaLabel === "map") {
@@ -59,6 +64,9 @@
                     behavior: "smooth",
                     block: "start",
                 });
+                // скрыть панель сортировки, выбора кол-ва страниц, пагинацию
+                paginationPage.classList.add("mix-display-none");
+                controlPanelLeft.classList.add("mix-display-none");
             } else {
                 btnList.classList.add("main-btn_active");
                 btnMap.classList.remove("main-btn_active");
@@ -74,6 +82,8 @@
                     behavior: "smooth",
                     block: "start",
                 });
+                paginationPage.classList.remove("mix-display-none");
+                controlPanelLeft.classList.remove("mix-display-none");
             }
             console.log(stateMain.currentOpenLeftBlock);
         })
@@ -332,6 +342,8 @@
             });
             cardsContainer.style.display = "block";
             mapContainer.style.display = "none";
+            paginationPage.classList.remove("mix-display-none");
+            controlPanelLeft.classList.remove("mix-display-none");
         }
     });
 
@@ -490,4 +502,34 @@
             i.classList.remove("custom-select-active")
         );
     });
+
+    // логика ввода значение в поля город улица адрес по клику в подменю
+
+    const sumbenuAdressContainers = document.querySelectorAll(
+        ".main-submenu_style_filters-adress"
+    );
+    const inputCity = document.querySelector("#main-form-adress-city");
+    const inputStreet = document.querySelector("#main-form-adress-street");
+    const inputUndergound = document.querySelector(
+        "#main-form-adress-underground"
+    );
+
+    sumbenuAdressContainers.forEach((i) =>
+        i.addEventListener("click", (e) => {
+            if (e.target.classList.contains("main-submenu__item")) {
+                if (e.target.ariaLabel === "city") {
+                    inputCity.value = e.target.textContent.trim();
+                }
+                if (e.target.ariaLabel === "street") {
+                    inputStreet.value = e.target.textContent.trim();
+                }
+                if (e.target.ariaLabel === "underground") {
+                    inputUndergound.value = e.target.textContent.trim();
+                }
+                e.target
+                    .closest(".main-submenu_style_filters-adress")
+                    .classList.remove("mix-visible");
+            }
+        })
+    );
 })();

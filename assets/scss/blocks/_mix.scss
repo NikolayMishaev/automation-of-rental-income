@@ -1,4 +1,7 @@
 .mix {
+    &-display-none {
+        display: none;
+    }
     &-visible {
         opacity: 1 !important;
         visibility: visible !important;

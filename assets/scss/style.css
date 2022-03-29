@@ -121,6 +121,10 @@ button {
   cursor: pointer;
 }
 
+.mix-display-none {
+  display: none;
+}
+
 .mix-visible {
   opacity: 1 !important;
   visibility: visible !important;
