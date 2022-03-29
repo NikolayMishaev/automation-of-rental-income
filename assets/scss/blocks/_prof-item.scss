@@ -15,6 +15,10 @@
         padding: rem(16px);
         display: flex;
         align-items: center;
+        @media #{$screen-mobile} {
+            flex-wrap: wrap;
+            height: unset;
+        }
         &_size_small {
             height: rem(56px);
         }
@@ -30,6 +34,7 @@
         margin-left: rem(8px);
     }
     &__button {
+        white-space: nowrap;
         margin-left: auto;
         padding: rem(12px) rem(20px);
         height: rem(48px);
@@ -37,6 +42,13 @@
         border: $border-CFD4DC;
         border-radius: rem(4px);
         transition: $transition;
+        @media #{$screen-mobile} {
+            margin-left: unset;
+            padding: 4px;
+            height: 32px;
+            width: 100%;
+            margin-top: 16px;
+        }
         &:hover {
             cursor: pointer;
             opacity: 0.7;

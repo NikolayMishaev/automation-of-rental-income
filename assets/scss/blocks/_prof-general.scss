@@ -1,7 +1,15 @@
 .prof-general {
+    width: 1068px;
+    flex-shrink: 0;
     color: $grey80;
-    width: 100%;
     padding-right: rem(32px);
+    @media (max-width: rem(1550px)) {
+        padding-right: 0;
+    }
+    @media (max-width: rem(1150px)) {
+        width: 100%;
+        flex-shrink: unset;
+    }
     &__header {
         display: flex;
         align-items: center;
@@ -31,7 +39,7 @@
         transition: $transition;
         &:hover {
             cursor: pointer;
-            opacity: .7;
+            opacity: 0.7;
         }
     }
     &__body {
@@ -43,6 +51,10 @@
         background-color: $grey-5;
         border-radius: 12px 12px 0px 0px;
         padding: 0 rem(40px);
+        text-align: center;
+        @media #{$screen-mobile} {
+            padding: 0;
+        }
     }
     &__button {
         height: rem(40px);
@@ -52,11 +64,16 @@
         padding: rem(8px) rem(16px);
         transition: $transition;
         &:hover {
-            opacity: .7;
+            opacity: 0.7;
         }
         &_active {
             border-bottom: 1px solid $accent-TCX50;
             color: $grey100;
+        }
+        @media #{$screen-mobile} {
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.08px;
         }
     }
     &__list-sections {
@@ -71,6 +88,7 @@
         }
         &_direction_row {
             flex-direction: row;
+            flex-wrap: wrap;
         }
     }
     &__content {
@@ -84,13 +102,18 @@
         border: $border-E3E7E8;
         border-radius: rem(12px);
         margin-bottom: rem(24px);
+        @media #{$screen-mobile} {
+            padding: 0;
+            border: none;
+        }
     }
     &__text {
         margin-top: rem(16px);
     }
     &__cards-container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(296px, 318px));
+        justify-content: center;
         gap: 16px;
         margin: 16px 0;
     }

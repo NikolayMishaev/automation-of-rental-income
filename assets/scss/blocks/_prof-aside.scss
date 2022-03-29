@@ -4,8 +4,10 @@
     top: rem(128px);
     right: rem(60px);
     height: rem(800px);
-    width: 731px;
     transition: $transition;
+    @media (max-width: rem(1550px)) {
+        display: none;
+    }
     &__block {
         width: 100%;
         transition: $transition;
@@ -16,6 +18,9 @@
         padding: rem(24px) rem(24px) rem(16px);
         box-sizing: border-box;
         border-radius: 12px;
+        @media (max-width: rem(1780px)) {
+            justify-content: center;
+        }
     }
     &__header {
         width: 100%;
@@ -39,12 +44,14 @@
         margin-right: rem(16px);
     }
     &__right-panel {
-        width: rem(407px);
         border: 1px solid #e3e7e8;
         border-radius: 12px;
         padding: rem(16px);
         display: flex;
         flex-direction: column;
+        @media (max-width: rem(1780px)) {
+            display: none;
+        }
     }
     &__input {
         width: 100%;

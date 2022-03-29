@@ -241,15 +241,15 @@
                             <div aria-label="favourites" id="favourites" class="prof-general__content">
                                 <div class="prof-control-panel">
                                     <div class="prof-control-panel__buttons-container">
-                                        <button
+                                        <button aria-label="button-list" id="button-list"
                                             class="prof-control-panel__button prof-control-panel__button_active heading-h4">Список</button>
-                                        <button class="prof-control-panel__button heading-h4">Карточки</button>
+                                        <button aria-label="button-cards" id="button-cards" class="prof-control-panel__button heading-h4">Карточки</button>
                                     </div>
                                     <label class="prof-control-panel__checkbox-label text-p2">
                                         <input type="checkbox" class="prof-control-panel__checkbox">
                                         Только выгодные предложения
                                     </label>
-                                    <label class="prof-control-panel__select-label text-p2">Статус:
+                                    <label class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2">Статус:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                         <div class="prof-control-panel__cursor"></div>
                                         <input type="text" disabled="true" class="prof-control-panel__select-input"
@@ -338,7 +338,7 @@
                                     </label>
                                 </div>
 
-                                <div class="prof-table mix-display-none">
+                                <div class="prof-table">
                                     <ul class="prof-table__row">
                                         <li class="prof-table__row-heading text-p2">Адрес объекта</li>
                                         <li class="prof-table__row-heading text-p2">Номер</li>
@@ -427,7 +427,7 @@
                                     </ul>
                                 </div>
 
-                                <ul class="prof-general__cards-container">
+                                <ul class="prof-general__cards-container mix-display-none">
                                     <li class="prof-card">
                                         <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
                                             class="prof-card__photo">
