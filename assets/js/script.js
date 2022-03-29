@@ -254,11 +254,10 @@ function checkRequiredInput(step) {
   let findInput = false;
   for (let index = 0; index < step.length; index++) {
     const element = step[index];
-    if (element.required) {
-      if (!element.value) {
+    if (element.required && !element.value) {
+      findInput = true;
+      if (element.type !== "file")
         element.closest(".custom-text-input").classList.add("custom-text-input__error");
-        findInput = true;
-      }
     }
   }
   if (findInput) return false;
@@ -362,36 +361,47 @@ for (let index = 0; index < btnDownloadList.length; index++) {
   btn.addEventListener("click", () => {
     modalDownloadList[index].style.display = "flex";
   });
-  // modalDownloadList[index].addEventListener("click", (e) => {
-  //   if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
-  //     modalDownloadList[index].style.display = "none";
-  //   }
-  // });
+  modalDownloadList[index].addEventListener("click", (e) => {
+    if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
+      modalDownloadList[index].style.display = "none";
+    }
+  });
 }
 
-const imgSvg =
-  '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z" fill="#55B465"/></svg>';
+const fileInput = document.querySelectorAll(".modal-file-input input");
+const fileContainerNameList = document.querySelectorAll(".file-input__name a");
+const fileContainerList = document.querySelectorAll(".file-input__file");
 
-const fileInput = document.querySelector(".modal-file-input input");
+// логика работы модального окна с загрузкой файлов
 
-fileInput.addEventListener("change", (e) => {
-  const input = e.target;
-  const textInput = input.previousElementSibling;
-  if (input.files) {
-    textInput.style.display = "none";
-    for (let index = 0; index < input.files.length; index++) {
-      const file = input.files[index];
-      let div = document.createElement("div");
-      const container = input.closest(".file-input");
-      div.innerHTML = `<div class ='file-input__row'>${imgSvg}${file.name}</><div class='file-input__file-close'>x</div>`;
-      div.classList.add("file-input__file");
-      container.append(div);
+for (let index = 0; index < fileInput.length; index++) {
+  fileInput[index].addEventListener("change", (e) => {
+    const input = e.target;
+    if (input.files) {
+      for (let i = 0; i < input.files.length; i++) {
+        fileContainerList[index].style.display = "inline-flex";
+        fileContainerNameList[index].textContent = input.files[i].name;
+      }
+      btnDownloadList[index].style.display = "none";
+      modalDownloadList[index].style.display = "none";
     }
-  }
-  console.log(input.value);
-});
+  });
+}
+
+// удаление файла
+
+for (let index = 0; index < fileContainerList.length; index++) {
+  fileContainerList[index].addEventListener("click", (e) => {
+    if (!e.target.classList.contains("file-input__file-close")) return;
+    e.currentTarget.style.display = "none";
+    btnDownloadList[index].style.display = "inline-flex";
+    fileInput[index].value = "";
+  });
+}
 
 const requiredInputList = document.querySelectorAll(".registration-form .custom-text-input");
+
+// проверить обязательное поле на заполнение
 
 for (let index = 0; index < requiredInputList.length; index++) {
   const input = requiredInputList[index];

@@ -38,6 +38,7 @@
     @include flex-container;
     background-color: transparent;
     border: none;
+    cursor: pointer;
   }
   &__body {
     padding: 0 24px 24px;

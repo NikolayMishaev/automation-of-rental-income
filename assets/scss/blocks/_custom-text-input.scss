@@ -42,7 +42,13 @@
       top: 4px;
       left: 12px;
       line-height: 16px;
+      @media #{$screen-mobile} {
+        display: none;
+      }
     }
+  }
+  &__error {
+    border: 2px solid $error;
   }
   textarea {
     width: 100%;

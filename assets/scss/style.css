@@ -1048,6 +1048,7 @@ main .container {
           justify-content: center;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .modal__body {
@@ -1277,6 +1278,16 @@ main .container {
   line-height: 16px;
 }
 
+@media (max-width: 40rem) {
+  .custom-text-input__label_full {
+    display: none;
+  }
+}
+
+.custom-text-input__error {
+  border: 2px solid #f44336;
+}
+
 .custom-text-input textarea {
   width: 100%;
   height: 100%;
@@ -1440,6 +1451,7 @@ main .container {
         -ms-flex: auto;
             flex: auto;
     width: 100%;
+    height: 32px;
   }
 }
 
@@ -1468,6 +1480,7 @@ main .container {
 @media (max-width: 40rem) {
   .regisrtation-page .input-date__container .label-date {
     top: 1px;
+    height: 30px;
   }
 }
 
@@ -1486,6 +1499,37 @@ main .container {
   background-color: white;
   line-height: 22px;
   margin-right: 8px;
+}
+
+@media (max-width: 40rem) {
+  .modal-warning-registration .modal__footer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 40rem) {
+  .modal-warning-registration .modal__footer .modal__login-btn {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .modal-warning-registration .modal__footer .modal__cancel-btn,
+  .modal-warning-registration .modal__footer .modal__secondary-btn {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+  }
+}
+
+@media (max-width: 40rem) {
+  .modal-warning-registration .modal__secondary-btn {
+    margin-right: 0;
+  }
 }
 
 .registration-form {
@@ -1515,6 +1559,12 @@ main .container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 40rem) {
+  .registration-form__select-icon {
+    top: 4px;
+  }
 }
 
 .registration-form__tabs {
@@ -1554,6 +1604,14 @@ main .container {
 
 .registration-form__tab_filled {
   background-color: #e6fae9;
+}
+
+.registration-form__tab_filled:nth-child(1) {
+  border-radius: 12px 0 0 0;
+}
+
+.registration-form__tab_filled:nth-last-child(1) {
+  border-radius: 0 12px 0 0;
 }
 
 .registration-form .active {
@@ -1673,6 +1731,10 @@ main .container {
   cursor: pointer;
 }
 
+.registration-form .custom-text-input__error {
+  border: 2px solid #f44336;
+}
+
 .registration-form .custom-text-input__option-list {
   position: absolute;
   opacity: 0;
@@ -1705,6 +1767,24 @@ main .container {
   color: white;
 }
 
+@media (max-width: 40rem) {
+  .registration-form .custom-text-input input {
+    padding: 4px 12px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .registration-form .custom-text-input input:focus + span {
+    display: none;
+  }
+}
+
+@media (max-width: 40rem) {
+  .registration-form .custom-text-input__label {
+    top: 4px;
+  }
+}
+
 .registration-form__input {
   -webkit-box-flex: 428px;
       -ms-flex: 428px;
@@ -1722,6 +1802,7 @@ main .container {
         -ms-flex: auto;
             flex: auto;
     width: 100%;
+    height: 32px;
   }
 }
 
@@ -1794,9 +1875,6 @@ main .container {
   display: none;
   width: 205px;
   height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1841,9 +1919,9 @@ main .container {
 }
 
 .registration-form__download-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1853,6 +1931,7 @@ main .container {
   background-color: white;
   line-height: 22px;
   padding: 8px 16px 8px 8px;
+  cursor: pointer;
 }
 
 @media (max-width: 40rem) {
@@ -1898,6 +1977,129 @@ main .container {
   display: block;
   background: url(/assets/images/icons/calendar.svg) no-repeat;
   border-width: thin;
+}
+
+.registration-form .file-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px dashed #b4bbc6;
+  width: 100%;
+  border-radius: 4px;
+  padding: 24px 0;
+  position: relative;
+  text-align: center;
+}
+
+@media (max-width: 40rem) {
+  .registration-form .file-input {
+    min-width: auto;
+  }
+}
+
+.registration-form .file-input input {
+  opacity: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.registration-form .file-input a {
+  color: #1565c0;
+}
+
+.registration-form .file-input__text {
+  font-size: 0.875rem;
+  color: #222429;
+  margin: auto;
+}
+
+.registration-form .file-input__text_small {
+  font-size: 0.75rem;
+  color: #6d7678;
+  margin-top: 8px;
+}
+
+.registration-form .file-input__file {
+  border: 1px solid #cfd4dc;
+  padding: 16px;
+  border-radius: 12px;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registration-form .file-input__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+}
+
+.registration-form .file-input__name a {
+  line-height: 24px;
+  font-size: 20px;
+}
+
+.registration-form .file-input__name a:hover {
+  text-decoration: none;
+}
+
+.registration-form .file-input__name a:visited {
+  color: inherit;
+}
+
+.registration-form .file-input__icon {
+  height: 24px;
+  width: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 8px;
+}
+
+.registration-form .file-input__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registration-form .file-input__row svg {
+  margin-right: 11px;
+}
+
+.registration-form .file-input__file-close {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.registration-form .modal h3 {
+  border: none;
+}
+
+.registration-form__error-text {
+  color: #f44336;
+  font-size: 0.875rem;
+  margin-bottom: 40px;
+}
+
+.registration-form .modal-file-input .modal__content {
+  width: 800px;
 }
 
 .registration-form_juridical {
