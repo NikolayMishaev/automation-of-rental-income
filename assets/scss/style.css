@@ -1072,7 +1072,7 @@ main .container {
   border-top: 1px solid #e1e5eb;
 }
 
-.modal__cancel-btn {
+.modal__cancel-btn, .modal__secondary-btn {
   border-radius: 4px;
   border: 1px solid #cfd4dc;
   color: #222429;
@@ -1083,7 +1083,7 @@ main .container {
 }
 
 @media (max-width: 40rem) {
-  .modal__cancel-btn {
+  .modal__cancel-btn, .modal__secondary-btn {
     -webkit-box-flex: 50%;
         -ms-flex: 50%;
             flex: 50%;

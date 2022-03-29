@@ -52,7 +52,8 @@
     padding: 20px 24px;
     border-top: 1px solid $grey-20;
   }
-  &__cancel-btn {
+  &__cancel-btn,
+  &__secondary-btn {
     @include secondary-btn;
     margin-right: 8px;
     padding: 4px 12px;

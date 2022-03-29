@@ -256,7 +256,7 @@ function checkRequiredInput(step) {
   let findInput = false;
   for (let index = 0; index < step.length; index++) {
     const element = step[index];
-    if (element.required && !element.value) {
+    if (element.dataset.required && !element.value) {
       findInput = true;
       if (element.type !== "file")
         element.closest(".custom-text-input").classList.add("custom-text-input__error");
@@ -289,20 +289,24 @@ function navigateNextBtn(numForm, stepList, tabList) {
   checkLastStep(numForm);
 }
 
-const modalRWarningReg = document.querySelector(".modal-warning-registration");
+const modalRWarningReg = document.querySelectorAll(".modal-warning-registration");
 
 // открыть модалку
 
 for (let index = 0; index < submitRegBtn.length; index++) {
   submitRegBtn[index].addEventListener("click", () => {
-    modalRWarningReg.style.display = "flex";
+    modalRWarningReg[index].style.display = "flex";
   });
 }
 
 // закрытие модалки
 
 if (modalRWarningReg) {
-  modalRWarningReg.addEventListener("click", (e) => closeModalWindow(modalRWarningReg, e));
+  for (let index = 0; index < modalRWarningReg.length; index++) {
+    modalRWarningReg[index].addEventListener("click", (e) =>
+      closeModalWindow(modalRWarningReg[index], e)
+    );
+  }
 }
 
 // слушатель на клик селекта
@@ -406,7 +410,7 @@ const requiredInputList = document.querySelectorAll(".registration-form .custom-
 for (let index = 0; index < requiredInputList.length; index++) {
   const input = requiredInputList[index];
   let elem = input.querySelector("input, textarea");
-  if (elem.required) {
+  if (elem.dataset.required) {
     input.addEventListener("change", (e) => {
       const container = input.closest(".custom-text-input");
       elem.value
@@ -415,6 +419,39 @@ for (let index = 0; index < requiredInputList.length; index++) {
     });
   }
 }
+
+function completeForm(stepList, tabList, form, radio, e) {
+  const requiredInputList = form.querySelectorAll(
+    'input[data-required="true"], textarea[data-required="true"]'
+  );
+  for (let index = 0; index < requiredInputList.length; index++) {
+    const element = requiredInputList[index];
+    if (!element.value) {
+      for (let index = 0; index < stepList.length; index++) {
+        const step = stepList[index];
+        step.style.display = "none";
+      }
+      const numStep = +element.closest(".registration-form__step").dataset.step;
+      radio === 0 ? (currentTab = numStep) : (currentTabJur = numStep);
+      stepList[numStep].style.display = "block";
+      tabList[stepList.length - 1].classList.remove("active");
+      tabList[numStep].classList.add("active");
+      checkRequiredInput(stepList[numStep].querySelectorAll("input, textarea"));
+      checkLastStep(0);
+      break;
+    }
+  }
+  e.target.closest(".modal").style.display = "none";
+}
+
+// логика кнопки "Дополнить"
+const formNat = document.querySelector(".registration-form_natural");
+const completeBtnNat = formNat.querySelector(".modal__complete-btn");
+const formJur = document.querySelector(".registration-form_juridical");
+const completeBtnJur = formJur.querySelector(".modal__complete-btn");
+
+completeBtnNat.onclick = (e) => completeForm(stepList, tabList, formNat, 0, e);
+completeBtnJur.onclick = (e) => completeForm(stepListJur, tabListJur, formJur, 1, e);
 
 // страница проверки формы
 

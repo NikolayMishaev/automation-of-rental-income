@@ -37,15 +37,15 @@
           <form class="registration-form_natural" action="">
             <div class="registration-form">
               <ul class="registration-form__tabs_natural registration-form__tabs">
-                <li class="registration-form__tab active" data-step="1">Шаг 1</li>
-                <li class="registration-form__tab" data-step="2">Шаг 2</li>
-                <li class="registration-form__tab" data-step="3">Шаг 3</li>
-                <li class="registration-form__tab" data-step="4">Шаг 4</li>
-                <li class="registration-form__tab" data-step="5">Шаг 5</li>
-                <li class="registration-form__tab" data-step="6">Шаг 6</li>
+                <li class="registration-form__tab active" data-step="0">Шаг 1</li>
+                <li class="registration-form__tab" data-step="1">Шаг 2</li>
+                <li class="registration-form__tab" data-step="2">Шаг 3</li>
+                <li class="registration-form__tab" data-step="3">Шаг 4</li>
+                <li class="registration-form__tab" data-step="4">Шаг 5</li>
+                <li class="registration-form__tab" data-step="5">Шаг 6</li>
               </ul>
               <div class="registration-form__content">
-                <div class="registration-form__step1 registration-form__step">
+                <div class="registration-form__step1 registration-form__step" data-step="0">
                   <h3>Общая информация</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Фамилия</span>
@@ -86,7 +86,7 @@
                     </label>
                   </div>
                 </div>
-                <div class="registration-form__step2 registration-form__step" style="display: none">
+                <div class="registration-form__step2 registration-form__step" data-step="1" style="display: none">
                   <h3>Данные контрагента</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Место рождения</span>
@@ -120,7 +120,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" required maxlength="12" minlength="12" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                      <input type="text" data-required='true' maxlength="12" minlength="12" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                       />
                       <span class="custom-text-input__label">Введите ИНН*</span>
                     </label>
@@ -160,7 +160,7 @@
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
                       <input
-                      required
+                      data-required='true'
                         maxlength="11"
                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                         type="text"
@@ -182,12 +182,12 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" required/>
+                      <input type="text" data-required='true'/>
                       <span class="custom-text-input__label">Введите E-mail*</span>
                     </label>
                   </div>
                 </div>
-                <div class="registration-form__step3 registration-form__step" style="display: none">
+                <div class="registration-form__step3 registration-form__step" data-step="2" style="display: none">
                   <h3>Реквизиты</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Наименование получателя платежа</span>
@@ -203,7 +203,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" required />
+                      <input type="text" data-required='true' />
                       <span class="custom-text-input__label">Введите страну банка*</span>
                     </label>
                   </div>
@@ -212,7 +212,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" required />
+                      <input type="text" data-required='true' />
                       <span class="custom-text-input__label">Введите наименование банка*</span>
                     </label>
                   </div>
@@ -280,17 +280,17 @@
                     </label>
                   </div>
                 </div>
-                <div class="registration-form__step4 registration-form__step" style="display: none">
+                <div class="registration-form__step4 registration-form__step" data-step="3" style="display: none">
                   <h3>Вид деятельности контрагента</h3>
                   <div class="registration-form__row_textarea">
                     <span class="registration-form__label_textarea">Вид деятельности</span>
                     <div class="custom-text-input custom-text-input_text">
-                      <textarea cols="30" rows="4" required></textarea>
+                      <textarea cols="30" rows="4" data-required='true'></textarea>
                       <span class="custom-text-input__label">Введите вид деятельности*</span>
                     </div>
                   </div>
                 </div>
-                <div class="registration-form__step5 registration-form__step" style="display: none">
+                <div class="registration-form__step5 registration-form__step" data-step="4" style="display: none">
                   <h3>Дополнительные сведения</h3>
                   <div class="registration-form__row_textarea">
                     <span class="registration-form__label_textarea"
@@ -302,7 +302,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="registration-form__step6 registration-form__step" style="display: none">
+                <div class="registration-form__step6 registration-form__step" data-step="5" style="display: none">
                   <h3>Обязательные вложения</h3>
                   <div class="registration-form__download-container">
                     <p class="registration-form__subtitle">Скан ИНН</p>
@@ -367,7 +367,7 @@
                                 Максимальный размер файла: 500 МБ
                               </p>
                             </div>
-                            <input type="file" required
+                            <input type="file" data-required='true'
                           /></label>
                         </div>
                       </div>
@@ -435,7 +435,7 @@
                                   Максимальный размер файла: 500 МБ
                                 </p>
                               </div>
-                              <input type="file" required
+                              <input type="file" data-required='true'
                             /></label>
                           </div>
                         </div>
@@ -503,7 +503,7 @@
                                   Максимальный размер файла: 500 МБ
                                 </p>
                               </div>
-                              <input type="file" required
+                              <input type="file" data-required='true'
                             /></label>
                           </div>
                         </div>
@@ -573,7 +573,7 @@
                                   Максимальный размер файла: 500 МБ
                                 </p>
                               </div>
-                              <input type="file" required
+                              <input type="file" data-required='true'
                             /></label>
                           </div>
                         </div>
@@ -643,7 +643,7 @@
                                   Максимальный размер файла: 500 МБ
                                 </p>
                               </div>
-                              <input type="file" required
+                              <input type="file" data-required='true'
                             /></label>
                           </div>
                         </div>
@@ -664,6 +664,40 @@
               <div class="registration-form__next-btn">Далее</div>
               <div class="registration-form__submit-btn">Сохранить</div>
             </div>
+            <!--модальное окно отображается, если не все поля заполнены -->
+      <div class="modal modal-warning-registration">
+        <div class="modal__content content-offer-price">
+          <div class="modal__header">
+            <h3>Предупреждение</h3>
+            <div class="modal__close-btn">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                  fill="#6C737D"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="modal__body">
+            <p class="modal__text-info">
+              Не все поля заполнены! <br /><br />
+              Вы можете сохранить анкету и дополнить её позже. Все ваши данные будут сохранены
+            </p>
+          </div>
+          <div class="modal__footer">
+            <button class="modal__cancel-btn">Отмена</button>
+            <button class="modal__secondary-btn modal__complete-btn">Дополнить</button>
+            <button class="modal__login-btn">Сохранить</button>
+          </div>
+        </div>
+      </div>
+      <!-- конец модального окна -->
           </form>
         </div>
           <form class="registration-form_juridical" action="">
@@ -680,7 +714,7 @@
                 <li class="registration-form__tab" data-step="9">Шаг 9</li>
               </ul>
               <div class="registration-form__content">
-                <div class="registration-form__step1 registration-form__step">
+                <div class="registration-form__step1 registration-form__step" data-step="0">
                   <h3>Регистрационные данные компании/ИП</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Признак компании</span>
@@ -854,7 +888,7 @@
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
                       <input
-                      required
+                      data-required='true'
                         type="text"
                         maxlength="11"
                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
@@ -876,12 +910,12 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" required/>
+                      <input type="text" data-required='true'/>
                       <span class="custom-text-input__label">Введите E-mail*</span>
                     </label>
                   </div>
                 </div>
-                <div class="registration-form__step2 registration-form__step" style="display: none">
+                <div class="registration-form__step2 registration-form__step" data-step="1" style="display: none">
                   <h3>Реквизиты</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label"
@@ -907,7 +941,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" required />
+                      <input type="text" data-required='true' />
                       <span class="custom-text-input__label">Введите страну банка*</span>
                     </label>
                   </div>
@@ -921,7 +955,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" required/>
+                      <input type="text" data-required='true'/>
                       <span class="custom-text-input__label">Введите наименование банка*</span>
                     </label>
                   </div>
@@ -994,7 +1028,7 @@
                     </label>
                   </div>
                 </div>
-                <div class="registration-form__step3 registration-form__step" style="display: none">
+                <div class="registration-form__step3 registration-form__step" data-step="2" style="display: none">
                   <h3>Генеральный директор/Руководитель</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Фамилия</span>
@@ -1062,7 +1096,7 @@
                     >
                   </div>
                 </div>
-                <div class="registration-form__step4 registration-form__step" style="display: none">
+                <div class="registration-form__step4 registration-form__step" data-step="3" style="display: none">
                   <h3>Доверенное лицо</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Фамилия</span>
@@ -1130,7 +1164,7 @@
                     </label>
                   </div>
                 </div>
-                <div class="registration-form__step5 registration-form__step" style="display: none">
+                <div class="registration-form__step5 registration-form__step" data-step="4" style="display: none">
                   <h3>Конечный бенефициар (физическое лицо)</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Фамилия</span>
@@ -1206,7 +1240,7 @@
                     <button class="registration-form__add-btn">Добавить бенефициара</button>
                   </div>
                 </div>
-                <div class="registration-form__step6 registration-form__step" style="display: none">
+                <div class="registration-form__step6 registration-form__step" data-step="5" style="display: none">
                   <h3>Конечный бенефициар (юридическое лицо)</h3>
                   <div class="registration-form__row">
                     <span class="registration-form__label">Полное наименование</span>
@@ -1332,7 +1366,7 @@
                     >
                       <input
                         type="text"
-                        required
+                        data-required='true'
                         maxlength="20"
                         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
                       />
@@ -1353,7 +1387,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" required/>
+                      <input type="text" data-required='true'/>
                       <span class="custom-text-input__label">Введите E-mail*</span>
                     </label>
                   </div>
@@ -1366,17 +1400,17 @@
                     <button class="registration-form__add-btn">Добавить бенефициара</button>
                   </div>
                 </div>
-                <div class="registration-form__step7 registration-form__step" style="display: none">
+                <div class="registration-form__step7 registration-form__step" data-step="6" style="display: none">
                   <h3>Вид деятельности контрагента</h3>
                   <div class="registration-form__row_textarea">
                     <span class="registration-form__label_textarea">Вид деятельности</span>
                     <div class="custom-text-input custom-text-input_text">
-                      <textarea required cols="30" rows="4"></textarea>
+                      <textarea data-required cols="30" rows="4"></textarea>
                       <span class="custom-text-input__label">Введите вид деятельности*</span>
                     </div>
                   </div>
                 </div>
-                <div class="registration-form__step8 registration-form__step" style="display: none">
+                <div class="registration-form__step8 registration-form__step" data-step="7" style="display: none">
                   <h3>Дополнительные сведения</h3>
                   <div class="registration-form__row_textarea">
                     <span class="registration-form__label_textarea"
@@ -1388,7 +1422,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="registration-form__step6 registration-form__step" style="display: none">
+                <div class="registration-form__step9 registration-form__step" data-step="8" style="display: none">
                   <h3>Обязательные вложения</h3>
                   <div class="registration-form__download-container">
                     <p class="registration-form__subtitle">Скан ИНН</p>
@@ -1453,7 +1487,7 @@
                                 Максимальный размер файла: 30 МБ
                               </p>
                             </div>
-                            <input type="file" required
+                            <input type="file" data-required='true'
                           /></label>
                         </div>
                       </div>
@@ -1522,7 +1556,7 @@
                                 Максимальный размер файла: 30 МБ
                               </p>
                             </div>
-                            <input type="file" required
+                            <input type="file" data-required='true'
                           /></label>
                         </div>
                       </div>
@@ -1591,7 +1625,7 @@
                                 Максимальный размер файла: 30 МБ
                               </p>
                             </div>
-                            <input type="file" required
+                            <input type="file" data-required='true'
                           /></label>
                         </div>
                       </div>
@@ -1662,7 +1696,7 @@
                                 Максимальный размер файла: 30 МБ
                               </p>
                             </div>
-                            <input type="file" required
+                            <input type="file" data-required='true'
                           /></label>
                         </div>
                       </div>
@@ -1733,7 +1767,7 @@
                                 Максимальный размер файла: 30 МБ
                               </p>
                             </div>
-                            <input type="file" required
+                            <input type="file" data-required='true'
                           /></label>
                         </div>
                       </div>
@@ -1751,10 +1785,7 @@
               <div class="registration-form__next-btn">Далее</div>
               <div class="registration-form__submit-btn">Сохранить</div>
             </div>
-          </form>
-        </div>
-      </div>
-      <!--модальное окно отображается, если не все поля заполнены -->
+             <!--модальное окно отображается, если не все поля заполнены -->
       <div class="modal modal-warning-registration">
         <div class="modal__content content-offer-price">
           <div class="modal__header">
@@ -1782,12 +1813,14 @@
           </div>
           <div class="modal__footer">
             <button class="modal__cancel-btn">Отмена</button>
-            <button class="modal__secondary-btn">Дополнить</button>
+            <button class="modal__secondary-btn modal__complete-btn">Дополнить</button>
             <button class="modal__login-btn">Сохранить</button>
           </div>
         </div>
       </div>
-      <!-- конец модального окна -->
+          </form>
+        </div>
+      </div>
     </div>
 
     <script src="./assets/js/tabs.js"></script>
