@@ -19,23 +19,23 @@ for (let index = 0; index < contactBtn.length; index++) {
 
 // закрыть модалку
 if (modalOfferPrice) {
-  modalOfferPrice.addEventListener("click", (e) => {
+  modalOfferPrice.addEventListener("click", (e) => closeModalWindow(modalOfferPrice, e));
+}
+
+function closeModalWindow(modal, e) {
+  {
     if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
-      modalOfferPrice.style.display = "none";
+      modal.style.display = "none";
     }
-  });
+  }
 }
 
 // закрыть модалку
 if (modalForm) {
-  modalForm.addEventListener("click", (e) => {
-    if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
-      modalForm.style.display = "none";
-    }
-  });
+  modalForm.addEventListener("click", (e) => closeModalWindow(modalForm, e));
 }
 
-// лькрыть модалку
+// открыть модалку
 contactBtn.onclick = function () {
   modalForm.style.display = "flex";
 };
@@ -192,8 +192,10 @@ const submitRegBtn = document.querySelectorAll(".registration-form__submit-btn")
 let currentTab = 0;
 let currentTabJur = 0;
 
-tabNextBtn[0].addEventListener("click", () => navigateNextBtn(0, stepList, tabList));
-tabNextBtn[1].addEventListener("click", () => navigateNextBtn(1, stepListJur, tabListJur));
+if (tabNextBtn.length > 0) {
+  tabNextBtn[0].addEventListener("click", () => navigateNextBtn(0, stepList, tabList));
+  tabNextBtn[1].addEventListener("click", () => navigateNextBtn(1, stepListJur, tabListJur));
+}
 
 // слушатели на клики по табам
 
@@ -300,11 +302,7 @@ for (let index = 0; index < submitRegBtn.length; index++) {
 // закрытие модалки
 
 if (modalRWarningReg) {
-  modalRWarningReg.addEventListener("click", (e) => {
-    if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
-      modalRWarningReg.style.display = "none";
-    }
-  });
+  modalRWarningReg.addEventListener("click", (e) => closeModalWindow(modalRWarningReg, e));
 }
 
 // слушатель на клик селекта
@@ -322,7 +320,7 @@ document.body.addEventListener("click", function (e) {
     currentSelect = null;
   }
 });
-// открыть селекот
+// открыть селект
 
 for (let index = 0; index < selectReg.length; index++) {
   const element = selectReg[index];
@@ -339,16 +337,18 @@ for (let index = 0; index < selectReg.length; index++) {
 const selectItemsReg = document.querySelector(".custom-text-input__option-list");
 
 // заполнить значение селекта
-selectItemsReg.addEventListener("click", function (e) {
-  if (e.target.tagName !== "LI") return;
-  const input = document.querySelector(".custom-text-input_select input");
-  const label = document.querySelector(".custom-text-input_select .custom-text-input__label");
-  input.value = e.target.textContent;
-  e.currentTarget.classList.remove("custom-text-input__option-list_active");
-  currentIcon.style.transform = "rotate(0deg)";
-  e.stopPropagation();
-  label.classList.add("custom-text-input__label_full");
-});
+if (selectItemsReg) {
+  selectItemsReg.addEventListener("click", function (e) {
+    if (e.target.tagName !== "LI") return;
+    const input = document.querySelector(".custom-text-input_select input");
+    const label = document.querySelector(".custom-text-input_select .custom-text-input__label");
+    input.value = e.target.textContent;
+    e.currentTarget.classList.remove("custom-text-input__option-list_active");
+    currentIcon.style.transform = "rotate(0deg)";
+    e.stopPropagation();
+    label.classList.add("custom-text-input__label_full");
+  });
+}
 
 const btnDownloadList = document.querySelectorAll(".registration-form__download-btn");
 const modalDownloadList = document.querySelectorAll(".modal-file-input");
@@ -415,3 +415,16 @@ for (let index = 0; index < requiredInputList.length; index++) {
     });
   }
 }
+
+// страница проверки формы
+
+const modalRejectForm = document.querySelector(".modal-reject-form");
+const openModalRejectFormBtn = document.querySelector(".check-form-page__reject-btn");
+
+openModalRejectFormBtn.onclick = function () {
+  modalRejectForm.style.display = "flex";
+};
+
+modalRejectForm.onclick = function (e) {
+  closeModalWindow(modalRejectForm, e);
+};
