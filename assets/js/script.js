@@ -421,10 +421,14 @@ for (let index = 0; index < requiredInputList.length; index++) {
 const modalRejectForm = document.querySelector(".modal-reject-form");
 const openModalRejectFormBtn = document.querySelector(".check-form-page__reject-btn");
 
-openModalRejectFormBtn.onclick = function () {
-  modalRejectForm.style.display = "flex";
-};
+if (openModalRejectFormBtn) {
+  openModalRejectFormBtn.onclick = function () {
+    modalRejectForm.style.display = "flex";
+  };
+}
 
-modalRejectForm.onclick = function (e) {
-  closeModalWindow(modalRejectForm, e);
-};
+if (modalRejectForm) {
+  modalRejectForm.onclick = function (e) {
+    closeModalWindow(modalRejectForm, e);
+  };
+}
