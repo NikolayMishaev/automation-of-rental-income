@@ -164,4 +164,8 @@
             display: flex;
         }
     }
+    &__navigation-wrapper {
+        display: flex;
+        align-items: center;
+    }
 }

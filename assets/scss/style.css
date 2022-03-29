@@ -3080,6 +3080,15 @@ main .container {
   }
 }
 
+.main__navigation-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .footer {
   padding: 1.5rem 3.75rem;
   display: -webkit-box;
