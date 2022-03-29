@@ -1,0 +1,60 @@
+.prof-table {
+    &__row {
+        display: grid;
+        grid-template-columns: 199px 90px 110px 180px 152px 178px;
+        column-gap: 16px;
+        align-items: baseline;
+        border-top: 1px solid #E3E7E8;
+        &:first-child {
+            margin-top: 16px;
+        }
+        &:last-child {
+            border-bottom: 1px solid #E3E7E8;
+        }
+    }
+    &__row-heading {
+        color: #6D7678;
+        padding: 14px 0;
+    }
+    &__row-content {
+        height: 54px;
+        display: flex;
+        align-items: center;
+        color: #3C4142;
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    &__index {
+        vertical-align: super;
+        font-size: 8px;
+    }
+    &__marker-green {
+        flex-shrink: 0;
+        width: 12px;
+        height: 12px;
+        border-radius:50%;
+        background-color: $accent-TCX50;
+        display: inline-block;
+        margin-right: 4px;
+    }
+    &__marker-red {
+        flex-shrink: 0;
+        width: 12px;
+        height: 12px;
+        border-radius:50%;
+        background-color: #F44336;
+        display: inline-block;
+        margin-right: 4px;
+    }
+    &__marker-hot {
+        flex-shrink: 0;
+        width: 16px;
+        height: 20px;
+        display: inline-block;
+        margin-right: 4px;
+        background: url('./../images/icons/prof-table-marker-hot.svg') no-repeat center;
+    }
+}

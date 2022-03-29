@@ -21,16 +21,31 @@
         min-width: 75px;
     }
     &_style_main-form-change-type {
-        left:0;
+        left: 0;
         right: 0;
         top: 105px;
         margin: 0 16px;
     }
     &_style_main-form-change-class {
-        left:0;
+        left: 0;
         right: 0;
         top: 105px;
         margin: 0 16px;
+    }
+    &_style_prof-status {
+        left: 0;
+        right: 0;
+        top: 34px;
+    }
+    &_style_prof-status-sort {
+        left: 0;
+        right: 0;
+        top: 34px;
+        &:hover {
+            background-color: $accent-TCX50;
+            color: white;
+            cursor: pointer;
+        }
     }
     &__item {
         font-style: normal;
@@ -58,12 +73,19 @@
             &:hover {
                 background-color: white;
                 color: #50565e;
-                cursor: auto
+                cursor: auto;
             }
         }
         &_active {
             background-color: $accent-TCX50;
             color: white;
+        }
+        &_style_prof-control-panel {
+            &:hover {
+                cursor: auto;
+                background-color: unset;
+                color: unset;
+            }
         }
     }
 }

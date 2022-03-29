@@ -1,0 +1,151 @@
+.prof-control-panel {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    &__buttons-container {
+        width: 228px;
+        height: 32px;
+        background-color: #e6fae9;
+        border-radius: 50px;
+        @include flex-container;
+    }
+    &__button {
+        height: 28px;
+        padding: 4px 24px;
+        background: transparent;
+        border-radius: 50px;
+        border: none;
+        color: #6c737d;
+        transition: $transition;
+        &:hover {
+            opacity: 0.7;
+        }
+        &_active {
+            background-color: #55b465;
+            color: white;
+        }
+    }
+    &__checkbox-label {
+        color: #6d7678;
+        margin-left: auto;
+        margin-right: 40px;
+    }
+    &__select-label {
+        position: relative;
+        color: #6d7678;
+        &_type_sort {
+            margin-top: 16px;
+        }
+    }
+    &__cursor {
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        width: 8px;
+        height: 8px;
+        background: url("./../images/icons/main-cursor-down.svg") no-repeat center/8px;
+        &_active {
+            transform: rotate(180deg);
+        }
+    }
+    &__select-input {
+        width: 150px;
+        height: 32px;
+        border: 1px solid #e1e5eb;
+        border-radius: 4px;
+        padding: 4px 12px;
+        &:disabled {
+            background-color: #fff;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.12px;
+            color: #222429;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        &_type_sort {
+            width: 210px;
+        }
+    }
+    &__label-custom {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 32px;
+        padding-left: 30px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__input-hidden {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        &:checked + .prof-control-panel__visible-radio {
+            border: 5px solid #55b465;
+        }
+        &:checked + .prof-control-panel__visible-checkbox {
+            background: url("./../images/icons/profile-active-checkbox.svg") no-repeat center;
+            border: none;
+        }
+    }
+    &__visible-radio {
+        position: absolute;
+        left: 6px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid #cfd4dc;
+    }
+    &__visible-checkbox {
+        position: absolute;
+        left: 6px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border-radius: 2px;
+        border: 1px solid #cfd4dc;
+    }
+    &__title-submenu {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: #50565e;
+        &:hover {
+            background-color: unset;
+            color: unset;
+            cursor: default;
+        }
+        &:nth-child(2n) {
+            border-top: 1px solid #e3e7e8;
+            margin-top: 14px;
+            padding-top: 10px;
+        }
+    }
+    &__search {
+        width: 645px;
+        height: 32px;
+        border: 1px solid #e1e5eb;
+        margin-right: auto;
+        margin-top: 16px;
+    }
+    &__input-search {
+        background: url(./../images/icons/main-filters-search.svg) no-repeat 13px center/15px;
+        padding: 4px 12px 4px 36px;
+        &:focus + .mix-caption,
+        &:not(:placeholder-shown) + .mix-caption {
+            opacity: 0;
+        }
+    }
+    &__caption {
+        top: 0px;
+        left: 26px;
+    }
+}

@@ -22,6 +22,8 @@
 @import "./blocks/_tooltip";
 @import "./blocks/map";
 
+@import "./blocks/mix";
+
 // Main-page
 @import "./blocks/body";
 @import "./blocks/page";
@@ -41,10 +43,11 @@
 @import "./blocks/main-submenu";
 @import "./blocks/main-filters";
 @import "./blocks/main-form";
-@import "./blocks/mix";
 @import "./blocks/pagination";
 
 // Personal-account-private-person
 @import "./blocks/prof-aside";
 @import "./blocks/prof-general";
 @import "./blocks/prof-item";
+@import "./blocks/prof-control-panel";
+@import "./blocks/prof-table";
