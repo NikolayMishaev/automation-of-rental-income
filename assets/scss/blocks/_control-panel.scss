@@ -1,0 +1,8 @@
+.control-panel {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    @media #{$screen-mobile} {
+        height: 28px;
+    }
+}

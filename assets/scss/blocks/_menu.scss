@@ -1,0 +1,136 @@
+.menu {
+    position: relative;
+    // width: rem(136px);
+    min-height: rem(40px);
+    display: flex;
+    // overflow: hidden;
+    margin-left: auto;
+
+    &__profile {
+        display: none;
+        margin: auto;
+        // display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        transition: $transition;
+        text-decoration: none;
+    }
+
+    &__profile:hover {
+        cursor: pointer;
+        opacity: .7;
+        text-decoration: none;
+    }
+
+    &__profile-name {
+        margin-right: rem(8px);
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(14px);
+        line-height: rem(16px);
+        letter-spacing: 0.08px;
+        color: $grey80;
+        padding-top: rem(2px);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: $transition;
+        @media #{$screen-mobile} {
+            opacity: 0;
+        }
+    }
+
+    &__profile-avatar {
+        flex-shrink: 0;
+        width: rem(40px);
+        height: rem(40px);
+        border-radius: 50%;
+        background: url("./../images/avatar-photo.png") no-repeat center/cover;
+        transition: $transition;
+        object-fit: cover;
+        @media #{$screen-mobile} {
+            width: rem(24px);
+            height: rem(24px);
+        }
+    }
+    &__links {
+        display: flex;
+        align-items: center;
+        transition: $transition;
+    }
+    &__list {
+        &:first-child {
+            margin-right: 16px;
+            @media #{$screen-mobile} {
+                margin-right: rem(8px);
+            }
+        }
+    }
+    &__link {
+        display: block;
+        font-style: normal;
+        font-weight: 400;
+        font-size: rem(16px);
+        line-height: rem(24px);
+        text-align: center;
+        letter-spacing: rem(0.12px);
+        padding: rem(7px) rem(15px);
+        border: rem(1px) solid transparent;
+        border-radius: rem(4px);
+        background-color: $accent-TCX50;
+        color: white;
+        transition: $transition;
+        &:hover {
+            border: rem(1px) solid $grey30;
+            color: $grey100;
+            background-color: transparent;
+            text-decoration-line: none;
+        }
+        @media #{$screen-mobile} {
+            padding: rem(2px) rem(8px);
+            font-size: rem(12px);
+        }
+        &_type_register:hover + .menu__link-message {
+            opacity: 1;
+            visibility: visible;
+        }
+        &-message {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 115%;
+            right: 50%;
+            transition: $transition;
+            width: 467px;
+            background-color: $grey90;
+            border-radius: 4px;
+            color: white;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.08px;
+            padding: 10px 12px;
+            z-index: 1;
+            @media #{$screen-mobile} {
+                width: 69vw;
+            }
+            @media (max-width: 360px) {
+                width: 252px;
+            }
+        }
+    }
+    &__link-paragraph {
+        margin-bottom: 10px;
+    }
+    &__item-message {
+        list-style-type: disc;
+        margin-left: 25px;
+    }
+    &__link-cursor {
+        position: absolute;
+        top: -4px;
+        left: 96%;
+    }
+}

@@ -1,0 +1,59 @@
+.icon {
+    transition: $transition;
+    &_logo {
+        width: rem(198px);
+        height: rem(40px);
+        @media #{$screen-tablet} {
+            width: rem(138px);
+            height: rem(28px);
+        }
+        @media #{$screen-mobile} {
+            width: rem(79px);
+            height: rem(16px);
+        }
+    }
+    &_header-select {
+        width: rem(10px);
+        height: rem(10px);
+    }
+    &_hot-price {
+        width: rem(20px);
+        height: rem(24px);
+        @media #{$screen-mobile} {
+            width: rem(16px);
+        }
+    }
+    &_card-price {
+        position: relative;
+        top: 3px;
+        width: rem(16px);
+        height: rem(20px);
+        margin-right: rem(4px);
+        &_style_main-active {
+            position: absolute;
+            top: rem(-2px);
+            left: rem(-34px);
+            z-index: 0;
+            width: rem(28px);
+            height: rem(36px);
+            margin-right: rem(6px);
+            @media #{$screen-tablet} {
+                width: rem(18px);
+                height: rem(26px);
+            }
+        }
+    }
+    &_card-square {
+        width: rem(20px);
+        height: rem(16px);
+        @media #{$screen-mobile} {
+            width: rem(12px);
+            height: rem(10px);
+        }
+    }
+    &_card-number {
+        width: rem(16px);
+        height: rem(11px);
+        margin-left: rem(13px);
+    }
+}

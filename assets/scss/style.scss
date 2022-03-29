@@ -10,5 +10,39 @@
 @import "base/fonts";
 @import "base/generic";
 
+// Mix
+@import "./blocks/mix";
+
 // Components
-@import "./blocks/example";
+@import "./blocks/objectCard";
+@import "./blocks/radio-btn";
+@import "./blocks/modal";
+@import "./blocks/custom-text-input";
+@import "./blocks/registration-page";
+@import "./blocks/registration-form";
+@import "./blocks/slider";
+@import "./blocks/_tooltip";
+@import "./blocks/map";
+
+// Main-page
+@import "./blocks/body";
+@import "./blocks/page";
+@import "./blocks/header";
+@import "./blocks/logo";
+@import "./blocks/menu";
+@import "./blocks/icon";
+@import "./blocks/list-positions";
+@import "./blocks/main";
+@import "./blocks/footer";
+@import "./blocks/hot-price";
+@import "./blocks/card-price";
+@import "./blocks/control-panel";
+@import "./blocks/main-btn";
+@import "./blocks/main-text";
+@import "./blocks/main-search";
+@import "./blocks/main-submenu";
+@import "./blocks/main-filters";
+@import "./blocks/main-form";
+@import "./blocks/pagination";
+@import "./blocks/main-popup";
+@import "./blocks/popup-change-city";
