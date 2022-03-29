@@ -31,30 +31,38 @@
         vertical-align: super;
         font-size: 8px;
     }
-    &__marker-green {
+    &__marker {
         flex-shrink: 0;
-        width: 12px;
-        height: 12px;
-        border-radius:50%;
-        background-color: $accent-TCX50;
         display: inline-block;
         margin-right: 4px;
-    }
-    &__marker-red {
-        flex-shrink: 0;
-        width: 12px;
-        height: 12px;
-        border-radius:50%;
-        background-color: #F44336;
-        display: inline-block;
-        margin-right: 4px;
-    }
-    &__marker-hot {
-        flex-shrink: 0;
-        width: 16px;
-        height: 20px;
-        display: inline-block;
-        margin-right: 4px;
-        background: url('./../images/icons/prof-table-marker-hot.svg') no-repeat center;
+        &_type_green {
+            width: 12px;
+            height: 12px;
+            border-radius:50%;
+            background-color: $accent-TCX50;
+        }
+        &_type_red {
+            width: 12px;
+            height: 12px;
+            border-radius:50%;
+            background-color: #F44336;
+        }
+        &_type_hot {
+            width: 16px;
+            height: 20px;
+            background: url('./../images/icons/prof-table-marker-hot.svg') no-repeat center;
+        }
+        &_type_ring {
+            width: 16px;
+            height: 20px;
+            background: url('./../images/icons/prof-table-marker-ring.svg') no-repeat center;
+            margin-left: auto;
+        }
+        &_type_ring-active {
+            width: 16px;
+            height: 20px;
+            background: url('./../images/icons/prof-table-marker-ring-active.svg') no-repeat center;
+            margin-left: auto;
+        }
     }
 }

@@ -2,6 +2,14 @@
     flex-grow: 1;
     width: 100%;
     box-shadow: inset rem(0px) rem(-1px) rem(0px) $grey-20;
+    &_page_profile {
+        flex-grow: unset;
+        width: unset;
+        box-shadow: unset;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
     &__content {
         max-width: rem(1920px);
         margin: auto;
