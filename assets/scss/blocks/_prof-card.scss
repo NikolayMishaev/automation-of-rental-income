@@ -1,0 +1,49 @@
+.prof-card {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border: 1px solid #d0d7d9;
+    border-radius: 12px;
+    height: 374px;
+    color: #222429;
+    &__photo {
+        object-fit: cover;
+        width: 100%;
+        height: 150px;
+        border: 1px solid #f0f2f2;
+        border-radius: 8px;
+    }
+    &__address {
+        margin-top: 12px;
+        display: flex;
+    }
+    &__number {
+        margin-top: 8px;
+    }
+    &__price {
+        margin-top: 8px;
+    }
+    &__wrapper-status {
+        display: flex;
+        align-items: center;
+    }
+    &__status {
+        margin-top: 8px;
+    }
+    &__bet {
+        margin-top: 8px;
+    }
+    &__button-delete {
+        margin-top: auto;
+        border: 1px solid #e1e5eb;
+        border-radius: 4px;
+        background-color: transparent;
+        background: url('./../images/icons/prof-card-delete-like.svg') no-repeat 35px center;
+        transition: $transition;
+        &:hover {
+            cursor: pointer;
+            opacity: .7;
+            transform: scale(1.025)
+        }
+    }
+}
