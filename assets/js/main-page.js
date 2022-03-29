@@ -429,6 +429,9 @@
         if (e.target.closest(".card-price__like")) {
             return;
         }
+        if (e.target.closest(".card-price__photo")) {
+            return;
+        }
         if (e.target.closest(".card-price_style_main")) {
             location.href = "./objectCard.html";
         }

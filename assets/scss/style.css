@@ -220,6 +220,10 @@ button {
   overflow: unset !important;
 }
 
+.mix-mb0 {
+  margin-bottom: 0 !important;
+}
+
 main .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3412,7 +3416,6 @@ main .container {
 
 .card-price_style_main:hover {
   cursor: pointer;
-  opacity: .8;
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
 }
@@ -3451,6 +3454,9 @@ main .container {
 }
 
 .card-price__photo_style_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   max-width: 25.625rem;
   max-height: 14.375rem;
   width: 22vw;

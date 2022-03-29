@@ -38,7 +38,6 @@
         }
         &:hover {
             cursor: pointer;
-            opacity: .8;
             transform: scale(1.010);
         }
         padding: rem(15px);
@@ -71,6 +70,7 @@
         width: 78px;
         height: 58px;
         &_style_main {
+            display: flex;
             max-width: rem(410px);
             max-height: rem(230px);
             width: 22vw;

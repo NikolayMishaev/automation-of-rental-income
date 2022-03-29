@@ -6,8 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/scss/style.css" />
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
     <title>Главная</title>
+    <script defer type="module" src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script defer type="module" src="./assets/js/script.js"></script>
     <script defer src="./assets/js/main-page.js"></script>
+    <script type="module" defer src="./assets/js/swiper-main.js"></script>
 </head>
 
 <body class="body">
@@ -779,20 +786,187 @@
                             <li class="card-price card-price_style_main card-price_style_main-active">
                                 <div class="card-price__like">
                                 </div>
-                                <picture>
-                                    <!-- картика для телефонов  -->
-                                    <source
-                                      media="(max-width: 640px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <!-- картика для пк  -->
-                                    <source
-                                      media="(min-width: 641px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <img class="card-price__photo card-price__photo_style_main"
-                                    src="./assets/images/hot-price-photo.jpg" alt="фото помещения для аренды"></img>
-                                  </picture>
+
+                                <div class="card-price__photo card-price__photo_style_main">
+                                    <div class="swiper track-swiper mix-mb0">
+                                      <div class="swiper-wrapper">
+                                        <!-- Нужны картинки для слайдера. Начало слайда -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <!-- конец слайда  -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-button-next slider__next-btn"></div>
+                                      <div class="swiper-button-prev slider__prev-btn"></div>
+                                      <div class="swiper-pagination"></div>
+                                    </div>
+                                  </div>
+
                                 <div class="card-price__description card-price__description_style_main">
                                     <!-- активный класс для адреса карточки: card-price__adress_style_main-active  -->
                                     <p class="card-price__adress card-price__adress_style_main-active">
@@ -848,20 +1022,185 @@
                                 <!-- класс, если карточка лайкнута (сердечко красное)  card-price__like_active -->
                                 <div class="card-price__like card-price__like_active">
                                 </div>
-                                <picture>
-                                    <!-- картика для телефонов  -->
-                                    <source
-                                      media="(max-width: 640px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <!-- картика для пк  -->
-                                    <source
-                                      media="(min-width: 641px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <img class="card-price__photo card-price__photo_style_main"
-                                    src="./assets/images/hot-price-photo.jpg" alt="фото помещения для аренды"></img>
-                                  </picture>
+                                <div class="card-price__photo card-price__photo_style_main">
+                                    <div class="swiper track-swiper mix-mb0">
+                                      <div class="swiper-wrapper">
+                                        <!-- Нужны картинки для слайдера. Начало слайда -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <!-- конец слайда  -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-button-next slider__next-btn"></div>
+                                      <div class="swiper-button-prev slider__prev-btn"></div>
+                                      <div class="swiper-pagination"></div>
+                                    </div>
+                                  </div>
                                 <div class="card-price__description card-price__description_style_main">
                                     <p class="card-price__adress card-price__adress_style_main">
                                         Москва, Ул. Льва Толстого, дом 23, корп.1</p>
@@ -897,20 +1236,185 @@
                                 <!-- класс, если карточка лайкнута (сердечко красное)  card-price__like_active -->
                                 <div class="card-price__like card-price__like_active">
                                 </div>
-                                <picture>
-                                    <!-- картика для телефонов  -->
-                                    <source
-                                      media="(max-width: 640px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <!-- картика для пк  -->
-                                    <source
-                                      media="(min-width: 641px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <img class="card-price__photo card-price__photo_style_main"
-                                    src="./assets/images/hot-price-photo.jpg" alt="фото помещения для аренды"></img>
-                                  </picture>
+                                <div class="card-price__photo card-price__photo_style_main">
+                                    <div class="swiper track-swiper mix-mb0">
+                                      <div class="swiper-wrapper">
+                                        <!-- Нужны картинки для слайдера. Начало слайда -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <!-- конец слайда  -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-button-next slider__next-btn"></div>
+                                      <div class="swiper-button-prev slider__prev-btn"></div>
+                                      <div class="swiper-pagination"></div>
+                                    </div>
+                                  </div>
                                 <div class="card-price__description card-price__description_style_main">
                                     <p class="card-price__adress card-price__adress_style_main">
                                         Москва, Ул. Льва Толстого, дом 23, корп.1</p>
@@ -946,20 +1450,185 @@
                                 <!-- класс, если карточка лайкнута (сердечко красное)  card-price__like_active -->
                                 <div class="card-price__like card-price__like_active">
                                 </div>
-                                <picture>
-                                    <!-- картика для телефонов  -->
-                                    <source
-                                      media="(max-width: 640px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <!-- картика для пк  -->
-                                    <source
-                                      media="(min-width: 641px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <img class="card-price__photo card-price__photo_style_main"
-                                    src="./assets/images/hot-price-photo.jpg" alt="фото помещения для аренды"></img>
-                                  </picture>
+                                <div class="card-price__photo card-price__photo_style_main">
+                                    <div class="swiper track-swiper mix-mb0">
+                                      <div class="swiper-wrapper">
+                                        <!-- Нужны картинки для слайдера. Начало слайда -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <!-- конец слайда  -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-button-next slider__next-btn"></div>
+                                      <div class="swiper-button-prev slider__prev-btn"></div>
+                                      <div class="swiper-pagination"></div>
+                                    </div>
+                                  </div>
                                 <div class="card-price__description card-price__description_style_main">
                                     <p class="card-price__adress card-price__adress_style_main">
                                         Москва, Ул. Льва Толстого, дом 23, корп.1</p>
@@ -995,20 +1664,185 @@
                                 <!-- класс, если карточка лайкнута (сердечко красное)  card-price__like_active -->
                                 <div class="card-price__like card-price__like_active">
                                 </div>
-                                <picture>
-                                    <!-- картика для телефонов  -->
-                                    <source
-                                      media="(max-width: 640px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <!-- картика для пк  -->
-                                    <source
-                                      media="(min-width: 641px)"
-                                      srcset="./assets/img/slider-item.jpg"
-                                    />
-                                    <img class="card-price__photo card-price__photo_style_main"
-                                    src="./assets/images/hot-price-photo.jpg" alt="фото помещения для аренды"></img>
-                                  </picture>
+                                <div class="card-price__photo card-price__photo_style_main">
+                                    <div class="swiper track-swiper mix-mb0">
+                                      <div class="swiper-wrapper">
+                                        <!-- Нужны картинки для слайдера. Начало слайда -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <!-- конец слайда  -->
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для пк  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                        <div class="swiper-slide">
+                                          <picture>
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(max-width: 640px)"
+                                              srcset="./assets/img/slider-item.jpg"
+                                            />
+                                            <!-- картика для телефонов  -->
+                                            <source
+                                              media="(min-width: 641px)"
+                                              srcset="
+                                                https://bipbap.ru/wp-content/uploads/2017/04/0_7c779_5df17311_orig.jpg
+                                              "
+                                            />
+                                            <img src="elva-800w.jpg" />
+                                          </picture>
+                                        </div>
+                                      </div>
+                                      <div class="swiper-button-next slider__next-btn"></div>
+                                      <div class="swiper-button-prev slider__prev-btn"></div>
+                                      <div class="swiper-pagination"></div>
+                                    </div>
+                                  </div>
                                 <div class="card-price__description card-price__description_style_main">
                                     <p class="card-price__adress card-price__adress_style_main">
                                         Москва, Ул. Льва Толстого, дом 23, корп.1</p>
