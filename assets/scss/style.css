@@ -228,6 +228,24 @@ button {
   margin-bottom: 0 !important;
 }
 
+.mix-scrollbar-only-vertical {
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.mix-scrollbar-only-vertical::-webkit-scrollbar {
+  height: 3px;
+}
+
+.mix-scrollbar-only-vertical::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+.mix-scrollbar-only-vertical::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
+}
+
 main .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3341,8 +3359,8 @@ main .container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-animation: animation-hot-price linear 50s infinite;
-          animation: animation-hot-price linear 50s infinite;
+  -webkit-animation: animation-hot-price linear 120s infinite;
+          animation: animation-hot-price linear 120s infinite;
 }
 
 .hot-price__wrapper:hover {
@@ -3975,6 +3993,12 @@ main .container {
   left: 0;
   right: 0;
   top: 50px;
+  max-height: 6.25rem;
+  overflow: auto;
+}
+
+.main-submenu_style_filters-adress::-webkit-scrollbar {
+  width: 10px;
 }
 
 @media (max-width: 40rem) {
@@ -4366,6 +4390,12 @@ main .container {
 
 .main-form__adress_active {
   height: 198px;
+}
+
+@media (max-width: 40rem) {
+  .main-form__adress_active {
+    height: 8.25rem;
+  }
 }
 
 .main-form__wrapper-fields {

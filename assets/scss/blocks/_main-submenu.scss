@@ -44,6 +44,11 @@
         left:0;
         right: 0;
         top: 50px;
+        max-height: rem(100px);
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
         @media #{$screen-mobile} {
             top: 34px;
         }

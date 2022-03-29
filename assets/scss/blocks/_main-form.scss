@@ -231,6 +231,9 @@
         transition: $transition;
         &_active {
             height: 198px;
+            @media #{$screen-mobile} {
+                height: rem(132px);
+            }
         }
     }
     &__wrapper-fields {

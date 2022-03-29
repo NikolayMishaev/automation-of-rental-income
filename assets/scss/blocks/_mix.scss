@@ -74,4 +74,19 @@
     &-mb0 {
         margin-bottom: 0 !important;
     }
+    &-scrollbar-only-vertical {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
+
 }
