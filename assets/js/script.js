@@ -192,9 +192,8 @@ const submitRegBtn = document.querySelectorAll(".registration-form__submit-btn")
 let currentTab = 0;
 let currentTabJur = 0;
 
-for (let index = 0; index < tabNextBtn.length; index++) {
-  tabNextBtn[index].addEventListener("click", () => navigateNextBtn());
-}
+tabNextBtn[0].addEventListener("click", () => navigateNextBtn(0, stepList, tabList));
+tabNextBtn[1].addEventListener("click", () => navigateNextBtn(1, stepListJur, tabListJur));
 
 // слушатели на клики по табам
 
@@ -232,6 +231,13 @@ function checkLastStep(radio) {
   }
 }
 function navigateTabs(stepList, tabList, idx, radio) {
+  let lastTab;
+  if (radio === 0) lastTab = currentTab;
+  if (radio === 1) lastTab = currentTabJur;
+  if (checkRequiredInput(stepList[lastTab].querySelectorAll("input, textarea"))) {
+    tabList[lastTab].classList.add("registration-form__tab_filled");
+  } else tabList[lastTab].classList.remove("registration-form__tab_filled");
+
   for (let index = 0; index < stepList.length; index++) {
     stepList[index].style.display = "none";
     tabList[index].classList.remove("active");
@@ -244,14 +250,42 @@ function navigateTabs(stepList, tabList, idx, radio) {
   checkLastStep(radio);
 }
 
-function navigateNextBtn() {
-  currentTab++;
-  stepList[currentTab].style.display = "block";
-  stepList[currentTab - 1].style.display = "none";
-  tabList[currentTab].classList.toggle("active");
-  tabList[currentTab - 1].classList.toggle("registration-form__tab_filled");
-  tabList[currentTab - 1].classList.toggle("active");
-  checkLastStep();
+function checkRequiredInput(step) {
+  let findInput = false;
+  for (let index = 0; index < step.length; index++) {
+    const element = step[index];
+    if (element.required) {
+      if (!element.value) {
+        element.closest(".custom-text-input").classList.add("custom-text-input__error");
+        findInput = true;
+      }
+    }
+  }
+  if (findInput) return false;
+  return true;
+}
+
+function navigateNextBtn(numForm, stepList, tabList) {
+  let idx = 0;
+  if (numForm === 0) {
+    if (checkRequiredInput(stepList[currentTab].querySelectorAll("input, textarea"))) {
+      tabList[currentTab].classList.add("registration-form__tab_filled");
+    } else tabList[currentTab].classList.remove("registration-form__tab_filled");
+    currentTab++;
+    idx = currentTab;
+  }
+  if (numForm === 1) {
+    if (checkRequiredInput(stepList[currentTabJur].querySelectorAll("input, textarea"))) {
+      tabList[currentTabJur].classList.toggle("registration-form__tab_filled");
+    }
+    currentTabJur++;
+    idx = currentTabJur;
+  }
+  stepList[idx].style.display = "block";
+  stepList[idx - 1].style.display = "none";
+  tabList[idx].classList.toggle("active");
+  tabList[idx - 1].classList.toggle("active");
+  checkLastStep(numForm);
 }
 
 const modalRWarningReg = document.querySelector(".modal-warning-registration");
@@ -279,6 +313,7 @@ if (modalRWarningReg) {
 const selectReg = document.querySelectorAll(".custom-text-input_select");
 let currentSelect = null;
 let currentIcon = null;
+// закрыть селект при клике по окну
 
 document.body.addEventListener("click", function (e) {
   if (e.target.closest(".custom-text-input_select")) return;
@@ -288,6 +323,7 @@ document.body.addEventListener("click", function (e) {
     currentSelect = null;
   }
 });
+// открыть селекот
 
 for (let index = 0; index < selectReg.length; index++) {
   const element = selectReg[index];
@@ -303,6 +339,7 @@ for (let index = 0; index < selectReg.length; index++) {
 
 const selectItemsReg = document.querySelector(".custom-text-input__option-list");
 
+// заполнить значение селекта
 selectItemsReg.addEventListener("click", function (e) {
   if (e.target.tagName !== "LI") return;
   const input = document.querySelector(".custom-text-input_select input");
@@ -313,3 +350,58 @@ selectItemsReg.addEventListener("click", function (e) {
   e.stopPropagation();
   label.classList.add("custom-text-input__label_full");
 });
+
+const btnDownloadList = document.querySelectorAll(".registration-form__download-btn");
+const modalDownloadList = document.querySelectorAll(".modal-file-input");
+
+// логика модальных инпутов
+
+for (let index = 0; index < btnDownloadList.length; index++) {
+  const btn = btnDownloadList[index];
+
+  btn.addEventListener("click", () => {
+    modalDownloadList[index].style.display = "flex";
+  });
+  // modalDownloadList[index].addEventListener("click", (e) => {
+  //   if (e.target.closest(".modal__close-btn") || e.target.closest(".modal__cancel-btn")) {
+  //     modalDownloadList[index].style.display = "none";
+  //   }
+  // });
+}
+
+const imgSvg =
+  '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z" fill="#55B465"/></svg>';
+
+const fileInput = document.querySelector(".modal-file-input input");
+
+fileInput.addEventListener("change", (e) => {
+  const input = e.target;
+  const textInput = input.previousElementSibling;
+  if (input.files) {
+    textInput.style.display = "none";
+    for (let index = 0; index < input.files.length; index++) {
+      const file = input.files[index];
+      let div = document.createElement("div");
+      const container = input.closest(".file-input");
+      div.innerHTML = `<div class ='file-input__row'>${imgSvg}${file.name}</><div class='file-input__file-close'>x</div>`;
+      div.classList.add("file-input__file");
+      container.append(div);
+    }
+  }
+  console.log(input.value);
+});
+
+const requiredInputList = document.querySelectorAll(".registration-form .custom-text-input");
+
+for (let index = 0; index < requiredInputList.length; index++) {
+  const input = requiredInputList[index];
+  let elem = input.querySelector("input, textarea");
+  if (elem.required) {
+    input.addEventListener("change", (e) => {
+      const container = input.closest(".custom-text-input");
+      elem.value
+        ? container.classList.remove("custom-text-input__error")
+        : container.classList.add("custom-text-input__error");
+    });
+  }
+}
