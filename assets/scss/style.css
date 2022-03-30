@@ -1080,6 +1080,8 @@ main .container {
   line-height: 22px;
   margin-right: 8px;
   padding: 4px 12px;
+  text-align: center;
+  cursor: pointer;
 }
 
 @media (max-width: 40rem) {
@@ -1097,6 +1099,7 @@ main .container {
   background-color: #2a9b43;
   line-height: 24px;
   padding: 4px 12px;
+  cursor: pointer;
 }
 
 @media (max-width: 40rem) {
@@ -1188,9 +1191,7 @@ main .container {
   position: absolute;
 }
 
-.group-radio-btn__container input:checked
-~ .group-radio-btn__inner
-.group-radio-btn__custom-checkmark {
+.group-radio-btn__container input:checked ~ .group-radio-btn__inner .group-radio-btn__custom-checkmark {
   background-color: #2a9b43;
   border: none;
 }
@@ -1201,6 +1202,7 @@ main .container {
   width: 240px;
   border: 1px solid #cfd4dc;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .group-radio-btn__title-radio {
@@ -1213,9 +1215,7 @@ main .container {
   border: 1px solid #2a9b43;
 }
 
-.group-radio-btn__container input:checked
-~ .group-radio-btn__inner
-.group-radio-btn__custom-checkmark::after {
+.group-radio-btn__container input:checked ~ .group-radio-btn__inner .group-radio-btn__custom-checkmark::after {
   display: block;
 }
 
@@ -4559,9 +4559,9 @@ main .container {
 
 @media (max-width: 40rem) {
   .check-form-page__secondary-btn {
-    -webkit-box-flex: 156px;
-        -ms-flex: 156px;
-            flex: 156px;
+    -webkit-box-flex: 47%;
+        -ms-flex: 47%;
+            flex: 47%;
   }
 }
 

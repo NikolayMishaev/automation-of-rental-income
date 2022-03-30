@@ -455,14 +455,16 @@ function completeForm(radio, e) {
   e.target.closest(".modal").style.display = "none";
 }
 
-// логика кнопки "Дополнить"
 const formNat = document.querySelector(".registration-form_natural");
-const completeBtnNat = formNat.querySelector(".modal__complete-btn");
-const formJur = document.querySelector(".registration-form_juridical");
-const completeBtnJur = formJur.querySelector(".modal__complete-btn");
+// логика кнопки "Дополнить"
+if (formNat) {
+  const completeBtnNat = formNat.querySelector(".modal__complete-btn");
+  const formJur = document.querySelector(".registration-form_juridical");
+  const completeBtnJur = formJur.querySelector(".modal__complete-btn");
 
-completeBtnNat.onclick = (e) => completeForm(0, e);
-completeBtnJur.onclick = (e) => completeForm(1, e);
+  completeBtnNat.onclick = (e) => completeForm(0, e);
+  completeBtnJur.onclick = (e) => completeForm(1, e);
+}
 
 // страница проверки формы
 

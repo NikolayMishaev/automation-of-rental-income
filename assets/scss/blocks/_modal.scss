@@ -57,6 +57,8 @@
     @include secondary-btn;
     margin-right: 8px;
     padding: 4px 12px;
+    text-align: center;
+    cursor: pointer;
     @media #{$screen-mobile} {
       flex: 50%;
     }
@@ -64,6 +66,7 @@
   &__login-btn {
     @include primary-btn($accent-TCX50);
     padding: 4px 12px;
+    cursor: pointer;
     @media #{$screen-mobile} {
       flex: 50%;
     }
