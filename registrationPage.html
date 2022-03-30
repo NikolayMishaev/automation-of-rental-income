@@ -34,7 +34,7 @@
               </div>
             </label>
           </div>
-          <form class="registration-form_natural" action="">
+          <form class="registration-form_natural" action="" enctype="multipart/form-data">
             <div class="registration-form">
               <ul class="registration-form__tabs_natural registration-form__tabs">
                 <li class="registration-form__tab active" data-step="0">Шаг 1</li>
@@ -410,7 +410,7 @@
                     </div>
                   </div>
                   <div class="registration-form__download-container">
-                    <p class="registration-form__subtitle">Скан ОГРН</p>
+                    <p class="registration-form__subtitle">Скан паспорта</p>
                     <div class="registration-form__download-btn">
                       <div class="registration-form__download-icon">
                         <svg
@@ -489,252 +489,6 @@
                       </div>
                     </div>
                   </div>
-                  <div class="registration-form__download-container">
-                    <p class="registration-form__subtitle">Скан документа на подписание договора</p>
-                    <div class="registration-form__download-btn">
-                      <div class="registration-form__download-icon">
-                        <svg
-                          width="13"
-                          height="14"
-                          viewBox="0 0 13 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
-                            fill="#50565E"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
-                            fill="#50565E"
-                          />
-                        </svg>
-                      </div>
-                      <span>Загрузить файл</span>
-                    </div>
-                    <div class="file-input__file">
-                      <div class="file-input__name">
-                        <div class="file-input__icon">
-                          <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
-                              fill="#55B465"
-                            />
-                          </svg>
-                        </div>
-                        <a href="#">Имя файла</a>
-                      </div>
-                      <div class="file-input__file-close">x</div>
-                    </div>
-                    <div class="modal modal-file-input">
-                      <div class="modal__content">
-                        <div class="modal__header">
-                          <h3>Загрузить скан документа на подписание договора</h3>
-                          <div class="modal__close-btn">
-                            <svg
-                              width="14"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
-                                fill="#6C737D"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <div class="modal__body">
-                          <label class="registration-form__file-input file-input">
-                            <div class="file-input__text">
-                              Перетащите файлы сюда или <a>выберите на компьютере</a>
-                              <p class="file-input__text_small">
-                                Максимальный размер файла: 500 МБ
-                              </p>
-                            </div>
-                            <input type="file" data-required="true"
-                          /></label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="registration-form__download-container">
-                    <p class="registration-form__subtitle">
-                      Документ о месте регистрации генерального директора
-                    </p>
-                    <div class="registration-form__download-btn">
-                      <div class="registration-form__download-icon">
-                        <svg
-                          width="13"
-                          height="14"
-                          viewBox="0 0 13 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
-                            fill="#50565E"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
-                            fill="#50565E"
-                          />
-                        </svg>
-                      </div>
-                      <span>Загрузить файл</span>
-                    </div>
-                    <div class="file-input__file">
-                      <div class="file-input__name">
-                        <div class="file-input__icon">
-                          <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
-                              fill="#55B465"
-                            />
-                          </svg>
-                        </div>
-                        <a href="#">Имя файла</a>
-                      </div>
-                      <div class="file-input__file-close">x</div>
-                    </div>
-                    <div class="modal modal-file-input">
-                      <div class="modal__content">
-                        <div class="modal__header">
-                          <h3>Загрузить документ о месте регистрации генерального директора</h3>
-                          <div class="modal__close-btn">
-                            <svg
-                              width="14"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
-                                fill="#6C737D"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <div class="modal__body">
-                          <label class="registration-form__file-input file-input">
-                            <div class="file-input__text">
-                              Перетащите файлы сюда или <a>выберите на компьютере</a>
-                              <p class="file-input__text_small">
-                                Максимальный размер файла: 500 МБ
-                              </p>
-                            </div>
-                            <input type="file" data-required="true"
-                          /></label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="registration-form__download-container">
-                    <p class="registration-form__subtitle">
-                      Полные реквизиты банка, где у юридического лица открыт счет
-                    </p>
-                    <div class="registration-form__download-btn">
-                      <div class="registration-form__download-icon">
-                        <svg
-                          width="13"
-                          height="14"
-                          viewBox="0 0 13 14"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
-                            fill="#50565E"
-                          />
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
-                            fill="#50565E"
-                          />
-                        </svg>
-                      </div>
-                      <span>Загрузить файл</span>
-                    </div>
-                    <div class="file-input__file">
-                      <div class="file-input__name">
-                        <div class="file-input__icon">
-                          <svg
-                            width="18"
-                            height="18"
-                            viewBox="0 0 18 18"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
-                              fill="#55B465"
-                            />
-                          </svg>
-                        </div>
-                        <a href="#">Имя файла</a>
-                      </div>
-                      <div class="file-input__file-close">x</div>
-                    </div>
-                    <div class="modal modal-file-input">
-                      <div class="modal__content">
-                        <div class="modal__header">
-                          <h3>
-                            Загрузить полные реквизиты банка, где у юридического лица открыт счет
-                          </h3>
-                          <div class="modal__close-btn">
-                            <svg
-                              width="14"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
-                                fill="#6C737D"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <div class="modal__body">
-                          <label class="registration-form__file-input file-input">
-                            <div class="file-input__text">
-                              Перетащите файлы сюда или <a>выберите на компьютере</a>
-                              <p class="file-input__text_small">
-                                Максимальный размер файла: 500 МБ
-                              </p>
-                            </div>
-                            <input type="file" data-required="true"
-                          /></label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -745,6 +499,7 @@
             <!-- end -->
             <p class="registration-form__user-agreement">
               Нажимая “Сохранить” вы принимаете
+              <!-- поменять ссылку -->
               <a class="registration-form__link" href="#">Пользовательское соглашение</a>
             </p>
             <div class="registration-form__btn-group">
@@ -788,7 +543,7 @@
             </div>
             <!-- конец модального окна -->
           </form>
-          <form class="registration-form_juridical" action="">
+          <form class="registration-form_juridical" action="" enctype="multipart/form-data">
             <div class="registration-form">
               <ul class="registration-form__tabs">
                 <li class="registration-form__tab active" data-step="1">Шаг 1</li>
@@ -1958,6 +1713,7 @@
             </div>
             <p class="registration-form__user-agreement">
               Нажимая “Сохранить” вы принимаете
+              <!-- поменять ссылку  -->
               <a class="registration-form__link" href="#">Пользовательское соглашение</a>
             </p>
             <div class="registration-form__btn-group">

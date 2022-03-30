@@ -456,10 +456,10 @@ function completeForm(radio, e) {
 }
 
 const formNat = document.querySelector(".registration-form_natural");
+const formJur = document.querySelector(".registration-form_juridical");
 // логика кнопки "Дополнить"
-if (formNat) {
+if (formNat || formJur) {
   const completeBtnNat = formNat.querySelector(".modal__complete-btn");
-  const formJur = document.querySelector(".registration-form_juridical");
   const completeBtnJur = formJur.querySelector(".modal__complete-btn");
 
   completeBtnNat.onclick = (e) => completeForm(0, e);
