@@ -10,6 +10,7 @@
         display: flex;
         justify-content: space-between;
         border-top: 1px solid #E3E7E8;
+        flex-wrap: wrap;
     }
     &__content {
         max-width: rem(1920px);

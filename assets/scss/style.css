@@ -2489,6 +2489,8 @@ button {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-top: 1px solid #E3E7E8;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .main__content {
@@ -4066,6 +4068,12 @@ button {
 
 .prof-aside__text {
   color: #6d7678;
+}
+
+@media (max-width: 40rem) {
+  .prof-aside__text {
+    display: none;
+  }
 }
 
 .prof-aside__total-requests {

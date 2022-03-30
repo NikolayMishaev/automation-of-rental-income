@@ -80,13 +80,31 @@
     const buttonBackToTasks = document.querySelector(
         ".prof-aside__button-back-tasks"
     );
+
+    const buttonBackToTasksMain = document.querySelector(
+        "#prof-aside__button-back-tasks-main"
+    );
+
     const panelChat = document.querySelector(".prof-aside__right-panel");
     const panelTasks = document.querySelector(".prof-aside__left-panel");
+
+    const panelChatMain = document.querySelector(
+        "#prof-aside__right-panel-main"
+    );
+    const panelTasksMain = document.querySelector(
+        "#prof-aside__left-panel-main"
+    );
 
     buttonBackToTasks.addEventListener("click", (e) => {
         panelChat.classList.add("mix-display-none");
         panelChat.classList.remove("mix-display-flex");
         panelTasks.classList.remove("mix-display-none");
+    });
+
+    buttonBackToTasksMain.addEventListener("click", (e) => {
+        panelChatMain.classList.add("mix-display-none");
+        panelChatMain.classList.remove("mix-display-flex");
+        panelTasksMain.classList.remove("mix-display-none");
     });
 
     // логика открытия чата по клику на таску
@@ -97,12 +115,16 @@
 
     tasksContainer.forEach((i) =>
         i.addEventListener("click", (e) => {
+            console.log("click task container");
             if (innerWidth > 1780) {
                 return;
             }
             if (e.target.closest(".prof-aside__task-item")) {
                 panelTasks.classList.add("mix-display-none");
                 panelChat.classList.add("mix-display-flex");
+
+                panelTasksMain.classList.add("mix-display-none");
+                panelChatMain.classList.add("mix-display-flex");
             }
         })
     );
@@ -114,9 +136,19 @@
         if (e.target.innerWidth > 1780) {
             resetVisibleDymanicClassAsideBlock();
         }
+        if (e.target.innerWidth > 750) {
+            resetVisibleDymanicClassAsideBlockMobile();
+        }
     });
 
     function resetVisibleDymanicClassAsideBlock() {
+        panelTasksMain.classList.remove("mix-display-none");
+        panelTasksMain.classList.remove("mix-display-flex");
+        panelChatMain.classList.remove("mix-display-none");
+        panelChatMain.classList.remove("mix-display-flex");
+    }
+
+    function resetVisibleDymanicClassAsideBlockMobile() {
         panelTasks.classList.remove("mix-display-none");
         panelTasks.classList.remove("mix-display-flex");
         panelChat.classList.remove("mix-display-none");

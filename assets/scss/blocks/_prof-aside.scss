@@ -37,6 +37,9 @@
     }
     &__text {
         color: $grey60;
+        @media #{$screen-mobile} {
+            display: none;
+        }
     }
     &__total-requests {
         color: $grey80;
