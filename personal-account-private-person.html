@@ -158,8 +158,10 @@
                                 <h2 class="prof-general__title heading-h2">Иван Иванов</h2>
                                 <p class="prof-general__subtitle text-p2">Контрагент / Физическое лицо</p>
                             </div>
+                            <!-- активная кнопка контаксов имеет класс: prof-general__contacts_active -->
+                            <div class="prof-general__contacts"></div>
                         </header>
-                        <div class="prof-general__body">
+                        <div id="general-panel" class="prof-general__body">
                             <nav class="prof-general__navigation">
                                 <!-- активный таб имеет класс: prof-general__button_active -->
                                 <button type="button" aria-label="documents"
@@ -660,6 +662,191 @@
                             </div>
 
                         </div>
+
+                        <div class="prof-general__body prof-general__body_type_contacts mix-display-none">
+                            <div class="prof-aside__block prof-aside__block_type_mobile">
+                                <header class="prof-aside__header">
+                                    <h2 class="prof-aside__title heading-h3">Обратная связь</h2>
+                                    <p class="prof-aside__text text-p3">Активных обращений:
+                                        <span class="prof-aside__total-requests text-p2">26</span>
+                                    </p>
+                                </header>
+                                <div class="prof-aside__body">
+                                    <div class="prof-aside__left-panel">
+                                        <input type="text" class="prof-aside__input prof-aside__input_type_search text-p1"
+                                            placeholder="Поиск">
+                                        <ul class="prof-aside__tasks-container">
+                                            <li class="prof-aside__task-item prof-aside__task-item_active">
+                                                <img src="./assets/images/avatar-photo.png" alt="Аватар"
+                                                    class="prof-aside__photo">
+                                                <div class="prof-aside__tasks-info">
+                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                        скролл длинной задачи ...................</p>
+                                                    <p
+                                                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                        №12345678</p>
+                                                </div>
+                                                <div class="prof-aside__icon icon icon_message"></div>
+                                            </li>
+                                            <li class="prof-aside__task-item">
+                                                <img src="./assets/images/avatar-photo.png" alt="Аватар"
+                                                    class="prof-aside__photo">
+                                                <div class="prof-aside__tasks-info">
+                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                        TASK111111</p>
+                                                    <p
+                                                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                        скролл длинного номера ...................</p>
+                                                </div>
+                                                <div class="prof-aside__icon icon icon_ring_active"></div>
+                                            </li>
+                                            <li class="prof-aside__task-item">
+                                                <img src="./assets/images/other-user.jpg" alt="Аватар"
+                                                    class="prof-aside__photo">
+                                                <div class="prof-aside__tasks-info">
+                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                        TASK111111</p>
+                                                    <p
+                                                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                        №12345678</p>
+                                                </div>
+                                                <div class="prof-aside__icon icon icon_document"></div>
+                                            </li>
+                                            <li class="prof-aside__task-item prof-aside__task-item_active">
+                                                <img src="./assets/images/avatar-photo.png" alt="Аватар"
+                                                    class="prof-aside__photo">
+                                                <div class="prof-aside__tasks-info">
+                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                        TASK111111</p>
+                                                    <p
+                                                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                        №12345678</p>
+                                                </div>
+                                                <div class="prof-aside__icon icon icon_document_active"></div>
+                                            </li>
+                                            <li class="prof-aside__task-item">
+                                                <img src="./assets/images/avatar-photo.png" alt="Аватар"
+                                                    class="prof-aside__photo">
+                                                <div class="prof-aside__tasks-info">
+                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                        TASK111111</p>
+                                                    <p
+                                                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                        №12345678</p>
+                                                </div>
+                                                <div class="prof-aside__icon icon icon_document"></div>
+                                            </li>
+                                            <li class="prof-aside__task-item prof-aside__task-item_active">
+                                                <img src="./assets/images/other-user.jpg" alt="Аватар"
+                                                    class="prof-aside__photo">
+                                                <div class="prof-aside__tasks-info">
+                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                        TASK111111</p>
+                                                    <p
+                                                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                        №12345678</p>
+                                                </div>
+                                                <div class="prof-aside__icon icon icon_ring_active"></div>
+                                            </li>
+                                            <li class="prof-aside__task-item">
+                                                <img src="./assets/images/avatar-photo.png" alt="Аватар"
+                                                    class="prof-aside__photo">
+                                                <div class="prof-aside__tasks-info">
+                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                        TASK111111</p>
+                                                    <p
+                                                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                        №12345678</p>
+                                                </div>
+                                                <div class="prof-aside__icon icon icon_message_active"></div>
+                                            </li>
+                                            <li class="prof-aside__task-item">
+                                                <img src="./assets/images/other-user.jpg" alt="Аватар"
+                                                    class="prof-aside__photo">
+                                                <div class="prof-aside__tasks-info">
+                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                        TASK111111</p>
+                                                    <p
+                                                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                        №12345678</p>
+                                                </div>
+                                                <div class="prof-aside__icon icon icon_ring"></div>
+                                            </li>
+                                            <li class="prof-aside__task-item">
+                                                <img src="./assets/images/hot-price-photo.jpg" alt="Аватар"
+                                                    class="prof-aside__photo">
+                                                <div class="prof-aside__tasks-info">
+                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                        TASK111111</p>
+                                                    <p
+                                                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                        №12345678</p>
+                                                </div>
+                                                <div class="prof-aside__icon icon icon_message"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="prof-aside__right-panel prof-aside__right-panel_type_mobile">
+                                        <li class="prof-aside__task-item prof-aside__task-item_type_message">
+                                            <button class="prof-aside__button-back-tasks"></button>
+                                            <img src="./assets/images/avatar-photo.png" alt="Аватар"
+                                                class="prof-aside__photo">
+                                            <div class="prof-aside__tasks-info">
+
+                                                <p class="prof-aside__status text-p3"><span class="prof-marker prof-marker_type_yellow"></span>На проверке</p>
+                                                <p class="prof-aside__task-name prof-aside__task-name_type_message text-p2 mix-scrollbar-only-horizontal">
+                                                    TASK111111</p>
+                                                <p
+                                                    class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                    скролл длинного номера ...................</p>
+                                            </div>
+
+                                        </li>
+                                        <!-- входящее сообщение имеет модификатор : "prof-aside__container-message_type_income" -->
+                                        <div
+                                            class="prof-aside__container-message prof-aside__container-message_type_income">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
+                                                alt="Аватар">
+                                            <!-- входящее сообщение имеет модификатор : "prof-aside__message_type_income" -->
+                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">Иван
+                                                Иванов заявка создана Иван Иванов заявка создана Иван Иванов заявка создана
+                                                Иван Иванов заявка создана Иван Иванов заявка создана Иван Иванов заявка
+                                                создана</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div class="prof-aside__divisor">
+                                            <p class="prof-aside__date text-p3">Сегодня</p>
+                                        </div>
+                                        <div class="prof-aside__container-message">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/avatar-photo.png"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message text-p3">исходящее сообщение исходящее сообщение
+                                                исходящее сообщение исходящее сообщение исходящее сообщение исходящее
+                                                сообщение исходящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div
+                                            class="prof-aside__container-message prof-aside__container-message_type_income">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">входящее
+                                                сообщение входящее сообщение входящее сообщение входящее сообщение входящее
+                                                сообщение входящее сообщение входящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <form class="prof-aside__send-message">
+                                            <input type="text"
+                                                class="prof-aside__input prof-aside__input_type_send-message text-p1"
+                                                placeholder="Введите сообщение">
+                                            <button type="submit"
+                                                class="prof-aside__sumbit-message icon icon_send-message"></button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <aside class="prof-aside">

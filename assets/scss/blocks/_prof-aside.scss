@@ -21,6 +21,12 @@
         @media (max-width: rem(1780px)) {
             justify-content: center;
         }
+        &_type_mobile {
+            justify-content: flex-start;
+            @media (max-width: rem(750px)) {
+                justify-content: center;
+            }
+        }
     }
     &__header {
         width: 100%;
@@ -51,6 +57,12 @@
         flex-direction: column;
         @media (max-width: rem(1780px)) {
             display: none;
+        }
+        &_type_mobile {
+            display: flex;
+            @media (max-width: rem(750px)) {
+                display: none;
+            }
         }
     }
     &__input {

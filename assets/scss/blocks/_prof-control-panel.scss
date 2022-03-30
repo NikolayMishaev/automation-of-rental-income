@@ -107,6 +107,10 @@
         border: 1px solid #e1e5eb;
         border-radius: 4px;
         padding: 4px 12px;
+        &:hover + .main-submenu {
+            opacity: 1;
+            visibility: visible;
+        }
         &:disabled {
             background-color: #fff;
             font-style: normal;

@@ -45,6 +45,12 @@
     &__body {
         border: rem(1px) solid #d0d7d9;
         border-radius: rem(12px);
+        &_type_contacts {
+            display: none;
+            @media (max-width: rem(1550px)) {
+                display: block;
+            }
+        }
     }
     &__navigation {
         height: rem(40px);
@@ -116,5 +122,25 @@
         justify-content: center;
         gap: 16px;
         margin: 16px 0;
+    }
+    &__contacts {
+        display: none;
+        flex-shrink: 0;
+        border-radius: 4px;
+        width: 32px;
+        height: 32px;
+        background: url('./../images/icons/profile-tasks-chat.svg') no-repeat center;
+        margin-left: auto;
+        transition: $transition;
+        @media (max-width: rem(1550px)) {
+            display: block;
+        }
+        &:hover {
+            cursor: pointer;
+            opacity: .7;
+        }
+        &_active {
+            background-image: url('./../images/icons/profile-tasks-chat-active.svg');
+        }
     }
 }

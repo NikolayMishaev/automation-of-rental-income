@@ -69,6 +69,8 @@
     function hideTable() {
         tableContainer.classList.add("mix-display-none");
         cardsContainer.classList.remove("mix-display-none");
+        buttonList.classList.remove("prof-control-panel__button_active");
+        buttonCards.classList.add("prof-control-panel__button_active");
     }
 
     // действие прописано в window.addEventListener('resize;)
@@ -119,5 +121,36 @@
         panelTasks.classList.remove("mix-display-flex");
         panelChat.classList.remove("mix-display-none");
         panelChat.classList.remove("mix-display-flex");
+    }
+
+    // Логика открытия контактов (таски, чат) для планшетной / мобильной версий
+
+    const buttonContacts = document.querySelector(".prof-general__contacts");
+
+    const generalPanel = document.querySelector("#general-panel");
+    const mobilePanelContacts = document.querySelector(
+        ".prof-general__body_type_contacts"
+    );
+
+    buttonContacts.addEventListener("click", (e) => {
+        if (
+            !buttonContacts.classList.contains("prof-general__contacts_active")
+        ) {
+            openMobileBlockContacts();
+        } else {
+            closeMobileBlockContacts();
+        }
+    });
+
+    function openMobileBlockContacts() {
+        buttonContacts.classList.add("prof-general__contacts_active");
+        mobilePanelContacts.classList.remove("mix-display-none");
+        generalPanel.classList.add("mix-display-none");
+    }
+
+    function closeMobileBlockContacts() {
+        buttonContacts.classList.remove("prof-general__contacts_active");
+        mobilePanelContacts.classList.add("mix-display-none");
+        generalPanel.classList.remove("mix-display-none");
     }
 })();
