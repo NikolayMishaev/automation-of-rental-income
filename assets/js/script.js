@@ -482,3 +482,22 @@ if (modalRejectForm) {
     closeModalWindow(modalRejectForm, e);
   };
 }
+
+const fileDownloadList = document.querySelectorAll(".check-form-page__file_img");
+const fileModal = document.querySelectorAll(".modal-file-form");
+
+if (fileDownloadList) {
+  for (let index = 0; index < fileDownloadList.length; index++) {
+    fileDownloadList[index].onclick = function (e) {
+      e.currentTarget.querySelector(".modal-file-form").style.display = "flex";
+    };
+  }
+}
+if (fileModal) {
+  for (let index = 0; index < fileModal.length; index++) {
+    fileModal[index].addEventListener("click", (e) => {
+      closeModalWindow(fileModal[index], e);
+      e.stopPropagation();
+    });
+  }
+}

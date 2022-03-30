@@ -70,6 +70,9 @@
     &:hover {
       text-decoration: none;
     }
+    span {
+      color: $grey100;
+    }
   }
   &__file-icon {
     @include flex-container;
@@ -117,6 +120,9 @@
   }
 }
 .modal-reject-form {
+  .modal__content {
+    width: 600px;
+  }
   .modal__footer {
     border-top: none;
     padding-top: 0;
@@ -125,5 +131,22 @@
     @media #{$screen-mobile} {
       width: 100%;
     }
+  }
+}
+.modal-file-form {
+  .modal__body {
+    position: relative;
+    object {
+      position: absolute;
+      top: 16px;
+      right: 40px;
+    }
+  }
+  .download-img-btn {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 4px;
+    @include flex-container;
   }
 }

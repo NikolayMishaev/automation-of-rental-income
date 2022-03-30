@@ -4525,6 +4525,10 @@ main .container {
   text-decoration: none;
 }
 
+.check-form-page__file span {
+  color: #222429;
+}
+
 .check-form-page__file-icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4608,6 +4612,10 @@ main .container {
   }
 }
 
+.modal-reject-form .modal__content {
+  width: 600px;
+}
+
 .modal-reject-form .modal__footer {
   border-top: none;
   padding-top: 0;
@@ -4617,4 +4625,30 @@ main .container {
   .modal-reject-form .custom-text-input_text {
     width: 100%;
   }
+}
+
+.modal-file-form .modal__body {
+  position: relative;
+}
+
+.modal-file-form .modal__body object {
+  position: absolute;
+  top: 16px;
+  right: 40px;
+}
+
+.modal-file-form .download-img-btn {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
