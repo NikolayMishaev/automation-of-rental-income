@@ -71,9 +71,53 @@
         cardsContainer.classList.remove("mix-display-none");
     }
 
+    // действие прописано в window.addEventListener('resize;)
+
+    // логика смены чата на задачи по клику на кнопку
+
+    const buttonBackToTasks = document.querySelector(
+        ".prof-aside__button-back-tasks"
+    );
+    const panelChat = document.querySelector(".prof-aside__right-panel");
+    const panelTasks = document.querySelector(".prof-aside__left-panel");
+
+    buttonBackToTasks.addEventListener("click", (e) => {
+        panelChat.classList.add("mix-display-none");
+        panelChat.classList.remove("mix-display-flex");
+        panelTasks.classList.remove("mix-display-none");
+    });
+
+    // логика открытия чата по клику на таску
+
+    const tasksContainer = document.querySelectorAll(
+        ".prof-aside__tasks-container"
+    );
+
+    tasksContainer.forEach((i) =>
+        i.addEventListener("click", (e) => {
+            if (innerWidth > 1780) {
+                return;
+            }
+            if (e.target.closest(".prof-aside__task-item")) {
+                panelTasks.classList.add("mix-display-none");
+                panelChat.classList.add("mix-display-flex");
+            }
+        })
+    );
+
     window.addEventListener("resize", function (e) {
         if (e.target.innerWidth < 1151) {
             hideTable();
         }
+        if (e.target.innerWidth > 1780) {
+            resetVisibleDymanicClassAsideBlock();
+        }
     });
+
+    function resetVisibleDymanicClassAsideBlock() {
+        panelTasks.classList.remove("mix-display-none");
+        panelTasks.classList.remove("mix-display-flex");
+        panelChat.classList.remove("mix-display-none");
+        panelChat.classList.remove("mix-display-flex");
+    }
 })();

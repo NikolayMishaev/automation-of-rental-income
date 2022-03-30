@@ -80,8 +80,17 @@
         padding: rem(16px);
         border-radius: rem(12px);
         border-bottom: 1px solid $grey-20_2;
+        transition: $transition;
         &_active {
             background-color: $accent-TCX5;
+        }
+        &_type_message {
+            margin-bottom: 16px;
+            position: relative;
+        }
+        &:hover {
+            cursor: pointer;
+            opacity: .8;
         }
     }
     &__photo {
@@ -97,6 +106,9 @@
     &__task-name {
         color: $grey80;
         margin-bottom: rem(4px);
+        &_type_message {
+            width: 90px;
+        }
     }
     &__task-number {
         color: $grey60;
@@ -142,7 +154,7 @@
     }
     &__date {
         text-align: center;
-        color:$grey60;
+        color: $grey60;
     }
     &__send-message {
         margin-top: auto;
@@ -157,5 +169,30 @@
         border: none;
         background-color: transparent;
         transform: translateY(-50%);
+    }
+    &__status {
+        position: absolute;
+        right: 0;
+    }
+    &__button-back-tasks {
+        display: none;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        left: -10px;
+        background: url("./../images/icons/main-cursor-down.svg") no-repeat center;
+        border: none;
+        border: 1px solid #d0d7d9;
+        border-radius: 4px;
+        transform: rotate(90deg);
+        transition: $transition;
+        &:hover {
+            cursor: pointer;
+            opacity: .7;
+            transform: scale(1.035) rotate(90deg);
+        }
+        @media (max-width: rem(1780px)) {
+           display: block;
+        }
     }
 }

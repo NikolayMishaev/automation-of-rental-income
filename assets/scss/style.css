@@ -1796,6 +1796,12 @@ button {
   display: none !important;
 }
 
+.mix-display-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 .mix-visible {
   opacity: 1 !important;
   visibility: visible !important;
@@ -4137,10 +4143,22 @@ button {
   padding: 1rem;
   border-radius: 0.75rem;
   border-bottom: 1px solid #E3E7E8;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .prof-aside__task-item_active {
   background-color: #e6fae9;
+}
+
+.prof-aside__task-item_type_message {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.prof-aside__task-item:hover {
+  cursor: pointer;
+  opacity: .8;
 }
 
 .prof-aside__photo {
@@ -4159,6 +4177,10 @@ button {
 .prof-aside__task-name {
   color: #3c4142;
   margin-bottom: 0.25rem;
+}
+
+.prof-aside__task-name_type_message {
+  width: 90px;
 }
 
 .prof-aside__task-number {
@@ -4242,6 +4264,40 @@ button {
   background-color: transparent;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.prof-aside__status {
+  position: absolute;
+  right: 0;
+}
+
+.prof-aside__button-back-tasks {
+  display: none;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: -10px;
+  background: url("./../images/icons/main-cursor-down.svg") no-repeat center;
+  border: none;
+  border: 1px solid #d0d7d9;
+  border-radius: 4px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.prof-aside__button-back-tasks:hover {
+  cursor: pointer;
+  opacity: .7;
+  -webkit-transform: scale(1.035) rotate(90deg);
+          transform: scale(1.035) rotate(90deg);
+}
+
+@media (max-width: 111.25rem) {
+  .prof-aside__button-back-tasks {
+    display: block;
+  }
 }
 
 .prof-general {
