@@ -245,13 +245,15 @@
                                     <div class="prof-control-panel__buttons-container">
                                         <button aria-label="button-list" id="button-list"
                                             class="prof-control-panel__button prof-control-panel__button_active heading-h4">Список</button>
-                                        <button aria-label="button-cards" id="button-cards" class="prof-control-panel__button heading-h4">Карточки</button>
+                                        <button aria-label="button-cards" id="button-cards"
+                                            class="prof-control-panel__button heading-h4">Карточки</button>
                                     </div>
                                     <label class="prof-control-panel__checkbox-label text-p2">
                                         <input type="checkbox" class="prof-control-panel__checkbox">
                                         Только выгодные предложения
                                     </label>
-                                    <label class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2">Статус:
+                                    <label
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2">Статус:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                         <div class="prof-control-panel__cursor"></div>
                                         <input type="text" disabled="true" class="prof-control-panel__select-input"
@@ -259,10 +261,10 @@
                                         <div class="main-submenu main-submenu_style_prof-status">
                                             <ul class="main-submenu__list">
                                                 <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
                                                     Объекты</li>
                                                 <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
                                                     <label class="prof-control-panel__label-custom">
                                                         <input name="object-type"
                                                             class="prof-control-panel__input-hidden" type="radio">
@@ -270,7 +272,7 @@
                                                         Все</label>
                                                 </li>
                                                 <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
                                                     <label class="prof-control-panel__label-custom">
                                                         <input name="object-type"
                                                             class="prof-control-panel__input-hidden" type="radio">
@@ -293,6 +295,10 @@
                                                         <span class="prof-control-panel__visible-checkbox"></span>
                                                         Скоро освободится</label>
                                                 </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                <button class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                            </li>
                                             </ul>
                                         </div>
                                     </label>
@@ -535,30 +541,30 @@
                                 </ul>
 
                                 <div class="main main_page_profile">
-                                    <div class="main__pagination">
+                                    <div class="main__pagination main__pagination_type_profile">
                                         <nav class="pagination">
                                             <ul class="pagination__list">
-                                                <li class="pagination__item">
+                                                <li class="pagination__item pagination__item_style_profile">
                                                     <button type="button"
                                                         class="pagination__button pagination__button_type_arrow-left"></button>
                                                 </li>
-                                                <li class="pagination__item">
+                                                <li class="pagination__item pagination__item_style_profile">
                                                     <button type="button"
                                                         class="pagination__button pagination__button_active">1</button>
                                                 </li>
-                                                <li class="pagination__item">
+                                                <li class="pagination__item pagination__item_style_profile">
                                                     <button type="button" class="pagination__button">2</button>
                                                 </li>
-                                                <li class="pagination__item">
+                                                <li class="pagination__item pagination__item_style_profile">
                                                     <button type="button" class="pagination__button">...</button>
                                                 </li>
-                                                <li class="pagination__item">
+                                                <li class="pagination__item pagination__item_style_profile">
                                                     <button type="button" class="pagination__button">12</button>
                                                 </li>
-                                                <li class="pagination__item">
+                                                <li class="pagination__item pagination__item_style_profile">
                                                     <button type="button" class="pagination__button">13</button>
                                                 </li>
-                                                <li class="pagination__item">
+                                                <li class="pagination__item pagination__item_style_profile">
                                                     <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
                                                                                           и влево: pagination__button_type_arrow-left-active -->
                                                     <button type="button"
@@ -673,14 +679,16 @@
                                 </header>
                                 <div class="prof-aside__body">
                                     <div class="prof-aside__left-panel prof-aside__left-panel_type_mobile">
-                                        <input type="text" class="prof-aside__input prof-aside__input_type_search text-p1"
+                                        <input type="text"
+                                            class="prof-aside__input prof-aside__input_type_search text-p1"
                                             placeholder="Поиск">
                                         <ul class="prof-aside__tasks-container">
                                             <li class="prof-aside__task-item prof-aside__task-item_active">
                                                 <img src="./assets/images/avatar-photo.png" alt="Аватар"
                                                     class="prof-aside__photo">
                                                 <div class="prof-aside__tasks-info">
-                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                    <p
+                                                        class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
                                                         скролл длинной задачи ...................</p>
                                                     <p
                                                         class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -692,7 +700,8 @@
                                                 <img src="./assets/images/avatar-photo.png" alt="Аватар"
                                                     class="prof-aside__photo">
                                                 <div class="prof-aside__tasks-info">
-                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                    <p
+                                                        class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
                                                         TASK111111</p>
                                                     <p
                                                         class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -704,7 +713,8 @@
                                                 <img src="./assets/images/other-user.jpg" alt="Аватар"
                                                     class="prof-aside__photo">
                                                 <div class="prof-aside__tasks-info">
-                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                    <p
+                                                        class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
                                                         TASK111111</p>
                                                     <p
                                                         class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -716,7 +726,8 @@
                                                 <img src="./assets/images/avatar-photo.png" alt="Аватар"
                                                     class="prof-aside__photo">
                                                 <div class="prof-aside__tasks-info">
-                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                    <p
+                                                        class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
                                                         TASK111111</p>
                                                     <p
                                                         class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -728,7 +739,8 @@
                                                 <img src="./assets/images/avatar-photo.png" alt="Аватар"
                                                     class="prof-aside__photo">
                                                 <div class="prof-aside__tasks-info">
-                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                    <p
+                                                        class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
                                                         TASK111111</p>
                                                     <p
                                                         class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -740,7 +752,8 @@
                                                 <img src="./assets/images/other-user.jpg" alt="Аватар"
                                                     class="prof-aside__photo">
                                                 <div class="prof-aside__tasks-info">
-                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                    <p
+                                                        class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
                                                         TASK111111</p>
                                                     <p
                                                         class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -752,7 +765,8 @@
                                                 <img src="./assets/images/avatar-photo.png" alt="Аватар"
                                                     class="prof-aside__photo">
                                                 <div class="prof-aside__tasks-info">
-                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                    <p
+                                                        class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
                                                         TASK111111</p>
                                                     <p
                                                         class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -764,7 +778,8 @@
                                                 <img src="./assets/images/other-user.jpg" alt="Аватар"
                                                     class="prof-aside__photo">
                                                 <div class="prof-aside__tasks-info">
-                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                    <p
+                                                        class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
                                                         TASK111111</p>
                                                     <p
                                                         class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -776,7 +791,8 @@
                                                 <img src="./assets/images/hot-price-photo.jpg" alt="Аватар"
                                                     class="prof-aside__photo">
                                                 <div class="prof-aside__tasks-info">
-                                                    <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                                                    <p
+                                                        class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
                                                         TASK111111</p>
                                                     <p
                                                         class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -788,13 +804,16 @@
                                     </div>
                                     <div class="prof-aside__right-panel prof-aside__right-panel_type_mobile">
                                         <li class="prof-aside__task-item prof-aside__task-item_type_message">
-                                            <button class="prof-aside__button-back-tasks"></button>
+                                            <button class="prof-aside__button-back-tasks prof-aside__button-back-tasks_type_mobile"></button>
                                             <img src="./assets/images/avatar-photo.png" alt="Аватар"
                                                 class="prof-aside__photo">
                                             <div class="prof-aside__tasks-info">
 
-                                                <p class="prof-aside__status text-p3"><span class="prof-marker prof-marker_type_yellow"></span>На проверке</p>
-                                                <p class="prof-aside__task-name prof-aside__task-name_type_message text-p2 mix-scrollbar-only-horizontal">
+                                                <p class="prof-aside__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>На проверке
+                                                </p>
+                                                <p
+                                                    class="prof-aside__task-name prof-aside__task-name_type_message text-p2 mix-scrollbar-only-horizontal">
                                                     TASK111111</p>
                                                 <p
                                                     class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
@@ -802,6 +821,7 @@
                                             </div>
 
                                         </li>
+                                        <div class="prof-aside__wrapper-container-message">
                                         <!-- входящее сообщение имеет модификатор : "prof-aside__container-message_type_income" -->
                                         <div
                                             class="prof-aside__container-message prof-aside__container-message_type_income">
@@ -809,7 +829,8 @@
                                                 alt="Аватар">
                                             <!-- входящее сообщение имеет модификатор : "prof-aside__message_type_income" -->
                                             <p class="prof-aside__message prof-aside__message_type_income text-p3">Иван
-                                                Иванов заявка создана Иван Иванов заявка создана Иван Иванов заявка создана
+                                                Иванов заявка создана Иван Иванов заявка создана Иван Иванов заявка
+                                                создана
                                                 Иван Иванов заявка создана Иван Иванов заявка создана Иван Иванов заявка
                                                 создана</p>
                                             <p class="prof-aside__time text-p4">19:48</p>
@@ -820,7 +841,8 @@
                                         <div class="prof-aside__container-message">
                                             <img class="prof-aside__chat-photo" src="./assets/images/avatar-photo.png"
                                                 alt="Аватар">
-                                            <p class="prof-aside__message text-p3">исходящее сообщение исходящее сообщение
+                                            <p class="prof-aside__message text-p3">исходящее сообщение исходящее
+                                                сообщение
                                                 исходящее сообщение исходящее сообщение исходящее сообщение исходящее
                                                 сообщение исходящее сообщение</p>
                                             <p class="prof-aside__time text-p4">19:48</p>
@@ -829,10 +851,54 @@
                                             class="prof-aside__container-message prof-aside__container-message_type_income">
                                             <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
                                                 alt="Аватар">
-                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">входящее
-                                                сообщение входящее сообщение входящее сообщение входящее сообщение входящее
+                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">
+                                                входящее
+                                                сообщение входящее сообщение входящее сообщение входящее сообщение
+                                                входящее
                                                 сообщение входящее сообщение входящее сообщение</p>
                                             <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div class="prof-aside__container-message">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/avatar-photo.png"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message text-p3">исходящее сообщение исходящее
+                                                сообщение
+                                                исходящее сообщени исходящее сообщение исходящее сообщение исходящее
+                                                сообщение исходящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div
+                                            class="prof-aside__container-message prof-aside__container-message_type_income">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">
+                                                входящее
+                                                соободящее сообщение
+                                                входящее
+                                                сообщение входящее сообщение входящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div class="prof-aside__container-message">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/avatar-photo.png"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message text-p3">исходящее сообщение исходящее
+                                                сообщение
+                                                исходящее сообщенее сообщение исходящее сообщение исходящее
+                                                сообщение исходящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div
+                                            class="prof-aside__container-message prof-aside__container-message_type_income">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">
+                                                входящее
+                                                сообщие входящее сообщение
+                                                входящее
+                                                сообщение входящее сообщение входящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+
                                         </div>
                                         <form class="prof-aside__send-message">
                                             <input type="text"
@@ -974,51 +1040,99 @@
                                 </div>
                                 <div id="prof-aside__right-panel-main" class="prof-aside__right-panel">
                                     <li class="prof-aside__task-item prof-aside__task-item_type_message">
-                                        <button id="prof-aside__button-back-tasks-main" class="prof-aside__button-back-tasks"></button>
+                                        <button id="prof-aside__button-back-tasks-main"
+                                            class="prof-aside__button-back-tasks"></button>
                                         <img src="./assets/images/avatar-photo.png" alt="Аватар"
                                             class="prof-aside__photo">
                                         <div class="prof-aside__tasks-info">
 
-                                            <p class="prof-aside__status text-p3"><span class="prof-marker prof-marker_type_yellow"></span>На проверке</p>
-                                            <p class="prof-aside__task-name prof-aside__task-name_type_message text-p2 mix-scrollbar-only-horizontal">
-                                                TASK111111</p>
+                                            <p class="prof-aside__status text-p3"><span
+                                                    class="prof-marker prof-marker_type_yellow"></span>На проверке</p>
                                             <p
-                                                class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
+                                                class="prof-aside__task-name prof-aside__task-name_type_message text-p2 mix-scrollbar-only-horizontal">
+                                                TASK111111</p>
+                                            <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
                                                 скролл длинного номера ...................</p>
                                         </div>
 
                                     </li>
-                                    <!-- входящее сообщение имеет модификатор : "prof-aside__container-message_type_income" -->
-                                    <div
-                                        class="prof-aside__container-message prof-aside__container-message_type_income">
-                                        <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
-                                            alt="Аватар">
-                                        <!-- входящее сообщение имеет модификатор : "prof-aside__message_type_income" -->
-                                        <p class="prof-aside__message prof-aside__message_type_income text-p3">Иван
-                                            Иванов заявка создана Иван Иванов заявка создана Иван Иванов заявка создана
-                                            Иван Иванов заявка создана Иван Иванов заявка создана Иван Иванов заявка
-                                            создана</p>
-                                        <p class="prof-aside__time text-p4">19:48</p>
-                                    </div>
-                                    <div class="prof-aside__divisor">
-                                        <p class="prof-aside__date text-p3">Сегодня</p>
-                                    </div>
-                                    <div class="prof-aside__container-message">
-                                        <img class="prof-aside__chat-photo" src="./assets/images/avatar-photo.png"
-                                            alt="Аватар">
-                                        <p class="prof-aside__message text-p3">исходящее сообщение исходящее сообщение
-                                            исходящее сообщение исходящее сообщение исходящее сообщение исходящее
-                                            сообщение исходящее сообщение</p>
-                                        <p class="prof-aside__time text-p4">19:48</p>
-                                    </div>
-                                    <div
-                                        class="prof-aside__container-message prof-aside__container-message_type_income">
-                                        <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
-                                            alt="Аватар">
-                                        <p class="prof-aside__message prof-aside__message_type_income text-p3">входящее
-                                            сообщение входящее сообщение входящее сообщение входящее сообщение входящее
-                                            сообщение входящее сообщение входящее сообщение</p>
-                                        <p class="prof-aside__time text-p4">19:48</p>
+                                    <div class="prof-aside__wrapper-container-message">
+                                        <!-- входящее сообщение имеет модификатор : "prof-aside__container-message_type_income" -->
+                                        <div
+                                            class="prof-aside__container-message prof-aside__container-message_type_income">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
+                                                alt="Аватар">
+                                            <!-- входящее сообщение имеет модификатор : "prof-aside__message_type_income" -->
+                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">Иван
+                                                Иванов заявка создана Иван Иванов заявка создана Иван Иванов заявка
+                                                создана
+                                                Иван Иванов заявка создана Иван Иванов заявка создана Иван Иванов заявка
+                                                создана</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div class="prof-aside__divisor">
+                                            <p class="prof-aside__date text-p3">Сегодня</p>
+                                        </div>
+                                        <div class="prof-aside__container-message">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/avatar-photo.png"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message text-p3">исходящее сообщение исходящее
+                                                сообщение
+                                                исходящее сообщение исходящее сообщение исходящее сообщение исходящее
+                                                сообщение исходящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div
+                                            class="prof-aside__container-message prof-aside__container-message_type_income">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">
+                                                входящее
+                                                сообщение входящее сообщение входящее сообщение входящее сообщение
+                                                входящее
+                                                сообщение входящее сообщение входящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div class="prof-aside__container-message">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/avatar-photo.png"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message text-p3">исходящее сообщение исходящее
+                                                сообщение
+                                                исходящее сообщение исходящее сообщение исходящее сообщение исходящее
+                                                сообщение исходящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div
+                                            class="prof-aside__container-message prof-aside__container-message_type_income">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">
+                                                входящее
+                                                сообщение входящее сообщение входящее сообщение входящее сообщение
+                                                входящее
+                                                сообщение входящее сообщение входящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div class="prof-aside__container-message">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/avatar-photo.png"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message text-p3">исходящее сообщение исходящее
+                                                сообщение
+                                                исходящее сообщение исходящее сообщение исходящее сообщение исходящее
+                                                сообщение исходящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
+                                        <div
+                                            class="prof-aside__container-message prof-aside__container-message_type_income">
+                                            <img class="prof-aside__chat-photo" src="./assets/images/other-user.jpg"
+                                                alt="Аватар">
+                                            <p class="prof-aside__message prof-aside__message_type_income text-p3">
+                                                входящее
+                                                сообщение входящее сообщение входящее сообщение входящее сообщение
+                                                входящее
+                                                сообщение входящее сообщение входящее сообщение</p>
+                                            <p class="prof-aside__time text-p4">19:48</p>
+                                        </div>
                                     </div>
                                     <form class="prof-aside__send-message">
                                         <input type="text"
@@ -1027,6 +1141,7 @@
                                         <button type="submit"
                                             class="prof-aside__sumbit-message icon icon_send-message"></button>
                                     </form>
+
 
                                 </div>
                             </div>

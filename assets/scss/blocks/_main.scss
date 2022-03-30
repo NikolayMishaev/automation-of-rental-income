@@ -9,8 +9,11 @@
         padding-top: 20px;
         display: flex;
         justify-content: space-between;
-        border-top: 1px solid #E3E7E8;
+        border-top: 1px solid #e3e7e8;
         flex-wrap: wrap;
+        @media (max-width: 860px) {
+            justify-content: center;
+        }
     }
     &__content {
         max-width: rem(1920px);
@@ -104,7 +107,7 @@
                 &:hover {
                     cursor: pointer;
                 }
-                &:hover  .main-submenu {
+                &:hover .main-submenu {
                     opacity: 1;
                     visibility: visible;
                 }
@@ -117,8 +120,8 @@
                     margin-left: 15px;
                 }
                 &:hover {
-                    cursor:pointer;
-                    opacity: .7;
+                    cursor: pointer;
+                    opacity: 0.7;
                 }
                 @media (max-width: 1500px) {
                     display: none;
@@ -164,5 +167,12 @@
     }
     &__pagination {
         @include flex-container;
+        &_type_profile {
+            @media (max-width: 860px) {
+                order: 1;
+                width: 100%;
+                margin-top: 24px;
+            }
+        }
     }
 }

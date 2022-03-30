@@ -45,5 +45,8 @@
             opacity: .7;
             transform: scale(1.025)
         }
+        @media #{$screen-mobile} {
+            background-position: 10% center;
+        }
     }
 }

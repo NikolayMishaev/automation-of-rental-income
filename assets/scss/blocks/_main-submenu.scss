@@ -36,6 +36,9 @@
         left: 0;
         right: 0;
         top: 34px;
+        @media (max-width: rem(1000px)) {
+left: unset;
+        }
     }
     &_style_prof-page {
         left: 240px;

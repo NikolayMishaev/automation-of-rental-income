@@ -57,9 +57,10 @@
         background-color: $grey-5;
         border-radius: 12px 12px 0px 0px;
         padding: 0 rem(40px);
-        text-align: center;
+        text-align: left;
         @media #{$screen-mobile} {
             padding: 0;
+            text-align: center;
         }
     }
     &__button {
@@ -99,6 +100,9 @@
     }
     &__content {
         padding: rem(24px);
+        @media #{$screen-mobile} {
+            padding: 16px;
+        }
     }
     &__message {
         margin-top: rem(16px);

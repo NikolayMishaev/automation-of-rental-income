@@ -115,7 +115,6 @@
 
     tasksContainer.forEach((i) =>
         i.addEventListener("click", (e) => {
-            console.log("click task container");
             if (innerWidth > 1780) {
                 return;
             }
@@ -138,6 +137,9 @@
         }
         if (e.target.innerWidth > 750) {
             resetVisibleDymanicClassAsideBlockMobile();
+        }
+        if (e.target.innerWidth > 1550) {
+            closeMobileBlockContacts();
         }
     });
 

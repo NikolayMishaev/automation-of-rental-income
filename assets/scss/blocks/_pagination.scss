@@ -4,8 +4,14 @@
     }
     &__item {
         margin-right: rem(16px);
+        transition: $transition;
         &:last-child {
             margin-right: 0;
+        }
+        &_style_profile {
+            @media #{$screen-mobile} {
+                margin-right: 8px;
+            }
         }
     }
     &__button {
