@@ -44,6 +44,7 @@
         margin-right: rem(16px);
     }
     &__right-panel {
+        position: relative;
         border: 1px solid #e3e7e8;
         border-radius: 12px;
         padding: rem(16px);
@@ -78,6 +79,20 @@
     }
     &__tasks-container {
         margin-top: rem(8px);
+        height: 648px;
+        overflow: auto;
+        padding-right: 5px;
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 3px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
     }
     &__task-item {
         @include flex-container;
@@ -208,9 +223,9 @@
         }
     }
     &__wrapper-container-message {
-        height: 534px;
+        height: 460px;
         overflow: auto;
-        margin-bottom: 10px;
+        margin-bottom: 70px;
         padding-right: 5px;
         &::-webkit-scrollbar {
             width: 5px;
@@ -222,6 +237,31 @@
         &::-webkit-scrollbar-thumb {
             border-radius: 4px;
             background-color: $grey30;
+        }
+    }
+    &__feedback {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 65px;
+        left: 20px;
+    }
+    &__stars-container {
+        width: 128px;
+        height: 32px;
+        margin-left: 4px;
+        border: 1px solid #e3e7e8;
+        border-radius: 12px;
+        @include flex-container;
+    }
+    &__star {
+        width: 12px;
+        height: 12px;
+        background: url('./../images/icons/profile-star.svg') no-repeat center;
+        margin: 0 4px;
+        transition: $transition;
+        &:hover {
+            cursor: pointer;
         }
     }
 }

@@ -149,6 +149,7 @@
             width: 76px;
             @media #{$screen-mobile} {
                 width: 53px;
+                padding-left: 10px;
             }
         }
     }

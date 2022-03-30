@@ -6,6 +6,9 @@
     border-radius: 12px;
     height: 374px;
     color: #222429;
+    &_active {
+        border: 2px solid #F9A825;
+    }
     &__photo {
         object-fit: cover;
         width: 100%;

@@ -4110,6 +4110,7 @@ button {
 }
 
 .prof-aside__right-panel {
+  position: relative;
   border: 1px solid #e3e7e8;
   border-radius: 12px;
   padding: 1rem;
@@ -4175,6 +4176,23 @@ button {
 
 .prof-aside__tasks-container {
   margin-top: 0.5rem;
+  height: 648px;
+  overflow: auto;
+  padding-right: 5px;
+}
+
+.prof-aside__tasks-container::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+
+.prof-aside__tasks-container::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+.prof-aside__tasks-container::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
 }
 
 .prof-aside__task-item {
@@ -4362,9 +4380,9 @@ button {
 }
 
 .prof-aside__wrapper-container-message {
-  height: 534px;
+  height: 460px;
   overflow: auto;
-  margin-bottom: 10px;
+  margin-bottom: 70px;
   padding-right: 5px;
 }
 
@@ -4380,6 +4398,48 @@ button {
 .prof-aside__wrapper-container-message::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: #cfd4dc;
+}
+
+.prof-aside__feedback {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 65px;
+  left: 20px;
+}
+
+.prof-aside__stars-container {
+  width: 128px;
+  height: 32px;
+  margin-left: 4px;
+  border: 1px solid #e3e7e8;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.prof-aside__star {
+  width: 12px;
+  height: 12px;
+  background: url("./../images/icons/profile-star.svg") no-repeat center;
+  margin: 0 4px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.prof-aside__star:hover {
+  cursor: pointer;
 }
 
 .prof-general {
@@ -4957,6 +5017,7 @@ button {
 @media (max-width: 40rem) {
   .prof-control-panel__select-input_type_page {
     width: 53px;
+    padding-left: 10px;
   }
 }
 
@@ -5147,6 +5208,10 @@ button {
   border-radius: 12px;
   height: 374px;
   color: #222429;
+}
+
+.prof-card_active {
+  border: 2px solid #F9A825;
 }
 
 .prof-card__photo {
