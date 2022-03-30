@@ -1899,7 +1899,7 @@ main .container {
   }
 }
 
-.registration-form__add-btn {
+.registration-form__add-btn, .registration-form__del-btn {
   border-radius: 4px;
   border: 1px solid #cfd4dc;
   color: #222429;
@@ -1908,10 +1908,13 @@ main .container {
   width: 100%;
   margin-top: 16px;
   padding: 4px;
+  text-align: center;
+  cursor: pointer;
 }
 
-.registration-form__add-btn_del {
+.registration-form__del-btn {
   margin-right: 16px;
+  display: none;
 }
 
 .registration-form__link {
@@ -1922,6 +1925,12 @@ main .container {
   display: none;
   font-size: 0.875rem;
   margin-bottom: 24px;
+}
+
+@media (max-width: 40rem) {
+  .registration-form__user-agreement {
+    display: none !important;
+  }
 }
 
 .registration-form input:focus {
@@ -1979,6 +1988,10 @@ main .container {
   display: block;
   font-size: 0.75rem;
   color: #6d7678;
+}
+
+.registration-form__benif {
+  margin-bottom: 16px;
 }
 
 .registration-form input[type="date"]::-webkit-calendar-picker-indicator {

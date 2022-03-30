@@ -155,33 +155,36 @@ function clear(list) {
 }
 // логика placeholder на datepicker
 
-const inputDate = document.querySelectorAll(".input-date__container input");
-for (let index = 0; index < inputDate.length; index++) {
-  const element = inputDate[index];
-  element.addEventListener("blur", function (e) {
-    if (e.target.value) {
-      e.target.nextElementSibling.style.display = "none";
-    } else {
-      e.target.nextElementSibling.style.display = "flex";
-    }
-  });
-}
 // логика placeholder на input
 
-const customInput = document.querySelectorAll(
-  ".custom-text-input input, .custom-text-input textarea"
-);
+function setCustomInput() {
+  const inputDate = document.querySelectorAll(".input-date__container input");
+  for (let index = 0; index < inputDate.length; index++) {
+    const element = inputDate[index];
+    element.addEventListener("blur", function (e) {
+      if (e.target.value) {
+        e.target.nextElementSibling.style.display = "none";
+      } else {
+        e.target.nextElementSibling.style.display = "flex";
+      }
+    });
+  }
+  let customInput = document.querySelectorAll(
+    ".custom-text-input input, .custom-text-input textarea"
+  );
 
-for (let index = 0; index < customInput.length; index++) {
-  const element = customInput[index];
-  element.addEventListener("blur", function (e) {
-    if (e.target.value) {
-      e.target.nextElementSibling.classList.add("custom-text-input__label_full");
-    } else {
-      e.target.nextElementSibling.classList.remove("custom-text-input__label_full");
-    }
-  });
+  for (let index = 0; index < customInput.length; index++) {
+    const element = customInput[index];
+    element.addEventListener("blur", function (e) {
+      if (e.target.value) {
+        e.target.nextElementSibling.classList.add("custom-text-input__label_full");
+      } else {
+        e.target.nextElementSibling.classList.remove("custom-text-input__label_full");
+      }
+    });
+  }
 }
+setCustomInput();
 
 const regRadioBtn = document.querySelectorAll(".regisrtation-page .group-radio-btn__radio");
 
@@ -526,4 +529,54 @@ if (fileModal) {
       e.stopPropagation();
     });
   }
+}
+
+const step5 = document.querySelector(".registration-form_juridical .registration-form__step5");
+const step6 = document.querySelector(".registration-form_juridical .registration-form__step6");
+import { inputFormBenif, inputFormBenifJur } from "./inputForm.js";
+
+step5.addEventListener("click", (e) => {
+  if (e.target.classList.contains("registration-form__add-btn")) {
+    addBenif(e.currentTarget, e.target, inputFormBenif);
+  }
+  if (e.target.classList.contains("registration-form__del-btn")) {
+    deleteBenif(e.currentTarget, e.target);
+  }
+});
+
+step6.addEventListener("click", (e) => {
+  if (e.target.classList.contains("registration-form__add-btn")) {
+    addBenif(e.currentTarget, e.target, inputFormBenifJur);
+  }
+  if (e.target.classList.contains("registration-form__del-btn")) {
+    deleteBenif(e.currentTarget, e.target);
+  }
+});
+
+function addBenif(step, btn, inputFormBenif) {
+  const stepForm = step.querySelectorAll(".registration-form__benif");
+  const addBtn = btn.previousElementSibling;
+  addBtn.style.display = "block";
+  if (stepForm.length > 4) {
+    btn.style.display = "none";
+    return;
+  }
+  const newBenif = document.createElement("div");
+  newBenif.classList.add("registration-form__benif");
+  newBenif.innerHTML = inputFormBenif;
+  stepForm[stepForm.length - 1].after(newBenif);
+  setCustomInput();
+}
+
+function deleteBenif(step, btn) {
+  const stepForm = step.querySelectorAll(".registration-form__benif");
+  const addBtn = btn.nextElementSibling;
+  if (stepForm.length === 1) return;
+  if (stepForm.length === 2) {
+    btn.style.display = "none";
+    addBtn.style.display = "block";
+  }
+
+  stepForm[stepForm.length - 1].remove();
+  setCustomInput();
 }

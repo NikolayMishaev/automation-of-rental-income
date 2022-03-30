@@ -209,14 +209,18 @@
       height: 32px;
     }
   }
-  &__add-btn {
+  &__add-btn,
+  &__del-btn {
     @include secondary-btn;
     width: 100%;
     margin-top: 16px;
     padding: 4px;
-    &_del {
-      margin-right: 16px;
-    }
+    text-align: center;
+    cursor: pointer;
+  }
+  &__del-btn {
+    margin-right: 16px;
+    display: none;
   }
   &__link {
     color: $accent90;
@@ -225,6 +229,9 @@
     display: none;
     font-size: $font-size-small;
     margin-bottom: 24px;
+    @media #{$screen-mobile} {
+      display: none !important;
+    }
   }
   input:focus {
     outline: none;
@@ -259,6 +266,10 @@
     font-size: $font-size-very-small;
     color: $grey60;
   }
+  &__benif {
+    margin-bottom: 16px;
+  }
+
   input[type="date"]::-webkit-calendar-picker-indicator {
     color: rgba(0, 0, 0, 0);
     opacity: 1;
