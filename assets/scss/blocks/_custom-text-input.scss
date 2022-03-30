@@ -1,18 +1,19 @@
 .custom-text-input {
-  border: 1px solid $grey30;
-  border-radius: 4px;
   background-color: white;
   position: relative;
   display: block;
+
   input {
     width: 100%;
     height: 100%;
-    border: none;
+    border: 1px solid $grey30;
+    border-radius: 4px;
     padding: 20px 12px 4px;
     font-size: 16px;
     color: $grey100;
     background-color: transparent;
     &:focus {
+      border: 2px solid $accent-TCX50;
       outline: none;
     }
     &:focus + span {
@@ -54,12 +55,14 @@
     width: 100%;
     height: 100%;
     display: block;
-    border: none;
+    border: 1px solid $grey30;
+    border-radius: 4px;
     padding: 20px 12px 4px;
     line-height: 24px;
     background-color: transparent;
     resize: vertical;
     &:focus {
+      border: 2px solid $accent-TCX50;
       outline: none;
     }
     &:focus + span {
@@ -67,14 +70,14 @@
       transition: 0.3s;
       font-size: 12px;
       position: absolute;
-      top: 1px;
+      top: 2px;
       left: 12px;
       line-height: 16px;
     }
   }
   textarea ~ span {
     background-color: white;
-    top: 1px;
+    top: 2px;
     padding-top: 4px;
     width: calc(100% - 24px);
   }

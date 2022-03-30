@@ -40,6 +40,34 @@ contactBtn.onclick = function () {
   modalForm.style.display = "flex";
 };
 
+// модальное окно "Вход"
+
+const modalLogin = document.querySelector(".modal-login");
+
+if (modalLogin) {
+  modalLogin.addEventListener("click", (e) => closeModalWindow(modalLogin, e));
+}
+
+// логика работы поля "пароль"
+
+const passwordIcon = document.querySelector(".modal-login__password-icon");
+
+if (passwordIcon) {
+  passwordIcon.onclick = function (e) {
+    const input = e.currentTarget.previousElementSibling.querySelector("input");
+    const iconList = e.currentTarget.querySelectorAll("svg");
+    if (input.type === "text") {
+      input.type = "password";
+      iconList[0].classList.add("modal-login__password-icon_active");
+      iconList[1].classList.remove("modal-login__password-icon_active");
+    } else {
+      input.type = "text";
+      iconList[1].classList.add("modal-login__password-icon_active");
+      iconList[0].classList.remove("modal-login__password-icon_active");
+    }
+  };
+}
+
 import Swiper from "https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js";
 
 const swiper = new Swiper(".mainSwiper", {
@@ -258,8 +286,7 @@ function checkRequiredInput(step) {
     const element = step[index];
     if (element.dataset.required && !element.value) {
       findInput = true;
-      if (element.type !== "file")
-        element.closest(".custom-text-input").classList.add("custom-text-input__error");
+      if (element.type !== "file") element.classList.add("custom-text-input__error");
     }
   }
   if (findInput) return false;
@@ -412,10 +439,9 @@ for (let index = 0; index < requiredInputList.length; index++) {
   let elem = input.querySelector("input, textarea");
   if (elem.dataset.required) {
     input.addEventListener("change", (e) => {
-      const container = input.closest(".custom-text-input");
       elem.value
-        ? container.classList.remove("custom-text-input__error")
-        : container.classList.add("custom-text-input__error");
+        ? elem.classList.remove("custom-text-input__error")
+        : elem.classList.add("custom-text-input__error");
     });
   }
 }

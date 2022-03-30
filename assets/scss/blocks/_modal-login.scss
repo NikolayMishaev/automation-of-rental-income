@@ -1,0 +1,132 @@
+.modal-login {
+  .modal__content {
+    width: 400px;
+    text-align: center;
+    @media #{$screen-mobile} {
+      width: 328px;
+    }
+  }
+  &__password-container {
+    position: relative;
+  }
+
+  &__email,
+  &__password {
+    margin-bottom: 16px;
+    height: 48px;
+  }
+  &__password-icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 8px;
+    right: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    @include flex-container;
+    @media #{$screen-mobile} {
+      transform: scale(0.75);
+      top: 0px;
+      right: 8px;
+    }
+    svg {
+      fill: $grey60;
+      display: none;
+    }
+    &:hover {
+      background-color: $grey-20;
+      transition: $transition;
+      svg {
+        fill: $grey70;
+      }
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    line-height: 16px;
+    font-size: $font-size-very-small;
+  }
+  &__login-btn {
+    @include primary-btn($accent-TCX50);
+    padding: 8px;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 32px;
+    @media #{$screen-mobile} {
+      height: 32px;
+      padding: 4px;
+      margin-bottom: 28px;
+    }
+  }
+  &__registration-link {
+    margin: auto;
+  }
+  &__checkbox {
+    appearance: none;
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 8px;
+    outline: 1px solid $grey30;
+    border-radius: 2px;
+    box-shadow: none;
+    position: relative;
+    &:checked {
+      background-color: $accent90;
+      outline: none;
+    }
+    &:checked:after {
+      content: "";
+      background-color: transparent;
+      /* position the checkbox */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      height: 8px;
+      width: 5px;
+      border-bottom: 2px solid white;
+      border-right: 2px solid white;
+    }
+  }
+  .custom-text-input {
+    @media #{$screen-mobile} {
+      width: 100%;
+      height: 32px;
+    }
+    input {
+      @media #{$screen-mobile} {
+        padding: 4px 12px;
+      }
+    }
+    input:focus + span {
+      @media #{$screen-mobile} {
+        display: none;
+      }
+    }
+
+    &__label {
+      top: 12px;
+      @media #{$screen-mobile} {
+        top: 4px;
+      }
+    }
+  }
+  a:visited {
+    color: $accent100;
+  }
+  .modal-login__password-icon_active {
+    display: block;
+  }
+  .custom-text-input__label_full {
+    top: 4px;
+  }
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $grey80;
+  }
+}
