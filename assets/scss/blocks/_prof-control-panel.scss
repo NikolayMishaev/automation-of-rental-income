@@ -61,12 +61,16 @@
                 margin-left: 20px;
             }
             @media (max-width: rem(1000px)) {
+                position: static;
                 margin-left: 16px;
                 order: -1;
                 width: 32px;
                 height: 32px;
                 overflow: hidden;
                 border-radius: 4px;
+                &:hover {
+                    cursor: pointer;
+                }
                 &:before {
                     content: "";
                     position: absolute;
@@ -89,6 +93,9 @@
                 height: 32px;
                 overflow: hidden;
                 border-radius: 4px;
+                &:hover {
+                    cursor: pointer;
+                }
                 &:before {
                     content: "";
                     position: absolute;
@@ -108,6 +115,7 @@
         width: 8px;
         height: 8px;
         background: url("./../images/icons/main-cursor-down.svg") no-repeat center/8px;
+        transition: $transition;
         &_active {
             transform: rotate(180deg);
         }

@@ -97,3 +97,10 @@ left: unset;
         }
     }
 }
+
+#submenu-select-sort {
+    @media (max-width: rem(1000px)) {
+        left: unset;
+        right: 48px;
+                }
+}

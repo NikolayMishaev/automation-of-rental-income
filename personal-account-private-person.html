@@ -252,13 +252,13 @@
                                         <input type="checkbox" class="prof-control-panel__checkbox">
                                         Только выгодные предложения
                                     </label>
-                                    <label
+                                    <label id="label-select-status"
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2">Статус:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div class="prof-control-panel__cursor"></div>
-                                        <input type="text" disabled="true" class="prof-control-panel__select-input"
+                                        <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
+                                        <input id="input-select-status" type="text" disabled="true" class="prof-control-panel__select-input"
                                             value="Все">
-                                        <div class="main-submenu main-submenu_style_prof-status">
+                                        <div id="submenu-select-status" class="main-submenu main-submenu_style_prof-status">
                                             <ul class="main-submenu__list">
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
@@ -267,7 +267,7 @@
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
                                                     <label class="prof-control-panel__label-custom">
                                                         <input name="object-type"
-                                                            class="prof-control-panel__input-hidden" type="radio">
+                                                            class="prof-control-panel__input-hidden" type="radio" checked>
                                                         <span class="prof-control-panel__visible-radio"></span>
                                                         Все</label>
                                                 </li>
@@ -285,19 +285,19 @@
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                     <label class="prof-control-panel__label-custom">
-                                                        <input class="prof-control-panel__input-hidden" type="checkbox">
+                                                        <input id="input-select-status-checkbox-free" class="prof-control-panel__input-hidden" type="checkbox">
                                                         <span class="prof-control-panel__visible-checkbox"></span>
                                                         Свободно</label></li>
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                     <label class="prof-control-panel__label-custom">
-                                                        <input class="prof-control-panel__input-hidden" type="checkbox">
+                                                        <input id="input-select-status-checkbox-soon-free" class="prof-control-panel__input-hidden" type="checkbox">
                                                         <span class="prof-control-panel__visible-checkbox"></span>
                                                         Скоро освободится</label>
                                                 </li>
                                                 <li
                                                 class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                <button class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                <button id="button-confirm-select-status" class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                             </li>
                                             </ul>
                                         </div>
@@ -307,38 +307,38 @@
                                             placeholder=" ">
                                         <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                     </label>
-                                    <label
+                                    <label id="label-select-sort"
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_sort text-p2">Сортировать:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div class="prof-control-panel__cursor"></div>
-                                        <input type="text" disabled="true"
+                                        <div id="cursor-select-sort" class="prof-control-panel__cursor"></div>
+                                        <input id="input-select-sort" type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_sort"
                                             value="Сначала выгодные">
-                                        <div class="main-submenu main-submenu_style_prof-status">
+                                        <div id="submenu-select-sort" class="main-submenu main-submenu_style_prof-status">
                                             <ul class="main-submenu__list">
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
                                                     Сортировка</li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                <li aria-label="item-sort-menu"
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Все
                                                 </li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                <li aria-label="item-sort-menu"
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала выгодные
                                                 </li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                <li aria-label="item-sort-menu"
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала дешевые</li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                <li aria-label="item-sort-menu"
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала дорогие</li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                <li aria-label="item-sort-menu"
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала новые
                                                 </li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                <li aria-label="item-sort-menu"
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала старые
                                                 </li>
                                             </ul>
@@ -575,28 +575,31 @@
                                     </div>
 
                                     <div class="prof-control-panel">
-                                        <label class="prof-control-panel__select-label text-p2">Показывать объектов на
+                                        <label id="label-select-page"
+                                        class="prof-control-panel__select-label text-p2">Показывать объектов на
                                             странице:
                                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                            <div class="prof-control-panel__cursor"></div>
-                                            <input type="text" disabled="true"
+                                            <div id="cursor-select-page"
+                                            class="prof-control-panel__cursor"></div>
+                                            <input id="input-select-page" type="text" disabled="true"
                                                 class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                 value="5">
-                                            <div class="main-submenu main-submenu_style_prof-page">
+                                            <div id="submenu-select-page"
+                                            class="main-submenu main-submenu_style_prof-page">
                                                 <ul class="main-submenu__list">
-                                                    <li
-                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                    <li aria-label="item-page-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
                                                         5
                                                     </li>
-                                                    <li
-                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                    <li aria-label="item-page-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
                                                         10
                                                     </li>
-                                                    <li
-                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                    <li aria-label="item-page-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
                                                         20</li>
-                                                    <li
-                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort">
+                                                    <li aria-label="item-page-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
                                                         50</li>
                                                 </ul>
                                             </div>
