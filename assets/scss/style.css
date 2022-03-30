@@ -1833,6 +1833,10 @@ main .container {
           justify-content: center;
 }
 
+.registration-form__cancel-btn:hover {
+  text-decoration: none;
+}
+
 @media (max-width: 40rem) {
   .registration-form__cancel-btn {
     height: 32px;

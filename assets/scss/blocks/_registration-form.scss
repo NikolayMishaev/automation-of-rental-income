@@ -180,6 +180,9 @@
     width: 205px;
     height: 40px;
     cursor: pointer;
+    &:hover {
+      text-decoration: none;
+    }
     @include flex-container;
     @media #{$screen-mobile} {
       height: 32px;
