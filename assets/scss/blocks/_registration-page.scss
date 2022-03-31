@@ -1,121 +1,83 @@
 .regisrtation-page {
-  margin: 40px 0;
-  .container {
-    display: flex;
-    max-width: 1920px;
-    margin: auto;
-    padding: 0 60px;
-    @media #{$screen-mobile} {
-      max-width: 360px;
-      flex-direction: column;
-      padding: 0 16px;
-    }
-  }
-  &__inner {
-    max-width: 824px;
-  }
-  @media #{$screen-mobile} {
-    margin: 24px 0;
-  }
-  .container {
-    display: block;
-  }
-  @media #{$screen-mobile} {
-    margin-top: 24px;
-  }
-  h1 {
-    margin-bottom: 40px;
-    @media #{$screen-mobile} {
-      margin-bottom: 16px;
-    }
-  }
-  .group-radio-btn {
-    padding-bottom: 40px;
-    border-bottom: 1px solid $grey30;
-    @media #{$screen-mobile} {
-      padding-bottom: 16px;
-    }
-    &__container {
-      flex: 50%;
+    margin: 40px 0;
+    .container {
+        display: flex;
+        max-width: 1920px;
+        margin: auto;
+        padding: 0 60px;
+        @media #{$screen-mobile} {
+            max-width: 360px;
+            flex-direction: column;
+            padding: 0 16px;
+        }
     }
     &__inner {
-      width: 100%;
+        max-width: 824px;
     }
-  }
-  .group-radio-btn__container + .group-radio-btn__container {
-    margin-left: 16px;
     @media #{$screen-mobile} {
-      margin-left: 0;
-      margin-top: 16px;
+        margin: 24px 0;
     }
-  }
-  .input-date__container {
-    flex: 428px;
-    height: 44px;
+    .container {
+        display: block;
+    }
     @media #{$screen-mobile} {
-      flex: auto;
-      width: 100%;
-      height: 32px;
+        margin-top: 24px;
     }
-    input {
-      width: 100%;
-      height: 100%;
-      border: 1px solid $grey30;
-      &:focus {
-        border: 2px solid $accent-TCX50;
-      }
+    h1 {
+        margin-bottom: 40px;
+        @media #{$screen-mobile} {
+            margin-bottom: 16px;
+        }
     }
-    position: relative;
-    .label-date {
-      position: absolute;
-      top: 1px;
-      left: 1px;
-      border-radius: 4px;
-      padding-left: 12px;
-      display: flex;
-      color: $grey60;
-      align-items: center;
-      background-color: white;
-      height: 42px;
-      @media #{$screen-mobile} {
-        top: 1px;
-        height: 30px;
-      }
+    .group-radio-btn {
+        padding-bottom: 40px;
+        border-bottom: 1px solid $grey30;
+        @media #{$screen-mobile} {
+            padding-bottom: 16px;
+        }
+        &__container {
+            flex: 50%;
+        }
+        &__inner {
+            width: 100%;
+        }
     }
-    .registration-form__input {
-      padding: 12px;
+    .group-radio-btn__container + .group-radio-btn__container {
+        margin-left: 16px;
+        @media #{$screen-mobile} {
+            margin-left: 0;
+            margin-top: 16px;
+        }
     }
-  }
-  .registration-form__input:focus + .label-date {
-    display: none !important;
-  }
-  .modal__secondary-btn {
-    @include secondary-btn;
-    margin-right: 8px;
-  }
+    .registration-form__input:focus + .label-date {
+    }
+    .modal__secondary-btn {
+        @include secondary-btn;
+        margin-right: 8px;
+    }
 }
 
 .modal-warning-registration {
-  .modal__footer {
-    @media #{$screen-mobile} {
-      flex-wrap: wrap;
+    .modal__footer {
+        @media #{$screen-mobile} {
+            flex-wrap: wrap;
+        }
+        .modal__login-btn {
+            @media #{$screen-mobile} {
+                flex: 100%;
+                margin-top: 16px;
+            }
+        }
+        .modal__cancel-btn,
+        .modal__secondary-btn {
+            @media #{$screen-mobile} {
+                flex: auto;
+            }
+        }
     }
-    .modal__login-btn {
-      @media #{$screen-mobile} {
-        flex: 100%;
-        margin-top: 16px;
-      }
-    }
-    .modal__cancel-btn,
     .modal__secondary-btn {
-      @media #{$screen-mobile} {
-        flex: auto;
-      }
+        @media #{$screen-mobile} {
+            margin-right: 0;
+        }
     }
-  }
-  .modal__secondary-btn {
-    @media #{$screen-mobile} {
-      margin-right: 0;
-    }
-  }
 }

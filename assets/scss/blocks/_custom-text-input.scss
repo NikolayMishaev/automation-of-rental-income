@@ -1,98 +1,106 @@
 .custom-text-input {
-  background-color: white;
-  position: relative;
-  display: block;
-
-  input {
-    width: 100%;
-    height: 48px;
-    border: 1px solid $grey30;
-    border-radius: 4px;
-    padding: 20px 12px 4px;
-    font-size: 16px;
-    color: $grey100;
-    background-color: transparent;
-    &:focus {
-      border: 2px solid $accent-TCX50;
-      outline: none;
-    }
-    &:focus + span {
-      color: $grey60;
-      transition: 0.3s;
-      font-size: 12px;
-      position: absolute;
-      top: 4px;
-      left: 12px;
-      line-height: 16px;
-    }
-  }
-
-  &__label {
-    transition: 0.3s;
-    color: $grey60;
-    font-size: 16px;
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    line-height: 24px;
-    &_full {
-      color: $grey60;
-      transition: 0.3s;
-      font-size: 12px;
-      position: absolute;
-      top: 4px;
-      left: 12px;
-      line-height: 16px;
-      @media #{$screen-mobile} {
-        display: none;
-      }
-    }
-  }
-  &__error {
-    border: 2px solid $error;
-  }
-  textarea {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: 1px solid $grey30;
-    border-radius: 4px;
-    padding: 20px 12px 4px;
-    line-height: 24px;
-    background-color: transparent;
-    resize: vertical;
-    &:focus {
-      border: 2px solid $accent-TCX50;
-      outline: none;
-    }
-    &:focus + span {
-      color: $grey60;
-      transition: 0.3s;
-      font-size: 12px;
-      position: absolute;
-      top: 2px;
-      left: 12px;
-      line-height: 16px;
-    }
-  }
-  textarea ~ span {
     background-color: white;
-    top: 2px;
-    padding-top: 4px;
-    width: calc(100% - 24px);
-  }
-  &__icon {
-    width: 24px;
-    height: 24px;
-    color: $grey60;
-    margin-left: 8px;
-    @include flex-container;
-    font-weight: 500;
-    font-size: 24px;
-  }
+    position: relative;
+    display: block;
+    &:hover input {
+        border: 1px solid $grey-40;
+    }
+
+    input {
+        width: 100%;
+        height: 48px;
+        border: 1px solid $grey30;
+        border-radius: 4px;
+        padding: 20px 12px 4px;
+        font-size: 16px;
+        color: $grey100;
+        background-color: transparent;
+        &:focus {
+            border: 2px solid $accent-TCX50;
+            outline: none;
+        }
+
+        &:focus + span {
+            color: $grey60;
+            transition: 0.3s;
+            font-size: 12px;
+            position: absolute;
+            top: 4px;
+            left: 12px;
+            line-height: 16px;
+        }
+    }
+
+    &__label {
+        transition: 0.3s;
+        color: $grey60;
+        font-size: 16px;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        line-height: 24px;
+        cursor: text;
+        &_full {
+            color: $grey60;
+            transition: 0.3s;
+            font-size: 12px;
+            position: absolute;
+            top: 4px;
+            left: 12px;
+            line-height: 16px;
+            @media #{$screen-mobile} {
+                display: none;
+            }
+        }
+    }
+    &__error {
+        border: 2px solid $error;
+    }
+    textarea {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 1px solid $grey30;
+        border-radius: 4px;
+        padding: 20px 12px 4px;
+        line-height: 24px;
+        background-color: transparent;
+        resize: vertical;
+        &:focus {
+            border: 2px solid $accent-TCX50;
+            outline: none;
+        }
+        &:hover {
+            border: 1px solid $grey-40;
+        }
+        &:focus + span {
+            color: $grey60;
+            transition: 0.3s;
+            font-size: 12px;
+            position: absolute;
+            top: 2px;
+            left: 12px;
+            line-height: 16px;
+        }
+    }
+    textarea ~ span {
+        background-color: white;
+        top: 2px;
+        padding-top: 4px;
+        width: calc(100% - 24px);
+    }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        color: $grey60;
+        margin-left: 8px;
+        @include flex-container;
+        font-weight: 500;
+        font-size: 24px;
+    }
 }
 .input-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
