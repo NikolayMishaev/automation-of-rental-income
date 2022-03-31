@@ -37,4 +37,16 @@
         background: url("./../images/icons/prof-table-marker-ring-active.svg") no-repeat center;
         margin-left: auto;
     }
+    &_type_star {
+        width: 12px;
+        height: 12px;
+        background: url("./../images/icons/profile-star.svg") no-repeat center;
+        margin: 0 4px;
+    }
+    &_type_star-active {
+        width: 12px;
+        height: 12px;
+        background: url("./../images/icons/profile-star-active.svg") no-repeat center;
+        margin: 0 4px;
+    }
 }

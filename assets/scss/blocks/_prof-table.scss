@@ -3,10 +3,13 @@
         display: grid;
         grid-template-columns: 199px 90px 110px 180px 152px 149px;
         column-gap: 16px;
-        align-items: baseline;
+        align-items: center;
         border-top: 1px solid #e3e7e8;
         &:first-child {
             margin-top: 16px;
+        }
+        &_style_manager {
+            grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
         }
     }
     &__row-heading {

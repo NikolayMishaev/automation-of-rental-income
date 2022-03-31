@@ -5838,12 +5838,13 @@ main .container {
 
 .prof-general__icon {
   position: absolute;
-  right: 0;
+  right: 3px;
   bottom: 0;
   width: 0.75rem;
   height: 0.75rem;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  background: url("./../images/icons/profile-edit-avatar.svg") no-repeat center;
 }
 
 .prof-general__icon:hover {
@@ -6008,6 +6009,36 @@ main .container {
 
 .prof-general__contacts_active {
   background-image: url("./../images/icons/profile-tasks-chat-active.svg");
+}
+
+.prof-general__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.prof-general__title {
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.prof-general__rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 8px;
+  padding-bottom: 3px;
 }
 
 .prof-item {
@@ -6502,14 +6533,19 @@ main .container {
       grid-template-columns: 199px 90px 110px 180px 152px 149px;
   -webkit-column-gap: 16px;
           column-gap: 16px;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-top: 1px solid #e3e7e8;
 }
 
 .prof-table__row:first-child {
   margin-top: 16px;
+}
+
+.prof-table__row_style_manager {
+  -ms-grid-columns: 327px 70px 120px 80px 90px 146px 56px;
+      grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
 }
 
 .prof-table__row-heading {
@@ -6668,6 +6704,20 @@ main .container {
   height: 20px;
   background: url("./../images/icons/prof-table-marker-ring-active.svg") no-repeat center;
   margin-left: auto;
+}
+
+.prof-marker_type_star {
+  width: 12px;
+  height: 12px;
+  background: url("./../images/icons/profile-star.svg") no-repeat center;
+  margin: 0 4px;
+}
+
+.prof-marker_type_star-active {
+  width: 12px;
+  height: 12px;
+  background: url("./../images/icons/profile-star-active.svg") no-repeat center;
+  margin: 0 4px;
 }
 
 .pagination__list {
