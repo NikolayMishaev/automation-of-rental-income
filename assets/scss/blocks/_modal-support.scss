@@ -4,6 +4,8 @@
       width: 600px;
       @media #{$screen-mobile} {
         width: 328px;
+        max-height: calc(100vh - 40px);
+        overflow-y: scroll;
       }
     }
     &__row {
@@ -17,10 +19,34 @@
     padding-bottom: 24px;
     margin-bottom: 24px;
     border-bottom: 1px solid $grey-20;
+    @media #{$screen-mobile} {
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+    }
   }
 
   .file-input {
     @include file-input;
+    &_fill {
+      z-index: -1;
+    }
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 16px;
+    &__name {
+      a {
+        font-size: $font-size-normal;
+      }
+      overflow: hidden;
+    }
+    &__text {
+      flex: 100%;
+    }
+    &__file {
+      padding: 8px;
+      margin: 12px 8px 0 0;
+      overflow: hidden;
+    }
   }
 
   &__file-block-title {
@@ -34,8 +60,10 @@
         height: 32px;
         padding: 4px 12px;
       }
-      &:focus + span {
-        display: none;
+      @media #{$screen-mobile} {
+        &:focus + span {
+          display: none;
+        }
       }
     }
     &__label {
@@ -47,6 +75,9 @@
   .custom-text-input_text {
     margin-bottom: 24px;
     height: 160px;
+    @media #{$screen-mobile} {
+      margin-bottom: 16px;
+    }
   }
   .custom-text-input + .custom-text-input {
     margin-left: 18px;

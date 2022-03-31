@@ -586,10 +586,12 @@ function deleteBenif(step, btn) {
 
 const fileInputModalSupport = document.querySelector(".modal-support__file-input");
 
+// логика работы drag n drop инпута на несколько файлов
+
 if (fileInputModalSupport) {
   fileInputModalSupport.addEventListener("change", (e) => {
-    const input = e.currentTarget.querySelector("input");
-    const text = e.currentTarget.querySelector(".file-input__text");
+    let input = e.currentTarget.querySelectorAll("input");
+    input = input[input.length - 1];
     if (input.files) {
       for (let i = 0; i < input.files.length; i++) {
         const inputName = document.createElement("div");
@@ -606,8 +608,25 @@ if (fileInputModalSupport) {
         <div class="file-input__file-close">x</div>`;
         inputName.style.display = "inline-flex";
         e.currentTarget.append(inputName);
-        text.style.display = "none";
+        inputName.addEventListener("click", (e) => deleteFileInput(e));
       }
+      input.classList.add("file-input_fill");
+      const newInput = document.createElement("input");
+      newInput.type = "file";
+      e.currentTarget.append(newInput);
     }
   });
+}
+
+function deleteFileInput(e) {
+  if (e.target.classList.contains("file-input__file-close")) {
+    e.currentTarget.previousElementSibling.remove();
+    e.currentTarget.remove();
+  }
+}
+
+const modalSupport = document.querySelector(".modal-support");
+
+if (modalSupport) {
+  modalSupport.addEventListener("click", (e) => closeModalWindow(modalSupport, e));
 }

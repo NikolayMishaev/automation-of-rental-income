@@ -64,6 +64,8 @@
     border-radius: 12px;
     display: none;
     align-items: center;
+    position: relative;
+    z-index: 3;
   }
   &__name {
     display: flex;

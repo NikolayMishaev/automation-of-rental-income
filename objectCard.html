@@ -1578,7 +1578,7 @@
           </button>
         </div>
         <div class="modal__body">
-          <form action="" id="modal-support">
+          <form action="" id="modal-support" enctype="multipart/form-data">
             <p class="modal-support__subtitle">Опишите ниже вашу проблему.</p>
             <div class="modal__row">
               <label class="custom-text-input">
@@ -1605,13 +1605,13 @@
               <span class="custom-text-input__label">Ваше сообщение*</span>
             </label>
             <p class="modal-support__file-block-title">Можете прикрепить файлы:</p>
-            <label class="modal-support__file-input file-input">
+            <div class="modal-support__file-input file-input">
               <div class="file-input__text">
                 Перетащите файлы сюда или <a>выберите на компьютере</a>
                 <p class="file-input__text_small">Максимальный размер файла: 15 МБ</p>
               </div>
-              <input type="file"
-            /></label>
+              <input type="file" accept="image"
+            /></div>
           </form>
         </div>
         <div class="modal__footer">
