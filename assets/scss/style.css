@@ -6228,7 +6228,7 @@ main .container {
 .prof-general__cards-container {
     display: -ms-grid;
     display: grid;
-    /* -ms-grid-columns: (minmax(296px, 318px))[auto-fit]; */
+    -ms-grid-columns: (minmax(296px, 318px)) [auto-fit];
     grid-template-columns: repeat(auto-fit, minmax(296px, 318px));
     -webkit-box-pack: center;
     -ms-flex-pack: center;
