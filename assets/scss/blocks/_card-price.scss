@@ -318,4 +318,20 @@
             bottom: rem(10px);
         }
     }
+    &__link {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        &:hover{
+            cursor: pointer;
+            text-decoration: none;
+        }
+        &:active,
+        &:hover,
+        &:visited {
+          outline-width: 0;
+          opacity: 1;
+          text-decoration: none;
+        }
+    }
 }

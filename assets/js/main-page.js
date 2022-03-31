@@ -395,6 +395,8 @@
         ".main__cards-container"
     );
     cardPriceContainerBigCards.addEventListener("click", (e) => {
+        e.preventDefault();
+        currentLink = e.target.closest(".card-price__link").href;
         if (e.target.closest(".card-price__like")) {
             return;
         }
@@ -402,7 +404,7 @@
             return;
         }
         if (e.target.closest(".card-price_style_main")) {
-            location.href = "./objectCard.html";
+            location.href = currentLink;
         }
     });
 
