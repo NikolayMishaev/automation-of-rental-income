@@ -145,6 +145,7 @@
     input {
       @media #{$screen-mobile} {
         padding: 4px 12px;
+        height: 32px;
       }
       &:focus + span {
         @media #{$screen-mobile} {
@@ -162,12 +163,10 @@
     flex: 428px;
     border-radius: 4px;
     line-height: 24px;
-    height: 44px;
     overflow: hidden;
     @media #{$screen-mobile} {
       flex: auto;
       width: 100%;
-      height: 32px;
     }
   }
   &__btn-group {

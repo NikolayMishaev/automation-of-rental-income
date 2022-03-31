@@ -535,23 +535,26 @@ const step5 = document.querySelector(".registration-form_juridical .registration
 const step6 = document.querySelector(".registration-form_juridical .registration-form__step6");
 import { inputFormBenif, inputFormBenifJur } from "./inputForm.js";
 
-step5.addEventListener("click", (e) => {
-  if (e.target.classList.contains("registration-form__add-btn")) {
-    addBenif(e.currentTarget, e.target, inputFormBenif);
-  }
-  if (e.target.classList.contains("registration-form__del-btn")) {
-    deleteBenif(e.currentTarget, e.target);
-  }
-});
-
-step6.addEventListener("click", (e) => {
-  if (e.target.classList.contains("registration-form__add-btn")) {
-    addBenif(e.currentTarget, e.target, inputFormBenifJur);
-  }
-  if (e.target.classList.contains("registration-form__del-btn")) {
-    deleteBenif(e.currentTarget, e.target);
-  }
-});
+if (step5) {
+  step5.addEventListener("click", (e) => {
+    if (e.target.classList.contains("registration-form__add-btn")) {
+      addBenif(e.currentTarget, e.target, inputFormBenif);
+    }
+    if (e.target.classList.contains("registration-form__del-btn")) {
+      deleteBenif(e.currentTarget, e.target);
+    }
+  });
+}
+if (step6) {
+  step6.addEventListener("click", (e) => {
+    if (e.target.classList.contains("registration-form__add-btn")) {
+      addBenif(e.currentTarget, e.target, inputFormBenifJur);
+    }
+    if (e.target.classList.contains("registration-form__del-btn")) {
+      deleteBenif(e.currentTarget, e.target);
+    }
+  });
+}
 
 function addBenif(step, btn, inputFormBenif) {
   const stepForm = step.querySelectorAll(".registration-form__benif");
@@ -579,4 +582,32 @@ function deleteBenif(step, btn) {
 
   stepForm[stepForm.length - 1].remove();
   setCustomInput();
+}
+
+const fileInputModalSupport = document.querySelector(".modal-support__file-input");
+
+if (fileInputModalSupport) {
+  fileInputModalSupport.addEventListener("change", (e) => {
+    const input = e.currentTarget.querySelector("input");
+    const text = e.currentTarget.querySelector(".file-input__text");
+    if (input.files) {
+      for (let i = 0; i < input.files.length; i++) {
+        const inputName = document.createElement("div");
+        inputName.classList.add("file-input__file");
+        inputName.innerHTML = `
+        <div class="file-input__name">
+          <div class="file-input__icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z" fill="#55B465"></path>
+            </svg>
+          </div>
+          <a href="#">${input.files[i].name}</a>
+        </div>
+        <div class="file-input__file-close">x</div>`;
+        inputName.style.display = "inline-flex";
+        e.currentTarget.append(inputName);
+        text.style.display = "none";
+      }
+    }
+  });
 }

@@ -2,9 +2,15 @@
   .modal {
     &__content {
       width: 600px;
+      @media #{$screen-mobile} {
+        width: 328px;
+      }
     }
     &__row {
       border-bottom: none;
+      @media #{$screen-mobile} {
+        display: block;
+      }
     }
   }
   &__subtitle {
@@ -16,17 +22,37 @@
   .file-input {
     @include file-input;
   }
-  .custom-text-input_text {
-    margin-bottom: 24px;
-  }
+
   &__file-block-title {
     font-size: $font-size-very-small;
     margin-bottom: 8px;
   }
   .custom-text-input {
     flex: 50%;
+    input {
+      @media #{$screen-mobile} {
+        height: 32px;
+        padding: 4px 12px;
+      }
+      &:focus + span {
+        display: none;
+      }
+    }
+    &__label {
+      @media #{$screen-mobile} {
+        top: 4px;
+      }
+    }
+  }
+  .custom-text-input_text {
+    margin-bottom: 24px;
+    height: 160px;
   }
   .custom-text-input + .custom-text-input {
     margin-left: 18px;
+    @media #{$screen-mobile} {
+      margin-left: 0;
+      margin-top: 16px;
+    }
   }
 }
