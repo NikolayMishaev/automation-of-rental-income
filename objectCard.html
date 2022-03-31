@@ -1548,6 +1548,77 @@
       </div>
     </div>
     <!-- конец модального окна  -->
+    <div class="modal modal-support" style="display: flex;">
+      <div class="modal__content">
+        <div class="modal__header">
+          <h3>Служба поддержки</h3>
+          <button class="modal__close-btn">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                fill="#6C737D"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="modal__body">
+          <form action="" id="modal-support" enctype="multipart/form-data">
+            <p class="modal-support__subtitle">Опишите ниже вашу проблему.</p>
+            <div class="modal__row">
+              <label class="custom-text-input">
+                <input
+                type="email"
+                class="input-email"
+                required
+                maxlength="100"
+              />
+                <span class="custom-text-input__label">Ваше имя*</span>
+              </label>
+              <label class="custom-text-input">
+                <input
+                type="email"
+                class="input-email"
+                required
+                maxlength="100"
+              />
+                <span class="custom-text-input__label">Ваш E-mail*</span>
+              </label>  
+            </div>
+            <label class="custom-text-input custom-text-input_text">
+              <textarea name="" cols="30" rows="5" required></textarea>
+              <span class="custom-text-input__label">Ваше сообщение*</span>
+            </label>
+            <p class="modal-support__file-block-title">Можете прикрепить файлы:</p>
+            <div class="modal-support__file-input file-input">
+              <div class="file-input__text">
+                Перетащите файлы сюда или <a>выберите на компьютере</a>
+                <p class="file-input__text_small">Максимальный размер файла: 15 МБ</p>
+              </div>
+              <input type="file" accept="image"
+            /></div>
+          </form>
+        </div>
+        <div class="modal__footer">
+          <button class="modal__cancel-btn">Отмена</button>
+          <button
+            type="submit"
+            class="modal__login-btn"
+            form="modal-support"
+          >
+            Отправить
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="./assets/js/script.js"></script>
     <script defer src="./assets/js/common-JS-to-all-pages.js"></script>
