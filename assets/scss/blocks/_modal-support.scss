@@ -1,0 +1,32 @@
+.modal-support {
+  .modal {
+    &__content {
+      width: 600px;
+    }
+    &__row {
+      border-bottom: none;
+    }
+  }
+  &__subtitle {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $grey-20;
+  }
+
+  .file-input {
+    @include file-input;
+  }
+  .custom-text-input_text {
+    margin-bottom: 24px;
+  }
+  &__file-block-title {
+    font-size: $font-size-very-small;
+    margin-bottom: 8px;
+  }
+  .custom-text-input {
+    flex: 50%;
+  }
+  .custom-text-input + .custom-text-input {
+    margin-left: 18px;
+  }
+}

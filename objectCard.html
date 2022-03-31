@@ -1495,7 +1495,7 @@
     </div>
     </div>
     <!-- модальное окно для входа в аккаунт  -->
-    <div class="modal modal-login" style="display: flex;">
+    <div class="modal modal-login">
       <div class="modal__content content-offer-price">
         <div class="modal__header">
           <h3>Вход</h3>
@@ -1558,10 +1558,10 @@
       </div>
     </div>
     <!-- конец модального окна  -->
-    <div class="modal modal-support">
+    <div class="modal modal-support" style="display: flex;">
       <div class="modal__content">
         <div class="modal__header">
-          <h3>Предложить свою стоимость</h3>
+          <h3>Служба поддержки</h3>
           <button class="modal__close-btn">
             <svg
               width="14"
@@ -1578,38 +1578,40 @@
           </button>
         </div>
         <div class="modal__body">
-          <form action="" id="modal-offer-price">
+          <form action="" id="modal-support">
+            <p class="modal-support__subtitle">Опишите ниже вашу проблему.</p>
             <div class="modal__row">
-              <p class="content-offer-price__text">
-                Введите размер арендной ставки за м2
-              </p>
-              <div class="input-container">
-                <label class="custom-text-input">
-                  <input
-                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                    type="text"
-                    maxlength="10"
-                    required
-                  />
-                  <span class="custom-text-input__label">Арендная ставка</span>
-                </label>
-                <div class="custom-text-input__icon">₽</div>
-              </div>
+              <label class="custom-text-input">
+                <input
+                type="email"
+                class="input-email"
+                required
+                maxlength="100"
+              />
+                <span class="custom-text-input__label">Ваше имя*</span>
+              </label>
+              <label class="custom-text-input">
+                <input
+                type="email"
+                class="input-email"
+                required
+                maxlength="100"
+              />
+                <span class="custom-text-input__label">Ваш E-mail*</span>
+              </label>  
             </div>
-            <p class="content-offer-price__row">
-              <span class="content-offer-price__price-container"
-                >Плата за площадь в месяц:
-                <span class="content-offer-price__price">
-                  <!-- template  -->
-                  44 780
-                  <!-- end  -->
-                  ₽</span
-                ></span
-              >
-              <span class="content-offer-price__aside"
-                >(высчитывается автоматически)</span
-              >
-            </p>
+            <label class="custom-text-input custom-text-input_text">
+              <textarea name="" cols="30" rows="5" required></textarea>
+              <span class="custom-text-input__label">Ваше сообщение*</span>
+            </label>
+            <p class="modal-support__file-block-title">Можете прикрепить файлы:</p>
+            <label class="registration-form__file-input file-input">
+              <div class="file-input__text">
+                Перетащите файлы сюда или <a>выберите на компьютере</a>
+                <p class="file-input__text_small">Максимальный размер файла: 15 МБ</p>
+              </div>
+              <input type="file"
+            /></label>
           </form>
         </div>
         <div class="modal__footer">
@@ -1617,9 +1619,9 @@
           <button
             type="submit"
             class="modal__login-btn"
-            form="modal-offer-price"
+            form="modal-support"
           >
-            Предложить
+            Отправить
           </button>
         </div>
       </div>
