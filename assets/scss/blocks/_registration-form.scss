@@ -7,7 +7,7 @@
         position: absolute;
         transition: $transition;
         right: 10px;
-        top: 10px;
+        top: 12px;
         width: 24px;
         height: 24px;
         @include flex-container;
@@ -111,10 +111,15 @@
         &_select {
             position: relative;
             overflow: visible;
-            cursor: pointer;
+            input {
+                cursor: pointer;
+            }
+            span {
+                cursor: pointer;
+            }
         }
         &__error {
-            border: 2px solid $error;
+            border: 2px solid $error !important;
         }
         &__option-list {
             position: absolute;

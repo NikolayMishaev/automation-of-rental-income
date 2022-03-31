@@ -54,7 +54,7 @@
         }
     }
     &__error {
-        border: 2px solid $error;
+        border: 2px solid $error !important;
     }
     textarea {
         width: 100%;
@@ -66,12 +66,23 @@
         line-height: 24px;
         background-color: transparent;
         resize: vertical;
+        scrollbar-width: thin;
+        @media (min-width: 360px) {
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $grey-20;
+                border-radius: 2px;
+            }
+        }
+
+        &:hover {
+            border: 1px solid $grey-40;
+        }
         &:focus {
             border: 2px solid $accent-TCX50;
             outline: none;
-        }
-        &:hover {
-            border: 1px solid $grey-40;
         }
         &:focus + span {
             color: $grey60;
