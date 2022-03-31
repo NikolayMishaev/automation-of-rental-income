@@ -22,14 +22,30 @@
     });
 
     // логика авторизации по клику на "Регистрации" и "Вход" в Header, пока не готовы попапы регистрации
-    const signInButton = document.querySelectorAll(".menu__link");
+    const linkSignIn = document.querySelector("#link-signIn");
+    const buttonClosePopup = document.querySelector(
+        "#button-close-popup-sign-in"
+    );
+    const formSignIn = document.querySelector("#form-sign-in");
+
     const menuLinks = document.querySelector(".menu__links");
     const menuProfile = document.querySelector(".menu__profile");
+    const popupLogIn = document.querySelector(".modal-login");
 
-    signInButton.forEach((i) =>
-        i.addEventListener("click", (e) => {
-            menuLinks.style.display = "none";
-            menuProfile.style.display = "flex";
-        })
-    );
+    formSignIn.addEventListener("submit", (e) => {
+        e.preventDefault();
+        menuLinks.style.display = "none";
+        menuProfile.style.display = "flex";
+        popupLogIn.classList.remove("mix-display-flex");
+    });
+
+    buttonClosePopup.addEventListener("click", (e) => {
+        if (e.target.closest(".modal__close-btn")) {
+            popupLogIn.classList.remove("mix-display-flex");
+        }
+    });
+
+    linkSignIn.addEventListener("click", (e) => {
+        popupLogIn.classList.add("mix-display-flex");
+    });
 })();

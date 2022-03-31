@@ -153,14 +153,15 @@
                     </svg>
                 </a>
                 <nav class="menu menu_place_header">
-                    <a class="menu__profile" href="#">
+                    <a class="menu__profile" href="./personal-account-private-person.html">
                         <span class="menu__profile-name"><!-- данные с сервера имя пользователя -->Иван Иванов</span>
                         <div class="menu__profile-avatar"></div>
                     </a>
                     <ul class="menu__links">
                         <li class="menu__list">
                             <a
-                                href="#"
+                                href="./registrationPage.html"
+                                id="link-register"
                                 class="menu__link menu__link_type_register"
                                 >Регистрация</a
                             >
@@ -199,7 +200,7 @@
                             </div>
                         </li>
                         <li class="menu__list">
-                            <a href="#" class="menu__link">Вход</a>
+                            <a id="link-signIn" href="#" class="menu__link">Вход</a>
                         </li>
                     </ul>
                 </nav>
@@ -1488,7 +1489,7 @@
       <div class="modal__content content-offer-price">
         <div class="modal__header">
           <h3>Вход</h3>
-          <button class="modal__close-btn">
+          <button id="button-close-popup-sign-in" class="modal__close-btn">
             <svg
               width="14"
               height="14"
@@ -1504,7 +1505,7 @@
           </button>
         </div>
         <div class="modal__body">
-          <form action="">
+          <form id="form-sign-in" action="">
             <label class="custom-text-input modal-login__email">
               <input
               type="email"
@@ -1549,6 +1550,7 @@
     <!-- конец модального окна  -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script type="module" src="./assets/js/script.js"></script>
+    <script defer src="./assets/js/common-JS-to-all-pages.js"></script>
     <script
       src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -1560,6 +1562,5 @@
       src="https://maps.googleapis.com/maps/api/js?key=yourkey&libraries=places"
     ></script>
     <script src="./assets/js/map.js"></script>
-    <script defer src="./assets/js/header-popup.js"></script>
   </body>
 </html>
