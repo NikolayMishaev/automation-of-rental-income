@@ -327,4 +327,38 @@
             showSubmenu(submenuSelectPage, cursorSelectPage);
         }
     });
+
+    // логика оценка работы менеджера звездочками
+
+    const mobileStars = document.querySelectorAll(
+        ".prof-aside__star_type_mobile"
+    );
+    const desktopStars = document.querySelectorAll(
+        ".prof-aside__star_type_desktop"
+    );
+    const containersStars = document.querySelectorAll(
+        ".prof-aside__stars-container"
+    );
+    const inputStars = document.querySelector("#input-stars");
+
+    containersStars.forEach((j) =>
+        j.addEventListener("click", (e) => {
+            if (e.target.ariaLabel) {
+                resetActiveClass(mobileStars, "prof-aside__star_active");
+                resetActiveClass(desktopStars, "prof-aside__star_active");
+                addActiveClassStars(mobileStars, +e.target.ariaLabel);
+                addActiveClassStars(desktopStars, +e.target.ariaLabel);
+            }
+        })
+    );
+
+    function addActiveClassStars(arrayStars, currentValue) {
+        arrayStars.forEach((i, c) => {
+            if (c < currentValue) {
+                i.classList.add("prof-aside__star_active");
+                inputStars.value = currentValue;
+                return;
+            }
+        });
+    }
 })();

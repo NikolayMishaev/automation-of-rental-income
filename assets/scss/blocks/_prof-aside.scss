@@ -262,6 +262,10 @@
         transition: $transition;
         &:hover {
             cursor: pointer;
+            background: url('./../images/icons/profile-star-active.svg') no-repeat center;
+        }
+        &_active {
+            background: url('./../images/icons/profile-star-active.svg') no-repeat center;
         }
     }
 }

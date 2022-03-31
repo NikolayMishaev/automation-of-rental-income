@@ -4440,6 +4440,11 @@ button {
 
 .prof-aside__star:hover {
   cursor: pointer;
+  background: url("./../images/icons/profile-star-active.svg") no-repeat center;
+}
+
+.prof-aside__star_active {
+  background: url("./../images/icons/profile-star-active.svg") no-repeat center;
 }
 
 .prof-general {
