@@ -85,7 +85,6 @@
                 paginationPage.classList.remove("mix-display-none");
                 controlPanelLeft.classList.remove("mix-display-none");
             }
-            console.log(stateMain.currentOpenLeftBlock);
         })
     );
 

@@ -24,8 +24,7 @@
 @import "./blocks/slider";
 @import "./blocks/_tooltip";
 @import "./blocks/map";
-
-@import "./blocks/mix";
+@import "./blocks/modal-login";
 
 // Main-page
 @import "./blocks/body";
@@ -58,3 +57,7 @@
 @import "./blocks/prof-table";
 @import "./blocks/prof-card";
 @import "./blocks/prof-marker";
+@import "./blocks/pagination";
+
+// Check-form
+@import "./blocks/check-form";

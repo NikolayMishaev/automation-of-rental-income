@@ -55,11 +55,15 @@
     @media #{$screen-mobile} {
       flex: auto;
       width: 100%;
-      height: 34px;
+      height: 32px;
     }
     input {
       width: 100%;
       height: 100%;
+      border: 1px solid $grey30;
+      &:focus {
+        border: 2px solid $accent-TCX50;
+      }
     }
     position: relative;
     .label-date {
@@ -75,7 +79,7 @@
       height: 42px;
       @media #{$screen-mobile} {
         top: 1px;
-        height: 32px;
+        height: 30px;
       }
     }
     .registration-form__input {
@@ -88,5 +92,30 @@
   .modal__secondary-btn {
     @include secondary-btn;
     margin-right: 8px;
+  }
+}
+
+.modal-warning-registration {
+  .modal__footer {
+    @media #{$screen-mobile} {
+      flex-wrap: wrap;
+    }
+    .modal__login-btn {
+      @media #{$screen-mobile} {
+        flex: 100%;
+        margin-top: 16px;
+      }
+    }
+    .modal__cancel-btn,
+    .modal__secondary-btn {
+      @media #{$screen-mobile} {
+        flex: auto;
+      }
+    }
+  }
+  .modal__secondary-btn {
+    @media #{$screen-mobile} {
+      margin-right: 0;
+    }
   }
 }
