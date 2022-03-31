@@ -9,6 +9,7 @@
 // Base
 @import "base/fonts";
 @import "base/generic";
+@import "base/profile-text";
 
 // Mix
 @import "./blocks/mix";
@@ -23,6 +24,8 @@
 @import "./blocks/slider";
 @import "./blocks/_tooltip";
 @import "./blocks/map";
+
+@import "./blocks/mix";
 
 // Main-page
 @import "./blocks/body";
@@ -46,3 +49,12 @@
 @import "./blocks/pagination";
 @import "./blocks/main-popup";
 @import "./blocks/popup-change-city";
+
+// Personal-account-private-person
+@import "./blocks/prof-aside";
+@import "./blocks/prof-general";
+@import "./blocks/prof-item";
+@import "./blocks/prof-control-panel";
+@import "./blocks/prof-table";
+@import "./blocks/prof-card";
+@import "./blocks/prof-marker";

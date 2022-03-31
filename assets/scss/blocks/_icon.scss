@@ -1,5 +1,7 @@
 .icon {
     transition: $transition;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
     &_logo {
         width: rem(198px);
         height: rem(40px);
@@ -55,5 +57,38 @@
         width: rem(16px);
         height: rem(11px);
         margin-left: rem(13px);
+    }
+    &_message {
+        background: url('./../images/icons/profile-message.svg');
+        &_active {
+            background: url('./../images/icons/profile-message-active.svg');
+        }
+    }
+    &_ring {
+        background: url('./../images/icons/profile-ring.svg');
+        &_active {
+            background: url('./../images/icons/profile-ring-active.svg');
+        }
+    }
+    &_document {
+        background: url('./../images/icons/profile-document.svg');
+        &_active {
+            background: url('./../images/icons/profile-document-active.svg');
+        }
+    }
+    &_send-message {
+        background: url('./../images/icons/profile-send-message.svg');
+    }
+    &_edit-avatar {
+        background: url('./../images/icons/profile-edit-avatar.svg');
+    }
+    &_on-checking {
+        background: url('./../images/icons/profile-status-on-checking.svg');
+    }
+    &_add-file {
+        background: url('./../images/icons/profile-add-file.svg');
+    }
+    &_delete {
+        background: url('./../images/icons/profile-delte-file.svg');
     }
 }

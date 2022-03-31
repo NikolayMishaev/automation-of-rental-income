@@ -60,5 +60,9 @@ $transition: all 0.5s;
 // Radius
 
 // Box-shadows
-$shadow-100: 0px 24px 38px rgba(80, 86, 94, 0.04), 0px 9px 46px rgba(80, 86, 94, 0.04),
-  0px 11px 15px rgba(80, 86, 94, 0.1);
+$shadow-100: 0px 24px 38px rgba(80, 86, 94, 0.04),
+  0px 9px 46px rgba(80, 86, 94, 0.04), 0px 11px 15px rgba(80, 86, 94, 0.1);
+
+// Border
+$border-CFD4DC: rem(1px) solid $grey30;
+$border-E3E7E8: 1px solid $grey-20_2;

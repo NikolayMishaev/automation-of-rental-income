@@ -1,0 +1,100 @@
+.prof-item {
+    margin-top: rem(16px);
+    &_size_small {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &_direction_row {
+        margin-right: rem(16px);
+    }
+    &__content {
+        height: rem(80px);
+        border: $border-CFD4DC;
+        border-radius: rem(12px);
+        padding: rem(16px);
+        display: flex;
+        align-items: center;
+        @media #{$screen-mobile} {
+            flex-wrap: wrap;
+            height: unset;
+        }
+        &_size_small {
+            height: rem(56px);
+        }
+    }
+    &__title {
+        padding-bottom: rem(8px);
+    }
+    &__icon {
+        width: rem(16px);
+        height: rem(20px);
+    }
+    &__title-file {
+        margin-left: rem(8px);
+    }
+    &__button {
+        white-space: nowrap;
+        margin-left: auto;
+        padding: rem(12px) rem(20px);
+        height: rem(48px);
+        background-color: transparent;
+        border: $border-CFD4DC;
+        border-radius: rem(4px);
+        transition: $transition;
+        @media #{$screen-mobile} {
+            margin-left: unset;
+            padding: 4px;
+            height: 32px;
+            width: 100%;
+            margin-top: 16px;
+        }
+        &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        &_type_form {
+            background-color: $accent-TCX50;
+            color: white;
+            border: none;
+        }
+        &_type_add-file {
+            position: relative;
+            height: rem(32px);
+            padding-right: 12px;
+            justify-content: flex-end;
+            margin: 0;
+            margin-top: rem(20px);
+            display: flex;
+            align-items: center;
+            width: rem(160px);
+            color: $grey100;
+            background-position: 10px 9px !important;
+        }
+        &_type_hidden {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+    &__group {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &__status {
+        width: 100%;
+        margin-top: rem(8px);
+        padding-left: rem(17px);
+        background-position: 0 1px !important;
+    }
+    &__icon-delete {
+        width: rem(9px);
+        height: rem(9px);
+        margin-left: rem(16px);
+    }
+}

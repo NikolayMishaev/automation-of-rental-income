@@ -1,0 +1,31 @@
+.prof-table {
+    &__row {
+        display: grid;
+        grid-template-columns: 199px 90px 110px 180px 152px 149px;
+        column-gap: 16px;
+        align-items: baseline;
+        border-top: 1px solid #e3e7e8;
+        &:first-child {
+            margin-top: 16px;
+        }
+    }
+    &__row-heading {
+        color: #6d7678;
+        padding: 14px 0;
+    }
+    &__row-content {
+        height: 54px;
+        display: flex;
+        align-items: center;
+        color: #3c4142;
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    &__index {
+        vertical-align: super;
+        font-size: 8px;
+    }
+}

@@ -1,0 +1,150 @@
+.prof-general {
+    width: 1068px;
+    flex-shrink: 0;
+    color: $grey80;
+    padding-right: rem(32px);
+    @media (max-width: rem(1550px)) {
+        padding-right: 0;
+    }
+    @media (max-width: rem(1150px)) {
+        width: 100%;
+        flex-shrink: unset;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        border: rem(1px) solid #d0d7d9;
+        border-radius: rem(12px);
+        height: rem(148px);
+        margin: 0 0 rem(40px) 0;
+        padding: rem(24px);
+    }
+    &__avatar {
+        width: rem(100px);
+        height: rem(100px);
+        position: relative;
+        margin-right: rem(24px);
+    }
+    &__photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__icon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: rem(12px);
+        height: rem(12px);
+        transition: $transition;
+        &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+    }
+    &__body {
+        border: rem(1px) solid #d0d7d9;
+        border-radius: rem(12px);
+        &_type_contacts {
+            display: none;
+            @media (max-width: rem(1550px)) {
+                display: block;
+            }
+        }
+    }
+    &__navigation {
+        height: rem(40px);
+        background-color: $grey-5;
+        border-radius: 12px 12px 0px 0px;
+        padding: 0 rem(40px);
+        text-align: left;
+        @media #{$screen-mobile} {
+            padding: 0;
+            text-align: center;
+        }
+    }
+    &__button {
+        height: rem(40px);
+        border: none;
+        background-color: transparent;
+        color: $grey60-2;
+        padding: rem(8px) rem(16px);
+        transition: $transition;
+        &:hover {
+            opacity: 0.7;
+        }
+        &_active {
+            border-bottom: 1px solid $accent-TCX50;
+            color: $grey100;
+        }
+        @media #{$screen-mobile} {
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.08px;
+        }
+    }
+    &__list-sections {
+        padding-bottom: rem(24px);
+        display: flex;
+        flex-direction: column;
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+        &_size_small {
+            align-items: flex-start;
+        }
+        &_direction_row {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+    &__content {
+        padding: rem(24px);
+        @media #{$screen-mobile} {
+            padding: 16px;
+        }
+    }
+    &__message {
+        margin-top: rem(16px);
+    }
+    &__section {
+        padding: rem(24px);
+        border: $border-E3E7E8;
+        border-radius: rem(12px);
+        margin-bottom: rem(24px);
+        @media #{$screen-mobile} {
+            padding: 0;
+            border: none;
+        }
+    }
+    &__text {
+        margin-top: rem(16px);
+    }
+    &__cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(296px, 318px));
+        justify-content: center;
+        gap: 16px;
+        margin: 16px 0;
+    }
+    &__contacts {
+        display: none;
+        flex-shrink: 0;
+        border-radius: 4px;
+        width: 32px;
+        height: 32px;
+        background: url('./../images/icons/profile-tasks-chat.svg') no-repeat center;
+        margin-left: auto;
+        transition: $transition;
+        @media (max-width: rem(1550px)) {
+            display: block;
+        }
+        &:hover {
+            cursor: pointer;
+            opacity: .7;
+        }
+        &_active {
+            background-image: url('./../images/icons/profile-tasks-chat-active.svg');
+        }
+    }
+}
