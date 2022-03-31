@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 .main-form {
     padding: 24px;
     font-style: normal;
@@ -16,7 +18,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        // height: 120px;
         background-color: #ffffff;
         border: 1px solid #e3e7e8;
         border-radius: 8px;
@@ -28,12 +29,16 @@
         line-height: 20px;
         letter-spacing: 0.12px;
         color: #3c4142;
+        @media #{$screen-mobile} {
+            margin-top: rem(8px);
+            padding: rem(12px);
+        }
         &-checkbox {
             padding-right: 16px;
             border: 1px solid #e3e7e8;
             border-radius: 8px;
             width: 50%;
-            margin: 16px 0;
+            margin: 16px 0 0;
             display: flex;
             align-items: center;
             font-style: normal;
@@ -42,11 +47,26 @@
             line-height: 24px;
             letter-spacing: 0.12px;
             color: #6c737d;
+            @media #{$screen-mobile} {
+                padding-right: 0;
+                margin: rem(12px) 0 0 0;
+                height: rem(32px);
+            }
             &:first-child {
                 margin-right: 16px;
+                @media #{$screen-mobile} {
+                    margin-right: 8px;
+                }
             }
             &:hover {
                 cursor: pointer;
+            }
+            &_type_select {
+                margin: 0;
+                width: 100%;
+                @media #{$screen-mobile} {
+                    height: unset;
+                }
             }
         }
         &_type_select {
@@ -56,16 +76,16 @@
     &__input {
         width: 100%;
         height: 48px;
-        padding: 12px;
+        padding: 20px 12px 4px;
         background-color: #ffffff;
         background-repeat: no-repeat;
         background-position: 12px;
         border: 1px solid #cfd4dc;
         box-sizing: border-box;
         border-radius: 4px;
-        margin-top: 18px;
         @media #{$screen-mobile} {
             height: 32px;
+            padding: rem(4px) rem(12px);
         }
         &_type_search {
             margin-top: 0;
@@ -74,6 +94,9 @@
         }
         &_style_two-column {
             margin-right: 16px;
+            @media #{$screen-mobile} {
+                margin-right: 8px;
+            }
         }
         &_style_no-right-margin {
             margin-right: 0;
@@ -82,15 +105,26 @@
             width: 16px;
             height: 16px;
             margin: 15px 8px 15px 12px;
+            flex-shrink: 0;
+            @media #{$screen-mobile} {
+                margin: 7px 8px 7px 12px;
+            }
+        }
+        &_style_select {
+            padding: rem(4px) rem(12px);
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
     &__two-column {
         @include flex-container;
         &_style_buttons {
-            border-top: 1px solid #E3E7E8;
+            border-top: 1px solid #e3e7e8;
         }
     }
     &__text-value {
+        margin-top: rem(16px);
         font-style: normal;
         font-weight: 500;
         font-size: 20px;
@@ -98,9 +132,14 @@
         text-align: center;
         letter-spacing: 0.12px;
         color: #6d7678;
-        padding-bottom: 7px;
+        // padding-bottom: 7px;
         min-width: 22px;
+        @media #{$screen-mobile} {
+            margin-top: rem(8px);
+        }
         &_style_label {
+            height: rem(20px);
+            margin-top: 0;
             font-style: normal;
             font-weight: 500;
             font-size: 16px;
@@ -108,6 +147,9 @@
             letter-spacing: 0.12px;
             color: #3c4142;
             text-align: left;
+            @media #{$screen-mobile} {
+                padding-bottom: 0;
+            }
         }
     }
     &__text-upper-index {
@@ -128,8 +170,12 @@
         border: none;
         border-radius: 4px;
         transition: $transition;
+        @media #{$screen-mobile} {
+            margin: 8px 0;
+            height: rem(32px);
+        }
         &:hover {
-            opacity: .7;
+            opacity: 0.7;
         }
         &_type_minimize {
             background-color: transparent;
@@ -147,6 +193,12 @@
             background-color: $accent-TCX50;
             margin-bottom: 0;
         }
+        &_type_confirm {
+            color: white;
+            background-color: $accent-TCX50;
+            margin: 5px auto 10px;
+            width: 50%;
+        }
     }
     &__cursor {
         position: absolute;
@@ -158,13 +210,17 @@
         transition: $transition;
         &:hover {
             cursor: pointer;
-            opacity: .7;
+            opacity: 0.7;
         }
         &_active {
-            transform: rotate(180deg)
+            transform: rotate(180deg);
         }
         &_style_input {
             top: 43%;
+        }
+        &_style_label {
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
     &__wrapper-input {
@@ -175,14 +231,28 @@
         transition: $transition;
         &_active {
             height: 198px;
+            @media #{$screen-mobile} {
+                height: rem(132px);
+            }
         }
     }
-    &__wrapper-fields{
+    &__wrapper-fields {
         height: 0;
         overflow: hidden;
         transition: $transition;
         &_active {
-            height: 990px;
+            height: 950px;
+            overflow: unset;
+            @media #{$screen-mobile} {
+                height: rem(683px);
+            }
+        }
+    }
+    &__caption {
+        &_type_general-search {
+            padding-left: rem(37px);
+        }
+        &_type_general-address {
         }
     }
 }

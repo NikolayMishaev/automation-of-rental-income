@@ -9,8 +9,10 @@
     transition: $transition;
     padding: 8px 0;
     background-color: white;
-    top: 36px;
+    top: 33px;
     left: 0;
+    display: flex;
+    flex-direction: column;
     &_style_sort {
         min-width: 230px;
         &-mobile {
@@ -21,16 +23,58 @@
         min-width: 75px;
     }
     &_style_main-form-change-type {
-        left:0;
+        left: 0;
         right: 0;
-        top: 105px;
+        top: 103px;
         margin: 0 16px;
+        @media #{$screen-mobile} {
+            top: 78px;
+        }
     }
     &_style_main-form-change-class {
-        left:0;
+        left: 0;
         right: 0;
-        top: 105px;
+        top: 103px;
         margin: 0 16px;
+        @media #{$screen-mobile} {
+            top: 78px;
+        }
+    }
+    &_style_filters-adress {
+        left: 0;
+        right: 0;
+        top: 50px;
+        max-height: rem(100px);
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+        @media #{$screen-mobile} {
+            top: 34px;
+        }
+    }
+    &_style_prof-status {
+        left: 0;
+        right: 0;
+        top: 34px;
+        @media (max-width: rem(1000px)) {
+            left: unset;
+        }
+    }
+    &_style_prof-page {
+        left: 240px;
+        right: 0;
+        top: 34px;
+    }
+    &_style_prof-status-sort {
+        left: 0;
+        right: 0;
+        top: 34px;
+        &:hover {
+            background-color: $accent-TCX50;
+            color: white;
+            cursor: pointer;
+        }
     }
     &__item {
         font-style: normal;
@@ -44,6 +88,7 @@
         transition: $transition;
         &:hover {
             background-color: $accent-TCX50;
+            opacity: 0.7;
             color: white;
             cursor: pointer;
         }
@@ -58,12 +103,38 @@
             &:hover {
                 background-color: white;
                 color: #50565e;
-                cursor: auto
+                cursor: auto;
             }
         }
         &_active {
             background-color: $accent-TCX50;
             color: white;
         }
+        &_type_change-type {
+            &:hover {
+                opacity: 1;
+                background-color: unset;
+            }
+        }
+        &_type_change-class {
+            &:hover {
+                opacity: 1;
+                background-color: unset;
+            }
+        }
+        &_style_prof-control-panel {
+            &:hover {
+                cursor: auto;
+                background-color: unset;
+                color: unset;
+            }
+        }
+    }
+}
+
+#submenu-select-sort {
+    @media (max-width: rem(1000px)) {
+        left: unset;
+        right: 48px;
     }
 }

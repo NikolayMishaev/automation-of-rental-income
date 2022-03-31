@@ -1,4 +1,10 @@
 .mix {
+    &-display-none {
+        display: none !important;
+    }
+    &-display-flex {
+        display: flex !important;
+    }
     &-visible {
         opacity: 1 !important;
         visibility: visible !important;
@@ -6,5 +12,108 @@
     &-hidden {
         opacity: 0 !important;
         visibility: hidden !important;
+    }
+    &-visible-scale {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: scale(1) !important;
+    }
+    &-scrollbar {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
+    &-scrollbar-only-horizontal {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:vertical {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
+    &-scrollbar-only-vertical {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
+    &-label {
+        height: rem(48px);
+        border-radius: 4px;
+        display: flex;
+        position: relative;
+        &:hover {
+            cursor: text;
+        }
+        @media #{$screen-mobile} {
+            height: rem(32px);
+        }
+    }
+    &-caption {
+        position: absolute;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.12px;
+        color: #6c737d;
+        padding: 4px 12px;
+        transition: $transition;
+        top: rem(8px);
+        @media #{$screen-mobile} {
+            top: 0;
+        }
+    }
+    &-input {
+        border: 1px solid #cfd4dc;
+        padding: 20px 12px 4px;
+        border: none;
+        width: 100%;
+        border-radius: 4px;
+        &:focus + .mix-caption,
+        &:not(:placeholder-shown) + .mix-caption {
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.08px;
+            top: 0;
+            @media #{$screen-mobile} {
+                opacity: 0;
+            }
+        }
+        @media #{$screen-mobile} {
+            padding: rem(4px) rem(12px);
+        }
+    }
+    &-mt16 {
+        margin-top: rem(16px);
+        @media #{$screen-mobile} {
+            margin-top: rem(12px);
+        }
+    }
+    &-overflow-unset {
+        overflow: unset !important;
+    }
+    &-mb0 {
+        margin-bottom: 0 !important;
     }
 }

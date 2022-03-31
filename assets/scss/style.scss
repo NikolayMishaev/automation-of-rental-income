@@ -9,11 +9,15 @@
 // Base
 @import "base/fonts";
 @import "base/generic";
+@import "base/profile-text";
+
+// Mix
+@import "./blocks/mix";
 
 // Components
 @import "./blocks/objectCard";
-@import "./blocks/modal";
 @import "./blocks/radio-btn";
+@import "./blocks/modal";
 @import "./blocks/custom-text-input";
 @import "./blocks/registration-page";
 @import "./blocks/registration-form";
@@ -21,6 +25,7 @@
 @import "./blocks/_tooltip";
 @import "./blocks/map";
 @import "./blocks/modal-login";
+
 // Main-page
 @import "./blocks/body";
 @import "./blocks/page";
@@ -40,7 +45,18 @@
 @import "./blocks/main-submenu";
 @import "./blocks/main-filters";
 @import "./blocks/main-form";
-@import "./blocks/mix";
+@import "./blocks/pagination";
+@import "./blocks/main-popup";
+@import "./blocks/popup-change-city";
+
+// Personal-account-private-person
+@import "./blocks/prof-aside";
+@import "./blocks/prof-general";
+@import "./blocks/prof-item";
+@import "./blocks/prof-control-panel";
+@import "./blocks/prof-table";
+@import "./blocks/prof-card";
+@import "./blocks/prof-marker";
 @import "./blocks/pagination";
 
 // Check-form

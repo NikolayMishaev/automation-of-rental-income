@@ -4,8 +4,14 @@
     }
     &__item {
         margin-right: rem(16px);
+        transition: $transition;
         &:last-child {
             margin-right: 0;
+        }
+        &_style_profile {
+            @media #{$screen-mobile} {
+                margin-right: 8px;
+            }
         }
     }
     &__button {
@@ -20,12 +26,38 @@
         font-size: 14px;
         line-height: 16px;
         letter-spacing: 0.08px;
+        transition: $transition;
+        &:hover {
+            background-color: $accent-TCX50;
+            color: white;
+        }
         &_type_arrow-left {
             background: url("./../images/icons/pagination-button-left.svg") no-repeat center;
             color: #50565e;
+            transition: $transition;
+            &:hover {
+                background-color: transparent;
+                cursor: auto;
+            }
+            &-active {
+                background: url("./../images/icons/pagination-button-right.svg") no-repeat center;
+                transform: rotate(180deg);
+                &:hover {
+                    background-color: $accent-TCX50;
+                }
+            }
         }
         &_type_arrow-right {
-            background: url("./../images/icons/pagination-button-right.svg") no-repeat center;
+            background: url("./../images/icons/pagination-button-left.svg") no-repeat center;
+            transform: rotate(180deg);
+            transition: $transition;
+            &-active {
+                background: url("./../images/icons/pagination-button-right.svg") no-repeat center;
+                transform: none;
+                &:hover {
+                    background-color: $accent-TCX50;
+                }
+            }
         }
         &_active {
             border: none;
