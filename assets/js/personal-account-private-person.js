@@ -2,14 +2,21 @@
     // логика переключения табов: "Документы" "Избранные объекты" "О себе"
     const tabButtons = document.querySelectorAll(".prof-general__button");
 
-    const generalContentDocuments = document.querySelector("#documents");
-    const generalContentFavourites = document.querySelector("#favourites");
-    const generalContentAboutMe = document.querySelector("#about-me");
+    const generalContentObjects = document.querySelector("#objects");
+    const generalContentCounterpartyQuestionnaires = document.querySelector(
+        "#counterparty-questionnaires"
+    );
+    const generalContentAnalyticalData =
+        document.querySelector("#analytical-data");
+    const generalContentStructure = document.querySelector("#structure");
+    const generalContentOffers = document.querySelector("#offers");
 
     const arrayGeneralContent = [
-        generalContentDocuments,
-        generalContentFavourites,
-        generalContentAboutMe,
+        generalContentObjects,
+        generalContentCounterpartyQuestionnaires,
+        generalContentAnalyticalData,
+        generalContentStructure,
+        generalContentOffers,
     ];
 
     tabButtons.forEach((i) =>
