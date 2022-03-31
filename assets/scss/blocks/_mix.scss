@@ -1,6 +1,9 @@
 .mix {
     &-display-none {
-        display: none;
+        display: none !important;
+    }
+    &-display-flex {
+        display: flex !important;
     }
     &-visible {
         opacity: 1 !important;
@@ -14,6 +17,45 @@
         opacity: 1 !important;
         visibility: visible !important;
         transform: scale(1) !important;
+    }
+    &-scrollbar {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
+    &-scrollbar-only-horizontal {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:vertical {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
+    &-scrollbar-only-vertical {
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
     }
     &-label {
         height: rem(48px);
@@ -74,19 +116,4 @@
     &-mb0 {
         margin-bottom: 0 !important;
     }
-    &-scrollbar-only-vertical {
-        overflow: scroll;
-        white-space: nowrap;
-        &::-webkit-scrollbar {
-            height: 3px;
-            &:horizontal {
-                display: none;
-            }
-        }
-        &::-webkit-scrollbar-thumb {
-            border-radius: 4px;
-            background-color: $grey30;
-        }
-    }
-
 }

@@ -32,10 +32,7 @@
     }
   }
 
-  &__container
-    input:checked
-    ~ .group-radio-btn__inner
-    .group-radio-btn__custom-checkmark {
+  &__container input:checked ~ .group-radio-btn__inner .group-radio-btn__custom-checkmark {
     background-color: $accent-TCX50;
     border: none;
   }
@@ -45,6 +42,7 @@
     width: 240px;
     border: 1px solid $grey30;
     border-radius: 12px;
+    cursor: pointer;
   }
   &__title-radio {
     padding-left: 24px;
@@ -55,10 +53,7 @@
     background-color: $accent-TCX5;
     border: 1px solid $accent-TCX50;
   }
-  &__container
-    input:checked
-    ~ .group-radio-btn__inner
-    .group-radio-btn__custom-checkmark::after {
+  &__container input:checked ~ .group-radio-btn__inner .group-radio-btn__custom-checkmark::after {
     display: block;
   }
 
