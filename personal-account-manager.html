@@ -179,9 +179,9 @@
                                 <button aria-label="counterparty-questionnaires" type="button"
                                     class="prof-general__button text-p1">Анкеты контрагентов</button>
                                 <button aria-label="analytical-data" type="button"
-                                    class="prof-general__button prof-general__button_active text-p1">Аналитические данные</button>
+                                    class="prof-general__button text-p1">Аналитические данные</button>
                                 <button aria-label="structure" type="button"
-                                    class="prof-general__button text-p1">Структура</button>
+                                    class="prof-general__button prof-general__button_active text-p1">Структура</button>
                                 <button aria-label="offers" type="button"
                                     class="prof-general__button text-p1">Предложения</button>
                             </nav>
@@ -579,7 +579,7 @@
                             </div>
 
                             <div aria-label="analytical-data" id="analytical-data"
-                                class="prof-general__content">
+                                class="prof-general__content mix-display-none">
                                 <section class="prof-general__section">
 
                                     <div class="prof-control-panel">
@@ -1250,7 +1250,7 @@
                                             <li class="prof-table__row-content heading-h5">12</li>
                                         </ul>
                                         <ul class="prof-table__row prof-table__row_style_views">
-                                            <li class="prof-table__row-heading text-p2">1</li>
+                                            <li class="prof-table__row-heading text-p2">2</li>
                                             <li class="prof-table__row-content heading-h5">203</li>
                                             <li class="prof-table__row-content heading-h5">123456</li>
                                             <li class="prof-table__row-content heading-h5">Нижний Новгород</li>
@@ -1259,7 +1259,7 @@
                                             <li class="prof-table__row-content heading-h5">12</li>
                                         </ul>
                                         <ul class="prof-table__row prof-table__row_style_views">
-                                            <li class="prof-table__row-heading text-p2">1</li>
+                                            <li class="prof-table__row-heading text-p2">3</li>
                                             <li class="prof-table__row-content heading-h5">203</li>
                                             <li class="prof-table__row-content heading-h5">123456</li>
                                             <li class="prof-table__row-content heading-h5">Нижний Новгород</li>
@@ -1268,7 +1268,7 @@
                                             <li class="prof-table__row-content heading-h5">12</li>
                                         </ul>
                                         <ul class="prof-table__row prof-table__row_style_views">
-                                            <li class="prof-table__row-heading text-p2">1</li>
+                                            <li class="prof-table__row-heading text-p2">4</li>
                                             <li class="prof-table__row-content heading-h5">203</li>
                                             <li class="prof-table__row-content heading-h5">123456</li>
                                             <li class="prof-table__row-content heading-h5">Нижний Новгород</li>
@@ -1277,7 +1277,7 @@
                                             <li class="prof-table__row-content heading-h5">12</li>
                                         </ul>
                                         <ul class="prof-table__row prof-table__row_style_views">
-                                            <li class="prof-table__row-heading text-p2">1</li>
+                                            <li class="prof-table__row-heading text-p2">5</li>
                                             <li class="prof-table__row-content heading-h5">203</li>
                                             <li class="prof-table__row-content heading-h5">123456</li>
                                             <li class="prof-table__row-content heading-h5">Нижний Новгород</li>
@@ -1355,9 +1355,782 @@
 
                                 </section>
 
+                                <section class="prof-general__section">
+
+                                    <div class="prof-control-panel">
+                                        <h3 class="prof-control-panel__title heading-h3">Зарегистрированные обращения</h3>
+                                        <a class="prof-control-panel__download-excel text-p1" href="./assets/images/excel-doc.xlsx" download>Выгрузить в Excel</a>
+
+                                        <div class="prof-control-panel__row">
+                                            <div class="prof-control-panel__buttons-container prof-control-panel__buttons-container_type_diagram">
+                                                <button aria-label="button-list" id="button-list"
+                                                    class="prof-control-panel__button prof-control-panel__button_active heading-h4">Список</button>
+                                                <button aria-label="button-cards" id="button-cards"
+                                                    class="prof-control-panel__button heading-h4">Диаграмма</button>
+                                            </div>
+                                            <label class="prof-control-panel__search prof-control-panel__search_type_analytic mix-label">
+                                                <input type="text" class="prof-control-panel__input-search mix-input"
+                                                    placeholder=" ">
+                                                <span class="prof-control-panel__caption mix-caption">Поиск</span>
+                                            </label>
+                                            <label id="label-select-status"
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
+                                            <input id="input-select-status" type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_period" value="Месяц">
+                                            <div id="submenu-select-status"
+                                                class="main-submenu main-submenu_style_prof-status">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
+                                                        Объекты</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input name="object-type"
+                                                                class="prof-control-panel__input-hidden" type="radio"
+                                                                checked>
+                                                            <span class="prof-control-panel__visible-radio"></span>
+                                                            Все</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input name="object-type"
+                                                                class="prof-control-panel__input-hidden" type="radio">
+                                                            <span class="prof-control-panel__visible-radio"></span>
+                                                            Только выгодные</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                                        Статус объекта</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input id="input-select-status-checkbox-free"
+                                                                class="prof-control-panel__input-hidden" type="checkbox">
+                                                            <span class="prof-control-panel__visible-checkbox"></span>
+                                                            Свободно</label></li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input id="input-select-status-checkbox-soon-free"
+                                                                class="prof-control-panel__input-hidden" type="checkbox">
+                                                            <span class="prof-control-panel__visible-checkbox"></span>
+                                                            Скоро освободится</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <button id="button-confirm-select-status"
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                        <label id="label-select-status"
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
+                                        <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+
+                                        <input id="input-select-status" type="text" disabled="true"
+                                            class="prof-control-panel__input-hidden" value="">
+                                        <div id="submenu-select-status"
+                                            class="main-submenu main-submenu_style_prof-status">
+                                            <ul class="main-submenu__list">
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
+                                                    Объекты</li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input name="object-type"
+                                                            class="prof-control-panel__input-hidden" type="radio"
+                                                            checked>
+                                                        <span class="prof-control-panel__visible-radio"></span>
+                                                        Все</label>
+                                                </li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input name="object-type"
+                                                            class="prof-control-panel__input-hidden" type="radio">
+                                                        <span class="prof-control-panel__visible-radio"></span>
+                                                        Только выгодные</label>
+                                                </li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                                    Статус объекта</li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input id="input-select-status-checkbox-free"
+                                                            class="prof-control-panel__input-hidden" type="checkbox">
+                                                        <span class="prof-control-panel__visible-checkbox"></span>
+                                                        Свободно</label></li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input id="input-select-status-checkbox-soon-free"
+                                                            class="prof-control-panel__input-hidden" type="checkbox">
+                                                        <span class="prof-control-panel__visible-checkbox"></span>
+                                                        Скоро освободится</label>
+                                                </li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    <button id="button-confirm-select-status"
+                                                        class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </label>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="prof-table">
+                                        <ul class="prof-table__row prof-table__row_style_appeals">
+                                            <li class="prof-table__row-heading text-p2">№<span class="prof-marker prof-marker_type_sort"></span></li>
+                                            <li class="prof-table__row-heading text-p2">Менеджер<span class="prof-marker prof-marker_type_sort"></span></li>
+                                            <li class="prof-table__row-heading text-p2">Дата</li>
+                                            <li class="prof-table__row-heading text-p2">Город</li>
+                                            <li class="prof-table__row-heading text-p2">Статус обращения</li>
+                                            <li class="prof-table__row-heading text-p2">Дата создания</li>
+                                            <li class="prof-table__row-heading text-p2">Дата закрытия</li>
+                                            <li class="prof-table__row-heading text-p2">Срок выполнения</li>
+                                            <li class="prof-table__row-heading text-p2">Номер</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_appeals">
+                                            <li class="prof-table__row-heading text-p2">1</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content prof-table__row-content_type_wrap text-p3 "><span class="prof-marker prof-marker_type_green"></span>Обработано</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">234567</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_appeals">
+                                            <li class="prof-table__row-heading text-p2">2</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content prof-table__row-content_type_wrap text-p3 "><span class="prof-marker prof-marker_type_green"></span>Обработано</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">234567</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_appeals">
+                                            <li class="prof-table__row-heading text-p2">3</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content prof-table__row-content_type_wrap text-p3 "><span class="prof-marker prof-marker_type_yellow"></span>Отправлено менеджеру</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">234567</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_appeals">
+                                            <li class="prof-table__row-heading text-p2">4</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content prof-table__row-content_type_wrap text-p3 "><span class="prof-marker prof-marker_type_yellow"></span>Отправлено менеджеру</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">234567</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_appeals">
+                                            <li class="prof-table__row-heading text-p2">5</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content prof-table__row-content_type_wrap text-p3 "><span class="prof-marker prof-marker_type_yellow"></span>Отправлено менеджеру</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">234567</li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="main main_page_profile">
+                                        <div class="main__pagination main__pagination_type_profile">
+                                            <nav class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-left"></button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_active">1</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">2</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">...</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">12</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">13</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
+                                                                                              и влево: pagination__button_type_arrow-left-active -->
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                        <div class="prof-control-panel">
+                                            <label id="label-select-page"
+                                                class="prof-control-panel__select-label text-p2">Показывать строк:
+                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <input id="input-select-page" type="text" disabled="true"
+                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                    value="5">
+                                                <div id="submenu-select-page"
+                                                    class="main-submenu main-submenu_style_prof-page">
+                                                    <ul class="main-submenu__list">
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            5
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            10
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            20</li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            50</li>
+                                                    </ul>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+                                <section class="prof-general__section">
+
+                                    <div class="prof-control-panel">
+                                        <h3 class="prof-control-panel__title heading-h3">Удовлетворенность обратной связью</h3>
+                                        <a class="prof-control-panel__download-excel text-p1" href="./assets/images/excel-doc.xlsx" download>Выгрузить в Excel</a>
+
+                                        <div class="prof-control-panel__row">
+                                            <p class="prof-control-panel__subtitle prof-control-panel__subtitle_type_feedback heading-h5">Список</p>
+                                            <label class="prof-control-panel__search prof-control-panel__search_type_analytic mix-label">
+                                                <input type="text" class="prof-control-panel__input-search mix-input"
+                                                    placeholder=" ">
+                                                <span class="prof-control-panel__caption mix-caption">Поиск</span>
+                                            </label>
+                                            <label id="label-select-status"
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
+                                            <input id="input-select-status" type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_period" value="Месяц">
+                                            <div id="submenu-select-status"
+                                                class="main-submenu main-submenu_style_prof-status">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
+                                                        Объекты</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input name="object-type"
+                                                                class="prof-control-panel__input-hidden" type="radio"
+                                                                checked>
+                                                            <span class="prof-control-panel__visible-radio"></span>
+                                                            Все</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input name="object-type"
+                                                                class="prof-control-panel__input-hidden" type="radio">
+                                                            <span class="prof-control-panel__visible-radio"></span>
+                                                            Только выгодные</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                                        Статус объекта</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input id="input-select-status-checkbox-free"
+                                                                class="prof-control-panel__input-hidden" type="checkbox">
+                                                            <span class="prof-control-panel__visible-checkbox"></span>
+                                                            Свободно</label></li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input id="input-select-status-checkbox-soon-free"
+                                                                class="prof-control-panel__input-hidden" type="checkbox">
+                                                            <span class="prof-control-panel__visible-checkbox"></span>
+                                                            Скоро освободится</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <button id="button-confirm-select-status"
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                        <label id="label-select-status"
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
+                                        <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+
+                                        <input id="input-select-status" type="text" disabled="true"
+                                            class="prof-control-panel__input-hidden" value="">
+                                        <div id="submenu-select-status"
+                                            class="main-submenu main-submenu_style_prof-status">
+                                            <ul class="main-submenu__list">
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
+                                                    Объекты</li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input name="object-type"
+                                                            class="prof-control-panel__input-hidden" type="radio"
+                                                            checked>
+                                                        <span class="prof-control-panel__visible-radio"></span>
+                                                        Все</label>
+                                                </li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input name="object-type"
+                                                            class="prof-control-panel__input-hidden" type="radio">
+                                                        <span class="prof-control-panel__visible-radio"></span>
+                                                        Только выгодные</label>
+                                                </li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                                    Статус объекта</li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input id="input-select-status-checkbox-free"
+                                                            class="prof-control-panel__input-hidden" type="checkbox">
+                                                        <span class="prof-control-panel__visible-checkbox"></span>
+                                                        Свободно</label></li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input id="input-select-status-checkbox-soon-free"
+                                                            class="prof-control-panel__input-hidden" type="checkbox">
+                                                        <span class="prof-control-panel__visible-checkbox"></span>
+                                                        Скоро освободится</label>
+                                                </li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    <button id="button-confirm-select-status"
+                                                        class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </label>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="prof-table">
+                                        <ul class="prof-table__row prof-table__row_style_feedback">
+                                            <li class="prof-table__row-heading text-p2">№<span class="prof-marker prof-marker_type_sort"></span></li>
+                                            <li class="prof-table__row-heading text-p2">Менеджер</li>
+                                            <li class="prof-table__row-heading text-p2">Дата</li>
+                                            <li class="prof-table__row-heading text-p2">Город</li>
+                                            <li class="prof-table__row-heading text-p2">Оценка</li>
+                                            <li class="prof-table__row-heading text-p2">Рейтинг</li>
+                                            <li class="prof-table__row-heading text-p2">Количество оценок</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_feedback">
+                                            <li class="prof-table__row-heading text-p2">1</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content heading-h5"><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback"></span></li>
+                                            <li class="prof-table__row-content heading-h5">4.2</li>
+                                            <li class="prof-table__row-content heading-h5">12</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_feedback">
+                                            <li class="prof-table__row-heading text-p2">2</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content heading-h5"><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span></li>
+                                            <li class="prof-table__row-content heading-h5">4.2</li>
+                                            <li class="prof-table__row-content heading-h5">12</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_feedback">
+                                            <li class="prof-table__row-heading text-p2">3</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content heading-h5"><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback"></span></li>
+                                            <li class="prof-table__row-content heading-h5">4.2</li>
+                                            <li class="prof-table__row-content heading-h5">12</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_feedback">
+                                            <li class="prof-table__row-heading text-p2">4</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content heading-h5"><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback"></span><span class="prof-marker prof-marker_type_star-feedback"></span></li>
+                                            <li class="prof-table__row-content heading-h5">4.2</li>
+                                            <li class="prof-table__row-content heading-h5">12</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_feedback">
+                                            <li class="prof-table__row-heading text-p2">5</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">Москва</li>
+                                            <li class="prof-table__row-content heading-h5"><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span><span class="prof-marker prof-marker_type_star-feedback-active"></span></li>
+                                            <li class="prof-table__row-content heading-h5">4.2</li>
+                                            <li class="prof-table__row-content heading-h5">12</li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="main main_page_profile">
+                                        <div class="main__pagination main__pagination_type_profile">
+                                            <nav class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-left"></button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_active">1</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">2</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">...</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">12</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">13</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
+                                                                                              и влево: pagination__button_type_arrow-left-active -->
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                        <div class="prof-control-panel">
+                                            <label id="label-select-page"
+                                                class="prof-control-panel__select-label text-p2">Показывать строк:
+                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <input id="input-select-page" type="text" disabled="true"
+                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                    value="5">
+                                                <div id="submenu-select-page"
+                                                    class="main-submenu main-submenu_style_prof-page">
+                                                    <ul class="main-submenu__list">
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            5
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            10
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            20</li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            50</li>
+                                                    </ul>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
+                                <section class="prof-general__section">
+
+                                    <div class="prof-control-panel">
+                                        <h3 class="prof-control-panel__title heading-h3">Период показа на портале</h3>
+                                        <a class="prof-control-panel__download-excel text-p1" href="./assets/images/excel-doc.xlsx" download>Выгрузить в Excel</a>
+
+                                        <div class="prof-control-panel__row">
+                                            <p class="prof-control-panel__subtitle prof-control-panel__subtitle_type_feedback heading-h5">Список</p>
+                                            <label class="prof-control-panel__search prof-control-panel__search_type_analytic mix-label">
+                                                <input type="text" class="prof-control-panel__input-search mix-input"
+                                                    placeholder=" ">
+                                                <span class="prof-control-panel__caption mix-caption">Поиск</span>
+                                            </label>
+                                            <label id="label-select-status"
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
+                                            <input id="input-select-status" type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_period" value="Месяц">
+                                            <div id="submenu-select-status"
+                                                class="main-submenu main-submenu_style_prof-status">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
+                                                        Объекты</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input name="object-type"
+                                                                class="prof-control-panel__input-hidden" type="radio"
+                                                                checked>
+                                                            <span class="prof-control-panel__visible-radio"></span>
+                                                            Все</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input name="object-type"
+                                                                class="prof-control-panel__input-hidden" type="radio">
+                                                            <span class="prof-control-panel__visible-radio"></span>
+                                                            Только выгодные</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                                        Статус объекта</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input id="input-select-status-checkbox-free"
+                                                                class="prof-control-panel__input-hidden" type="checkbox">
+                                                            <span class="prof-control-panel__visible-checkbox"></span>
+                                                            Свободно</label></li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input id="input-select-status-checkbox-soon-free"
+                                                                class="prof-control-panel__input-hidden" type="checkbox">
+                                                            <span class="prof-control-panel__visible-checkbox"></span>
+                                                            Скоро освободится</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <button id="button-confirm-select-status"
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                        <label id="label-select-status"
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
+                                        <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+
+                                        <input id="input-select-status" type="text" disabled="true"
+                                            class="prof-control-panel__input-hidden" value="">
+                                        <div id="submenu-select-status"
+                                            class="main-submenu main-submenu_style_prof-status">
+                                            <ul class="main-submenu__list">
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
+                                                    Объекты</li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input name="object-type"
+                                                            class="prof-control-panel__input-hidden" type="radio"
+                                                            checked>
+                                                        <span class="prof-control-panel__visible-radio"></span>
+                                                        Все</label>
+                                                </li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input name="object-type"
+                                                            class="prof-control-panel__input-hidden" type="radio">
+                                                        <span class="prof-control-panel__visible-radio"></span>
+                                                        Только выгодные</label>
+                                                </li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                                    Статус объекта</li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input id="input-select-status-checkbox-free"
+                                                            class="prof-control-panel__input-hidden" type="checkbox">
+                                                        <span class="prof-control-panel__visible-checkbox"></span>
+                                                        Свободно</label></li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input id="input-select-status-checkbox-soon-free"
+                                                            class="prof-control-panel__input-hidden" type="checkbox">
+                                                        <span class="prof-control-panel__visible-checkbox"></span>
+                                                        Скоро освободится</label>
+                                                </li>
+                                                <li
+                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                    <button id="button-confirm-select-status"
+                                                        class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </label>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="prof-table">
+                                        <ul class="prof-table__row prof-table__row_style_period">
+                                            <li class="prof-table__row-heading text-p2">№<span class="prof-marker prof-marker_type_sort"></span></li>
+                                            <li class="prof-table__row-heading text-p2">Менеджер</li>
+                                            <li class="prof-table__row-heading text-p2">Дата размещения на портале</li>
+                                            <li class="prof-table__row-heading text-p2">Дата передачи в архив</li>
+                                            <li class="prof-table__row-heading text-p2">Срок нахождения на портале</li>
+                                            <li class="prof-table__row-heading text-p2">Номер</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_period">
+                                            <li class="prof-table__row-heading text-p2">1</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">01.01.2022</li>
+                                            <li class="prof-table__row-content heading-h5">12 дней</li>
+                                            <li class="prof-table__row-content heading-h5">113245</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_period">
+                                            <li class="prof-table__row-heading text-p2">2</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">01.01.2022</li>
+                                            <li class="prof-table__row-content heading-h5">12 дней</li>
+                                            <li class="prof-table__row-content heading-h5">113245</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_period">
+                                            <li class="prof-table__row-heading text-p2">3</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">01.01.2022</li>
+                                            <li class="prof-table__row-content heading-h5">12 дней</li>
+                                            <li class="prof-table__row-content heading-h5">113245</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_period">
+                                            <li class="prof-table__row-heading text-p2">4</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">01.01.2022</li>
+                                            <li class="prof-table__row-content heading-h5">12 дней</li>
+                                            <li class="prof-table__row-content heading-h5">113245</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_period">
+                                            <li class="prof-table__row-heading text-p2">5</li>
+                                            <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
+                                            <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                                            <li class="prof-table__row-content heading-h5">01.01.2022</li>
+                                            <li class="prof-table__row-content heading-h5">12 дней</li>
+                                            <li class="prof-table__row-content heading-h5">113245</li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="main main_page_profile">
+                                        <div class="main__pagination main__pagination_type_profile">
+                                            <nav class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-left"></button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_active">1</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">2</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">...</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">12</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">13</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
+                                                                                              и влево: pagination__button_type_arrow-left-active -->
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                        <div class="prof-control-panel">
+                                            <label id="label-select-page"
+                                                class="prof-control-panel__select-label text-p2">Показывать строк:
+                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <input id="input-select-page" type="text" disabled="true"
+                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                    value="5">
+                                                <div id="submenu-select-page"
+                                                    class="main-submenu main-submenu_style_prof-page">
+                                                    <ul class="main-submenu__list">
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            5
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            10
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            20</li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            50</li>
+                                                    </ul>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+
                             </div>
 
-                            <div aria-label="structure" id="structure" class="prof-general__content mix-display-none">
+                            <div aria-label="structure" id="structure" class="prof-general__content">
                                 структура
                             </div>
 

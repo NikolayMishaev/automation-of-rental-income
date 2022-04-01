@@ -6609,6 +6609,10 @@ main .container {
   margin-right: 4px;
 }
 
+.prof-control-panel__subtitle_type_feedback {
+  color: #3c4142;
+}
+
 .prof-control-panel__user-number {
   color: #3c4142;
   font-style: normal;
@@ -6719,6 +6723,10 @@ main .container {
 
 .prof-table__row-content::-webkit-scrollbar {
   display: none;
+}
+
+.prof-table__row-content_type_wrap {
+  white-space: unset;
 }
 
 .prof-table__index {
@@ -6869,6 +6877,20 @@ main .container {
   height: 12px;
   background: url("./../images/icons/profile-star-active.svg") no-repeat center;
   margin: 0 4px;
+}
+
+.prof-marker_type_star-feedback {
+  width: 12px;
+  height: 12px;
+  background: url("./../images/icons/profile-star.svg") no-repeat center;
+  margin: 0 2px;
+}
+
+.prof-marker_type_star-feedback-active {
+  width: 12px;
+  height: 12px;
+  background: url("./../images/icons/profile-star-active.svg") no-repeat center;
+  margin: 0 2px;
 }
 
 .prof-marker_type_eye {

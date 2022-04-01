@@ -49,6 +49,18 @@
         background: url("./../images/icons/profile-star-active.svg") no-repeat center;
         margin: 0 4px;
     }
+    &_type_star-feedback {
+        width: 12px;
+        height: 12px;
+        background: url("./../images/icons/profile-star.svg") no-repeat center;
+        margin: 0 2px;
+    }
+    &_type_star-feedback-active {
+        width: 12px;
+        height: 12px;
+        background: url("./../images/icons/profile-star-active.svg") no-repeat center;
+        margin: 0 2px;
+    }
     &_type_eye {
         width: 12px;
         height: 8px;

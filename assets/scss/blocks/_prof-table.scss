@@ -65,6 +65,9 @@
         &::-webkit-scrollbar {
             display: none;
         }
+        &_type_wrap {
+            white-space: unset;
+        }
     }
     &__index {
         vertical-align: super;
