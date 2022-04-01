@@ -52,4 +52,11 @@
             background-position: 10% center;
         }
     }
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+        padding-top: 12px;
+        border-top: 1px solid #E3E7E8;
+    }
 }

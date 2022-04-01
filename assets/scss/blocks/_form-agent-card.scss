@@ -1,0 +1,36 @@
+.form-agent-card {
+    border: 1px solid #D0D7D9;
+    border-radius: 12px;
+    height: 80px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    &__info {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        background: url('./../images/icons/profile-document-active.svg') no-repeat center;
+        margin-right: 8px;
+    }
+    &__caption {
+        width: 100%;
+        margin-top: 8px;
+        margin-left: 3px;
+    }
+    &__button {
+        width: 109px;
+        height: 32px;
+        background-color: #E1E5EB;
+        border: none;
+        color: #B4BBC6;
+        border-radius: 4px;
+        &_active {
+            background-color: $accent-TCX50;
+            color: white;
+        }
+    }
+}

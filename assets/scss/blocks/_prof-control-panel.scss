@@ -18,6 +18,9 @@
         &_type_diagram {
             width: 244px;
         }
+        &_type_agent {
+            width: 241px;
+        }
     }
     &__button {
         height: 28px;
@@ -120,6 +123,9 @@
             background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
             border-radius: 4px;
         }
+        &_type_status-agent {
+            margin-right: 40px;
+        }
     }
     &__cursor {
         position: absolute;
@@ -167,6 +173,9 @@
         }
         &_type_period {
             width: 110px;
+        }
+        &_type_status-agent {
+            width: 140px;
         }
     }
     &__label-custom {
@@ -262,6 +271,12 @@
             flex: 1;
             margin: 0 24px;
         }
+        &_type_agent {
+            width: unset;
+            flex: 1;
+            margin: 0 24px;
+            margin-right: 0;
+        }
     }
     &__input-search {
         background: url(./../images/icons/main-filters-search.svg) no-repeat 13px center/15px;
@@ -300,6 +315,9 @@
         &:first-of-type {
             margin-top: 16px;
         }
+        &_type_agent {
+            border: none;
+        }
     }
     &__subtitle {
         color: #6d7678;
@@ -315,5 +333,8 @@
         font-size: 14px;
         line-height: 16px;
         letter-spacing: 0.08px;
+    }
+    &__title {
+        margin-right: auto;
     }
 }

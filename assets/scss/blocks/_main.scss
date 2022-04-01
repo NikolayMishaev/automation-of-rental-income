@@ -15,6 +15,9 @@
             justify-content: center;
         }
     }
+    &_page_agent {
+        border-top: none;
+    }
     &__content {
         max-width: rem(1920px);
         margin: auto;

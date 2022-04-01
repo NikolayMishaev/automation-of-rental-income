@@ -177,11 +177,11 @@
                                 <button aria-label="objects" type="button"
                                     class="prof-general__button text-p1">Объекты</button>
                                 <button aria-label="counterparty-questionnaires" type="button"
-                                    class="prof-general__button text-p1">Анкеты контрагентов</button>
+                                    class="prof-general__button prof-general__button_active text-p1">Анкеты контрагентов</button>
                                 <button aria-label="analytical-data" type="button"
                                     class="prof-general__button text-p1">Аналитические данные</button>
                                 <button aria-label="structure" type="button"
-                                    class="prof-general__button prof-general__button_active text-p1">Структура</button>
+                                    class="prof-general__button text-p1">Структура</button>
                                 <button aria-label="offers" type="button"
                                     class="prof-general__button text-p1">Предложения</button>
                             </nav>
@@ -299,7 +299,7 @@
                                     </label>
                                 </div>
 
-                                <div class="prof-table">
+                                <div class="prof-table mix-display-none">
                                     <ul class="prof-table__row prof-table__row_style_objects">
                                         <li class="prof-table__row-heading text-p2">Адрес объекта</li>
                                         <li class="prof-table__row-heading text-p2">Номер</li>
@@ -320,13 +320,9 @@
                                         <li class="prof-table__row-content heading-h5">100</li>
                                         <li class="prof-table__row-content heading-h5">44287</li>
                                         <li class="prof-table__row-content">
-                                            <div class="prof-control-panel">
-                                                <label class="prof-control-panel__label-custom">
-                                                    <input id="input-select-status-checkbox-free"
-                                                        class="prof-control-panel__input-hidden" type="checkbox">
-                                                    <span class="prof-control-panel__visible-checkbox"></span>
-                                                </label>
-                                            </div>
+                                            <label class="prof-table__test-checkbox-active"></label>
+                                            <span
+                                                class="prof-marker prof-marker_type_hot"></span>
                                         </li>
                                     </ul>
                                     <ul class="prof-table__row prof-table__row_style_objects">
@@ -339,6 +335,11 @@
                                         <li class="prof-table__row-content heading-h5">А1</li>
                                         <li class="prof-table__row-content heading-h5">100</li>
                                         <li class="prof-table__row-content heading-h5">44287</li>
+                                        <li class="prof-table__row-content">
+                                            <label class="prof-table__test-checkbox"></label>
+                                            <span
+                                                class="prof-marker prof-marker_type_hot"></span>
+                                        </li>
                                     </ul>
                                     <ul class="prof-table__row prof-table__row_style_objects">
                                         <li class="prof-table__row-content heading-h5"><span
@@ -350,6 +351,11 @@
                                         <li class="prof-table__row-content heading-h5">А1</li>
                                         <li class="prof-table__row-content heading-h5">150</li>
                                         <li class="prof-table__row-content heading-h5">12000</li>
+                                        <li class="prof-table__row-content">
+                                            <label class="prof-table__test-checkbox"></label>
+                                            <span
+                                                class="prof-marker prof-marker_type_hot"></span>
+                                        </li>
                                     </ul>
                                     <ul class="prof-table__row prof-table__row_style_objects">
                                         <li class="prof-table__row-content heading-h5"><span
@@ -360,8 +366,11 @@
                                         <li class="prof-table__row-content heading-h5">OARU06/175/67</li>
                                         <li class="prof-table__row-content heading-h5">А1</li>
                                         <li class="prof-table__row-content heading-h5">150</li>
-                                        <li class="prof-table__row-content heading-h5">12000<span
-                                                class="prof-marker prof-marker_type_ring-active"></span>
+                                        <li class="prof-table__row-content heading-h5">12000</li>
+                                        <li class="prof-table__row-content">
+                                            <label class="prof-table__test-checkbox-active"></label>
+                                            <span
+                                                class="prof-marker prof-marker_type_hot"></span>
                                         </li>
                                     </ul>
                                     <ul class="prof-table__row prof-table__row_style_objects">
@@ -374,6 +383,11 @@
                                         <li class="prof-table__row-content heading-h5">А1</li>
                                         <li class="prof-table__row-content heading-h5">200</li>
                                         <li class="prof-table__row-content heading-h5">50123</li>
+                                        <li class="prof-table__row-content">
+                                            <label class="prof-table__test-checkbox-active"></label>
+                                            <span
+                                                class="prof-marker prof-marker_type_hot"></span>
+                                        </li>
                                     </ul>
                                     <ul class="prof-table__row prof-table__row_style_objects">
                                         <li class="prof-table__row-content heading-h5"><span
@@ -384,8 +398,12 @@
                                         <li class="prof-table__row-content heading-h5">OARU06/175/67</li>
                                         <li class="prof-table__row-content heading-h5">А1</li>
                                         <li class="prof-table__row-content heading-h5">200</li>
-                                        <li class="prof-table__row-content heading-h5">20212<span
-                                                class="prof-marker prof-marker_type_ring"></span></li>
+                                        <li class="prof-table__row-content heading-h5">20212</li>
+                                        <li class="prof-table__row-content">
+                                            <label class="prof-table__test-checkbox"></label>
+                                            <span
+                                                class="prof-marker prof-marker_type_hot"></span>
+                                        </li>
                                     </ul>
                                     <ul class="prof-table__row prof-table__row_style_objects">
                                         <li class="prof-table__row-content heading-h5"><span
@@ -397,10 +415,15 @@
                                         <li class="prof-table__row-content heading-h5">А1</li>
                                         <li class="prof-table__row-content heading-h5">165</li>
                                         <li class="prof-table__row-content heading-h5">34200</li>
+                                        <li class="prof-table__row-content">
+                                            <label class="prof-table__test-checkbox"></label>
+                                            <span
+                                                class="prof-marker prof-marker_type_hot"></span>
+                                        </li>
                                     </ul>
                                 </div>
 
-                                <ul class="prof-general__cards-container mix-display-none">
+                                <ul class="prof-general__cards-container">
                                     <li class="prof-card">
                                         <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
                                             class="prof-card__photo">
@@ -414,9 +437,11 @@
                                                     class="prof-marker prof-marker_type_red"></span>Скоро освободится
                                             </p><span class="prof-marker"></span>
                                         </div>
-
-
-                                        <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        <div class="prof-card__checkbox heading-h5">
+                                            <label class="prof-table__test-checkbox"></label>
+                                            <span class="prof-marker prof-marker_type_hot"></span>
+                                            В выгодные предложения
+                                        </div>
                                     </li>
                                     <li class="prof-card prof-card_active">
                                         <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
@@ -434,7 +459,11 @@
 
                                         <p class="prof-card__bet text-p3">Предложенная ставка: <span
                                                 class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
-                                        <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                                                                <div class="prof-card__checkbox heading-h5">
+                                            <label class="prof-table__test-checkbox"></label>
+                                            <span class="prof-marker prof-marker_type_hot"></span>
+                                            В выгодные предложения
+                                        </div>
                                     </li>
                                     <li class="prof-card">
                                         <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
@@ -450,7 +479,11 @@
                                         </div>
 
 
-                                        <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        <div class="prof-card__checkbox heading-h5">
+                                            <label class="prof-table__test-checkbox-active"></label>
+                                            <span class="prof-marker prof-marker_type_hot"></span>
+                                            В выгодные предложения
+                                        </div>
                                     </li>
                                     <li class="prof-card">
                                         <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
@@ -467,7 +500,11 @@
 
                                         <p class="prof-card__bet text-p3">Предложенная ставка: <span
                                                 class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
-                                        <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                                                                <div class="prof-card__checkbox heading-h5">
+                                            <label class="prof-table__test-checkbox"></label>
+                                            <span class="prof-marker prof-marker_type_hot"></span>
+                                            В выгодные предложения
+                                        </div>
                                     </li>
                                     <li class="prof-card">
                                         <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
@@ -485,7 +522,11 @@
 
                                         <p class="prof-card__bet text-p3">Предложенная ставка: <span
                                                 class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
-                                        <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                                                                <div class="prof-card__checkbox heading-h5">
+                                            <label class="prof-table__test-checkbox-active"></label>
+                                            <span class="prof-marker prof-marker_type_hot"></span>
+                                            В выгодные предложения
+                                        </div>
                                     </li>
                                     <li class="prof-card">
                                         <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
@@ -501,7 +542,11 @@
                                         </div>
 
 
-                                        <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                                                                <div class="prof-card__checkbox heading-h5">
+                                            <label class="prof-table__test-checkbox"></label>
+                                            <span class="prof-marker prof-marker_type_hot"></span>
+                                            В выгодные предложения
+                                        </div>
                                     </li>
                                 </ul>
 
@@ -574,8 +619,271 @@
                             </div>
 
                             <div aria-label="counterparty-questionnaires" id="counterparty-questionnaires"
-                                class="prof-general__content mix-display-none">
-                                анкеты
+                                class="prof-general__content ">
+                                <div class="prof-control-panel">
+                                    <h3 class="prof-control-panel__title prof-control-panel__title_type_agent heading-h3">Анкеты контрагентов</h3>
+                                    <label id="label-select-status"
+                                    class="prof-control-panel__select-label prof-control-panel__select-label_type_status-agent text-p2">Статус анкеты:
+                                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                    <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
+                                    <input id="input-select-status" type="text" disabled="true"
+                                        class="prof-control-panel__select-input prof-control-panel__select-input_type_status-agent" value="Любой">
+                                    <div id="submenu-select-status"
+                                        class="main-submenu main-submenu_style_prof-status">
+                                        <ul class="main-submenu__list">
+                                            <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
+                                                Объекты</li>
+                                            <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                <label class="prof-control-panel__label-custom">
+                                                    <input name="object-type"
+                                                        class="prof-control-panel__input-hidden" type="radio"
+                                                        checked>
+                                                    <span class="prof-control-panel__visible-radio"></span>
+                                                    Все</label>
+                                            </li>
+                                            <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                <label class="prof-control-panel__label-custom">
+                                                    <input name="object-type"
+                                                        class="prof-control-panel__input-hidden" type="radio">
+                                                    <span class="prof-control-panel__visible-radio"></span>
+                                                    Только выгодные</label>
+                                            </li>
+                                            <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                                Статус объекта</li>
+                                            <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                <label class="prof-control-panel__label-custom">
+                                                    <input id="input-select-status-checkbox-free"
+                                                        class="prof-control-panel__input-hidden" type="checkbox">
+                                                    <span class="prof-control-panel__visible-checkbox"></span>
+                                                    Свободно</label></li>
+                                            <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                <label class="prof-control-panel__label-custom">
+                                                    <input id="input-select-status-checkbox-soon-free"
+                                                        class="prof-control-panel__input-hidden" type="checkbox">
+                                                    <span class="prof-control-panel__visible-checkbox"></span>
+                                                    Скоро освободится</label>
+                                            </li>
+                                            <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                <button id="button-confirm-select-status"
+                                                    class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </label>
+                                <label id="label-select-status"
+                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
+                                <input id="input-select-status" type="text" disabled="true"
+                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_period" value="Месяц">
+                                <div id="submenu-select-status"
+                                    class="main-submenu main-submenu_style_prof-status">
+                                    <ul class="main-submenu__list">
+                                        <li
+                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
+                                            Объекты</li>
+                                        <li
+                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                            <label class="prof-control-panel__label-custom">
+                                                <input name="object-type"
+                                                    class="prof-control-panel__input-hidden" type="radio"
+                                                    checked>
+                                                <span class="prof-control-panel__visible-radio"></span>
+                                                Все</label>
+                                        </li>
+                                        <li
+                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                            <label class="prof-control-panel__label-custom">
+                                                <input name="object-type"
+                                                    class="prof-control-panel__input-hidden" type="radio">
+                                                <span class="prof-control-panel__visible-radio"></span>
+                                                Только выгодные</label>
+                                        </li>
+                                        <li
+                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                            Статус объекта</li>
+                                        <li
+                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                            <label class="prof-control-panel__label-custom">
+                                                <input id="input-select-status-checkbox-free"
+                                                    class="prof-control-panel__input-hidden" type="checkbox">
+                                                <span class="prof-control-panel__visible-checkbox"></span>
+                                                Свободно</label></li>
+                                        <li
+                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                            <label class="prof-control-panel__label-custom">
+                                                <input id="input-select-status-checkbox-soon-free"
+                                                    class="prof-control-panel__input-hidden" type="checkbox">
+                                                <span class="prof-control-panel__visible-checkbox"></span>
+                                                Скоро освободится</label>
+                                        </li>
+                                        <li
+                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                            <button id="button-confirm-select-status"
+                                                class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </label>
+                                    <div class="prof-control-panel__row prof-control-panel__row_type_agent">
+                                        <div class="prof-control-panel__buttons-container prof-control-panel__buttons-container_type_agent">
+                                            <button aria-label="button-list" id="button-list"
+                                                class="prof-control-panel__button prof-control-panel__button_active heading-h4">Актуальные</button>
+                                            <button aria-label="button-cards" id="button-cards"
+                                                class="prof-control-panel__button heading-h4">Архив</button>
+                                        </div>
+                                        <label class="prof-control-panel__search prof-control-panel__search_type_agent mix-label">
+                                            <input type="text" class="prof-control-panel__input-search mix-input"
+                                                placeholder=" ">
+                                            <span class="prof-control-panel__caption mix-caption">Поиск</span>
+                                        </label>
+
+
+                                    </div>
+
+
+
+                                </div>
+
+                                <ul class="prof-general__forms-agent-container">
+                                    <li class="form-agent-card">
+                                        <div class="form-agent-card__info">
+                                            <div class="form-agent-card__icon"></div>
+                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                            <p class="form-agent-card__caption text-p2"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+
+                                        </div>
+                                        <button class="form-agent-card__button text-p1">Уведомить</button>
+                                    </li>
+                                    <li class="form-agent-card">
+                                        <div class="form-agent-card__info">
+                                            <div class="form-agent-card__icon"></div>
+                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                            <p class="form-agent-card__caption text-p2"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p>
+
+                                        </div>
+                                        <button class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                    </li>
+                                    <li class="form-agent-card">
+                                        <div class="form-agent-card__info">
+                                            <div class="form-agent-card__icon"></div>
+                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                            <p class="form-agent-card__caption text-p2"><span class="prof-marker prof-marker_type_red"></span>Отказано</p>
+
+                                        </div>
+                                        <button class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                    </li>
+                                    <li class="form-agent-card">
+                                        <div class="form-agent-card__info">
+                                            <div class="form-agent-card__icon"></div>
+                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                            <p class="form-agent-card__caption text-p2"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+
+                                        </div>
+                                        <button class="form-agent-card__button text-p1">Уведомить</button>
+                                    </li>
+                                    <li class="form-agent-card">
+                                        <div class="form-agent-card__info">
+                                            <div class="form-agent-card__icon"></div>
+                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                            <p class="form-agent-card__caption text-p2"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+
+                                        </div>
+                                        <button class="form-agent-card__button text-p1">Уведомить</button>
+                                    </li>
+                                    <li class="form-agent-card">
+                                        <div class="form-agent-card__info">
+                                            <div class="form-agent-card__icon"></div>
+                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                            <p class="form-agent-card__caption text-p2"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+
+                                        </div>
+                                        <button class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                    </li>
+                                    <li class="form-agent-card">
+                                        <div class="form-agent-card__info">
+                                            <div class="form-agent-card__icon"></div>
+                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                            <p class="form-agent-card__caption text-p2"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+
+                                        </div>
+                                        <button class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                    </li>
+                                </ul>
+                                <div class="main main_page_profile main_page_agent">
+                                    <div class="main__pagination main__pagination_type_profile">
+                                        <nav class="pagination">
+                                            <ul class="pagination__list">
+                                                <li class="pagination__item pagination__item_style_profile">
+                                                    <button type="button"
+                                                        class="pagination__button pagination__button_type_arrow-left"></button>
+                                                </li>
+                                                <li class="pagination__item pagination__item_style_profile">
+                                                    <button type="button"
+                                                        class="pagination__button pagination__button_active">1</button>
+                                                </li>
+                                                <li class="pagination__item pagination__item_style_profile">
+                                                    <button type="button" class="pagination__button">2</button>
+                                                </li>
+                                                <li class="pagination__item pagination__item_style_profile">
+                                                    <button type="button" class="pagination__button">...</button>
+                                                </li>
+                                                <li class="pagination__item pagination__item_style_profile">
+                                                    <button type="button" class="pagination__button">12</button>
+                                                </li>
+                                                <li class="pagination__item pagination__item_style_profile">
+                                                    <button type="button" class="pagination__button">13</button>
+                                                </li>
+                                                <li class="pagination__item pagination__item_style_profile">
+                                                    <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
+                                                                                          и влево: pagination__button_type_arrow-left-active -->
+                                                    <button type="button"
+                                                        class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+
+                                    <div class="prof-control-panel">
+                                        <label id="label-select-page"
+                                            class="prof-control-panel__select-label text-p2">Показывать объектов на
+                                            странице:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                            <input id="input-select-page" type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                value="5">
+                                            <div id="submenu-select-page"
+                                                class="main-submenu main-submenu_style_prof-page">
+                                                <ul class="main-submenu__list">
+                                                    <li aria-label="item-page-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                        5
+                                                    </li>
+                                                    <li aria-label="item-page-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                        10
+                                                    </li>
+                                                    <li aria-label="item-page-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                        20</li>
+                                                    <li aria-label="item-page-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                        50</li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                </div>
+
                             </div>
 
                             <div aria-label="analytical-data" id="analytical-data"
@@ -2130,8 +2438,77 @@
 
                             </div>
 
-                            <div aria-label="structure" id="structure" class="prof-general__content">
-                                структура
+                            <div aria-label="structure" id="structure" class="prof-general__content mix-display-none">
+                                <div class="prof-structure">
+                                    <h3 class="prof-structure__title heading-h3">Структура</h3>
+                                    <p class="prof-structure__subtitle heading-h5">Руководитель отдела</p>
+                                    <div class="prof-structure__card prof-structure__card_main">
+                                        <div class="prof-structure__marker prof-structure__marker_main"></div>
+                                        <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар" class="prof-structure__photo">
+                                        <div class="prof-structure__description">
+                                            <h4 class="prof-structure__card-title heading-h3">Баженова Ольга</h4>
+                                            <p class="prof-structure__card-subtitle heading-h5">Руководитель отдела</p>
+                                            <p class="prof-structure__card-department text-p3">Отдел SAP и анализа</p>
+                                        </div>
+                                    </div>
+                                    <p class="prof-structure__subtitle heading-h5">Менеджеры</p>
+                                    <ul class="prof-structure__cards-container">
+                                        <li class="prof-structure__card">
+                                            <div class="prof-structure__marker"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар" class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по брокериджу</p>
+                                                <p class="prof-structure__card-department text-p3">Отдел аренды и брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card">
+                                            <div class="prof-structure__marker"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар" class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по брокериджу</p>
+                                                <p class="prof-structure__card-department text-p3">Отдел аренды и брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card">
+                                            <div class="prof-structure__marker"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар" class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по брокериджу</p>
+                                                <p class="prof-structure__card-department text-p3">Отдел аренды и брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card">
+                                            <div class="prof-structure__marker"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар" class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по брокериджу</p>
+                                                <p class="prof-structure__card-department text-p3">Отдел аренды и брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card">
+                                            <div class="prof-structure__marker"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар" class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по брокериджу</p>
+                                                <p class="prof-structure__card-department text-p3">Отдел аренды и брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card">
+                                            <div class="prof-structure__marker"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар" class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по брокериджу</p>
+                                                <p class="prof-structure__card-department text-p3">Отдел аренды и брокериджа</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div aria-label="offers" id="offers" class="prof-general__content mix-display-none">
@@ -2276,111 +2653,6 @@
                                             <li class="prof-table__row-content heading-h5">02.02.2022</li>
                                         </ul>
                                     </div>
-
-                                    <ul class="prof-general__cards-container mix-display-none">
-                                        <li class="prof-card">
-                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
-                                                class="prof-card__photo">
-                                            <p class="prof-card__address heading-h4"><span
-                                                    class="prof-marker prof-marker_type_hot"></span>Москва, Ул. Льва
-                                                Толстого, дом 23, корп.1</p>
-                                            <p class="prof-card__number text-p3">№13246578</p>
-                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
-                                            <div class="prof-card__wrapper-status">
-                                                <p class="prof-card__status text-p3"><span
-                                                        class="prof-marker prof-marker_type_red"></span>Скоро освободится
-                                                </p><span class="prof-marker"></span>
-                                            </div>
-
-
-                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
-                                        </li>
-                                        <li class="prof-card prof-card_active">
-                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
-                                                class="prof-card__photo">
-                                            <p class="prof-card__address heading-h4"><span
-                                                    class="prof-marker prof-marker_type_hot"></span>Москва, Ул. Льва
-                                                Толстого, дом 23, корп.1</p>
-                                            <p class="prof-card__number text-p3">№13246578</p>
-                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
-                                            <div class="prof-card__wrapper-status">
-                                                <p class="prof-card__status text-p3"><span
-                                                        class="prof-marker prof-marker_type_green"></span>Свободно</p><span
-                                                    class="prof-marker prof-marker_type_ring"></span>
-                                            </div>
-
-                                            <p class="prof-card__bet text-p3">Предложенная ставка: <span
-                                                    class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
-                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
-                                        </li>
-                                        <li class="prof-card">
-                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
-                                                class="prof-card__photo">
-                                            <p class="prof-card__address heading-h4"><span
-                                                    class="prof-marker"></span>Москва, Ул. Льва Толстого, дом 23, корп.1</p>
-                                            <p class="prof-card__number text-p3">№13246578</p>
-                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
-                                            <div class="prof-card__wrapper-status">
-                                                <p class="prof-card__status text-p3"><span
-                                                        class="prof-marker prof-marker_type_yellow"></span>В архиве</p><span
-                                                    class="prof-marker prof-marker_type_ring-active"></span>
-                                            </div>
-
-
-                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
-                                        </li>
-                                        <li class="prof-card">
-                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
-                                                class="prof-card__photo">
-                                            <p class="prof-card__address heading-h4"><span
-                                                    class="prof-marker"></span>Москва, Ул. Льва Толстого, дом 23, корп.1</p>
-                                            <p class="prof-card__number text-p3">№13246578</p>
-                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
-                                            <div class="prof-card__wrapper-status">
-                                                <p class="prof-card__status text-p3"><span
-                                                        class="prof-marker prof-marker_type_yellow"></span>В архиве</p><span
-                                                    class="prof-marker"></span>
-                                            </div>
-
-                                            <p class="prof-card__bet text-p3">Предложенная ставка: <span
-                                                    class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
-                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
-                                        </li>
-                                        <li class="prof-card">
-                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
-                                                class="prof-card__photo">
-                                            <p class="prof-card__address heading-h4"><span
-                                                    class="prof-marker prof-marker_type_hot"></span>Москва, Ул. Льва
-                                                Толстого, дом 23, корп.1</p>
-                                            <p class="prof-card__number text-p3">№13246578</p>
-                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
-                                            <div class="prof-card__wrapper-status">
-                                                <p class="prof-card__status text-p3"><span
-                                                        class="prof-marker prof-marker_type_red"></span>Скоро освободится
-                                                </p><span class="prof-marker"></span>
-                                            </div>
-
-                                            <p class="prof-card__bet text-p3">Предложенная ставка: <span
-                                                    class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
-                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
-                                        </li>
-                                        <li class="prof-card">
-                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
-                                                class="prof-card__photo">
-                                            <p class="prof-card__address heading-h4"><span
-                                                    class="prof-marker"></span>Москва, Ул. Льва Толстого, дом 23, корп.1</p>
-                                            <p class="prof-card__number text-p3">№13246578</p>
-                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
-                                            <div class="prof-card__wrapper-status">
-                                                <p class="prof-card__status text-p3"><span
-                                                        class="prof-marker prof-marker_type_green"></span>Свободно</p><span
-                                                    class="prof-marker prof-marker_type_ring"></span>
-                                            </div>
-
-
-                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
-                                        </li>
-                                    </ul>
 
                                     <div class="main main_page_profile">
                                         <div class="main__pagination main__pagination_type_profile">
