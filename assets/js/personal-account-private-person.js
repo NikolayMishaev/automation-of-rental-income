@@ -368,4 +368,37 @@
             }
         });
     }
+
+    const checkboxsActive = document.querySelectorAll(
+        ".prof-table__test-checkbox-active"
+    );
+    const checkboxs = document.querySelectorAll(".prof-table__test-checkbox");
+
+    checkboxsActive.forEach((i) =>
+        i.addEventListener("click", (e) => {
+            if (
+                e.target.classList.contains("prof-table__test-checkbox-active")
+            ) {
+                e.target.classList.remove("prof-table__test-checkbox-active");
+                e.target.classList.add("prof-table__test-checkbox");
+            } else {
+                e.target.classList.add("prof-table__test-checkbox-active");
+                e.target.classList.remove("prof-table__test-checkbox");
+            }
+        })
+    );
+
+    checkboxs.forEach((i) =>
+        i.addEventListener("click", (e) => {
+            if (
+                e.target.classList.contains("prof-table__test-checkbox-active")
+            ) {
+                e.target.classList.remove("prof-table__test-checkbox-active");
+                e.target.classList.add("prof-table__test-checkbox");
+            } else {
+                e.target.classList.add("prof-table__test-checkbox-active");
+                e.target.classList.remove("prof-table__test-checkbox");
+            }
+        })
+    );
 })();

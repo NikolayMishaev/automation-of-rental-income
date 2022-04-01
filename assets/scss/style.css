@@ -6787,6 +6787,8 @@ main .container {
   height: 20px;
   background: url("./../images/switch-on.jpg") no-repeat center;
   margin-right: 4px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .prof-card {

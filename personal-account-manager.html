@@ -175,9 +175,9 @@
                             <nav class="prof-general__navigation">
                                 <!-- активный таб имеет класс: prof-general__button_active -->
                                 <button aria-label="objects" type="button"
-                                    class="prof-general__button text-p1">Объекты</button>
+                                    class="prof-general__button prof-general__button_active text-p1">Объекты</button>
                                 <button aria-label="counterparty-questionnaires" type="button"
-                                    class="prof-general__button prof-general__button_active text-p1">Анкеты контрагентов</button>
+                                    class="prof-general__button text-p1">Анкеты контрагентов</button>
                                 <button aria-label="analytical-data" type="button"
                                     class="prof-general__button text-p1">Аналитические данные</button>
                                 <button aria-label="structure" type="button"
@@ -187,7 +187,7 @@
                             </nav>
 
 
-                            <div aria-label="objects" id="objects" class="prof-general__content mix-display-none">
+                            <div aria-label="objects" id="objects" class="prof-general__content">
                                 <div class="prof-control-panel">
                                     <div class="prof-control-panel__buttons-container">
                                         <button aria-label="button-list" id="button-list"
@@ -299,7 +299,7 @@
                                     </label>
                                 </div>
 
-                                <div class="prof-table mix-display-none">
+                                <div class="prof-table">
                                     <ul class="prof-table__row prof-table__row_style_objects">
                                         <li class="prof-table__row-heading text-p2">Адрес объекта</li>
                                         <li class="prof-table__row-heading text-p2">Номер</li>
@@ -423,7 +423,7 @@
                                     </ul>
                                 </div>
 
-                                <ul class="prof-general__cards-container">
+                                <ul class="prof-general__cards-container mix-display-none">
                                     <li class="prof-card">
                                         <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
                                             class="prof-card__photo">
@@ -619,7 +619,7 @@
                             </div>
 
                             <div aria-label="counterparty-questionnaires" id="counterparty-questionnaires"
-                                class="prof-general__content ">
+                                class="prof-general__content mix-display-none">
                                 <div class="prof-control-panel">
                                     <h3 class="prof-control-panel__title prof-control-panel__title_type_agent heading-h3">Анкеты контрагентов</h3>
                                     <label id="label-select-status"
