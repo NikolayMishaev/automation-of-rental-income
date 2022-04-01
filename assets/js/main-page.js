@@ -1,4 +1,9 @@
 (function () {
+    // стейты
+    const stateMain = {
+        currentOpenLeftBlock: null,
+    };
+
     // логика табов, выбор: "список" или "карта"
     const controlPanelBtns = document.querySelectorAll(".main-btn");
     const btnList = document.querySelector("#btn-list");
