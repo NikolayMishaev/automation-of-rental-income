@@ -11,8 +11,8 @@ $grey-50: #919c9e;
 $grey60: #6d7678;
 $grey60-2: #6c737d;
 $grey70: #50565e;
-$grey80: #3c4142;
-$grey90: #2b3030;
+$grey80: #3b4047;
+$grey90: #050505;
 $grey100: #222429;
 $red10: #feebee;
 $error: #f44336;
@@ -63,8 +63,8 @@ $transition: all 0.5s;
 // Radius
 
 // Box-shadows
-$shadow-100: 0px 24px 38px rgba(80, 86, 94, 0.04),
-    0px 9px 46px rgba(80, 86, 94, 0.04), 0px 11px 15px rgba(80, 86, 94, 0.1);
+$shadow-100: 0px 24px 38px rgba(80, 86, 94, 0.04), 0px 9px 46px rgba(80, 86, 94, 0.04),
+  0px 11px 15px rgba(80, 86, 94, 0.1);
 
 // Border
 $border-CFD4DC: rem(1px) solid $grey30;
