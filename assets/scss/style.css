@@ -6511,6 +6511,12 @@ main .container {
   }
 }
 
+.prof-control-panel__search_type_offers {
+  width: 743px;
+  margin: 0;
+  margin-left: 37px;
+}
+
 .prof-control-panel__input-search {
   background: url(./../images/icons/main-filters-search.svg) no-repeat 13px center/15px;
   padding: 4px 12px 4px 36px;
@@ -6546,6 +6552,11 @@ main .container {
 .prof-table__row_style_manager {
   -ms-grid-columns: 327px 70px 120px 80px 90px 146px 56px;
       grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
+}
+
+.prof-table__row_style_offers {
+  -ms-grid-columns: 278px 70px 120px 85px 120px 120px 94px;
+      grid-template-columns: 278px 70px 120px 85px 120px 120px 94px;
 }
 
 .prof-table__row-heading {
@@ -6718,6 +6729,21 @@ main .container {
   height: 12px;
   background: url("./../images/icons/profile-star-active.svg") no-repeat center;
   margin: 0 4px;
+}
+
+.prof-marker_type_eye {
+  width: 12px;
+  height: 8px;
+  background: url("./../images/icons/profile-manage-eye.svg") no-repeat center;
+  margin-right: 4px;
+}
+
+.prof-marker_type_eye-close {
+  width: 12px;
+  height: 12px;
+  background: url("./../images/icons/profile-manage-eye-close.svg") no-repeat center;
+  margin-right: 4px;
+  margin-top: 2px;
 }
 
 .pagination__list {

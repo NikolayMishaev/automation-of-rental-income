@@ -175,7 +175,7 @@
                             <nav class="prof-general__navigation">
                                 <!-- активный таб имеет класс: prof-general__button_active -->
                                 <button aria-label="objects" type="button"
-                                    class="prof-general__button prof-general__button_active text-p1">Объекты</button>
+                                    class="prof-general__button text-p1">Объекты</button>
                                 <button aria-label="counterparty-questionnaires" type="button"
                                     class="prof-general__button text-p1">Анкеты контрагентов</button>
                                 <button aria-label="analytical-data" type="button"
@@ -183,11 +183,11 @@
                                 <button aria-label="structure" type="button"
                                     class="prof-general__button text-p1">Структура</button>
                                 <button aria-label="offers" type="button"
-                                    class="prof-general__button text-p1">Предложения</button>
+                                    class="prof-general__button prof-general__button_active text-p1">Предложения</button>
                             </nav>
 
 
-                            <div aria-label="objects" id="objects" class="prof-general__content">
+                            <div aria-label="objects" id="objects" class="prof-general__content mix-display-none">
                                 <div class="prof-control-panel">
                                     <div class="prof-control-panel__buttons-container">
                                         <button aria-label="button-list" id="button-list"
@@ -580,15 +580,709 @@
 
                             <div aria-label="analytical-data" id="analytical-data"
                                 class="prof-general__content mix-display-none">
-                                аналитика
+                                    <div class="prof-control-panel">
+                                        <div class="prof-control-panel__buttons-container">
+                                            <button aria-label="button-list" id="button-list"
+                                                class="prof-control-panel__button prof-control-panel__button_active heading-h4">Список</button>
+                                            <button aria-label="button-cards" id="button-cards"
+                                                class="prof-control-panel__button heading-h4">Карточки</button>
+                                        </div>
+                                        <label class="prof-control-panel__checkbox-label text-p2">
+                                            <input type="checkbox" class="prof-control-panel__checkbox">
+                                            Только выгодные предложения
+                                        </label>
+                                        <label id="label-select-status"
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2">Статус:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
+                                            <input id="input-select-status" type="text" disabled="true"
+                                                class="prof-control-panel__select-input" value="Все">
+                                            <div id="submenu-select-status"
+                                                class="main-submenu main-submenu_style_prof-status">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
+                                                        Объекты</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input name="object-type"
+                                                                class="prof-control-panel__input-hidden" type="radio"
+                                                                checked>
+                                                            <span class="prof-control-panel__visible-radio"></span>
+                                                            Все</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input name="object-type"
+                                                                class="prof-control-panel__input-hidden" type="radio">
+                                                            <span class="prof-control-panel__visible-radio"></span>
+                                                            Только выгодные</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
+                                                        Статус объекта</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input id="input-select-status-checkbox-free"
+                                                                class="prof-control-panel__input-hidden" type="checkbox">
+                                                            <span class="prof-control-panel__visible-checkbox"></span>
+                                                            Свободно</label></li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <label class="prof-control-panel__label-custom">
+                                                            <input id="input-select-status-checkbox-soon-free"
+                                                                class="prof-control-panel__input-hidden" type="checkbox">
+                                                            <span class="prof-control-panel__visible-checkbox"></span>
+                                                            Скоро освободится</label>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                        <button id="button-confirm-select-status"
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                        <label class="prof-control-panel__search mix-label">
+                                            <input type="text" class="prof-control-panel__input-search mix-input"
+                                                placeholder=" ">
+                                            <span class="prof-control-panel__caption mix-caption">Поиск</span>
+                                        </label>
+                                        <label id="label-select-sort"
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_sort text-p2">Сортировать:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div id="cursor-select-sort" class="prof-control-panel__cursor"></div>
+                                            <input id="input-select-sort" type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_sort"
+                                                value="Сначала выгодные">
+                                            <div id="submenu-select-sort"
+                                                class="main-submenu main-submenu_style_prof-status">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
+                                                        Сортировка</li>
+                                                    <li aria-label="item-sort-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                                        Все
+                                                    </li>
+                                                    <li aria-label="item-sort-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                                        Сначала выгодные
+                                                    </li>
+                                                    <li aria-label="item-sort-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                                        Сначала дешевые</li>
+                                                    <li aria-label="item-sort-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                                        Сначала дорогие</li>
+                                                    <li aria-label="item-sort-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                                        Сначала новые
+                                                    </li>
+                                                    <li aria-label="item-sort-menu"
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                                        Сначала старые
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                    </div>
+
+                                    <div class="prof-table">
+                                        <ul class="prof-table__row prof-table__row_style_manager">
+                                            <li class="prof-table__row-heading text-p2">Адрес объекта</li>
+                                            <li class="prof-table__row-heading text-p2">Номер</li>
+                                            <li class="prof-table__row-heading text-p2">Код ВП</li>
+                                            <li class="prof-table__row-heading text-p2">Категория</li>
+                                            <li class="prof-table__row-heading text-p2">Площадь, м<span
+                                                    class="prof-table__index">2</span></li>
+                                            <li class="prof-table__row-heading text-p2">Стоимость в месяц, &#8381;</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_manager">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_green"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">OARU06/175/67</li>
+                                            <li class="prof-table__row-content heading-h5">А1</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">44287</li>
+                                            <li class="prof-table__row-content">
+                                                <div class="prof-control-panel">
+                                                    <label class="prof-control-panel__label-custom">
+                                                        <input id="input-select-status-checkbox-free"
+                                                            class="prof-control-panel__input-hidden" type="checkbox">
+                                                        <span class="prof-control-panel__visible-checkbox"></span>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_manager">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_green"></span><span
+                                                    class="prof-marker prof-marker_type_hot"></span>119021. Ул. Льва
+                                                Толстого, дом 23, корп.1</li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">OARU06/175/67</li>
+                                            <li class="prof-table__row-content heading-h5">А1</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">44287</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_manager">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_red"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">OARU06/175/67</li>
+                                            <li class="prof-table__row-content heading-h5">А1</li>
+                                            <li class="prof-table__row-content heading-h5">150</li>
+                                            <li class="prof-table__row-content heading-h5">12000</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_manager">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_green"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">OARU06/175/67</li>
+                                            <li class="prof-table__row-content heading-h5">А1</li>
+                                            <li class="prof-table__row-content heading-h5">150</li>
+                                            <li class="prof-table__row-content heading-h5">12000<span
+                                                    class="prof-marker prof-marker_type_ring-active"></span>
+                                            </li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_manager">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_green"></span><span
+                                                    class="prof-marker prof-marker_type_hot"></span>119021. Ул. Льва
+                                                Толстого, дом 23, корп.1</li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">OARU06/175/67</li>
+                                            <li class="prof-table__row-content heading-h5">А1</li>
+                                            <li class="prof-table__row-content heading-h5">200</li>
+                                            <li class="prof-table__row-content heading-h5">50123</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_manager">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_red"></span><span
+                                                    class="prof-marker prof-marker_type_hot"></span>длинный адрес скроллится
+                                                119021. Ул. Льва Толстого, дом 23, корп.1</li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">OARU06/175/67</li>
+                                            <li class="prof-table__row-content heading-h5">А1</li>
+                                            <li class="prof-table__row-content heading-h5">200</li>
+                                            <li class="prof-table__row-content heading-h5">20212<span
+                                                    class="prof-marker prof-marker_type_ring"></span></li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_manager">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_green"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">OARU06/175/67</li>
+                                            <li class="prof-table__row-content heading-h5">А1</li>
+                                            <li class="prof-table__row-content heading-h5">165</li>
+                                            <li class="prof-table__row-content heading-h5">34200</li>
+                                        </ul>
+                                    </div>
+
+                                    <ul class="prof-general__cards-container mix-display-none">
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker prof-marker_type_hot"></span>Москва, Ул. Льва
+                                                Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_red"></span>Скоро освободится
+                                                </p><span class="prof-marker"></span>
+                                            </div>
+
+
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card prof-card_active">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker prof-marker_type_hot"></span>Москва, Ул. Льва
+                                                Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_green"></span>Свободно</p><span
+                                                    class="prof-marker prof-marker_type_ring"></span>
+                                            </div>
+
+                                            <p class="prof-card__bet text-p3">Предложенная ставка: <span
+                                                    class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker"></span>Москва, Ул. Льва Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>В архиве</p><span
+                                                    class="prof-marker prof-marker_type_ring-active"></span>
+                                            </div>
+
+
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker"></span>Москва, Ул. Льва Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>В архиве</p><span
+                                                    class="prof-marker"></span>
+                                            </div>
+
+                                            <p class="prof-card__bet text-p3">Предложенная ставка: <span
+                                                    class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker prof-marker_type_hot"></span>Москва, Ул. Льва
+                                                Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_red"></span>Скоро освободится
+                                                </p><span class="prof-marker"></span>
+                                            </div>
+
+                                            <p class="prof-card__bet text-p3">Предложенная ставка: <span
+                                                    class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker"></span>Москва, Ул. Льва Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_green"></span>Свободно</p><span
+                                                    class="prof-marker prof-marker_type_ring"></span>
+                                            </div>
+
+
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                    </ul>
+
+                                    <div class="main main_page_profile">
+                                        <div class="main__pagination main__pagination_type_profile">
+                                            <nav class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-left"></button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_active">1</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">2</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">...</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">12</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">13</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
+                                                                                              и влево: pagination__button_type_arrow-left-active -->
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                        <div class="prof-control-panel">
+                                            <label id="label-select-page"
+                                                class="prof-control-panel__select-label text-p2">Показывать объектов на
+                                                странице:
+                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <input id="input-select-page" type="text" disabled="true"
+                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                    value="5">
+                                                <div id="submenu-select-page"
+                                                    class="main-submenu main-submenu_style_prof-page">
+                                                    <ul class="main-submenu__list">
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            5
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            10
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            20</li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            50</li>
+                                                    </ul>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                    </div>
                             </div>
 
                             <div aria-label="structure" id="structure" class="prof-general__content mix-display-none">
                                 структура
                             </div>
 
-                            <div aria-label="offers" id="offers" class="prof-general__content mix-display-none">
-                                предложения
+                            <div aria-label="offers" id="offers" class="prof-general__content">
+                                    <div class="prof-control-panel">
+                                        <p class="prof-control-panel__title heading-h3">Список предложений</p>
+                                        <label class="prof-control-panel__search prof-control-panel__search_type_offers mix-label">
+                                            <input type="text" class="prof-control-panel__input-search mix-input"
+                                                placeholder=" ">
+                                            <span class="prof-control-panel__caption mix-caption">Поиск</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="prof-table">
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-heading text-p2">Адрес объекта</li>
+                                            <li class="prof-table__row-heading text-p2">Номер</li>
+                                            <li class="prof-table__row-heading text-p2">Контрагент</li>
+                                            <li class="prof-table__row-heading text-p2">Площадь, м<span
+                                                class="prof-table__index">2</span></li>
+                                            <li class="prof-table__row-heading text-p2">Текущая арендная ставка</li>
+                                            <li class="prof-table__row-heading text-p2">Предложенная арендная ставка</li>
+                                            <li class="prof-table__row-heading text-p2">Поступление предложения</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye-close"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye"></span><span
+                                                    class="prof-marker prof-marker_type_hot"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye-close"></span><span
+                                                    class="prof-marker prof-marker_type_hot"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">12653132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye-close"></span><span
+                                                    class="prof-marker prof-marker_type_hot"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">12653132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">12653132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye-close"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye-close"></span><span
+                                                    class="prof-marker prof-marker_type_hot"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                        <ul class="prof-table__row prof-table__row_style_offers">
+                                            <li class="prof-table__row-content heading-h5"><span
+                                                    class="prof-marker prof-marker_type_eye"></span><span
+                                                    class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+                                            </li>
+                                            <li class="prof-table__row-content heading-h5">123132</li>
+                                            <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                                            <li class="prof-table__row-content heading-h5">100</li>
+                                            <li class="prof-table__row-content heading-h5">1100</li>
+                                            <li class="prof-table__row-content heading-h5">1200</li>
+                                            <li class="prof-table__row-content">02.02.2022</li>
+                                        </ul>
+                                    </div>
+
+                                    <ul class="prof-general__cards-container mix-display-none">
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker prof-marker_type_hot"></span>Москва, Ул. Льва
+                                                Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_red"></span>Скоро освободится
+                                                </p><span class="prof-marker"></span>
+                                            </div>
+
+
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card prof-card_active">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker prof-marker_type_hot"></span>Москва, Ул. Льва
+                                                Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_green"></span>Свободно</p><span
+                                                    class="prof-marker prof-marker_type_ring"></span>
+                                            </div>
+
+                                            <p class="prof-card__bet text-p3">Предложенная ставка: <span
+                                                    class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker"></span>Москва, Ул. Льва Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>В архиве</p><span
+                                                    class="prof-marker prof-marker_type_ring-active"></span>
+                                            </div>
+
+
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker"></span>Москва, Ул. Льва Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>В архиве</p><span
+                                                    class="prof-marker"></span>
+                                            </div>
+
+                                            <p class="prof-card__bet text-p3">Предложенная ставка: <span
+                                                    class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker prof-marker_type_hot"></span>Москва, Ул. Льва
+                                                Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_red"></span>Скоро освободится
+                                                </p><span class="prof-marker"></span>
+                                            </div>
+
+                                            <p class="prof-card__bet text-p3">Предложенная ставка: <span
+                                                    class="prof-card__bet-price heading-h5">1 200 &#8381;</span></p>
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                        <li class="prof-card">
+                                            <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
+                                                class="prof-card__photo">
+                                            <p class="prof-card__address heading-h4"><span
+                                                    class="prof-marker"></span>Москва, Ул. Льва Толстого, дом 23, корп.1</p>
+                                            <p class="prof-card__number text-p3">№13246578</p>
+                                            <p class="prof-card__price heading-h5">44 287 &#8381; в месяц</p>
+                                            <div class="prof-card__wrapper-status">
+                                                <p class="prof-card__status text-p3"><span
+                                                        class="prof-marker prof-marker_type_green"></span>Свободно</p><span
+                                                    class="prof-marker prof-marker_type_ring"></span>
+                                            </div>
+
+
+                                            <button class="prof-card__button-delete text-p1">Удалить из избранного</button>
+                                        </li>
+                                    </ul>
+
+                                    <div class="main main_page_profile">
+                                        <div class="main__pagination main__pagination_type_profile">
+                                            <nav class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-left"></button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_active">1</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">2</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">...</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">12</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">13</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
+                                                                                              и влево: pagination__button_type_arrow-left-active -->
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                        <div class="prof-control-panel">
+                                            <label id="label-select-page"
+                                                class="prof-control-panel__select-label text-p2">Показывать объектов на
+                                                странице:
+                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <input id="input-select-page" type="text" disabled="true"
+                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                    value="5">
+                                                <div id="submenu-select-page"
+                                                    class="main-submenu main-submenu_style_prof-page">
+                                                    <ul class="main-submenu__list">
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            5
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            10
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            20</li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            50</li>
+                                                    </ul>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                    </div>
                             </div>
 
 

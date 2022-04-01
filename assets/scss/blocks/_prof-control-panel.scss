@@ -236,6 +236,11 @@
             width: unset;
             flex: 1;
         }
+        &_type_offers {
+            width: 743px;
+            margin: 0;
+            margin-left: 37px;
+        }
     }
     &__input-search {
         background: url(./../images/icons/main-filters-search.svg) no-repeat 13px center/15px;
