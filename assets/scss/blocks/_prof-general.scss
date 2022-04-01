@@ -117,6 +117,9 @@
             padding: 0;
             border: none;
         }
+        &:nth-child(2n) {
+            margin-top: 40px;
+        }
     }
     &__text {
         margin-top: rem(16px);
