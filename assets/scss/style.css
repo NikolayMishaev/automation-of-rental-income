@@ -6226,6 +6226,10 @@ main .container {
   padding-bottom: 3px;
 }
 
+.prof-general__agent-container {
+  margin-top: 16px;
+}
+
 .prof-general__forms-agent-container {
   display: -ms-grid;
   display: grid;
@@ -7590,6 +7594,9 @@ main .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .form-agent-card__info {
@@ -7628,5 +7635,16 @@ main .container {
 .form-agent-card__button_active {
   background-color: #2a9b43;
   color: white;
+}
+
+.form-agent-card__status {
+  color: #6D7678;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.form-agent-card__date {
+  color: #3C4142;
+  margin-left: 4px;
 }
 /*# sourceMappingURL=style.css.map */

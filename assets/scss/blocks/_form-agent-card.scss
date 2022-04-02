@@ -5,6 +5,7 @@
     padding: 16px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     &__info {
         display: flex;
         align-items: center;
@@ -32,5 +33,14 @@
             background-color: $accent-TCX50;
             color: white;
         }
+    }
+    &__status {
+        color: #6D7678;
+        margin-top: 8px;
+        width: 100%;
+    }
+    &__date {
+        color: #3C4142;
+        margin-left: 4px;
     }
 }

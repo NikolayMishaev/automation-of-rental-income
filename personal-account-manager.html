@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/scss/style.css" />
     <title>ЛК менеджер</title>
-    <script defer src="./assets/js/personal-account-manager.js"></script>
-    <script defer src="./assets/js/common-JS-to-all-pages.js"></script>
+    <script type="module" defer src="./assets/js/personal-account-manager.js"></script>
 </head>
 
 <body class="body">
@@ -190,10 +189,10 @@
                             <div aria-label="objects" id="objects" class="prof-general__content">
                                 <div class="prof-control-panel">
                                     <div class="prof-control-panel__buttons-container">
-                                        <button aria-label="button-list" id="button-list"
-                                            class="prof-control-panel__button prof-control-panel__button_active heading-h4">Список</button>
-                                        <button aria-label="button-cards" id="button-cards"
-                                            class="prof-control-panel__button heading-h4">Карточки</button>
+                                        <button aria-label="list"
+                                            class="prof-control-panel__button prof-control-panel__button_active heading-h4 objects-button">Список</button>
+                                        <button aria-label="cards"
+                                            class="prof-control-panel__button heading-h4 objects-button">Карточки</button>
                                     </div>
                                     <label class="prof-control-panel__checkbox-label text-p2">
                                         <input type="checkbox" class="prof-control-panel__checkbox">
@@ -299,7 +298,7 @@
                                     </label>
                                 </div>
 
-                                <div class="prof-table">
+                                <div class="prof-table" aria-label="list" id="objects-table">
                                     <ul class="prof-table__row prof-table__row_style_objects">
                                         <li class="prof-table__row-heading text-p2">Адрес объекта</li>
                                         <li class="prof-table__row-heading text-p2">Номер</li>
@@ -419,7 +418,7 @@
                                     </ul>
                                 </div>
 
-                                <ul class="prof-general__cards-container mix-display-none">
+                                <ul class="prof-general__cards-container mix-display-none" aria-label="cards" id="objects-cards">
                                     <li class="prof-card">
                                         <img src="./assets/images/hot-price-photo.jpg" alt="Фото помещения"
                                             class="prof-card__photo">
@@ -738,10 +737,10 @@
                                     <div class="prof-control-panel__row prof-control-panel__row_type_agent">
                                         <div
                                             class="prof-control-panel__buttons-container prof-control-panel__buttons-container_type_agent">
-                                            <button aria-label="button-list" id="button-list"
-                                                class="prof-control-panel__button prof-control-panel__button_active heading-h4">Актуальные</button>
-                                            <button aria-label="button-cards" id="button-cards"
-                                                class="prof-control-panel__button heading-h4">Архив</button>
+                                            <button aria-label="actual"
+                                                class="prof-control-panel__button prof-control-panel__button_active heading-h4 agent-button">Актуальные</button>
+                                            <button aria-label="archive"
+                                                class="prof-control-panel__button heading-h4 agent-button">Архив</button>
                                         </div>
                                         <label
                                             class="prof-control-panel__search prof-control-panel__search_type_agent mix-label">
@@ -757,147 +756,290 @@
 
                                 </div>
 
-                                <ul class="prof-general__forms-agent-container">
-                                    <li class="form-agent-card">
-                                        <div class="form-agent-card__info">
-                                            <div class="form-agent-card__icon"></div>
-                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
-                                            <p class="form-agent-card__caption text-p2"><span
-                                                    class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+                                <div class="prof-general__agent-container" aria-label="actual" id="agent-actual">
+                                    <ul class="prof-general__forms-agent-container">
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__caption text-p2"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>Новая</p>
 
-                                        </div>
-                                        <button class="form-agent-card__button text-p1">Уведомить</button>
-                                    </li>
-                                    <li class="form-agent-card">
-                                        <div class="form-agent-card__info">
-                                            <div class="form-agent-card__icon"></div>
-                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
-                                            <p class="form-agent-card__caption text-p2"><span
-                                                    class="prof-marker prof-marker_type_green"></span>Одобрено</p>
-
-                                        </div>
-                                        <button
-                                            class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
-                                    </li>
-                                    <li class="form-agent-card">
-                                        <div class="form-agent-card__info">
-                                            <div class="form-agent-card__icon"></div>
-                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
-                                            <p class="form-agent-card__caption text-p2"><span
-                                                    class="prof-marker prof-marker_type_red"></span>Отказано</p>
-
-                                        </div>
-                                        <button
-                                            class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
-                                    </li>
-                                    <li class="form-agent-card">
-                                        <div class="form-agent-card__info">
-                                            <div class="form-agent-card__icon"></div>
-                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
-                                            <p class="form-agent-card__caption text-p2"><span
-                                                    class="prof-marker prof-marker_type_yellow"></span>Новая</p>
-
-                                        </div>
-                                        <button class="form-agent-card__button text-p1">Уведомить</button>
-                                    </li>
-                                    <li class="form-agent-card">
-                                        <div class="form-agent-card__info">
-                                            <div class="form-agent-card__icon"></div>
-                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
-                                            <p class="form-agent-card__caption text-p2"><span
-                                                    class="prof-marker prof-marker_type_yellow"></span>Новая</p>
-
-                                        </div>
-                                        <button class="form-agent-card__button text-p1">Уведомить</button>
-                                    </li>
-                                    <li class="form-agent-card">
-                                        <div class="form-agent-card__info">
-                                            <div class="form-agent-card__icon"></div>
-                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
-                                            <p class="form-agent-card__caption text-p2"><span
-                                                    class="prof-marker prof-marker_type_yellow"></span>Новая</p>
-
-                                        </div>
-                                        <button
-                                            class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
-                                    </li>
-                                    <li class="form-agent-card">
-                                        <div class="form-agent-card__info">
-                                            <div class="form-agent-card__icon"></div>
-                                            <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
-                                            <p class="form-agent-card__caption text-p2"><span
-                                                    class="prof-marker prof-marker_type_yellow"></span>Новая</p>
-
-                                        </div>
-                                        <button
-                                            class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
-                                    </li>
-                                </ul>
-                                <div class="main main_page_profile main_page_agent">
-                                    <div class="main__pagination main__pagination_type_profile">
-                                        <nav class="pagination">
-                                            <ul class="pagination__list">
-                                                <li class="pagination__item pagination__item_style_profile">
-                                                    <button type="button"
-                                                        class="pagination__button pagination__button_type_arrow-left"></button>
-                                                </li>
-                                                <li class="pagination__item pagination__item_style_profile">
-                                                    <button type="button"
-                                                        class="pagination__button pagination__button_active">1</button>
-                                                </li>
-                                                <li class="pagination__item pagination__item_style_profile">
-                                                    <button type="button" class="pagination__button">2</button>
-                                                </li>
-                                                <li class="pagination__item pagination__item_style_profile">
-                                                    <button type="button" class="pagination__button">...</button>
-                                                </li>
-                                                <li class="pagination__item pagination__item_style_profile">
-                                                    <button type="button" class="pagination__button">12</button>
-                                                </li>
-                                                <li class="pagination__item pagination__item_style_profile">
-                                                    <button type="button" class="pagination__button">13</button>
-                                                </li>
-                                                <li class="pagination__item pagination__item_style_profile">
-                                                    <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
-                                                                                          и влево: pagination__button_type_arrow-left-active -->
-                                                    <button type="button"
-                                                        class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-
-                                    <div class="prof-control-panel">
-                                        <label id="label-select-page"
-                                            class="prof-control-panel__select-label text-p2">Показывать объектов на
-                                            странице:
-                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                            <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
-                                            <input id="input-select-page" type="text" disabled="true"
-                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
-                                                value="5">
-                                            <div id="submenu-select-page"
-                                                class="main-submenu main-submenu_style_prof-page">
-                                                <ul class="main-submenu__list">
-                                                    <li aria-label="item-page-menu"
-                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
-                                                        5
-                                                    </li>
-                                                    <li aria-label="item-page-menu"
-                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
-                                                        10
-                                                    </li>
-                                                    <li aria-label="item-page-menu"
-                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
-                                                        20</li>
-                                                    <li aria-label="item-page-menu"
-                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
-                                                        50</li>
-                                                </ul>
                                             </div>
-                                        </label>
-                                    </div>
+                                            <button class="form-agent-card__button text-p1">Уведомить</button>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__caption text-p2"><span
+                                                        class="prof-marker prof-marker_type_green"></span>Одобрено</p>
 
+                                            </div>
+                                            <button
+                                                class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__caption text-p2"><span
+                                                        class="prof-marker prof-marker_type_red"></span>Отказано</p>
+
+                                            </div>
+                                            <button
+                                                class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__caption text-p2"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+
+                                            </div>
+                                            <button class="form-agent-card__button text-p1">Уведомить</button>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__caption text-p2"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+
+                                            </div>
+                                            <button class="form-agent-card__button text-p1">Уведомить</button>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__caption text-p2"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+
+                                            </div>
+                                            <button
+                                                class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__caption text-p2"><span
+                                                        class="prof-marker prof-marker_type_yellow"></span>Новая</p>
+
+                                            </div>
+                                            <button
+                                                class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                        </li>
+                                    </ul>
+                                    <div class="main main_page_profile main_page_agent">
+                                        <div class="main__pagination main__pagination_type_profile">
+                                            <nav class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-left"></button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_active">1</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">2</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">...</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">12</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">13</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
+                                                                                              и влево: pagination__button_type_arrow-left-active -->
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                        <div class="prof-control-panel">
+                                            <label id="label-select-page"
+                                                class="prof-control-panel__select-label text-p2">Показывать объектов на
+                                                странице:
+                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <input id="input-select-page" type="text" disabled="true"
+                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                    value="5">
+                                                <div id="submenu-select-page"
+                                                    class="main-submenu main-submenu_style_prof-page">
+                                                    <ul class="main-submenu__list">
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            5
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            10
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            20</li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            50</li>
+                                                    </ul>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="prof-general__agent-container mix-display-none" aria-label="archive" id="agent-archive">
+                                    <ul class="prof-general__forms-agent-container">
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                        <li class="form-agent-card">
+                                            <div class="form-agent-card__info">
+                                                <div class="form-agent-card__icon"></div>
+                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__status text-p3">В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="main main_page_profile main_page_agent">
+                                        <div class="main__pagination main__pagination_type_profile">
+                                            <nav class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-left"></button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_active">1</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">2</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">...</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">12</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <button type="button" class="pagination__button">13</button>
+                                                    </li>
+                                                    <li class="pagination__item pagination__item_style_profile">
+                                                        <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
+                                                                                              и влево: pagination__button_type_arrow-left-active -->
+                                                        <button type="button"
+                                                            class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+
+                                        <div class="prof-control-panel">
+                                            <label id="label-select-page"
+                                                class="prof-control-panel__select-label text-p2">Показывать объектов на
+                                                странице:
+                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <input id="input-select-page" type="text" disabled="true"
+                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                    value="5">
+                                                <div id="submenu-select-page"
+                                                    class="main-submenu main-submenu_style_prof-page">
+                                                    <ul class="main-submenu__list">
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            5
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            10
+                                                        </li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            20</li>
+                                                        <li aria-label="item-page-menu"
+                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                            50</li>
+                                                    </ul>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                    </div>
                                 </div>
 
                             </div>
