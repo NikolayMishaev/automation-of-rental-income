@@ -45,6 +45,16 @@
             min-width: rem(260px);
             overflow: auto;
         }
+        &_type_notify {
+            min-width: 600px;
+            min-height: 264px;
+            background: #ffffff;
+            box-shadow: 0px 24px 38px rgba(80, 86, 94, 0.04), 0px 9px 46px rgba(80, 86, 94, 0.04),
+                0px 11px 15px rgba(80, 86, 94, 0.1);
+            border-radius: 12px;
+            padding: 20px 0;
+            max-width: unset;
+        }
         &:hover {
             cursor: auto;
         }
@@ -52,16 +62,16 @@
     &__close {
         width: rem(14px);
         height: rem(14px);
-        background: url('./../images/icons/popup-close.svg') no-repeat center;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1;
-            border: none;
-            transition: $transition;
+        background: url("./../images/icons/popup-close.svg") no-repeat center;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+        border: none;
+        transition: $transition;
         &:hover {
             cursor: pointer;
-            opacity: .7;
+            opacity: 0.7;
             transform: scale(1.2);
         }
         @media #{$screen-mobile} {
