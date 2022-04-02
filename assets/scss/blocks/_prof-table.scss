@@ -78,12 +78,20 @@
         height: 20px;
         background: url('./../images/switch-off.jpg') no-repeat center;
         margin-right: 4px;
+        transition: $transition;
+        &:hover {
+            opacity: .8;
+            cursor: pointer;
+        }
     }
     &__test-checkbox-active {
         width: 32px;
         height: 20px;
         background: url('./../images/switch-on.jpg') no-repeat center;
         margin-right: 4px;
-        transition: $transition;
+        &:hover {
+            opacity: .8;
+            cursor: pointer;
+        }
     }
 }

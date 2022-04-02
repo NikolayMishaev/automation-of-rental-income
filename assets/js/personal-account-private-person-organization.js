@@ -2,21 +2,14 @@
     // логика переключения табов: "Документы" "Избранные объекты" "О себе"
     const tabButtons = document.querySelectorAll(".prof-general__button");
 
-    const generalContentObjects = document.querySelector("#objects");
-    const generalContentCounterpartyQuestionnaires = document.querySelector(
-        "#counterparty-questionnaires"
-    );
-    const generalContentAnalyticalData =
-        document.querySelector("#analytical-data");
-    const generalContentStructure = document.querySelector("#structure");
-    const generalContentOffers = document.querySelector("#offers");
+    const generalContentDocuments = document.querySelector("#documents");
+    const generalContentFavourites = document.querySelector("#favourites");
+    const generalContentAboutMe = document.querySelector("#about-me");
 
     const arrayGeneralContent = [
-        generalContentObjects,
-        generalContentCounterpartyQuestionnaires,
-        generalContentAnalyticalData,
-        generalContentStructure,
-        generalContentOffers,
+        generalContentDocuments,
+        generalContentFavourites,
+        generalContentAboutMe,
     ];
 
     tabButtons.forEach((i) =>
@@ -368,37 +361,4 @@
             }
         });
     }
-
-    const checkboxsActive = document.querySelectorAll(
-        ".prof-table__test-checkbox-active"
-    );
-    const checkboxs = document.querySelectorAll(".prof-table__test-checkbox");
-
-    checkboxsActive.forEach((i) =>
-        i.addEventListener("click", (e) => {
-            if (
-                e.target.classList.contains("prof-table__test-checkbox-active")
-            ) {
-                e.target.classList.remove("prof-table__test-checkbox-active");
-                e.target.classList.add("prof-table__test-checkbox");
-            } else {
-                e.target.classList.add("prof-table__test-checkbox-active");
-                e.target.classList.remove("prof-table__test-checkbox");
-            }
-        })
-    );
-
-    checkboxs.forEach((i) =>
-        i.addEventListener("click", (e) => {
-            if (
-                e.target.classList.contains("prof-table__test-checkbox-active")
-            ) {
-                e.target.classList.remove("prof-table__test-checkbox-active");
-                e.target.classList.add("prof-table__test-checkbox");
-            } else {
-                e.target.classList.add("prof-table__test-checkbox-active");
-                e.target.classList.remove("prof-table__test-checkbox");
-            }
-        })
-    );
 })();

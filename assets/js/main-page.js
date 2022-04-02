@@ -1,4 +1,9 @@
 (function () {
+    // стейты
+    const stateMain = {
+        currentOpenLeftBlock: null,
+    };
+
     // логика табов, выбор: "список" или "карта"
     const controlPanelBtns = document.querySelectorAll(".main-btn");
     const btnList = document.querySelector("#btn-list");
@@ -404,7 +409,13 @@
             return;
         }
         if (e.target.closest(".card-price_style_main")) {
-            location.href = currentLink;
+            e.target.closest(".card-price_style_main").style.transform =
+                "scale(4) translateX(500px)";
+            e.target.closest(".card-price_style_main").style.opacity = "0.1";
+            e.target.closest(".card-price_style_main").style.zIndex = "10";
+            setTimeout(() => {
+                location.href = currentLink;
+            }, 0);
         }
     });
 
@@ -489,6 +500,44 @@
                     .closest(".main-submenu_style_filters-adress")
                     .classList.remove("mix-visible");
             }
+        })
+    );
+
+    const inputCityNamePopup = document.querySelector("#inputCityNamePopup");
+    const containersCityName = document.querySelectorAll(
+        ".popup-change-city__list"
+    );
+    const popupChangeCity = document.querySelector(
+        ".main-popup_type_change-city"
+    );
+    containersCityName.forEach((i) =>
+        i.addEventListener("click", (e) => {
+            if (e.target.classList.contains("popup-change-city__item")) {
+                setTimeout(() => {
+                    popupChangeCity.classList.remove("mix-visible-scale");
+                }, 750);
+            }
+        })
+    );
+
+    containersCityName.forEach((i) =>
+        i.addEventListener("mouseover", (e) => {
+            if (e.target.classList.contains("popup-change-city__item")) {
+                inputCityNamePopup.value = e.target.textContent.trim();
+            }
+        })
+    );
+
+    const cityPopupAll = document.querySelectorAll(
+        ".popup-change-city__item-popup"
+    );
+
+    cityPopupAll.forEach((i) =>
+        i.addEventListener("click", (e) => {
+            cityPopupAll.forEach((i) =>
+                i.classList.remove("popup-change-city__item_type_active")
+            );
+            e.target.classList.add("popup-change-city__item_type_active");
         })
     );
 })();
