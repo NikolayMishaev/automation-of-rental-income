@@ -1,0 +1,32 @@
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $grey80;
+  &__checkbox {
+    appearance: none;
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 8px;
+    outline: 1px solid $grey30;
+    border-radius: 2px;
+    box-shadow: none;
+    position: relative;
+    &:checked {
+      background-color: $accent-TCX50;
+      outline: none;
+    }
+    &:checked:after {
+      content: "";
+      background-color: transparent;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      height: 8px;
+      width: 5px;
+      border-bottom: 2px solid white;
+      border-right: 2px solid white;
+    }
+  }
+}
