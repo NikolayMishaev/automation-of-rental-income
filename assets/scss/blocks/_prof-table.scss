@@ -50,13 +50,20 @@
         &_style_offers {
             grid-template-columns: 278px 70px 120px 85px 120px 120px 94px;
         }
+        &_style_one-row {
+            padding: 14px 0;
+            display: flex;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
     }
     &__row-heading {
         color: #6d7678;
-        padding: 14px 0;
+        padding: 16px 0;
     }
     &__row-content {
-        height: 54px;
+        padding: 16px 0;
         display: flex;
         align-items: center;
         color: #3c4142;
@@ -93,5 +100,8 @@
             opacity: .8;
             cursor: pointer;
         }
+    }
+    &__number {
+        margin-left: 4px;
     }
 }

@@ -6925,13 +6925,24 @@ main .container {
       grid-template-columns: 278px 70px 120px 85px 120px 120px 94px;
 }
 
+.prof-table__row_style_one-row {
+  padding: 14px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.prof-table__row_style_one-row:first-child {
+  margin-top: 0;
+}
+
 .prof-table__row-heading {
   color: #6d7678;
-  padding: 14px 0;
+  padding: 16px 0;
 }
 
 .prof-table__row-content {
-  height: 54px;
+  padding: 16px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6980,6 +6991,10 @@ main .container {
 .prof-table__test-checkbox-active:hover {
   opacity: .8;
   cursor: pointer;
+}
+
+.prof-table__number {
+  margin-left: 4px;
 }
 
 .prof-card {

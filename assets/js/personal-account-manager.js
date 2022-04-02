@@ -71,6 +71,86 @@ agentButtons.forEach((i) =>
     )
 );
 
+// логика переключения кнопок на вкладке "Аналитические данные"
+// количество зарегистрированных пользователей (контрагентов)
+
+const userButtons = document.querySelectorAll(".user-button");
+
+const contentUserList = document.querySelector("#user-list");
+const contentUserGraph = document.querySelector("#user-graph");
+
+userButtons.forEach((i) =>
+    i.addEventListener("click", (e) =>
+        switchButtons(
+            e.target,
+            userButtons,
+            [contentUserList, contentUserGraph],
+            "prof-control-panel__button_active",
+            "mix-display-none"
+        )
+    )
+);
+
+// логика переключения кнопок на вкладке "Аналитические данные"
+// размер предлагаемой арендной платы
+
+const sizeButtons = document.querySelectorAll(".size-button");
+
+const contentSizeList = document.querySelector("#size-list");
+const contentSizeGraph = document.querySelector("#size-graph");
+
+sizeButtons.forEach((i) =>
+    i.addEventListener("click", (e) =>
+        switchButtons(
+            e.target,
+            sizeButtons,
+            [contentSizeList, contentSizeGraph],
+            "prof-control-panel__button_active",
+            "mix-display-none"
+        )
+    )
+);
+
+// логика переключения кнопок на вкладке "Аналитические данные"
+// количество просмотров объектов
+
+const viewsButtons = document.querySelectorAll(".views-button");
+
+const contentViewsList = document.querySelector("#views-list");
+const contentViewsGraph = document.querySelector("#views-graph");
+
+viewsButtons.forEach((i) =>
+    i.addEventListener("click", (e) =>
+        switchButtons(
+            e.target,
+            viewsButtons,
+            [contentViewsList, contentViewsGraph],
+            "prof-control-panel__button_active",
+            "mix-display-none"
+        )
+    )
+);
+
+// логика переключения кнопок на вкладке "Аналитические данные"
+// зарегистрированные обращения
+
+const appealsButtons = document.querySelectorAll(".appeals-button");
+
+const contentAppealsList = document.querySelector("#appeals-list");
+const contentAppealsGraph = document.querySelector("#appeals-graph");
+
+appealsButtons.forEach((i) =>
+    i.addEventListener("click", (e) =>
+        switchButtons(
+            e.target,
+            appealsButtons,
+            [contentAppealsList, contentAppealsGraph],
+            "prof-control-panel__button_active",
+            "mix-display-none"
+        )
+    )
+);
+
 // логика сркытия таблицы при первой загрузке
 if (window.innerWidth < 1151) {
     hideTable();
