@@ -12,7 +12,8 @@
     }
     &__card {
         margin-top: 16px;
-        width: 478px;
+        width: 100%;
+        max-width: 478px;
         height: 88px;
         background-color: #f5f7f7;
         border: 1px solid #e3e7e8;

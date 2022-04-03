@@ -10,8 +10,7 @@
     <title>Главная</title>
     <script defer type="module" src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script defer type="module" src="./assets/js/swiper-main.js"></script>
-    <script defer src="./assets/js/common-JS-to-all-pages.js"></script>
-    <script defer src="./assets/js/main-page.js"></script>
+    <script defer type="module" src="./assets/js/main-page.js"></script>
 </head>
 
 <body class="body">
@@ -97,7 +96,7 @@
                     </svg>
                 </a>
                 <p class="header__city-select">Ваш город:</p>
-                <a href="#" class="header__city">Москва
+                <a aria-label='popup-city' href="#" class="header__city button-open-popup">Москва
                     <svg class="icon icon_header-select" viewBox="0 0 10 6" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -106,12 +105,12 @@
                     </svg>
                 </a>
                 <nav class="menu menu_place_header">
-                    <a class="menu__profile" href="./personal-account-private-person.html">
+                    <a class="menu__profile mix-display-flex" href="./personal-account-private-person.html">
                         <span class="menu__profile-name">
                             <!-- данные с сервера имя пользователя -->Иван Иванов</span>
-                        <img src="./assets/images/avatar-photo.png" alt="Аватар" class="menu__profile-avatar">
+                        <div class="menu__profile-avatar"></div>
                     </a>
-                    <ul class="menu__links">
+                    <ul class="menu__links mix-display-none">
                         <li class="menu__list">
                             <a href="./registrationPage.html" id="link-register"
                                 class="menu__link menu__link_type_register">Регистрация</a>
@@ -2291,59 +2290,58 @@
         </footer>
     </div>
 
-    <div class="main-popup main-popup_type_change-city">
-        <div class="main-popup__container main-popup__container_type_change-city mix-scrollbar-only-vertical">
-            <button class="main-popup__close"></button>
-            <div class="popup-change-city">
-                <h3 class="popup-change-city__title">Укажите свой город</h3>
-                <label class="popup-change-city__label mix-label">
-                    <input id="inputCityNamePopup" class="popup-change-city__input mix-input" type="text" maxlength="50"
-                        placeholder=" " />
-                    <span class="popup-change-city__caption mix-caption"></span>
-                </label>
-                <div class="popup-change-city__column">
-                    <ul class="popup-change-city__list">
-                        <!-- текущий активный город модификатор: popup-change-city__item_type_active -->
-                        <li
-                            class="popup-change-city__item popup-change-city__item-popup popup-change-city__item_type_favorite popup-change-city__item_type_active">
-                            Москва</li>
-                        <li
-                            class="popup-change-city__item popup-change-city__item-popup popup-change-city__item_type_favorite">
-                            Санкт-Петербург</li>
-                        <li
-                            class="popup-change-city__item popup-change-city__item-popup popup-change-city__item_type_favorite">
-                            Воронеж</li>
-                    </ul>
-                    <ul class="popup-change-city__list">
-                        <!-- данные с сервера выбор города -->
-                        <li class="popup-change-city__item popup-change-city__item-popup">Балашиха</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Бронницы</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Видное</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Воскресенск</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Дзержинский</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Дмитров</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Домодедово</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Жуковский</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Истра</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Кашира</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Клин</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Королёв</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Котельники</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Кубинка</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Лобня</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Лыткарино</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Мытищи</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Одинцово</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Пушкино</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Раменское</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Химки</li>
-                        <li class="popup-change-city__item popup-change-city__item-popup">Чехов</li>
-                    </ul>
+        <!-- модальное окно для выбора города "Ваш город" в блоке Header  -->
+        <div id="popup-city" class="main-popup main-popup_type_change-city">
+            <div class="main-popup__container main-popup__container_type_change-city">
+                <button class="main-popup__close"></button>
+                <div class="popup-change-city">
+                    <h3 class="popup-change-city__title">Укажите свой город</h3>
+                    <label class="popup-change-city__label mix-label">
+                        <input class="popup-change-city__input mix-input" type="text" maxlength="50" placeholder=" " />
+                        <span class="popup-change-city__caption mix-caption"></span>
+                    </label>
+                    <div class="popup-change-city__column">
+                        <ul class="popup-change-city__list">
+                            <!-- текущий активный город модификатор: popup-change-city__item_type_active -->
+                            <li
+                                class="popup-change-city__item popup-change-city__item_type_favorite popup-change-city__item_type_active">
+                                Москва</li>
+                            <li class="popup-change-city__item popup-change-city__item_type_favorite">Санкт-Петербург
+                            </li>
+                            <li class="popup-change-city__item popup-change-city__item_type_favorite">Тула</li>
+                        </ul>
+                        <ul class="popup-change-city__list">
+                            <div class="popup-change-city__overlay"></div>
+                            <!-- данные с сервера выбор города -->
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item">Москва</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
+
     <!-- модальное окно для входа в аккаунт  -->
     <div class="modal modal-login">
         <div class="modal__content content-offer-price">

@@ -362,6 +362,12 @@ button {
           transform: scale(1.025) !important;
 }
 
+@media (max-width: 1150px) {
+  .mix-only-desktop-1150px {
+    display: none !important;
+  }
+}
+
 main .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5372,7 +5378,7 @@ main .container {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 100;
 }
 
@@ -5614,6 +5620,13 @@ main .container {
   border-radius: 12px;
 }
 
+@media (max-width: 40rem) {
+  .prof-aside__block {
+    border: unset;
+    padding: 0;
+  }
+}
+
 .prof-aside__header {
   width: 100%;
   display: -webkit-box;
@@ -5630,6 +5643,12 @@ main .container {
           justify-content: space-between;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e3e7e8;
+}
+
+@media (max-width: 40rem) {
+  .prof-aside__header {
+    border-bottom: unset;
+  }
 }
 
 .prof-aside__text {
@@ -5653,9 +5672,21 @@ main .container {
   display: flex;
 }
 
+@media (max-width: 40rem) {
+  .prof-aside__body {
+    margin-top: 0;
+  }
+}
+
 .prof-aside__left-panel {
   width: 16.25rem;
   margin-right: 1rem;
+}
+
+@media (max-width: 25rem) {
+  .prof-aside__left-panel {
+    width: 90vw;
+  }
 }
 
 .prof-aside__right-panel {
@@ -5719,6 +5750,12 @@ main .container {
   background-size: 0.875rem;
 }
 
+@media (max-width: 40rem) {
+  .prof-aside__input_type_search {
+    display: none;
+  }
+}
+
 .prof-aside__input_type_send-message {
   padding: 0.25rem 2.125rem 0.25rem 0.75rem;
 }
@@ -5742,6 +5779,13 @@ main .container {
 .prof-aside__tasks-container::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: #cfd4dc;
+}
+
+@media (max-width: 40rem) {
+  .prof-aside__tasks-container {
+    border: 1px solid #E3E7E8;
+    border-radius: 12px;
+  }
 }
 
 .prof-aside__task-item {
@@ -5931,7 +5975,7 @@ main .container {
 .prof-aside__wrapper-container-message {
   height: 460px;
   overflow: auto;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
   padding-right: 5px;
 }
 
@@ -5996,6 +6040,23 @@ main .container {
   background: url("./../images/icons/profile-star-active.svg") no-repeat center;
 }
 
+.prof-aside__link {
+  color: #1565C0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 65px;
+  right: 20px;
+}
+
+.prof-aside__link_type_first {
+  bottom: 100px;
+}
+
 .prof-general {
   width: 1068px;
   -ms-flex-negative: 0;
@@ -6032,11 +6093,32 @@ main .container {
   padding: 1.5rem;
 }
 
+@media (max-width: 40rem) {
+  .prof-general__header {
+    border: unset;
+    padding: 0;
+    height: unset;
+    margin-bottom: 24px;
+  }
+}
+
 .prof-general__avatar {
   width: 6.25rem;
   height: 6.25rem;
   position: relative;
   margin-right: 1.5rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media (max-width: 40rem) {
+  .prof-general__avatar {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-right: 0.75rem;
+  }
 }
 
 .prof-general__photo {
@@ -6062,6 +6144,12 @@ main .container {
   opacity: 0.7;
 }
 
+@media (max-width: 40rem) {
+  .prof-general__icon {
+    right: -3px;
+  }
+}
+
 .prof-general__body {
   border: 0.0625rem solid #d0d7d9;
   border-radius: 0.75rem;
@@ -6074,6 +6162,12 @@ main .container {
 @media (max-width: 96.875rem) {
   .prof-general__body_type_contacts {
     display: block;
+  }
+}
+
+@media (max-width: 40rem) {
+  .prof-general__body_type_contacts {
+    border: unset;
   }
 }
 
@@ -6097,7 +6191,7 @@ main .container {
   border: none;
   background-color: transparent;
   color: #6c737d;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.875rem;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -6114,7 +6208,7 @@ main .container {
 @media (max-width: 40rem) {
   .prof-general__button {
     font-size: 12px;
-    line-height: 16px;
+    line-height: 14px;
     letter-spacing: 0.08px;
   }
 }
@@ -6265,6 +6359,13 @@ main .container {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+@media (max-width: 930px) {
+  .prof-general__forms-agent-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .prof-item {
@@ -6439,12 +6540,6 @@ main .container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-@media (max-width: 71.875rem) {
-  .prof-control-panel__buttons-container {
-    display: none;
-  }
 }
 
 .prof-control-panel__buttons-container_type_analytic {
@@ -7577,7 +7672,8 @@ main .container {
 
 .prof-structure__card {
   margin-top: 16px;
-  width: 478px;
+  width: 100%;
+  max-width: 478px;
   height: 88px;
   background-color: #f5f7f7;
   border: 1px solid #e3e7e8;
@@ -7630,7 +7726,7 @@ main .container {
 .form-agent-card {
   border: 1px solid #D0D7D9;
   border-radius: 12px;
-  height: 80px;
+  min-height: 80px;
   padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7641,6 +7737,29 @@ main .container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.form-agent-card__title {
+  height: 29px;
+  margin-right: 10px;
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.form-agent-card__title::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.form-agent-card__title::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+.form-agent-card__title::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
 }
 
 .form-agent-card__info {
@@ -7652,6 +7771,19 @@ main .container {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 330px;
+}
+
+@media (max-width: 930px) {
+  .form-agent-card__info {
+    width: 54vw;
+  }
+}
+
+@media (max-width: 720px) {
+  .form-agent-card__info {
+    width: 67vw;
+  }
 }
 
 .form-agent-card__icon {
@@ -7659,6 +7791,9 @@ main .container {
   height: 24px;
   background: url("./../images/icons/profile-document-active.svg") no-repeat center;
   margin-right: 8px;
+  display: inline-block;
+  position: relative;
+  top: 4px;
 }
 
 .form-agent-card__caption {
@@ -7680,6 +7815,27 @@ main .container {
 
 .form-agent-card__button:hover {
   cursor: auto;
+}
+
+@media (max-width: 1150px) {
+  .form-agent-card__button {
+    margin-top: 8px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 930px) {
+  .form-agent-card__button {
+    margin-top: 0;
+    width: 109px;
+  }
+}
+
+@media (max-width: 720px) {
+  .form-agent-card__button {
+    margin-top: 8px;
+    width: 100%;
+  }
 }
 
 .form-agent-card__button_active {

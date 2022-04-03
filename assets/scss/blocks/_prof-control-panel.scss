@@ -9,9 +9,6 @@
         background-color: #e6fae9;
         border-radius: 50px;
         @include flex-container;
-        @media (max-width: rem(1150px)) {
-            display: none;
-        }
         &_type_analytic {
             width: 208px;
         }

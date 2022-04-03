@@ -5,6 +5,7 @@ import {
 } from "./common-JS-to-all-pages.js";
 
 // логика переключения табов: "Объекты", "Анкеты контрагентов", "Аналитические данные", "Структура", "Предложения"
+
 const tabButtons = document.querySelectorAll(".prof-general__button");
 
 const generalContentObjects = document.querySelector("#objects");
@@ -36,6 +37,7 @@ tabButtons.forEach((i) =>
 );
 
 // логика переключения кнопок на вкладке "Объекты": "Список", "Карточки"
+
 const objectsButtons = document.querySelectorAll(".objects-button");
 
 const contentTable = document.querySelector("#objects-table");
@@ -54,6 +56,7 @@ objectsButtons.forEach((i) =>
 );
 
 // логика переключения кнопок на вкладке "Анкеты контрагентов": "Актуальные", "Архив"
+
 const agentButtons = document.querySelectorAll(".agent-button");
 
 const contentActual = document.querySelector("#agent-actual");
@@ -151,19 +154,48 @@ appealsButtons.forEach((i) =>
     )
 );
 
-// логика сркытия таблицы при первой загрузке
+// логика действий при загрузе страницы на определенном разрешении
+
 if (window.innerWidth < 1151) {
-    hideTable();
+    removeClassElement(contentCards, "mix-display-none");
 }
 
-function hideTable() {
-    tableContainer.classList.add("mix-display-none");
-    cardsContainer.classList.remove("mix-display-none");
-    buttonList.classList.remove("prof-control-panel__button_active");
-    buttonCards.classList.add("prof-control-panel__button_active");
+// логика действий при ресайзе
+// общие функции для этого блока логики
+
+function resetActiveClassButton(arrayButtons) {
+    arrayButtons.forEach((i) => {
+        if (i.ariaLabel === "list") {
+            removeClassElement(i, "prof-control-panel__button_active");
+        } else {
+            addClassElement(i, "prof-control-panel__button_active");
+        }
+    });
 }
 
-// действие прописано в window.addEventListener('resize;)
+window.addEventListener("resize", function (e) {
+    // если таблица скрыта, то ничего не делаем
+    if (e.target.innerWidth < 1151) {
+        if (contentTable.classList.contains("mix-display-none")) {
+            return;
+            // иначе показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
+        } else {
+            removeClassElement(contentCards, "mix-display-none");
+            addClassElement(contentTable, "mix-display-none");
+            resetActiveClassButton(objectsButtons);
+        }
+    }
+
+    if (e.target.innerWidth > 750) {
+        resetVisibleDymanicClassAsideBlockMobile();
+    }
+    if (e.target.innerWidth > 1550) {
+        closeMobileBlockContacts();
+    }
+    if (e.target.innerWidth > 1780) {
+        resetVisibleDymanicClassAsideBlock();
+    }
+});
 
 // логика смены чата на задачи по клику на кнопку
 
@@ -213,21 +245,6 @@ tasksContainer.forEach((i) =>
         }
     })
 );
-
-window.addEventListener("resize", function (e) {
-    if (e.target.innerWidth < 1151) {
-        hideTable();
-    }
-    if (e.target.innerWidth > 1780) {
-        resetVisibleDymanicClassAsideBlock();
-    }
-    if (e.target.innerWidth > 750) {
-        resetVisibleDymanicClassAsideBlockMobile();
-    }
-    if (e.target.innerWidth > 1550) {
-        closeMobileBlockContacts();
-    }
-});
 
 function resetVisibleDymanicClassAsideBlock() {
     panelTasksMain.classList.remove("mix-display-none");

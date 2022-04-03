@@ -124,5 +124,10 @@
             transform: scale(1.025) !important;
         }
     }
+    &-only-desktop-1150px {
+        @media (max-width: 1150px) {
+            display: none !important;
+        }
+    }
 
 }

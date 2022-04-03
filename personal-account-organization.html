@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/scss/style.css" />
     <title>ЛК юридическое лицо</title>
-    <script defer src="./assets/js/common-JS-to-all-pages.js"></script>
-    <script defer src="./assets/js/personal-account-private-person-organization.js"></script>
+    <script type="module" defer src="./assets/js/personal-account-private-person-organization.js"></script>
 </head>
 
 <body class="body">
@@ -94,7 +93,7 @@
                     </svg>
                 </a>
                 <p class="header__city-select">Ваш город:</p>
-                <a href="#" class="header__city">Москва
+                <a aria-label='popup-city' href="#" class="header__city button-open-popup">Москва
                     <svg class="icon icon_header-select" viewBox="0 0 10 6" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1293,7 +1292,8 @@
             </ul>
         </footer>
 
-        <div class="main-popup main-popup_type_change-city">
+        <!-- модальное окно для выбора города "Ваш город" в блоке Header  -->
+        <div id="popup-city" class="main-popup main-popup_type_change-city">
             <div class="main-popup__container main-popup__container_type_change-city">
                 <button class="main-popup__close"></button>
                 <div class="popup-change-city">
@@ -1343,6 +1343,7 @@
 
             </div>
         </div>
+
         <!-- модальное окно для входа в аккаунт  -->
         <div class="modal modal-login">
             <div class="modal__content content-offer-price">

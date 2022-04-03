@@ -178,17 +178,17 @@
                                 <button aria-label="counterparty-questionnaires" type="button"
                                     class="prof-general__button text-p1">Анкеты контрагентов</button>
                                 <button aria-label="analytical-data" type="button"
-                                    class="prof-general__button text-p1">Аналитические данные</button>
+                                    class="prof-general__button text-p1 mix-only-desktop-1150px">Аналитические данные</button>
                                 <button aria-label="structure" type="button"
                                     class="prof-general__button text-p1">Структура</button>
                                 <button aria-label="offers" type="button"
-                                    class="prof-general__button text-p1">Предложения</button>
+                                    class="prof-general__button text-p1 mix-only-desktop-1150px">Предложения</button>
                             </nav>
 
 
                             <div aria-label="objects" id="objects" class="prof-general__content">
                                 <div class="prof-control-panel">
-                                    <div class="prof-control-panel__buttons-container">
+                                    <div class="prof-control-panel__buttons-container mix-only-desktop-1150px">
                                         <button aria-label="list"
                                             class="prof-control-panel__button prof-control-panel__button_active heading-h4 objects-button">Список</button>
                                         <button aria-label="cards"
@@ -202,7 +202,7 @@
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2">Статус:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                         <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                        <input id="input-select-status" type="text" disabled="true"
+                                        <input type="text" disabled="true"
                                             class="prof-control-panel__select-input" value="Все">
                                         <div id="submenu-select-status"
                                             class="main-submenu main-submenu_style_prof-status">
@@ -298,7 +298,7 @@
                                     </label>
                                 </div>
 
-                                <div class="prof-table" aria-label="list" id="objects-table">
+                                <div class="prof-table mix-only-desktop-1150px" aria-label="list" id="objects-table">
                                     <ul class="prof-table__row prof-table__row_style_objects">
                                         <li class="prof-table__row-heading text-p2">Адрес объекта</li>
                                         <li class="prof-table__row-heading text-p2">Номер</li>
@@ -588,7 +588,7 @@
                                             странице:
                                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                             <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
-                                            <input id="input-select-page" type="text" disabled="true"
+                                            <input type="text" disabled="true"
                                                 class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                 value="5">
                                             <div id="submenu-select-page"
@@ -627,7 +627,7 @@
                                         анкеты:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                         <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                        <input id="input-select-status" type="text" disabled="true"
+                                        <input type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_status-agent"
                                             value="Любой">
                                         <div id="submenu-select-status"
@@ -683,7 +683,7 @@
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                         <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                        <input id="input-select-status" type="text" disabled="true"
+                                        <input type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                             value="Месяц">
                                         <div id="submenu-select-status"
@@ -761,8 +761,7 @@
                                     <ul class="prof-general__forms-agent-container">
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+                                                <p class="form-agent-card__title heading-h3"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__caption text-p2"><span
                                                         class="prof-marker prof-marker_type_yellow"></span>Новая</p>
 
@@ -771,8 +770,8 @@
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__caption text-p2"><span
                                                         class="prof-marker prof-marker_type_green"></span>Одобрено</p>
 
@@ -787,8 +786,8 @@
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__caption text-p2"><span
                                                         class="prof-marker prof-marker_type_red"></span>Отказано</p>
 
@@ -798,8 +797,8 @@
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__caption text-p2"><span
                                                         class="prof-marker prof-marker_type_yellow"></span>Новая</p>
 
@@ -808,8 +807,8 @@
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__caption text-p2"><span
                                                         class="prof-marker prof-marker_type_yellow"></span>Новая</p>
 
@@ -818,8 +817,8 @@
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__caption text-p2"><span
                                                         class="prof-marker prof-marker_type_yellow"></span>Новая</p>
 
@@ -829,8 +828,8 @@
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__caption text-p2"><span
                                                         class="prof-marker prof-marker_type_yellow"></span>Новая</p>
 
@@ -879,7 +878,7 @@
                                                 странице:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-page" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
                                                 <div id="submenu-select-page"
@@ -912,80 +911,80 @@
                                     <ul class="prof-general__forms-agent-container">
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
-                                                <div class="form-agent-card__icon"></div>
-                                                <p class="form-agent-card__title heading-h3">Иванов Иван, 16.02.2022</p>
+
+                                                <p class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"><span class="form-agent-card__icon"></span>Иванов Иван, 16.02.2022</p>
                                                 <p class="form-agent-card__status text-p3">В архиве с:<span
                                                         class="form-agent-card__date text-p2">16.02.2022</span></p>
                                             </div>
@@ -1031,7 +1030,7 @@
                                                 странице:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-page" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
                                                 <div id="submenu-select-page"
@@ -1062,7 +1061,7 @@
                             </div>
 
                             <div aria-label="analytical-data" id="analytical-data"
-                                class="prof-general__content mix-display-none">
+                                class="prof-general__content mix-display-none mix-only-desktop-1150px">
                                 <section class="prof-general__section">
 
                                     <div class="prof-control-panel">
@@ -1089,7 +1088,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                                     value="Месяц">
                                                 <div id="submenu-select-status"
@@ -1150,7 +1149,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
                                                 <div id="submenu-select-status"
                                                     class="main-submenu main-submenu_style_prof-status">
@@ -1305,7 +1304,7 @@
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                     <div id="cursor-select-page" class="prof-control-panel__cursor">
                                                     </div>
-                                                    <input id="input-select-page" type="text" disabled="true"
+                                                    <input type="text" disabled="true"
                                                         class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                         value="5">
                                                     <div id="submenu-select-page"
@@ -1367,7 +1366,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                                     value="Месяц">
                                                 <div id="submenu-select-status"
@@ -1428,7 +1427,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
                                                 <div id="submenu-select-status"
                                                     class="main-submenu main-submenu_style_prof-status">
@@ -1597,7 +1596,7 @@
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                     <div id="cursor-select-page" class="prof-control-panel__cursor">
                                                     </div>
-                                                    <input id="input-select-page" type="text" disabled="true"
+                                                    <input type="text" disabled="true"
                                                         class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                         value="5">
                                                     <div id="submenu-select-page"
@@ -1657,7 +1656,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                                     value="Месяц">
                                                 <div id="submenu-select-status"
@@ -1718,7 +1717,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
                                                 <div id="submenu-select-status"
                                                     class="main-submenu main-submenu_style_prof-status">
@@ -1887,7 +1886,7 @@
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                     <div id="cursor-select-page" class="prof-control-panel__cursor">
                                                     </div>
-                                                    <input id="input-select-page" type="text" disabled="true"
+                                                    <input type="text" disabled="true"
                                                         class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                         value="5">
                                                     <div id="submenu-select-page"
@@ -1947,7 +1946,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                                     value="Месяц">
                                                 <div id="submenu-select-status"
@@ -2008,7 +2007,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
                                                 <div id="submenu-select-status"
                                                     class="main-submenu main-submenu_style_prof-status">
@@ -2196,7 +2195,7 @@
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                     <div id="cursor-select-page" class="prof-control-panel__cursor">
                                                     </div>
-                                                    <input id="input-select-page" type="text" disabled="true"
+                                                    <input type="text" disabled="true"
                                                         class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                         value="5">
                                                     <div id="submenu-select-page"
@@ -2253,7 +2252,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                                     value="Месяц">
                                                 <div id="submenu-select-status"
@@ -2314,7 +2313,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
                                                 <div id="submenu-select-status"
                                                     class="main-submenu main-submenu_style_prof-status">
@@ -2500,7 +2499,7 @@
                                                 class="prof-control-panel__select-label text-p2">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-page" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
                                                 <div id="submenu-select-page"
@@ -2550,7 +2549,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                                     value="Месяц">
                                                 <div id="submenu-select-status"
@@ -2611,7 +2610,7 @@
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
-                                                <input id="input-select-status" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
                                                 <div id="submenu-select-status"
                                                     class="main-submenu main-submenu_style_prof-status">
@@ -2764,7 +2763,7 @@
                                                 class="prof-control-panel__select-label text-p2">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
-                                                <input id="input-select-page" type="text" disabled="true"
+                                                <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
                                                 <div id="submenu-select-page"
@@ -2887,7 +2886,7 @@
                                 </div>
                             </div>
 
-                            <div aria-label="offers" id="offers" class="prof-general__content mix-display-none">
+                            <div aria-label="offers" id="offers" class="prof-general__content mix-display-none mix-only-desktop-1150px">
                                 <div class="prof-control-panel">
                                     <h3 class="prof-control-panel__title heading-h3">Список предложений</h3>
                                     <label
@@ -3075,7 +3074,7 @@
                                             странице:
                                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                             <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
-                                            <input id="input-select-page" type="text" disabled="true"
+                                            <input type="text" disabled="true"
                                                 class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                 value="5">
                                             <div id="submenu-select-page"
@@ -3339,24 +3338,8 @@
                                                     сообщение входящее сообщение входящее сообщение</p>
                                                 <p class="prof-aside__time text-p4">19:48</p>
                                             </div>
-                                            <div class="prof-aside__feedback">
-                                                <img src="./assets/images/avatar-photo.png" alt="Аватар"
-                                                    class="prof-aside__photo">
-                                                <div class="prof-aside__stars-container">
-                                                    <input id="input-stars" hidden type="text"
-                                                        class="prof-aside__input-stars">
-                                                    <div aria-label="1"
-                                                        class="prof-aside__star prof-aside__star_type_mobile"></div>
-                                                    <div aria-label="2"
-                                                        class="prof-aside__star prof-aside__star_type_mobile"></div>
-                                                    <div aria-label="3"
-                                                        class="prof-aside__star prof-aside__star_type_mobile"></div>
-                                                    <div aria-label="4"
-                                                        class="prof-aside__star prof-aside__star_type_mobile"></div>
-                                                    <div aria-label="5"
-                                                        class="prof-aside__star prof-aside__star_type_mobile"></div>
-                                                </div>
-                                            </div>
+                                            <a href="#" class="prof-aside__link prof-aside__link_type_first text-p1">На уточнение</a>
+                                            <a href="#" class="prof-aside__link text-p1">Завершить обращение &#215;</a>
 
                                         </div>
                                         <form class="prof-aside__send-message">
@@ -3591,22 +3574,6 @@
                                                 входящее
                                                 сообщение входящее сообщение входящее сообщение</p>
                                             <p class="prof-aside__time text-p4">19:48</p>
-                                        </div>
-                                        <div class="prof-aside__feedback">
-                                            <img src="./assets/images/avatar-photo.png" alt="Аватар"
-                                                class="prof-aside__photo">
-                                            <div class="prof-aside__stars-container">
-                                                <div aria-label="1"
-                                                    class="prof-aside__star  prof-aside__star_type_desktop"></div>
-                                                <div aria-label="2"
-                                                    class="prof-aside__star  prof-aside__star_type_desktop"></div>
-                                                <div aria-label="3"
-                                                    class="prof-aside__star  prof-aside__star_type_desktop"></div>
-                                                <div aria-label="4"
-                                                    class="prof-aside__star  prof-aside__star_type_desktop"></div>
-                                                <div aria-label="5"
-                                                    class="prof-aside__star  prof-aside__star_type_desktop"></div>
-                                            </div>
                                         </div>
                                     </div>
                                     <form class="prof-aside__send-message">
