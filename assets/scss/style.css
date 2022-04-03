@@ -5887,20 +5887,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-.modal-edit-card-object__photo-container__photo-container-item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 31.5%;
-          flex: 0 0 31.5%;
-  margin-bottom: 24px;
-  margin-right: 24px;
-}
-
-@media (max-width: 40rem) {
-  .modal-edit-card-object__photo-container__photo-container-item {
-    width: 100%;
-  }
-}
-
 .modal-edit-card-object__photo-container__photo-container-item:nth-of-type(3n) {
   margin-right: 0;
 }
@@ -5911,6 +5897,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
           justify-content: flex-start;
   margin-left: 1px;
   margin-top: 8px;
+}
+
+.modal-edit-card-object__photo-container-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 31.5%;
+          flex: 0 0 31.5%;
+  margin-bottom: 24px;
+  margin-right: 24px;
+}
+
+@media (max-width: 40rem) {
+  .modal-edit-card-object__photo-container-item {
+    width: 100%;
+  }
 }
 
 .modal-edit-card-object__img {
