@@ -76,6 +76,14 @@
             cursor: pointer;
         }
     }
+    &_style_date {
+        left: -33px;
+        right: 0;
+        top: 34px;
+        @media (max-width: rem(1000px)) {
+            left: unset;
+        }
+    }
     &__item {
         font-style: normal;
         font-weight: 400;
@@ -128,6 +136,9 @@
                 background-color: unset;
                 color: unset;
             }
+        }
+        &_style_align-center {
+            text-align: center;
         }
     }
 }

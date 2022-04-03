@@ -4846,6 +4846,18 @@ main .container {
   cursor: pointer;
 }
 
+.main-submenu_style_date {
+  left: -33px;
+  right: 0;
+  top: 34px;
+}
+
+@media (max-width: 62.5rem) {
+  .main-submenu_style_date {
+    left: unset;
+  }
+}
+
 .main-submenu__item {
   font-style: normal;
   font-weight: 400;
@@ -4901,6 +4913,10 @@ main .container {
   cursor: auto;
   background-color: unset;
   color: unset;
+}
+
+.main-submenu__item_style_align-center {
+  text-align: center;
 }
 
 @media (max-width: 62.5rem) {
@@ -6592,8 +6608,6 @@ main .container {
 .prof-control-panel__button_type_confirm {
   background-color: #55b465;
   color: white;
-  position: relative;
-  left: 18%;
 }
 
 .prof-control-panel__checkbox-label {
@@ -6654,7 +6668,7 @@ main .container {
   }
   .prof-control-panel__select-label_type_sort:hover {
     cursor: pointer;
-    opacity: .8;
+    opacity: 0.8;
   }
   .prof-control-panel__select-label_type_sort:before {
     content: "";
@@ -6726,7 +6740,7 @@ main .container {
   }
   .prof-control-panel__select-label_type_status-agent:hover {
     cursor: pointer;
-    opacity: .8;
+    opacity: 0.8;
   }
   .prof-control-panel__select-label_type_status-agent:before {
     content: "";
@@ -7017,10 +7031,13 @@ main .container {
 
 .prof-control-panel__row_type_agent {
   border: none;
+  padding: 0;
+  height: 32px;
 }
 
 @media (max-width: 62.5rem) {
   .prof-control-panel__row_type_agent {
+    padding: 8px 0;
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
@@ -7067,6 +7084,38 @@ main .container {
   .prof-control-panel__title_type_agent {
     display: none;
   }
+}
+
+.prof-control-panel__text {
+  color: #6d7678;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prof-control-panel__text:first-child {
+  margin-bottom: 8px;
+}
+
+.prof-control-panel__input-date {
+  width: 152px;
+  height: 32px;
+  border: 1px solid #cfd4dc;
+  border-radius: 4px;
+  padding: 4px 8px 4px 012px;
+  margin-left: auto;
+  color: #6c737d;
+}
+
+.prof-control-panel__input-date::-webkit-calendar-picker-indicator {
+  background: url("./../images/icons/profile-calendar.svg") no-repeat center;
+}
+
+.prof-control-panel__input-date::-webkit-calendar-picker-indicator:hover {
+  cursor: pointer;
 }
 
 .prof-table__row {

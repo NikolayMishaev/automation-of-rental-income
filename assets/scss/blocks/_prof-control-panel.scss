@@ -6,7 +6,7 @@
     &_type_agent {
         @media (max-width: rem(1000px)) {
             flex-wrap: nowrap;
-         }
+        }
     }
     &__buttons-container {
         width: 228px;
@@ -23,7 +23,7 @@
         &_type_agent {
             width: 241px;
             @media (max-width: rem(1000px)) {
-               order: -1
+                order: -1;
             }
         }
     }
@@ -45,8 +45,6 @@
         &_type_confirm {
             background-color: #55b465;
             color: white;
-            position: relative;
-            left: 18%;
         }
     }
     &__checkbox-label {
@@ -86,7 +84,7 @@
                 transition: $transition;
                 &:hover {
                     cursor: pointer;
-                    opacity: .8;
+                    opacity: 0.8;
                 }
                 &:before {
                     content: "";
@@ -147,7 +145,7 @@
                 transition: $transition;
                 &:hover {
                     cursor: pointer;
-                    opacity: .8;
+                    opacity: 0.8;
                 }
                 &:before {
                     content: "";
@@ -368,7 +366,10 @@
         }
         &_type_agent {
             border: none;
+            padding: 0;
+            height: 32px;
             @media (max-width: rem(1000px)) {
+                padding: 8px 0;
                 order: -1;
                 flex-wrap: wrap;
                 flex-direction: column;
@@ -401,6 +402,29 @@
         &_type_agent {
             @media (max-width: rem(1000px)) {
                 display: none;
+            }
+        }
+    }
+    &__text {
+        color: #6d7678;
+        display: flex;
+        align-items: center;
+        &:first-child {
+            margin-bottom: 8px;
+        }
+    }
+    &__input-date {
+        width: 152px;
+        height: 32px;
+        border: 1px solid #cfd4dc;
+        border-radius: 4px;
+        padding: 4px 8px 4px 012px;
+        margin-left: auto;
+        color: #6c737d;
+        &::-webkit-calendar-picker-indicator {
+            background: url("./../images/icons/profile-calendar.svg") no-repeat center;
+            &:hover {
+                cursor: pointer;
             }
         }
     }

@@ -174,9 +174,9 @@
                             <nav class="prof-general__navigation">
                                 <!-- активный таб имеет класс: prof-general__button_active -->
                                 <button aria-label="objects" type="button"
-                                    class="prof-general__button prof-general__button_active text-p1">Объекты</button>
+                                    class="prof-general__button text-p1">Объекты</button>
                                 <button aria-label="counterparty-questionnaires" type="button"
-                                    class="prof-general__button text-p1">Анкеты контрагентов</button>
+                                    class="prof-general__button prof-general__button_active text-p1">Анкеты контрагентов</button>
                                 <button aria-label="analytical-data" type="button"
                                     class="prof-general__button text-p1 mix-only-desktop-1150px">Аналитические данные</button>
                                 <button aria-label="structure" type="button"
@@ -186,7 +186,7 @@
                             </nav>
 
 
-                            <div aria-label="objects" id="objects" class="prof-general__content">
+                            <div aria-label="objects" id="objects" class="prof-general__content mix-display-none">
                                 <div class="prof-control-panel">
                                     <div class="prof-control-panel__buttons-container mix-only-desktop-1150px">
                                         <button aria-label="list"
@@ -201,10 +201,10 @@
                                     <label
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2">Статус:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
+                                        <div class="prof-control-panel__cursor"></div>
                                         <input type="text" disabled="true"
                                             class="prof-control-panel__select-input" value="Все">
-                                        <div id="submenu-select-status"
+                                        <div
                                             class="main-submenu main-submenu_style_prof-status">
                                             <ul class="main-submenu__list">
                                                 <li
@@ -233,21 +233,21 @@
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                     <label class="prof-control-panel__label-custom">
-                                                        <input id="input-select-status-checkbox-free"
+                                                        <input
                                                             class="prof-control-panel__input-hidden" type="checkbox">
                                                         <span class="prof-control-panel__visible-checkbox"></span>
                                                         Свободно</label></li>
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                     <label class="prof-control-panel__label-custom">
-                                                        <input id="input-select-status-checkbox-soon-free"
+                                                        <input
                                                             class="prof-control-panel__input-hidden" type="checkbox">
                                                         <span class="prof-control-panel__visible-checkbox"></span>
                                                         Скоро освободится</label>
                                                 </li>
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                    <button id="button-confirm-select-status"
+                                                    <button
                                                         class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                                 </li>
                                             </ul>
@@ -258,14 +258,14 @@
                                             placeholder=" ">
                                         <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                     </label>
-                                    <label id="label-select-sort"
+                                    <label
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_sort text-p2">Сортировать:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div id="cursor-select-sort" class="prof-control-panel__cursor"></div>
-                                        <input id="input-select-sort" type="text" disabled="true"
+                                        <div  class="prof-control-panel__cursor"></div>
+                                        <input  type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_sort"
                                             value="Сначала выгодные">
-                                        <div id="submenu-select-sort"
+                                        <div
                                             class="main-submenu main-submenu_style_prof-status">
                                             <ul class="main-submenu__list">
                                                 <li
@@ -583,15 +583,15 @@
                                     </div>
 
                                     <div class="prof-control-panel">
-                                        <label id="label-select-page"
+                                        <label
                                             class="prof-control-panel__select-label text-p2">Показывать объектов на
                                             странице:
                                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                            <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                            <div class="prof-control-panel__cursor"></div>
                                             <input type="text" disabled="true"
                                                 class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                 value="5">
-                                            <div id="submenu-select-page"
+                                            <div
                                                 class="main-submenu main-submenu_style_prof-page">
                                                 <ul class="main-submenu__list">
                                                     <li aria-label="item-page-menu"
@@ -617,20 +617,20 @@
                             </div>
 
                             <div aria-label="counterparty-questionnaires" id="counterparty-questionnaires"
-                                class="prof-general__content mix-display-none">
+                                class="prof-general__content">
                                 <div class="prof-control-panel prof-control-panel_type_agent">
                                     <h3
                                         class="prof-control-panel__title prof-control-panel__title_type_agent heading-h3">
                                         Анкеты контрагентов</h3>
-                                    <label
+                                    <label id="test-period"
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_status-agent text-p2">Статус
                                         анкеты:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div id="cursor-select-status" class="prof-control-panel__cursor prof-control-panel__cursor_type_agent"></div>
+                                        <div class="prof-control-panel__cursor prof-control-panel__cursor_type_agent"></div>
                                         <input type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_status-agent"
                                             value="Любой">
-                                        <div id="submenu-select-status"
+                                        <div
                                             class="main-submenu main-submenu_style_prof-status">
                                             <ul class="main-submenu__list">
                                                 <li
@@ -659,21 +659,21 @@
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                     <label class="prof-control-panel__label-custom">
-                                                        <input id="input-select-status-checkbox-free"
+                                                        <input
                                                             class="prof-control-panel__input-hidden" type="checkbox">
                                                         <span class="prof-control-panel__visible-checkbox"></span>
                                                         Свободно</label></li>
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                     <label class="prof-control-panel__label-custom">
-                                                        <input id="input-select-status-checkbox-soon-free"
+                                                        <input
                                                             class="prof-control-panel__input-hidden" type="checkbox">
                                                         <span class="prof-control-panel__visible-checkbox"></span>
                                                         Скоро освободится</label>
                                                 </li>
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                    <button id="button-confirm-select-status"
+                                                    <button
                                                         class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                                 </li>
                                             </ul>
@@ -682,54 +682,29 @@
                                     <label
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
+                                        <div class="prof-control-panel__cursor"></div>
                                         <input type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                             value="Месяц">
-                                        <div id="submenu-select-status"
-                                            class="main-submenu main-submenu_style_prof-status">
+                                        <div
+                                            class="main-submenu main-submenu_style_date">
                                             <ul class="main-submenu__list">
                                                 <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
-                                                    Объекты</li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                    <label class="prof-control-panel__label-custom">
-                                                        <input name="object-type"
-                                                            class="prof-control-panel__input-hidden" type="radio"
-                                                            checked>
-                                                        <span class="prof-control-panel__visible-radio"></span>
-                                                        Все</label>
-                                                </li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                    <label class="prof-control-panel__label-custom">
-                                                        <input name="object-type"
-                                                            class="prof-control-panel__input-hidden" type="radio">
-                                                        <span class="prof-control-panel__visible-radio"></span>
-                                                        Только выгодные</label>
-                                                </li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
-                                                    Статус объекта</li>
+                                                    class="main-submenu__item">Январь</li>
+                                                    <li
+                                                    class="main-submenu__item">Февраль</li>
+                                                    <li
+                                                    class="main-submenu__item">Март</li>
+                                                    <li
+                                                    class="main-submenu__item">Апрель</li>
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                    <label class="prof-control-panel__label-custom">
-                                                        <input id="input-select-status-checkbox-free"
-                                                            class="prof-control-panel__input-hidden" type="checkbox">
-                                                        <span class="prof-control-panel__visible-checkbox"></span>
-                                                        Свободно</label></li>
-                                                <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                    <label class="prof-control-panel__label-custom">
-                                                        <input id="input-select-status-checkbox-soon-free"
-                                                            class="prof-control-panel__input-hidden" type="checkbox">
-                                                        <span class="prof-control-panel__visible-checkbox"></span>
-                                                        Скоро освободится</label>
+                                                        <p class="prof-control-panel__text text-p2">От<input type="date" class="prof-control-panel__input-date"></p>
+                                                        <p class="prof-control-panel__text text-p2">До<input type="date" class="prof-control-panel__input-date"></p>
                                                 </li>
                                                 <li
-                                                    class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                    <button id="button-confirm-select-status"
+                                                    class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                                    <button
                                                         class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                                 </li>
                                             </ul>
@@ -873,15 +848,15 @@
                                         </div>
 
                                         <div class="prof-control-panel">
-                                            <label id="label-select-page"
+                                            <label
                                                 class="prof-control-panel__select-label text-p2">Показывать объектов на
                                                 странице:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
-                                                <div id="submenu-select-page"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-page">
                                                     <ul class="main-submenu__list">
                                                         <li aria-label="item-page-menu"
@@ -1025,15 +1000,15 @@
                                         </div>
 
                                         <div class="prof-control-panel">
-                                            <label id="label-select-page"
+                                            <label
                                                 class="prof-control-panel__select-label text-p2">Показывать объектов на
                                                 странице:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
-                                                <div id="submenu-select-page"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-page">
                                                     <ul class="main-submenu__list">
                                                         <li aria-label="item-page-menu"
@@ -1073,9 +1048,9 @@
                                         <div class="prof-control-panel__row">
                                             <div
                                                 class="prof-control-panel__buttons-container prof-control-panel__buttons-container_type_analytic">
-                                                <button aria-label="list" id="button-list"
+                                                <button aria-label="list"
                                                     class="prof-control-panel__button prof-control-panel__button_active heading-h4 user-button">Список</button>
-                                                <button aria-label="graph" id="button-cards"
+                                                <button aria-label="graph"
                                                     class="prof-control-panel__button heading-h4 user-button">График</button>
                                             </div>
                                             <label
@@ -1085,73 +1060,43 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
-                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input type="text" disabled="true"
-                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
-                                                    value="Месяц">
-                                                <div id="submenu-select-status"
-                                                    class="main-submenu main-submenu_style_prof-status">
-                                                    <ul class="main-submenu__list">
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor"></div>
+                                            <input type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
+                                                value="Месяц">
+                                            <div
+                                                class="main-submenu main-submenu_style_date">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item">Январь</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
-                                                            Объекты</li>
+                                                        class="main-submenu__item">Февраль</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio" checked>
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Все</label>
-                                                        </li>
+                                                        class="main-submenu__item">Март</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio">
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Только выгодные</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
-                                                            Статус объекта</li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Свободно</label></li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Скоро освободится</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
-                                                                class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </label>
+                                                        class="main-submenu__item">Апрель</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                            <p class="prof-control-panel__text text-p2">От<input type="date" class="prof-control-panel__input-date"></p>
+                                                            <p class="prof-control-panel__text text-p2">До<input type="date" class="prof-control-panel__input-date"></p>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                                        <button
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
                                             <label
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
-                                                <div id="submenu-select-status"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-status">
                                                     <ul class="main-submenu__list">
                                                         <li
@@ -1181,7 +1126,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -1190,7 +1135,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -1199,7 +1144,7 @@
                                                         </li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
+                                                            <button
                                                                 class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                                         </li>
                                                     </ul>
@@ -1299,15 +1244,15 @@
                                             </div>
 
                                             <div class="prof-control-panel">
-                                                <label id="label-select-page"
+                                                <label
                                                     class="prof-control-panel__select-label text-p2">Показывать строк:
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                    <div id="cursor-select-page" class="prof-control-panel__cursor">
+                                                    <div class="prof-control-panel__cursor">
                                                     </div>
                                                     <input type="text" disabled="true"
                                                         class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                         value="5">
-                                                    <div id="submenu-select-page"
+                                                    <div
                                                         class="main-submenu main-submenu_style_prof-page">
                                                         <ul class="main-submenu__list">
                                                             <li aria-label="item-page-menu"
@@ -1363,73 +1308,43 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
-                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input type="text" disabled="true"
-                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
-                                                    value="Месяц">
-                                                <div id="submenu-select-status"
-                                                    class="main-submenu main-submenu_style_prof-status">
-                                                    <ul class="main-submenu__list">
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor"></div>
+                                            <input type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
+                                                value="Месяц">
+                                            <div
+                                                class="main-submenu main-submenu_style_date">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item">Январь</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
-                                                            Объекты</li>
+                                                        class="main-submenu__item">Февраль</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio" checked>
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Все</label>
-                                                        </li>
+                                                        class="main-submenu__item">Март</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio">
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Только выгодные</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
-                                                            Статус объекта</li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Свободно</label></li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Скоро освободится</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
-                                                                class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </label>
+                                                        class="main-submenu__item">Апрель</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                            <p class="prof-control-panel__text text-p2">От<input type="date" class="prof-control-panel__input-date"></p>
+                                                            <p class="prof-control-panel__text text-p2">До<input type="date" class="prof-control-panel__input-date"></p>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                                        <button
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
                                             <label
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
-                                                <div id="submenu-select-status"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-status">
                                                     <ul class="main-submenu__list">
                                                         <li
@@ -1459,7 +1374,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -1468,7 +1383,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -1477,7 +1392,7 @@
                                                         </li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
+                                                            <button
                                                                 class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                                         </li>
                                                     </ul>
@@ -1591,15 +1506,15 @@
                                             </div>
 
                                             <div class="prof-control-panel">
-                                                <label id="label-select-page"
+                                                <label
                                                     class="prof-control-panel__select-label text-p2">Показывать строк:
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                    <div id="cursor-select-page" class="prof-control-panel__cursor">
+                                                    <div class="prof-control-panel__cursor">
                                                     </div>
                                                     <input type="text" disabled="true"
                                                         class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                         value="5">
-                                                    <div id="submenu-select-page"
+                                                    <div
                                                         class="main-submenu main-submenu_style_prof-page">
                                                         <ul class="main-submenu__list">
                                                             <li aria-label="item-page-menu"
@@ -1653,73 +1568,43 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
-                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input type="text" disabled="true"
-                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
-                                                    value="Месяц">
-                                                <div id="submenu-select-status"
-                                                    class="main-submenu main-submenu_style_prof-status">
-                                                    <ul class="main-submenu__list">
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor"></div>
+                                            <input type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
+                                                value="Месяц">
+                                            <div
+                                                class="main-submenu main-submenu_style_date">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item">Январь</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
-                                                            Объекты</li>
+                                                        class="main-submenu__item">Февраль</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio" checked>
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Все</label>
-                                                        </li>
+                                                        class="main-submenu__item">Март</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio">
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Только выгодные</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
-                                                            Статус объекта</li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Свободно</label></li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Скоро освободится</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
-                                                                class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </label>
+                                                        class="main-submenu__item">Апрель</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                            <p class="prof-control-panel__text text-p2">От<input type="date" class="prof-control-panel__input-date"></p>
+                                                            <p class="prof-control-panel__text text-p2">До<input type="date" class="prof-control-panel__input-date"></p>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                                        <button
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
                                             <label
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
-                                                <div id="submenu-select-status"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-status">
                                                     <ul class="main-submenu__list">
                                                         <li
@@ -1749,7 +1634,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -1758,7 +1643,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -1767,7 +1652,7 @@
                                                         </li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
+                                                            <button
                                                                 class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                                         </li>
                                                     </ul>
@@ -1881,15 +1766,15 @@
                                             </div>
 
                                             <div class="prof-control-panel">
-                                                <label id="label-select-page"
+                                                <label
                                                     class="prof-control-panel__select-label text-p2">Показывать строк:
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                    <div id="cursor-select-page" class="prof-control-panel__cursor">
+                                                    <div class="prof-control-panel__cursor">
                                                     </div>
                                                     <input type="text" disabled="true"
                                                         class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                         value="5">
-                                                    <div id="submenu-select-page"
+                                                    <div
                                                         class="main-submenu main-submenu_style_prof-page">
                                                         <ul class="main-submenu__list">
                                                             <li aria-label="item-page-menu"
@@ -1943,73 +1828,43 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
-                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input type="text" disabled="true"
-                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
-                                                    value="Месяц">
-                                                <div id="submenu-select-status"
-                                                    class="main-submenu main-submenu_style_prof-status">
-                                                    <ul class="main-submenu__list">
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor"></div>
+                                            <input type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
+                                                value="Месяц">
+                                            <div
+                                                class="main-submenu main-submenu_style_date">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item">Январь</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
-                                                            Объекты</li>
+                                                        class="main-submenu__item">Февраль</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio" checked>
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Все</label>
-                                                        </li>
+                                                        class="main-submenu__item">Март</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio">
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Только выгодные</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
-                                                            Статус объекта</li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Свободно</label></li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Скоро освободится</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
-                                                                class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </label>
+                                                        class="main-submenu__item">Апрель</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                            <p class="prof-control-panel__text text-p2">От<input type="date" class="prof-control-panel__input-date"></p>
+                                                            <p class="prof-control-panel__text text-p2">До<input type="date" class="prof-control-panel__input-date"></p>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                                        <button
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
                                             <label
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
-                                                <div id="submenu-select-status"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-status">
                                                     <ul class="main-submenu__list">
                                                         <li
@@ -2039,7 +1894,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -2048,7 +1903,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -2057,7 +1912,7 @@
                                                         </li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
+                                                            <button
                                                                 class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                                         </li>
                                                     </ul>
@@ -2190,15 +2045,15 @@
                                             </div>
 
                                             <div class="prof-control-panel">
-                                                <label id="label-select-page"
+                                                <label
                                                     class="prof-control-panel__select-label text-p2">Показывать строк:
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                    <div id="cursor-select-page" class="prof-control-panel__cursor">
+                                                    <div class="prof-control-panel__cursor">
                                                     </div>
                                                     <input type="text" disabled="true"
                                                         class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                         value="5">
-                                                    <div id="submenu-select-page"
+                                                    <div
                                                         class="main-submenu main-submenu_style_prof-page">
                                                         <ul class="main-submenu__list">
                                                             <li aria-label="item-page-menu"
@@ -2249,73 +2104,43 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
-                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input type="text" disabled="true"
-                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
-                                                    value="Месяц">
-                                                <div id="submenu-select-status"
-                                                    class="main-submenu main-submenu_style_prof-status">
-                                                    <ul class="main-submenu__list">
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor"></div>
+                                            <input type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
+                                                value="Месяц">
+                                            <div
+                                                class="main-submenu main-submenu_style_date">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item">Январь</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
-                                                            Объекты</li>
+                                                        class="main-submenu__item">Февраль</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio" checked>
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Все</label>
-                                                        </li>
+                                                        class="main-submenu__item">Март</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio">
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Только выгодные</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
-                                                            Статус объекта</li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Свободно</label></li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Скоро освободится</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
-                                                                class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </label>
+                                                        class="main-submenu__item">Апрель</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                            <p class="prof-control-panel__text text-p2">От<input type="date" class="prof-control-panel__input-date"></p>
+                                                            <p class="prof-control-panel__text text-p2">До<input type="date" class="prof-control-panel__input-date"></p>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                                        <button
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
                                             <label
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
-                                                <div id="submenu-select-status"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-status">
                                                     <ul class="main-submenu__list">
                                                         <li
@@ -2345,7 +2170,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -2354,7 +2179,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -2363,7 +2188,7 @@
                                                         </li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
+                                                            <button
                                                                 class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                                         </li>
                                                     </ul>
@@ -2495,14 +2320,14 @@
                                         </div>
 
                                         <div class="prof-control-panel">
-                                            <label id="label-select-page"
+                                            <label
                                                 class="prof-control-panel__select-label text-p2">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
-                                                <div id="submenu-select-page"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-page">
                                                     <ul class="main-submenu__list">
                                                         <li aria-label="item-page-menu"
@@ -2546,73 +2371,43 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
-                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-status" class="prof-control-panel__cursor"></div>
-                                                <input type="text" disabled="true"
-                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
-                                                    value="Месяц">
-                                                <div id="submenu-select-status"
-                                                    class="main-submenu main-submenu_style_prof-status">
-                                                    <ul class="main-submenu__list">
+                                            class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor"></div>
+                                            <input type="text" disabled="true"
+                                                class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
+                                                value="Месяц">
+                                            <div
+                                                class="main-submenu main-submenu_style_date">
+                                                <ul class="main-submenu__list">
+                                                    <li
+                                                        class="main-submenu__item">Январь</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
-                                                            Объекты</li>
+                                                        class="main-submenu__item">Февраль</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio" checked>
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Все</label>
-                                                        </li>
+                                                        class="main-submenu__item">Март</li>
                                                         <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu_type_sort">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input name="object-type"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="radio">
-                                                                <span class="prof-control-panel__visible-radio"></span>
-                                                                Только выгодные</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu">
-                                                            Статус объекта</li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Свободно</label></li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
-                                                                    class="prof-control-panel__input-hidden"
-                                                                    type="checkbox">
-                                                                <span
-                                                                    class="prof-control-panel__visible-checkbox"></span>
-                                                                Скоро освободится</label>
-                                                        </li>
-                                                        <li
-                                                            class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
-                                                                class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </label>
+                                                        class="main-submenu__item">Апрель</li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                                            <p class="prof-control-panel__text text-p2">От<input type="date" class="prof-control-panel__input-date"></p>
+                                                            <p class="prof-control-panel__text text-p2">До<input type="date" class="prof-control-panel__input-date"></p>
+                                                    </li>
+                                                    <li
+                                                        class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                                        <button
+                                                            class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </label>
                                             <label
                                                 class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__input-hidden" value="">
-                                                <div id="submenu-select-status"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-status">
                                                     <ul class="main-submenu__list">
                                                         <li
@@ -2642,7 +2437,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -2651,7 +2446,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <label class="prof-control-panel__label-custom">
-                                                                <input id="input-select-status-checkbox-soon-free"
+                                                                <input
                                                                     class="prof-control-panel__input-hidden"
                                                                     type="checkbox">
                                                                 <span
@@ -2660,7 +2455,7 @@
                                                         </li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
-                                                            <button id="button-confirm-select-status"
+                                                            <button
                                                                 class="prof-control-panel__button prof-control-panel__button_type_confirm">Выбрать</button>
                                                         </li>
                                                     </ul>
@@ -2759,14 +2554,14 @@
                                         </div>
 
                                         <div class="prof-control-panel">
-                                            <label id="label-select-page"
+                                            <label
                                                 class="prof-control-panel__select-label text-p2">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                                <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
-                                                <div id="submenu-select-page"
+                                                <div
                                                     class="main-submenu main-submenu_style_prof-page">
                                                     <ul class="main-submenu__list">
                                                         <li aria-label="item-page-menu"
@@ -3069,15 +2864,15 @@
                                     </div>
 
                                     <div class="prof-control-panel">
-                                        <label id="label-select-page"
+                                        <label
                                             class="prof-control-panel__select-label text-p2">Показывать объектов на
                                             странице:
                                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                            <div id="cursor-select-page" class="prof-control-panel__cursor"></div>
+                                            <div class="prof-control-panel__cursor"></div>
                                             <input type="text" disabled="true"
                                                 class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                 value="5">
-                                            <div id="submenu-select-page"
+                                            <div
                                                 class="main-submenu main-submenu_style_prof-page">
                                                 <ul class="main-submenu__list">
                                                     <li aria-label="item-page-menu"
