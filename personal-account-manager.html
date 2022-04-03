@@ -93,7 +93,7 @@
                     </svg>
                 </a>
                 <p class="header__city-select">Ваш город:</p>
-                <a href="#" class="header__city">Москва
+                <a aria-label='popup-city' href="#" class="header__city button-open-popup">Москва
                     <svg class="icon icon_header-select" viewBox="0 0 10 6" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -777,8 +777,13 @@
                                                         class="prof-marker prof-marker_type_green"></span>Одобрено</p>
 
                                             </div>
+                                            <!-- активный класс  для кнопки: "form-agent-card__button_active"
+                                                 ! важно !  вместе с активным классом у каждой активной кнопки должны быть:
+                                                                1__атрибут: aria-label="popup-notify"
+                                                                2__класс: class="button-open-popup"
+                                             -->
                                             <button
-                                                class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                                aria-label="popup-notify" class="form-agent-card__button form-agent-card__button_active text-p1 button-open-popup">Уведомить</button>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
@@ -789,7 +794,7 @@
 
                                             </div>
                                             <button
-                                                class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                            aria-label="popup-notify" class="form-agent-card__button form-agent-card__button_active text-p1 button-open-popup">Уведомить</button>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
@@ -820,7 +825,7 @@
 
                                             </div>
                                             <button
-                                                class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                            aria-label="popup-notify" class="form-agent-card__button form-agent-card__button_active text-p1 button-open-popup">Уведомить</button>
                                         </li>
                                         <li class="form-agent-card">
                                             <div class="form-agent-card__info">
@@ -831,7 +836,7 @@
 
                                             </div>
                                             <button
-                                                class="form-agent-card__button form-agent-card__button_active text-p1">Уведомить</button>
+                                            aria-label="popup-notify" class="form-agent-card__button form-agent-card__button_active text-p1 button-open-popup">Уведомить</button>
                                         </li>
                                     </ul>
                                     <div class="main main_page_profile main_page_agent">
@@ -3715,7 +3720,7 @@
         </footer>
 
         <!-- модальное окно для выбора города "Ваш город" в блоке Header  -->
-        <div class="main-popup main-popup_type_change-city">
+        <div id="popup-city" class="main-popup main-popup_type_change-city">
             <div class="main-popup__container main-popup__container_type_change-city">
                 <button class="main-popup__close"></button>
                 <div class="popup-change-city">
@@ -3822,20 +3827,20 @@
         </div>
 
         <!-- модальное окно "Уведомление о результате проверки"  -->
-        <div class="main-popup mix-visible">
+        <div id='popup-notify' class="main-popup">
             <div class="main-popup__container main-popup__container_type_notify">
-                <button class="main-popup__close"></button>
+                <button class="main-popup__close main-popup__close_type_notify"></button>
                 <div class="popup-notify">
                     <h3 class="popup-notify__title heading-h3">Уведомление о результате проверки</h3>
                     <form class="popup-notify__form">
                         <div class="popup-notify__wrapper-textarea">
                             <label class="popup-notify__label mix-label">
-                                <textarea class="popup-notify__textarea mix-input" placeholder=" "></textarea>
-                                <span class="mix-caption">Комментарий*</span>
+                                <textarea class="popup-notify__textarea mix-input text-p1" placeholder=" "></textarea>
+                                <span class="mix-caption text-p1">Комментарий*</span>
                             </label>
                         </div>
                         <div class="popup-notify__buttons">
-                            <button type="button" class="popup-notify__button popup-notify__button_type_cancel text-p1">Отмена</button>
+                            <button type="button" class="popup-notify__button popup-notify__button_type_cancel text-p1 button-close-popup">Отмена</button>
                             <button type="submit" class="popup-notify__button popup-notify__button_type_submit text-p1">Завершить</button>
                         </div>
                     </form>

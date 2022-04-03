@@ -30,26 +30,6 @@ function switchButtons(
     });
 }
 
-// логика открытия/закрытия попапа выбора городов "Ваш город"
-
-const popupOverlay = document.querySelector(".main-popup");
-
-const headerCity = document.querySelector(".header__city");
-const popupChangeCity = document.querySelector(".main-popup_type_change-city");
-
-popupOverlay.addEventListener("click", (e) => {
-    if (
-        e.target.classList.contains("main-popup") ||
-        e.target.classList.contains("main-popup__close")
-    ) {
-        popupChangeCity.classList.remove("mix-visible-scale");
-    }
-});
-
-headerCity.addEventListener("click", (e) => {
-    popupChangeCity.classList.add("mix-visible-scale");
-});
-
 // логика авторизации по клику на "Регистрации" и "Вход" в Header, пока не готовы попапы регистрации
 const linkSignIn = document.querySelector("#link-signIn");
 const buttonClosePopup = document.querySelector("#button-close-popup-sign-in");
@@ -75,3 +55,34 @@ buttonClosePopup.addEventListener("click", (e) => {
 linkSignIn.addEventListener("click", (e) => {
     popupLogIn.classList.add("mix-display-flex");
 });
+
+// логика открытия всех попапов
+// 1__добавить уникальное значение в атрибут aria-label кнопки
+// 2__добавить id попапу с тем же значением aria-label
+// 3__добавить кнопке класс "button-open-popup"
+
+const buttonsOpenPopup = document.querySelectorAll(".button-open-popup");
+
+buttonsOpenPopup.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        document
+            .querySelector(`#${i.ariaLabel}`)
+            .classList.add("mix-visible-scale");
+    })
+);
+
+// логика закрытия всех попапов по оверлею или крестику
+
+const overlaysPopup = document.querySelectorAll(".main-popup");
+
+overlaysPopup.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (
+            e.target.classList.contains("main-popup") ||
+            e.target.classList.contains("main-popup__close") ||
+            e.target.classList.contains("button-close-popup")
+        ) {
+            removeClassElement(i, "mix-visible-scale");
+        }
+    })
+);

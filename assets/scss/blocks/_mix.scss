@@ -117,4 +117,12 @@
     &-mb0 {
         margin-bottom: 0 !important;
     }
+    &-button-hover {
+        &:hover {
+            cursor: pointer !important;
+            opacity: .8 !important;
+            transform: scale(1.025) !important;
+        }
+    }
+
 }

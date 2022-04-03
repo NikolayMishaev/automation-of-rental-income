@@ -29,9 +29,18 @@
         border: none;
         color: #B4BBC6;
         border-radius: 4px;
+        transition: $transition;
+        &:hover {
+            cursor: auto;
+        }
         &_active {
             background-color: $accent-TCX50;
             color: white;
+            &:hover {
+                cursor: pointer !important;
+                opacity: .8 !important;
+                transform: scale(1.025) !important;
+            }
         }
     }
     &__status {

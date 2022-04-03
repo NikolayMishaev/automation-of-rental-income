@@ -54,6 +54,9 @@
             border-radius: 12px;
             padding: 20px 0;
             max-width: unset;
+            @media #{$screen-mobile} {
+                min-width: 328px;
+            }
         }
         &:hover {
             cursor: auto;
@@ -76,6 +79,10 @@
         }
         @media #{$screen-mobile} {
             right: 12px;
+        }
+        &_type_notify {
+            right: 19px;
+            top: 24px;
         }
     }
 }
