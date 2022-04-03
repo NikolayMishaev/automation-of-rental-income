@@ -18,9 +18,11 @@
     background-color: white;
     margin: auto;
     box-shadow: $shadow-100;
+    max-height: calc(100vh - 200px);
     @media #{$screen-mobile} {
       width: 100%;
       margin: 0 16px;
+      max-height: calc(100vh - 40px);
     }
   }
   &__header {
