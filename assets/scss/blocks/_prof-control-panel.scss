@@ -3,6 +3,11 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    &_type_agent {
+        @media (max-width: rem(1000px)) {
+            flex-wrap: nowrap;
+         }
+    }
     &__buttons-container {
         width: 228px;
         height: 32px;
@@ -17,6 +22,9 @@
         }
         &_type_agent {
             width: 241px;
+            @media (max-width: rem(1000px)) {
+               order: -1
+            }
         }
     }
     &__button {
@@ -60,6 +68,7 @@
         position: relative;
         color: #6d7678;
         position: relative;
+        transition: $transition;
         &_type_sort {
             margin-top: 16px;
             @media (max-width: rem(1150px)) {
@@ -74,12 +83,15 @@
                 height: 32px;
                 overflow: hidden;
                 border-radius: 4px;
+                transition: $transition;
                 &:hover {
                     cursor: pointer;
+                    opacity: .8;
                 }
                 &:before {
                     content: "";
                     position: absolute;
+                    border-radius: 4px;
                     z-index: 1;
                     width: 32px;
                     height: 32px;
@@ -105,6 +117,7 @@
                 &:before {
                     content: "";
                     position: absolute;
+                    border-radius: 4px;
                     z-index: 1;
                     width: 32px;
                     height: 32px;
@@ -122,6 +135,36 @@
         }
         &_type_status-agent {
             margin-right: 40px;
+            @media (max-width: rem(1000px)) {
+                width: 32px;
+                height: 32px;
+                position: static;
+                overflow: hidden;
+                margin-right: 0;
+                flex-shrink: 0;
+                margin-top: auto;
+                margin-left: 16px;
+                transition: $transition;
+                &:hover {
+                    cursor: pointer;
+                    opacity: .8;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    border-radius: 4px;
+                    z-index: 1;
+                    width: 32px;
+                    height: 32px;
+                    background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
+                    background-color: #fff;
+                }
+            }
+        }
+        &_type_period {
+            @media (max-width: rem(1000px)) {
+                display: none;
+            }
         }
     }
     &__cursor {
@@ -134,6 +177,11 @@
         transition: $transition;
         &_active {
             transform: rotate(180deg);
+        }
+        &_type_agent {
+            @media (max-width: rem(1000px)) {
+                display: none;
+            }
         }
     }
     &__select-input {
@@ -273,11 +321,17 @@
             flex: 1;
             margin: 0 24px;
             margin-right: 0;
+            @media (max-width: rem(1000px)) {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 16px;
+            }
         }
     }
     &__input-search {
         background: url(./../images/icons/main-filters-search.svg) no-repeat 13px center/15px;
         padding: 4px 12px 4px 36px;
+        height: 32px;
         &:focus + .mix-caption,
         &:not(:placeholder-shown) + .mix-caption {
             opacity: 0;
@@ -314,6 +368,17 @@
         }
         &_type_agent {
             border: none;
+            @media (max-width: rem(1000px)) {
+                order: -1;
+                flex-wrap: wrap;
+                flex-direction: column;
+                height: unset;
+                align-items: flex-start;
+                width: 100%;
+                margin-top: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
         }
     }
     &__subtitle {
@@ -333,5 +398,10 @@
     }
     &__title {
         margin-right: auto;
+        &_type_agent {
+            @media (max-width: rem(1000px)) {
+                display: none;
+            }
+        }
     }
 }

@@ -95,7 +95,7 @@
     }
     &__tasks-container {
         margin-top: rem(8px);
-        height: 648px;
+        max-height: 648px;
         overflow: auto;
         padding-right: 5px;
         &::-webkit-scrollbar {
