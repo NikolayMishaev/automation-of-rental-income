@@ -34,6 +34,19 @@ const state = {
             "#submenu-agents-page-archive"
         ),
     },
+    inputsSelect: {
+        "objects-status": document.querySelector("#input-objects-status"),
+        "objects-sort": document.querySelector("#input-objects-sort"),
+        "objects-page": document.querySelector("#input-objects-page"),
+        "agents-status": document.querySelector("#input-agents-status"),
+        "agents-period": document.querySelector("#input-agents-period"),
+        "agents-page-actual": document.querySelector(
+            "#input-agents-page-actual"
+        ),
+        "agents-page-archive": document.querySelector(
+            "#input-agents-page-archive"
+        ),
+    },
 };
 
 // логика переключения табов: "Объекты", "Анкеты контрагентов", "Аналитические данные", "Структура", "Предложения"
@@ -524,7 +537,7 @@ function hideCurrentSubmenu() {
     if (state.currentOpenSubmenu) {
         // найти по подменю текущий селект
         const currentSelectLabel = state.currentOpenSubmenu.closest(
-            "prof-control-panel__select-label"
+            ".prof-control-panel__select-label"
         );
         // удалить активный класс у текущего селекта
         removeClassElement(
@@ -552,13 +565,27 @@ buttonsSelect.forEach((i) =>
         const currentLabel = e.target.closest(
             ".prof-control-panel__select-label"
         );
+        if (e.target.ariaLabel === "item") {
+            state.inputsSelect[currentLabel.ariaLabel].value =
+                e.target.textContent.trim();
+            Array.from(
+                e.target.closest(".main-submenu__list").children
+            ).forEach((i) =>
+                removeClassElement(i, "main-submenu__item_active")
+            );
+            addClassElement(e.target, "main-submenu__item_active");
+            hideCurrentSubmenu();
+        }
+        if (e.target.classList.contains("prof-control-panel__button")) {
+            hideCurrentSubmenu();
+        }
         if (e.target.closest(".main-submenu")) {
             return;
         }
         if (currentLabel) {
             if (
                 !currentLabel.classList.contains(
-                    "prof-control-panel__cursor_active"
+                    "prof-control-panel__select-label_active"
                 )
             ) {
                 hideCurrentSubmenu();
@@ -566,19 +593,20 @@ buttonsSelect.forEach((i) =>
                     state.submenuSelect[currentLabel.ariaLabel],
                     "mix-visible"
                 );
+                state.currentOpenSubmenu =
+                    state.submenuSelect[currentLabel.ariaLabel];
+                setListenerClickOutsideSelect();
+                addClassElement(
+                    currentLabel,
+                    "prof-control-panel__select-label_active"
+                );
+                addClassElement(
+                    state.cursorsSelect[currentLabel.ariaLabel],
+                    "prof-control-panel__cursor_active"
+                );
+            } else {
+                hideCurrentSubmenu();
             }
-            state.currentOpenSubmenu =
-                state.submenuSelect[currentLabel.ariaLabel];
-            setListenerClickOutsideSelect();
-            addClassElement(
-                currentLabel,
-                "prof-control-panel__select-label_active"
-            );
-            addClassElement(
-                state.cursorsSelect[currentLabel.ariaLabel],
-                "prof-control-panel__cursor_active"
-            );
-        } else {
         }
     })
 );

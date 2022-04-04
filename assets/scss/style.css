@@ -6643,17 +6643,13 @@ main .container {
   transition: all 0.5s;
 }
 
-.prof-control-panel__button:hover {
-  opacity: 0.7;
-}
-
 .prof-control-panel__button_active {
-  background-color: #55b465;
+  background-color: #2a9b43;
   color: white;
 }
 
 .prof-control-panel__button_type_confirm {
-  background-color: #55b465;
+  background-color: #2a9b43;
   color: white;
 }
 
@@ -6698,13 +6694,14 @@ main .container {
   cursor: pointer;
 }
 
-.prof-control-panel__select-label_active {
-  background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
-}
-
-.prof-control-panel__select-label_active:before {
-  background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center !important;
-  background-color: white !important;
+@media (max-width: 62.5rem) {
+  .prof-control-panel__select-label_active {
+    background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+  }
+  .prof-control-panel__select-label_active:before {
+    background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center !important;
+    background-color: white !important;
+  }
 }
 
 .prof-control-panel__select-label_type_sort {

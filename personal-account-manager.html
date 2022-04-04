@@ -204,7 +204,7 @@
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2 button-toggle-select">Статус:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                         <div class="prof-control-panel__cursor" id="cursor-objects-status"></div>
-                                        <input type="text" disabled="true" class="prof-control-panel__select-input"
+                                        <input id="input-objects-status" type="text" disabled="true" class="prof-control-panel__select-input"
                                             value="Все">
                                         <div class="main-submenu main-submenu_style_prof-status" id="submenu-objects-status">
                                             <ul class="main-submenu__list">
@@ -261,7 +261,7 @@
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_sort text-p2 button-toggle-select">Сортировать:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                         <div class="prof-control-panel__cursor" id="cursor-objects-sort"></div>
-                                        <input type="text" disabled="true"
+                                        <input id="input-objects-sort" type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_sort"
                                             value="Сначала выгодные">
                                         <div class="main-submenu main-submenu_style_prof-status" id="submenu-objects-sort">
@@ -269,25 +269,25 @@
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
                                                     Сортировка</li>
-                                                <li aria-label="item-sort-menu"
+                                                <li aria-label="item"
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Все
                                                 </li>
-                                                <li aria-label="item-sort-menu"
+                                                <li aria-label="item"
                                                     class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала выгодные
                                                 </li>
-                                                <li aria-label="item-sort-menu"
+                                                <li aria-label="item"
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала дешевые</li>
-                                                <li aria-label="item-sort-menu"
+                                                <li aria-label="item"
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала дорогие</li>
-                                                <li aria-label="item-sort-menu"
+                                                <li aria-label="item"
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала новые
                                                 </li>
-                                                <li aria-label="item-sort-menu"
+                                                <li aria-label="item"
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
                                                     Сначала старые
                                                 </li>
@@ -585,21 +585,21 @@
                                             странице:
                                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                             <div class="prof-control-panel__cursor" id="cursor-objects-page"></div>
-                                            <input type="text" disabled="true"
+                                            <input id="input-objects-page" type="text" disabled="true"
                                                 class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                 value="5">
                                             <div class="main-submenu main-submenu_style_prof-page" id="submenu-objects-page">
                                                 <ul class="main-submenu__list">
-                                                    <li aria-label="item-page-menu"
+                                                    <li aria-label="item"
                                                         class="main-submenu__item main-submenu__item_active">
                                                         5
                                                     </li>
-                                                    <li aria-label="item-page-menu" class="main-submenu__item">
+                                                    <li aria-label="item" class="main-submenu__item">
                                                         10
                                                     </li>
-                                                    <li aria-label="item-page-menu" class="main-submenu__item">
+                                                    <li aria-label="item" class="main-submenu__item">
                                                         20</li>
-                                                    <li aria-label="item-page-menu" class="main-submenu__item">
+                                                    <li aria-label="item" class="main-submenu__item">
                                                         50</li>
                                                 </ul>
                                             </div>
@@ -616,21 +616,21 @@
                                         class="prof-control-panel__title prof-control-panel__title_type_agent heading-h3">
                                         Анкеты контрагентов</h3>
                                     <label aria-label="agents-status"
-                                        class="prof-control-panel__select-label prof-control-panel__select-label_active prof-control-panel__select-label_type_status-agent text-p2 button-toggle-select">Статус
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_status-agent text-p2 button-toggle-select">Статус
                                         анкеты:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                         <div class="prof-control-panel__cursor prof-control-panel__cursor_type_agent" id="cursor-agents-status">
                                         </div>
-                                        <input type="text" disabled="true"
+                                        <input id="input-agents-status" type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_status-agent"
                                             value="Любой">
                                         <div class="main-submenu main-submenu_style_prof-status" id="submenu-agents-status">
                                             <ul class="main-submenu__list">
-                                                <li class="main-submenu__item main-submenu__item_active">Любой</li>
-                                                <li class="main-submenu__item">Пункт_1</li>
-                                                <li class="main-submenu__item">Пункт_2</li>
-                                                <li class="main-submenu__item">Пункт_3</li>
-                                                <li class="main-submenu__item">Пункт_4</li>
+                                                <li aria-label="item" class="main-submenu__item main-submenu__item_active">Любой</li>
+                                                <li aria-label="item" class="main-submenu__item">Пункт_1</li>
+                                                <li aria-label="item" class="main-submenu__item">Пункт_2</li>
+                                                <li aria-label="item" class="main-submenu__item">Пункт_3</li>
+                                                <li aria-label="item" class="main-submenu__item">Пункт_4</li>
                                             </ul>
                                         </div>
                                     </label>
@@ -638,15 +638,15 @@
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                         <div class="prof-control-panel__cursor" id="cursor-agents-period"></div>
-                                        <input type="text" disabled="true"
+                                        <input id="input-agents-period" type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                             value="Месяц">
                                         <div class="main-submenu main-submenu_style_date" id="submenu-agents-period">
                                             <ul class="main-submenu__list">
-                                                <li class="main-submenu__item">Январь</li>
-                                                <li class="main-submenu__item">Февраль</li>
-                                                <li class="main-submenu__item">Март</li>
-                                                <li class="main-submenu__item">Апрель</li>
+                                                <li aria-label="item" class="main-submenu__item">Январь</li>
+                                                <li aria-label="item" class="main-submenu__item">Февраль</li>
+                                                <li aria-label="item" class="main-submenu__item">Март</li>
+                                                <li aria-label="item" class="main-submenu__item">Апрель</li>
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                     <p class="prof-control-panel__text text-p2">От<input type="date"
@@ -812,21 +812,21 @@
                                             <label aria-label="agents-page-actual" class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor" id="cursor-agents-page-actual"></div>
-                                                <input type="text" disabled="true"
+                                                <input id="input-agents-page-actual" type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="10">
                                                 <div class="main-submenu main-submenu_style_prof-page-second" id="submenu-agents-page-actual">
                                                     <ul class="main-submenu__list">
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             5
                                                         </li>
-                                                        <li aria-label="item-page-menu"
+                                                        <li aria-label="item"
                                                             class="main-submenu__item main-submenu__item_active">
                                                             10
                                                         </li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             20</li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             50</li>
                                                     </ul>
                                                 </div>
@@ -988,21 +988,21 @@
                                             <label aria-label="agents-page-archive" class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor" id="cursor-agents-page-archive"></div>
-                                                <input type="text" disabled="true"
+                                                <input id="input-agents-page-archive" type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
                                                 <div class="main-submenu main-submenu_style_prof-page-second" id="submenu-agents-page-archive">
                                                     <ul class="main-submenu__list">
-                                                        <li aria-label="item-page-menu"
+                                                        <li aria-label="item"
                                                             class="main-submenu__item main-submenu__item_active">
                                                             5
                                                         </li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             10
                                                         </li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             20</li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             50</li>
                                                     </ul>
                                                 </div>
@@ -1047,10 +1047,10 @@
                                                     value="Месяц">
                                                 <div class="main-submenu main-submenu_style_date">
                                                     <ul class="main-submenu__list">
-                                                        <li class="main-submenu__item">Январь</li>
-                                                        <li class="main-submenu__item">Февраль</li>
-                                                        <li class="main-submenu__item">Март</li>
-                                                        <li class="main-submenu__item">Апрель</li>
+                                                        <li aria-label="item" class="main-submenu__item">Январь</li>
+                                                        <li aria-label="item" class="main-submenu__item">Февраль</li>
+                                                        <li aria-label="item" class="main-submenu__item">Март</li>
+                                                        <li aria-label="item" class="main-submenu__item">Апрель</li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <p class="prof-control-panel__text text-p2">От<input
@@ -1197,16 +1197,16 @@
                                                         value="5">
                                                     <div class="main-submenu main-submenu_style_prof-page-second">
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="item-page-menu"
+                                                            <li aria-label="item"
                                                                 class="main-submenu__item main-submenu__item_active">
                                                                 5
                                                             </li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 10
                                                             </li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 20</li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 50</li>
                                                         </ul>
                                                     </div>
@@ -1255,10 +1255,10 @@
                                                     value="Месяц">
                                                 <div class="main-submenu main-submenu_style_date">
                                                     <ul class="main-submenu__list">
-                                                        <li class="main-submenu__item">Январь</li>
-                                                        <li class="main-submenu__item">Февраль</li>
-                                                        <li class="main-submenu__item">Март</li>
-                                                        <li class="main-submenu__item">Апрель</li>
+                                                        <li aria-label="item" class="main-submenu__item">Январь</li>
+                                                        <li aria-label="item" class="main-submenu__item">Февраль</li>
+                                                        <li aria-label="item" class="main-submenu__item">Март</li>
+                                                        <li aria-label="item" class="main-submenu__item">Апрель</li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <p class="prof-control-panel__text text-p2">От<input
@@ -1349,12 +1349,12 @@
                                                                     class="main-submenu main-submenu_style_prof-status">
                                                                     <ul class="main-submenu__list">
                                                                         <li
-                                                                            class="main-submenu__item main-submenu__item_active">
+                                                                            aria-label="item" class="main-submenu__item main-submenu__item_active">
                                                                             Находится внутри торгового зала</li>
-                                                                        <li class="main-submenu__item">Прикассовая зона</li>
-                                                                        <li class="main-submenu__item">Места общего пользования</li>
-                                                                        <li class="main-submenu__item">Не стандарт</li>
-                                                                        <li class="main-submenu__item">Отдельный вход с внешней стороны здания</li>
+                                                                        <li aria-label="item" class="main-submenu__item">Прикассовая зона</li>
+                                                                        <li aria-label="item" class="main-submenu__item">Места общего пользования</li>
+                                                                        <li aria-label="item" class="main-submenu__item">Не стандарт</li>
+                                                                        <li aria-label="item" class="main-submenu__item">Отдельный вход с внешней стороны здания</li>
                                                                     </ul>
                                                                 </div>
                                                             </label>
@@ -1485,16 +1485,16 @@
                                                         value="5">
                                                     <div class="main-submenu main-submenu_style_prof-page-second">
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="item-page-menu"
+                                                            <li aria-label="item"
                                                                 class="main-submenu__item main-submenu__item_active">
                                                                 5
                                                             </li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 10
                                                             </li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 20</li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 50</li>
                                                         </ul>
                                                     </div>
@@ -1541,10 +1541,10 @@
                                                     value="Месяц">
                                                 <div class="main-submenu main-submenu_style_date">
                                                     <ul class="main-submenu__list">
-                                                        <li class="main-submenu__item">Январь</li>
-                                                        <li class="main-submenu__item">Февраль</li>
-                                                        <li class="main-submenu__item">Март</li>
-                                                        <li class="main-submenu__item">Апрель</li>
+                                                        <li aria-label="item" class="main-submenu__item">Январь</li>
+                                                        <li aria-label="item" class="main-submenu__item">Февраль</li>
+                                                        <li aria-label="item" class="main-submenu__item">Март</li>
+                                                        <li aria-label="item" class="main-submenu__item">Апрель</li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <p class="prof-control-panel__text text-p2">От<input
@@ -1602,12 +1602,12 @@
                                                                     class="main-submenu main-submenu_style_prof-status">
                                                                     <ul class="main-submenu__list">
                                                                         <li
-                                                                            class="main-submenu__item main-submenu__item_active">
+                                                                            aria-label="item" class="main-submenu__item main-submenu__item_active">
                                                                             Находится внутри торгового зала</li>
-                                                                        <li class="main-submenu__item">Прикассовая зона</li>
-                                                                        <li class="main-submenu__item">Места общего пользования</li>
-                                                                        <li class="main-submenu__item">Не стандарт</li>
-                                                                        <li class="main-submenu__item">Отдельный вход с внешней стороны здания</li>
+                                                                        <li aria-label="item" class="main-submenu__item">Прикассовая зона</li>
+                                                                        <li aria-label="item" class="main-submenu__item">Места общего пользования</li>
+                                                                        <li aria-label="item" class="main-submenu__item">Не стандарт</li>
+                                                                        <li aria-label="item" class="main-submenu__item">Отдельный вход с внешней стороны здания</li>
                                                                     </ul>
                                                                 </div>
                                                             </label>
@@ -1766,16 +1766,16 @@
                                                         value="5">
                                                     <div class="main-submenu main-submenu_style_prof-page-second">
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="item-page-menu"
+                                                            <li aria-label="item"
                                                                 class="main-submenu__item main-submenu__item_active">
                                                                 5
                                                             </li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 10
                                                             </li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 20</li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 50</li>
                                                         </ul>
                                                     </div>
@@ -1822,10 +1822,10 @@
                                                     value="Месяц">
                                                 <div class="main-submenu main-submenu_style_date">
                                                     <ul class="main-submenu__list">
-                                                        <li class="main-submenu__item">Январь</li>
-                                                        <li class="main-submenu__item">Февраль</li>
-                                                        <li class="main-submenu__item">Март</li>
-                                                        <li class="main-submenu__item">Апрель</li>
+                                                        <li aria-label="item" class="main-submenu__item">Январь</li>
+                                                        <li aria-label="item" class="main-submenu__item">Февраль</li>
+                                                        <li aria-label="item" class="main-submenu__item">Март</li>
+                                                        <li aria-label="item" class="main-submenu__item">Апрель</li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <p class="prof-control-panel__text text-p2">От<input
@@ -2040,16 +2040,16 @@
                                                         value="5">
                                                     <div class="main-submenu main-submenu_style_prof-page-second">
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="item-page-menu"
+                                                            <li aria-label="item"
                                                                 class="main-submenu__item main-submenu__item_active">
                                                                 5
                                                             </li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 10
                                                             </li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 20</li>
-                                                            <li aria-label="item-page-menu" class="main-submenu__item">
+                                                            <li aria-label="item" class="main-submenu__item">
                                                                 50</li>
                                                         </ul>
                                                     </div>
@@ -2093,10 +2093,10 @@
                                                     value="Месяц">
                                                 <div class="main-submenu main-submenu_style_date">
                                                     <ul class="main-submenu__list">
-                                                        <li class="main-submenu__item">Январь</li>
-                                                        <li class="main-submenu__item">Февраль</li>
-                                                        <li class="main-submenu__item">Март</li>
-                                                        <li class="main-submenu__item">Апрель</li>
+                                                        <li aria-label="item" class="main-submenu__item">Январь</li>
+                                                        <li aria-label="item" class="main-submenu__item">Февраль</li>
+                                                        <li aria-label="item" class="main-submenu__item">Март</li>
+                                                        <li aria-label="item" class="main-submenu__item">Апрель</li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <p class="prof-control-panel__text text-p2">От<input
@@ -2315,16 +2315,16 @@
                                                     value="5">
                                                 <div class="main-submenu main-submenu_style_prof-page-second">
                                                     <ul class="main-submenu__list">
-                                                        <li aria-label="item-page-menu"
+                                                        <li aria-label="item"
                                                             class="main-submenu__item main-submenu__item_active">
                                                             5
                                                         </li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             10
                                                         </li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             20</li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             50</li>
                                                     </ul>
                                                 </div>
@@ -2361,10 +2361,10 @@
                                                     value="Месяц">
                                                 <div class="main-submenu main-submenu_style_date">
                                                     <ul class="main-submenu__list">
-                                                        <li class="main-submenu__item">Январь</li>
-                                                        <li class="main-submenu__item">Февраль</li>
-                                                        <li class="main-submenu__item">Март</li>
-                                                        <li class="main-submenu__item">Апрель</li>
+                                                        <li aria-label="item" class="main-submenu__item">Январь</li>
+                                                        <li aria-label="item" class="main-submenu__item">Февраль</li>
+                                                        <li aria-label="item" class="main-submenu__item">Март</li>
+                                                        <li aria-label="item" class="main-submenu__item">Апрель</li>
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_prof-control-panel">
                                                             <p class="prof-control-panel__text text-p2">От<input
@@ -2508,16 +2508,16 @@
                                                     value="5">
                                                 <div class="main-submenu main-submenu_style_prof-page-second">
                                                     <ul class="main-submenu__list">
-                                                        <li aria-label="item-page-menu"
+                                                        <li aria-label="item"
                                                             class="main-submenu__item main-submenu__item_active">
                                                             5
                                                         </li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             10
                                                         </li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             20</li>
-                                                        <li aria-label="item-page-menu" class="main-submenu__item">
+                                                        <li aria-label="item" class="main-submenu__item">
                                                             50</li>
                                                     </ul>
                                                 </div>
@@ -2815,16 +2815,16 @@
                                                 value="5">
                                             <div class="main-submenu main-submenu_style_prof-page">
                                                 <ul class="main-submenu__list">
-                                                    <li aria-label="item-page-menu"
+                                                    <li aria-label="item"
                                                         class="main-submenu__item main-submenu__item_active">
                                                         5
                                                     </li>
-                                                    <li aria-label="item-page-menu" class="main-submenu__item">
+                                                    <li aria-label="item" class="main-submenu__item">
                                                         10
                                                     </li>
-                                                    <li aria-label="item-page-menu" class="main-submenu__item">
+                                                    <li aria-label="item" class="main-submenu__item">
                                                         20</li>
-                                                    <li aria-label="item-page-menu" class="main-submenu__item">
+                                                    <li aria-label="item" class="main-submenu__item">
                                                         50</li>
                                                 </ul>
                                             </div>

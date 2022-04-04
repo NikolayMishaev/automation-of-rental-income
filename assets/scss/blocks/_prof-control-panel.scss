@@ -35,15 +35,12 @@
         border: none;
         color: #6c737d;
         transition: $transition;
-        &:hover {
-            opacity: 0.7;
-        }
         &_active {
-            background-color: #55b465;
+            background-color: #2a9b43;
             color: white;
         }
         &_type_confirm {
-            background-color: #55b465;
+            background-color: #2a9b43;
             color: white;
         }
     }
@@ -74,10 +71,12 @@
             cursor: pointer;
         }
         &_active {
-            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
-            &:before {
-                background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center !important;
-                background-color: white !important;
+            @media (max-width: rem(1000px)) {
+                background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+                &:before {
+                    background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center !important;
+                    background-color: white !important;
+                }
             }
         }
         &_type_sort {
