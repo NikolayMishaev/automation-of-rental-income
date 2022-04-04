@@ -143,6 +143,9 @@
     &__tasks-info {
         width: rem(152px);
         margin: 0 rem(8px);
+        &_type_director {
+            width: 128px;
+        }
     }
     &__task-name {
         color: $grey80;
