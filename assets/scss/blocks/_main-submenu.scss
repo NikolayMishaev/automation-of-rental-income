@@ -1,8 +1,8 @@
 .main-submenu {
     position: absolute;
     z-index: 11;
-    opacity: 0;
-    visibility: hidden;
+    // opacity: 0;
+    // visibility: hidden;
     box-shadow: 0px 6px 10px rgba(80, 86, 94, 0.02), 0px 2px 18px rgba(80, 86, 94, 0.12),
         0px 4px 5px rgba(80, 86, 94, 0.12);
     border-radius: 8px;
@@ -61,8 +61,18 @@
             left: unset;
         }
     }
+    &_style_division {
+        left: -268px;
+        right: 0;
+        top: 34px;
+    }
     &_style_prof-page {
         left: 240px;
+        right: 0;
+        top: 34px;
+    }
+    &_style_prof-page-second {
+        left: 130px;
         right: 0;
         top: 34px;
     }
@@ -131,6 +141,23 @@
             }
         }
         &_style_prof-control-panel {
+            &:hover {
+                cursor: auto;
+                background-color: unset;
+                color: unset;
+            }
+        }
+        &_style_division {
+            padding-top: 0;
+            &:hover {
+                cursor: auto;
+                background-color: unset;
+                color: unset;
+                opacity: 1;
+            }
+        }
+        &_style_divisor {
+            border-top: 1px solid #e3e7e8;
             &:hover {
                 cursor: auto;
                 background-color: unset;

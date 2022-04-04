@@ -1,5 +1,12 @@
 export { addClassElement, removeClassElement, switchButtons };
 
+// стейты
+
+const state = {
+    "popup-city": document.querySelector("#popup-city"),
+    "popup-notify": document.querySelector("#popup-notify"),
+};
+
 // общие функции
 function addClassElement(element, className) {
     element.classList.add(className);
@@ -65,9 +72,7 @@ const buttonsOpenPopup = document.querySelectorAll(".button-open-popup");
 
 buttonsOpenPopup.forEach((i) =>
     i.addEventListener("click", (e) => {
-        document
-            .querySelector(`#${i.ariaLabel}`)
-            .classList.add("mix-visible-scale");
+        state[`${i.ariaLabel}`].classList.add("mix-visible-scale");
     })
 );
 

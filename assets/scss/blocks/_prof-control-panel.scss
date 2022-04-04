@@ -164,6 +164,10 @@
                 display: none;
             }
         }
+        &_type_division {
+            display: block;
+            width: 100%;
+        }
     }
     &__cursor {
         position: absolute;
@@ -220,6 +224,9 @@
         &_type_status-agent {
             width: 140px;
         }
+        &_type_division {
+            width: 100%;
+        }
     }
     &__label-custom {
         position: relative;
@@ -274,7 +281,7 @@
             color: unset;
             cursor: default;
         }
-        &:nth-child(2n) {
+        &:nth-of-type(2n) {
             @media (max-width: rem(1000px)) {
                 border-top: 1px solid #e3e7e8;
                 margin-top: 14px;
@@ -324,6 +331,11 @@
                 margin-left: 0;
                 margin-top: 16px;
             }
+        }
+        &_type_division {
+            margin: 0;
+            width: unset;
+            flex: 1;
         }
     }
     &__input-search {
@@ -426,6 +438,47 @@
             &:hover {
                 cursor: pointer;
             }
+        }
+    }
+    &__label-number {
+        color: #6d7678;
+        &:first-of-type {
+            margin-right: 16px;
+        }
+    }
+    &__input-number {
+        width: 106px;
+        height: 32px;
+        border: 1px solid #cfd4dc;
+        border-radius: 4px;
+        padding: 4px 12px;
+    }
+    &__index {
+        vertical-align: super;
+        font-size: 8px;
+    }
+    &__stars-container {
+        display: flex;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.08px;
+        color: #6d7678;
+    }
+    &__star {
+        display: block;
+        width: 17px;
+        height: 17px;
+        background: url("./../images/icons/profile-star.svg") no-repeat center/cover;
+        margin: 0 7px;
+        transition: $transition;
+        &:hover {
+            cursor: pointer;
+            background: url("./../images/icons/profile-star-active.svg") no-repeat center/cover;
+        }
+        &:last-child {
+            margin-right: 0;
         }
     }
 }

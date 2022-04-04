@@ -4,6 +4,13 @@ import {
     switchButtons,
 } from "./common-JS-to-all-pages.js";
 
+// стейты
+
+const state = {
+    currentOpenSubmenu: null,
+    selectSubmenu: {},
+};
+
 // логика переключения табов: "Объекты", "Анкеты контрагентов", "Аналитические данные", "Структура", "Предложения"
 
 const tabButtons = document.querySelectorAll(".prof-general__button");
@@ -291,11 +298,13 @@ function closeMobileBlockContacts() {
 
 // скрыть подменю селектов если клик сработал за их пределами
 
-// document.addEventListener("click", (e) => {
-//     if (!e.target.closest(".prof-control-panel__select-label")) {
-//         hideAllSubmenu();
-//     }
-// });
+// function listenClickOutsideSelect() {
+//     document.addEventListener("click", (e) => {
+//         if (!e.target.closest(".prof-control-panel__select-label")) {
+//             hideAllSubmenu();
+//         }
+//     });
+// }
 
 // логика работы селектов общие функции:
 
@@ -464,14 +473,17 @@ checkboxs.forEach((i) =>
     })
 );
 
-// тест
-const testPeriod = document.querySelector("#test-period");
+// логика по работе селектов
 
-testPeriod.addEventListener("click", one);
-testPeriod.addEventListener("click", one);
-testPeriod.addEventListener("click", one);
-testPeriod.removeEventListener("click", one);
+const checkClickOutsideSelect = (e) => {
+    if (!e.target.closest(".prof-control-panel__select-label")) {
+        if (state.currentOpenSubmenu) {
+            removeClassElement(state.currentOpenSubmenu, "mix-visible");
+        }
+        document.removeEventListener("click", checkClickOutsideSelect);
+    }
+};
 
-function one() {
-    console.log("one");
+function listenClickOutsideSelect() {
+    document.addEventListener("click", checkClickOutsideSelect);
 }
