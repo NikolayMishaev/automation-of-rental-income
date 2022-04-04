@@ -9,13 +9,29 @@ import {
 const state = {
     currentOpenSubmenu: null,
     selectSubmenu: {},
-    selectCursorStructure: {
+    cursorsStructure: {
         director: document.querySelector("#structure-cursor-director"),
         direction: document.querySelector("#structure-cursor-direction"),
         management: document.querySelector("#structure-cursor-management"),
         department: document.querySelector("#structure-cursor-department"),
         manager: document.querySelector("#structure-cursor-manager"),
         analytics: document.querySelector("#structure-cursor-analytics"),
+    },
+    cardsStructure: {
+        director: document.querySelector(".prof-structure__card_type_director"),
+        direction: document.querySelector(
+            ".structure-cards-container-direction"
+        ),
+        management: document.querySelector(
+            ".structure-cards-container-management"
+        ),
+        department: document.querySelector(
+            ".structure-cards-container-department"
+        ),
+        manager: document.querySelector(".structure-cards-container-manager"),
+        analytics: document.querySelector(
+            ".structure-cards-container-analytics"
+        ),
     },
 };
 
@@ -502,24 +518,35 @@ const sturctureWrappers = document.querySelectorAll(
 
 sturctureWrappers.forEach((i) =>
     i.addEventListener("click", (e) => {
-        const label = e.target.closest(
-            ".prof-structure__wrapper-subtitle_active"
+        const wrapperElement = e.target.closest(
+            ".prof-structure__wrapper-subtitle"
         );
-        if (label) {
-            console.log(label);
+        const wrapperElementActive = wrapperElement.classList.contains(
+            "prof-structure__wrapper-subtitle_active"
+        );
+        if (wrapperElementActive) {
+            const currentHeight =
+                state.cardsStructure[`${wrapperElement.ariaLabel}`]
+                    .clientHeight;
+            console.log(currentHeight);
+            wrapperElement.style.height = `${currentHeight + 32}px`;
             removeClassElement(
-                label,
+                wrapperElement,
                 "prof-structure__wrapper-subtitle_active"
             );
             addClassElement(
-                state.selectCursorStructure[`${label.ariaLabel}`],
-                "mix-visible"
+                state.cursorsStructure[`${wrapperElement.ariaLabel}`],
+                "prof-structure__cursor_active"
             );
         } else {
-            addClassElement(label, "prof-structure__wrapper-subtitle_active");
+            wrapperElement.style.height = `16px`;
+            addClassElement(
+                wrapperElement,
+                "prof-structure__wrapper-subtitle_active"
+            );
             removeClassElement(
-                state.selectCursorStructure[`${label.ariaLabel}`],
-                "mix-visible"
+                state.cursorsStructure[`${wrapperElement.ariaLabel}`],
+                "prof-structure__cursor_active"
             );
         }
     })

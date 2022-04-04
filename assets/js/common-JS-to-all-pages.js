@@ -9,7 +9,6 @@ const state = {
 
 // общие функции
 function addClassElement(element, className) {
-    console.log(className);
     element.classList.add(className);
 }
 
@@ -50,7 +49,7 @@ const popupLogIn = document.querySelector(".modal-login");
 formSignIn.addEventListener("submit", (e) => {
     e.preventDefault();
     menuLinks.style.display = "none";
-    menuProfile.style.display = "flex";
+    menuProfile.classList.remove("mix-display-none");
     popupLogIn.classList.remove("mix-display-flex");
 });
 

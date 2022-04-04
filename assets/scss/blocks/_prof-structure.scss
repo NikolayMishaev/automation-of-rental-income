@@ -87,16 +87,14 @@
         position: relative;
         max-width: 478px;
         margin-top: 16px;
-        // height: 16px;
+        height: 16px;
         overflow: hidden;
+        transition: $transition;
         &:hover {
             cursor: pointer;
         }
         &:first-of-type {
             margin-top: 24px;
-        }
-        &_active {
-            height: 100%;
         }
     }
     &__cursor {
@@ -106,6 +104,10 @@
         width: 6px;
         height: 6px;
         background: url('./../images/icons/structure-cursor.svg') no-repeat center;
+        transition: $transition;
+        &_active {
+            transform: rotate(180deg)
+        }
     }
     &__label {
         opacity: 0;

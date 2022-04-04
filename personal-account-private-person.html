@@ -596,7 +596,7 @@
                                                 class="main-submenu main-submenu_style_prof-page">
                                                 <ul class="main-submenu__list">
                                                     <li aria-label="item-page-menu"
-                                                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-page">
+                                                        class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-page">
                                                         5
                                                     </li>
                                                     <li aria-label="item-page-menu"
@@ -1300,44 +1300,46 @@
                 <div class="popup-change-city">
                     <h3 class="popup-change-city__title">Укажите свой город</h3>
                     <label class="popup-change-city__label mix-label">
-                        <input class="popup-change-city__input mix-input" type="text" maxlength="50" placeholder=" " />
+                        <input id="inputCityNamePopup" class="popup-change-city__input mix-input" type="text" maxlength="50" placeholder=" " />
                         <span class="popup-change-city__caption mix-caption"></span>
                     </label>
                     <div class="popup-change-city__column">
                         <ul class="popup-change-city__list">
                             <!-- текущий активный город модификатор: popup-change-city__item_type_active -->
                             <li
-                                class="popup-change-city__item popup-change-city__item_type_favorite popup-change-city__item_type_active">
+                                class="popup-change-city__item popup-change-city__item-popup popup-change-city__item_type_favorite popup-change-city__item_type_active">
                                 Москва</li>
-                            <li class="popup-change-city__item popup-change-city__item_type_favorite">Санкт-Петербург
+                            <li class="popup-change-city__item popup-change-city__item-popup popup-change-city__item_type_favorite">Санкт-Петербург
                             </li>
-                            <li class="popup-change-city__item popup-change-city__item_type_favorite">Тула</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup popup-change-city__item_type_favorite">Тула</li>
                         </ul>
                         <ul class="popup-change-city__list">
-                            <div class="popup-change-city__overlay"></div>
+                            <!-- <div class="popup-change-city__overlay"></div> -->
                             <!-- данные с сервера выбор города -->
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Балашиха</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Бронницы</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Видное</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Воскресенск</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Дзержинский</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Дмитров</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Домодедово</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Жуковский</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Истра</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Кашира</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Клин</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Королёв</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Котельники</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Кубинка</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Лобня</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Лыткарино</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Мытищи</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Одинцово</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Подольск</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Пушкино</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Раменское</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Химки</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Чехов</li>
+                            <li class="popup-change-city__item popup-change-city__item-popup">Ярославль</li>
                         </ul>
                     </div>
                 </div>

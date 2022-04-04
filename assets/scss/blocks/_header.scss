@@ -47,6 +47,12 @@
         line-height: rem(16px);
         letter-spacing: rem(0.08px);
         color: $grey80;
+        &:link {
+            text-decoration: none;
+        }
+        &:visited {
+            text-decoration: none;
+        }
         @media #{$screen-mobile} {
             font-size: rem(12px);
             padding-top: 0;

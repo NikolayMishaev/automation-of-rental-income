@@ -394,7 +394,7 @@ cardPriceContainerBigCards.addEventListener("click", (e) => {
         e.target.closest(".card-price_style_main").style.zIndex = "10";
         setTimeout(() => {
             location.href = currentLink;
-        }, 0);
+        }, 250);
     }
 });
 
@@ -490,7 +490,7 @@ containersCityName.forEach((i) =>
         if (e.target.classList.contains("popup-change-city__item")) {
             setTimeout(() => {
                 popupChangeCity.classList.remove("mix-visible-scale");
-            }, 250);
+            }, 100);
         }
     })
 );
@@ -513,5 +513,7 @@ cityPopupAll.forEach((i) =>
             i.classList.remove("popup-change-city__item_type_active")
         );
         e.target.classList.add("popup-change-city__item_type_active");
+        document.querySelector("#link-your-city").textContent =
+            e.target.textContent.trim();
     })
 );

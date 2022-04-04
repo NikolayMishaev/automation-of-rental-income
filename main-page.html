@@ -96,7 +96,7 @@
                     </svg>
                 </a>
                 <p class="header__city-select">Ваш город:</p>
-                <a aria-label='popup-city' href="#" class="header__city button-open-popup">Москва
+                <a id='link-your-city' aria-label='popup-city' href="#" class="header__city button-open-popup">Москва
                     <svg class="icon icon_header-select" viewBox="0 0 10 6" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -105,12 +105,12 @@
                     </svg>
                 </a>
                 <nav class="menu menu_place_header">
-                    <a class="menu__profile mix-display-flex" href="./personal-account-private-person.html">
+                    <a class="menu__profile mix-display-none" href="./personal-account-private-person.html">
                         <span class="menu__profile-name">
                             <!-- данные с сервера имя пользователя -->Иван Иванов</span>
                         <div class="menu__profile-avatar"></div>
                     </a>
-                    <ul class="menu__links mix-display-none">
+                    <ul class="menu__links">
                         <li class="menu__list">
                             <a href="./registrationPage.html" id="link-register"
                                 class="menu__link menu__link_type_register">Регистрация</a>
@@ -2052,22 +2052,19 @@
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input
                                                             type="checkbox"
-                                                            class="main-form__input main-form__input_type_checkbox">Торговый
-                                                        центр</label>
+                                                            class="main-form__input main-form__input_type_checkbox">Торговый центр</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input
                                                             type="checkbox"
-                                                            class="main-form__input main-form__input_type_checkbox">Отдельно
-                                                        стоящее здание</label>
+                                                            class="main-form__input main-form__input_type_checkbox">Отдельно стоящее здание</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input
                                                             type="checkbox"
-                                                            class="main-form__input main-form__input_type_checkbox">Встроенное/пристроенное
-                                                        здание</label>
+                                                            class="main-form__input main-form__input_type_checkbox">Встроенное/пристроенное здание</label>
                                                 </li>
                                             </ul>
                                             <button id="button-filter-confirm-change-type" type="button"
@@ -2107,29 +2104,25 @@
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input
                                                             type="checkbox"
-                                                            class="main-form__input main-form__input_type_checkbox">Находится
-                                                        внутри торгового зала</label>
+                                                            class="main-form__input main-form__input_type_checkbox">Находится внутри торгового зала</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input
                                                             type="checkbox"
-                                                            class="main-form__input main-form__input_type_checkbox">Прикассовая
-                                                        зона</label>
+                                                            class="main-form__input main-form__input_type_checkbox">Прикассовая зона</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input
                                                             type="checkbox"
-                                                            class="main-form__input main-form__input_type_checkbox">Места
-                                                        общего пользования</label>
+                                                            class="main-form__input main-form__input_type_checkbox">Места общего пользования</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input
                                                             type="checkbox"
-                                                            class="main-form__input main-form__input_type_checkbox">Отдельный
-                                                        вход с внешней стороны здания</label>
+                                                            class="main-form__input main-form__input_type_checkbox">Отдельный вход с внешней стороны здания</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-class">
                                                     <label
@@ -2142,8 +2135,7 @@
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-class"><input
                                                             type="checkbox"
-                                                            class="main-form__input main-form__input_type_checkbox">Не
-                                                        стандарт</label>
+                                                            class="main-form__input main-form__input_type_checkbox">Не стандарт</label>
                                                 </li>
                                             </ul>
                                             <button id="button-filter-confirm-change-class" type="button"

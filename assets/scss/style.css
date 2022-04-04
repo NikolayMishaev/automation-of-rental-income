@@ -3013,6 +3013,14 @@ main .container {
   color: #3c4142;
 }
 
+.header__city:link {
+  text-decoration: none;
+}
+
+.header__city:visited {
+  text-decoration: none;
+}
+
 @media (max-width: 40rem) {
   .header__city {
     font-size: 0.75rem;
@@ -3077,8 +3085,10 @@ main .container {
 }
 
 .menu__profile {
-  display: none;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -8045,7 +8055,10 @@ main .container {
   position: relative;
   max-width: 478px;
   margin-top: 16px;
+  height: 16px;
   overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .prof-structure__wrapper-subtitle:hover {
@@ -8056,10 +8069,6 @@ main .container {
   margin-top: 24px;
 }
 
-.prof-structure__wrapper-subtitle_active {
-  height: 100%;
-}
-
 .prof-structure__cursor {
   position: absolute;
   top: 4px;
@@ -8067,6 +8076,13 @@ main .container {
   width: 6px;
   height: 6px;
   background: url("./../images/icons/structure-cursor.svg") no-repeat center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.prof-structure__cursor_active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .prof-structure__label {

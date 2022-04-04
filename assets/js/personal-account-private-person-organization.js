@@ -66,6 +66,9 @@ buttonsChangeViewContainer.addEventListener("click", (e) => {
 // логика сркытия таблицы при первой загрузке
 if (window.innerWidth < 1151) {
     hideTable();
+    buttonsChangeViewContainer.classList.add("mix-display-none");
+} else {
+    buttonsChangeViewContainer.classList.remove("mix-display-none");
 }
 
 function hideTable() {
@@ -129,6 +132,9 @@ tasksContainer.forEach((i) =>
 window.addEventListener("resize", function (e) {
     if (e.target.innerWidth < 1151) {
         hideTable();
+        buttonsChangeViewContainer.classList.add("mix-display-none");
+    } else {
+        buttonsChangeViewContainer.classList.remove("mix-display-none");
     }
     if (e.target.innerWidth > 1780) {
         resetVisibleDymanicClassAsideBlock();
