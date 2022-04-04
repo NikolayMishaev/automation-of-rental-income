@@ -1,111 +1,124 @@
 @mixin primary-btn($color) {
-    border-radius: 4px;
-    border: none;
-    color: white;
-    background-color: $color;
-    line-height: 24px;
-    &:hover {
-        background-color: $accen-hover;
-        transition: $transition;
-    }
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: $color;
+  line-height: 24px;
+  &:hover {
+    background-color: $accen-hover;
+    transition: $transition;
+  }
 }
 
 @mixin secondary-btn {
-    border-radius: 4px;
-    border: 1px solid $grey30;
-    color: $grey100;
-    background-color: white;
-    line-height: 22px;
-    &:hover {
-        border-color: $grey-40;
-        transition: $transition;
-        background-color: $grey-20;
-    }
+  border-radius: 4px;
+  border: 1px solid $grey30;
+  color: $grey100;
+  background-color: white;
+  line-height: 22px;
+  &:hover {
+    border-color: $grey-40;
+    transition: $transition;
+    background-color: $grey-20;
+  }
 }
 
 @mixin block-border {
-    border: 1px solid #e3e7e8;
-    border-radius: 12px;
-    background-color: white;
+  border: 1px solid #e3e7e8;
+  border-radius: 12px;
+  background-color: white;
 }
 @mixin flex-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin file-input {
-    display: flex;
-    border: 1px dashed $grey-40;
-    width: 100%;
-    border-radius: 4px;
-    padding: 24px 0;
-    position: relative;
-    text-align: center;
-    @media #{$screen-mobile} {
-        min-width: auto;
-    }
+  display: flex;
+  border: 1px dashed $grey-40;
+  width: 100%;
+  border-radius: 4px;
+  padding: 24px 0;
+  position: relative;
+  text-align: center;
+  @media #{$screen-mobile} {
+    min-width: auto;
+  }
 
-    input {
-        opacity: 0;
-        top: 0;
-        right: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
+  input {
+    opacity: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  a {
+    color: $accent90;
+  }
+  &__text {
+    font-size: $font-size-small;
+    color: $grey100;
+    margin: auto;
+    &_small {
+      font-size: $font-size-very-small;
+      color: $grey60;
+      margin-top: 8px;
     }
+  }
+  &__file {
+    border: 1px solid $grey30;
+    padding: 16px;
+    border-radius: 12px;
+    display: none;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
     a {
-        color: $accent90;
+      line-height: 24px;
+      font-size: 20px;
     }
-    &__text {
-        font-size: $font-size-small;
-        color: $grey100;
-        margin: auto;
-        &_small {
-            font-size: $font-size-very-small;
-            color: $grey60;
-            margin-top: 8px;
-        }
+    a:hover {
+      text-decoration: none;
     }
-    &__file {
-        border: 1px solid $grey30;
-        padding: 16px;
-        border-radius: 12px;
-        display: none;
-        align-items: center;
-        position: relative;
-        z-index: 3;
+    a:visited {
+      color: inherit;
     }
-    &__name {
-        display: flex;
-        align-items: center;
-        font-weight: 500;
-        a {
-            line-height: 24px;
-            font-size: 20px;
-        }
-        a:hover {
-            text-decoration: none;
-        }
-        a:visited {
-            color: inherit;
-        }
+  }
+  &__icon {
+    height: 24px;
+    width: 24px;
+    @include flex-container;
+    margin-right: 8px;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 11px;
     }
-    &__icon {
-        height: 24px;
-        width: 24px;
-        @include flex-container;
-        margin-right: 8px;
+  }
+  &__file-close {
+    margin-left: 15px;
+    cursor: pointer;
+  }
+}
+
+@mixin scrollbar {
+  scrollbar-width: thin;
+  @media (min-width: 640px) {
+    &::-webkit-scrollbar {
+      width: 10px;
     }
-    &__row {
-        display: flex;
-        align-items: center;
-        svg {
-            margin-right: 11px;
-        }
+    &::-webkit-scrollbar-thumb {
+      background: $grey-20;
+      border-radius: 2px;
     }
-    &__file-close {
-        margin-left: 15px;
-        cursor: pointer;
-    }
+  }
 }
