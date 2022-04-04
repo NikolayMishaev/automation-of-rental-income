@@ -96,6 +96,9 @@
         &:first-of-type {
             margin-top: 24px;
         }
+        &_active {
+            overflow: unset;
+        }
     }
     &__cursor {
         position: absolute;

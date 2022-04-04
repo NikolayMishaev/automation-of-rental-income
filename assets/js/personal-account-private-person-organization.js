@@ -119,6 +119,9 @@ tasksContainer.forEach((i) =>
         if (innerWidth > 1780) {
             return;
         }
+        if (innerWidth < 1551 && innerWidth > 750) {
+            return;
+        }
         if (e.target.closest(".prof-aside__task-item")) {
             panelTasks.classList.add("mix-display-none");
             panelChat.classList.add("mix-display-flex");
@@ -130,20 +133,27 @@ tasksContainer.forEach((i) =>
 );
 
 window.addEventListener("resize", function (e) {
+    // если таблица скрыта, то ничего не делаем
     if (e.target.innerWidth < 1151) {
-        hideTable();
-        buttonsChangeViewContainer.classList.add("mix-display-none");
-    } else {
-        buttonsChangeViewContainer.classList.remove("mix-display-none");
+        if (!contentTable.classList.contains("mix-display-none")) {
+            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
+            removeClassElement(contentCards, "mix-display-none");
+            addClassElement(contentTable, "mix-display-none");
+            resetActiveClassButton(objectsButtons);
+        }
     }
-    if (e.target.innerWidth > 1780) {
-        resetVisibleDymanicClassAsideBlock();
-    }
+
     if (e.target.innerWidth > 750) {
         resetVisibleDymanicClassAsideBlockMobile();
     }
     if (e.target.innerWidth > 1550) {
         closeMobileBlockContacts();
+    }
+    if (e.target.innerWidth > 1780) {
+        resetVisibleDymanicClassAsideBlock();
+    }
+    if (innerWidth < 1551 && innerWidth > 750) {
+        panelTasks.classList.remove("mix-display-none");
     }
 });
 

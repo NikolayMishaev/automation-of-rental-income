@@ -72,7 +72,7 @@ const buttonsOpenPopup = document.querySelectorAll(".button-open-popup");
 
 buttonsOpenPopup.forEach((i) =>
     i.addEventListener("click", (e) => {
-        state[`${i.ariaLabel}`].classList.add("mix-visible-scale");
+        state[i.ariaLabel].classList.add("mix-visible-scale");
     })
 );
 

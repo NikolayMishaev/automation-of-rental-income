@@ -200,13 +200,13 @@
                                         <input type="checkbox" class="prof-control-panel__checkbox">
                                         Только выгодные предложения
                                     </label>
-                                    <label
-                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2">Статус:
+                                    <label aria-label="objects-status"
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2 button-toggle-select">Статус:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div class="prof-control-panel__cursor"></div>
+                                        <div class="prof-control-panel__cursor" id="cursor-objects-status"></div>
                                         <input type="text" disabled="true" class="prof-control-panel__select-input"
                                             value="Все">
-                                        <div class="main-submenu main-submenu_style_prof-status">
+                                        <div class="main-submenu main-submenu_style_prof-status" id="submenu-objects-status">
                                             <ul class="main-submenu__list">
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu prof-control-panel__title-submenu_type_sort">
@@ -257,14 +257,14 @@
                                             placeholder=" ">
                                         <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                     </label>
-                                    <label
-                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_sort text-p2">Сортировать:
+                                    <label aria-label="objects-sort"
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_sort text-p2 button-toggle-select">Сортировать:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div class="prof-control-panel__cursor"></div>
+                                        <div class="prof-control-panel__cursor" id="cursor-objects-sort"></div>
                                         <input type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_sort"
                                             value="Сначала выгодные">
-                                        <div class="main-submenu main-submenu_style_prof-status">
+                                        <div class="main-submenu main-submenu_style_prof-status" id="submenu-objects-sort">
                                             <ul class="main-submenu__list">
                                                 <li
                                                     class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
@@ -581,14 +581,14 @@
                                     </div>
 
                                     <div class="prof-control-panel">
-                                        <label class="prof-control-panel__select-label text-p2">Показывать объектов на
+                                        <label aria-label="objects-page" class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать объектов на
                                             странице:
                                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                            <div class="prof-control-panel__cursor"></div>
+                                            <div class="prof-control-panel__cursor" id="cursor-objects-page"></div>
                                             <input type="text" disabled="true"
                                                 class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                 value="5">
-                                            <div class="main-submenu main-submenu_style_prof-page">
+                                            <div class="main-submenu main-submenu_style_prof-page" id="submenu-objects-page">
                                                 <ul class="main-submenu__list">
                                                     <li aria-label="item-page-menu"
                                                         class="main-submenu__item main-submenu__item_active">
@@ -615,16 +615,16 @@
                                     <h3
                                         class="prof-control-panel__title prof-control-panel__title_type_agent heading-h3">
                                         Анкеты контрагентов</h3>
-                                    <label
-                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_status-agent text-p2">Статус
+                                    <label aria-label="agents-status"
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_active prof-control-panel__select-label_type_status-agent text-p2 button-toggle-select">Статус
                                         анкеты:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div class="prof-control-panel__cursor prof-control-panel__cursor_type_agent">
+                                        <div class="prof-control-panel__cursor prof-control-panel__cursor_type_agent" id="cursor-agents-status">
                                         </div>
                                         <input type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_status-agent"
                                             value="Любой">
-                                        <div class="main-submenu main-submenu_style_prof-status">
+                                        <div class="main-submenu main-submenu_style_prof-status" id="submenu-agents-status">
                                             <ul class="main-submenu__list">
                                                 <li class="main-submenu__item main-submenu__item_active">Любой</li>
                                                 <li class="main-submenu__item">Пункт_1</li>
@@ -634,14 +634,14 @@
                                             </ul>
                                         </div>
                                     </label>
-                                    <label
-                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                    <label aria-label="agents-period"
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                        <div class="prof-control-panel__cursor"></div>
+                                        <div class="prof-control-panel__cursor" id="cursor-agents-period"></div>
                                         <input type="text" disabled="true"
                                             class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                                             value="Месяц">
-                                        <div class="main-submenu main-submenu_style_date">
+                                        <div class="main-submenu main-submenu_style_date" id="submenu-agents-period">
                                             <ul class="main-submenu__list">
                                                 <li class="main-submenu__item">Январь</li>
                                                 <li class="main-submenu__item">Февраль</li>
@@ -809,13 +809,13 @@
                                         </div>
 
                                         <div class="prof-control-panel">
-                                            <label class="prof-control-panel__select-label text-p2">Показывать строк:
+                                            <label aria-label="agents-page-actual" class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div class="prof-control-panel__cursor"></div>
+                                                <div class="prof-control-panel__cursor" id="cursor-agents-page-actual"></div>
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="10">
-                                                <div class="main-submenu main-submenu_style_prof-page-second">
+                                                <div class="main-submenu main-submenu_style_prof-page-second" id="submenu-agents-page-actual">
                                                     <ul class="main-submenu__list">
                                                         <li aria-label="item-page-menu" class="main-submenu__item">
                                                             5
@@ -985,13 +985,13 @@
                                         </div>
 
                                         <div class="prof-control-panel">
-                                            <label class="prof-control-panel__select-label text-p2">Показывать строк:
+                                            <label aria-label="agents-page-archive" class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                                                <div class="prof-control-panel__cursor"></div>
+                                                <div class="prof-control-panel__cursor" id="cursor-agents-page-archive"></div>
                                                 <input type="text" disabled="true"
                                                     class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                                                     value="5">
-                                                <div class="main-submenu main-submenu_style_prof-page-second">
+                                                <div class="main-submenu main-submenu_style_prof-page-second" id="submenu-agents-page-archive">
                                                     <ul class="main-submenu__list">
                                                         <li aria-label="item-page-menu"
                                                             class="main-submenu__item main-submenu__item_active">
@@ -1039,7 +1039,7 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
@@ -1069,7 +1069,7 @@
                                                 </div>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2 button-toggle-select">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
@@ -1187,7 +1187,7 @@
                                             </div>
 
                                             <div class="prof-control-panel">
-                                                <label class="prof-control-panel__select-label text-p2">Показывать
+                                                <label class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать
                                                     строк:
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                     <div class="prof-control-panel__cursor">
@@ -1247,7 +1247,7 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
@@ -1277,7 +1277,7 @@
                                                 </div>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2 button-toggle-select">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
@@ -1337,7 +1337,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_division">
                                                             <label
-                                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2">
+                                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2 button-toggle-select">
                                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                                 <div
                                                                     class="prof-control-panel__cursor prof-control-panel__cursor_type_agent">
@@ -1475,7 +1475,7 @@
                                             </div>
 
                                             <div class="prof-control-panel">
-                                                <label class="prof-control-panel__select-label text-p2">Показывать
+                                                <label class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать
                                                     строк:
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                     <div class="prof-control-panel__cursor">
@@ -1533,7 +1533,7 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
@@ -1563,7 +1563,7 @@
                                                 </div>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2 button-toggle-select">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
@@ -1590,7 +1590,7 @@
                                                         <li
                                                             class="main-submenu__item main-submenu__item_style_division">
                                                             <label
-                                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2">
+                                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2 button-toggle-select">
                                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                                 <div
                                                                     class="prof-control-panel__cursor prof-control-panel__cursor_type_agent">
@@ -1756,7 +1756,7 @@
                                             </div>
 
                                             <div class="prof-control-panel">
-                                                <label class="prof-control-panel__select-label text-p2">Показывать
+                                                <label class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать
                                                     строк:
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                     <div class="prof-control-panel__cursor">
@@ -1814,7 +1814,7 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
@@ -1844,7 +1844,7 @@
                                                 </div>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2 button-toggle-select">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
@@ -2030,7 +2030,7 @@
                                             </div>
 
                                             <div class="prof-control-panel">
-                                                <label class="prof-control-panel__select-label text-p2">Показывать
+                                                <label class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать
                                                     строк:
                                                     <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                     <div class="prof-control-panel__cursor">
@@ -2085,7 +2085,7 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
@@ -2115,7 +2115,7 @@
                                                 </div>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2 button-toggle-select">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
@@ -2307,7 +2307,7 @@
                                         </div>
 
                                         <div class="prof-control-panel">
-                                            <label class="prof-control-panel__select-label text-p2">Показывать строк:
+                                            <label class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
@@ -2353,7 +2353,7 @@
                                                 <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2">Период:
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
@@ -2383,7 +2383,7 @@
                                                 </div>
                                             </label>
                                             <label
-                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2">
+                                                class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2 button-toggle-select">
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
                                                 <input type="text" disabled="true"
@@ -2500,7 +2500,7 @@
                                         </div>
 
                                         <div class="prof-control-panel">
-                                            <label class="prof-control-panel__select-label text-p2">Показывать строк:
+                                            <label class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать строк:
                                                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                                 <div class="prof-control-panel__cursor"></div>
                                                 <input type="text" disabled="true"
@@ -2806,7 +2806,7 @@
                                     </div>
 
                                     <div class="prof-control-panel">
-                                        <label class="prof-control-panel__select-label text-p2">Показывать объектов на
+                                        <label class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать объектов на
                                             странице:
                                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                                             <div class="prof-control-panel__cursor"></div>

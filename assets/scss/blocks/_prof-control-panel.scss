@@ -67,6 +67,19 @@
         color: #6d7678;
         position: relative;
         transition: $transition;
+        @media (max-width: rem(1000px)) {
+            border-radius: 4px
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &_active {
+            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+            &:before {
+                background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center !important;
+                background-color: white !important;
+            }
+        }
         &_type_sort {
             margin-top: 16px;
             @media (max-width: rem(1150px)) {

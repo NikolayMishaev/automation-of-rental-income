@@ -8,7 +8,32 @@ import {
 
 const state = {
     currentOpenSubmenu: null,
-    selectSubmenu: {},
+    cursorsSelect: {
+        "objects-status": document.querySelector("#cursor-objects-status"),
+        "objects-sort": document.querySelector("#cursor-objects-sort"),
+        "objects-page": document.querySelector("#cursor-objects-page"),
+        "agents-status": document.querySelector("#cursor-agents-status"),
+        "agents-period": document.querySelector("#cursor-agents-period"),
+        "agents-page-actual": document.querySelector(
+            "#cursor-agents-page-actual"
+        ),
+        "agents-page-archive": document.querySelector(
+            "#cursor-agents-page-archive"
+        ),
+    },
+    submenuSelect: {
+        "objects-status": document.querySelector("#submenu-objects-status"),
+        "objects-sort": document.querySelector("#submenu-objects-sort"),
+        "objects-page": document.querySelector("#submenu-objects-page"),
+        "agents-status": document.querySelector("#submenu-agents-status"),
+        "agents-period": document.querySelector("#submenu-agents-period"),
+        "agents-page-actual": document.querySelector(
+            "#submenu-agents-page-actual"
+        ),
+        "agents-page-archive": document.querySelector(
+            "#submenu-agents-page-archive"
+        ),
+    },
 };
 
 // логика переключения табов: "Объекты", "Анкеты контрагентов", "Аналитические данные", "Структура", "Предложения"
@@ -183,10 +208,8 @@ function resetActiveClassButton(arrayButtons) {
 window.addEventListener("resize", function (e) {
     // если таблица скрыта, то ничего не делаем
     if (e.target.innerWidth < 1151) {
-        if (contentTable.classList.contains("mix-display-none")) {
-            return;
-            // иначе показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
-        } else {
+        if (!contentTable.classList.contains("mix-display-none")) {
+            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
             removeClassElement(contentCards, "mix-display-none");
             addClassElement(contentTable, "mix-display-none");
             resetActiveClassButton(objectsButtons);
@@ -201,6 +224,9 @@ window.addEventListener("resize", function (e) {
     }
     if (e.target.innerWidth > 1780) {
         resetVisibleDymanicClassAsideBlock();
+    }
+    if (innerWidth < 1551 && innerWidth > 750) {
+        panelTasks.classList.remove("mix-display-none");
     }
 });
 
@@ -241,6 +267,9 @@ const tasksContainer = document.querySelectorAll(
 tasksContainer.forEach((i) =>
     i.addEventListener("click", (e) => {
         if (innerWidth > 1780) {
+            return;
+        }
+        if (innerWidth < 1551 && innerWidth > 750) {
             return;
         }
         if (e.target.closest(".prof-aside__task-item")) {
@@ -475,15 +504,81 @@ checkboxs.forEach((i) =>
 
 // логика по работе селектов
 
+// проверить, где сработал клик, если за пределами тела селекта, то запустить ф-ию для скрытия текущего открытого подменю
 const checkClickOutsideSelect = (e) => {
+    // если клик произошел за пределами селекта(label)
     if (!e.target.closest(".prof-control-panel__select-label")) {
-        if (state.currentOpenSubmenu) {
-            removeClassElement(state.currentOpenSubmenu, "mix-visible");
-        }
-        document.removeEventListener("click", checkClickOutsideSelect);
+        // скрыть текущее подменю
+        hideCurrentSubmenu();
     }
 };
 
-function listenClickOutsideSelect() {
+// установить слушатель клика на весь документ и отслеживать клик вне тела селекта
+function setListenerClickOutsideSelect() {
     document.addEventListener("click", checkClickOutsideSelect);
 }
+
+// скрыть текущее открытое подменю селекта
+function hideCurrentSubmenu() {
+    // если в стейте есть текущее открытое подменю
+    if (state.currentOpenSubmenu) {
+        // найти по подменю текущий селект
+        const currentSelectLabel = state.currentOpenSubmenu.closest(
+            "prof-control-panel__select-label"
+        );
+        // удалить активный класс у текущего селекта
+        removeClassElement(
+            currentSelectLabel,
+            "prof-control-panel__select-label_active"
+        );
+        // удалить активный класс у текущего курсора
+        removeClassElement(
+            state.cursorsSelect[currentSelectLabel.ariaLabel],
+            "prof-control-panel__cursor_active"
+        );
+        // скрыть текущее открытое подменю
+        removeClassElement(state.currentOpenSubmenu, "mix-visible");
+        // удалить текущий селект из стейта
+        state.currentOpenSubmenu = null;
+        // удалить слушатель document, т.к. все селекты закрыты
+        document.removeEventListener("click", checkClickOutsideSelect);
+    }
+}
+
+const buttonsSelect = document.querySelectorAll(".button-toggle-select");
+
+buttonsSelect.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        const currentLabel = e.target.closest(
+            ".prof-control-panel__select-label"
+        );
+        if (e.target.closest(".main-submenu")) {
+            return;
+        }
+        if (currentLabel) {
+            if (
+                !currentLabel.classList.contains(
+                    "prof-control-panel__cursor_active"
+                )
+            ) {
+                hideCurrentSubmenu();
+                addClassElement(
+                    state.submenuSelect[currentLabel.ariaLabel],
+                    "mix-visible"
+                );
+            }
+            state.currentOpenSubmenu =
+                state.submenuSelect[currentLabel.ariaLabel];
+            setListenerClickOutsideSelect();
+            addClassElement(
+                currentLabel,
+                "prof-control-panel__select-label_active"
+            );
+            addClassElement(
+                state.cursorsSelect[currentLabel.ariaLabel],
+                "prof-control-panel__cursor_active"
+            );
+        } else {
+        }
+    })
+);

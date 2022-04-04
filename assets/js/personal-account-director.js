@@ -205,10 +205,8 @@ function resetActiveClassButton(arrayButtons) {
 window.addEventListener("resize", function (e) {
     // если таблица скрыта, то ничего не делаем
     if (e.target.innerWidth < 1151) {
-        if (contentTable.classList.contains("mix-display-none")) {
-            return;
-            // иначе показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
-        } else {
+        if (!contentTable.classList.contains("mix-display-none")) {
+            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
             removeClassElement(contentCards, "mix-display-none");
             addClassElement(contentTable, "mix-display-none");
             resetActiveClassButton(objectsButtons);
@@ -223,6 +221,9 @@ window.addEventListener("resize", function (e) {
     }
     if (e.target.innerWidth > 1780) {
         resetVisibleDymanicClassAsideBlock();
+    }
+    if (innerWidth < 1551 && innerWidth > 750) {
+        panelTasks.classList.remove("mix-display-none");
     }
 });
 
@@ -263,6 +264,9 @@ const tasksContainer = document.querySelectorAll(
 tasksContainer.forEach((i) =>
     i.addEventListener("click", (e) => {
         if (innerWidth > 1780) {
+            return;
+        }
+        if (innerWidth < 1551 && innerWidth > 750) {
             return;
         }
         if (e.target.closest(".prof-aside__task-item")) {
@@ -525,27 +529,27 @@ sturctureWrappers.forEach((i) =>
             "prof-structure__wrapper-subtitle_active"
         );
         if (wrapperElementActive) {
-            const currentHeight =
-                state.cardsStructure[`${wrapperElement.ariaLabel}`]
-                    .clientHeight;
-            console.log(currentHeight);
-            wrapperElement.style.height = `${currentHeight + 32}px`;
+            wrapperElement.style.height = `16px`;
             removeClassElement(
                 wrapperElement,
                 "prof-structure__wrapper-subtitle_active"
             );
-            addClassElement(
+            removeClassElement(
                 state.cursorsStructure[`${wrapperElement.ariaLabel}`],
                 "prof-structure__cursor_active"
             );
         } else {
-            wrapperElement.style.height = `16px`;
+            const currentHeight =
+                state.cardsStructure[wrapperElement.ariaLabel].clientHeight;
+            wrapperElement.style.height = `${currentHeight + 32}px`;
+            setTimeout(() => {
+                addClassElement(
+                    wrapperElement,
+                    "prof-structure__wrapper-subtitle_active"
+                );
+            }, 300);
             addClassElement(
-                wrapperElement,
-                "prof-structure__wrapper-subtitle_active"
-            );
-            removeClassElement(
-                state.cursorsStructure[`${wrapperElement.ariaLabel}`],
+                state.cursorsStructure[wrapperElement.ariaLabel],
                 "prof-structure__cursor_active"
             );
         }

@@ -6688,6 +6688,25 @@ main .container {
   transition: all 0.5s;
 }
 
+@media (max-width: 62.5rem) {
+  .prof-control-panel__select-label {
+    border-radius: 4px;
+  }
+}
+
+.prof-control-panel__select-label:hover {
+  cursor: pointer;
+}
+
+.prof-control-panel__select-label_active {
+  background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+}
+
+.prof-control-panel__select-label_active:before {
+  background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center !important;
+  background-color: white !important;
+}
+
 .prof-control-panel__select-label_type_sort {
   margin-top: 16px;
 }
@@ -8067,6 +8086,10 @@ main .container {
 
 .prof-structure__wrapper-subtitle:first-of-type {
   margin-top: 24px;
+}
+
+.prof-structure__wrapper-subtitle_active {
+  overflow: unset;
 }
 
 .prof-structure__cursor {
