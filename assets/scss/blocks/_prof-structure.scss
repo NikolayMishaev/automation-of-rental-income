@@ -9,6 +9,10 @@
         &:first-child {
             margin-top: 0;
         }
+        &_type_director {
+            padding-left: 25px;
+            margin-top: 0;
+        }
     }
     &__card {
         margin-top: 16px;
@@ -78,5 +82,39 @@
     &__card-department {
         color:  #6D7678;
         margin-top: 4px;
+    }
+    &__wrapper-subtitle {
+        position: relative;
+        max-width: 478px;
+        margin-top: 16px;
+        // height: 16px;
+        overflow: hidden;
+        &:hover {
+            cursor: pointer;
+        }
+        &:first-of-type {
+            margin-top: 24px;
+        }
+        &_active {
+            height: 100%;
+        }
+    }
+    &__cursor {
+        position: absolute;
+        top: 4px;
+        left: 10px;
+        width: 6px;
+        height: 6px;
+        background: url('./../images/icons/structure-cursor.svg') no-repeat center;
+    }
+    &__label {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        background: url('./../images/icons/main-page-icon-filters.svg') no-repeat center
     }
 }

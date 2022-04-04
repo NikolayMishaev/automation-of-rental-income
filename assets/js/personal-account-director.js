@@ -9,6 +9,14 @@ import {
 const state = {
     currentOpenSubmenu: null,
     selectSubmenu: {},
+    selectCursorStructure: {
+        director: document.querySelector("#structure-cursor-director"),
+        direction: document.querySelector("#structure-cursor-direction"),
+        management: document.querySelector("#structure-cursor-management"),
+        department: document.querySelector("#structure-cursor-department"),
+        manager: document.querySelector("#structure-cursor-manager"),
+        analytics: document.querySelector("#structure-cursor-analytics"),
+    },
 };
 
 // логика переключения табов: "Объекты", "Анкеты контрагентов", "Аналитические данные", "Структура", "Предложения"
@@ -485,3 +493,34 @@ const checkClickOutsideSelect = (e) => {
 function listenClickOutsideSelect() {
     document.addEventListener("click", checkClickOutsideSelect);
 }
+
+// логика работы селектов в табе Структура
+
+const sturctureWrappers = document.querySelectorAll(
+    ".prof-structure__wrapper-subtitle"
+);
+
+sturctureWrappers.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        const label = e.target.closest(
+            ".prof-structure__wrapper-subtitle_active"
+        );
+        if (label) {
+            console.log(label);
+            removeClassElement(
+                label,
+                "prof-structure__wrapper-subtitle_active"
+            );
+            addClassElement(
+                state.selectCursorStructure[`${label.ariaLabel}`],
+                "mix-visible"
+            );
+        } else {
+            addClassElement(label, "prof-structure__wrapper-subtitle_active");
+            removeClassElement(
+                state.selectCursorStructure[`${label.ariaLabel}`],
+                "mix-visible"
+            );
+        }
+    })
+);

@@ -7944,6 +7944,11 @@ main .container {
   margin-top: 0;
 }
 
+.prof-structure__subtitle_type_director {
+  padding-left: 25px;
+  margin-top: 0;
+}
+
 .prof-structure__card {
   margin-top: 16px;
   width: 100%;
@@ -8034,6 +8039,45 @@ main .container {
 .prof-structure__card-department {
   color: #6D7678;
   margin-top: 4px;
+}
+
+.prof-structure__wrapper-subtitle {
+  position: relative;
+  max-width: 478px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.prof-structure__wrapper-subtitle:hover {
+  cursor: pointer;
+}
+
+.prof-structure__wrapper-subtitle:first-of-type {
+  margin-top: 24px;
+}
+
+.prof-structure__wrapper-subtitle_active {
+  height: 100%;
+}
+
+.prof-structure__cursor {
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+  background: url("./../images/icons/structure-cursor.svg") no-repeat center;
+}
+
+.prof-structure__label {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: url("./../images/icons/main-page-icon-filters.svg") no-repeat center;
 }
 
 .form-agent-card {

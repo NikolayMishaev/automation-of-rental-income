@@ -490,7 +490,7 @@ containersCityName.forEach((i) =>
         if (e.target.classList.contains("popup-change-city__item")) {
             setTimeout(() => {
                 popupChangeCity.classList.remove("mix-visible-scale");
-            }, 750);
+            }, 250);
         }
     })
 );

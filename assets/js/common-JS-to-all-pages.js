@@ -9,6 +9,7 @@ const state = {
 
 // общие функции
 function addClassElement(element, className) {
+    console.log(className);
     element.classList.add(className);
 }
 
