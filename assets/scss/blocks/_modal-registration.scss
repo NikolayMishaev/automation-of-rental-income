@@ -2,10 +2,7 @@
   .checkbox-container {
     justify-content: flex-start;
     font-size: $font-size-very-small;
-    margin-bottom: 24px;
     line-height: 16px;
-  }
-  .checkbox-container + .checkbox-container {
-    margin-top: 16px;
+    margin-bottom: 16px;
   }
 }
