@@ -5901,8 +5901,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .modal-edit-card-object__photo-container-item {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 31.5%;
-          flex: 0 0 31.5%;
+      -ms-flex: 0 0 30.5%;
+          flex: 0 0 30.5%;
   margin-bottom: 24px;
   margin-right: 24px;
 }
