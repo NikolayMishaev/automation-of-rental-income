@@ -26,8 +26,8 @@ addModalBtnContainer.addEventListener("change", (e) => {
     //TODO когда будет запрос  - убрать вызов функции
     addPhotoContainer(file);
     //
-    sendPhoto(formData, file, idObj);
   }
+  sendPhoto(formData, file, idObj);
 });
 // логика для отображения нового инпута
 

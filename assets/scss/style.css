@@ -5811,6 +5811,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: 16px;
   padding: 4px 12px;
   position: relative;
+  cursor: pointer;
 }
 
 .modal-edit-card-object__btn:hover {
@@ -5825,6 +5826,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
   width: 100%;
   height: 100%;
+}
+
+.modal-edit-card-object__btn input::file-selector-button {
+  cursor: pointer;
 }
 
 @media (max-width: 40rem) {
