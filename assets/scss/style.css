@@ -5810,6 +5810,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 32px;
   line-height: 16px;
   padding: 4px 12px;
+  position: relative;
 }
 
 .modal-edit-card-object__btn:hover {
@@ -5820,10 +5821,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .modal-edit-card-object__btn input {
-  position: relative;
+  position: absolute;
   opacity: 0;
-  width: 1px;
-  height: 1px;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 40rem) {
@@ -5923,6 +5924,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
      object-fit: cover;
   border-radius: 8px;
   display: block;
+}
+
+.modal-edit-card-object__input-file_full {
+  z-index: -1;
 }
 
 .checkbox-container {
