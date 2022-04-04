@@ -7962,20 +7962,59 @@ main .container {
       flex-wrap: wrap;
 }
 
-.prof-structure__card_main {
+.prof-structure__card_type_director {
+  background-color: #E6FAE9;
+}
+
+.prof-structure__card_type_direction {
+  background-color: #FFFDE7;
+}
+
+.prof-structure__card_type_management {
+  background-color: #FBE9E7;
+}
+
+.prof-structure__card_type_department {
   background-color: #E8EAF6;
+}
+
+.prof-structure__card_type_manager {
+  background-color: #F5F7F7;
+}
+
+.prof-structure__card_type_analytics {
+  background-color: #E0F7FA;
 }
 
 .prof-structure__marker {
   width: 8px;
   height: 100%;
-  background-color: #B2BDBF;
   border-radius: 12px 0 0 12px;
   margin-right: 12px;
 }
 
-.prof-structure__marker_main {
+.prof-structure__marker_type_director {
+  background-color: #55B465;
+}
+
+.prof-structure__marker_type_direction {
+  background-color: #FBC02D;
+}
+
+.prof-structure__marker_type_management {
+  background-color: #FF7043;
+}
+
+.prof-structure__marker_type_department {
   background-color: #5C6BC0;
+}
+
+.prof-structure__marker_type_manager {
+  background-color: #B2BDBF;
+}
+
+.prof-structure__marker_type_analytics {
+  background-color: #26C6DA;
 }
 
 .prof-structure__photo {

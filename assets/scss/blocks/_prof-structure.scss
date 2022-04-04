@@ -21,18 +21,47 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        &_main {
+        &_type_director {
+            background-color: #E6FAE9;
+        }
+        &_type_direction {
+            background-color: #FFFDE7;
+        }
+        &_type_management {
+            background-color: #FBE9E7;
+        }
+        &_type_department {
             background-color: #E8EAF6;
+        }
+        &_type_manager {
+            background-color: #F5F7F7;
+        }
+        &_type_analytics {
+            background-color: #E0F7FA;
         }
     }
     &__marker {
         width: 8px;
         height: 100%;
-        background-color: #B2BDBF;
         border-radius: 12px 0 0 12px;
         margin-right: 12px;
-        &_main {
+        &_type_director {
+            background-color: #55B465;
+        }
+        &_type_direction {
+            background-color: #FBC02D;
+        }
+        &_type_management {
+            background-color: #FF7043;
+        }
+        &_type_department {
             background-color: #5C6BC0;
+        }
+        &_type_manager {
+            background-color: #B2BDBF;
+        }
+        &_type_analytics {
+            background-color: #26C6DA;
         }
     }
     &__photo {

@@ -177,13 +177,13 @@
                                 <button aria-label="objects" type="button"
                                     class="prof-general__button text-p1">Объекты</button>
                                 <button aria-label="counterparty-questionnaires" type="button"
-                                    class="prof-general__button prof-general__button_active text-p1">Анкеты
+                                    class="prof-general__button text-p1">Анкеты
                                     контрагентов</button>
                                 <button aria-label="analytical-data" type="button"
                                     class="prof-general__button text-p1 mix-only-desktop-1150px">Аналитические
                                     данные</button>
                                 <button aria-label="structure" type="button"
-                                    class="prof-general__button text-p1">Структура</button>
+                                    class="prof-general__button prof-general__button_active text-p1">Структура</button>
                             </nav>
 
 
@@ -667,7 +667,7 @@
                             </div>
 
                             <div aria-label="counterparty-questionnaires" id="counterparty-questionnaires"
-                                class="prof-general__content">
+                                class="prof-general__content mix-display-none">
                                 <div class="prof-control-panel prof-control-panel_type_agent">
                                     <h3
                                         class="prof-control-panel__title prof-control-panel__title_type_agent heading-h3">
@@ -2587,92 +2587,184 @@
 
                             </div>
 
-                            <div aria-label="structure" id="structure" class="prof-general__content mix-display-none">
+                            <div aria-label="structure" id="structure" class="prof-general__content">
                                 <div class="prof-structure">
                                     <h3 class="prof-structure__title heading-h3">Структура</h3>
-                                    <p class="prof-structure__subtitle heading-h5">Руководитель отдела</p>
-                                    <div class="prof-structure__card prof-structure__card_main">
-                                        <div class="prof-structure__marker prof-structure__marker_main"></div>
-                                        <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    <p class="prof-structure__subtitle heading-h5">Директор</p>
+                                    <div class="prof-structure__card prof-structure__card_type_director">
+                                        <div class="prof-structure__marker prof-structure__marker_type_director"></div>
+                                        <img src="./assets/images/other-user.jpg" alt="Аватар"
                                             class="prof-structure__photo">
                                         <div class="prof-structure__description">
-                                            <h4 class="prof-structure__card-title heading-h3">Баженова Ольга</h4>
-                                            <p class="prof-structure__card-subtitle heading-h5">Руководитель отдела</p>
-                                            <p class="prof-structure__card-department text-p3">Отдел SAP и анализа</p>
+                                            <h4 class="prof-structure__card-title heading-h3">Шохин Роман</h4>
+                                            <p class="prof-structure__card-subtitle heading-h5">Директор по развитию</p>
+                                            <p class="prof-structure__card-department text-p3">Департамент развития</p>
                                         </div>
                                     </div>
-                                    <p class="prof-structure__subtitle heading-h5">Менеджеры</p>
+                                    <p class="prof-structure__subtitle heading-h5">Руководители направлений</p>
                                     <ul class="prof-structure__cards-container">
-                                        <li class="prof-structure__card">
-                                            <div class="prof-structure__marker"></div>
+                                        <li class="prof-structure__card prof-structure__card_type_direction">
+                                            <div class="prof-structure__marker prof-structure__marker_type_direction"></div>
                                             <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
                                                 class="prof-structure__photo">
                                             <div class="prof-structure__description">
-                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
-                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по
-                                                    брокериджу</p>
-                                                <p class="prof-structure__card-department text-p3">Отдел аренды и
-                                                    брокериджа</p>
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
                                             </div>
                                         </li>
-                                        <li class="prof-structure__card">
-                                            <div class="prof-structure__marker"></div>
+                                    </ul>
+                                    <p class="prof-structure__subtitle heading-h5">Руководители направлений</p>
+                                    <ul class="prof-structure__cards-container">
+                                        <li class="prof-structure__card prof-structure__card_type_management">
+                                            <div class="prof-structure__marker prof-structure__marker_type_management"></div>
                                             <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
                                                 class="prof-structure__photo">
                                             <div class="prof-structure__description">
-                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
-                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по
-                                                    брокериджу</p>
-                                                <p class="prof-structure__card-department text-p3">Отдел аренды и
-                                                    брокериджа</p>
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
                                             </div>
                                         </li>
-                                        <li class="prof-structure__card">
-                                            <div class="prof-structure__marker"></div>
+                                        <li class="prof-structure__card prof-structure__card_type_management">
+                                            <div class="prof-structure__marker prof-structure__marker_type_management"></div>
                                             <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
                                                 class="prof-structure__photo">
                                             <div class="prof-structure__description">
-                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
-                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по
-                                                    брокериджу</p>
-                                                <p class="prof-structure__card-department text-p3">Отдел аренды и
-                                                    брокериджа</p>
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
                                             </div>
                                         </li>
-                                        <li class="prof-structure__card">
-                                            <div class="prof-structure__marker"></div>
+                                        <li class="prof-structure__card prof-structure__card_type_management">
+                                            <div class="prof-structure__marker prof-structure__marker_type_management"></div>
                                             <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
                                                 class="prof-structure__photo">
                                             <div class="prof-structure__description">
-                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
-                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по
-                                                    брокериджу</p>
-                                                <p class="prof-structure__card-department text-p3">Отдел аренды и
-                                                    брокериджа</p>
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
                                             </div>
                                         </li>
-                                        <li class="prof-structure__card">
-                                            <div class="prof-structure__marker"></div>
+                                        <li class="prof-structure__card prof-structure__card_type_management">
+                                            <div class="prof-structure__marker prof-structure__marker_type_management"></div>
                                             <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
                                                 class="prof-structure__photo">
                                             <div class="prof-structure__description">
-                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
-                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по
-                                                    брокериджу</p>
-                                                <p class="prof-structure__card-department text-p3">Отдел аренды и
-                                                    брокериджа</p>
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
                                             </div>
                                         </li>
-                                        <li class="prof-structure__card">
-                                            <div class="prof-structure__marker"></div>
+                                    </ul>
+                                    <p class="prof-structure__subtitle heading-h5">Руководители направлений</p>
+                                    <ul class="prof-structure__cards-container">
+                                        <li class="prof-structure__card prof-structure__card_type_department">
+                                            <div class="prof-structure__marker prof-structure__marker_type_department"></div>
                                             <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
                                                 class="prof-structure__photo">
                                             <div class="prof-structure__description">
-                                                <h4 class="prof-structure__card-title heading-h3">Антоневич Рута</h4>
-                                                <p class="prof-structure__card-subtitle heading-h5">Менеджер по
-                                                    брокериджу</p>
-                                                <p class="prof-structure__card-department text-p3">Отдел аренды и
-                                                    брокериджа</p>
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card prof-structure__card_type_department">
+                                            <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                                class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card prof-structure__card_type_department">
+                                            <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                                class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card prof-structure__card_type_department">
+                                            <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                                class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card prof-structure__card_type_department">
+                                            <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                                class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card prof-structure__card_type_department">
+                                            <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                                class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <p class="prof-structure__subtitle heading-h5">Руководители направлений</p>
+                                    <ul class="prof-structure__cards-container">
+                                        <li class="prof-structure__card prof-structure__card_type_manager">
+                                            <div class="prof-structure__marker prof-structure__marker_type_manager"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                                class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card prof-structure__card_type_manager">
+                                            <div class="prof-structure__marker prof-structure__marker_type_manager"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                                class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                            </div>
+                                        </li>
+                                        <li class="prof-structure__card prof-structure__card_type_manager">
+                                            <div class="prof-structure__marker prof-structure__marker_type_manager"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                                class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <p class="prof-structure__subtitle heading-h5">Руководители направлений</p>
+                                    <ul class="prof-structure__cards-container">
+                                        <li class="prof-structure__card prof-structure__card_type_analytics">
+                                            <div class="prof-structure__marker prof-structure__marker_type_analytics"></div>
+                                            <img src="./assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                                class="prof-structure__photo">
+                                            <div class="prof-structure__description">
+                                                <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                                <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                                <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
                                             </div>
                                         </li>
                                     </ul>
