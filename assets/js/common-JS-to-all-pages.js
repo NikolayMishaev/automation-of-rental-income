@@ -66,68 +66,36 @@ overlaysPopup.forEach((i) =>
     })
 );
 
-// логика ввода значение в поля город улица адрес по клику в подменю
+// логика работы попапа выбора города
 
-const sumbenuAdressContainers = document.querySelectorAll(
-    ".main-submenu_style_filters-adress"
-);
-const inputCity = document.querySelector("#main-form-adress-city");
-const inputStreet = document.querySelector("#main-form-adress-street");
-const inputUndergound = document.querySelector("#main-form-adress-underground");
-
-sumbenuAdressContainers.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (e.target.classList.contains("main-submenu__item")) {
-            if (e.target.ariaLabel === "city") {
-                inputCity.value = e.target.textContent.trim();
-            }
-            if (e.target.ariaLabel === "street") {
-                inputStreet.value = e.target.textContent.trim();
-            }
-            if (e.target.ariaLabel === "underground") {
-                inputUndergound.value = e.target.textContent.trim();
-            }
-            e.target
-                .closest(".main-submenu_style_filters-adress")
-                .classList.remove("mix-visible");
-        }
-    })
-);
-
-const inputCityNamePopup = document.querySelector("#inputCityNamePopup");
+const formChangeCity = document.querySelector("#form-change-city");
+const inputChangeCity = document.querySelector("#input-change-city");
 const containersCityName = document.querySelectorAll(
     ".popup-change-city__list"
 );
 const popupChangeCity = document.querySelector(".main-popup_type_change-city");
-containersCityName.forEach((i) =>
+const itemsCity = document.querySelectorAll(".popup-change-city__item");
+const headerCityName = document.querySelector(".header__city-name");
+
+containersCityName.forEach((i) => {
     i.addEventListener("click", (e) => {
         if (e.target.classList.contains("popup-change-city__item")) {
-            setTimeout(() => {
-                popupChangeCity.classList.remove("mix-visible-scale");
-            }, 100);
+            itemsCity.forEach((i) =>
+                removeClassElement(i, "popup-change-city__item_type_active")
+            );
+            addClassElement(e.target, "popup-change-city__item_type_active");
+            headerCityName.textContent = e.target.textContent.trim();
+            inputChangeCity.value = e.target.id;
+            formChangeCity.submit();
+            removeClassElement(popupChangeCity, "mix-visible-scale");
         }
-    })
-);
+    });
+});
 
 containersCityName.forEach((i) =>
     i.addEventListener("mouseover", (e) => {
         if (e.target.classList.contains("popup-change-city__item")) {
-            inputCityNamePopup.value = e.target.textContent.trim();
+            inputChangeCity.value = e.target.textContent.trim();
         }
-    })
-);
-
-const cityPopupAll = document.querySelectorAll(
-    ".popup-change-city__item-popup"
-);
-
-cityPopupAll.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        cityPopupAll.forEach((i) =>
-            i.classList.remove("popup-change-city__item_type_active")
-        );
-        e.target.classList.add("popup-change-city__item_type_active");
-        document.querySelector("#link-your-city").textContent =
-            e.target.textContent.trim();
     })
 );

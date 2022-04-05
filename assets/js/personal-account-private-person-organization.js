@@ -132,14 +132,31 @@ tasksContainer.forEach((i) =>
     })
 );
 
+// логика действий при загрузе страницы на определенном разрешении
+
+if (window.innerWidth < 1151) {
+    removeClassElement(cardsContainer, "mix-display-none");
+}
+
+// логика действий при ресайзе
+// общие функции для этого блока логики
+
+function resetActiveClassButton(buttons) {
+    if (buttons.ariaLabel === "button-list") {
+        removeClassElement(buttons, "prof-control-panel__button_active");
+    } else {
+        addClassElement(buttons, "prof-control-panel__button_active");
+    }
+}
+
 window.addEventListener("resize", function (e) {
     // если таблица скрыта, то ничего не делаем
     if (e.target.innerWidth < 1151) {
-        if (!contentTable.classList.contains("mix-display-none")) {
+        if (!tableContainer.classList.contains("mix-display-none")) {
             // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
-            removeClassElement(contentCards, "mix-display-none");
-            addClassElement(contentTable, "mix-display-none");
-            resetActiveClassButton(objectsButtons);
+            removeClassElement(cardsContainer, "mix-display-none");
+            addClassElement(tableContainer, "mix-display-none");
+            resetActiveClassButton(buttonsChangeViewContainer);
         }
     }
 

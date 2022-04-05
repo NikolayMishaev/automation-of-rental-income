@@ -292,24 +292,8 @@ const modalRWarningReg = document.querySelectorAll(".modal-warning-registration"
 
 // открыть модалку
 
-const formListReg = document.querySelectorAll(".registration-form");
-
 for (let index = 0; index < submitRegBtn.length; index++) {
-  submitRegBtn[index].addEventListener("click", (e) => {
-    let find = false;
-    const requiredInputList = formListReg[index].querySelectorAll(
-      'input[data-required="true"], textarea[data-required="true"]'
-    );
-    for (let index = 0; index < requiredInputList.length; index++) {
-      const element = requiredInputList[index];
-      if (!element.value) {
-        find = true;
-        break;
-      }
-    }
-    if (find) {
-      e.preventDefault();
-    } else return;
+  submitRegBtn[index].addEventListener("click", () => {
     modalRWarningReg[index].style.display = "flex";
   });
 }
