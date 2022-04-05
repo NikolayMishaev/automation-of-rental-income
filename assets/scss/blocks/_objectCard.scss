@@ -194,6 +194,7 @@ main .container {
     align-items: center;
     justify-content: center;
     @include secondary-btn;
+    width: 50%;
     @media #{$screen-tablet} {
       width: 32px;
       height: 32px;

@@ -5,12 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/scss/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-      crossorigin=""
-    />
+    <link rel="stylesheet" href="./assets/leaflet/leaflet.css">
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -885,7 +880,7 @@
         </div>
         <div class="map-object map">
           <h3 class="map-object__title">Объект на карте</h3>
-          <div class="map-container" id="map"></div>
+          <div class="map-container" data-id="1" id="map"></div>
 
           <div id="cities"></div>
         </div>
@@ -1552,11 +1547,7 @@
     <script type="module" src="./assets/js/script.js"></script>
     <script type="module" src="./assets/js/swiper.js"></script>
     <script defer src="./assets/js/common-JS-to-all-pages.js"></script>
-    <script
-      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""
-    ></script>
+    <script src="./assets/leaflet/leaflet.js"></script>
     <script
       async
       defer
