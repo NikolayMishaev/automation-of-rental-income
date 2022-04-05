@@ -49,71 +49,39 @@ contactBtn.onclick = function () {
 
 const modalLogin = document.querySelector(".modal-login");
 
+const signInBtn = document.querySelector("#link-signIn");
+
+if (signInBtn) {
+  signInBtn.onclick = function () {
+    modalLogin.style.display = "flex";
+  };
+}
 if (modalLogin) {
-    modalLogin.addEventListener("click", (e) =>
-        closeModalWindow(modalLogin, e)
-    );
+  modalLogin.addEventListener("click", (e) => closeModalWindow(modalLogin, e));
+  const modalBtnLog = modalLogin.querySelector(".modal-login__login-btn");
+  const modalLoginInputList = modalLogin.querySelectorAll("input");
+  modalBtnLog.addEventListener("click", () => checkRequiredInput(modalLoginInputList));
 }
 
 // логика работы поля "пароль"
 
-const passwordIcon = document.querySelector(".modal-login__password-icon");
+const passwordIcon = document.querySelectorAll(".modal-login__password-icon");
 
-if (passwordIcon) {
-    passwordIcon.onclick = function (e) {
-        const input =
-            e.currentTarget.previousElementSibling.querySelector("input");
-        const iconList = e.currentTarget.querySelectorAll("svg");
-        if (input.type === "text") {
-            input.type = "password";
-            iconList[0].classList.add("modal-login__password-icon_active");
-            iconList[1].classList.remove("modal-login__password-icon_active");
-        } else {
-            input.type = "text";
-            iconList[1].classList.add("modal-login__password-icon_active");
-            iconList[0].classList.remove("modal-login__password-icon_active");
-        }
-    };
+for (let index = 0; index < passwordIcon.length; index++) {
+  passwordIcon[index].addEventListener("click", (e) => {
+    const input = e.currentTarget.previousElementSibling.querySelector("input");
+    const iconList = e.currentTarget.querySelectorAll("svg");
+    if (input.type === "text") {
+      input.type = "password";
+      iconList[0].classList.add("modal-login__password-icon_active");
+      iconList[1].classList.remove("modal-login__password-icon_active");
+    } else {
+      input.type = "text";
+      iconList[1].classList.add("modal-login__password-icon_active");
+      iconList[0].classList.remove("modal-login__password-icon_active");
+    }
+  });
 }
-
-import Swiper from "https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js";
-
-const swiper = new Swiper(".mainSwiper", {
-    loop: false,
-    spaceBetween: 16,
-    breakpoints: {
-        1441: {
-            slidesPerView: 5,
-        },
-        1440: {
-            slidesPerView: 4,
-        },
-        768: {
-            slidesPerView: 3,
-        },
-    },
-    freeMode: true,
-    watchSlidesProgress: true,
-    navigation: {
-        nextEl: ".slider__next-btn_track",
-        prevEl: ".slider__prev-btn_track",
-    },
-});
-const swiper2 = new Swiper(".track-swiper", {
-    loop: false,
-    spaceBetween: 10,
-    navigation: {
-        nextEl: ".slider__next-btn",
-        prevEl: ".slider__prev-btn",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        type: "fraction",
-    },
-    thumbs: {
-        swiper: swiper,
-    },
-});
 
 const bellBtn = document.querySelectorAll(".info-card__icon-bell");
 
@@ -174,35 +142,31 @@ function clear(list) {
 // логика placeholder на input
 
 function setCustomInput() {
-    const inputDate = document.querySelectorAll(".input-date__container input");
-    for (let index = 0; index < inputDate.length; index++) {
-        const element = inputDate[index];
-        element.addEventListener("blur", function (e) {
-            if (e.target.value) {
-                e.target.nextElementSibling.style.display = "none";
-            } else {
-                e.target.nextElementSibling.style.display = "flex";
-            }
-        });
-    }
-    let customInput = document.querySelectorAll(
-        ".custom-text-input input, .custom-text-input textarea"
-    );
+  const inputDate = document.querySelectorAll(".input-date__container input");
+  for (let index = 0; index < inputDate.length; index++) {
+    const element = inputDate[index];
+    element.addEventListener("blur", function (e) {
+      if (e.target.value) {
+        e.target.nextElementSibling.classList.add("custom-text-input__label_full");
+      } else {
+        e.target.nextElementSibling.classList.remove("custom-text-input__label_full");
+      }
+    });
+  }
+  let customInput = document.querySelectorAll(
+    ".custom-text-input input, .custom-text-input textarea"
+  );
 
-    for (let index = 0; index < customInput.length; index++) {
-        const element = customInput[index];
-        element.addEventListener("blur", function (e) {
-            if (e.target.value) {
-                e.target.nextElementSibling.classList.add(
-                    "custom-text-input__label_full"
-                );
-            } else {
-                e.target.nextElementSibling.classList.remove(
-                    "custom-text-input__label_full"
-                );
-            }
-        });
-    }
+  for (let index = 0; index < customInput.length; index++) {
+    const element = customInput[index];
+    element.addEventListener("blur", function (e) {
+      if (e.target.value) {
+        e.target.nextElementSibling.classList.add("custom-text-input__label_full");
+      } else {
+        e.target.nextElementSibling.classList.remove("custom-text-input__label_full");
+      }
+    });
+  }
 }
 setCustomInput();
 
@@ -213,28 +177,19 @@ const regRadioBtn = document.querySelectorAll(
 // логика радио кнопок
 
 for (let index = 0; index < regRadioBtn.length; index++) {
-    regRadioBtn[index].addEventListener("change", function (e) {
-        const value = e.target.value;
-        if (value === "one") {
-            const currentForm = document.querySelector(
-                ".registration-form_natural"
-            );
-            document.querySelector(
-                ".registration-form_juridical"
-            ).style.display = "none";
-            currentForm.style.display = "block";
-            //sendBtn.setAttribute("form", currentForm.id);
-        }
-        if (value === "two") {
-            const currentForm = document.querySelector(
-                ".registration-form_juridical"
-            );
-            document.querySelector(".registration-form_natural").style.display =
-                "none";
-            currentForm.style.display = "block";
-            // sendBtn.setAttribute("form", currentForm.id);
-        }
-    });
+  regRadioBtn[index].addEventListener("change", function (e) {
+    const value = e.target.value;
+    if (value === "one") {
+      const currentForm = document.querySelector(".registration-form_natural");
+      document.querySelector(".registration-form_juridical").style.display = "none";
+      currentForm.style.display = "block";
+    }
+    if (value === "two") {
+      const currentForm = document.querySelector(".registration-form_juridical");
+      document.querySelector(".registration-form_natural").style.display = "none";
+      currentForm.style.display = "block";
+    }
+  });
 }
 
 const tabNextBtn = document.querySelectorAll(".registration-form__next-btn");
@@ -331,14 +286,12 @@ function navigateTabs(stepList, tabList, idx, radio) {
 }
 
 function checkRequiredInput(step) {
-    let findInput = false;
-    for (let index = 0; index < step.length; index++) {
-        const element = step[index];
-        if (element.dataset.required && !element.value) {
-            findInput = true;
-            if (element.type !== "file")
-                element.classList.add("custom-text-input__error");
-        }
+  let findInput = false;
+  for (let index = 0; index < step.length; index++) {
+    const element = step[index];
+    if ((element.dataset.required || element.required) && !element.value) {
+      findInput = true;
+      if (element.type !== "file") element.classList.add("custom-text-input__error");
     }
     if (findInput) return false;
     return true;
@@ -386,10 +339,26 @@ const modalRWarningReg = document.querySelectorAll(
 
 // открыть модалку
 
+const formListReg = document.querySelectorAll(".registration-form");
+
 for (let index = 0; index < submitRegBtn.length; index++) {
-    submitRegBtn[index].addEventListener("click", () => {
-        modalRWarningReg[index].style.display = "flex";
-    });
+  submitRegBtn[index].addEventListener("click", (e) => {
+    let find = false;
+    const requiredInputList = formListReg[index].querySelectorAll(
+      'input[data-required="true"], textarea[data-required="true"]'
+    );
+    for (let index = 0; index < requiredInputList.length; index++) {
+      const element = requiredInputList[index];
+      if (!element.value) {
+        find = true;
+        break;
+      }
+    }
+    if (find) {
+      e.preventDefault();
+    } else return;
+    modalRWarningReg[index].style.display = "flex";
+  });
 }
 
 // закрытие модалки
@@ -509,22 +478,20 @@ for (let index = 0; index < fileContainerList.length; index++) {
     });
 }
 
-const requiredInputList = document.querySelectorAll(
-    ".registration-form .custom-text-input"
-);
+const requiredInputList = document.querySelectorAll(".custom-text-input");
 
 // проверить обязательное поле на заполнение
 
 for (let index = 0; index < requiredInputList.length; index++) {
-    const input = requiredInputList[index];
-    let elem = input.querySelector("input, textarea");
-    if (elem.dataset.required) {
-        input.addEventListener("change", (e) => {
-            elem.value
-                ? elem.classList.remove("custom-text-input__error")
-                : elem.classList.add("custom-text-input__error");
-        });
-    }
+  const input = requiredInputList[index];
+  let elem = input.querySelector("input, textarea");
+  if (elem.dataset.required || elem.required) {
+    input.addEventListener("change", (e) => {
+      elem.value
+        ? elem.classList.remove("custom-text-input__error")
+        : elem.classList.add("custom-text-input__error");
+    });
+  }
 }
 
 function completeForm(radio, e) {
@@ -625,23 +592,26 @@ const step6 = document.querySelector(
 );
 import { inputFormBenif, inputFormBenifJur } from "./inputForm.js";
 
-step5.addEventListener("click", (e) => {
+if (step5) {
+  step5.addEventListener("click", (e) => {
     if (e.target.classList.contains("registration-form__add-btn")) {
-        addBenif(e.currentTarget, e.target, inputFormBenif);
+      addBenif(e.currentTarget, e.target, inputFormBenif);
     }
     if (e.target.classList.contains("registration-form__del-btn")) {
-        deleteBenif(e.currentTarget, e.target);
+      deleteBenif(e.currentTarget, e.target);
     }
-});
-
-step6.addEventListener("click", (e) => {
+  });
+}
+if (step6) {
+  step6.addEventListener("click", (e) => {
     if (e.target.classList.contains("registration-form__add-btn")) {
-        addBenif(e.currentTarget, e.target, inputFormBenifJur);
+      addBenif(e.currentTarget, e.target, inputFormBenifJur);
     }
     if (e.target.classList.contains("registration-form__del-btn")) {
-        deleteBenif(e.currentTarget, e.target);
+      deleteBenif(e.currentTarget, e.target);
     }
-});
+  });
+}
 
 function addBenif(step, btn, inputFormBenif) {
     const stepForm = step.querySelectorAll(".registration-form__benif");
@@ -670,3 +640,69 @@ function deleteBenif(step, btn) {
     stepForm[stepForm.length - 1].remove();
     setCustomInput();
 }
+
+const fileInputModalSupport = document.querySelector(".modal-support__file-input");
+
+// логика работы drag n drop инпута на несколько файлов
+
+if (fileInputModalSupport) {
+  fileInputModalSupport.addEventListener("change", (e) => {
+    let input = e.currentTarget.querySelectorAll("input");
+    input = input[input.length - 1];
+    if (input.files) {
+      for (let i = 0; i < input.files.length; i++) {
+        const inputName = document.createElement("div");
+        inputName.classList.add("file-input__file");
+        inputName.innerHTML = `
+        <div class="file-input__name">
+          <div class="file-input__icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z" fill="#55B465"></path>
+            </svg>
+          </div>
+          <a href="#">${input.files[i].name}</a>
+        </div>
+        <div class="file-input__file-close">x</div>`;
+        inputName.style.display = "inline-flex";
+        e.currentTarget.append(inputName);
+        inputName.addEventListener("click", (e) => deleteFileInput(e));
+      }
+      input.classList.add("file-input_fill");
+      const newInput = document.createElement("input");
+      newInput.type = "file";
+      e.currentTarget.append(newInput);
+    }
+  });
+}
+
+function deleteFileInput(e) {
+  if (e.target.classList.contains("file-input__file-close")) {
+    e.currentTarget.previousElementSibling.remove();
+    e.currentTarget.remove();
+  }
+}
+
+const modalSupport = document.querySelector(".modal-support");
+
+if (modalSupport) {
+  modalSupport.addEventListener("click", (e) => closeModalWindow(modalSupport, e));
+}
+
+const modalRegistration = document.querySelector(".modal-registration");
+
+if (modalRegistration) {
+  const modalBtnReg = modalRegistration.querySelector(".modal-login__registration-btn");
+  const modalRegistrationInputList = modalRegistration.querySelectorAll("input");
+
+  modalRegistration.addEventListener("click", (e) => closeModalWindow(modalRegistration, e));
+  modalBtnReg.addEventListener("click", () => checkRequiredInput(modalRegistrationInputList));
+}
+const registerBtn = document.querySelector("#link-register");
+
+if (registerBtn) {
+  registerBtn.onclick = function () {
+    modalRegistration.style.display = "flex";
+  };
+}
+
+// проверить обязательные поля

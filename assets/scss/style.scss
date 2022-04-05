@@ -25,8 +25,8 @@
 @import "./blocks/_tooltip";
 @import "./blocks/map";
 @import "./blocks/modal-login";
-
-// Main-page
+@import "./blocks/modal-support";
+@import "./blocks/input-date"; // Main-page
 @import "./blocks/body";
 @import "./blocks/page";
 @import "./blocks/header";
@@ -48,6 +48,10 @@
 @import "./blocks/pagination";
 @import "./blocks/main-popup";
 @import "./blocks/popup-change-city";
+@import "./blocks/modal-registration";
+@import "./blocks/modal-edit-card-object";
+@import "./blocks/custom-checkbox";
+@import './blocks/modal-transfer-object';
 
 // Personal-account-private-person
 @import "./blocks/prof-aside";
@@ -68,3 +72,4 @@
 @import "./blocks/prof-graph";
 @import "./blocks/popup-notify";
 @import "./blocks/prof-label-checkbox";
+
