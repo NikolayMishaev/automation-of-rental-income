@@ -93,7 +93,7 @@
                     </svg>
                 </a>
                 <p class="header__city-select">Ваш город:</p>
-                <a aria-label='popup-city' href="#" class="header__city button-open-popup">Москва
+                <a id='link-your-city' aria-label='popup-city' href="#" class="header__city button-open-popup">Москва
                     <svg class="icon icon_header-select" viewBox="0 0 10 6" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -102,7 +102,7 @@
                     </svg>
                 </a>
                 <nav class="menu menu_place_header">
-                    <a class="menu__profile mix-display-flex" href="./personal-account-private-person.html">
+                    <a class="menu__profile" href="./personal-account-private-person.html">
                         <span class="menu__profile-name">
                             <!-- данные с сервера имя пользователя -->Иван Иванов</span>
                         <div class="menu__profile-avatar"></div>
@@ -3419,112 +3419,66 @@
             </ul>
         </footer>
 
-        <!-- модальное окно для выбора города "Ваш город" в блоке Header  -->
-        <div id="popup-city" class="main-popup main-popup_type_change-city">
-            <div class="main-popup__container main-popup__container_type_change-city">
-                <button class="main-popup__close"></button>
-                <div class="popup-change-city">
-                    <h3 class="popup-change-city__title">Укажите свой город</h3>
-                    <label class="popup-change-city__label mix-label">
-                        <input class="popup-change-city__input mix-input" type="text" maxlength="50" placeholder=" " />
-                        <span class="popup-change-city__caption mix-caption"></span>
-                    </label>
-                    <div class="popup-change-city__column">
-                        <ul class="popup-change-city__list">
-                            <!-- текущий активный город модификатор: popup-change-city__item_type_active -->
-                            <li
-                                class="popup-change-city__item popup-change-city__item_type_favorite popup-change-city__item_type_active">
-                                Москва</li>
-                            <li class="popup-change-city__item popup-change-city__item_type_favorite">Санкт-Петербург
-                            </li>
-                            <li class="popup-change-city__item popup-change-city__item_type_favorite">Тула</li>
-                        </ul>
-                        <ul class="popup-change-city__list">
-                            <div class="popup-change-city__overlay"></div>
-                            <!-- данные с сервера выбор города -->
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                            <li class="popup-change-city__item">Москва</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- модальное окно для входа в аккаунт  -->
-        <div class="modal modal-login">
-            <div class="modal__content content-offer-price">
-                <div class="modal__header">
-                    <h3>Вход</h3>
-                    <button id="button-close-popup-sign-in" class="modal__close-btn">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
-                                fill="#6C737D" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="modal__body">
-                    <form id="form-sign-in" action="">
-                        <label class="custom-text-input modal-login__email">
-                            <input type="email" class="input-email" required maxlength="100" />
-                            <span class="custom-text-input__label">E-mail или логин X5</span>
-                        </label>
-                        <div class="modal-login__password-container">
-                            <label class="custom-text-input modal-login__password">
-                                <input type="password" class="input-password" required maxlength="100" />
-                                <span class="custom-text-input__label">Пароль</span>
-                            </label>
-                            <div class="modal-login__password-icon">
-                                <svg class="modal-login__password-icon_active" width="20" height="11"
-                                    viewBox="0 0 20 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M1.88579 0.536197C1.62953 0.0469655 1.02518 -0.141892 0.535953 0.114372C0.0467214 0.370636 -0.142136 0.97498 0.114128 1.46421C0.60982 2.41053 1.26362 3.36662 2.07615 4.23713L0.292893 6.02039C-0.0976311 6.41091 -0.0976311 7.04408 0.292893 7.4346C0.683417 7.82513 1.31658 7.82513 1.70711 7.4346L3.56143 5.58028C4.39829 6.21382 5.34943 6.74822 6.41522 7.12542L5.75714 9.75772C5.6232 10.2935 5.94896 10.8365 6.48475 10.9704C7.02055 11.1044 7.56348 10.7786 7.69743 10.2428L8.35626 7.60747C8.88199 7.68584 9.42988 7.72748 9.99996 7.72748C10.5701 7.72748 11.118 7.68583 11.6437 7.60746L12.3026 10.2428C12.4365 10.7786 12.9795 11.1044 13.5152 10.9704C14.051 10.8365 14.3768 10.2935 14.2429 9.75772L13.5848 7.1254C14.6506 6.74819 15.6017 6.21379 16.4385 5.58024L18.2929 7.4346C18.6834 7.82513 19.3166 7.82513 19.7071 7.4346C20.0976 7.04408 20.0976 6.41091 19.7071 6.02039L17.9238 4.23708C18.7363 3.36658 19.3901 2.41052 19.8858 1.46421C20.1421 0.97498 19.9532 0.370636 19.464 0.114372C18.9747 -0.141892 18.3704 0.0469655 18.1141 0.536197C16.7274 3.18355 14.0155 5.72748 9.99996 5.72748C5.98444 5.72748 3.2725 3.18355 1.88579 0.536197Z"
-                                        fill="#6C737D" />
-                                </svg>
-                                <svg width="22" height="15" viewBox="0 0 22 15" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M11 2C14.79 2 18.17 4.13 19.82 7.5C18.17 10.87 14.79 13 11 13C7.21 13 3.83 10.87 2.18 7.5C3.83 4.13 7.21 2 11 2ZM11 0C6 0 1.73 3.11 0 7.5C1.73 11.89 6 15 11 15C16 15 20.27 11.89 22 7.5C20.27 3.11 16 0 11 0ZM11 5C12.38 5 13.5 6.12 13.5 7.5C13.5 8.88 12.38 10 11 10C9.62 10 8.5 8.88 8.5 7.5C8.5 6.12 9.62 5 11 5ZM11 3C8.52 3 6.5 5.02 6.5 7.5C6.5 9.98 8.52 12 11 12C13.48 12 15.5 9.98 15.5 7.5C15.5 5.02 13.48 3 11 3Z"
-                                        fill="#6C737D" />
-                                </svg>
-                            </div>
-                        </div>
-
-                        <div class="modal-login__row">
-                            <label class="checkbox-container"><input class="modal-login__checkbox" type="checkbox">
-                                <p>Запомнить пароль</p>
-                            </label>
-                            <!-- поменять ссылку  -->
-                            <a href="#">Забыли пароль</a>
-                        </div>
-                        <button class="modal-login__login-btn">Войти</button>
-                    </form>
-                    <!-- поменять ссылку -->
-                    <a class="modal-login__registration-link" href="#">Зарегистрироваться</a>
+    </div>
+    <!-- модальное окно для выбора города "Ваш город" в блоке Header  -->
+    <div id="popup-city" class="main-popup main-popup_type_change-city">
+        <div class="main-popup__container main-popup__container_type_change-city">
+            <button class="main-popup__close"></button>
+            <div class="popup-change-city">
+                <h3 class="popup-change-city__title">Укажите свой город</h3>
+                <label class="popup-change-city__label mix-label">
+                    <input id="inputCityNamePopup" class="popup-change-city__input mix-input" type="text" maxlength="50"
+                        placeholder=" " />
+                    <span class="popup-change-city__caption mix-caption"></span>
+                </label>
+                <div class="popup-change-city__column">
+                    <ul class="popup-change-city__list">
+                        <!-- текущий активный город модификатор: popup-change-city__item_type_active -->
+                        <li
+                            class="popup-change-city__item popup-change-city__item-popup popup-change-city__item_type_favorite popup-change-city__item_type_active">
+                            Москва</li>
+                        <li
+                            class="popup-change-city__item popup-change-city__item-popup popup-change-city__item_type_favorite">
+                            Санкт-Петербург
+                        </li>
+                        <li
+                            class="popup-change-city__item popup-change-city__item-popup popup-change-city__item_type_favorite">
+                            Тула</li>
+                    </ul>
+                    <ul class="popup-change-city__list">
+                        <!-- <div class="popup-change-city__overlay"></div> -->
+                        <!-- данные с сервера выбор города -->
+                        <li class="popup-change-city__item popup-change-city__item-popup">Балашиха</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Бронницы</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Видное</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Воскресенск</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Дзержинский</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Дмитров</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Домодедово</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Жуковский</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Истра</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Кашира</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Клин</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Королёв</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Котельники</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Кубинка</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Лобня</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Лыткарино</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Мытищи</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Одинцово</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Подольск</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Пушкино</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Раменское</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Химки</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Чехов</li>
+                        <li class="popup-change-city__item popup-change-city__item-popup">Ярославль</li>
+                    </ul>
                 </div>
             </div>
+
         </div>
+
+    </div>
 
         <!-- модальное окно "Уведомление о результате проверки"  -->
         <div id='popup-notify' class="main-popup">
@@ -3551,7 +3505,113 @@
             </div>
         </div>
 
-    </div>
+    <!-- модальное окно для изменения данных об объекте  -->
+    <!-- поменять дата атрибут на ид объекта  -->
+    <div data-objectId="1" class="modal modal-edit-card-object mix-display-none" style="display: flex">
+        <div class="modal__content">
+          <div class="modal__header">
+            <!-- поменять на имя объекта  -->
+            <h3>119021. Ул. Льва Толстого, дом 23, корп.1</h3>
+            <button id="button-close-popup-sign-in" class="modal__close-btn">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                  fill="#6C737D"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="modal__body">
+            <form enctype="multipart/form-data" action="">
+              <label class="custom-text-input custom-text-input_text">
+                <textarea class="modal-edit-card-object__info">
+  Предлагаем Вам снять в аренду офисное помещение в Москве: 0т 52 м2 до 738 м2, в трехэтажном полностью функционирующем здании, со всеми инженерными коммуникациями.
+  Площади сдаются целиком и по-отдельности, возможны другие варианты и комбинации.
+                              - Вода и электричество входят в арендную ставку;
+                              - Телефония, интернет;
+                              - Санузлы на этажах есть;
+                              - Удобная парковка возле здания;
+                              - Периметр охраняемый, видеонаблюдение.
+                          Условия заключения договора обеспечительный платеж, в размере ежемесячного арендного платежа. Возможны арендные каникулы.
+                          Адрес объекта: г. Москва, улица Рябиновая, дом 47, строение 13 (округ ЗАО, район Очаково-Матвеевское, ближайшие станции метро Озерная и Кунцевская).
+                          Добро пожаловать!</textarea
+                >
+                <span class="custom-text-input__label">Дополнительные сведения</span>
+              </label>
+              <div class="modal-edit-card-object__row">
+                <h4>Фотографии объекта</h4>
+                <div class="modal-edit-card-object__btn-container">
+                  <div class="modal-edit-card-object__btn modal-edit-card-object__btn_delete">
+                    <div class="modal-edit-card-object__icon-btn">
+                      <svg
+                        width="14"
+                        height="16"
+                        viewBox="0 0 14 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M5.5 2.0625C5.25838 2.0625 5.0625 2.25838 5.0625 2.5V3.9375H8.9375V2.5C8.9375 2.25838 8.74162 2.0625 8.5 2.0625H5.5ZM10.0625 3.9375V2.5C10.0625 1.63706 9.36295 0.9375 8.5 0.9375H5.5C4.63706 0.9375 3.9375 1.63706 3.9375 2.5V3.9375H1.5C1.18934 3.9375 0.9375 4.18934 0.9375 4.5C0.9375 4.81066 1.18934 5.0625 1.5 5.0625H1.9375V13.5C1.9375 14.3629 2.63705 15.0625 3.5 15.0625H10.5C11.3629 15.0625 12.0625 14.3629 12.0625 13.5V5.0625H12.5C12.8107 5.0625 13.0625 4.81066 13.0625 4.5C13.0625 4.18934 12.8107 3.9375 12.5 3.9375H10.0625ZM10.9375 5.0625H3.0625V13.5C3.0625 13.7416 3.25838 13.9375 3.5 13.9375H10.5C10.7416 13.9375 10.9375 13.7416 10.9375 13.5V5.0625ZM5.5 6.9375C5.81066 6.9375 6.0625 7.18934 6.0625 7.5V11.5C6.0625 11.8107 5.81066 12.0625 5.5 12.0625C5.18934 12.0625 4.9375 11.8107 4.9375 11.5V7.5C4.9375 7.18934 5.18934 6.9375 5.5 6.9375ZM8.5 6.9375C8.81066 6.9375 9.0625 7.18934 9.0625 7.5V11.5C9.0625 11.8107 8.81066 12.0625 8.5 12.0625C8.18934 12.0625 7.9375 11.8107 7.9375 11.5V7.5C7.9375 7.18934 8.18934 6.9375 8.5 6.9375Z"
+                          fill="#50565E"
+                        />
+                      </svg>
+                    </div>
+                    <span>Удалить выбранные</span>
+                  </div>
+                  <div class="modal-edit-card-object__btn modal-edit-card-object__add-btn">
+                    <div class="modal-edit-card-object__icon-btn">
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M5.50006 0.435547C5.8121 0.435547 6.06506 0.688506 6.06506 1.00055V4.93555H10.0001C10.3121 4.93555 10.5651 5.18851 10.5651 5.50055C10.5651 5.81259 10.3121 6.06555 10.0001 6.06555H6.06506V10.0005C6.06506 10.3126 5.8121 10.5655 5.50006 10.5655C5.18802 10.5655 4.93506 10.3126 4.93506 10.0005V6.06555H1.00006C0.688018 6.06555 0.435059 5.81259 0.435059 5.50055C0.435059 5.18851 0.688018 4.93555 1.00006 4.93555H4.93506V1.00055C4.93506 0.688506 5.18802 0.435547 5.50006 0.435547Z"
+                          fill="#50565E"
+                        />
+                      </svg>
+                    </div>
+                    <input type="file" multiple accept="image/*" /><span>Добавить</span>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-edit-card-object__photo-container">
+                <div class="modal-edit-card-object__photo-container-item">
+                  <div class="modal-edit-card-object__img">
+                    <img src="./assets/images/slider-item.jpg" alt="Фото" />
+                  </div>
+                  <!-- поменять текст  -->
+                  <!-- поменять дата атрибут на ид фотки  -->
+                  <label class="checkbox-container"
+                    ><input
+                      data-photoid="todos"
+                      class="checkbox-container__checkbox"
+                      type="checkbox"
+                    />photo prekerstok</label
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal__footer">
+            <button class="modal__cancel-btn">Отмена</button>
+            <button form="contact-form1" type="submit" class="modal__login-btn">Сохранить</button>
+          </div>
+        </div>
+      </div>
+
 </body>
 
 </html>

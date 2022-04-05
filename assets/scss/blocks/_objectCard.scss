@@ -38,6 +38,7 @@ main .container {
   position: sticky;
   margin-top: 40px;
   top: 40px;
+  z-index: 1;
   @media #{$screen-mobile} {
     display: none;
   }

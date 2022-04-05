@@ -136,6 +136,11 @@
 .modal-file-form {
   .modal__body {
     position: relative;
+    img {
+      @media #{$screen-mobile} {
+        max-height: none;
+      }
+    }
     object {
       position: absolute;
       top: 16px;
