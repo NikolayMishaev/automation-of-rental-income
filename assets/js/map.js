@@ -83,8 +83,9 @@ function setMarker(obj) {
 
 function setOuterMarkers(list) {
   for (const key in list) {
-    L.marker([+list[key].lat, +list[key].lon], { icon: myIcon(list[key].price) })
+    const currentItem = list[key];
+    L.marker([+currentItem.lat, +currentItem.lon], { icon: myIcon(currentItem.price) })
       .addTo(map)
-      .bindPopup(tooltip(list[key]));
+      .bindPopup(tooltip(currentItem));
   }
 }
