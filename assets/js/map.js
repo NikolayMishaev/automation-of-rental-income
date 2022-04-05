@@ -12,9 +12,7 @@ function myIcon(price) {
 
 function tooltip(obj) {
   //TODO нужнен url картинки
-  return `<div class="map__tooltip_current"><div class="map__img"><img src="${"./assets/img/slider-item.jpg"}" alt="" /></div><div class="map__tooltip-info"><h4>${
-    obj.title
-  }</h4><h5>${obj.price} ₽ в месяц</h5></div></div>`;
+  return `<div class="map__tooltip_current"><div class="map__img"><img src="${obj.photo}" alt="" /></div><div class="map__tooltip-info"><h4>${obj.title}</h4><h5>${obj.price} ₽ в месяц</h5></div></div>`;
 }
 
 // ид объекта
@@ -31,6 +29,7 @@ async function getObjectPoint(id) {
       lat: "55.7590447",
       lon: "37.6175600",
       price: 50000,
+      photo: "./assets/img/slider-item.jpg",
       title: "Москва, Ул. Льва Толстого, дом 23, корп.1",
     };
     setMarker(result);
@@ -49,13 +48,14 @@ async function getObjectListPounts() {
         lat: "55.7590447",
         lon: "37.6155600",
         price: 40000,
-        photo: "",
+        photo: "./assets/img/slider-item.jpg",
         title: "Москва, Ул. Льва Толстого, дом 23, корп.1",
       },
       1: {
         lat: "55.7590447",
         lon: "37.614094",
         price: 35555,
+        photo: "./assets/img/slider-item.jpg",
         title: "Москва, Ул. Льва Толстого, дом 23, корп.1",
       },
     };
