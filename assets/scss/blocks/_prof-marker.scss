@@ -37,4 +37,47 @@
         background: url("./../images/icons/prof-table-marker-ring-active.svg") no-repeat center;
         margin-left: auto;
     }
+    &_type_star {
+        width: 12px;
+        height: 12px;
+        background: url("./../images/icons/profile-star.svg") no-repeat center;
+        margin: 0 4px;
+    }
+    &_type_star-active {
+        width: 12px;
+        height: 12px;
+        background: url("./../images/icons/profile-star-active.svg") no-repeat center;
+        margin: 0 4px;
+    }
+    &_type_star-feedback {
+        width: 12px;
+        height: 12px;
+        background: url("./../images/icons/profile-star.svg") no-repeat center;
+        margin: 0 2px;
+    }
+    &_type_star-feedback-active {
+        width: 12px;
+        height: 12px;
+        background: url("./../images/icons/profile-star-active.svg") no-repeat center;
+        margin: 0 2px;
+    }
+    &_type_eye {
+        width: 12px;
+        height: 8px;
+        background: url("./../images/icons/profile-manage-eye.svg") no-repeat center;
+        margin-right: 4px;
+    }
+    &_type_eye-close {
+        width: 12px;
+        height: 12px;
+        background: url("./../images/icons/profile-manage-eye-close.svg") no-repeat center;
+        margin-right: 4px;
+        margin-top: 2px;
+    }
+    &_type_sort {
+        width: 13px;
+        height: 12px;
+        background: url('./../images/icons/profile-analytics-sort.svg') no-repeat center;
+        margin-left: 8px;
+    }
 }

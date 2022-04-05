@@ -7,13 +7,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 100;
+    transform: scale(5);
     &:hover {
         cursor: pointer;
     }
     &_type_change-city {
-        transform: scale(5);
+        min-width: 280px;
     }
     &__container {
         position: fixed;
@@ -28,9 +29,34 @@
         padding: 16px 24px 20px;
         overflow: hidden;
         max-height: 100vh;
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
         &_type_change-city {
-            height: rem(350px);
+            height: rem(392px);
             min-width: rem(260px);
+            overflow: auto;
+        }
+        &_type_notify {
+            min-width: 600px;
+            min-height: 264px;
+            background: #ffffff;
+            box-shadow: 0px 24px 38px rgba(80, 86, 94, 0.04), 0px 9px 46px rgba(80, 86, 94, 0.04),
+                0px 11px 15px rgba(80, 86, 94, 0.1);
+            border-radius: 12px;
+            padding: 20px 0;
+            max-width: unset;
+            @media #{$screen-mobile} {
+                min-width: 328px;
+            }
         }
         &:hover {
             cursor: auto;
@@ -39,17 +65,24 @@
     &__close {
         width: rem(14px);
         height: rem(14px);
-        background: url('./../images/icons/popup-close.svg') no-repeat center;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1;
-            border: none;
-            transition: $transition;
+        background: url("./../images/icons/popup-close.svg") no-repeat center;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+        border: none;
+        transition: $transition;
         &:hover {
             cursor: pointer;
-            opacity: .7;
+            opacity: 0.7;
             transform: scale(1.2);
+        }
+        @media #{$screen-mobile} {
+            right: 12px;
+        }
+        &_type_notify {
+            right: 19px;
+            top: 24px;
         }
     }
 }

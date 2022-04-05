@@ -1,0 +1,95 @@
+.form-agent-card {
+    border: 1px solid #D0D7D9;
+    border-radius: 12px;
+    min-height: 80px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__title {
+        height: 29px;
+        margin-right: 10px;
+        overflow: scroll;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+            &:vertical {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 330px;
+        @media (max-width: 930px) {
+           width: 54vw;
+        }
+        @media (max-width: 720px) {
+            width: 67vw;
+        }
+    }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        background: url('./../images/icons/profile-document-active.svg') no-repeat center;
+        margin-right: 8px;
+        display: inline-block;
+        position: relative;
+        top: 4px;
+    }
+    &__caption {
+        width: 100%;
+        margin-top: 8px;
+        margin-left: 3px;
+    }
+    &__button {
+       width: 109px;
+        height: 32px;
+        background-color: #E1E5EB;
+        border: none;
+        color: #B4BBC6;
+        border-radius: 4px;
+        transition: $transition;
+        &:hover {
+            cursor: auto;
+        }
+        @media (max-width: 1150px) {
+            margin-top: 8px;
+            width: 100%;
+        }
+        @media (max-width: 930px) {
+            margin-top: 0;
+            width: 109px;
+        }
+        @media (max-width: 720px) {
+            margin-top: 8px;
+            width: 100%;
+        }
+        &_active {
+            background-color: $accent-TCX50;
+            color: white;
+            &:hover {
+                cursor: pointer !important;
+                opacity: .8 !important;
+                transform: scale(1.025) !important;
+            }
+        }
+    }
+    &__status {
+        color: #6D7678;
+        margin-top: 8px;
+        width: 100%;
+    }
+    &__date {
+        color: #3C4142;
+        margin-left: 4px;
+    }
+}

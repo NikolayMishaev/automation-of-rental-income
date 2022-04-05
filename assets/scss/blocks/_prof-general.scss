@@ -18,12 +18,25 @@
         height: rem(148px);
         margin: 0 0 rem(40px) 0;
         padding: rem(24px);
+        @media #{$screen-mobile} {
+            border: unset;
+            padding: 0;
+            height: unset;
+            margin-bottom: 24px;
+        }
     }
     &__avatar {
         width: rem(100px);
         height: rem(100px);
         position: relative;
         margin-right: rem(24px);
+        flex-shrink: 0;
+        transition: $transition;
+        @media #{$screen-mobile} {
+            width: rem(60px);
+            height: rem(60px);
+            margin-right: rem(12px);
+        }
     }
     &__photo {
         width: 100%;
@@ -32,14 +45,18 @@
     }
     &__icon {
         position: absolute;
-        right: 0;
+        right: 3px;
         bottom: 0;
         width: rem(12px);
         height: rem(12px);
         transition: $transition;
+        background: url('./../images/icons/profile-edit-avatar.svg') no-repeat center;
         &:hover {
             cursor: pointer;
             opacity: 0.7;
+        }
+        @media #{$screen-mobile} {
+            right: -3px;
         }
     }
     &__body {
@@ -49,6 +66,9 @@
             display: none;
             @media (max-width: rem(1550px)) {
                 display: block;
+            }
+            @media #{$screen-mobile} {
+                border: unset;
             }
         }
     }
@@ -68,7 +88,7 @@
         border: none;
         background-color: transparent;
         color: $grey60-2;
-        padding: rem(8px) rem(16px);
+        padding: rem(8px) rem(14px);
         transition: $transition;
         &:hover {
             opacity: 0.7;
@@ -79,7 +99,7 @@
         }
         @media #{$screen-mobile} {
             font-size: 12px;
-            line-height: 16px;
+            line-height: 14px;
             letter-spacing: 0.08px;
         }
     }
@@ -116,6 +136,9 @@
             padding: 0;
             border: none;
         }
+        &:nth-child(2n) {
+            margin-top: 40px;
+        }
     }
     &__text {
         margin-top: rem(16px);
@@ -145,6 +168,31 @@
         }
         &_active {
             background-image: url('./../images/icons/profile-tasks-chat-active.svg');
+        }
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    &__title {
+        width: 100%;
+        margin-bottom: 4px;
+    }
+    &__rating {
+        @include flex-container;
+        margin-left: 8px;
+        padding-bottom: 3px;
+    }
+    &__agent-container {
+margin-top: 16px;
+    }
+    &__forms-agent-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        @media (max-width: 930px) {
+            grid-template-columns: 1fr;
         }
     }
 }
