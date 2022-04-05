@@ -638,6 +638,7 @@ main .container {
   color: white;
   background-color: #2a9b43;
   line-height: 24px;
+  cursor: pointer;
   width: calc(100% - 40px);
 }
 
@@ -645,6 +646,7 @@ main .container {
   background-color: #55af69;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 @media (max-width: 64rem) {
@@ -669,6 +671,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  cursor: pointer;
 }
 
 .info-card__favorite-btn:hover {
@@ -676,6 +679,7 @@ main .container {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: #e1e5eb;
+  text-decoration: none;
 }
 
 @media (max-width: 64rem) {
@@ -1134,6 +1138,7 @@ main .container {
   color: white;
   background-color: #2a9b43;
   line-height: 24px;
+  cursor: pointer;
   padding: 4px 0;
   width: 200px;
   display: block;
@@ -1145,6 +1150,7 @@ main .container {
   background-color: #55af69;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 .contact-form__route-to-btn:hover {
@@ -1414,6 +1420,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  cursor: pointer;
   margin-right: 8px;
   padding: 4px 12px;
   text-align: center;
@@ -1425,6 +1432,7 @@ main .container {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: #e1e5eb;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {
@@ -1441,6 +1449,7 @@ main .container {
   color: white;
   background-color: #2a9b43;
   line-height: 24px;
+  cursor: pointer;
   padding: 4px 12px;
   cursor: pointer;
 }
@@ -1449,6 +1458,7 @@ main .container {
   background-color: #55af69;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {
@@ -1827,6 +1837,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  cursor: pointer;
   margin-right: 8px;
 }
 
@@ -1835,6 +1846,7 @@ main .container {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: #e1e5eb;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {
@@ -2159,6 +2171,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  cursor: pointer;
   margin-right: 16px;
   width: 205px;
   height: 40px;
@@ -2179,6 +2192,7 @@ main .container {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: #e1e5eb;
+  text-decoration: none;
 }
 
 .registration-form__cancel-btn:hover {
@@ -2197,6 +2211,7 @@ main .container {
   color: white;
   background-color: #2a9b43;
   line-height: 24px;
+  cursor: pointer;
   width: 205px;
   height: 40px;
   cursor: pointer;
@@ -2215,6 +2230,7 @@ main .container {
   background-color: #55af69;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {
@@ -2229,6 +2245,7 @@ main .container {
   color: white;
   background-color: #2a9b43;
   line-height: 24px;
+  cursor: pointer;
   cursor: pointer;
   display: none;
   width: 205px;
@@ -2245,6 +2262,7 @@ main .container {
   background-color: #55af69;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {
@@ -2259,6 +2277,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  cursor: pointer;
   width: 100%;
   margin-top: 16px;
   padding: 4px;
@@ -2271,6 +2290,7 @@ main .container {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: #e1e5eb;
+  text-decoration: none;
 }
 
 .registration-form__del-btn {
@@ -2310,6 +2330,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  cursor: pointer;
   padding: 8px 16px 8px 8px;
   cursor: pointer;
 }
@@ -2319,6 +2340,7 @@ main .container {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: #e1e5eb;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {
@@ -2922,6 +2944,7 @@ main .container {
   color: white;
   background-color: #2a9b43;
   line-height: 24px;
+  cursor: pointer;
   padding: 8px;
   width: 100%;
   height: 40px;
@@ -2933,6 +2956,7 @@ main .container {
   background-color: #55af69;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {
@@ -2951,6 +2975,7 @@ main .container {
   color: white;
   background-color: #2a9b43;
   line-height: 24px;
+  cursor: pointer;
   padding: 8px;
   width: 100%;
   height: 40px;
@@ -2962,6 +2987,7 @@ main .container {
   background-color: #55af69;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {
@@ -5899,6 +5925,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  cursor: pointer;
   height: 32px;
   line-height: 16px;
   padding: 4px 12px;
@@ -5911,6 +5938,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: #e1e5eb;
+  text-decoration: none;
 }
 
 .modal-edit-card-object__btn input {
@@ -7847,6 +7875,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  cursor: pointer;
   padding: 8px;
   margin-right: 16px;
   -webkit-box-flex: 205px;
@@ -7859,6 +7888,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   background-color: #e1e5eb;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {
@@ -7883,6 +7913,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: white;
   background-color: #2a9b43;
   line-height: 24px;
+  cursor: pointer;
   padding: 8px;
 }
 
@@ -7890,6 +7921,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #55af69;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  text-decoration: none;
 }
 
 @media (max-width: 40rem) {

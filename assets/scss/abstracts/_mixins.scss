@@ -4,9 +4,11 @@
   color: white;
   background-color: $color;
   line-height: 24px;
+  cursor: pointer;
   &:hover {
     background-color: $accen-hover;
     transition: $transition;
+    text-decoration: none;
   }
 }
 
@@ -16,10 +18,12 @@
   color: $grey100;
   background-color: white;
   line-height: 22px;
+  cursor: pointer;
   &:hover {
     border-color: $grey-40;
     transition: $transition;
     background-color: $grey-20;
+    text-decoration: none;
   }
 }
 
