@@ -11,7 +11,6 @@ function myIcon(price) {
 }
 
 function tooltip(obj) {
-  //TODO нужнен url картинки
   return `<div class="map__tooltip_current"><div class="map__img"><img src="${obj.photo}" alt="" /></div><div class="map__tooltip-info"><h4>${obj.title}</h4><h5>${obj.price} ₽ в месяц</h5></div></div>`;
 }
 
