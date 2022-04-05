@@ -37,32 +37,6 @@ function switchButtons(
     });
 }
 
-// логика авторизации по клику на "Регистрации" и "Вход" в Header, пока не готовы попапы регистрации
-// const linkSignIn = document.querySelector("#link-signIn");
-// const buttonClosePopup = document.querySelector("#button-close-popup-log-in");
-// const formSignIn = document.querySelector("#form-log-in");
-
-// const menuLinks = document.querySelector(".menu__links");
-// const menuProfile = document.querySelector(".menu__profile");
-// const popupLogIn = document.querySelector(".modal-login");
-
-// formSignIn.addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     menuLinks.style.display = "none";
-//     menuProfile.classList.remove("mix-display-none");
-//     popupLogIn.classList.remove("mix-display-flex");
-// });
-
-// buttonClosePopup.addEventListener("click", (e) => {
-//     if (e.target.closest(".modal__close-btn")) {
-//         popupLogIn.classList.remove("mix-display-flex");
-//     }
-// });
-
-// linkSignIn.addEventListener("click", (e) => {
-//     popupLogIn.classList.add("mix-display-flex");
-// });
-
 // логика открытия всех попапов
 // 1__добавить уникальное значение в атрибут aria-label кнопки
 // 2__добавить id попапу с тем же значением aria-label
