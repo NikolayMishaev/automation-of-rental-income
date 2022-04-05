@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/scss/style.css" />
+  </head>
+  <body>
+    <div class="regisrtation-page">
+      <div class="container">
+        <div class="regisrtation-page__inner">
+          <h1>Регистрация контрагента</h1>
+          <div class="group-radio-btn">
+            <label class="group-radio-btn__container"
+              ><input
+                class="group-radio-btn__radio"
+                type="radio"
+                name="radio-select"
+                value="one"
+                checked="checked"
+              />
+              <div class="group-radio-btn__inner">
+                <span class="group-radio-btn__title-radio">Физическое лицо</span>
+                <span class="group-radio-btn__custom-checkmark"></span>
+              </div>
+            </label>
+            <label class="group-radio-btn__container"
+              ><input class="group-radio-btn__radio" type="radio" name="radio-select" value="two" />
+              <div class="group-radio-btn__inner">
+                <span class="group-radio-btn__title-radio">Юридическое лицо/ИП</span>
+                <span class="group-radio-btn__custom-checkmark"></span>
+              </div>
+            </label>
+          </div>
+          <form class="registration-form_natural" action="" enctype="multipart/form-data">
+            <div class="registration-form">
+              <ul class="registration-form__tabs_natural registration-form__tabs">
+                <li class="registration-form__tab active" data-step="0">Шаг 1</li>
+                <li class="registration-form__tab" data-step="1">Шаг 2</li>
+                <li class="registration-form__tab" data-step="2">Шаг 3</li>
+                <li class="registration-form__tab" data-step="3">Шаг 4</li>
+                <li class="registration-form__tab" data-step="4">Шаг 5</li>
+                <li class="registration-form__tab" data-step="5">Шаг 6</li>
+              </ul>
+              <div class="registration-form__content">
+                <div class="registration-form__step1 registration-form__step" data-step="0">
+                  <h3>Общая информация</h3>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Фамилия</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фамилию</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Имя</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите имя</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Отчество</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите отчество</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">Дата рождения</div>
+                    <label class="input-date__container">
+                      <input
+                        type="date"
+                        class="registration-form__input"
+                        placeholder="Дата рождения"
+                      />
+                      <span class="label-date">Дата рождения</span>
+                    </label>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step2 registration-form__step"
+                  data-step="1"
+                  style="display: none"
+                >
+                  <h3>Данные контрагента</h3>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Место рождения</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите место рождения</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Адрес регистрации</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите адрес регистрации</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Адрес проживания</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите адрес проживания</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">ИНН</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        type="text"
+                        data-required="true"
+                        maxlength="12"
+                        minlength="12"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                      />
+                      <span class="custom-text-input__label">Введите ИНН*</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Серия паспорта</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите серию</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Кем паспорт выдан</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите организацию</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Дата выдачи паспорта</span>
+                    <label class="input-date__container">
+                      <input
+                        type="date"
+                        class="registration-form__input"
+                        placeholder="Дата рождения"
+                      />
+                      <span class="label-date">Дата выдачи</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Телефон</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        data-required="true"
+                        maxlength="11"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        type="text"
+                      />
+                      <span class="custom-text-input__label">Введите телефон*</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Факс</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите факс</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">E-mail</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" data-required="true" />
+                      <span class="custom-text-input__label">Введите E-mail*</span>
+                    </label>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step3 registration-form__step"
+                  data-step="2"
+                  style="display: none"
+                >
+                  <h3>Реквизиты</h3>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Наименование получателя платежа</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите получателя платежа</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Страна банка</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" data-required="true" />
+                      <span class="custom-text-input__label">Введите страну банка*</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Наименование банка</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" data-required="true" />
+                      <span class="custom-text-input__label">Введите наименование банка*</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Адрес банка</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите адрес</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">БИК банка</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите БИК</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Расчётный счёт</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите расчетный счет</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Корр счёт банка</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите корр счет</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">SWIFT</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите SWIFT</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">IBAN</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите IBAN</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">ABA</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ABA</span>
+                    </label>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step4 registration-form__step"
+                  data-step="3"
+                  style="display: none"
+                >
+                  <h3>Вид деятельности контрагента</h3>
+                  <div class="registration-form__row_textarea">
+                    <span class="registration-form__label_textarea">Вид деятельности</span>
+                    <div class="custom-text-input custom-text-input_text">
+                      <textarea cols="30" rows="4" data-required="true"></textarea>
+                      <span class="custom-text-input__label">Введите вид деятельности*</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step5 registration-form__step"
+                  data-step="4"
+                  style="display: none"
+                >
+                  <h3>Дополнительные сведения</h3>
+                  <div class="registration-form__row_textarea">
+                    <span class="registration-form__label_textarea"
+                      >Дополнительная информация о контрагенте</span
+                    >
+                    <div class="custom-text-input custom-text-input_text">
+                      <textarea cols="30" rows="4"></textarea>
+                      <span class="custom-text-input__label">Введите информацию</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step6 registration-form__step"
+                  data-step="5"
+                  style="display: none"
+                >
+                  <h3>Обязательные вложения</h3>
+                  <div class="registration-form__download-container">
+                    <p class="registration-form__subtitle">Скан ИНН</p>
+                    <div class="registration-form__download-btn">
+                      <div class="registration-form__download-icon">
+                        <svg
+                          width="13"
+                          height="14"
+                          viewBox="0 0 13 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
+                            fill="#50565E"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
+                            fill="#50565E"
+                          />
+                        </svg>
+                      </div>
+                      <span>Загрузить файл</span>
+                    </div>
+                    <div class="file-input__file">
+                      <div class="file-input__name">
+                        <div class="file-input__icon">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
+                              fill="#55B465"
+                            />
+                          </svg>
+                        </div>
+                        <a href="#">Имя файла</a>
+                      </div>
+                      <div class="file-input__file-close">x</div>
+                    </div>
+                    <div class="modal modal-file-input">
+                      <div class="modal__content">
+                        <div class="modal__header">
+                          <h3>Загрузить скан ИНН</h3>
+                          <div class="modal__close-btn">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                                fill="#6C737D"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="modal__body">
+                          <label class="registration-form__file-input file-input">
+                            <div class="file-input__text">
+                              Перетащите файлы сюда или <a>выберите на компьютере</a>
+                              <p class="file-input__text_small">
+                                Максимальный размер файла: 500 МБ
+                              </p>
+                            </div>
+                            <input type="file" data-required="true"
+                          /></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="registration-form__download-container">
+                    <p class="registration-form__subtitle">Скан паспорта</p>
+                    <div class="registration-form__download-btn">
+                      <div class="registration-form__download-icon">
+                        <svg
+                          width="13"
+                          height="14"
+                          viewBox="0 0 13 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
+                            fill="#50565E"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
+                            fill="#50565E"
+                          />
+                        </svg>
+                      </div>
+                      <span>Загрузить файл</span>
+                    </div>
+                    <div class="file-input__file">
+                      <div class="file-input__name">
+                        <div class="file-input__icon">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
+                              fill="#55B465"
+                            />
+                          </svg>
+                        </div>
+                        <a href="#">Имя файла</a>
+                      </div>
+                      <div class="file-input__file-close">x</div>
+                    </div>
+                    <div class="modal modal-file-input">
+                      <div class="modal__content">
+                        <div class="modal__header">
+                          <h3>Загрузить ОГРН</h3>
+                          <div class="modal__close-btn">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                                fill="#6C737D"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="modal__body">
+                          <label class="registration-form__file-input file-input">
+                            <div class="file-input__text">
+                              Перетащите файлы сюда или <a>выберите на компьютере</a>
+                              <p class="file-input__text_small">
+                                Максимальный размер файла: 500 МБ
+                              </p>
+                            </div>
+                            <input type="file" data-required="true"
+                          /></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Отображать, если проверка формы не прошла  -->
+            <p class="registration-form__error-text" style="display: none">
+              Заполните пустые поля!
+            </p>
+            <!-- end -->
+            <p class="registration-form__user-agreement">
+              Нажимая “Сохранить” вы принимаете
+              <!-- поменять ссылку -->
+              <a class="registration-form__link" href="#">Пользовательское соглашение</a>
+            </p>
+            <div class="registration-form__btn-group">
+              <!-- поменять ссылку -->
+              <a href="./main-page.html" class="registration-form__cancel-btn">Отмена</a>
+              <div class="registration-form__next-btn">Далее</div>
+              <button type="submit" class="registration-form__submit-btn">Сохранить</button>
+            </div>
+            <!--модальное окно отображается, если не все поля заполнены -->
+            <div class="modal modal-warning-registration">
+              <div class="modal__content content-offer-price">
+                <div class="modal__header">
+                  <h3>Предупреждение</h3>
+                  <div class="modal__close-btn">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                        fill="#6C737D"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="modal__body">
+                  <p class="modal__text-info">
+                    Не все поля заполнены! <br /><br />
+                    Вы можете сохранить анкету и дополнить её позже. Все ваши данные будут сохранены
+                  </p>
+                </div>
+                <div class="modal__footer">
+                  <a class="modal__cancel-btn">Отмена</a>
+                  <div class="modal__secondary-btn modal__complete-btn">Дополнить</div>
+                  <button type="submit" class="modal__login-btn">Сохранить</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- конец модального окна -->
+          <form class="registration-form_juridical" action="" enctype="multipart/form-data">
+            <div class="registration-form">
+              <ul class="registration-form__tabs">
+                <li class="registration-form__tab active" data-step="1">Шаг 1</li>
+                <li class="registration-form__tab" data-step="2">Шаг 2</li>
+                <li class="registration-form__tab" data-step="3">Шаг 3</li>
+                <li class="registration-form__tab" data-step="4">Шаг 4</li>
+                <li class="registration-form__tab" data-step="5">Шаг 5</li>
+                <li class="registration-form__tab" data-step="6">Шаг 6</li>
+                <li class="registration-form__tab" data-step="7">Шаг 7</li>
+                <li class="registration-form__tab" data-step="8">Шаг 8</li>
+                <li class="registration-form__tab" data-step="9">Шаг 9</li>
+              </ul>
+              <div class="registration-form__content">
+                <div class="registration-form__step1 registration-form__step" data-step="0">
+                  <h3>Регистрационные данные компании/ИП</h3>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Признак компании</span>
+                    <label
+                      class="custom-text-input custom-text-input_select registration-form__input"
+                    >
+                      <input type="text" disabled />
+                      <span class="custom-text-input__label">Выберите признак</span>
+                      <div class="registration-form__select-icon">
+                        <svg
+                          width="12"
+                          height="8"
+                          viewBox="0 0 12 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9.87998 1.29055L5.99998 5.17055L2.11998 1.29055C1.72998 0.900547 1.09998 0.900547 0.70998 1.29055C0.31998 1.68055 0.31998 2.31055 0.70998 2.70055L5.29998 7.29055C5.68998 7.68055 6.31998 7.68055 6.70998 7.29055L11.3 2.70055C11.69 2.31055 11.69 1.68055 11.3 1.29055C10.91 0.910547 10.27 0.900547 9.87998 1.29055Z"
+                            fill="#6C737D"
+                          />
+                        </svg>
+                      </div>
+                      <ul class="custom-text-input__option-list">
+                        <!-- заполнить Список -->
+                        <li data-value="1" class="custom-text-input__option">1</li>
+                        <li data-value="2" class="custom-text-input__option">2</li>
+                      </ul>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Полное наименование</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите полное наименование</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label"
+                      >Наименование на английском языке
+                      <span class="registration-form__label-subtitle"
+                        >(только для нерезидентов)</span
+                      >
+                    </span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите наименование</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">Сокращённое наименование</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите сокращенное наименование</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">Форма собственности</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите форму собственности</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">ОГРН/ОГРНИП</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        type="text"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        maxlength="15"
+                        minlength="13"
+                      />
+                      <span class="custom-text-input__label">Введите ОГРН/ОГРНИП</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">ИНН</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        type="text"
+                        minlength="10"
+                        maxlength="10"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                      />
+                      <span class="custom-text-input__label">Введите ИНН</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">КПП</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        type="text"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        maxlength="9"
+                        minlength="9"
+                      />
+                      <span class="custom-text-input__label">Введите КПП</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">ОКПО</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        type="text"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        maxlength="10"
+                        minlength="8"
+                      />
+                      <span class="custom-text-input__label">Введите ОКПО</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">ОКВЭД</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" minlength="5" />
+                      <span class="custom-text-input__label">Введите ОКВЭД</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">
+                      Юридический адрес
+                      <span class="registration-form__label-subtitle"
+                        >(для нерезидентов - на английском)</span
+                      >
+                    </div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите юридический адрес</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">Фактический адрес</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фактический адрес</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">Дата регистрации</div>
+                    <label class="input-date__container">
+                      <input
+                        type="date"
+                        class="registration-form__input"
+                        placeholder="Дата рождения"
+                      />
+                      <span class="label-date">Дата регистрации</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">
+                      Наименование и номер регистрирующего органа
+                    </div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите наименование и номер</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">Телефон</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input
+                        data-required="true"
+                        type="text"
+                        maxlength="11"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                      />
+                      <span class="custom-text-input__label">Введите телефон*</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">Факс</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите факс</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <div class="registration-form__label">E-mail</div>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" data-required="true" />
+                      <span class="custom-text-input__label">Введите E-mail*</span>
+                    </label>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step2 registration-form__step"
+                  data-step="1"
+                  style="display: none"
+                >
+                  <h3>Реквизиты</h3>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label"
+                      >Наименование получателя платежа
+                      <span class="registration-form__label-subtitle"
+                        >(если не совпадает с названием)</span
+                      >
+                    </span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите получателя платежа</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label"
+                      >Страна банка
+                      <span class="registration-form__label-subtitle"
+                        >(для нерезидентов - на английском)</span
+                      >
+                    </span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" data-required="true" />
+                      <span class="custom-text-input__label">Введите страну банка*</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label"
+                      >Наименование банка
+                      <span class="registration-form__label-subtitle"
+                        >(для нерезидентов - на английском)</span
+                      ></span
+                    >
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" data-required="true" />
+                      <span class="custom-text-input__label">Введите наименование банка*</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label"
+                      >Адрес банка
+                      <span class="registration-form__label-subtitle"
+                        >(для нерезидентов - на английском)</span
+                      ></span
+                    >
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите адрес</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">БИК банка</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите БИК</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Расчётный счёт</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите расчетный счет</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Корр счёт банка</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите корр счет</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">SWIFT</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите SWIFT</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">IBAN</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите IBAN</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">ABA</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите ABA</span>
+                    </label>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step3 registration-form__step"
+                  data-step="2"
+                  style="display: none"
+                >
+                  <h3>Генеральный директор/Руководитель</h3>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Фамилия</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фамилию</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Имя</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите имя</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Отчество</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите отчество</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Дата рождения</span>
+                    <label class="input-date__container">
+                      <input
+                        type="date"
+                        class="registration-form__input"
+                        placeholder="Дата рождения"
+                      /><span class="label-date">Дата рождения</span></label
+                    >
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Серия паспорта</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите серию</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Кем паспорт выдан</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите организацию</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Дата выдачи паспорта</span>
+                    <label class="input-date__container">
+                      <input
+                        type="date"
+                        class="registration-form__input"
+                        placeholder="Дата рождения"
+                      /><span class="label-date">Дата выдачи</span></label
+                    >
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step4 registration-form__step"
+                  data-step="3"
+                  style="display: none"
+                >
+                  <h3>Доверенное лицо</h3>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Фамилия</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите фамилию</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Имя</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите имя</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Отчество</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите отчество</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Дата рождения</span>
+                    <label class="input-date__container">
+                      <input
+                        type="date"
+                        class="registration-form__input"
+                        placeholder="Дата рождения"
+                      /><span class="label-date">Дата рождения</span></label
+                    >
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Серия паспорта</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите серию</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Кем паспорт выдан</span>
+                    <label
+                      class="custom-text-input custom-text-input_name registration-form__input"
+                    >
+                      <input type="text" />
+                      <span class="custom-text-input__label">Введите организацию</span>
+                    </label>
+                  </div>
+                  <div class="registration-form__row">
+                    <span class="registration-form__label">Дата выдачи паспорта</span>
+                    <label class="input-date__container">
+                      <input
+                        type="date"
+                        class="registration-form__input"
+                        placeholder="Дата рождения"
+                      /><span class="label-date">Дата выдачи</span>
+                    </label>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step5 registration-form__step"
+                  data-step="4"
+                  style="display: none"
+                >
+                  <div class="registration-form__benif">
+                    <h3>Конечный бенефициар (физическое лицо)</h3>
+                    <div class="registration-form__row">
+                      <span class="registration-form__label">Фамилия</span>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите фамилию</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <span class="registration-form__label">Имя</span>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите имя</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <span class="registration-form__label">Отчество</span>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите отчество</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <span class="registration-form__label">Дата рождения</span>
+                      <label class="input-date__container">
+                        <input
+                          type="date"
+                          class="registration-form__input"
+                          placeholder="Дата рождения"
+                        /><span class="label-date">Дата рождения</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <span class="registration-form__label">Серия паспорта</span>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите серию</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <span class="registration-form__label">Кем паспорт выдан</span>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите организацию</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <span class="registration-form__label">Дата выдачи паспорта</span>
+                      <label class="input-date__container">
+                        <input
+                          type="date"
+                          class="registration-form__input"
+                          placeholder="Дата рождения"
+                        /><span class="label-date">Дата выдачи</span></label
+                      >
+                    </div>
+                  </div>
+                  <div class="registration-form__row">
+                    <!-- эту кнопку видно при каких то условиях.  -->
+                    <div class="registration-form__del-btn">Удалить бенефициара</div>
+                    <!-- конец -->
+                    <div class="registration-form__add-btn">Добавить бенефициара</div>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step6 registration-form__step"
+                  data-step="5"
+                  style="display: none"
+                >
+                  <div class="registration-form__benif">
+                    <h3>Конечный бенефициар (юридическое лицо)</h3>
+                    <div class="registration-form__row">
+                      <span class="registration-form__label">Полное наименование</span>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите наименование</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">Сокращённое наименование</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label"
+                          >Введите сокращенное наименование</span
+                        >
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">Форма собственности</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите форму собственности</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">ОГРН/ОГРНИП</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите ОГРН/ОГРНИП</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">ИНН</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите ИНН</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">КПП</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите КПП</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">ОКПО</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите ОКПО</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">ОКВЭД</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите ОКВЭД</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">
+                        Юридический адрес
+                        <span class="registration-form__label-subtitle"
+                          >(для нерезидентов - на английском)</span
+                        >
+                      </div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите юридический адрес</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">Фактический адрес</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите фактический адрес</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">Дата регистрации</div>
+                      <label class="input-date__container">
+                        <input
+                          type="date"
+                          class="registration-form__input"
+                          placeholder="Дата рождения"
+                        />
+                        <span class="label-date">Дата регистрации</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">
+                        Наименование и номер регистрирующего органа
+                      </div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите наименование и номер</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">Телефон</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input
+                          type="text"
+                          data-required="true"
+                          maxlength="20"
+                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        />
+                        <span class="custom-text-input__label">Введите телефон*</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">Факс</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" />
+                        <span class="custom-text-input__label">Введите факс</span>
+                      </label>
+                    </div>
+                    <div class="registration-form__row">
+                      <div class="registration-form__label">E-mail</div>
+                      <label
+                        class="custom-text-input custom-text-input_name registration-form__input"
+                      >
+                        <input type="text" data-required="true" />
+                        <span class="custom-text-input__label">Введите E-mail*</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="registration-form__row">
+                    <!-- эту кнопку видно при каких то условиях.  -->
+                    <div class="registration-form__del-btn">Удалить бенефициара</div>
+                    <!-- конец -->
+                    <div class="registration-form__add-btn">Добавить бенефициара</div>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step7 registration-form__step"
+                  data-step="6"
+                  style="display: none"
+                >
+                  <h3>Вид деятельности контрагента</h3>
+                  <div class="registration-form__row_textarea">
+                    <span class="registration-form__label_textarea">Вид деятельности</span>
+                    <div class="custom-text-input custom-text-input_text">
+                      <textarea data-required cols="30" rows="4"></textarea>
+                      <span class="custom-text-input__label">Введите вид деятельности*</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step8 registration-form__step"
+                  data-step="7"
+                  style="display: none"
+                >
+                  <h3>Дополнительные сведения</h3>
+                  <div class="registration-form__row_textarea">
+                    <span class="registration-form__label_textarea"
+                      >Дополнительная информация о контрагенте</span
+                    >
+                    <div class="custom-text-input custom-text-input_text">
+                      <textarea cols="30" rows="4"></textarea>
+                      <span class="custom-text-input__label">Введите информацию</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="registration-form__step9 registration-form__step"
+                  data-step="8"
+                  style="display: none"
+                >
+                  <h3>Обязательные вложения</h3>
+                  <div class="registration-form__download-container">
+                    <p class="registration-form__subtitle">Скан ИНН</p>
+                    <div class="registration-form__download-btn">
+                      <div class="registration-form__download-icon">
+                        <svg
+                          width="13"
+                          height="14"
+                          viewBox="0 0 13 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
+                            fill="#50565E"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
+                            fill="#50565E"
+                          />
+                        </svg>
+                      </div>
+                      <span>Загрузить файл</span>
+                    </div>
+                    <div class="file-input__file">
+                      <div class="file-input__name">
+                        <div class="file-input__icon">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
+                              fill="#55B465"
+                            />
+                          </svg>
+                        </div>
+                        <a href="#">Имя файла</a>
+                      </div>
+                      <div class="file-input__file-close">x</div>
+                    </div>
+                    <div class="modal modal-file-input">
+                      <div class="modal__content">
+                        <div class="modal__header">
+                          <h3>Загрузить скан ИНН</h3>
+                          <div class="modal__close-btn">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                                fill="#6C737D"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="modal__body">
+                          <label class="registration-form__file-input file-input">
+                            <div class="file-input__text">
+                              Перетащите файлы сюда или <a>выберите на компьютере</a>
+                              <p class="file-input__text_small">Максимальный размер файла: 30 МБ</p>
+                            </div>
+                            <input type="file" data-required="true"
+                          /></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="registration-form__download-container">
+                    <p class="registration-form__subtitle">Скан ОГРН</p>
+                    <div class="registration-form__download-btn">
+                      <div class="registration-form__download-icon">
+                        <svg
+                          width="13"
+                          height="14"
+                          viewBox="0 0 13 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
+                            fill="#50565E"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
+                            fill="#50565E"
+                          />
+                        </svg>
+                      </div>
+                      <span>Загрузить файл</span>
+                    </div>
+                    <div class="file-input__file">
+                      <div class="file-input__name">
+                        <div class="file-input__icon">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
+                              fill="#55B465"
+                            />
+                          </svg>
+                        </div>
+                        <a href="#">Имя файла</a>
+                      </div>
+                      <div class="file-input__file-close">x</div>
+                    </div>
+                    <div class="modal modal-file-input">
+                      <div class="modal__content">
+                        <div class="modal__header">
+                          <h3>Загрузить скан ОГРН</h3>
+                          <div class="modal__close-btn">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                                fill="#6C737D"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="modal__body">
+                          <label class="registration-form__file-input file-input">
+                            <div class="file-input__text">
+                              Перетащите файлы сюда или <a>выберите на компьютере</a>
+                              <p class="file-input__text_small">Максимальный размер файла: 30 МБ</p>
+                            </div>
+                            <input type="file" data-required="true"
+                          /></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="registration-form__download-container">
+                    <p class="registration-form__subtitle">Скан документа на подписание договора</p>
+                    <div class="registration-form__download-btn">
+                      <div class="registration-form__download-icon">
+                        <svg
+                          width="13"
+                          height="14"
+                          viewBox="0 0 13 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
+                            fill="#50565E"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
+                            fill="#50565E"
+                          />
+                        </svg>
+                      </div>
+                      <span>Загрузить файл</span>
+                    </div>
+                    <div class="file-input__file">
+                      <div class="file-input__name">
+                        <div class="file-input__icon">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
+                              fill="#55B465"
+                            />
+                          </svg>
+                        </div>
+                        <a href="#">Имя файла</a>
+                      </div>
+                      <div class="file-input__file-close">x</div>
+                    </div>
+                    <div class="modal modal-file-input">
+                      <div class="modal__content">
+                        <div class="modal__header">
+                          <h3>Загрузить скан документа на подписание договора</h3>
+                          <div class="modal__close-btn">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                                fill="#6C737D"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="modal__body">
+                          <label class="registration-form__file-input file-input">
+                            <div class="file-input__text">
+                              Перетащите файлы сюда или <a>выберите на компьютере</a>
+                              <p class="file-input__text_small">Максимальный размер файла: 30 МБ</p>
+                            </div>
+                            <input type="file" data-required="true"
+                          /></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="registration-form__download-container">
+                    <p class="registration-form__subtitle">
+                      Документ о месте регистрации генерального директора
+                    </p>
+                    <div class="registration-form__download-btn">
+                      <div class="registration-form__download-icon">
+                        <svg
+                          width="13"
+                          height="14"
+                          viewBox="0 0 13 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
+                            fill="#50565E"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
+                            fill="#50565E"
+                          />
+                        </svg>
+                      </div>
+                      <span>Загрузить файл</span>
+                    </div>
+                    <div class="file-input__file">
+                      <div class="file-input__name">
+                        <div class="file-input__icon">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
+                              fill="#55B465"
+                            />
+                          </svg>
+                        </div>
+                        <a href="#">Имя файла</a>
+                      </div>
+                      <div class="file-input__file-close">x</div>
+                    </div>
+                    <div class="modal modal-file-input">
+                      <div class="modal__content">
+                        <div class="modal__header">
+                          <h3>Загрузить документ о месте регистрации генерального директора</h3>
+                          <div class="modal__close-btn">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                                fill="#6C737D"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="modal__body">
+                          <label class="registration-form__file-input file-input">
+                            <div class="file-input__text">
+                              Перетащите файлы сюда или <a>выберите на компьютере</a>
+                              <p class="file-input__text_small">Максимальный размер файла: 30 МБ</p>
+                            </div>
+                            <input type="file" data-required="true"
+                          /></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="registration-form__download-container">
+                    <p class="registration-form__subtitle">
+                      Полные реквизиты банка, где у юридического лица открыт счет
+                    </p>
+                    <div class="registration-form__download-btn">
+                      <div class="registration-form__download-icon">
+                        <svg
+                          width="13"
+                          height="14"
+                          viewBox="0 0 13 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M7.06506 9.43353C7.06506 9.74557 6.8121 9.99853 6.50006 9.99853C6.18802 9.99853 5.93506 9.74557 5.93506 9.43353V2.86262L3.89957 4.89811C3.67893 5.11875 3.32119 5.11875 3.10054 4.89811C2.87989 4.67746 2.87989 4.31972 3.10054 4.09908L6.10054 1.09908C6.2065 0.99312 6.35021 0.933594 6.50006 0.933594C6.6499 0.933594 6.79361 0.99312 6.89957 1.09908L9.89957 4.09908C10.1202 4.31972 10.1202 4.67746 9.89957 4.89811C9.67893 5.11875 9.32119 5.11875 9.10054 4.89811L7.06506 2.86262V9.43353Z"
+                            fill="#50565E"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M0.934998 12.4985C0.934998 12.1865 1.18796 11.9335 1.5 11.9335H11.5C11.812 11.9335 12.065 12.1865 12.065 12.4985C12.065 12.8106 11.812 13.0635 11.5 13.0635H1.5C1.18796 13.0635 0.934998 12.8106 0.934998 12.4985Z"
+                            fill="#50565E"
+                          />
+                        </svg>
+                      </div>
+                      <span>Загрузить файл</span>
+                    </div>
+                    <div class="file-input__file">
+                      <div class="file-input__name">
+                        <div class="file-input__icon">
+                          <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 18 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z"
+                              fill="#55B465"
+                            />
+                          </svg>
+                        </div>
+                        <a href="#">Имя файла</a>
+                      </div>
+                      <div class="file-input__file-close">x</div>
+                    </div>
+                    <div class="modal modal-file-input">
+                      <div class="modal__content">
+                        <div class="modal__header">
+                          <h3>
+                            Загрузить полные реквизиты банка, где у юридического лица открыт счет
+                          </h3>
+                          <div class="modal__close-btn">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                                fill="#6C737D"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="modal__body">
+                          <label class="registration-form__file-input file-input">
+                            <div class="file-input__text">
+                              Перетащите файлы сюда или <a>выберите на компьютере</a>
+                              <p class="file-input__text_small">Максимальный размер файла: 30 МБ</p>
+                            </div>
+                            <input type="file" data-required="true"
+                          /></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="registration-form__user-agreement">
+              Нажимая “Сохранить” вы принимаете
+              <!-- поменять ссылку  -->
+              <a class="registration-form__link" href="#">Пользовательское соглашение</a>
+            </p>
+            <div class="registration-form__btn-group">
+              <!-- поменять ссылку -->
+              <a href="./main-page.html" class="registration-form__cancel-btn">Отмена</a>
+              <div class="registration-form__next-btn">Далее</div>
+              <button type="submit" class="registration-form__submit-btn">Сохранить</button>
+            </div>
+            <!--модальное окно отображается, если не все поля заполнены -->
+            <div class="modal modal-warning-registration">
+              <div class="modal__content content-offer-price">
+                <div class="modal__header">
+                  <h3>Предупреждение</h3>
+                  <div class="modal__close-btn">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                        fill="#6C737D"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="modal__body">
+                  <p class="modal__text-info">
+                    Не все поля заполнены! <br /><br />
+                    Вы можете сохранить анкету и дополнить её позже. Все ваши данные будут сохранены
+                  </p>
+                </div>
+                <div class="modal__footer">
+                  <div class="modal__cancel-btn">Отмена</div>
+                  <div class="modal__secondary-btn modal__complete-btn">Дополнить</div>
+                  <button type="submit" class="modal__login-btn">Сохранить</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./assets/js/script.js"></script>
+  </body>
+</html>
