@@ -689,7 +689,6 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
             "prof-control-panel__select-label_active"
         )
     ) {
-        console.log("open");
         addClassElement(
             state.submenuSelect[currentLabel.ariaLabel],
             "mix-visible"
@@ -707,7 +706,6 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
             );
         }
     } else {
-        console.log("close");
         hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
     }
 }

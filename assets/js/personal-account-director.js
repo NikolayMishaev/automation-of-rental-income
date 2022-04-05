@@ -8,7 +8,190 @@ import {
 
 const state = {
     currentOpenSubmenu: null,
-    selectSubmenu: {},
+    currentOpenSubmenuSecondLevel: null,
+    cursorsSelect: {
+        "objects-status": document.querySelector("#cursor-objects-status"),
+        "objects-sort": document.querySelector("#cursor-objects-sort"),
+        "objects-page": document.querySelector("#cursor-objects-page"),
+        "agents-status": document.querySelector("#cursor-agents-status"),
+        "agents-period": document.querySelector("#cursor-agents-period"),
+        "agents-page-actual": document.querySelector(
+            "#cursor-agents-page-actual"
+        ),
+        "agents-page-archive": document.querySelector(
+            "#cursor-agents-page-archive"
+        ),
+        "analytics-period-users": document.querySelector(
+            "#cursor-analytics-period-users"
+        ),
+        "analytics-page-users": document.querySelector(
+            "#cursor-analytics-page-users"
+        ),
+        "analytics-period-size": document.querySelector(
+            "#cursor-analytics-period-size"
+        ),
+        "division-size": document.querySelector("#cursor-division-size"),
+        "analytics-page-size": document.querySelector(
+            "#cursor-analytics-page-size"
+        ),
+        "analytics-period-views": document.querySelector(
+            "#cursor-analytics-period-views"
+        ),
+        "division-views": document.querySelector("#cursor-division-views"),
+        "analytics-page-views": document.querySelector(
+            "#cursor-analytics-page-views"
+        ),
+        "analytics-period-appeals": document.querySelector(
+            "#cursor-analytics-period-appeals"
+        ),
+        "analytics-page-appeals": document.querySelector(
+            "#cursor-analytics-page-appeals"
+        ),
+        "analytics-period-feedback": document.querySelector(
+            "#cursor-analytics-period-feedback"
+        ),
+        "analytics-page-feedback": document.querySelector(
+            "#cursor-analytics-page-feedback"
+        ),
+        "analytics-period-portal": document.querySelector(
+            "#cursor-analytics-period-portal"
+        ),
+        "analytics-page-portal": document.querySelector(
+            "#cursor-analytics-page-portal"
+        ),
+    },
+    submenuSelect: {
+        "objects-status": document.querySelector("#submenu-objects-status"),
+        "objects-sort": document.querySelector("#submenu-objects-sort"),
+        "objects-page": document.querySelector("#submenu-objects-page"),
+        "agents-status": document.querySelector("#submenu-agents-status"),
+        "agents-period": document.querySelector("#submenu-agents-period"),
+        "agents-page-actual": document.querySelector(
+            "#submenu-agents-page-actual"
+        ),
+        "agents-page-archive": document.querySelector(
+            "#submenu-agents-page-archive"
+        ),
+        "analytics-period-users": document.querySelector(
+            "#submenu-analytics-period-users"
+        ),
+        "analytics-users": document.querySelector("#submenu-analytics-users"),
+        "analytics-page-users": document.querySelector(
+            "#submenu-analytics-page-users"
+        ),
+        "analytics-period-size": document.querySelector(
+            "#submenu-analytics-period-size"
+        ),
+        "analytics-size": document.querySelector("#submenu-analytics-size"),
+        "division-size": document.querySelector("#submenu-division-size"),
+        "analytics-page-size": document.querySelector(
+            "#submenu-analytics-page-size"
+        ),
+        "analytics-period-views": document.querySelector(
+            "#submenu-analytics-period-views"
+        ),
+        "analytics-views": document.querySelector("#submenu-analytics-views"),
+        "division-views": document.querySelector("#submenu-division-views"),
+        "analytics-page-views": document.querySelector(
+            "#submenu-analytics-page-views"
+        ),
+        "analytics-period-appeals": document.querySelector(
+            "#submenu-analytics-period-appeals"
+        ),
+        "analytics-appeals": document.querySelector(
+            "#submenu-analytics-appeals"
+        ),
+        "analytics-page-appeals": document.querySelector(
+            "#submenu-analytics-page-appeals"
+        ),
+        "analytics-period-feedback": document.querySelector(
+            "#submenu-analytics-period-feedback"
+        ),
+        "analytics-feedback": document.querySelector(
+            "#submenu-analytics-feedback"
+        ),
+        "analytics-page-feedback": document.querySelector(
+            "#submenu-analytics-page-feedback"
+        ),
+        "analytics-period-portal": document.querySelector(
+            "#submenu-analytics-period-portal"
+        ),
+        "analytics-portal": document.querySelector("#submenu-analytics-portal"),
+        "analytics-page-portal": document.querySelector(
+            "#submenu-analytics-page-portal"
+        ),
+    },
+    inputsSelect: {
+        "checkbox-free": document.querySelector("#input-objects-checkobx-free"),
+        "checkbox-free-soon": document.querySelector(
+            "#input-objects-checkobx-free-soon"
+        ),
+        "objects-status": document.querySelector("#input-objects-status"),
+        "objects-sort": document.querySelector("#input-objects-sort"),
+        "objects-page": document.querySelector("#input-objects-page"),
+        "agents-status": document.querySelector("#input-agents-status"),
+        "agents-period": document.querySelector("#input-agents-period"),
+        "agents-page-actual": document.querySelector(
+            "#input-agents-page-actual"
+        ),
+        "agents-page-archive": document.querySelector(
+            "#input-agents-page-archive"
+        ),
+        "analytics-period-users": document.querySelector(
+            "#input-analytics-period-users"
+        ),
+        "analytics-users": document.querySelector("#input-analytics-users"),
+        "analytics-page-users": document.querySelector(
+            "#input-analytics-page-users"
+        ),
+        "analytics-period-size": document.querySelector(
+            "#input-analytics-period-size"
+        ),
+        "analytics-size": document.querySelector("#input-analytics-size"),
+        "division-size": document.querySelector("#input-division-size"),
+        "analytics-page-size": document.querySelector(
+            "#input-analytics-page-size"
+        ),
+        "analytics-period-views": document.querySelector(
+            "#input-analytics-period-views"
+        ),
+        "analytics-views": document.querySelector("#input-analytics-views"),
+        "division-views": document.querySelector("#input-division-views"),
+        "analytics-page-views": document.querySelector(
+            "#input-analytics-page-views"
+        ),
+        "analytics-period-appeals": document.querySelector(
+            "#input-analytics-period-appeals"
+        ),
+        "analytics-appeals": document.querySelector("#input-analytics-appeals"),
+        "analytics-page-appeals": document.querySelector(
+            "#input-analytics-page-appeals"
+        ),
+        "analytics-period-feedback": document.querySelector(
+            "#input-analytics-period-feedback"
+        ),
+        "analytics-feedback": document.querySelector(
+            "#input-analytics-feedback"
+        ),
+        "analytics-page-feedback": document.querySelector(
+            "#input-analytics-page-feedback"
+        ),
+        "analytics-period-portal": document.querySelector(
+            "#input-analytics-period-portal"
+        ),
+        "analytics-portal": document.querySelector("#input-analytics-portal"),
+        "analytics-page-portal": document.querySelector(
+            "#input-analytics-page-portal"
+        ),
+    },
+    labelsStructure: {
+        director: document.querySelector("#structure-label-director"),
+        direction: document.querySelector("#structure-label-direction"),
+        management: document.querySelector("#structure-label-management"),
+        department: document.querySelector("#structure-label-department"),
+        manager: document.querySelector("#structure-label-manager"),
+        analytics: document.querySelector("#structure-label-analytics"),
+    },
     cursorsStructure: {
         director: document.querySelector("#structure-cursor-director"),
         direction: document.querySelector("#structure-cursor-direction"),
@@ -499,21 +682,6 @@ checkboxs.forEach((i) =>
     })
 );
 
-// логика по работе селектов
-
-const checkClickOutsideSelect = (e) => {
-    if (!e.target.closest(".prof-control-panel__select-label")) {
-        if (state.currentOpenSubmenu) {
-            removeClassElement(state.currentOpenSubmenu, "mix-visible");
-        }
-        document.removeEventListener("click", checkClickOutsideSelect);
-    }
-};
-
-function listenClickOutsideSelect() {
-    document.addEventListener("click", checkClickOutsideSelect);
-}
-
 // логика работы селектов в табе Структура
 
 const sturctureWrappers = document.querySelectorAll(
@@ -538,6 +706,10 @@ sturctureWrappers.forEach((i) =>
                 state.cursorsStructure[`${wrapperElement.ariaLabel}`],
                 "prof-structure__cursor_active"
             );
+            removeClassElement(
+                state.labelsStructure[wrapperElement.ariaLabel],
+                "mix-visible"
+            );
         } else {
             const currentHeight =
                 state.cardsStructure[wrapperElement.ariaLabel].clientHeight;
@@ -552,6 +724,172 @@ sturctureWrappers.forEach((i) =>
                 state.cursorsStructure[wrapperElement.ariaLabel],
                 "prof-structure__cursor_active"
             );
+            addClassElement(
+                state.labelsStructure[wrapperElement.ariaLabel],
+                "mix-visible"
+            );
+        }
+    })
+);
+
+// логика по работе селектов
+
+// проверить, где сработал клик, если за пределами тела селекта, то запустить ф-ию для скрытия текущего открытого подменю
+const checkClickOutsideSelect = (e) => {
+    // если клик произошел за пределами селекта(label)
+    if (!e.target.closest(".prof-control-panel__select-label")) {
+        // скрыть текущее подменю
+        hideCurrentSubmenu(state.currentOpenSubmenu, true);
+    }
+};
+
+function setInputValueByValueActiveCheckbox() {
+    if (
+        state.inputsSelect["checkbox-free"].checked &&
+        state.inputsSelect["checkbox-free-soon"].checked
+    ) {
+        state.inputsSelect["objects-status"].value = "Выбрано несколько";
+    } else if (state.inputsSelect["checkbox-free"].checked) {
+        state.inputsSelect["objects-status"].value = "Свободен";
+    } else if (state.inputsSelect["checkbox-free-soon"].checked) {
+        state.inputsSelect["objects-status"].value = "Скоро освободится";
+    } else {
+        state.inputsSelect["objects-status"].value = "Все";
+    }
+}
+
+function toggleVisibleSubmenuSecondLevel(currentLabel) {
+    if (
+        !currentLabel.classList.contains(
+            "prof-control-panel__select-label_active"
+        )
+    ) {
+        addClassElement(
+            state.submenuSelect[currentLabel.ariaLabel],
+            "mix-visible"
+        );
+        addClassElement(
+            currentLabel,
+            "prof-control-panel__select-label_active"
+        );
+        state.currentOpenSubmenuSecondLevel =
+            state.submenuSelect[currentLabel.ariaLabel];
+        if (state.cursorsSelect[currentLabel.ariaLabel]) {
+            addClassElement(
+                state.cursorsSelect[currentLabel.ariaLabel],
+                "prof-control-panel__cursor_active"
+            );
+        }
+    } else {
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+    }
+}
+
+// установить слушатель клика на весь документ и отслеживать клик вне тела селекта
+function setListenerClickOutsideSelect() {
+    document.addEventListener("click", checkClickOutsideSelect);
+}
+
+// скрыть текущее открытое подменю селекта
+function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
+    // если в стейте есть текущее открытое подменю
+    if (submenu) {
+        // найти по подменю текущий селект
+        const currentSelectLabel = submenu.closest(
+            ".prof-control-panel__select-label"
+        );
+        // удалить активный класс у текущего селекта
+        removeClassElement(
+            currentSelectLabel,
+            "prof-control-panel__select-label_active"
+        );
+        // удалить активный класс у текущего курсора
+        if (state.cursorsSelect[currentSelectLabel.ariaLabel]) {
+            removeClassElement(
+                state.cursorsSelect[currentSelectLabel.ariaLabel],
+                "prof-control-panel__cursor_active"
+            );
+        }
+        // скрыть текущее открытое подменю
+        removeClassElement(submenu, "mix-visible");
+        // удалить текущий селект из стейта
+        submenu = null;
+        if (deleteListenerOverlay) {
+            // удалить слушатель document, т.к. все селекты закрыты
+            document.removeEventListener("click", checkClickOutsideSelect);
+        }
+    }
+}
+
+const buttonsSelect = document.querySelectorAll(".button-toggle-select");
+
+buttonsSelect.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        const currentLabel = e.target.closest(
+            ".prof-control-panel__select-label"
+        );
+        if (
+            e.target.closest(".label-checkbox") &&
+            e.target.closest(".label-checkbox").ariaLabel === "checkbox"
+        ) {
+            setInputValueByValueActiveCheckbox();
+            return;
+        }
+        if (e.target.ariaLabel === "item") {
+            state.inputsSelect[currentLabel.ariaLabel].value =
+                e.target.textContent.trim();
+            Array.from(
+                e.target.closest(".main-submenu__list").children
+            ).forEach((i) =>
+                removeClassElement(i, "main-submenu__item_active")
+            );
+            addClassElement(e.target, "main-submenu__item_active");
+            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            return;
+        }
+        if (e.target.classList.contains("prof-control-panel__button")) {
+            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            return;
+        }
+        if (e.target.closest(".main-submenu")) {
+            const currentLabelSecondLevel = e.target.closest(
+                ".prof-control-panel__select-label"
+            );
+            if (
+                currentLabelSecondLevel &&
+                currentLabelSecondLevel.ariaLabel.includes("division")
+            ) {
+                toggleVisibleSubmenuSecondLevel(currentLabelSecondLevel);
+            }
+            return;
+        }
+        if (currentLabel) {
+            if (
+                !currentLabel.classList.contains(
+                    "prof-control-panel__select-label_active"
+                )
+            ) {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                addClassElement(
+                    state.submenuSelect[currentLabel.ariaLabel],
+                    "mix-visible"
+                );
+                state.currentOpenSubmenu =
+                    state.submenuSelect[currentLabel.ariaLabel];
+                setListenerClickOutsideSelect();
+                addClassElement(
+                    currentLabel,
+                    "prof-control-panel__select-label_active"
+                );
+                if (state.cursorsSelect[currentLabel.ariaLabel]) {
+                    addClassElement(
+                        state.cursorsSelect[currentLabel.ariaLabel],
+                        "prof-control-panel__cursor_active"
+                    );
+                }
+            } else {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            }
         }
     })
 );

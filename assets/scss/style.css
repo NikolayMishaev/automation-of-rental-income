@@ -8123,6 +8123,10 @@ main .container {
   background: url("./../images/icons/main-page-icon-filters.svg") no-repeat center;
 }
 
+.prof-structure__label:hover {
+  cursor: pointer;
+}
+
 .form-agent-card {
   border: 1px solid #D0D7D9;
   border-radius: 12px;
