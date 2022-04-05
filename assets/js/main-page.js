@@ -451,3 +451,31 @@ buttonReset.addEventListener("click", () => {
         i.classList.remove("custom-select-active")
     );
 });
+
+// логика ввода значение в поля город улица адрес по клику в подменю
+
+const sumbenuAdressContainers = document.querySelectorAll(
+    ".main-submenu_style_filters-adress"
+);
+const inputCity = document.querySelector("#main-form-adress-city");
+const inputStreet = document.querySelector("#main-form-adress-street");
+const inputUndergound = document.querySelector("#main-form-adress-underground");
+
+sumbenuAdressContainers.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (e.target.classList.contains("main-submenu__item")) {
+            if (e.target.ariaLabel === "city") {
+                inputCity.value = e.target.textContent.trim();
+            }
+            if (e.target.ariaLabel === "street") {
+                inputStreet.value = e.target.textContent.trim();
+            }
+            if (e.target.ariaLabel === "underground") {
+                inputUndergound.value = e.target.textContent.trim();
+            }
+            e.target
+                .closest(".main-submenu_style_filters-adress")
+                .classList.remove("mix-visible");
+        }
+    })
+);
