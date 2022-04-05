@@ -61,6 +61,15 @@
             left: unset;
         }
     }
+    &_style_agents {
+        left: 0;
+        right: 0;
+        top: 34px;
+        @media (max-width: rem(1000px)) {
+            left: unset;
+            top: 100px;
+        }
+    }
     &_style_division {
         left: -268px;
         right: 0;

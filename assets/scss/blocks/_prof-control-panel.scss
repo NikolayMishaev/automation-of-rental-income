@@ -72,9 +72,9 @@
         }
         &_active {
             @media (max-width: rem(1000px)) {
-                background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+                // background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
                 &:before {
-                    background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center !important;
+                    // background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
                     background-color: white !important;
                 }
             }
@@ -96,7 +96,6 @@
                 transition: $transition;
                 &:hover {
                     cursor: pointer;
-                    opacity: 0.8;
                 }
                 &:before {
                     content: "";
@@ -157,7 +156,6 @@
                 transition: $transition;
                 &:hover {
                     cursor: pointer;
-                    opacity: 0.8;
                 }
                 &:before {
                     content: "";

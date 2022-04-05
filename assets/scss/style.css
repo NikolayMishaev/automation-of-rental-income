@@ -4838,6 +4838,19 @@ main .container {
   }
 }
 
+.main-submenu_style_agents {
+  left: 0;
+  right: 0;
+  top: 34px;
+}
+
+@media (max-width: 62.5rem) {
+  .main-submenu_style_agents {
+    left: unset;
+    top: 100px;
+  }
+}
+
 .main-submenu_style_division {
   left: -268px;
   right: 0;
@@ -6695,11 +6708,7 @@ main .container {
 }
 
 @media (max-width: 62.5rem) {
-  .prof-control-panel__select-label_active {
-    background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
-  }
   .prof-control-panel__select-label_active:before {
-    background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center !important;
     background-color: white !important;
   }
 }
@@ -6731,7 +6740,6 @@ main .container {
   }
   .prof-control-panel__select-label_type_sort:hover {
     cursor: pointer;
-    opacity: 0.8;
   }
   .prof-control-panel__select-label_type_sort:before {
     content: "";
@@ -6803,7 +6811,6 @@ main .container {
   }
   .prof-control-panel__select-label_type_status-agent:hover {
     cursor: pointer;
-    opacity: 0.8;
   }
   .prof-control-panel__select-label_type_status-agent:before {
     content: "";
