@@ -4233,9 +4233,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .main__map {
   width: 100%;
   height: 100%;
+  max-height: 800px;
   -o-object-fit: cover;
      object-fit: cover;
-  display: none;
   margin-top: 16px;
 }
 
@@ -5598,6 +5598,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .main-form__input {
     height: 32px;
     padding: 0.25rem 0.75rem;
+    padding-right: 35px;
   }
 }
 
@@ -5637,6 +5638,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main-form__input_style_select {
   padding: 0.25rem 0.75rem;
+  padding-right: 35px;
 }
 
 .main-form__input_style_select:hover {
@@ -5757,7 +5759,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .main-form__cursor {
   position: absolute;
   top: 12px;
-  right: 10px;
+  right: 12px;
   width: 24px;
   height: 24px;
   background: url("./../images/icons/main-cursor-down.svg") no-repeat center/12px;
@@ -5779,10 +5781,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   top: 43%;
 }
 
+@media (max-width: 40rem) {
+  .main-form__cursor_style_input {
+    background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
+    top: 37%;
+    right: 7px;
+  }
+}
+
 .main-form__cursor_style_label {
-  top: 50%;
+  top: 23px;
+  right: 10px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@media (max-width: 40rem) {
+  .main-form__cursor_style_label {
+    top: 16px;
+    right: 5px;
+    background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
+  }
 }
 
 .main-form__wrapper-input {
