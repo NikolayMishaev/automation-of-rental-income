@@ -86,6 +86,7 @@
         @media #{$screen-mobile} {
             height: 32px;
             padding: rem(4px) rem(12px);
+            padding-right: 35px;
         }
         &_type_search {
             margin-top: 0;
@@ -112,6 +113,7 @@
         }
         &_style_select {
             padding: rem(4px) rem(12px);
+            padding-right: 35px;
             &:hover {
                 cursor: pointer;
             }
@@ -203,7 +205,7 @@
     &__cursor {
         position: absolute;
         top: 12px;
-        right: 10px;
+        right: 12px;
         width: 24px;
         height: 24px;
         background: url("./../images/icons/main-cursor-down.svg") no-repeat center/12px;
@@ -217,10 +219,21 @@
         }
         &_style_input {
             top: 43%;
+            @media #{$screen-mobile} {
+                background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
+                top: 37%;
+                right: 7px;
+            }
         }
         &_style_label {
-            top: 50%;
+            top: 23px;
+            right: 10px;
             transform: translateY(-50%);
+            @media #{$screen-mobile} {
+                top: 16px;
+                right: 5px;
+                background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
+            }
         }
     }
     &__wrapper-input {
