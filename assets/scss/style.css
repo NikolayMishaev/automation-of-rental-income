@@ -8183,7 +8183,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__input-date::-webkit-calendar-picker-indicator {
-  background: url("./../images/icons/profile-calendar.svg") no-repeat center;
+  position: static !important;
+  background: url("./../images/icons/profile-calendar.svg") no-repeat center !important;
 }
 
 .prof-control-panel__input-date::-webkit-calendar-picker-indicator:hover {

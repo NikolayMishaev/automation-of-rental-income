@@ -444,7 +444,8 @@
         margin-left: auto;
         color: #6c737d;
         &::-webkit-calendar-picker-indicator {
-            background: url("./../images/icons/profile-calendar.svg") no-repeat center;
+            position: static !important;
+            background: url("./../images/icons/profile-calendar.svg") no-repeat center !important;
             &:hover {
                 cursor: pointer;
             }
