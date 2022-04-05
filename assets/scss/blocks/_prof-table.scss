@@ -3,18 +3,67 @@
         display: grid;
         grid-template-columns: 199px 90px 110px 180px 152px 149px;
         column-gap: 16px;
-        align-items: baseline;
+        align-items: center;
         border-top: 1px solid #e3e7e8;
         &:first-child {
             margin-top: 16px;
         }
+        &_style_objects {
+            grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
+        }
+        &_style_users {
+            grid-template-columns: 40px 297px 160px 160px 220px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        &_style_size {
+            grid-template-columns: 40px 169px 100px 70px 140px 80px 80px 150px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        &_style_views {
+            grid-template-columns: 40px 120px 70px 180px 90px 150px 160px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        &_style_appeals {
+            grid-template-columns: 40px 138px 80px 90px 125px 90px 90px 90px 70px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        &_style_feedback {
+            grid-template-columns: 40px 179px 110px 180px 100px 100px 136px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        &_style_period {
+            grid-template-columns: 40px 200px 200px 155px 195px 70px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        &_style_offers {
+            grid-template-columns: 278px 70px 120px 85px 120px 120px 94px;
+        }
+        &_style_one-row {
+            padding: 14px 0;
+            display: flex;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
     }
     &__row-heading {
         color: #6d7678;
-        padding: 14px 0;
+        padding: 16px 0;
     }
     &__row-content {
-        height: 54px;
+        padding: 16px 0;
         display: flex;
         align-items: center;
         color: #3c4142;
@@ -23,9 +72,36 @@
         &::-webkit-scrollbar {
             display: none;
         }
+        &_type_wrap {
+            white-space: unset;
+        }
     }
     &__index {
         vertical-align: super;
         font-size: 8px;
+    }
+    &__test-checkbox {
+        width: 32px;
+        height: 20px;
+        background: url('./../images/switch-off.jpg') no-repeat center;
+        margin-right: 4px;
+        transition: $transition;
+        &:hover {
+            opacity: .8;
+            cursor: pointer;
+        }
+    }
+    &__test-checkbox-active {
+        width: 32px;
+        height: 20px;
+        background: url('./../images/switch-on.jpg') no-repeat center;
+        margin-right: 4px;
+        &:hover {
+            opacity: .8;
+            cursor: pointer;
+        }
+    }
+    &__number {
+        margin-left: 4px;
     }
 }

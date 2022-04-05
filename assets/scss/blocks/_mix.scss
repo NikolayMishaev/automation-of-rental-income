@@ -47,6 +47,7 @@
         overflow: scroll;
         white-space: nowrap;
         &::-webkit-scrollbar {
+            width: 3px;
             height: 3px;
             &:horizontal {
                 display: none;
@@ -116,4 +117,17 @@
     &-mb0 {
         margin-bottom: 0 !important;
     }
+    &-button-hover {
+        &:hover {
+            cursor: pointer !important;
+            opacity: .8 !important;
+            transform: scale(1.025) !important;
+        }
+    }
+    &-only-desktop-1150px {
+        @media (max-width: 1150px) {
+            display: none !important;
+        }
+    }
+
 }

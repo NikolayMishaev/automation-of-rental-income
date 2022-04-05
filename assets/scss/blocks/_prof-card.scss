@@ -6,6 +6,11 @@
     border-radius: 12px;
     height: 374px;
     color: #222429;
+    &_type_director {
+        height: unset;
+        margin-bottom: 24px;
+        position: relative;
+    }
     &_active {
         border: 2px solid #F9A825;
     }
@@ -51,5 +56,19 @@
         @media #{$screen-mobile} {
             background-position: 10% center;
         }
+    }
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+        padding-top: 12px;
+        border-top: 1px solid #E3E7E8;
+    }
+    &__checkbox-transfer {
+        position: absolute;
+        bottom: -24px;
+        left: 0;
+        display: flex;
+        align-items: center;
     }
 }

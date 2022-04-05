@@ -18,6 +18,10 @@
         padding: rem(24px) rem(24px) rem(16px);
         box-sizing: border-box;
         border-radius: 12px;
+        @media #{$screen-mobile} {
+            border: unset;
+            padding: 0;
+        }
     }
     &__header {
         width: 100%;
@@ -25,6 +29,9 @@
         justify-content: space-between;
         padding-bottom: rem(16px);
         border-bottom: 1px solid $grey-20_2;
+        @media #{$screen-mobile} {
+            border-bottom: unset;
+        }
     }
     &__text {
         color: $grey60;
@@ -38,10 +45,16 @@
     &__body {
         margin-top: rem(16px);
         display: flex;
+        @media #{$screen-mobile} {
+            margin-top: 0;
+        }
     }
     &__left-panel {
         width: rem(260px);
         margin-right: rem(16px);
+        @media (max-width: rem(400px)) {
+            width: 90vw;
+        }
     }
     &__right-panel {
         position: relative;
@@ -72,6 +85,9 @@
             padding: rem(4px) rem(12px) rem(4px) rem(36px);
             background: url("./../images/icons/main-filters-search.svg") no-repeat rem(12px);
             background-size: rem(14px);
+            @media #{$screen-mobile} {
+                display: none;
+            }
         }
         &_type_send-message {
             padding: rem(4px) rem(34px) rem(4px) rem(12px);
@@ -79,7 +95,7 @@
     }
     &__tasks-container {
         margin-top: rem(8px);
-        height: 648px;
+        max-height: 648px;
         overflow: auto;
         padding-right: 5px;
         &::-webkit-scrollbar {
@@ -92,6 +108,10 @@
         &::-webkit-scrollbar-thumb {
             border-radius: 4px;
             background-color: $grey30;
+        }
+        @media #{$screen-mobile} {
+            border: 1px solid #E3E7E8;
+            border-radius: 12px;
         }
     }
     &__task-item {
@@ -123,6 +143,9 @@
     &__tasks-info {
         width: rem(152px);
         margin: 0 rem(8px);
+        &_type_director {
+            width: 128px;
+        }
     }
     &__task-name {
         color: $grey80;
@@ -225,7 +248,7 @@
     &__wrapper-container-message {
         height: 460px;
         overflow: auto;
-        margin-bottom: 70px;
+        margin-bottom: 90px;
         padding-right: 5px;
         &::-webkit-scrollbar {
             width: 5px;
@@ -266,6 +289,17 @@
         }
         &_active {
             background: url('./../images/icons/profile-star-active.svg') no-repeat center;
+        }
+    }
+    &__link {
+        color: #1565C0;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 65px;
+        right: 20px;
+        &_type_first {
+            bottom: 100px;
         }
     }
 }

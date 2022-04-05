@@ -1,9 +1,36 @@
 @keyframes animation-scroll-adress {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
+        background: transparent;
     }
-    100% {
-        transform: translateX(-200px);
+    12.5% {
+        background: rgb(255, 191, 138);
+     }
+     25% {
+        transform: translateX(0);
+        background: transparent;
+     }
+     37.5% {
+        background: rgb(255, 191, 138);
+    }
+     50% {
+        background: transparent;
+     }
+     62.5% {
+        transform: translateX(-150px);
+        background: rgb(255, 191, 138);
+     }
+    75% {
+        transform: translateX(0);
+        background: transparent;
+     }
+     87.5% {
+        transform: translateX(0);
+        background: rgb(255, 191, 138);
+     }
+     100% {
+        transform: translateX(0);
+        background: transparent;
      }
   }
 
@@ -20,7 +47,7 @@
     border: 1px solid $grey-20_2;
     flex-wrap: wrap;
     position: relative;
-    transition: $transition;
+    transition: all 1s;
     @media #{$screen-mobile} {
         padding: rem(8px);
     }
@@ -86,6 +113,7 @@
         }
     }
     &__description {
+        position: relative;
         overflow: hidden;
         margin-left: rem(13px);
         display: flex;
@@ -127,10 +155,12 @@
         }
     }
     &__adress {
-        animation: animation-scroll-adress 2s infinite alternate;
+        animation: animation-scroll-adress 10s infinite backwards;
         animation-play-state: paused;
+        animation-play-state: running;
+        border-radius:8px;
         &:hover {
-            animation-play-state: running;
+            animation-play-state: paused;
         }
         &::-webkit-scrollbar {
             height: 3px;
@@ -318,4 +348,47 @@
             bottom: rem(10px);
         }
     }
+    &__link {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        &:hover{
+            cursor: pointer;
+            text-decoration: none;
+        }
+        &:link {
+          text-decoration: unset;
+        }
+        &:active {
+            opacity:1;
+        }
+        &:visited {
+            transform: scale(4);
+            opacity:0;
+        }
+    }
+    &__overlay {
+        position: absolute;
+        width: 5px;
+        height: 25px;
+        z-index: 1;
+        top: 0;
+        left: 0;
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+&_right {
+    right: 0;
+    left: unset;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
+background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
 }
+    }
+}
+

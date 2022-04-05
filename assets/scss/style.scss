@@ -26,7 +26,9 @@
 @import "./blocks/map";
 @import "./blocks/modal-login";
 @import "./blocks/modal-support";
-@import "./blocks/input-date"; // Main-page
+@import "./blocks/input-date";
+
+// Main-page
 @import "./blocks/body";
 @import "./blocks/page";
 @import "./blocks/header";
@@ -65,3 +67,10 @@
 
 // Check-form
 @import "./blocks/check-form";
+
+// Personal-account-manager
+@import "./blocks/prof-structure";
+@import "./blocks/form-agent-card";
+@import "./blocks/prof-graph";
+@import "./blocks/popup-notify";
+@import "./blocks/prof-label-checkbox";
