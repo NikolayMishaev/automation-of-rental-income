@@ -5385,6 +5385,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: all 0.5s;
 }
 
+.main-submenu__item:hover .main-submenu__link {
+  color: white;
+}
+
 .main-submenu__item:hover {
   background-color: #2a9b43;
   opacity: 0.7;
@@ -5410,6 +5414,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main-submenu__item_active {
   background-color: #2a9b43;
+  color: white;
+}
+
+.main-submenu__item_active .main-submenu__link {
   color: white;
 }
 
@@ -5452,6 +5460,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main-submenu__item_style_align-center {
   text-align: center;
+}
+
+.main-submenu__link {
+  color: #222429;
+  text-decoration: none;
+}
+
+.main-submenu__link:hover {
+  text-decoration: none;
 }
 
 @media (max-width: 62.5rem) {

@@ -103,6 +103,7 @@
             left: unset;
         }
     }
+
     &__item {
         font-style: normal;
         font-weight: 400;
@@ -113,6 +114,9 @@
         padding: 6px 12px;
         white-space: wrap;
         transition: $transition;
+        &:hover .main-submenu__link {
+            color: white;
+        }
         &:hover {
             background-color: $accent-TCX50;
             opacity: 0.7;
@@ -135,6 +139,9 @@
         }
         &_active {
             background-color: $accent-TCX50;
+            color: white;
+        }
+        &_active .main-submenu__link {
             color: white;
         }
         &_type_change-type {
@@ -175,6 +182,13 @@
         }
         &_style_align-center {
             text-align: center;
+        }
+    }
+    &__link {
+        color: #222429;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
         }
     }
 }
