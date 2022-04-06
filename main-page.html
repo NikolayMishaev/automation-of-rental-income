@@ -868,14 +868,14 @@
                                             <div class="main-submenu main-submenu_style_number-cards">
                                                 <ul class="main-submenu__list">
                                                     <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort">5</li>
+                                                        class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">5</a></li>
                                                     <li aria-label="number-cards"
                                                         class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                                        10</li>
+                                                        <a href="" class="main-submenu__link">10</a></li>
                                                     <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort">20</li>
+                                                        class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">20</a></li>
                                                     <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort">50</li>
+                                                        class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">50</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1807,14 +1807,14 @@
                                     class="main-submenu main-submenu_style_number-cards main-submenu_style_number-cards-mobile">
                                     <ul class="main-submenu__list">
                                         <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort">5</li>
+                                            class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">5</a></li>
                                         <li aria-label="number-cards"
                                             class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                            10</li>
+                                            <a href="" class="main-submenu__link">10</a></li>
                                         <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort">20</li>
+                                            class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">20</a></li>
                                         <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort">50</li>
+                                            class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">50</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1822,34 +1822,45 @@
 
                         <div class="main__pagination">
                             <nav class="pagination">
-                                <ul class="pagination__list">
-                                    <li class="pagination__item">
-                                        <button type="button"
-                                            class="pagination__button pagination__button_type_arrow-left"></button>
-                                    </li>
-                                    <li class="pagination__item">
-                                        <button type="button"
-                                            class="pagination__button pagination__button_active">1</button>
-                                    </li>
-                                    <li class="pagination__item">
-                                        <button type="button" class="pagination__button">2</button>
-                                    </li>
-                                    <li class="pagination__item">
-                                        <button type="button" class="pagination__button">...</button>
-                                    </li>
-                                    <li class="pagination__item">
-                                        <button type="button" class="pagination__button">12</button>
-                                    </li>
-                                    <li class="pagination__item">
-                                        <button type="button" class="pagination__button">13</button>
-                                    </li>
-                                    <li class="pagination__item">
-                                        <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
-                                                                                  и влево: pagination__button_type_arrow-left-active -->
-                                        <button type="button"
-                                            class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
-                                    </li>
-                                </ul>
+                                    <ul class="pagination__list">
+                                        <li class="pagination__item">
+                                            <a href="#">
+                                                <button type="button" disabled class="pagination__button pagination__button_type_arrow-left"></button>
+                                            </a>
+                                        </li>
+                                        <li class="pagination__item">
+                                            <a href="#">
+                                                <button type="button" class="pagination__button pagination__button_active">1</button>
+                                            </a>
+                                        </li>
+                                        <li class="pagination__item">
+                                            <a href="#">
+                                                <button type="button" class="pagination__button">2</button>
+                                            </a>
+                                        </li>
+                                        <li class="pagination__item">
+                                            <a href="#">
+                                                <button type="button" class="pagination__button">...</button>
+                                            </a>
+                                        </li>
+                                        <li class="pagination__item">
+                                            <a href="#">
+                                                <button type="button" class="pagination__button">12</button>
+                                            </a>
+                                        </li>
+                                        <li class="pagination__item">
+                                            <a href="#">
+                                                <button type="button" class="pagination__button">13</button>
+                                            </a>
+                                        </li>
+                                        <li class="pagination__item">
+                                            <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
+                                                                                      и влево: pagination__button_type_arrow-left-active -->
+                                            <a href="#">
+                                                <button type="button" class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
+                                            </a>
+                                        </li>
+                                    </ul>
                             </nav>
                         </div>
 
@@ -2280,7 +2291,7 @@
             <button class="main-popup__close"></button>
             <div class="popup-change-city">
                 <h3 class="popup-change-city__title">Укажите свой город</h3>
-                <form id="form-change-city" action="http://foo.com" method="get">
+                <form id="form-change-city" action="33" method="get">
                     <label class="popup-change-city__label mix-label">
                         <input name="city_code" id="input-change-city" class="popup-change-city__input mix-input" type="text" maxlength="50"
                             placeholder=" " />
