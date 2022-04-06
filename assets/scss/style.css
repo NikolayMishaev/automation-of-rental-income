@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url(./../normalize.css);
+@import url(./cropper.css);
 @font-face {
   font-family: "Roboto";
   font-weight: 400;
@@ -685,6 +686,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  text-align: center;
   cursor: pointer;
   width: 50%;
 }
@@ -1435,6 +1437,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  text-align: center;
   cursor: pointer;
   margin-right: 8px;
   padding: 4px 12px;
@@ -1852,6 +1855,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  text-align: center;
   cursor: pointer;
   margin-right: 8px;
 }
@@ -2186,6 +2190,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  text-align: center;
   cursor: pointer;
   margin-right: 16px;
   width: 205px;
@@ -2292,6 +2297,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  text-align: center;
   cursor: pointer;
   width: 100%;
   margin-top: 16px;
@@ -2345,6 +2351,7 @@ main .container {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  text-align: center;
   cursor: pointer;
   padding: 8px 16px 8px 8px;
   cursor: pointer;
@@ -3392,6 +3399,47 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
   top: 12px;
   right: 12px;
+}
+
+.modal-edit-avatar .modal__content {
+  width: 620px;
+}
+
+.modal-edit-avatar__download-btn {
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid #cfd4dc;
+  color: #222429;
+  background-color: white;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+  padding: 4px 12px;
+  max-width: 250px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.modal-edit-avatar__download-btn:hover {
+  border-color: #b4bbc6;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: #e1e5eb;
+  text-decoration: none;
+}
+
+.modal-edit-avatar__download-btn input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  cursor: inherit;
+}
+
+.modal-edit-avatar__download-btn input::file-selector-button {
+  cursor: inherit;
 }
 
 .body {
@@ -6241,6 +6289,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  text-align: center;
   cursor: pointer;
   height: 32px;
   line-height: 16px;
@@ -8877,6 +8926,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #222429;
   background-color: white;
   line-height: 22px;
+  text-align: center;
   cursor: pointer;
   padding: 8px;
   margin-right: 16px;

@@ -132,3 +132,5 @@ function closeModalWindow(modal, e) {
 }
 
 modalObj.addEventListener("click", (e) => closeModalWindow(modalObj, e));
+
+

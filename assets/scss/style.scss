@@ -27,6 +27,7 @@
 @import "./blocks/modal-login";
 @import "./blocks/modal-support";
 @import "./blocks/input-date";
+@import "./blocks/modal-edit-avatar";
 
 // Main-page
 @import "./blocks/body";
@@ -53,7 +54,7 @@
 @import "./blocks/modal-registration";
 @import "./blocks/modal-edit-card-object";
 @import "./blocks/custom-checkbox";
-@import './blocks/modal-transfer-object';
+@import "./blocks/modal-transfer-object";
 
 // Personal-account-private-person
 @import "./blocks/prof-aside";
@@ -74,3 +75,5 @@
 @import "./blocks/prof-graph";
 @import "./blocks/popup-notify";
 @import "./blocks/prof-label-checkbox";
+
+@import url(./cropper.css);
