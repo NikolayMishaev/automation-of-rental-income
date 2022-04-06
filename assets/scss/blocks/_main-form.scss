@@ -34,6 +34,7 @@
             padding: rem(12px);
         }
         &-checkbox {
+            position: relative;
             padding-right: 16px;
             border: 1px solid #e3e7e8;
             border-radius: 8px;
@@ -103,12 +104,16 @@
             margin-right: 0;
         }
         &_type_checkbox {
+            opacity: 0;
             width: 16px;
             height: 16px;
             margin: 15px 8px 15px 12px;
             flex-shrink: 0;
             @media #{$screen-mobile} {
                 margin: 7px 8px 7px 12px;
+            }
+            &:checked + .main-form__visible-input {
+                background-image: url('./../images/icons/profile-active-checkbox.svg')
             }
         }
         &_style_select {
@@ -267,5 +272,14 @@
         }
         &_type_general-address {
         }
+    }
+    &__visible-input {
+        transition: $transition;
+        position: absolute;
+        background: url('./../images/icons/checkbox-empty.svg') no-repeat center;
+        width: 16px;
+        height: 16px;
+        top: auto;
+        left: 12px;
     }
 }
