@@ -373,16 +373,22 @@ const cardPriceContainerBigCards = document.querySelector(
 );
 cardPriceContainerBigCards.addEventListener("click", (e) => {
     e.preventDefault();
+    // console.log(e.target);
     const currentLink = e.target.closest(".card-price__link").href;
     if (e.target.closest(".card-price__like")) {
         return;
     }
-    if (e.target.closest(".card-price__photo")) {
+    if (
+        e.target.classList.contains("swiper-button-next") ||
+        e.target.classList.contains("swiper-button-prev")
+    ) {
         return;
     }
     if (e.target.closest(".card-price_style_main")) {
         e.target.closest(".card-price_style_main").style.transform =
-            "scale(4) translateX(500px)";
+            innerWidth < 640
+                ? "scale(3) translateX(0)"
+                : "scale(4) translateX(500px)";
         e.target.closest(".card-price_style_main").style.opacity = "0.1";
         e.target.closest(".card-price_style_main").style.zIndex = "10";
         setTimeout(() => {

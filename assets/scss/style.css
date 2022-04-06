@@ -4397,12 +4397,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @-webkit-keyframes animation-hot-price {
   0% {
-    -webkit-transform: translateX(1950px);
-            transform: translateX(1950px);
+    opacity: 1;
   }
   1% {
-    -webkit-transform: translateX(1400px);
-            transform: translateX(1400px);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
   99% {
     opacity: 1;
@@ -4416,12 +4415,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @keyframes animation-hot-price {
   0% {
-    -webkit-transform: translateX(1950px);
-            transform: translateX(1950px);
+    opacity: 1;
   }
   1% {
-    -webkit-transform: translateX(1400px);
-            transform: translateX(1400px);
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
   }
   99% {
     opacity: 1;
@@ -4533,8 +4531,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transform: translateX(1950px);
-          transform: translateX(1950px);
   -webkit-animation: animation-hot-price linear 150s infinite;
           animation: animation-hot-price linear 150s infinite;
   -webkit-animation-delay: .5s;
@@ -5525,6 +5521,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .main-form__label-checkbox {
+  position: relative;
   padding-right: 16px;
   border: 1px solid #e3e7e8;
   border-radius: 8px;
@@ -5623,6 +5620,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .main-form__input_type_checkbox {
+  opacity: 0;
   width: 16px;
   height: 16px;
   margin: 15px 8px 15px 12px;
@@ -5634,6 +5632,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .main-form__input_type_checkbox {
     margin: 7px 8px 7px 12px;
   }
+}
+
+.main-form__input_type_checkbox:checked + .main-form__visible-input {
+  background-image: url("./../images/icons/profile-active-checkbox.svg");
 }
 
 .main-form__input_style_select {
@@ -5844,6 +5846,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main-form__caption_type_general-search {
   padding-left: 2.3125rem;
+}
+
+.main-form__visible-input {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  position: absolute;
+  background: url("./../images/icons/checkbox-empty.svg") no-repeat center;
+  width: 16px;
+  height: 16px;
+  top: auto;
+  left: 12px;
 }
 
 .pagination__list {
@@ -7927,6 +7940,31 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
+.prof-control-panel__label-custom_type_alone {
+  padding-left: 27px;
+  width: unset;
+  color: #6d7678;
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.prof-control-panel__label-custom_type_alone:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 71.875rem) {
+  .prof-control-panel__label-custom_type_alone {
+    margin-left: unset;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 62.5rem) {
+  .prof-control-panel__label-custom_type_alone {
+    display: none;
+  }
+}
+
 .prof-control-panel__input-hidden {
   opacity: 0;
   visibility: hidden;
@@ -7939,6 +7977,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__input-hidden:checked + .prof-control-panel__visible-checkbox {
   background: url("./../images/icons/profile-active-checkbox.svg") no-repeat center;
+  border: none;
+}
+
+.prof-control-panel__input-hidden:checked + .prof-control-panel__visible-checkbox_type_alone {
+  background: url("./../images/icons/profile-active-checkbox.svg") no-repeat center/13px 13px;
   border: none;
 }
 
@@ -7959,6 +8002,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 50%;
   border-radius: 2px;
   border: 1px solid #cfd4dc;
+}
+
+.prof-control-panel__visible-checkbox_type_alone {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: 13px;
+  height: 13px;
+  margin-bottom: 2px;
 }
 
 .prof-control-panel__title-submenu {
@@ -9194,6 +9245,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #cfd4dc;
 }
 
+@media (max-width: 640px) {
+  .form-agent-card__title {
+    margin-right: 0;
+    font-size: 18px;
+  }
+}
+
 .form-agent-card__info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9215,6 +9273,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @media (max-width: 720px) {
   .form-agent-card__info {
     width: 67vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-agent-card__info {
+    width: 69vw;
   }
 }
 

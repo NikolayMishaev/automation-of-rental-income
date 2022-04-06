@@ -1,9 +1,9 @@
 @keyframes animation-hot-price {
     0% {
-        transform: translateX(1950px);
+        opacity: 1;
     }
     1% {
-        transform: translateX(1400px);
+        transform: translateX(0px);
     }
     99% {
         opacity: 1;
@@ -70,7 +70,6 @@
     }
     &__wrapper {
         @include flex-container;
-        transform: translateX(1950px);
         animation: animation-hot-price linear 150s infinite;
         animation-delay: .5s;
         &:hover {
