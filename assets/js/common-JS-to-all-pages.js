@@ -76,6 +76,10 @@ const containersCityName = document.querySelectorAll(
 const popupChangeCity = document.querySelector(".main-popup_type_change-city");
 const itemsCity = document.querySelectorAll(".popup-change-city__item");
 const headerCityName = document.querySelector(".header__city-name");
+const captionErrorInputCity = document.querySelector(
+    ".popup-change-city__error"
+);
+const labelErrorInputCity = document.querySelector(".popup-change-city__label");
 
 containersCityName.forEach((i) => {
     i.addEventListener("click", (e) => {
@@ -84,10 +88,10 @@ containersCityName.forEach((i) => {
                 removeClassElement(i, "popup-change-city__item_type_active")
             );
             addClassElement(e.target, "popup-change-city__item_type_active");
-            headerCityName.textContent = e.target.textContent.trim();
-            inputChangeCity.value = e.target.id;
-            formChangeCity.submit();
-            removeClassElement(popupChangeCity, "mix-visible-scale");
+            if (headerCityName) {
+                headerCityName.textContent = e.target.textContent.trim();
+            }
+            sendRequest(e.target);
         }
     });
 });
@@ -99,3 +103,46 @@ containersCityName.forEach((i) =>
         }
     })
 );
+
+function checkAvailabilityCity() {
+    return Array.from(itemsCity).find(
+        (i) =>
+            i.textContent.toLocaleLowerCase().trim() ===
+            inputChangeCity.value.toLocaleLowerCase().trim()
+    );
+}
+
+formChangeCity.addEventListener("submit", (e) => {
+    e.preventDefault();
+    sendRequest(checkAvailabilityCity());
+});
+
+inputChangeCity.addEventListener("input", () => {
+    hideInputError();
+});
+
+function showInputError() {
+    addClassElement(captionErrorInputCity, "popup-change-city__error_active");
+    addClassElement(labelErrorInputCity, "popup-change-city__label_error");
+    addClassElement(inputChangeCity, "popup-change-city__input_error");
+}
+
+function hideInputError() {
+    removeClassElement(
+        captionErrorInputCity,
+        "popup-change-city__error_active"
+    );
+    removeClassElement(labelErrorInputCity, "popup-change-city__label_error");
+    removeClassElement(inputChangeCity, "popup-change-city__input_error");
+}
+
+function sendRequest(target) {
+    if (target) {
+        console.log("send request");
+        // inputChangeCity.value = target.id;
+        // formChangeCity.submit();
+        // removeClassElement(popupChangeCity, "mix-visible-scale");
+    } else {
+        showInputError();
+    }
+}
