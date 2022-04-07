@@ -553,53 +553,6 @@ function deleteBenif(step, btn) {
   setCustomInput();
 }
 
-const fileInputModalSupport = document.querySelector(".modal-support__file-input");
-
-// логика работы drag n drop инпута на несколько файлов
-
-if (fileInputModalSupport) {
-  fileInputModalSupport.addEventListener("change", (e) => {
-    let input = e.currentTarget.querySelectorAll("input");
-    input = input[input.length - 1];
-    if (input.files) {
-      for (let i = 0; i < input.files.length; i++) {
-        const inputName = document.createElement("div");
-        inputName.classList.add("file-input__file");
-        inputName.innerHTML = `
-        <div class="file-input__name">
-          <div class="file-input__icon">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 16V2C18 0.9 17.1 0 16 0H2C0.9 0 0 0.9 0 2V16C0 17.1 0.9 18 2 18H16C17.1 18 18 17.1 18 16ZM5.9 10.98L8 13.51L11.1 9.52C11.3 9.26 11.7 9.26 11.9 9.53L15.41 14.21C15.66 14.54 15.42 15.01 15.01 15.01H3.02C2.6 15.01 2.37 14.53 2.63 14.2L5.12 11C5.31 10.74 5.69 10.73 5.9 10.98Z" fill="#55B465"></path>
-            </svg>
-          </div>
-          <a href="#">${input.files[i].name}</a>
-        </div>
-        <div class="file-input__file-close">x</div>`;
-        inputName.style.display = "inline-flex";
-        e.currentTarget.append(inputName);
-        inputName.addEventListener("click", (e) => deleteFileInput(e));
-      }
-      input.classList.add("file-input_fill");
-      const newInput = document.createElement("input");
-      newInput.type = "file";
-      e.currentTarget.append(newInput);
-    }
-  });
-}
-
-function deleteFileInput(e) {
-  if (e.target.classList.contains("file-input__file-close")) {
-    e.currentTarget.previousElementSibling.remove();
-    e.currentTarget.remove();
-  }
-}
-
-const modalSupport = document.querySelector(".modal-support");
-
-if (modalSupport) {
-  modalSupport.addEventListener("click", (e) => closeModalWindow(modalSupport, e));
-}
-
 const modalRegistration = document.querySelector(".modal-registration");
 
 if (modalRegistration) {
@@ -618,3 +571,25 @@ if (registerBtn) {
 }
 
 // проверить обязательные поля
+
+const formListReg = document.querySelectorAll(".registration-form");
+
+for (let index = 0; index < submitRegBtn.length; index++) {
+  submitRegBtn[index].addEventListener("click", (e) => {
+    let find = false;
+    const requiredInputList = formListReg[index].querySelectorAll(
+      'input[data-required="true"], textarea[data-required="true"]'
+    );
+    for (let index = 0; index < requiredInputList.length; index++) {
+      const element = requiredInputList[index];
+      if (!element.value) {
+        find = true;
+        break;
+      }
+    }
+    if (find) {
+      e.preventDefault();
+    } else return;
+    modalRWarningReg[index].style.display = "flex";
+  });
+}

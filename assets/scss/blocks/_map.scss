@@ -12,6 +12,9 @@
       font-family: $font-family-custom, $font-family-default;
     }
   }
+  .leaflet-popup-content {
+    margin: 12px 14px;
+  }
 }
 
 .map {
@@ -39,6 +42,9 @@
   font-family: $font-family-custom, $font-family-default;
   text-align: center;
   border-radius: 8px;
+  &:hover {
+    z-index: 9000 !important;
+  }
   &__arrow {
     position: absolute;
     background-color: white;
