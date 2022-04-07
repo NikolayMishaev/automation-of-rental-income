@@ -43,6 +43,19 @@
             background-color: #2a9b43;
             color: white;
         }
+        &_type_transfer {
+            background-color: $accent-TCX50;
+            color: white;
+            border-radius: 4px;
+            margin-left: 40px;
+            display: flex;
+            align-items: center;
+            min-width: 167px;
+            height: 32px;
+            @media (max-width: rem(1150px)) {
+                display: none;
+            }
+        }
     }
     &__checkbox-label {
         color: #6d7678;
@@ -197,7 +210,7 @@
         }
     }
     &__select-input {
-        width: 190px;
+        width: 150px;
         height: 32px;
         border: 1px solid #e1e5eb;
         border-radius: 4px;
