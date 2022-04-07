@@ -3405,6 +3405,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 620px;
 }
 
+@media (max-width: 40rem) {
+  .modal-edit-avatar .modal__content {
+    width: 328px;
+  }
+}
+
 .modal-edit-avatar__download-btn {
   position: relative;
   border-radius: 4px;
@@ -3428,6 +3434,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-decoration: none;
 }
 
+@media (max-width: 40rem) {
+  .modal-edit-avatar__download-btn {
+    max-width: none;
+  }
+}
+
 .modal-edit-avatar__download-btn input {
   width: 100%;
   height: 100%;
@@ -3440,6 +3452,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .modal-edit-avatar__download-btn input::file-selector-button {
   cursor: inherit;
+}
+
+@media (max-width: 40rem) {
+  .modal-edit-avatar .cr-boundary {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 40rem) {
+  .modal-edit-avatar .cr-viewport,
+  .modal-edit-avatar .cr-vp-circle {
+    width: 280px !important;
+    height: 280px !important;
+  }
 }
 
 .body {
@@ -9646,4 +9672,3 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: 1px solid #cfd4dc;
   border-radius: 2px;
 }
-/*# sourceMappingURL=style.css.map */
