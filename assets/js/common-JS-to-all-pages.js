@@ -138,10 +138,9 @@ function hideInputError() {
 
 function sendRequest(target) {
     if (target) {
-        console.log("send request");
-        // inputChangeCity.value = target.id;
-        // formChangeCity.submit();
-        // removeClassElement(popupChangeCity, "mix-visible-scale");
+        inputChangeCity.value = target.id;
+        formChangeCity.submit();
+        removeClassElement(popupChangeCity, "mix-visible-scale");
     } else {
         showInputError();
     }
