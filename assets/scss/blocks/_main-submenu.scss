@@ -61,6 +61,20 @@
             left: unset;
         }
     }
+    &_style_main {
+        left: 0;
+        right: 0;
+        top: 34px;
+        @media (max-width: rem(740px)) {
+            left: unset;
+            top: 49px;
+            right: 107px;
+        }
+        @media (max-width: rem(640px)) {
+            top: 47px;
+            right: 63px;
+        }
+    }
     &_style_agents {
         left: 0;
         right: 0;
@@ -110,7 +124,6 @@
         line-height: 20px;
         letter-spacing: 0.12px;
         color: #222429;
-        padding: 6px 12px;
         white-space: wrap;
         transition: $transition;
         &:hover .main-submenu__link {
@@ -186,6 +199,19 @@
     &__link {
         color: #222429;
         text-decoration: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 6px 12px;
+        &:link {
+            text-decoration: none;
+        }
+        &:visited {
+            text-decoration: none;
+        }
+        &:active {
+            text-decoration: none;
+        }
         &:hover {
             text-decoration: none;
         }

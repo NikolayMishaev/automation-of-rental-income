@@ -829,87 +829,97 @@
                             <div class="control-panel__column main__control-panel-column-two">
                                 <div class="main__control-panel-desktop main__control-panel-desktop-left">
                                     <div class="main__navigation-wrapper main__navigation-wrapper_type_sort">
-                                        <p class="main-text">Сортировать: </p>
-                                        <div id="main-search-sort-cards-desktop"
-                                            class="main-search main-search_style_main main-search_style_sort"> <span
-                                                id="main-sort-desktop">Сначала выгодные</span>
-                                            <div class="main-submenu main-submenu_style_sort">
-                                                <ul class="main-submenu__list">
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Все</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                        выгодные</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">От
-                                                        меньшей
-                                                        площади</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                                        От большей площади</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                        дорогие</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                        дешевые</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                        популярные</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main__navigation-wrapper main__navigation-wrapper_type_number-cards">
-                                        <p class="main-text main__control-panel-text">Показывать объектов на странице:
-                                        </p>
-                                        <div id="main-search-number-cards" class="main-search main-search_style_main">
-                                            <span id="main-number-cards">10</span>
-                                            <div class="main-submenu main-submenu_style_number-cards">
-                                                <ul class="main-submenu__list">
-                                                    <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">5</a></li>
-                                                    <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                                        <a href="" class="main-submenu__link">10</a></li>
-                                                    <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">20</a></li>
-                                                    <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">50</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="main__control-panel-mobile">
-                                    <div id="main-search-sort-cards-mobile"
-                                        class="main__control-panel-icon main__control-panel-icon_search">
-                                        <div class="main-submenu main-submenu_style_sort-mobile">
+                                        <label
+                                        aria-label="main-sort"
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_main text-p2 button-toggle-select"
+                                        >Сортировать:
+                                        <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor prof-control-panel__cursor_type_main" id="cursor-main-sort"></div>
+                                            <input
+                                            id="input-main-sort"
+                                            type="text"
+                                            disabled="true"
+                                            class="prof-control-panel__select-input prof-control-panel__select-input_type_sort"
+                                            value="Сначала выгодные"
+                                            />
+                                            <div
+                                            class="main-submenu main-submenu_style_main"
+                                            id="submenu-main-sort"
+                                            >
                                             <ul class="main-submenu__list">
-                                                <li class="main-submenu__item main-submenu__item_title">Сортировка</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Все</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                    выгодные</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">От меньшей
-                                                    площади</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                                    От большей площади</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                    дорогие</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                    дешевые</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                    популярные</li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu"
+                                                >
+                                                Сортировка
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Все</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Сначала выгодные</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Сначала дешевые</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Сначала дорогие</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Сначала новые</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Сначала старые</a>
+                                                </li>
                                             </ul>
                                         </div>
+                                    </label>
                                     </div>
+                                    <div class="main__navigation-wrapper main__navigation-wrapper_type_number-cards">
+                                        <div class="prof-control-panel">
+                                            <label aria-label="main-page-desktop" class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать объектов на
+                                                странице:
+                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                <div class="prof-control-panel__cursor" id="cursor-main-page-desktop"></div>
+                                                <input id="input-main-page-desktop" type="text" disabled="true"
+                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                    value="5">
+                                                <div class="main-submenu main-submenu_style_prof-page" id="submenu-main-page-desktop">
+                                                    <ul class="main-submenu__list main-submenu__list_type_page">
+                                                        <li
+                                                            class="main-submenu__item main-submenu__item_active">
+                                                            <a aria-label="linked" href="#" class="main-submenu__link">5</a>
+                                                        </li>
+                                                        <li class="main-submenu__item">
+                                                            <a aria-label="linked" href="#" class="main-submenu__link">10</a>
+                                                        </li>
+                                                        <li class="main-submenu__item">
+                                                            <a aria-label="linked" href="#" class="main-submenu__link">20</a></li>
+                                                        <li class="main-submenu__item">
+                                                            <a aria-label="linked" href="#" class="main-submenu__link">50</a></li>
+                                                    </ul>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+                                <div class="main__control-panel-mobile">
                                     <div class="main__control-panel-icon main__control-panel-icon_filters"></div>
                                 </div>
                             </div>
@@ -919,9 +929,6 @@
                                 <div class="main__control-panel-desktop">
                                     <div class="main-search main-search_style_main main-search_style_main-filters">
                                         Фильтры: </div>
-                                </div>
-                                <div class="main__control-panel-mobile">
-
                                 </div>
                             </div>
                         </div>
@@ -1799,24 +1806,30 @@
                         </ul>
 
                         <div class="main__change-page">
-                            <p class="main-text main__control-panel-text main__control-panel-text_style_mobile">
-                                Показывать объектов на странице:</p>
-                            <div id="main-search-number-cards-mobile" class="main-search main-search_style_main"> <span
-                                    id="main-number-cards-mobile">10</span>
-                                <div
-                                    class="main-submenu main-submenu_style_number-cards main-submenu_style_number-cards-mobile">
-                                    <ul class="main-submenu__list">
-                                        <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">5</a></li>
-                                        <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                            <a href="" class="main-submenu__link">10</a></li>
-                                        <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">20</a></li>
-                                        <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">50</a></li>
-                                    </ul>
-                                </div>
+                            <div class="prof-control-panel">
+                                <label aria-label="main-page-mobile" class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать объектов на
+                                    странице:
+                                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                    <div class="prof-control-panel__cursor" id="cursor-main-page-mobile"></div>
+                                    <input id="input-main-page-mobile" type="text" disabled="true"
+                                        class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                        value="5">
+                                    <div class="main-submenu main-submenu_style_prof-page" id="submenu-main-page-mobile">
+                                        <ul class="main-submenu__list main-submenu__list_type_page">
+                                            <li
+                                                class="main-submenu__item main-submenu__item_active">
+                                                <a aria-label="linked" href="#" class="main-submenu__link">5</a>
+                                            </li>
+                                            <li class="main-submenu__item">
+                                                <a aria-label="linked" href="#" class="main-submenu__link">10</a>
+                                            </li>
+                                            <li class="main-submenu__item">
+                                                <a aria-label="linked" href="#" class="main-submenu__link">20</a></li>
+                                            <li class="main-submenu__item">
+                                                <a aria-label="linked" href="#" class="main-submenu__link">50</a></li>
+                                        </ul>
+                                    </div>
+                                </label>
                             </div>
                         </div>
 
@@ -1824,39 +1837,39 @@
                             <nav class="pagination">
                                     <ul class="pagination__list">
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" disabled class="pagination__button pagination__button_type_arrow-left"></button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button pagination__button_active">1</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button">2</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button">...</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button">12</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button">13</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
                                             <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
                                                                                       и влево: pagination__button_type_arrow-left-active -->
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
                                             </a>
                                         </li>

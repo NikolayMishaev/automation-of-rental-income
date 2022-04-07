@@ -27,8 +27,14 @@
         line-height: 16px;
         letter-spacing: 0.08px;
         transition: $transition;
+        &:disabled {
+            &:hover {
+                border: 1px solid #cfd4dc;
+            }
+        }
         &:hover {
             background-color: $accent-TCX50;
+            border: none;
             color: white;
         }
         &_type_arrow-left {
@@ -63,6 +69,9 @@
             border: none;
             background-color: $accent-TCX50;
             color: white;
+        }
+        &__link {
+            display: block;
         }
     }
 }

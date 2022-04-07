@@ -340,6 +340,7 @@ button {
 
 .mix-mt16 {
   margin-top: 1rem;
+  width: 100%;
 }
 
 @media (max-width: 40rem) {
@@ -4173,7 +4174,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 1280px) {
   .main__control-panel-section-two {
-    width: 0;
+    display: none;
   }
 }
 
@@ -4246,6 +4247,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main__control-panel-column-two {
   margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .main__control-panel-desktop {
@@ -4261,18 +4265,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-}
-
-@media (max-width: 1280px) {
-  .main__control-panel-desktop {
-    display: none;
-  }
-}
-
-@media (max-width: 1500px) {
-  .main__control-panel-desktop-left {
-    display: none;
-  }
 }
 
 .main__control-panel-mobile {
@@ -4344,6 +4336,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.main__navigation-wrapper_type_number-cards {
+  margin-left: 40px;
+}
+
+@media (max-width: 1500px) {
+  .main__navigation-wrapper_type_number-cards {
+    display: none;
+  }
 }
 
 .footer {
@@ -5374,6 +5376,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.main-submenu_style_main {
+  left: 0;
+  right: 0;
+  top: 34px;
+}
+
+@media (max-width: 46.25rem) {
+  .main-submenu_style_main {
+    left: unset;
+    top: 49px;
+    right: 107px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .main-submenu_style_main {
+    top: 47px;
+    right: 63px;
+  }
+}
+
 .main-submenu_style_agents {
   left: 0;
   right: 0;
@@ -5436,7 +5459,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: 20px;
   letter-spacing: 0.12px;
   color: #222429;
-  padding: 6px 12px;
   white-space: wrap;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -5521,6 +5543,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main-submenu__link {
   color: #222429;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 6px 12px;
+}
+
+.main-submenu__link:link {
+  text-decoration: none;
+}
+
+.main-submenu__link:visited {
+  text-decoration: none;
+}
+
+.main-submenu__link:active {
   text-decoration: none;
 }
 
@@ -5978,8 +6016,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: all 0.5s;
 }
 
+.pagination__button:disabled:hover {
+  border: 1px solid #cfd4dc;
+}
+
 .pagination__button:hover {
   background-color: #2a9b43;
+  border: none;
   color: white;
 }
 
@@ -6027,6 +6070,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: none;
   background-color: #2a9b43;
   color: white;
+}
+
+.pagination__button__link {
+  display: block;
 }
 
 .main-popup {
@@ -7913,6 +7960,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.prof-control-panel__select-label_type_main {
+  margin-top: 0;
+}
+
+@media (max-width: 46.25rem) {
+  .prof-control-panel__select-label_type_main {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border-radius: 4px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    position: static;
+  }
+  .prof-control-panel__select-label_type_main:before {
+    content: "";
+    position: absolute;
+    border-radius: 4px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
+    background-color: #fff;
+  }
+}
+
 .prof-control-panel__select-label_type_sort {
   margin-top: 16px;
 }
@@ -8053,6 +8126,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 62.5rem) {
   .prof-control-panel__cursor_type_agent {
+    display: none;
+  }
+}
+
+@media (max-width: 46.25rem) {
+  .prof-control-panel__cursor_type_main {
     display: none;
   }
 }
@@ -8203,6 +8282,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   letter-spacing: 1.2px;
   text-transform: uppercase;
   color: #50565e;
+  padding: 6px 12px;
 }
 
 .prof-control-panel__title-submenu:hover {
@@ -8905,8 +8985,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: all 0.5s;
 }
 
+.pagination__button:disabled:hover {
+  border: 1px solid #cfd4dc;
+}
+
 .pagination__button:hover {
   background-color: #2a9b43;
+  border: none;
   color: white;
 }
 
@@ -8954,6 +9039,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: none;
   background-color: #2a9b43;
   color: white;
+}
+
+.pagination__button__link {
+  display: block;
 }
 
 .check-form-page {
