@@ -1900,99 +1900,211 @@
                                             <li class="main-form__item">
                                                 <div class="main-form__wrapper-input">
 
-                                                    <label class="mix-mt16 mix-label">
-                                                        <div id="submenu-city"
-                                                            class="main-form__cursor main-form__cursor_style_label">
-                                                        </div>
-                                                        <input type="text" id="main-form-adress-city"
-                                                            class="main-form__input mix-input" placeholder=" ">
+                                                    <label
+                                                    aria-label="main-city"
+                                                    class="prof-control-panel__select-label prof-control-panel__select-label_type_main-big text-p2 button-toggle-select mix-label"
+                                                    >
+                                                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                        <div class="prof-control-panel__cursor prof-control-panel__cursor_type_main-big" id="cursor-main-city"></div>
+                                                        <input
+                                                        id="input-main-city"
+                                                        type="text"
+                                                        class="prof-control-panel__select-input prof-control-panel__select-input_type_main mix-input text-p1"
+                                                        placeholder=" "
+                                                        />
                                                         <span class="mix-caption">Город</span>
-                                                    </label>
-
-                                                    <div id="submenu-city-body"
-                                                        class="main-submenu main-submenu_style_filters-adress mix-scrollbar-only-vertical">
+                                                        <div
+                                                        class="main-submenu main-submenu_style_main-big"
+                                                        id="submenu-main-city"
+                                                        >
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="city" class="main-submenu__item">Москва</li>
-                                                            <li aria-label="city" class="main-submenu__item">
-                                                                Санкт-Петербург</li>
-                                                            <li aria-label="city" class="main-submenu__item">Воронеж
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Москва
                                                             </li>
-                                                            <li aria-label="city" class="main-submenu__item">Липецк</li>
-                                                            <li aria-label="city" class="main-submenu__item">Ногинск
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_active main-submenu__item_style_wide"
+                                                            >
+                                                                Санкт-Петербург
                                                             </li>
-                                                            <li aria-label="city" class="main-submenu__item">Смоленск
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Воронеж
                                                             </li>
-                                                            <li aria-label="city" class="main-submenu__item">Тула</li>
-                                                            <li aria-label="city" class="main-submenu__item">Ярославль
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Липецк
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Ногинск
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Смоленск
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Тула
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Ярославль
                                                             </li>
                                                         </ul>
                                                     </div>
+                                                </label>
                                                 </div>
                                             </li>
                                             <li class="main-form__item">
                                                 <div class="main-form__wrapper-input">
                                                     <div class="main-form__cursor main-form__cursor_style_input"></div>
-                                                    <label class="mix-mt16 mix-label">
-                                                        <div id="submenu-street"
-                                                            class="main-form__cursor main-form__cursor_style_label">
-                                                        </div>
-                                                        <input id="main-form-adress-street" type="text"
-                                                            class="main-form__input mix-input" placeholder=" ">
+
+                                                    <label
+                                                    aria-label="main-street"
+                                                    class="prof-control-panel__select-label prof-control-panel__select-label_type_main-big text-p2 button-toggle-select mix-label"
+                                                    >
+                                                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                        <div class="prof-control-panel__cursor prof-control-panel__cursor_type_main-big" id="cursor-main-street"></div>
+                                                        <input
+                                                        id="input-main-street"
+                                                        type="text"
+                                                        class="prof-control-panel__select-input prof-control-panel__select-input_type_main mix-input text-p1"
+                                                        placeholder=" "
+                                                        />
                                                         <span class="mix-caption">Улица</span>
-                                                    </label>
-                                                    <div id="submenu-street-body"
-                                                        class="main-submenu main-submenu_style_filters-adress mix-scrollbar-only-vertical">
+                                                        <div
+                                                        class="main-submenu main-submenu_style_main-big"
+                                                        id="submenu-main-street"
+                                                        >
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="street" class="main-submenu__item">9 Мая</li>
-                                                            <li aria-label="street" class="main-submenu__item">Авиамоторная</li>
-                                                            <li aria-label="street" class="main-submenu__item">Бирюлёвская</li>
-                                                            <li aria-label="street" class="main-submenu__item">Винницкая</li>
-                                                            <li aria-label="street" class="main-submenu__item">Заречная</li>
-                                                            <li aria-label="street" class="main-submenu__item">Керченская</li>
-                                                            <li aria-label="street" class="main-submenu__item">Нагорная</li>
-                                                            <li aria-label="street" class="main-submenu__item">Парковая 11-я</li>
-                                                            <li aria-label="street" class="main-submenu__item">Сумская/li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                9 Мая
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_active main-submenu__item_style_wide"
+                                                            >
+                                                                Авиамоторная
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Бирюлёвская
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Винницкая
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Заречная
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Керченская
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Нагорная
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Парковая
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Широкая
+                                                            </li>
                                                         </ul>
                                                     </div>
+                                                </label>
                                                 </div>
                                             </li>
                                             <li class="main-form__item">
                                                 <div class="main-form__wrapper-input">
                                                     <div class="main-form__cursor main-form__cursor_style_input"></div>
-                                                    <label class="mix-mt16 mix-label">
-                                                        <div id="submenu-underground"
-                                                            class="main-form__cursor main-form__cursor_style_label">
-                                                        </div>
-                                                        <input id="main-form-adress-underground" type="text"
-                                                            class="main-form__input mix-input" placeholder=" ">
-                                                        <span class="mix-caption">Метро</span>
-                                                    </label>
 
-                                                    <div id="submenu-underground-body"
-                                                        class="main-submenu main-submenu_style_filters-adress mix-scrollbar-only-vertical">
+                                                    <label
+                                                    aria-label="main-underground"
+                                                    class="prof-control-panel__select-label prof-control-panel__select-label_type_main-big text-p2 button-toggle-select mix-label"
+                                                    >
+                                                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                        <div class="prof-control-panel__cursor prof-control-panel__cursor_type_main-big" id="cursor-main-underground"></div>
+                                                        <input
+                                                        id="input-main-underground"
+                                                        type="text"
+                                                        class="prof-control-panel__select-input prof-control-panel__select-input_type_main mix-input text-p1"
+                                                        placeholder=" "
+                                                        />
+                                                        <span class="mix-caption">Метро</span>
+                                                        <div
+                                                        class="main-submenu main-submenu_style_main-big"
+                                                        id="submenu-main-underground"
+                                                        >
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Академическая</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Станция 2</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Бабушкинская</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Варшавская</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Говорово</li>
-                                                            <li aria-label="underground" class="main-submenu__item">ВДНХ
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Алтуфьево
                                                             </li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Киевская</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Лубянка</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Медведково</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Южная</li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_active main-submenu__item_style_wide"
+                                                            >
+                                                                Бибирево
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Владыкино
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Дмитровская
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Лубянка
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Медведково
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Пражская
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Сокольники
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Ясенево
+                                                            </li>
                                                         </ul>
                                                     </div>
+                                                </label>
                                                 </div>
                                             </li>
                                         </ul>
