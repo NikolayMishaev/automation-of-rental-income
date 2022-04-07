@@ -322,7 +322,17 @@ changeValueInputSelect(labelSelectChangeType, inputChangeType);
 function changeValueInputSelect(items, valueInput) {
     items.forEach((i) =>
         i.addEventListener("click", (e) => {
-            e.target.classList.toggle("custom-select-active");
+            if (
+                e.target.classList.contains("main-form__label-checkbox") ||
+                e.target.classList.contains("main-form__visible-input")
+            ) {
+                return;
+            }
+            if (i.classList.contains("custom-select-active")) {
+                i.classList.remove("custom-select-active");
+            } else {
+                i.classList.add("custom-select-active");
+            }
             let countActiveItmes = 0;
             items.forEach((j) => {
                 if (j.closest(".custom-select-active")) {
