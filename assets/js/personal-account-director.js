@@ -843,7 +843,10 @@ buttonsSelect.forEach((i) =>
             ).forEach((i) =>
                 removeClassElement(i, "main-submenu__item_active")
             );
-            addClassElement(e.target, "main-submenu__item_active");
+            addClassElement(
+                e.target.closest(".main-submenu__item"),
+                "main-submenu__item_active"
+            );
             hideCurrentSubmenu(state.currentOpenSubmenu, true);
             return;
         }

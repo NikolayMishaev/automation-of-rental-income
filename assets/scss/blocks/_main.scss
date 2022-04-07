@@ -92,7 +92,7 @@
         &-section-two {
             width: 34%;
             @media (max-width: 1280px) {
-                width: 0;
+               display: none;
             }
         }
         &-text {
@@ -147,18 +147,11 @@
     }
     &__control-panel-column-two {
         margin-left: auto;
+        display: flex;
     }
     &__control-panel-desktop {
         @include flex-container;
         justify-content: flex-start;
-        @media (max-width: 1280px) {
-            display: none;
-        }
-        &-left {
-            @media (max-width: 1500px) {
-                display: none;
-            }
-        }
     }
     &__control-panel-mobile {
         display: none;
@@ -195,5 +188,11 @@
     &__navigation-wrapper {
         display: flex;
         align-items: center;
+        &_type_number-cards {
+            margin-left: 40px;
+            @media (max-width: 1500px) {
+                display: none;
+            }
+        }
     }
 }
