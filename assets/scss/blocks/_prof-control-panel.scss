@@ -43,6 +43,19 @@
             background-color: #2a9b43;
             color: white;
         }
+        &_type_transfer {
+            background-color: $accent-TCX50;
+            color: white;
+            border-radius: 4px;
+            margin-left: 40px;
+            display: flex;
+            align-items: center;
+            min-width: 167px;
+            height: 32px;
+            @media (max-width: rem(1150px)) {
+                display: none;
+            }
+        }
     }
     &__checkbox-label {
         color: #6d7678;
@@ -197,7 +210,7 @@
         }
     }
     &__select-input {
-        width: 190px;
+        width: 150px;
         height: 32px;
         border: 1px solid #e1e5eb;
         border-radius: 4px;
@@ -248,6 +261,23 @@
         &:hover {
             cursor: pointer;
         }
+        &_type_alone {
+            padding-left: 27px;
+            width: unset;
+            color: #6d7678;
+            margin-left: auto;
+            margin-right: 40px;
+            &:hover {
+                cursor: pointer;
+            }
+            @media (max-width: rem(1150px)) {
+                margin-left: unset;
+                margin-right: auto;
+            }
+            @media (max-width: rem(1000px)) {
+                display: none;
+            }
+        }
     }
     &__input-hidden {
         opacity: 0;
@@ -258,6 +288,10 @@
         }
         &:checked + .prof-control-panel__visible-checkbox {
             background: url("./../images/icons/profile-active-checkbox.svg") no-repeat center;
+            border: none;
+        }
+        &:checked + .prof-control-panel__visible-checkbox_type_alone {
+            background: url("./../images/icons/profile-active-checkbox.svg") no-repeat center/ 13px 13px;
             border: none;
         }
     }
@@ -277,6 +311,12 @@
         border-radius: 50%;
         border-radius: 2px;
         border: 1px solid #cfd4dc;
+        &_type_alone {
+            transition: $transition;
+            width: 13px;
+            height: 13px;
+            margin-bottom: 2px;
+        }
     }
     &__title-submenu {
         font-style: normal;

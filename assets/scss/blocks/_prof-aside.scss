@@ -38,6 +38,10 @@
         @media #{$screen-mobile} {
             display: none;
         }
+        &_type_director {
+            margin-left: auto;
+            margin-right: 0;
+        }
     }
     &__total-requests {
         color: $grey80;
@@ -217,6 +221,28 @@
     &__status {
         position: absolute;
         right: 0;
+    }
+    &__button {
+        margin-left: 16px;
+        background-color: $accent-TCX50;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 187px;
+        height: 32px;
+        border: none;
+        &_type_mobile {
+            @media (max-width: rem(720px)) {
+                display: none;
+            }
+        }
+        &_type_desktop {
+            @media (max-width: rem(1780px)) {
+                display: none;
+            }
+        }
     }
     &__button-back-tasks {
         display: none;

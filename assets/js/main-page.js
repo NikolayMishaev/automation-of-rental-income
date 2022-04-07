@@ -9,60 +9,77 @@ const stateMain = {
     currentOpenLeftBlock: null,
 };
 
-// логика табов, выбор: "список" или "карта"
-const controlPanelBtns = document.querySelectorAll(".main-btn");
-const btnList = document.querySelector("#btn-list");
-const btnMap = document.querySelector("#btn-map");
-const cardsContainer = document.querySelector(".main__cards-container");
-const mapContainer = document.querySelector(".main__map");
+// логика переключения кнопок "Список", "Карта"
+
+const mainButtons = document.querySelectorAll(".main-btn");
+const contentCards = document.querySelector(".main__cards-container");
+const contentMap = document.querySelector(".main__map");
+const controlPanelLeft = document.querySelector(
+    ".main__control-panel-desktop-left"
+);
+const blockPagination = document.querySelector(".main__pagination");
+const selectChangePage = document.querySelector(".main__change-page");
+
+mainButtons.forEach((i) => {
+    i.addEventListener("click", (e) => {
+        switchButtons(
+            e.target,
+            mainButtons,
+            [contentCards, contentMap],
+            "main-btn_active",
+            "mix-display-none"
+        );
+        if (contentCards.classList.contains("mix-display-none")) {
+            addClassElement(controlPanelLeft, "mix-display-none");
+            addClassElement(blockPagination, "mix-display-none");
+            addClassElement(selectChangePage, "mix-display-none");
+            minimizeFiltersPanel();
+        } else {
+            removeClassElement(controlPanelLeft, "mix-display-none");
+            removeClassElement(blockPagination, "mix-display-none");
+            removeClassElement(selectChangePage, "mix-display-none");
+            expandFiltersPanel();
+        }
+    });
+});
+
+// логика по сворачиванию панели фильтров
+
+const mainContainerFilters = document.querySelector(".main__container");
 const AllFiltersPanel = document.querySelector(".main-form__wrapper-fields");
 const buttonMinimizeFiltersPanel = document.querySelector(
     ".main-form__button_type_minimize"
 );
-const mainContainerFilter = document.querySelector(".main__container");
 
-const paginationPage = document.querySelector(".pagination");
-const controlPanelLeft = document.querySelector(
-    ".main__control-panel-column-two"
-);
+function minimizeFiltersPanel() {
+    removeClassElement(AllFiltersPanel, "main-form__wrapper-fields_active");
+    buttonMinimizeFiltersPanel.textContent = "Все фильтры";
+    mainContainerFilters.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+    });
+}
 
-controlPanelBtns.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (e.target.ariaLabel === "map") {
-            btnList.classList.remove("main-btn_active");
-            btnMap.classList.add("main-btn_active");
-            cardsContainer.style.display = "none";
-            mapContainer.style.display = "block";
-            stateMain.currentOpenLeftBlock = cardsContainer;
-            AllFiltersPanel.classList.remove(
-                "main-form__wrapper-fields_active"
-            );
-            buttonMinimizeFiltersPanel.textContent = "Все фильтры";
-            mainContainerFilter.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-            // скрыть панель сортировки, выбора кол-ва страниц, пагинацию
-            paginationPage.classList.add("mix-display-none");
-            controlPanelLeft.classList.add("mix-display-none");
-        } else {
-            btnList.classList.add("main-btn_active");
-            btnMap.classList.remove("main-btn_active");
-            cardsContainer.style.display = "block";
-            mapContainer.style.display = "none";
-            stateMain.currentOpenLeftBlock = mapContainer;
+// логика по развертыванию панели фильтров
 
-            AllFiltersPanel.classList.add("main-form__wrapper-fields_active");
-            buttonMinimizeFiltersPanel.textContent = "Свернуть фильтры";
-            mainContainerFilter.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-            paginationPage.classList.remove("mix-display-none");
-            controlPanelLeft.classList.remove("mix-display-none");
-        }
-    })
-);
+function expandFiltersPanel() {
+    addClassElement(AllFiltersPanel, "main-form__wrapper-fields_active");
+    buttonMinimizeFiltersPanel.textContent = "Свернуть фильтры";
+    mainContainerFilters.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+    });
+}
+
+// логика работы кнопки по сворачиванию и развертыванию панили фильтров
+
+buttonMinimizeFiltersPanel.addEventListener("click", () => {
+    if (buttonMinimizeFiltersPanel.textContent === "Все фильтры") {
+        expandFiltersPanel();
+    } else {
+        minimizeFiltersPanel();
+    }
+});
 
 // логика выбора значения сортировки в полях: "Сортировать" "Кол-во карточек для показа"
 const itemsSubmenuSort = document.querySelectorAll(
@@ -199,6 +216,8 @@ iconFilters.addEventListener("click", (e) => {
     }
 });
 
+// логика при ресайзе
+
 window.addEventListener("resize", function (e) {
     if (
         e.target.innerWidth > 1280 &&
@@ -247,46 +266,20 @@ const submenuAdressMainForm = document.querySelector(".main-form__adress");
 cursorAdressMainForm.addEventListener("click", (e) => {
     if (e.target.classList.contains("main-form__cursor")) {
         if (submenuAdressMainForm.closest(".main-form__adress_active")) {
-            submenuAdressMainForm.classList.remove("main-form__adress_active");
-            cursorAdressMainForm.classList.remove("main-form__cursor_active");
-            containerFiltersAdress.classList.remove("mix-overflow-unset");
+            removeClassElement(
+                submenuAdressMainForm,
+                "main-form__adress_active"
+            );
+            removeClassElement(
+                cursorAdressMainForm,
+                "main-form__cursor_active"
+            );
+            removeClassElement(containerFiltersAdress, "mix-overflow-unset");
         } else {
-            submenuAdressMainForm.classList.add("main-form__adress_active");
-            cursorAdressMainForm.classList.add("main-form__cursor_active");
-            containerFiltersAdress.classList.add("mix-overflow-unset");
+            addClassElement(submenuAdressMainForm, "main-form__adress_active");
+            addClassElement(cursorAdressMainForm, "main-form__cursor_active");
+            addClassElement(containerFiltersAdress, "mix-overflow-unset");
         }
-    }
-});
-
-// логика аккордеона фильтров (свернуть фильтры)
-const buttonMinimizeFilters = document.querySelector(
-    ".main-form__button_type_minimize"
-);
-const AllFilters = document.querySelector(".main-form__wrapper-fields");
-
-const mainContainer = document.querySelector(".main__container");
-
-const mainFiltersContainer = document.querySelector(".main-filters");
-
-buttonMinimizeFilters.addEventListener("click", () => {
-    if (AllFilters.closest(".main-form__wrapper-fields_active")) {
-        AllFilters.classList.remove("main-form__wrapper-fields_active");
-        buttonMinimizeFilters.textContent = "Все фильтры";
-        mainContainer.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-    } else {
-        AllFilters.classList.add("main-form__wrapper-fields_active");
-        buttonMinimizeFilters.textContent = "Свернуть фильтры";
-        mainFiltersContainer.scrollIntoView({
-            behavior: "smooth",
-            block: "end",
-        });
-        cardsContainer.style.display = "block";
-        mapContainer.style.display = "none";
-        paginationPage.classList.remove("mix-display-none");
-        controlPanelLeft.classList.remove("mix-display-none");
     }
 });
 
@@ -380,16 +373,22 @@ const cardPriceContainerBigCards = document.querySelector(
 );
 cardPriceContainerBigCards.addEventListener("click", (e) => {
     e.preventDefault();
+    // console.log(e.target);
     const currentLink = e.target.closest(".card-price__link").href;
     if (e.target.closest(".card-price__like")) {
         return;
     }
-    if (e.target.closest(".card-price__photo")) {
+    if (
+        e.target.classList.contains("swiper-button-next") ||
+        e.target.classList.contains("swiper-button-prev")
+    ) {
         return;
     }
     if (e.target.closest(".card-price_style_main")) {
         e.target.closest(".card-price_style_main").style.transform =
-            "scale(4) translateX(500px)";
+            innerWidth < 640
+                ? "scale(3) translateX(0)"
+                : "scale(4) translateX(500px)";
         e.target.closest(".card-price_style_main").style.opacity = "0.1";
         e.target.closest(".card-price_style_main").style.zIndex = "10";
         setTimeout(() => {
@@ -398,7 +397,7 @@ cardPriceContainerBigCards.addEventListener("click", (e) => {
     }
 });
 
-// логика открытия попапов город улица метро
+// логика открытия селектов город улица метро
 
 const cursorCity = document.querySelector("#submenu-city");
 const cursorStreet = document.querySelector("#submenu-street");

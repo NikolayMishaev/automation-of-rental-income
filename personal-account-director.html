@@ -191,10 +191,10 @@
                                         <button aria-label="cards"
                                             class="prof-control-panel__button heading-h4 objects-button">Карточки</button>
                                     </div>
-                                    <label class="prof-control-panel__checkbox-label text-p2">
-                                        <input type="checkbox" class="prof-control-panel__checkbox">
-                                        Только выгодные предложения
-                                    </label>
+                                    <label class="prof-control-panel__label-custom prof-control-panel__label-custom_type_alone text-p2">
+                                        <input
+                                            class="prof-control-panel__input-hidden" type="checkbox">
+                                        <span class="prof-control-panel__visible-checkbox prof-control-panel__visible-checkbox_type_alone"></span>Только выгодные предложения</label>
                                     <label aria-label="objects-status"
                                         class="prof-control-panel__select-label prof-control-panel__select-label_type_filters text-p2 button-toggle-select">Статус:
                                         <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
@@ -247,6 +247,7 @@
                                             </ul>
                                         </div>
                                     </label>
+                                    <button class="prof-control-panel__button prof-control-panel__button_type_transfer text-p1">Передать объекты</button>
                                     <label class="prof-control-panel__search mix-label">
                                         <input type="text" class="prof-control-panel__input-search mix-input"
                                             placeholder=" ">
@@ -3187,9 +3188,10 @@
                             <div class="prof-aside__block prof-aside__block_type_mobile">
                                 <header class="prof-aside__header">
                                     <h2 class="prof-aside__title heading-h3">Обратная связь</h2>
-                                    <p class="prof-aside__text text-p3">Активных обращений:
+                                    <p class="prof-aside__text prof-aside__text_type_director text-p3">Активных обращений:
                                         <span class="prof-aside__total-requests text-p2">26</span>
                                     </p>
+                                    <div class="prof-control-panel"><button class="prof-aside__button prof-aside__button_type_mobile text-p1">Передать обращения</button></div>
                                 </header>
                                 <div class="prof-aside__body">
                                     <div class="prof-aside__left-panel prof-aside__left-panel_type_mobile">
@@ -3476,9 +3478,10 @@
                         <div class="prof-aside__block">
                             <header class="prof-aside__header">
                                 <h2 class="prof-aside__title heading-h3">Обратная связь</h2>
-                                <p class="prof-aside__text text-p3">Активных обращений:
+                                <p class="prof-aside__text prof-aside__text_type_director text-p3">Активных обращений:
                                     <span class="prof-aside__total-requests text-p2">26</span>
                                 </p>
+                                <div class="prof-control-panel"><button class="prof-aside__button prof-aside__button_type_desktop text-p1">Передать обращения</button></div>
                             </header>
                             <div class="prof-aside__body">
                                 <div id="prof-aside__left-panel-main" class="prof-aside__left-panel">
