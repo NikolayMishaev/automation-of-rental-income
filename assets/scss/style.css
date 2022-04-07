@@ -4490,7 +4490,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .hot-price {
   position: relative;
-  overflow: scroll;
+  overflow: hidden;
   padding: 1.25rem 0;
   width: 100%;
   background-color: #f5f7f7;
@@ -6157,13 +6157,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-bottom: 1.25rem;
 }
 
+.popup-change-city__label_error {
+  border-color: red;
+}
+
 .popup-change-city__caption:before {
-  content: 'Введите название города';
+  content: "Введите название города";
 }
 
 @media (max-width: 40rem) {
   .popup-change-city__caption:before {
-    content: 'Название города';
+    content: "Название города";
   }
 }
 
@@ -6244,6 +6248,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .popup-change-city__item_type_active {
   background-color: #2a9b43;
   color: white;
+}
+
+.popup-change-city__error {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  color: red;
+  top: 47px;
+  left: 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media (max-width: 40rem) {
+  .popup-change-city__error {
+    top: 31px;
+  }
+}
+
+.popup-change-city__error_active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-change-city__input_error:focus {
+  outline-color: red;
 }
 
 .modal-registration .checkbox-container {
