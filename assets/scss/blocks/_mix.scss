@@ -8,6 +8,7 @@
     &-visible {
         opacity: 1 !important;
         visibility: visible !important;
+        clip: unset !important;
     }
     &-hidden {
         opacity: 0 !important;

@@ -14,6 +14,9 @@ const state = {
         ),
         "main-sort": document.querySelector("#cursor-main-sort"),
         "main-page-mobile": document.querySelector("#cursor-main-page-mobile"),
+        "main-city": document.querySelector("#cursor-main-city"),
+        "main-street": document.querySelector("#cursor-main-street"),
+        "main-underground": document.querySelector("#cursor-main-underground"),
     },
     submenuSelect: {
         "main-page-desktop": document.querySelector(
@@ -21,11 +24,17 @@ const state = {
         ),
         "main-sort": document.querySelector("#submenu-main-sort"),
         "main-page-mobile": document.querySelector("#submenu-main-page-mobile"),
+        "main-city": document.querySelector("#submenu-main-city"),
+        "main-street": document.querySelector("#submenu-main-street"),
+        "main-underground": document.querySelector("#submenu-main-underground"),
     },
     inputsSelect: {
         "main-page-desktop": document.querySelector("#input-main-page-desktop"),
         "main-sort": document.querySelector("#input-main-sort"),
         "main-page-mobile": document.querySelector("#input-main-page-mobile"),
+        "main-city": document.querySelector("#input-main-city"),
+        "main-street": document.querySelector("#input-main-street"),
+        "main-underground": document.querySelector("#input-main-underground"),
     },
     submenuListPage: document.querySelectorAll(".main-submenu__list_type_page"),
 };
@@ -317,27 +326,27 @@ cardPriceContainerBigCards.addEventListener("click", (e) => {
 
 // логика открытия селектов город улица метро
 
-const cursorCity = document.querySelector("#submenu-city");
-const cursorStreet = document.querySelector("#submenu-street");
-const cursorUnderground = document.querySelector("#submenu-underground");
-const submenuCityBody = document.querySelector("#submenu-city-body");
-const submenuStreetBody = document.querySelector("#submenu-street-body");
-const submenuUndergroundBody = document.querySelector(
-    "#submenu-underground-body"
-);
+// const cursorCity = document.querySelector("#submenu-city");
+// const cursorStreet = document.querySelector("#submenu-street");
+// const cursorUnderground = document.querySelector("#submenu-underground");
+// const submenuCityBody = document.querySelector("#submenu-city-body");
+// const submenuStreetBody = document.querySelector("#submenu-street-body");
+// const submenuUndergroundBody = document.querySelector(
+//     "#submenu-underground-body"
+// );
 
-cursorCity.addEventListener("click", (e) => {
-    containerFiltersAdress.classList.toggle("mix-visible");
-    submenuCityBody.classList.toggle("mix-visible");
-});
-cursorStreet.addEventListener("click", (e) => {
-    containerFiltersAdress.classList.toggle("mix-visible");
-    submenuStreetBody.classList.toggle("mix-visible");
-});
-cursorUnderground.addEventListener("click", (e) => {
-    containerFiltersAdress.classList.toggle("mix-visible");
-    submenuUndergroundBody.classList.toggle("mix-visible");
-});
+// cursorCity.addEventListener("click", (e) => {
+//     containerFiltersAdress.classList.toggle("mix-visible");
+//     submenuCityBody.classList.toggle("mix-visible");
+// });
+// cursorStreet.addEventListener("click", (e) => {
+//     containerFiltersAdress.classList.toggle("mix-visible");
+//     submenuStreetBody.classList.toggle("mix-visible");
+// });
+// cursorUnderground.addEventListener("click", (e) => {
+//     containerFiltersAdress.classList.toggle("mix-visible");
+//     submenuUndergroundBody.classList.toggle("mix-visible");
+// });
 
 // логика закрытия подменю селектов выбора типа помещения и классификация помещения по кнопке "Выбрать"
 
@@ -493,6 +502,13 @@ buttonsSelect.forEach((i) =>
         const currentLabel = e.target.closest(
             ".prof-control-panel__select-label"
         );
+        if (
+            e.target.classList.contains(
+                "prof-control-panel__select-input_type_main"
+            )
+        ) {
+            return;
+        }
         if (
             e.target.closest(".label-checkbox") &&
             e.target.closest(".label-checkbox").ariaLabel === "checkbox"
