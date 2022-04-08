@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url(./../normalize.css);
 @import url(./cropper.css);
+@import url(../leaflet/leaflet.css);
 @font-face {
   font-family: "Roboto";
   font-weight: 400;
@@ -2712,6 +2713,13 @@ main .container {
   background-position: center;
 }
 
+.swiper-slide video {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
 .mainSwiper .swiper-slide {
   width: 25%;
   height: 100%;
@@ -2876,6 +2884,10 @@ main .container {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   left: calc(50% - 7px);
+}
+
+.main__map #map {
+  height: 600px;
 }
 
 .modal-login .modal__content,
