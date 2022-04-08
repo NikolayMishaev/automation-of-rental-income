@@ -6312,6 +6312,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       grid-template-columns: 1fr 1fr 1fr;
 }
 
+@media (max-width: 56.25rem) {
+  .popup-change-city__list:last-child {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 40rem) {
   .popup-change-city__list:last-child {
     -ms-grid-columns: 1fr;
