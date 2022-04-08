@@ -102,6 +102,34 @@
             left: unset;
             top: 100px;
         }
+        &-first {
+            @media (max-width: rem(1000px)) {
+                left: unset;
+                top: 50px;
+                right: 145px;
+            }
+        }
+        &-second {
+            @media (max-width: rem(1000px)) {
+                left: unset;
+                top: 50px;
+                right: 97px;
+            }
+        }
+        &-third {
+            @media (max-width: rem(1000px)) {
+                left: unset;
+                top: 50px;
+                right: 48px;
+            }
+        }
+        &-fourth {
+            @media (max-width: rem(1000px)) {
+                left: unset;
+                top: 50px;
+                right: 1px;
+            }
+        }
     }
     &_style_division {
         left: -268px;
@@ -144,6 +172,7 @@
         letter-spacing: 0.12px;
         color: #222429;
         white-space: wrap;
+        padding: 6px 12px;
         transition: $transition;
         &:hover .main-submenu__link {
             color: white;
@@ -226,7 +255,6 @@
         display: block;
         width: 100%;
         height: 100%;
-        padding: 6px 12px;
         &:link {
             text-decoration: none;
         }

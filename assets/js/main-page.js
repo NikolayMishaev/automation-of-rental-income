@@ -312,41 +312,9 @@ cardPriceContainerBigCards.addEventListener("click", (e) => {
         return;
     }
     if (e.target.closest(".card-price_style_main")) {
-        e.target.closest(".card-price_style_main").style.transform =
-            innerWidth < 640
-                ? "scale(3) translateX(0)"
-                : "scale(4) translateX(500px)";
-        e.target.closest(".card-price_style_main").style.opacity = "0.1";
-        e.target.closest(".card-price_style_main").style.zIndex = "10";
-        setTimeout(() => {
-            location.href = currentLink;
-        }, 250);
+        location.href = currentLink;
     }
 });
-
-// логика открытия селектов город улица метро
-
-// const cursorCity = document.querySelector("#submenu-city");
-// const cursorStreet = document.querySelector("#submenu-street");
-// const cursorUnderground = document.querySelector("#submenu-underground");
-// const submenuCityBody = document.querySelector("#submenu-city-body");
-// const submenuStreetBody = document.querySelector("#submenu-street-body");
-// const submenuUndergroundBody = document.querySelector(
-//     "#submenu-underground-body"
-// );
-
-// cursorCity.addEventListener("click", (e) => {
-//     containerFiltersAdress.classList.toggle("mix-visible");
-//     submenuCityBody.classList.toggle("mix-visible");
-// });
-// cursorStreet.addEventListener("click", (e) => {
-//     containerFiltersAdress.classList.toggle("mix-visible");
-//     submenuStreetBody.classList.toggle("mix-visible");
-// });
-// cursorUnderground.addEventListener("click", (e) => {
-//     containerFiltersAdress.classList.toggle("mix-visible");
-//     submenuUndergroundBody.classList.toggle("mix-visible");
-// });
 
 // логика закрытия подменю селектов выбора типа помещения и классификация помещения по кнопке "Выбрать"
 

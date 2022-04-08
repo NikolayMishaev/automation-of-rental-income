@@ -195,4 +195,15 @@ margin-top: 16px;
             grid-template-columns: 1fr;
         }
     }
+    &__row {
+        display: flex;
+    }
+    &__submit-btn {
+        flex-shrink: 0;
+        @include primary-btn($accent-TCX50);
+        height: 48px;
+        padding: 4px 12px;
+        margin-top: 16px;
+        width: 208px;
+    }
 }

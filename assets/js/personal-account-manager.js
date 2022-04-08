@@ -10,6 +10,10 @@ const state = {
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
     cursorsSelect: {
+        ankets: document.querySelector("#cursor-ankets"),
+        "type-activity": document.querySelector("#cursor-type-activity"),
+        "ankets-status": document.querySelector("#cursor-ankets-status"),
+        "ankets-views": document.querySelector("#cursor-ankets-views"),
         "objects-status": document.querySelector("#cursor-objects-status"),
         "objects-sort": document.querySelector("#cursor-objects-sort"),
         "objects-page": document.querySelector("#cursor-objects-page"),
@@ -62,6 +66,10 @@ const state = {
         "structure-offers": document.querySelector("#cursor-structure-offers"),
     },
     submenuSelect: {
+        ankets: document.querySelector("#submenu-ankets"),
+        "type-activity": document.querySelector("#submenu-type-activity"),
+        "ankets-status": document.querySelector("#submenu-ankets-status"),
+        "ankets-views": document.querySelector("#submenu-ankets-views"),
         "objects-status": document.querySelector("#submenu-objects-status"),
         "objects-sort": document.querySelector("#submenu-objects-sort"),
         "objects-page": document.querySelector("#submenu-objects-page"),
@@ -124,6 +132,10 @@ const state = {
         "structure-offers": document.querySelector("#submenu-structure-offers"),
     },
     inputsSelect: {
+        ankets: document.querySelector("#input-ankets"),
+        "type-activity": document.querySelector("#input-type-activity"),
+        "ankets-status": document.querySelector("#input-ankets-status"),
+        "ankets-views": document.querySelector("#input-ankets-views"),
         "checkbox-free": document.querySelector("#input-objects-checkobx-free"),
         "checkbox-free-soon": document.querySelector(
             "#input-objects-checkobx-free-soon"
@@ -821,3 +833,9 @@ buttonsSelect.forEach((i) =>
         }
     })
 );
+
+const buttonClose = document.querySelector("#button-close-popup-sign-ind");
+const popoupAvatar = document.querySelector(".modal-edit-avatar");
+buttonClose.addEventListener("click", (e) => {
+    popoupAvatar.style = "display-none";
+});

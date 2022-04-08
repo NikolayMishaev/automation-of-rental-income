@@ -835,84 +835,153 @@
                     >
                       Анкеты контрагентов
                     </h3>
-                    <label
-                      aria-label="agents-status"
-                      class="prof-control-panel__select-label prof-control-panel__select-label_type_status-agent text-p2 button-toggle-select"
-                      >Статус анкеты:
-                      <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                      <div
-                        class="prof-control-panel__cursor prof-control-panel__cursor_type_agent"
-                        id="cursor-agents-status"
-                      ></div>
-                      <input
-                        id="input-agents-status"
-                        type="text"
-                        disabled="true"
-                        class="prof-control-panel__select-input prof-control-panel__select-input_type_status-agent"
-                        value="Любой"
-                      />
-                      <div
-                        class="main-submenu main-submenu_style_agents"
-                        id="submenu-agents-status"
-                      >
-                        <ul class="main-submenu__list">
-                          <li
-                            aria-label="item"
-                            class="main-submenu__item main-submenu__item_active"
-                          >
-                            Любой
-                          </li>
-                          <li aria-label="item" class="main-submenu__item">Пункт_1</li>
-                          <li aria-label="item" class="main-submenu__item">Пункт_2</li>
-                          <li aria-label="item" class="main-submenu__item">Пункт_3</li>
-                          <li aria-label="item" class="main-submenu__item">Пункт_4</li>
-                        </ul>
-                      </div>
-                    </label>
-                    <label
-                      aria-label="agents-period"
-                      class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select"
-                      >Период:
-                      <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                      <div class="prof-control-panel__cursor" id="cursor-agents-period"></div>
-                      <input
-                        id="input-agents-period"
-                        type="text"
-                        disabled="true"
-                        class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
-                        value="Месяц"
-                      />
-                      <div class="main-submenu main-submenu_style_date" id="submenu-agents-period">
-                        <ul class="main-submenu__list">
-                          <li aria-label="item" class="main-submenu__item">Январь</li>
-                          <li aria-label="item" class="main-submenu__item">Февраль</li>
-                          <li aria-label="item" class="main-submenu__item">Март</li>
-                          <li aria-label="item" class="main-submenu__item">Апрель</li>
-                          <li
-                            class="main-submenu__item main-submenu__item_style_prof-control-panel"
-                          >
-                            <p class="prof-control-panel__text text-p2">
-                              От<input type="date" class="prof-control-panel__input-date" />
-                            </p>
-                            <p class="prof-control-panel__text text-p2">
-                              До<input type="date" class="prof-control-panel__input-date" />
-                            </p>
-                          </li>
-                          <li
-                            class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel"
-                          >
-                            <button
-                              class="prof-control-panel__button prof-control-panel__button_type_confirm"
-                            >
-                              Выбрать
-                            </button>
-                          </li>
-                        </ul>
-                      </div>
-                    </label>
+                    <div class="prof-control-panel__wrapper">
+                        <label aria-label="ankets" class="prof-control-panel__select-label prof-control-panel__select-label_type_about-me text-p2 button-toggle-select">Вид анкеты:
+                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                            <div class="prof-control-panel__cursor prof-control-panel__cursor_type_about-me" id="cursor-ankets"></div>
+                            <input id="input-ankets" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me" value="Текущие">
+                            <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-first" id="submenu-ankets">
+                              <ul class="main-submenu__list">
+                                  <li
+                                  class="main-submenu__item main-submenu__item_style_prof-control-panel"
+                                >
+                                  <label class="prof-control-panel__label-custom">
+                                    <input
+                                      name="object-type"
+                                      class="prof-control-panel__input-hidden"
+                                      type="radio"
+                                      checked
+                                    />
+                                    <span class="prof-control-panel__visible-radio"></span>
+                                    Текущие</label
+                                  >
+                                </li>
+                                <li
+                                  class="main-submenu__item main-submenu__item_style_prof-control-panel"
+                                >
+                                  <label class="prof-control-panel__label-custom">
+                                    <input
+                                      name="object-type"
+                                      class="prof-control-panel__input-hidden"
+                                      type="radio"
+                                    />
+                                    <span class="prof-control-panel__visible-radio"></span>
+                                    В архиве</label
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </label>
+
+                          <label aria-label="type-activity" class="prof-control-panel__select-label prof-control-panel__select-label_type_about-me text-p2 button-toggle-select">Вид деятельности:
+                              <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                              <div class="prof-control-panel__cursor prof-control-panel__cursor_type_about-me" id="cursor-type-activity"></div>
+                              <input id="input-type-activity" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me-wide" value="Вид_1">
+                              <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-second" id="submenu-type-activity">
+                                <ul class="main-submenu__list">
+                                  <li aria-label="item" class="main-submenu__item main-submenu__item_active">
+                                    Вид_1
+                                  </li>
+                                  <li aria-label="item" class="main-submenu__item">Пункт_1</li>
+                                  <li aria-label="item" class="main-submenu__item">Пункт_2</li>
+                                  <li aria-label="item" class="main-submenu__item">Пункт_3</li>
+                                  <li aria-label="item" class="main-submenu__item">Пункт_4</li>
+                                </ul>
+                              </div>
+                            </label>
+
+                            <label aria-label="ankets-status" class="prof-control-panel__select-label prof-control-panel__select-label_type_about-me text-p2 button-toggle-select">Статус анкеты:
+                              <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                              <div class="prof-control-panel__cursor prof-control-panel__cursor_type_about-me" id="cursor-ankets-status"></div>
+                              <input id="input-ankets-status" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me" value="Новое">
+                              <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-third" id="submenu-ankets-status">
+                                <ul class="main-submenu__list">
+                                  <li
+                                  class="main-submenu__item main-submenu__item_style_prof-control-panel"
+                                >
+                                  <label class="prof-control-panel__label-custom">
+                                    <input
+                                      name="object-type"
+                                      class="prof-control-panel__input-hidden"
+                                      type="radio"
+                                      checked
+                                    />
+                                    <span class="prof-control-panel__visible-radio"></span>
+                                    Новое</label
+                                  >
+                                </li>
+                                <li
+                                  class="main-submenu__item main-submenu__item_style_prof-control-panel"
+                                >
+                                  <label class="prof-control-panel__label-custom">
+                                    <input
+                                      name="object-type"
+                                      class="prof-control-panel__input-hidden"
+                                      type="radio"
+                                    />
+                                    <span class="prof-control-panel__visible-radio"></span>
+                                    Одобрено</label
+                                  >
+                                </li>
+                                <li
+                                class="main-submenu__item main-submenu__item_style_prof-control-panel"
+                              >
+                                <label class="prof-control-panel__label-custom">
+                                  <input
+                                    name="object-type"
+                                    class="prof-control-panel__input-hidden"
+                                    type="radio"
+                                  />
+                                  <span class="prof-control-panel__visible-radio"></span>
+                                  Отказано</label
+                                >
+                              </li>
+                                </ul>
+                              </div>
+                            </label>
+
+                            <label aria-label="ankets-views" class="prof-control-panel__select-label prof-control-panel__select-label_type_about-me text-p2 button-toggle-select">Статус просмотра:
+                              <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                              <div class="prof-control-panel__cursor prof-control-panel__cursor_type_about-me" id="cursor-ankets-views"></div>
+                              <input id="input-ankets-views" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me-wide" value="Просмотрено">
+                              <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-fourth" id="submenu-ankets-views">
+                                <ul class="main-submenu__list">
+                                  <li
+                                  class="main-submenu__item main-submenu__item_style_prof-control-panel"
+                                >
+                                  <label class="prof-control-panel__label-custom">
+                                    <input
+                                      name="object-type"
+                                      class="prof-control-panel__input-hidden"
+                                      type="radio"
+                                      checked
+                                    />
+                                    <span class="prof-control-panel__visible-radio"></span>
+                                    Просмотрено</label
+                                  >
+                                </li>
+                                <li
+                                  class="main-submenu__item main-submenu__item_style_prof-control-panel"
+                                >
+                                  <label class="prof-control-panel__label-custom">
+                                    <input
+                                      name="object-type"
+                                      class="prof-control-panel__input-hidden"
+                                      type="radio"
+                                    />
+                                    <span class="prof-control-panel__visible-radio"></span>
+                                    Не просмотрено</label
+                                  >
+                                </li>
+                                </ul>
+                              </div>
+                            </label>
+                    </div>
+
+
                     <div class="prof-control-panel__row prof-control-panel__row_type_agent">
                       <div
-                        class="prof-control-panel__buttons-container"
+                        class="prof-control-panel__buttons-container mix-only-desktop-1150px"
                       >
                         <button
                           aria-label="actual"
@@ -941,7 +1010,7 @@
                   </div>
 
                   <div class="prof-general__agent-container" aria-label="actual" id="agent-actual">
-                    <div class="prof-table">
+                    <div class="prof-table mix-only-desktop-1150px">
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-heading text-p2">Статус просмотра</li>
                         <li class="prof-table__row-heading text-p2">Наименование контрагента</li>
@@ -955,18 +1024,18 @@
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-content heading-h5">
                           <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
-                        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html'>Иван Иванов</a></li>
                         <li class="prof-table__row-content heading-h5">02.02.2022</li>
                         <li class="prof-table__row-content heading-h5">деятельность</li>
                         <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
                         <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
                         <li class="prof-table__row-content heading-h5">
                             <button class="prof-table__button heading-h5">
-                                Переместить
+                                В архив
                             </button>
                         </li>
                         <li class="prof-table__row-content heading-h5">
-                            <button class="prof-table__button heading-h5">
+                            <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
                                 Уведомить
                             </button>
                         </li>
@@ -974,18 +1043,18 @@
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-content heading-h5">
                           <span class="prof-marker prof-marker_type_eye-close"></span><span class="prof-marker"></span></li>
-                        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html'>Иван Иванов</a></li>
                         <li class="prof-table__row-content heading-h5">02.02.2022</li>
                         <li class="prof-table__row-content heading-h5">деятельность</li>
                         <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
                         <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
                         <li class="prof-table__row-content heading-h5">
                             <button class="prof-table__button heading-h5">
-                                Переместить
+                                В архив
                             </button>
                         </li>
                         <li class="prof-table__row-content heading-h5">
-                            <button class="prof-table__button heading-h5">
+                            <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
                                 Уведомить
                             </button>
                         </li>
@@ -993,37 +1062,37 @@
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-content heading-h5">
                           <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
-                        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html'>Иван Иванов</a></li>
+                        <li class="prof-table__row-content heading-h5">02.02.2022</li>
+                        <li class="prof-table__row-content heading-h5">деятельность</li>
+                        <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
+                        <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
+                        <li class="prof-table__row-content heading-h5">
+                            <button class="prof-table__button heading-h5">
+                                В архив
+                            </button>
+                        </li>
+                        <li class="prof-table__row-content heading-h5">
+                            <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
+                                Уведомить
+                            </button>
+                        </li>
+                      </ul>
+                      <ul class="prof-table__row prof-table__row_style_agent">
+                        <li class="prof-table__row-content heading-h5">
+                          <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
+                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html'>Иван Иванов</a></li>
                         <li class="prof-table__row-content heading-h5">02.02.2022</li>
                         <li class="prof-table__row-content heading-h5">деятельность</li>
                         <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
                         <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_red"></span>Отказано</p></li>
                         <li class="prof-table__row-content heading-h5">
                             <button class="prof-table__button heading-h5">
-                                Переместить
+                                В архив
                             </button>
                         </li>
                         <li class="prof-table__row-content heading-h5">
-                            <button class="prof-table__button heading-h5">
-                                Уведомить
-                            </button>
-                        </li>
-                      </ul>
-                      <ul class="prof-table__row prof-table__row_style_agent">
-                        <li class="prof-table__row-content heading-h5">
-                          <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
-                        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-                        <li class="prof-table__row-content heading-h5">02.02.2022</li>
-                        <li class="prof-table__row-content heading-h5">деятельность</li>
-                        <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
-                        <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
-                        <li class="prof-table__row-content heading-h5">
-                            <button class="prof-table__button heading-h5">
-                                Переместить
-                            </button>
-                        </li>
-                        <li class="prof-table__row-content heading-h5">
-                            <button class="prof-table__button heading-h5">
+                            <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
                                 Уведомить
                             </button>
                         </li>
@@ -1031,24 +1100,24 @@
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-content heading-h5">
                           <span class="prof-marker prof-marker_type_eye-close"></span><span class="prof-marker"></span></li>
-                        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html'>Иван Иванов</a></li>
                         <li class="prof-table__row-content heading-h5">02.02.2022</li>
                         <li class="prof-table__row-content heading-h5">деятельность</li>
                         <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
                         <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
                         <li class="prof-table__row-content heading-h5">
                             <button class="prof-table__button heading-h5">
-                                Переместить
+                                В архив
                             </button>
                         </li>
                         <li class="prof-table__row-content heading-h5">
-                            <button class="prof-table__button heading-h5">
+                            <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
                                 Уведомить
                             </button>
                         </li>
                       </ul>
                     </div>
-                    <div class="main main_page_profile main_page_agent">
+                    <div class="main main_page_profile main_page_agent mix-only-desktop-1150px">
                       <div class="main__pagination main__pagination_type_profile">
                         <nav class="pagination">
                           <ul class="pagination__list">
@@ -5108,7 +5177,7 @@
       <div class="modal__content">
         <div class="modal__header">
           <h3>Изменить аватар</h3>
-          <button id="button-close-popup-sign-in" class="modal__close-btn">
+          <button id="button-close-popup-sign-ind" class="modal__close-btn">
             <svg
               width="14"
               height="14"
