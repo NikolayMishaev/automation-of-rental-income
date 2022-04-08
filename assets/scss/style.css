@@ -4225,7 +4225,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main__control-panel-icon_filters:hover {
   cursor: pointer;
-  opacity: 0.7;
 }
 
 @media (max-width: 1500px) {
@@ -5760,6 +5759,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @media (max-width: 40rem) {
   .main-form__input_style_two-column {
     margin-right: 8px;
+    padding-right: 12px;
   }
 }
 
@@ -8019,7 +8019,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 32px;
     background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
     background-color: #fff;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
   }
+}
+
+.prof-control-panel__select-label_type_main.prof-control-panel__select-label_active:before {
+  background: url(./../images/icons/main-page-icon-search-active.svg) no-repeat center;
+  background-color: white !important;
 }
 
 .prof-control-panel__select-label_type_main-big {
@@ -8480,7 +8487,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__download-excel {
-  width: 178px;
+  min-width: 178px;
   height: 32px;
   padding: 4px 11px 4px 29px;
   color: #222429;

@@ -101,6 +101,9 @@
                 border-radius: 4px;
                 transition: $transition;
                 position: static;
+                &:hover::before {
+
+                }
                 &:before {
                     content: "";
                     position: absolute;
@@ -110,8 +113,13 @@
                     height: 32px;
                     background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
                     background-color: #fff;
+                    transition: $transition;
                 }
             }
+        }
+        &_type_main.prof-control-panel__select-label_active:before {
+                    background: url(./../images/icons/main-page-icon-search-active.svg) no-repeat center;
+                    background-color: white !important;
         }
         &_type_main-big {
             margin-top: 16px;
@@ -460,7 +468,7 @@
         left: 26px;
     }
     &__download-excel {
-        width: 178px;
+        min-width: 178px;
         height: 32px;
         padding: 4px 11px 4px 29px;
         color: #222429;
