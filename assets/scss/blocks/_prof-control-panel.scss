@@ -6,10 +6,19 @@
     &_type_agent {
         @media (max-width: rem(1000px)) {
             flex-wrap: nowrap;
+            align-items: flex-end;
+        }
+    }
+    &_type_about-me {
+        @media (max-width: rem(1150px)) {
+            justify-content: space-between;
+        }
+        @media (max-width: rem(1000px)) {
+            justify-content: flex-start;
         }
     }
     &__buttons-container {
-        width: 228px;
+        min-width: 228px;
         height: 32px;
         background-color: #e6fae9;
         border-radius: 50px;
@@ -78,7 +87,7 @@
         position: relative;
         transition: $transition;
         @media (max-width: rem(1000px)) {
-            border-radius: 4px
+            border-radius: 4px;
         }
         &:hover {
             cursor: pointer;
@@ -101,6 +110,8 @@
                 border-radius: 4px;
                 transition: $transition;
                 position: static;
+                &:hover::before {
+                }
                 &:before {
                     content: "";
                     position: absolute;
@@ -110,8 +121,13 @@
                     height: 32px;
                     background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
                     background-color: #fff;
+                    transition: $transition;
                 }
             }
+        }
+        &_type_main.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-search-active.svg) no-repeat center;
+            background-color: white !important;
         }
         &_type_main-big {
             margin-top: 16px;
@@ -218,6 +234,41 @@
             display: block;
             width: 100%;
         }
+        &_type_about-me {
+            margin-right: 10px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            @media (max-width: rem(1150px)) {
+                display: flex;
+                align-items: center;
+                width: 45%;
+                margin-right: 0;
+                margin-top: 10px;
+            }
+            @media (max-width: rem(1000px)) {
+                width: 32px;
+                height: 32px;
+                overflow: hidden;
+                border-radius: 4px;
+                transition: $transition;
+                position: static;
+                margin-right: 16px;
+                &:hover::before {
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    border-radius: 4px;
+                    z-index: 1;
+                    width: 32px;
+                    height: 32px;
+                    background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
+                    background-color: #fff;
+                    transition: $transition;
+                }
+            }
+        }
     }
     &__cursor {
         position: absolute;
@@ -231,6 +282,11 @@
             transform: rotate(180deg);
         }
         &_type_agent {
+            @media (max-width: rem(1000px)) {
+                display: none;
+            }
+        }
+        &_type_about-me {
             @media (max-width: rem(1000px)) {
                 display: none;
             }
@@ -271,6 +327,22 @@
             color: #222429;
             &:hover {
                 cursor: pointer;
+            }
+        }
+        &_type_about-me {
+            width: 110px;
+            @media (max-width: rem(1150px)) {
+                width: unset;
+                flex: 1;
+                margin-left: 5px;
+            }
+        }
+        &_type_about-me-wide {
+            width: 145px;
+            @media (max-width: rem(1150px)) {
+                width: unset;
+                flex: 1;
+                margin-left: 5px;
             }
         }
         &_type_main {
@@ -460,7 +532,7 @@
         left: 26px;
     }
     &__download-excel {
-        width: 178px;
+        min-width: 178px;
         height: 32px;
         padding: 4px 11px 4px 29px;
         color: #222429;
@@ -520,6 +592,8 @@
     &__title {
         margin-right: auto;
         &_type_agent {
+            width: 100%;
+            margin-bottom: 10px;
             @media (max-width: rem(1000px)) {
                 display: none;
             }
@@ -588,6 +662,17 @@
         }
         &:last-child {
             margin-right: 0;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @media (max-width: rem(1000px)) {
+            flex-wrap: nowrap;
+            margin-bottom: 0;
+            margin-left: 16px;
         }
     }
 }
