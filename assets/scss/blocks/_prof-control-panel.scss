@@ -506,6 +506,9 @@
             flex: 1;
             margin: 0 24px;
             margin-right: 0;
+            @media (max-width: rem(1150px)) {
+                margin-left: 0;
+            }
             @media (max-width: rem(1000px)) {
                 width: 100%;
                 margin-left: 0;
@@ -666,9 +669,13 @@
     }
     &__wrapper {
         display: flex;
-        margin-bottom: 16px;
+        flex: 1;
+        margin-top: 16px;
         flex-wrap: wrap;
         justify-content: space-between;
+        @media (max-width: rem(1150px)) {
+            margin-top: 0;
+        }
         @media (max-width: rem(1000px)) {
             flex-wrap: nowrap;
             margin-bottom: 0;

@@ -835,6 +835,37 @@
                     >
                       Анкеты контрагентов
                     </h3>
+
+
+
+                    <div class="prof-control-panel__row prof-control-panel__row_type_agent">
+                      <div
+                        class="prof-control-panel__buttons-container mix-only-desktop-1150px"
+                      >
+                        <button
+                          aria-label="actual"
+                          class="prof-control-panel__button prof-control-panel__button_active heading-h4 agent-button"
+                        >
+                          Список
+                        </button>
+                        <button
+                          aria-label="archive"
+                          class="prof-control-panel__button heading-h4 agent-button"
+                        >
+                          Карточки
+                        </button>
+                      </div>
+                      <label
+                        class="prof-control-panel__search prof-control-panel__search_type_agent mix-label"
+                      >
+                        <input
+                          type="text"
+                          class="prof-control-panel__input-search mix-input"
+                          placeholder=" "
+                        />
+                        <span class="prof-control-panel__caption mix-caption">Поиск</span>
+                      </label>
+                    </div>
                     <div class="prof-control-panel__wrapper">
                         <label aria-label="ankets" class="prof-control-panel__select-label prof-control-panel__select-label_type_about-me text-p2 button-toggle-select">Вид анкеты:
                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
@@ -842,7 +873,10 @@
                             <input id="input-ankets" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me" value="Текущие">
                             <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-first" id="submenu-ankets">
                               <ul class="main-submenu__list">
-                                  <li
+                                <li class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
+                                  Анкеты
+                                </li>
+                                  <li aria-label='item'
                                   class="main-submenu__item main-submenu__item_style_prof-control-panel"
                                 >
                                   <label class="prof-control-panel__label-custom">
@@ -856,7 +890,7 @@
                                     Текущие</label
                                   >
                                 </li>
-                                <li
+                                <li aria-label='item'
                                   class="main-submenu__item main-submenu__item_style_prof-control-panel"
                                 >
                                   <label class="prof-control-panel__label-custom">
@@ -869,6 +903,11 @@
                                     В архиве</label
                                   >
                                 </li>
+                                <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                  <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
+                                    Выбрать
+                                  </button>
+                                </li>
                               </ul>
                             </div>
                           </label>
@@ -879,6 +918,9 @@
                               <input id="input-type-activity" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me-wide" value="Вид_1">
                               <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-second" id="submenu-type-activity">
                                 <ul class="main-submenu__list">
+                                  <li class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
+                                    Вид деятельности
+                                  </li>
                                   <li aria-label="item" class="main-submenu__item main-submenu__item_active">
                                     Вид_1
                                   </li>
@@ -896,6 +938,9 @@
                               <input id="input-ankets-status" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me" value="Новое">
                               <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-third" id="submenu-ankets-status">
                                 <ul class="main-submenu__list">
+                                  <li class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
+                                    Статус анкеты
+                                  </li>
                                   <li
                                   class="main-submenu__item main-submenu__item_style_prof-control-panel"
                                 >
@@ -936,6 +981,11 @@
                                   Отказано</label
                                 >
                               </li>
+                              <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
+                                  Выбрать
+                                </button>
+                              </li>
                                 </ul>
                               </div>
                             </label>
@@ -946,6 +996,9 @@
                               <input id="input-ankets-views" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me-wide" value="Просмотрено">
                               <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-fourth" id="submenu-ankets-views">
                                 <ul class="main-submenu__list">
+                                  <li class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
+                                    Статус просмотра
+                                  </li>
                                   <li
                                   class="main-submenu__item main-submenu__item_style_prof-control-panel"
                                 >
@@ -973,39 +1026,14 @@
                                     Не просмотрено</label
                                   >
                                 </li>
+                                <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                  <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
+                                    Выбрать
+                                  </button>
+                                </li>
                                 </ul>
                               </div>
                             </label>
-                    </div>
-
-
-                    <div class="prof-control-panel__row prof-control-panel__row_type_agent">
-                      <div
-                        class="prof-control-panel__buttons-container mix-only-desktop-1150px"
-                      >
-                        <button
-                          aria-label="actual"
-                          class="prof-control-panel__button prof-control-panel__button_active heading-h4 agent-button"
-                        >
-                          Список
-                        </button>
-                        <button
-                          aria-label="archive"
-                          class="prof-control-panel__button heading-h4 agent-button"
-                        >
-                          Карточки
-                        </button>
-                      </div>
-                      <label
-                        class="prof-control-panel__search prof-control-panel__search_type_agent mix-label"
-                      >
-                        <input
-                          type="text"
-                          class="prof-control-panel__input-search mix-input"
-                          placeholder=" "
-                        />
-                        <span class="prof-control-panel__caption mix-caption">Поиск</span>
-                      </label>
                     </div>
                   </div>
 
