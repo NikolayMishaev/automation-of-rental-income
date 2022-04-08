@@ -7872,7 +7872,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__buttons-container {
-  width: 228px;
+  min-width: 228px;
   height: 32px;
   background-color: #e6fae9;
   border-radius: 50px;
@@ -8690,6 +8690,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
 }
 
+.prof-table__row_style_agent {
+  -ms-grid-columns: 85px 160px 100px 160px 75px 86px 110px 95px;
+      grid-template-columns: 85px 160px 100px 160px 75px 86px 110px 95px;
+}
+
 .prof-table__row_style_users {
   -ms-grid-columns: 40px 297px 160px 160px 220px;
       grid-template-columns: 40px 297px 160px 160px 220px;
@@ -8819,6 +8824,29 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-table__number {
   margin-left: 4px;
+}
+
+.prof-table__button {
+  border-radius: 4px;
+  border: none;
+  background-color: #2a9b43;
+  padding: 4px 8px;
+  color: white;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.prof-table__button:hover {
+  opacity: .8;
+}
+
+.prof-table__link {
+  color: #1565c0;
+  font-weight: 400;
+}
+
+.prof-table__caption {
+  font-weight: 400;
 }
 
 .prof-card {
