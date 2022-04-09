@@ -142,4 +142,13 @@
         position: relative;
         display: inline;
     }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        background: url("./../images/icons/profile-document-active.svg") no-repeat center;
+        transition: $transition;
+        &:hover {
+            opacity: .8;
+        }
+    }
 }

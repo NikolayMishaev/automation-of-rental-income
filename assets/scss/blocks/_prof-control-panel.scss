@@ -96,9 +96,7 @@
         }
         &_active {
             @media (max-width: rem(1000px)) {
-                // background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
                 &:before {
-                    // background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
                     background-color: white !important;
                 }
             }
@@ -128,6 +126,53 @@
             }
         }
         &_type_main.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-search-active.svg) no-repeat center;
+            background-color: white !important;
+        }
+        &_type_about-me {
+            margin-right: 10px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            @media (max-width: rem(1150px)) {
+                display: flex;
+                align-items: center;
+                width: 45%;
+                margin-right: 0;
+                margin-top: 10px;
+            }
+            @media (max-width: rem(1000px)) {
+                width: 32px;
+                height: 32px;
+                overflow: hidden;
+                border-radius: 4px;
+                transition: $transition;
+                position: static;
+                margin-right: 16px;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    border-radius: 4px;
+                    z-index: 1;
+                    width: 32px;
+                    height: 32px;
+                    background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
+                    background-color: #fff;
+                    transition: $transition;
+                }
+            }
+            &-sort {
+                &:before {
+                    background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
+                    background-color: #fff;
+                }
+            }
+        }
+        &_type_about-me.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+            background-color: white !important;
+        }
+        &_type_about-me-sort.prof-control-panel__select-label_active:before {
             background: url(./../images/icons/main-page-icon-search-active.svg) no-repeat center;
             background-color: white !important;
         }
@@ -164,8 +209,13 @@
                     height: 32px;
                     background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
                     background-color: #fff;
+                    transition: $transition;
                 }
             }
+        }
+        &_type_sort.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-search-active.svg) no-repeat center;
+            background-color: white !important;
         }
         &_type_filters {
             @media (max-width: rem(1150px)) {
@@ -190,8 +240,13 @@
                     height: 32px;
                     background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
                     background-color: #fff;
+                    transition: $transition;
                 }
             }
+        }
+        &_type_filters.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+            background-color: white !important;
         }
         &_type_filters-analytic {
             width: 32px;
@@ -199,6 +254,10 @@
             margin-left: 16px;
             background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
             border-radius: 4px;
+            transition: $transition;
+        }
+        &_type_filters-analytic.prof-control-panel__select-label_active {
+            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
         }
         &_type_status-agent {
             margin-right: 40px;
@@ -235,41 +294,6 @@
         &_type_division {
             display: block;
             width: 100%;
-        }
-        &_type_about-me {
-            margin-right: 10px;
-            &:last-of-type {
-                margin-right: 0;
-            }
-            @media (max-width: rem(1150px)) {
-                display: flex;
-                align-items: center;
-                width: 45%;
-                margin-right: 0;
-                margin-top: 10px;
-            }
-            @media (max-width: rem(1000px)) {
-                width: 32px;
-                height: 32px;
-                overflow: hidden;
-                border-radius: 4px;
-                transition: $transition;
-                position: static;
-                margin-right: 16px;
-                &:hover::before {
-                }
-                &:before {
-                    content: "";
-                    position: absolute;
-                    border-radius: 4px;
-                    z-index: 1;
-                    width: 32px;
-                    height: 32px;
-                    background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
-                    background-color: #fff;
-                    transition: $transition;
-                }
-            }
         }
     }
     &__cursor {
