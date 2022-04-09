@@ -5432,11 +5432,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+@media (max-width: 71.875rem) {
+  .main-submenu_style_agents-first {
+    left: 87px;
+  }
+}
+
 @media (max-width: 62.5rem) {
   .main-submenu_style_agents-first {
     left: unset;
     top: 50px;
     right: 145px;
+  }
+}
+
+@media (max-width: 71.875rem) {
+  .main-submenu_style_agents-second {
+    left: 130px;
   }
 }
 
@@ -5448,11 +5460,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+@media (max-width: 71.875rem) {
+  .main-submenu_style_agents-third {
+    left: 106px;
+  }
+}
+
 @media (max-width: 62.5rem) {
   .main-submenu_style_agents-third {
     left: unset;
     top: 50px;
     right: 48px;
+  }
+}
+
+@media (max-width: 71.875rem) {
+  .main-submenu_style_agents-fourth {
+    left: 130px;
   }
 }
 
@@ -8131,11 +8155,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: white !important;
 }
 
-.prof-control-panel__select-label_type_about-me {
-  margin-right: 10px;
-}
-
-.prof-control-panel__select-label_type_about-me:last-of-type {
+.prof-control-panel__select-label_type_about-me:last-child {
   margin-right: 0;
 }
 
@@ -8422,7 +8442,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__select-input_type_about-me {
-  width: 110px;
+  width: 105px;
+  padding-left: 7px;
 }
 
 @media (max-width: 71.875rem) {
@@ -8436,7 +8457,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__select-input_type_about-me-wide {
-  width: 160px;
+  width: 155px;
+  padding-left: 7px;
 }
 
 @media (max-width: 71.875rem) {
@@ -8960,8 +8982,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__row_style_agent-archive {
-  -ms-grid-columns: 85px 160px 95px 160px 75px 100px 133px 95px;
-      grid-template-columns: 85px 160px 95px 160px 75px 100px 133px 95px;
+  -ms-grid-columns: 80px 155px 95px 155px 70px 100px 120px 95px;
+      grid-template-columns: 80px 155px 95px 155px 70px 100px 120px 95px;
 }
 
 .prof-table__row_style_users {

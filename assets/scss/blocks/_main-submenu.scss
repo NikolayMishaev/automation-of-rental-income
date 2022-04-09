@@ -103,6 +103,9 @@
             top: 100px;
         }
         &-first {
+            @media (max-width: rem(1150px)) {
+                left: 87px;
+            }
             @media (max-width: rem(1000px)) {
                 left: unset;
                 top: 50px;
@@ -110,6 +113,9 @@
             }
         }
         &-second {
+            @media (max-width: rem(1150px)) {
+                left: 130px;
+            }
             @media (max-width: rem(1000px)) {
                 left: unset;
                 top: 50px;
@@ -117,6 +123,9 @@
             }
         }
         &-third {
+            @media (max-width: rem(1150px)) {
+                left: 106px;
+            }
             @media (max-width: rem(1000px)) {
                 left: unset;
                 top: 50px;
@@ -124,6 +133,9 @@
             }
         }
         &-fourth {
+            @media (max-width: rem(1150px)) {
+                left: 130px;
+            }
             @media (max-width: rem(1000px)) {
                 left: unset;
                 top: 50px;
