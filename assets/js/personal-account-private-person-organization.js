@@ -4,7 +4,33 @@ import {
     switchButtons,
 } from "./common-JS-to-all-pages.js";
 
-// логика переключения табов: "Документы" "Избранные объекты" "О себе"
+// стейты
+
+const state = {
+    currentOpenSubmenu: null,
+    cursorsSelect: {
+        "objects-status": document.querySelector("#cursor-objects-status"),
+        "objects-sort": document.querySelector("#cursor-objects-sort"),
+        "objects-page": document.querySelector("#cursor-objects-page"),
+    },
+    submenuSelect: {
+        "objects-status": document.querySelector("#submenu-objects-status"),
+        "objects-sort": document.querySelector("#submenu-objects-sort"),
+        "objects-page": document.querySelector("#submenu-objects-page"),
+    },
+    inputsSelect: {
+        "objects-status": document.querySelector("#input-objects-status"),
+        "objects-sort": document.querySelector("#input-objects-sort"),
+        "checkbox-free": document.querySelector("#input-objects-checkobx-free"),
+        "checkbox-free-soon": document.querySelector(
+            "#input-objects-checkobx-free-soon"
+        ),
+        "objects-page": document.querySelector("#input-objects-page"),
+    },
+};
+
+// логика переключения табов: "Документы", "Избранные объекты", "О себе"
+
 const tabButtons = document.querySelectorAll(".prof-general__button");
 
 const generalContentDocuments = document.querySelector("#documents");
@@ -18,67 +44,79 @@ const arrayGeneralContent = [
 ];
 
 tabButtons.forEach((i) =>
-    i.addEventListener("click", () => {
-        if (i.closest(".prof-general__button_active")) {
-            return;
-        }
-        tabButtons.forEach((j) =>
-            deleteActiveClass(j, "prof-general__button_active")
-        );
-        i.classList.add("prof-general__button_active");
-        arrayGeneralContent.forEach((c) => {
-            if (c.ariaLabel === i.ariaLabel) {
-                c.classList.remove("mix-display-none");
-            } else {
-                c.classList.add("mix-display-none");
-            }
-        });
-    })
+    i.addEventListener("click", (e) =>
+        switchButtons(
+            e.target,
+            tabButtons,
+            arrayGeneralContent,
+            "prof-general__button_active",
+            "mix-display-none"
+        )
+    )
 );
-function deleteActiveClass(element, className) {
-    element.classList.remove(className);
+
+// логика переключения кнопок на вкладке "Документы": "Список", "Карточки"
+
+const favouritesButtons = document.querySelectorAll(".favourites-button");
+
+const contentTable = document.querySelector("#favourites-table");
+const contentCards = document.querySelector("#favourites-cards");
+
+favouritesButtons.forEach((i) =>
+    i.addEventListener("click", (e) =>
+        switchButtons(
+            e.target,
+            favouritesButtons,
+            [contentTable, contentCards],
+            "prof-control-panel__button_active",
+            "mix-display-none"
+        )
+    )
+);
+
+// логика действий при загрузе страницы на определенном разрешении
+
+if (window.innerWidth < 1151) {
+    removeClassElement(contentCards, "mix-display-none");
 }
 
-// логика переключения список, карточки
-const buttonsChangeViewContainer = document.querySelector(
-    ".prof-control-panel__buttons-container"
-);
+// логика действий при ресайзе
+// общие функции для этого блока логики
 
-const buttonList = document.querySelector("#button-list");
-const buttonCards = document.querySelector("#button-cards");
+function resetActiveClassButton(arrayButtons) {
+    arrayButtons.forEach((i) => {
+        if (i.ariaLabel === "list") {
+            removeClassElement(i, "prof-control-panel__button_active");
+        } else {
+            addClassElement(i, "prof-control-panel__button_active");
+        }
+    });
+}
 
-const cardsContainer = document.querySelector(".prof-general__cards-container");
-const tableContainer = document.querySelector(".prof-table");
+window.addEventListener("resize", function (e) {
+    // если таблица скрыта, то ничего не делаем
+    if (e.target.innerWidth < 1151) {
+        if (!contentTable.classList.contains("mix-display-none")) {
+            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
+            removeClassElement(contentCards, "mix-display-none");
+            addClassElement(contentTable, "mix-display-none");
+            resetActiveClassButton(favouritesButtons);
+        }
+    }
 
-buttonsChangeViewContainer.addEventListener("click", (e) => {
-    if (e.target.ariaLabel === "button-list") {
-        e.target.classList.add("prof-control-panel__button_active");
-        buttonCards.classList.remove("prof-control-panel__button_active");
-        tableContainer.classList.remove("mix-display-none");
-        cardsContainer.classList.add("mix-display-none");
-    } else {
-        e.target.classList.add("prof-control-panel__button_active");
-        buttonList.classList.remove("prof-control-panel__button_active");
-        hideTable();
+    if (e.target.innerWidth > 750) {
+        resetVisibleDymanicClassAsideBlockMobile();
+    }
+    if (e.target.innerWidth > 1550) {
+        closeMobileBlockContacts();
+    }
+    if (e.target.innerWidth > 1780) {
+        resetVisibleDymanicClassAsideBlock();
+    }
+    if (innerWidth < 1551 && innerWidth > 750) {
+        panelTasks.classList.remove("mix-display-none");
     }
 });
-
-// логика сркытия таблицы при первой загрузке
-if (window.innerWidth < 1151) {
-    hideTable();
-    buttonsChangeViewContainer.classList.add("mix-display-none");
-} else {
-    buttonsChangeViewContainer.classList.remove("mix-display-none");
-}
-
-function hideTable() {
-    tableContainer.classList.add("mix-display-none");
-    cardsContainer.classList.remove("mix-display-none");
-    buttonList.classList.remove("prof-control-panel__button_active");
-    buttonCards.classList.add("prof-control-panel__button_active");
-}
-
-// действие прописано в window.addEventListener('resize;)
 
 // логика смены чата на задачи по клику на кнопку
 
@@ -132,48 +170,6 @@ tasksContainer.forEach((i) =>
     })
 );
 
-// логика действий при загрузе страницы на определенном разрешении
-
-if (window.innerWidth < 1151) {
-    removeClassElement(cardsContainer, "mix-display-none");
-}
-
-// логика действий при ресайзе
-// общие функции для этого блока логики
-
-function resetActiveClassButton(buttons) {
-    if (buttons.ariaLabel === "button-list") {
-        removeClassElement(buttons, "prof-control-panel__button_active");
-    } else {
-        addClassElement(buttons, "prof-control-panel__button_active");
-    }
-}
-
-window.addEventListener("resize", function (e) {
-    // если таблица скрыта, то ничего не делаем
-    if (e.target.innerWidth < 1151) {
-        if (!tableContainer.classList.contains("mix-display-none")) {
-            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
-            removeClassElement(cardsContainer, "mix-display-none");
-            addClassElement(tableContainer, "mix-display-none");
-            resetActiveClassButton(buttonsChangeViewContainer);
-        }
-    }
-
-    if (e.target.innerWidth > 750) {
-        resetVisibleDymanicClassAsideBlockMobile();
-    }
-    if (e.target.innerWidth > 1550) {
-        closeMobileBlockContacts();
-    }
-    if (e.target.innerWidth > 1780) {
-        resetVisibleDymanicClassAsideBlock();
-    }
-    if (innerWidth < 1551 && innerWidth > 750) {
-        panelTasks.classList.remove("mix-display-none");
-    }
-});
-
 function resetVisibleDymanicClassAsideBlock() {
     panelTasksMain.classList.remove("mix-display-none");
     panelTasksMain.classList.remove("mix-display-flex");
@@ -217,141 +213,6 @@ function closeMobileBlockContacts() {
     generalPanel.classList.remove("mix-display-none");
 }
 
-// скрыть подменю селектов если клик сработал за их пределами
-
-document.addEventListener("click", (e) => {
-    if (!e.target.closest(".prof-control-panel__select-label")) {
-        hideAllSubmenu();
-    }
-});
-
-// логика работы селектов общие функции:
-
-function showSubmenu(submenu, cursor) {
-    submenu.classList.add("mix-visible");
-    cursor.classList.add("prof-control-panel__cursor_active");
-}
-
-function hideSubmenu(submenu, cursor) {
-    submenu.classList.remove("mix-visible");
-    cursor.classList.remove("prof-control-panel__cursor_active");
-}
-
-function hideAllSubmenu() {
-    hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-    hideSubmenu(submenuSelectSort, cursorSelectSort);
-    hideSubmenu(submenuSelectPage, cursorSelectPage);
-}
-
-function resetActiveClass(arrayElements, className) {
-    arrayElements.forEach((i) => i.classList.remove(className));
-}
-
-// логика работы селекта "Статус"
-
-const LabelSelectStatus = document.querySelector("#label-select-status");
-const cursorSelectStatus = document.querySelector("#cursor-select-status");
-const inputSelectStatus = document.querySelector("#input-select-status");
-const submenuSelectStatus = document.querySelector("#submenu-select-status");
-const inputCheckboxFree = document.querySelector(
-    "#input-select-status-checkbox-free"
-);
-const inputCheckboxSoonFree = document.querySelector(
-    "#input-select-status-checkbox-soon-free"
-);
-
-LabelSelectStatus.addEventListener("click", (e) => {
-    if (inputCheckboxFree.checked && inputCheckboxSoonFree.checked) {
-        inputSelectStatus.value = "Выбрано несколько";
-    } else if (inputCheckboxFree.checked) {
-        inputSelectStatus.value = "Свободен";
-    } else if (inputCheckboxSoonFree.checked) {
-        inputSelectStatus.value = "Скоро освободится";
-    } else {
-        inputSelectStatus.value = "Все";
-    }
-    if (e.target.id === "button-confirm-select-status") {
-        hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-    }
-    if (e.target.id === "label-select-status" && innerWidth < 1001) {
-        hideAllSubmenu();
-        showSubmenu(submenuSelectStatus, cursorSelectStatus);
-    }
-    if (e.target.id !== "input-select-status") {
-        return;
-    }
-    if (
-        cursorSelectStatus.classList.contains(
-            "prof-control-panel__cursor_active"
-        )
-    ) {
-        hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-    } else {
-        hideAllSubmenu();
-        showSubmenu(submenuSelectStatus, cursorSelectStatus);
-    }
-});
-
-// логика работы селекта "Сортировать"
-
-const LabelSelectSort = document.querySelector("#label-select-sort");
-const cursorSelectSort = document.querySelector("#cursor-select-sort");
-const inputSelectSort = document.querySelector("#input-select-sort");
-const submenuSelectSort = document.querySelector("#submenu-select-sort");
-const itemsSubmenuSort = document.querySelectorAll(".item-submenu-sort");
-
-LabelSelectSort.addEventListener("click", (e) => {
-    if (e.target.ariaLabel === "item-sort-menu") {
-        inputSelectSort.value = e.target.innerText;
-        resetActiveClass(itemsSubmenuSort, "main-submenu__item_active");
-        e.target.classList.add("main-submenu__item_active");
-        hideSubmenu(submenuSelectSort, cursorSelectSort);
-    }
-    if (e.target.id === "label-select-sort" && innerWidth < 1001) {
-        hideAllSubmenu();
-        showSubmenu(submenuSelectSort, cursorSelectSort);
-    }
-    if (e.target.id !== "input-select-sort") {
-        return;
-    }
-    if (
-        cursorSelectSort.classList.contains("prof-control-panel__cursor_active")
-    ) {
-        hideSubmenu(submenuSelectSort, cursorSelectSort);
-    } else {
-        hideAllSubmenu();
-        showSubmenu(submenuSelectSort, cursorSelectSort);
-    }
-});
-
-// логика работы селекта "выбор количества карточек"
-
-const LabelSelectPage = document.querySelector("#label-select-page");
-const cursorSelectPage = document.querySelector("#cursor-select-page");
-const inputSelectPage = document.querySelector("#input-select-page");
-const submenuSelectPage = document.querySelector("#submenu-select-page");
-const itemsSubmenuPage = document.querySelectorAll(".item-submenu-page");
-
-LabelSelectPage.addEventListener("click", (e) => {
-    if (e.target.ariaLabel === "item-page-menu") {
-        inputSelectPage.value = e.target.innerText;
-        resetActiveClass(itemsSubmenuPage, "main-submenu__item_active");
-        e.target.classList.add("main-submenu__item_active");
-        hideSubmenu(submenuSelectPage, cursorSelectPage);
-    }
-    if (e.target.id !== "input-select-page") {
-        return;
-    }
-    if (
-        cursorSelectPage.classList.contains("prof-control-panel__cursor_active")
-    ) {
-        hideSubmenu(submenuSelectPage, cursorSelectPage);
-    } else {
-        hideAllSubmenu();
-        showSubmenu(submenuSelectPage, cursorSelectPage);
-    }
-});
-
 // логика оценка работы менеджера звездочками
 
 const mobileStars = document.querySelectorAll(".prof-aside__star_type_mobile");
@@ -374,6 +235,10 @@ containersStars.forEach((j) =>
     })
 );
 
+function resetActiveClass(arrayElements, className) {
+    arrayElements.forEach((i) => i.classList.remove(className));
+}
+
 function addActiveClassStars(arrayStars, currentValue) {
     arrayStars.forEach((i, c) => {
         if (c < currentValue) {
@@ -383,3 +248,176 @@ function addActiveClassStars(arrayStars, currentValue) {
         }
     });
 }
+
+// логика по работе селектов
+
+// проверить, где сработал клик, если за пределами тела селекта, то запустить ф-ию для скрытия текущего открытого подменю
+const checkClickOutsideSelect = (e) => {
+    // если клик произошел за пределами селекта(label)
+    if (!e.target.closest(".prof-control-panel__select-label")) {
+        // скрыть текущее подменю
+        hideCurrentSubmenu(state.currentOpenSubmenu, true);
+    }
+};
+
+function setInputValueByValueActiveCheckbox() {
+    if (
+        state.inputsSelect["checkbox-free"].checked &&
+        state.inputsSelect["checkbox-free-soon"].checked
+    ) {
+        state.inputsSelect["objects-status"].value = "Выбрано несколько";
+    } else if (state.inputsSelect["checkbox-free"].checked) {
+        state.inputsSelect["objects-status"].value = "Свободен";
+    } else if (state.inputsSelect["checkbox-free-soon"].checked) {
+        state.inputsSelect["objects-status"].value = "Скоро освободится";
+    } else {
+        state.inputsSelect["objects-status"].value = "Все";
+    }
+}
+
+function toggleVisibleSubmenuSecondLevel(currentLabel) {
+    if (
+        !currentLabel.classList.contains(
+            "prof-control-panel__select-label_active"
+        )
+    ) {
+        addClassElement(
+            state.submenuSelect[currentLabel.ariaLabel],
+            "mix-visible"
+        );
+        addClassElement(
+            currentLabel,
+            "prof-control-panel__select-label_active"
+        );
+        state.currentOpenSubmenuSecondLevel =
+            state.submenuSelect[currentLabel.ariaLabel];
+        if (state.cursorsSelect[currentLabel.ariaLabel]) {
+            addClassElement(
+                state.cursorsSelect[currentLabel.ariaLabel],
+                "prof-control-panel__cursor_active"
+            );
+        }
+    } else {
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+    }
+}
+
+// установить слушатель клика на весь документ и отслеживать клик вне тела селекта
+function setListenerClickOutsideSelect() {
+    document.addEventListener("click", checkClickOutsideSelect);
+}
+
+// скрыть текущее открытое подменю селекта
+function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
+    // если в стейте есть текущее открытое подменю
+    if (submenu) {
+        // найти по подменю текущий селект
+        const currentSelectLabel = submenu.closest(
+            ".prof-control-panel__select-label"
+        );
+        // удалить активный класс у текущего селекта
+        removeClassElement(
+            currentSelectLabel,
+            "prof-control-panel__select-label_active"
+        );
+        // удалить активный класс у текущего курсора
+        if (state.cursorsSelect[currentSelectLabel.ariaLabel]) {
+            removeClassElement(
+                state.cursorsSelect[currentSelectLabel.ariaLabel],
+                "prof-control-panel__cursor_active"
+            );
+        }
+        // скрыть текущее открытое подменю
+        removeClassElement(submenu, "mix-visible");
+        // удалить текущий селект из стейта
+        submenu = null;
+        if (deleteListenerOverlay) {
+            // удалить слушатель document, т.к. все селекты закрыты
+            document.removeEventListener("click", checkClickOutsideSelect);
+        }
+    }
+}
+
+const buttonsSelect = document.querySelectorAll(".button-toggle-select");
+
+buttonsSelect.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        const currentLabel = e.target.closest(
+            ".prof-control-panel__select-label"
+        );
+        if (
+            e.target.closest(".label-checkbox") &&
+            e.target.closest(".label-checkbox").ariaLabel === "checkbox"
+        ) {
+            setInputValueByValueActiveCheckbox();
+            return;
+        }
+        if (e.target.ariaLabel === "item") {
+            state.inputsSelect[currentLabel.ariaLabel].value =
+                e.target.textContent.trim();
+            Array.from(
+                e.target.closest(".main-submenu__list").children
+            ).forEach((i) =>
+                removeClassElement(i, "main-submenu__item_active")
+            );
+            addClassElement(
+                e.target.closest(".main-submenu__item"),
+                "main-submenu__item_active"
+            );
+            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            return;
+        }
+        if (e.target.classList.contains("prof-control-panel__button")) {
+            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            return;
+        }
+        if (e.target.closest(".main-submenu")) {
+            const currentLabelSecondLevel = e.target.closest(
+                ".prof-control-panel__select-label"
+            );
+            if (
+                currentLabelSecondLevel &&
+                currentLabelSecondLevel.ariaLabel.includes("division")
+            ) {
+                toggleVisibleSubmenuSecondLevel(currentLabelSecondLevel);
+            }
+            return;
+        }
+        if (currentLabel) {
+            if (
+                !currentLabel.classList.contains(
+                    "prof-control-panel__select-label_active"
+                )
+            ) {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                addClassElement(
+                    state.submenuSelect[currentLabel.ariaLabel],
+                    "mix-visible"
+                );
+                state.currentOpenSubmenu =
+                    state.submenuSelect[currentLabel.ariaLabel];
+                setListenerClickOutsideSelect();
+                addClassElement(
+                    currentLabel,
+                    "prof-control-panel__select-label_active"
+                );
+                if (state.cursorsSelect[currentLabel.ariaLabel]) {
+                    addClassElement(
+                        state.cursorsSelect[currentLabel.ariaLabel],
+                        "prof-control-panel__cursor_active"
+                    );
+                }
+            } else {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            }
+        }
+    })
+);
+
+// логика закрытия попапа редактирования аватара
+
+const buttonClose = document.querySelector("#button-close-popup-sign-ind");
+const popoupAvatar = document.querySelector(".modal-edit-avatar");
+buttonClose.addEventListener("click", (e) => {
+    popoupAvatar.style = "display-none";
+});

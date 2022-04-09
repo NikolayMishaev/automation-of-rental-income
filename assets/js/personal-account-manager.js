@@ -260,15 +260,15 @@ const agentContentTable = document.querySelector("#agent-list");
 const agentContentCards = document.querySelector("#agent-cards");
 
 agentButtons.forEach((i) =>
-    i.addEventListener("click", (e) =>
+    i.addEventListener("click", (e) => {
         switchButtons(
             e.target,
             agentButtons,
             [agentContentTable, agentContentCards],
             "prof-control-panel__button_active",
             "mix-display-none"
-        )
-    )
+        );
+    })
 );
 
 // логика переключения кнопок на вкладке "Аналитические данные"
@@ -497,143 +497,6 @@ function closeMobileBlockContacts() {
     generalPanel.classList.remove("mix-display-none");
 }
 
-// скрыть подменю селектов если клик сработал за их пределами
-
-// function listenClickOutsideSelect() {
-//     document.addEventListener("click", (e) => {
-//         if (!e.target.closest(".prof-control-panel__select-label")) {
-//             hideAllSubmenu();
-//         }
-//     });
-// }
-
-// логика работы селектов общие функции:
-
-// function showSubmenu(submenu, cursor) {
-//     submenu.classList.add("mix-visible");
-//     cursor.classList.add("prof-control-panel__cursor_active");
-// }
-
-// function hideSubmenu(submenu, cursor) {
-//     submenu.classList.remove("mix-visible");
-//     cursor.classList.remove("prof-control-panel__cursor_active");
-// }
-
-// function hideAllSubmenu() {
-//     hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     hideSubmenu(submenuSelectSort, cursorSelectSort);
-//     hideSubmenu(submenuSelectPage, cursorSelectPage);
-// }
-
-// function resetActiveClass(arrayElements, className) {
-//     arrayElements.forEach((i) => i.classList.remove(className));
-// }
-
-// логика работы селекта "Статус"
-
-// const LabelSelectStatus = document.querySelector("#label-select-status");
-// const cursorSelectStatus = document.querySelector("#cursor-select-status");
-// const inputSelectStatus = document.querySelector("#input-select-status");
-// const submenuSelectStatus = document.querySelector("#submenu-select-status");
-// const inputCheckboxFree = document.querySelector(
-//     "#input-select-status-checkbox-free"
-// );
-// const inputCheckboxSoonFree = document.querySelector(
-//     "#input-select-status-checkbox-soon-free"
-// );
-
-// LabelSelectStatus.addEventListener("click", (e) => {
-//     if (inputCheckboxFree.checked && inputCheckboxSoonFree.checked) {
-//         inputSelectStatus.value = "Выбрано несколько";
-//     } else if (inputCheckboxFree.checked) {
-//         inputSelectStatus.value = "Свободен";
-//     } else if (inputCheckboxSoonFree.checked) {
-//         inputSelectStatus.value = "Скоро освободится";
-//     } else {
-//         inputSelectStatus.value = "Все";
-//     }
-//     if (e.target.id === "button-confirm-select-status") {
-//         hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     }
-//     if (e.target.id === "label-select-status" && innerWidth < 1001) {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     }
-//     if (e.target.id !== "input-select-status") {
-//         return;
-//     }
-//     if (
-//         cursorSelectStatus.classList.contains(
-//             "prof-control-panel__cursor_active"
-//         )
-//     ) {
-//         hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     } else {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     }
-// });
-
-// логика работы селекта "Сортировать"
-
-// const LabelSelectSort = document.querySelector("#label-select-sort");
-// const cursorSelectSort = document.querySelector("#cursor-select-sort");
-// const inputSelectSort = document.querySelector("#input-select-sort");
-// const submenuSelectSort = document.querySelector("#submenu-select-sort");
-// const itemsSubmenuSort = document.querySelectorAll(".item-submenu-sort");
-
-// LabelSelectSort.addEventListener("click", (e) => {
-//     if (e.target.ariaLabel === "item-sort-menu") {
-//         inputSelectSort.value = e.target.innerText;
-//         resetActiveClass(itemsSubmenuSort, "main-submenu__item_active");
-//         e.target.classList.add("main-submenu__item_active");
-//         hideSubmenu(submenuSelectSort, cursorSelectSort);
-//     }
-//     if (e.target.id === "label-select-sort" && innerWidth < 1001) {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectSort, cursorSelectSort);
-//     }
-//     if (e.target.id !== "input-select-sort") {
-//         return;
-//     }
-//     if (
-//         cursorSelectSort.classList.contains("prof-control-panel__cursor_active")
-//     ) {
-//         hideSubmenu(submenuSelectSort, cursorSelectSort);
-//     } else {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectSort, cursorSelectSort);
-//     }
-// });
-
-// логика работы селекта "выбор количества карточек"
-
-// const LabelSelectPage = document.querySelector("#label-select-page");
-// const cursorSelectPage = document.querySelector("#cursor-select-page");
-// const inputSelectPage = document.querySelector("#input-select-page");
-// const submenuSelectPage = document.querySelector("#submenu-select-page");
-// const itemsSubmenuPage = document.querySelectorAll(".item-submenu-page");
-
-// LabelSelectPage.addEventListener("click", (e) => {
-//     if (e.target.ariaLabel === "item-page-menu") {
-//         inputSelectPage.value = e.target.innerText;
-//         resetActiveClass(itemsSubmenuPage, "main-submenu__item_active");
-//         e.target.classList.add("main-submenu__item_active");
-//         hideSubmenu(submenuSelectPage, cursorSelectPage);
-//     }
-//     if (e.target.id !== "input-select-page") {
-//         return;
-//     }
-//     if (
-//         cursorSelectPage.classList.contains("prof-control-panel__cursor_active")
-//     ) {
-//         hideSubmenu(submenuSelectPage, cursorSelectPage);
-//     } else {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectPage, cursorSelectPage);
-//     }
-// });
-
 // логика оценка работы менеджера звездочками
 
 const mobileStars = document.querySelectorAll(".prof-aside__star_type_mobile");
@@ -849,6 +712,8 @@ buttonsSelect.forEach((i) =>
         }
     })
 );
+
+// логика закрытия попапа редактирования аватара
 
 const buttonClose = document.querySelector("#button-close-popup-sign-ind");
 const popoupAvatar = document.querySelector(".modal-edit-avatar");

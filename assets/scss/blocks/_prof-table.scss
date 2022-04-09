@@ -1,10 +1,13 @@
 .prof-table {
     &__row {
         display: grid;
-        grid-template-columns: 199px 90px 110px 180px 152px 149px;
+        grid-template-columns: 199px 90px 110px 180px 152px 172px;
         column-gap: 16px;
         align-items: center;
         border-top: 1px solid #e3e7e8;
+        @media (max-width: rem(1550px)) {
+            grid-template-columns: 199px 90px 110px 180px 152px 203px;
+        }
         &:first-child {
             margin-top: 16px;
         }

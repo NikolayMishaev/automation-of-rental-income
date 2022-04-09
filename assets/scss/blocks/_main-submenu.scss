@@ -61,6 +61,15 @@
             left: unset;
         }
     }
+    &_style_prof-status-list {
+        left: 0;
+        right: 0;
+        top: 34px;
+        @media (max-width: rem(1000px)) {
+            left: unset;
+            right: 48px;
+        }
+    }
     &_style_main {
         left: 0;
         right: 0;
@@ -191,7 +200,6 @@
         }
         &:hover {
             background-color: $accent-TCX50;
-            opacity: 0.7;
             color: white;
             cursor: pointer;
         }
@@ -232,6 +240,7 @@
         }
         &_style_prof-control-panel {
             &:hover {
+                opacity: 1;
                 cursor: auto;
                 background-color: unset;
                 color: unset;
@@ -252,6 +261,7 @@
                 cursor: auto;
                 background-color: unset;
                 color: unset;
+                opacity: 1;
             }
         }
         &_style_align-center {

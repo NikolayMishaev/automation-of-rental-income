@@ -46,7 +46,7 @@ const buttonsOpenPopup = document.querySelectorAll(".button-open-popup");
 
 buttonsOpenPopup.forEach((i) =>
     i.addEventListener("click", (e) => {
-        state[i.ariaLabel].classList.add("mix-visible-scale");
+        removeClassElement(state[i.ariaLabel], "mix-display-none");
     })
 );
 
@@ -61,7 +61,7 @@ overlaysPopup.forEach((i) =>
             e.target.classList.contains("main-popup__close") ||
             e.target.classList.contains("button-close-popup")
         ) {
-            removeClassElement(i, "mix-visible-scale");
+            addClassElement(i, "mix-display-none");
         }
     })
 );
@@ -139,8 +139,8 @@ function sendRequest(target) {
         if (headerCityName) {
             headerCityName.textContent = target.textContent.trim();
         }
-        // formChangeCity.submit();
-        removeClassElement(popupChangeCity, "mix-visible-scale");
+        formChangeCity.submit();
+        addClassElement(popupChangeCity, "mix-display-none");
     } else {
         showInputError();
     }
