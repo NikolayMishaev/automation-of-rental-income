@@ -563,6 +563,9 @@
             border: none;
             padding: 0;
             height: 32px;
+            &:first-of-type {
+                margin-top: 0;
+            }
             @media (max-width: rem(1000px)) {
                 padding: 8px 0;
                 order: -1;

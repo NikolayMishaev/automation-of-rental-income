@@ -3677,7 +3677,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: url("./../images/avatar-photo.png") no-repeat center/cover;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -o-object-fit: cover;
@@ -8701,6 +8700,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: none;
   padding: 0;
   height: 32px;
+}
+
+.prof-control-panel__row_type_agent:first-of-type {
+  margin-top: 0;
 }
 
 @media (max-width: 62.5rem) {
