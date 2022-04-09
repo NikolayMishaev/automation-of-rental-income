@@ -86,6 +86,8 @@
         color: #6d7678;
         position: relative;
         transition: $transition;
+        display: flex;
+        align-items: center;
         @media (max-width: rem(1000px)) {
             border-radius: 4px;
         }
@@ -312,11 +314,12 @@
         }
     }
     &__select-input {
-        width: 150px;
+        width: 187px;
         height: 32px;
         border: 1px solid #e1e5eb;
         border-radius: 4px;
         padding: 4px 19px 4px 12px;
+        margin-left: 4px;
         &:disabled {
             background-color: #fff;
             font-style: normal;

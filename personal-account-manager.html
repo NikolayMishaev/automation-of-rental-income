@@ -458,7 +458,7 @@
                       <li class="prof-table__row-heading text-p2">Код ВП</li>
                       <li class="prof-table__row-heading text-p2">Категория</li>
                       <li class="prof-table__row-heading text-p2">
-                        Площадь, м<span class="prof-table__index">2</span>
+                        <p class="prof-table__text">Площадь, м<span class="prof-table__index">2</span></p>
                       </li>
                       <li class="prof-table__row-heading text-p2">Стоимость в месяц, &#8381;</li>
                     </ul>
@@ -843,13 +843,13 @@
                         class="prof-control-panel__buttons-container mix-only-desktop-1150px"
                       >
                         <button
-                          aria-label="actual"
+                          aria-label="list"
                           class="prof-control-panel__button prof-control-panel__button_active heading-h4 agent-button"
                         >
                           Список
                         </button>
                         <button
-                          aria-label="archive"
+                          aria-label="cards"
                           class="prof-control-panel__button heading-h4 agent-button"
                         >
                           Карточки
@@ -1037,7 +1037,7 @@
                     </div>
                   </div>
 
-                  <div class="prof-general__agent-container" aria-label="actual" id="agent-actual">
+                  <div class="prof-general__agent-container" aria-label="list" id="agent-list">
                     <div class="prof-table mix-only-desktop-1150px">
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-heading text-p2">Статус просмотра</li>
@@ -1059,7 +1059,7 @@
                         <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
                         <li class="prof-table__row-content heading-h5">
                             <button class="prof-table__button heading-h5">
-                                В архив
+                                Архив
                             </button>
                         </li>
                         <li class="prof-table__row-content heading-h5">
@@ -1078,7 +1078,7 @@
                         <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
                         <li class="prof-table__row-content heading-h5">
                             <button class="prof-table__button heading-h5">
-                                В архив
+                                Архив
                             </button>
                         </li>
                         <li class="prof-table__row-content heading-h5">
@@ -1097,7 +1097,7 @@
                         <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
                         <li class="prof-table__row-content heading-h5">
                             <button class="prof-table__button heading-h5">
-                                В архив
+                                Архив
                             </button>
                         </li>
                         <li class="prof-table__row-content heading-h5">
@@ -1116,7 +1116,7 @@
                         <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_red"></span>Отказано</p></li>
                         <li class="prof-table__row-content heading-h5">
                             <button class="prof-table__button heading-h5">
-                                В архив
+                                Архив
                             </button>
                         </li>
                         <li class="prof-table__row-content heading-h5">
@@ -1135,7 +1135,7 @@
                         <li class="prof-table__row-content heading-h5"><p class="prof-table__caption"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
                         <li class="prof-table__row-content heading-h5">
                             <button class="prof-table__button heading-h5">
-                                В архив
+                                Архив
                             </button>
                         </li>
                         <li class="prof-table__row-content heading-h5">
@@ -1227,8 +1227,8 @@
 
                   <div
                     class="prof-general__agent-container mix-display-none"
-                    aria-label="archive"
-                    id="agent-archive"
+                    aria-label="cards"
+                    id="agent-cards"
                   >
                   <ul class="prof-general__forms-agent-container">
                     <li class="form-agent-card">
@@ -2050,7 +2050,7 @@
                               <li
                                 class="main-submenu__item main-submenu__item_style_divisor prof-control-panel__title-submenu"
                               >
-                                Площадь объекта, м<span class="prof-control-panel__index">2</span>
+                                <p class="main-submenu__text">Площадь объекта, м<span class="main-submenu__index">2</span></p>
                               </li>
                               <li class="main-submenu__item main-submenu__item_style_division">
                                 <label class="prof-control-panel__label-number text-p2">
@@ -2151,11 +2151,11 @@
                           <li class="prof-table__row-heading text-p2">Номер</li>
                           <li class="prof-table__row-heading text-p2">Город</li>
                           <li class="prof-table__row-heading text-p2">
-                            АП, &#8381; за м<span class="prof-table__index">2</span>
+                            <p class="prof-table__text">АП, &#8381; за м<span class="prof-table__index">2</span></p>
                           </li>
                           <li class="prof-table__row-heading text-p2">Дата</li>
                           <li class="prof-table__row-heading text-p2">
-                            Площадь объекта, м<span class="prof-table__index">2</span>
+                            <p class="prof-table__text">Площадь объекта, м<span class="prof-table__index">2</span></p>
                           </li>
                         </ul>
                         <ul class="prof-table__row prof-table__row_style_size">
@@ -2467,7 +2467,7 @@
                               <li
                                 class="main-submenu__item main-submenu__item_style_divisor prof-control-panel__title-submenu"
                               >
-                                Площадь объекта, м<span class="prof-control-panel__index">2</span>
+                              <p class="main-submenu__text">Площадь объекта, м<span class="main-submenu__index">2</span></p>
                               </li>
                               <li class="main-submenu__item main-submenu__item_style_division">
                                 <label class="prof-control-panel__label-number text-p2">
@@ -3830,7 +3830,7 @@
                       <li class="prof-table__row-heading text-p2">Номер</li>
                       <li class="prof-table__row-heading text-p2">Контрагент</li>
                       <li class="prof-table__row-heading text-p2">
-                        Площадь, м<span class="prof-table__index">2</span>
+                          <p class="prof-table__text">Площадь, м<span class="prof-table__index">2</span></p>
                       </li>
                       <li class="prof-table__row-heading text-p2">Текущая арендная ставка</li>
                       <li class="prof-table__row-heading text-p2">Предложенная арендная ставка</li>

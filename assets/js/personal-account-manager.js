@@ -256,15 +256,15 @@ objectsButtons.forEach((i) =>
 
 const agentButtons = document.querySelectorAll(".agent-button");
 
-const contentActual = document.querySelector("#agent-actual");
-const contentArchive = document.querySelector("#agent-archive");
+const agentContentTable = document.querySelector("#agent-list");
+const agentContentCards = document.querySelector("#agent-cards");
 
 agentButtons.forEach((i) =>
     i.addEventListener("click", (e) =>
         switchButtons(
             e.target,
             agentButtons,
-            [contentActual, contentArchive],
+            [agentContentTable, agentContentCards],
             "prof-control-panel__button_active",
             "mix-display-none"
         )

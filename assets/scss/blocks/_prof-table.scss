@@ -12,7 +12,7 @@
             grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
         }
         &_style_agent {
-            grid-template-columns: 85px 160px 100px 160px 75px 86px 110px 95px;
+            grid-template-columns: 85px 160px 95px 160px 75px 100px 100px 95px;
         }
         &_style_users {
             grid-template-columns: 40px 297px 160px 160px 220px;
@@ -80,6 +80,9 @@
         }
     }
     &__index {
+        position: absolute;
+        right: -4px;
+        top: -4px;
         vertical-align: super;
         font-size: 8px;
     }
@@ -124,5 +127,9 @@
     }
     &__caption {
         font-weight: 400;
+    }
+    &__text {
+        position: relative;
+        display: inline;
     }
 }
