@@ -772,6 +772,15 @@ buttonsSelect.forEach((i) =>
         const currentLabel = e.target.closest(
             ".prof-control-panel__select-label"
         );
+        if (e.target.closest(".prof-control-panel__label-custom")) {
+            const currentCheckedValue = e.target
+                .closest(".prof-control-panel__label-custom")
+                .textContent.trim();
+            state.inputsSelect[currentLabel.ariaLabel].value =
+                currentCheckedValue;
+            switchContentAnkets(currentCheckedValue);
+            return;
+        }
         if (
             e.target.closest(".label-checkbox") &&
             e.target.closest(".label-checkbox").ariaLabel === "checkbox"
@@ -846,3 +855,31 @@ const popoupAvatar = document.querySelector(".modal-edit-avatar");
 buttonClose.addEventListener("click", (e) => {
     popoupAvatar.style = "display-none";
 });
+
+// логика переключения вида анкет
+
+const agentActualCardsContent = document.querySelector("#agents-cards-actual");
+const agentArchiveCardsContent = document.querySelector(
+    "#agents-cards-archive"
+);
+const agentActualListContent = document.querySelector("#agents-list-actual");
+const agentArchiveListContent = document.querySelector("#agents-list-archive");
+
+function switchContentAnkets(currentCheckedValue) {
+    switch (currentCheckedValue) {
+        case "Текущие":
+            removeClassElement(agentActualCardsContent, "mix-display-none");
+            removeClassElement(agentActualListContent, "mix-display-none");
+            addClassElement(agentArchiveCardsContent, "mix-display-none");
+            addClassElement(agentArchiveListContent, "mix-display-none");
+            return;
+        case "В архиве":
+            removeClassElement(agentArchiveCardsContent, "mix-display-none");
+            removeClassElement(agentArchiveListContent, "mix-display-none");
+            addClassElement(agentActualCardsContent, "mix-display-none");
+            addClassElement(agentActualListContent, "mix-display-none");
+            return;
+        default:
+            return;
+    }
+}
