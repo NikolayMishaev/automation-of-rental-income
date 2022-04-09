@@ -8042,8 +8042,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 50px;
   border: none;
   color: #6c737d;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .prof-control-panel__button_active {
@@ -8104,8 +8102,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: relative;
   color: #6d7678;
   position: relative;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8307,8 +8303,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: 16px;
   background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
   border-radius: 4px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .prof-control-panel__select-label_type_filters-analytic.prof-control-panel__select-label_active {
@@ -8364,8 +8358,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 8px;
   height: 8px;
   background: url("./../images/icons/main-cursor-down.svg") no-repeat center/8px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .prof-control-panel__cursor_active {
@@ -8592,8 +8584,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__visible-checkbox_type_alone {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   width: 13px;
   height: 13px;
   margin-bottom: 2px;
@@ -8902,8 +8892,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 17px;
   background: url("./../images/icons/profile-star.svg") no-repeat center/cover;
   margin: 0 7px;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .prof-control-panel__star:hover {

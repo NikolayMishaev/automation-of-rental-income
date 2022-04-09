@@ -43,9 +43,11 @@ function switchButtons(
 // 3__добавить кнопке класс "button-open-popup"
 
 const buttonsOpenPopup = document.querySelectorAll(".button-open-popup");
+const inputChangeCity = document.querySelector("#input-change-city");
 
 buttonsOpenPopup.forEach((i) =>
     i.addEventListener("click", (e) => {
+        inputChangeCity.value = "";
         removeClassElement(state[i.ariaLabel], "mix-display-none");
     })
 );
@@ -69,7 +71,6 @@ overlaysPopup.forEach((i) =>
 // логика работы попапа выбора города
 
 const formChangeCity = document.querySelector("#form-change-city");
-const inputChangeCity = document.querySelector("#input-change-city");
 const containersCityName = document.querySelectorAll(
     ".popup-change-city__list"
 );
@@ -93,13 +94,13 @@ containersCityName.forEach((i) => {
     });
 });
 
-containersCityName.forEach((i) =>
-    i.addEventListener("mouseover", (e) => {
-        if (e.target.classList.contains("popup-change-city__item")) {
-            inputChangeCity.value = e.target.textContent.trim();
-        }
-    })
-);
+// containersCityName.forEach((i) =>
+//     i.addEventListener("mouseover", (e) => {
+//         if (e.target.classList.contains("popup-change-city__item")) {
+//             inputChangeCity.value = e.target.textContent.trim();
+//         }
+//     })
+// );
 
 function checkAvailabilityCity() {
     return Array.from(itemsCity).find(

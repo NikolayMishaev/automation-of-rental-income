@@ -43,7 +43,7 @@
         border-radius: 50px;
         border: none;
         color: #6c737d;
-        transition: $transition;
+
         &_active {
             background-color: #2a9b43;
             color: white;
@@ -85,7 +85,7 @@
         position: relative;
         color: #6d7678;
         position: relative;
-        transition: $transition;
+
         display: flex;
         align-items: center;
         @media (max-width: rem(1000px)) {
@@ -250,7 +250,7 @@
             margin-left: 16px;
             background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
             border-radius: 4px;
-            transition: $transition;
+
         }
         &_type_filters-analytic.prof-control-panel__select-label_active {
             background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
@@ -298,7 +298,7 @@
         width: 8px;
         height: 8px;
         background: url("./../images/icons/main-cursor-down.svg") no-repeat center/8px;
-        transition: $transition;
+
         &_active {
             transform: rotate(180deg);
         }
@@ -465,7 +465,7 @@
         border-radius: 2px;
         border: 1px solid #cfd4dc;
         &_type_alone {
-            transition: $transition;
+
             width: 13px;
             height: 13px;
             margin-bottom: 2px;
@@ -684,7 +684,7 @@
         height: 17px;
         background: url("./../images/icons/profile-star.svg") no-repeat center/cover;
         margin: 0 7px;
-        transition: $transition;
+
         &:hover {
             cursor: pointer;
             background: url("./../images/icons/profile-star-active.svg") no-repeat center/cover;

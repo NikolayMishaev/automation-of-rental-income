@@ -17,14 +17,14 @@ const state = {
         "objects-status": document.querySelector("#cursor-objects-status"),
         "objects-sort": document.querySelector("#cursor-objects-sort"),
         "objects-page": document.querySelector("#cursor-objects-page"),
-        "agents-status": document.querySelector("#cursor-agents-status"),
-        "agents-period": document.querySelector("#cursor-agents-period"),
+        // "agents-status": document.querySelector("#cursor-agents-status"),
+        // "agents-period": document.querySelector("#cursor-agents-period"),
         "agents-page-actual": document.querySelector(
             "#cursor-agents-page-actual"
         ),
-        "agents-page-archive": document.querySelector(
-            "#cursor-agents-page-archive"
-        ),
+        // "agents-page-archive": document.querySelector(
+        //     "#cursor-agents-page-archive"
+        // ),
         "analytics-period-users": document.querySelector(
             "#cursor-analytics-period-users"
         ),
@@ -73,14 +73,14 @@ const state = {
         "objects-status": document.querySelector("#submenu-objects-status"),
         "objects-sort": document.querySelector("#submenu-objects-sort"),
         "objects-page": document.querySelector("#submenu-objects-page"),
-        "agents-status": document.querySelector("#submenu-agents-status"),
-        "agents-period": document.querySelector("#submenu-agents-period"),
+        // "agents-status": document.querySelector("#submenu-agents-status"),
+        // "agents-period": document.querySelector("#submenu-agents-period"),
         "agents-page-actual": document.querySelector(
             "#submenu-agents-page-actual"
         ),
-        "agents-page-archive": document.querySelector(
-            "#submenu-agents-page-archive"
-        ),
+        // "agents-page-archive": document.querySelector(
+        //     "#submenu-agents-page-archive"
+        // ),
         "analytics-period-users": document.querySelector(
             "#submenu-analytics-period-users"
         ),
@@ -143,14 +143,14 @@ const state = {
         "objects-status": document.querySelector("#input-objects-status"),
         "objects-sort": document.querySelector("#input-objects-sort"),
         "objects-page": document.querySelector("#input-objects-page"),
-        "agents-status": document.querySelector("#input-agents-status"),
-        "agents-period": document.querySelector("#input-agents-period"),
+        // "agents-status": document.querySelector("#input-agents-status"),
+        // "agents-period": document.querySelector("#input-agents-period"),
         "agents-page-actual": document.querySelector(
             "#input-agents-page-actual"
         ),
-        "agents-page-archive": document.querySelector(
-            "#input-agents-page-archive"
-        ),
+        // "agents-page-archive": document.querySelector(
+        //     "#input-agents-page-archive"
+        // ),
         "analytics-period-users": document.querySelector(
             "#input-analytics-period-users"
         ),
