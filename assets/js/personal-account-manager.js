@@ -355,6 +355,7 @@ appealsButtons.forEach((i) =>
 
 if (window.innerWidth < 1151) {
     removeClassElement(contentCards, "mix-display-none");
+    removeClassElement(agentContentCards, "mix-display-none");
 }
 
 // логика действий при ресайзе
@@ -378,6 +379,12 @@ window.addEventListener("resize", function (e) {
             removeClassElement(contentCards, "mix-display-none");
             addClassElement(contentTable, "mix-display-none");
             resetActiveClassButton(objectsButtons);
+        }
+        if (!agentContentTable.classList.contains("mix-display-none")) {
+            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
+            removeClassElement(agentContentCards, "mix-display-none");
+            addClassElement(agentContentTable, "mix-display-none");
+            resetActiveClassButton(agentButtons);
         }
     }
 

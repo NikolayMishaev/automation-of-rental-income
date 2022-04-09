@@ -9020,6 +9020,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   white-space: unset;
 }
 
+.prof-table__row-content_type_agent {
+  padding: 12px 0;
+}
+
 .prof-table__index {
   position: absolute;
   right: -4px;
