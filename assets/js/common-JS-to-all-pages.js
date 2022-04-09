@@ -88,9 +88,6 @@ containersCityName.forEach((i) => {
                 removeClassElement(i, "popup-change-city__item_type_active")
             );
             addClassElement(e.target, "popup-change-city__item_type_active");
-            if (headerCityName) {
-                headerCityName.textContent = e.target.textContent.trim();
-            }
             sendRequest(e.target);
         }
     });
@@ -139,7 +136,10 @@ function hideInputError() {
 function sendRequest(target) {
     if (target) {
         inputChangeCity.value = target.id;
-        formChangeCity.submit();
+        if (headerCityName) {
+            headerCityName.textContent = target.textContent.trim();
+        }
+        // formChangeCity.submit();
         removeClassElement(popupChangeCity, "mix-visible-scale");
     } else {
         showInputError();
