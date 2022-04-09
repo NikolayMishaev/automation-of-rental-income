@@ -14,7 +14,7 @@
     <div class="page">
       <header class="header">
         <div class="header__content">
-          <a class="logo logo_place_header" href="#">
+          <a class="logo logo_place_header" href="./main-page.html">
             <svg
               class="icon icon_logo"
               viewBox="0 0 198 40"
@@ -149,11 +149,11 @@
             </svg>
           </a>
           <nav class="menu menu_place_header">
-            <a class="menu__profile" href="./personal-account-private-person.html">
+            <a class="menu__profile" href="./personal-account-manager.html">
               <span class="menu__profile-name">
                 <!-- данные с сервера имя пользователя -->Иван Иванов</span
               >
-              <div class="menu__profile-avatar"></div>
+              <img src='./assets/images/avatar-photo.png' class="menu__profile-avatar"></img>
             </a>
             <ul class="menu__links mix-display-none">
               <li class="menu__list">
@@ -835,6 +835,37 @@
                     >
                       Анкеты контрагентов
                     </h3>
+
+
+
+                    <div class="prof-control-panel__row prof-control-panel__row_type_agent">
+                      <div
+                        class="prof-control-panel__buttons-container mix-only-desktop-1150px"
+                      >
+                        <button
+                          aria-label="actual"
+                          class="prof-control-panel__button prof-control-panel__button_active heading-h4 agent-button"
+                        >
+                          Список
+                        </button>
+                        <button
+                          aria-label="archive"
+                          class="prof-control-panel__button heading-h4 agent-button"
+                        >
+                          Карточки
+                        </button>
+                      </div>
+                      <label
+                        class="prof-control-panel__search prof-control-panel__search_type_agent mix-label"
+                      >
+                        <input
+                          type="text"
+                          class="prof-control-panel__input-search mix-input"
+                          placeholder=" "
+                        />
+                        <span class="prof-control-panel__caption mix-caption">Поиск</span>
+                      </label>
+                    </div>
                     <div class="prof-control-panel__wrapper">
                         <label aria-label="ankets" class="prof-control-panel__select-label prof-control-panel__select-label_type_about-me text-p2 button-toggle-select">Вид анкеты:
                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
@@ -842,7 +873,10 @@
                             <input id="input-ankets" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me" value="Текущие">
                             <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-first" id="submenu-ankets">
                               <ul class="main-submenu__list">
-                                  <li
+                                <li class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
+                                  Анкеты
+                                </li>
+                                  <li aria-label='item'
                                   class="main-submenu__item main-submenu__item_style_prof-control-panel"
                                 >
                                   <label class="prof-control-panel__label-custom">
@@ -856,7 +890,7 @@
                                     Текущие</label
                                   >
                                 </li>
-                                <li
+                                <li aria-label='item'
                                   class="main-submenu__item main-submenu__item_style_prof-control-panel"
                                 >
                                   <label class="prof-control-panel__label-custom">
@@ -869,6 +903,11 @@
                                     В архиве</label
                                   >
                                 </li>
+                                <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                  <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
+                                    Выбрать
+                                  </button>
+                                </li>
                               </ul>
                             </div>
                           </label>
@@ -879,6 +918,9 @@
                               <input id="input-type-activity" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me-wide" value="Вид_1">
                               <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-second" id="submenu-type-activity">
                                 <ul class="main-submenu__list">
+                                  <li class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
+                                    Вид деятельности
+                                  </li>
                                   <li aria-label="item" class="main-submenu__item main-submenu__item_active">
                                     Вид_1
                                   </li>
@@ -896,6 +938,9 @@
                               <input id="input-ankets-status" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me" value="Новое">
                               <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-third" id="submenu-ankets-status">
                                 <ul class="main-submenu__list">
+                                  <li class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
+                                    Статус анкеты
+                                  </li>
                                   <li
                                   class="main-submenu__item main-submenu__item_style_prof-control-panel"
                                 >
@@ -936,6 +981,11 @@
                                   Отказано</label
                                 >
                               </li>
+                              <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
+                                  Выбрать
+                                </button>
+                              </li>
                                 </ul>
                               </div>
                             </label>
@@ -946,6 +996,9 @@
                               <input id="input-ankets-views" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_about-me-wide" value="Просмотрено">
                               <div class="main-submenu main-submenu_style_agents main-submenu_style_agents-fourth" id="submenu-ankets-views">
                                 <ul class="main-submenu__list">
+                                  <li class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
+                                    Статус просмотра
+                                  </li>
                                   <li
                                   class="main-submenu__item main-submenu__item_style_prof-control-panel"
                                 >
@@ -973,39 +1026,14 @@
                                     Не просмотрено</label
                                   >
                                 </li>
+                                <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                  <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
+                                    Выбрать
+                                  </button>
+                                </li>
                                 </ul>
                               </div>
                             </label>
-                    </div>
-
-
-                    <div class="prof-control-panel__row prof-control-panel__row_type_agent">
-                      <div
-                        class="prof-control-panel__buttons-container mix-only-desktop-1150px"
-                      >
-                        <button
-                          aria-label="actual"
-                          class="prof-control-panel__button prof-control-panel__button_active heading-h4 agent-button"
-                        >
-                          Список
-                        </button>
-                        <button
-                          aria-label="archive"
-                          class="prof-control-panel__button heading-h4 agent-button"
-                        >
-                          Карточки
-                        </button>
-                      </div>
-                      <label
-                        class="prof-control-panel__search prof-control-panel__search_type_agent mix-label"
-                      >
-                        <input
-                          type="text"
-                          class="prof-control-panel__input-search mix-input"
-                          placeholder=" "
-                        />
-                        <span class="prof-control-panel__caption mix-caption">Поиск</span>
-                      </label>
                     </div>
                   </div>
 
@@ -1024,7 +1052,7 @@
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-content heading-h5">
                           <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
-                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html'>Иван Иванов</a></li>
+                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html' target="_blank">Иван Иванов</a></li>
                         <li class="prof-table__row-content heading-h5">02.02.2022</li>
                         <li class="prof-table__row-content heading-h5">деятельность</li>
                         <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
@@ -1043,7 +1071,7 @@
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-content heading-h5">
                           <span class="prof-marker prof-marker_type_eye-close"></span><span class="prof-marker"></span></li>
-                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html'>Иван Иванов</a></li>
+                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html' target="_blank">Иван Иванов</a></li>
                         <li class="prof-table__row-content heading-h5">02.02.2022</li>
                         <li class="prof-table__row-content heading-h5">деятельность</li>
                         <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
@@ -1062,7 +1090,7 @@
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-content heading-h5">
                           <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
-                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html'>Иван Иванов</a></li>
+                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html' target="_blank">Иван Иванов</a></li>
                         <li class="prof-table__row-content heading-h5">02.02.2022</li>
                         <li class="prof-table__row-content heading-h5">деятельность</li>
                         <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
@@ -1081,7 +1109,7 @@
                       <ul class="prof-table__row prof-table__row_style_agent">
                         <li class="prof-table__row-content heading-h5">
                           <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
-                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html'>Иван Иванов</a></li>
+                        <li class="prof-table__row-content heading-h5"><a href='./about-me.html' target="_blank">Иван Иванов</a></li>
                         <li class="prof-table__row-content heading-h5">02.02.2022</li>
                         <li class="prof-table__row-content heading-h5">деятельность</li>
                         <li class="prof-table__row-content heading-h5"><a href="./manager-form.html" class="prof-table__link">ссылка</a></li>
@@ -4777,67 +4805,65 @@
 
     <!-- модальное окно для выбора города "Ваш город" в блоке Header  -->
     <div id="popup-city" class="main-popup main-popup_type_change-city">
-      <div class="main-popup__container main-popup__container_type_change-city">
-        <button class="main-popup__close"></button>
-        <div class="popup-change-city">
-          <h3 class="popup-change-city__title">Укажите свой город</h3>
-          <form id="form-change-city" action="http://foo.com" method="get">
-            <label class="popup-change-city__label mix-label">
-              <input
-                name="city_id"
-                id="input-change-city"
-                class="popup-change-city__input mix-input"
-                type="text"
-                maxlength="50"
-                placeholder=" "
-              />
-              <span class="popup-change-city__caption mix-caption"></span>
-            </label>
-          </form>
-          <div class="popup-change-city__column">
-            <ul class="popup-change-city__list">
-              <!-- текущий активный город модификатор: popup-change-city__item_type_active -->
-              <li
-                class="popup-change-city__item popup-change-city__item_type_favorite popup-change-city__item_type_active"
-              >
-                Москва
-              </li>
-              <li class="popup-change-city__item popup-change-city__item_type_favorite">
-                Санкт-Петербург
-              </li>
-              <li class="popup-change-city__item popup-change-city__item_type_favorite">Тула</li>
-            </ul>
-            <ul class="popup-change-city__list">
-              <!-- <div class="popup-change-city__overlay"></div> -->
-              <!-- данные с сервера выбор города -->
-              <li id="1" class="popup-change-city__item">Балашиха</li>
-              <li id="2" class="popup-change-city__item">Бронницы</li>
-              <li id="3" class="popup-change-city__item">Видное</li>
-              <li id="4" class="popup-change-city__item">Воскресенск</li>
-              <li id="5" class="popup-change-city__item">Дзержинский</li>
-              <li id="6" class="popup-change-city__item">Дмитров</li>
-              <li id="7" class="popup-change-city__item">Домодедово</li>
-              <li id="8" class="popup-change-city__item">Жуковский</li>
-              <li id="9" class="popup-change-city__item">Истра</li>
-              <li id="10" class="popup-change-city__item">Кашира</li>
-              <li id="11" class="popup-change-city__item">Клин</li>
-              <li id="12" class="popup-change-city__item">Королёв</li>
-              <li id="13" class="popup-change-city__item">Котельники</li>
-              <li id="14" class="popup-change-city__item">Кубинка</li>
-              <li id="15" class="popup-change-city__item">Лобня</li>
-              <li id="16" class="popup-change-city__item">Лыткарино</li>
-              <li id="17" class="popup-change-city__item">Мытищи</li>
-              <li id="18" class="popup-change-city__item">Одинцово</li>
-              <li id="19" class="popup-change-city__item">Подольск</li>
-              <li id="20" class="popup-change-city__item">Пушкино</li>
-              <li id="21" class="popup-change-city__item">Раменское</li>
-              <li id="22" class="popup-change-city__item">Химки</li>
-              <li id="23" class="popup-change-city__item">Чехов</li>
-              <li id="24" class="popup-change-city__item">Ярославль</li>
-            </ul>
-          </div>
+        <div class="main-popup__container main-popup__container_type_change-city">
+            <button class="main-popup__close"></button>
+            <div class="popup-change-city">
+                <h3 class="popup-change-city__title">Укажите свой город</h3>
+                <form id="form-change-city" action="http://foo.com" method="get">
+                    <label class="popup-change-city__label mix-label">
+                        <input name="city_code" id="input-change-city" class="popup-change-city__input mix-input" type="text" maxlength="50"
+                            placeholder=" " />
+                        <span class="popup-change-city__caption mix-caption"></span>
+                        <span class="popup-change-city__error text-p2">такого города нет в списке!</span>
+                    </label>
+                </form>
+                <div class="popup-change-city__column">
+                    <ul class="popup-change-city__list">
+                        <!-- текущий активный город модификатор: popup-change-city__item_type_active -->
+                        <li
+                            id="25" class="popup-change-city__item popup-change-city__item_type_favorite popup-change-city__item_type_active">
+                            Москва</li>
+                        <li
+                            id="26" class="popup-change-city__item popup-change-city__item_type_favorite">
+                            Санкт-Петербург
+                        </li>
+                        <li
+                            id="27" class="popup-change-city__item popup-change-city__item_type_favorite">
+                            Тула</li>
+                    </ul>
+                    <ul class="popup-change-city__list">
+                        <!-- <div class="popup-change-city__overlay"></div> -->
+                        <!-- данные с сервера выбор города -->
+                        <li id="1" class="popup-change-city__item">Балашиха</li>
+                        <li id="2" class="popup-change-city__item">Бронницы</li>
+                        <li id="3" class="popup-change-city__item">Видное</li>
+                        <li id="4" class="popup-change-city__item">Воскресенск</li>
+                        <li id="5" class="popup-change-city__item">Дзержинский</li>
+                        <li id="6" class="popup-change-city__item">Дмитров</li>
+                        <li id="7" class="popup-change-city__item">Домодедово</li>
+                        <li id="8" class="popup-change-city__item">Жуковский</li>
+                        <li id="9" class="popup-change-city__item">Истра</li>
+                        <li id="10" class="popup-change-city__item">Кашира</li>
+                        <li id="11" class="popup-change-city__item">Клин</li>
+                        <li id="12" class="popup-change-city__item">Королёв</li>
+                        <li id="13" class="popup-change-city__item">Котельники</li>
+                        <li id="14" class="popup-change-city__item">Кубинка</li>
+                        <li id="15" class="popup-change-city__item">Лобня</li>
+                        <li id="16" class="popup-change-city__item">Лыткарино</li>
+                        <li id="17" class="popup-change-city__item">Мытищи</li>
+                        <li id="18" class="popup-change-city__item">Одинцово</li>
+                        <li id="19" class="popup-change-city__item">Подольск</li>
+                        <li id="20" class="popup-change-city__item">Пушкино</li>
+                        <li id="21" class="popup-change-city__item">Раменское</li>
+                        <li id="22" class="popup-change-city__item">Химки</li>
+                        <li id="23" class="popup-change-city__item">Чехов</li>
+                        <li id="24" class="popup-change-city__item">Ярославль</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-      </div>
+
     </div>
 
     <!-- модальное окно "Уведомление о результате проверки"  -->

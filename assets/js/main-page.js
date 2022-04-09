@@ -168,8 +168,13 @@ window.addEventListener("resize", function (e) {
 const mainCardsContainer = document.querySelector(".main__cards-container");
 
 mainCardsContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("card-price__like")) {
-        e.target.classList.toggle("card-price__like_active");
+    const currentTargetLike = e.target.classList.contains("card-price__like");
+    if (currentTargetLike) {
+        if (e.target.classList.contains("card-price__like_active")) {
+            removeClassElement(e.target, "card-price__like_active");
+        } else {
+            addClassElement(e.target, "card-price__like_active");
+        }
     }
 });
 
@@ -201,7 +206,7 @@ cursorAdressMainForm.addEventListener("click", (e) => {
     }
 });
 
-// логика работы всплывающего меню по клике на курсор в фильтре "тип помещения"
+// логика работы всплывающего меню по клику на курсор в фильтре "тип помещения"
 const cursorChangeTypeMainForm = document.querySelector(
     "#main-form-cursor-change-type"
 );
@@ -268,7 +273,7 @@ function changeValueInputSelect(items, valueInput) {
     );
 }
 
-// логика работы всплывающего меню по клике на курсор в фильтре "классификация помещения"
+// логика работы всплывающего меню по клику на курсор в фильтре "классификация помещения"
 const cursorChangeClassMainForm = document.querySelector(
     "#main-form-cursor-change-class"
 );

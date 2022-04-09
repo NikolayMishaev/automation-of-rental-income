@@ -17,7 +17,7 @@
 
         <header class="header">
             <div class="header__content">
-                <a class="logo logo_place_header" href="#">
+                <a class="logo logo_place_header" href="./main-page.html">
                     <svg class="icon icon_logo" viewBox="0 0 198 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M156.581 26.9354H148.802V29.1138H151.559V35.7226H153.824V29.1138H156.581V26.9354Z"
                             fill="#65B32E" />
@@ -105,10 +105,10 @@
                     </svg>
                 </a>
                 <nav class="menu menu_place_header">
-                    <a class="menu__profile" href="./personal-account-private-person.html">
+                    <a class="menu__profile" href="./personal-account-director.html">
                         <span class="menu__profile-name">
                             <!-- данные с сервера имя пользователя -->Иван Иванов</span>
-                        <div class="menu__profile-avatar"></div>
+                            <img src='./assets/images/avatar-photo.png' class="menu__profile-avatar"></img>
                     </a>
                     <ul class="menu__links mix-display-none">
                         <li class="menu__list">
@@ -3851,23 +3851,24 @@
                 <h3 class="popup-change-city__title">Укажите свой город</h3>
                 <form id="form-change-city" action="http://foo.com" method="get">
                     <label class="popup-change-city__label mix-label">
-                        <input name="city_id" id="input-change-city" class="popup-change-city__input mix-input" type="text" maxlength="50"
+                        <input name="city_code" id="input-change-city" class="popup-change-city__input mix-input" type="text" maxlength="50"
                             placeholder=" " />
                         <span class="popup-change-city__caption mix-caption"></span>
+                        <span class="popup-change-city__error text-p2">такого города нет в списке!</span>
                     </label>
                 </form>
                 <div class="popup-change-city__column">
                     <ul class="popup-change-city__list">
                         <!-- текущий активный город модификатор: popup-change-city__item_type_active -->
                         <li
-                            class="popup-change-city__item popup-change-city__item_type_favorite popup-change-city__item_type_active">
+                            id="25" class="popup-change-city__item popup-change-city__item_type_favorite popup-change-city__item_type_active">
                             Москва</li>
                         <li
-                            class="popup-change-city__item popup-change-city__item_type_favorite">
+                            id="26" class="popup-change-city__item popup-change-city__item_type_favorite">
                             Санкт-Петербург
                         </li>
                         <li
-                            class="popup-change-city__item popup-change-city__item_type_favorite">
+                            id="27" class="popup-change-city__item popup-change-city__item_type_favorite">
                             Тула</li>
                     </ul>
                     <ul class="popup-change-city__list">
