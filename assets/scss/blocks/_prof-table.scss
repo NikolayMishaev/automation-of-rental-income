@@ -5,11 +5,17 @@
         column-gap: 16px;
         align-items: center;
         border-top: 1px solid #e3e7e8;
+        &:hover {
+            cursor: pointer;
+        }
         @media (max-width: rem(1550px)) {
             grid-template-columns: 199px 90px 110px 180px 152px 203px;
         }
         &:first-child {
             margin-top: 16px;
+            &:hover {
+                cursor: auto;
+            }
         }
         &_style_objects {
             grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;

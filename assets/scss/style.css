@@ -8960,6 +8960,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-top: 1px solid #e3e7e8;
 }
 
+.prof-table__row:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 96.875rem) {
   .prof-table__row {
     -ms-grid-columns: 199px 90px 110px 180px 152px 203px;
@@ -8969,6 +8973,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-table__row:first-child {
   margin-top: 16px;
+}
+
+.prof-table__row:first-child:hover {
+  cursor: auto;
 }
 
 .prof-table__row_style_objects {
@@ -9182,6 +9190,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 12px;
   height: 374px;
   color: #222429;
+}
+
+.prof-card:hover {
+  cursor: pointer;
 }
 
 .prof-card_type_director {
@@ -10187,6 +10199,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
+.prof-label-checkbox_type_object {
+  width: 32px;
+  height: 20px;
+  margin-right: 8px;
+}
+
 .prof-label-checkbox__input {
   opacity: 0;
   visibility: hidden;
@@ -10195,6 +10213,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-label-checkbox__input:checked + .prof-label-checkbox__visible-checkbox {
   background: url("./../images/icons/profile-active-checkbox.svg") no-repeat center;
+  border: none;
+}
+
+.prof-label-checkbox__input:checked + .prof-label-checkbox__visible-checkbox_type_object {
+  background: unset;
+  background-color: #2a9b43;
+  padding-left: 14px;
 }
 
 .prof-label-checkbox__visible-checkbox {
@@ -10203,7 +10228,31 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   left: 0;
   width: 16px;
   height: 16px;
-  border: 1px solid #cfd4dc;
+  border: 1px solid #E1E5EB;
   border-radius: 2px;
+}
+
+.prof-label-checkbox__visible-checkbox_type_object {
+  border: none;
+  width: 32px;
+  height: 20px;
+  background-color: #cfd4dc;
+  border-radius: 10px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 2px;
+}
+
+.prof-label-checkbox__visible-checkbox-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
