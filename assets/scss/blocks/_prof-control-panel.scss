@@ -43,7 +43,7 @@
         border-radius: 50px;
         border: none;
         color: #6c737d;
-        transition: $transition;
+
         &_active {
             background-color: #2a9b43;
             color: white;
@@ -85,7 +85,9 @@
         position: relative;
         color: #6d7678;
         position: relative;
-        transition: $transition;
+
+        display: flex;
+        align-items: center;
         @media (max-width: rem(1000px)) {
             border-radius: 4px;
         }
@@ -94,9 +96,7 @@
         }
         &_active {
             @media (max-width: rem(1000px)) {
-                // background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
                 &:before {
-                    // background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
                     background-color: white !important;
                 }
             }
@@ -108,7 +108,6 @@
                 height: 32px;
                 overflow: hidden;
                 border-radius: 4px;
-                transition: $transition;
                 position: static;
                 &:hover::before {
                 }
@@ -121,11 +120,56 @@
                     height: 32px;
                     background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
                     background-color: #fff;
-                    transition: $transition;
+
                 }
             }
         }
         &_type_main.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-search-active.svg) no-repeat center;
+            background-color: white !important;
+        }
+        &_type_about-me {
+            &:last-child {
+                margin-right: 0;
+            }
+            @media (max-width: rem(1150px)) {
+                display: flex;
+                align-items: center;
+                width: 45%;
+                margin-right: 0;
+                margin-top: 10px;
+            }
+            @media (max-width: rem(1000px)) {
+                width: 32px;
+                height: 32px;
+                overflow: hidden;
+                border-radius: 4px;
+                position: static;
+                margin-right: 16px;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    border-radius: 4px;
+                    z-index: 1;
+                    width: 32px;
+                    height: 32px;
+                    background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
+                    background-color: #fff;
+
+                }
+            }
+            &-sort {
+                &:before {
+                    background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
+                    background-color: #fff;
+                }
+            }
+        }
+        &_type_about-me.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+            background-color: white !important;
+        }
+        &_type_about-me-sort.prof-control-panel__select-label_active:before {
             background: url(./../images/icons/main-page-icon-search-active.svg) no-repeat center;
             background-color: white !important;
         }
@@ -149,7 +193,6 @@
                 height: 32px;
                 overflow: hidden;
                 border-radius: 4px;
-                transition: $transition;
                 &:hover {
                     cursor: pointer;
                 }
@@ -162,8 +205,13 @@
                     height: 32px;
                     background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
                     background-color: #fff;
+
                 }
             }
+        }
+        &_type_sort.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-search-active.svg) no-repeat center;
+            background-color: white !important;
         }
         &_type_filters {
             @media (max-width: rem(1150px)) {
@@ -188,8 +236,13 @@
                     height: 32px;
                     background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
                     background-color: #fff;
+
                 }
             }
+        }
+        &_type_filters.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+            background-color: white !important;
         }
         &_type_filters-analytic {
             width: 32px;
@@ -197,6 +250,10 @@
             margin-left: 16px;
             background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
             border-radius: 4px;
+
+        }
+        &_type_filters-analytic.prof-control-panel__select-label_active {
+            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
         }
         &_type_status-agent {
             margin-right: 40px;
@@ -209,7 +266,6 @@
                 flex-shrink: 0;
                 margin-top: auto;
                 margin-left: 16px;
-                transition: $transition;
                 &:hover {
                     cursor: pointer;
                 }
@@ -234,41 +290,6 @@
             display: block;
             width: 100%;
         }
-        &_type_about-me {
-            margin-right: 10px;
-            &:last-of-type {
-                margin-right: 0;
-            }
-            @media (max-width: rem(1150px)) {
-                display: flex;
-                align-items: center;
-                width: 45%;
-                margin-right: 0;
-                margin-top: 10px;
-            }
-            @media (max-width: rem(1000px)) {
-                width: 32px;
-                height: 32px;
-                overflow: hidden;
-                border-radius: 4px;
-                transition: $transition;
-                position: static;
-                margin-right: 16px;
-                &:hover::before {
-                }
-                &:before {
-                    content: "";
-                    position: absolute;
-                    border-radius: 4px;
-                    z-index: 1;
-                    width: 32px;
-                    height: 32px;
-                    background: url(./../images/icons/main-page-icon-search.svg) no-repeat center;
-                    background-color: #fff;
-                    transition: $transition;
-                }
-            }
-        }
     }
     &__cursor {
         position: absolute;
@@ -277,7 +298,7 @@
         width: 8px;
         height: 8px;
         background: url("./../images/icons/main-cursor-down.svg") no-repeat center/8px;
-        transition: $transition;
+
         &_active {
             transform: rotate(180deg);
         }
@@ -312,11 +333,12 @@
         }
     }
     &__select-input {
-        width: 150px;
+        width: 187px;
         height: 32px;
         border: 1px solid #e1e5eb;
         border-radius: 4px;
         padding: 4px 19px 4px 12px;
+        margin-left: 4px;
         &:disabled {
             background-color: #fff;
             font-style: normal;
@@ -330,7 +352,8 @@
             }
         }
         &_type_about-me {
-            width: 110px;
+            width: 105px;
+            padding-left: 7px;
             @media (max-width: rem(1150px)) {
                 width: unset;
                 flex: 1;
@@ -338,7 +361,8 @@
             }
         }
         &_type_about-me-wide {
-            width: 145px;
+            width: 155px;
+            padding-left: 7px;
             @media (max-width: rem(1150px)) {
                 width: unset;
                 flex: 1;
@@ -441,7 +465,7 @@
         border-radius: 2px;
         border: 1px solid #cfd4dc;
         &_type_alone {
-            transition: $transition;
+
             width: 13px;
             height: 13px;
             margin-bottom: 2px;
@@ -546,7 +570,6 @@
         text-decoration: none;
         &:hover {
             text-decoration: none;
-            opacity: 0.7;
         }
     }
     &__row {
@@ -661,7 +684,7 @@
         height: 17px;
         background: url("./../images/icons/profile-star.svg") no-repeat center/cover;
         margin: 0 7px;
-        transition: $transition;
+
         &:hover {
             cursor: pointer;
             background: url("./../images/icons/profile-star-active.svg") no-repeat center/cover;

@@ -17,14 +17,14 @@ const state = {
         "objects-status": document.querySelector("#cursor-objects-status"),
         "objects-sort": document.querySelector("#cursor-objects-sort"),
         "objects-page": document.querySelector("#cursor-objects-page"),
-        "agents-status": document.querySelector("#cursor-agents-status"),
-        "agents-period": document.querySelector("#cursor-agents-period"),
+        // "agents-status": document.querySelector("#cursor-agents-status"),
+        // "agents-period": document.querySelector("#cursor-agents-period"),
         "agents-page-actual": document.querySelector(
             "#cursor-agents-page-actual"
         ),
-        "agents-page-archive": document.querySelector(
-            "#cursor-agents-page-archive"
-        ),
+        // "agents-page-archive": document.querySelector(
+        //     "#cursor-agents-page-archive"
+        // ),
         "analytics-period-users": document.querySelector(
             "#cursor-analytics-period-users"
         ),
@@ -73,14 +73,14 @@ const state = {
         "objects-status": document.querySelector("#submenu-objects-status"),
         "objects-sort": document.querySelector("#submenu-objects-sort"),
         "objects-page": document.querySelector("#submenu-objects-page"),
-        "agents-status": document.querySelector("#submenu-agents-status"),
-        "agents-period": document.querySelector("#submenu-agents-period"),
+        // "agents-status": document.querySelector("#submenu-agents-status"),
+        // "agents-period": document.querySelector("#submenu-agents-period"),
         "agents-page-actual": document.querySelector(
             "#submenu-agents-page-actual"
         ),
-        "agents-page-archive": document.querySelector(
-            "#submenu-agents-page-archive"
-        ),
+        // "agents-page-archive": document.querySelector(
+        //     "#submenu-agents-page-archive"
+        // ),
         "analytics-period-users": document.querySelector(
             "#submenu-analytics-period-users"
         ),
@@ -143,14 +143,14 @@ const state = {
         "objects-status": document.querySelector("#input-objects-status"),
         "objects-sort": document.querySelector("#input-objects-sort"),
         "objects-page": document.querySelector("#input-objects-page"),
-        "agents-status": document.querySelector("#input-agents-status"),
-        "agents-period": document.querySelector("#input-agents-period"),
+        // "agents-status": document.querySelector("#input-agents-status"),
+        // "agents-period": document.querySelector("#input-agents-period"),
         "agents-page-actual": document.querySelector(
             "#input-agents-page-actual"
         ),
-        "agents-page-archive": document.querySelector(
-            "#input-agents-page-archive"
-        ),
+        // "agents-page-archive": document.querySelector(
+        //     "#input-agents-page-archive"
+        // ),
         "analytics-period-users": document.querySelector(
             "#input-analytics-period-users"
         ),
@@ -256,19 +256,19 @@ objectsButtons.forEach((i) =>
 
 const agentButtons = document.querySelectorAll(".agent-button");
 
-const contentActual = document.querySelector("#agent-actual");
-const contentArchive = document.querySelector("#agent-archive");
+const agentContentTable = document.querySelector("#agent-list");
+const agentContentCards = document.querySelector("#agent-cards");
 
 agentButtons.forEach((i) =>
-    i.addEventListener("click", (e) =>
+    i.addEventListener("click", (e) => {
         switchButtons(
             e.target,
             agentButtons,
-            [contentActual, contentArchive],
+            [agentContentTable, agentContentCards],
             "prof-control-panel__button_active",
             "mix-display-none"
-        )
-    )
+        );
+    })
 );
 
 // логика переключения кнопок на вкладке "Аналитические данные"
@@ -355,6 +355,7 @@ appealsButtons.forEach((i) =>
 
 if (window.innerWidth < 1151) {
     removeClassElement(contentCards, "mix-display-none");
+    removeClassElement(agentContentCards, "mix-display-none");
 }
 
 // логика действий при ресайзе
@@ -378,6 +379,12 @@ window.addEventListener("resize", function (e) {
             removeClassElement(contentCards, "mix-display-none");
             addClassElement(contentTable, "mix-display-none");
             resetActiveClassButton(objectsButtons);
+        }
+        if (!agentContentTable.classList.contains("mix-display-none")) {
+            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
+            removeClassElement(agentContentCards, "mix-display-none");
+            addClassElement(agentContentTable, "mix-display-none");
+            resetActiveClassButton(agentButtons);
         }
     }
 
@@ -489,143 +496,6 @@ function closeMobileBlockContacts() {
     mobilePanelContacts.classList.add("mix-display-none");
     generalPanel.classList.remove("mix-display-none");
 }
-
-// скрыть подменю селектов если клик сработал за их пределами
-
-// function listenClickOutsideSelect() {
-//     document.addEventListener("click", (e) => {
-//         if (!e.target.closest(".prof-control-panel__select-label")) {
-//             hideAllSubmenu();
-//         }
-//     });
-// }
-
-// логика работы селектов общие функции:
-
-// function showSubmenu(submenu, cursor) {
-//     submenu.classList.add("mix-visible");
-//     cursor.classList.add("prof-control-panel__cursor_active");
-// }
-
-// function hideSubmenu(submenu, cursor) {
-//     submenu.classList.remove("mix-visible");
-//     cursor.classList.remove("prof-control-panel__cursor_active");
-// }
-
-// function hideAllSubmenu() {
-//     hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     hideSubmenu(submenuSelectSort, cursorSelectSort);
-//     hideSubmenu(submenuSelectPage, cursorSelectPage);
-// }
-
-// function resetActiveClass(arrayElements, className) {
-//     arrayElements.forEach((i) => i.classList.remove(className));
-// }
-
-// логика работы селекта "Статус"
-
-// const LabelSelectStatus = document.querySelector("#label-select-status");
-// const cursorSelectStatus = document.querySelector("#cursor-select-status");
-// const inputSelectStatus = document.querySelector("#input-select-status");
-// const submenuSelectStatus = document.querySelector("#submenu-select-status");
-// const inputCheckboxFree = document.querySelector(
-//     "#input-select-status-checkbox-free"
-// );
-// const inputCheckboxSoonFree = document.querySelector(
-//     "#input-select-status-checkbox-soon-free"
-// );
-
-// LabelSelectStatus.addEventListener("click", (e) => {
-//     if (inputCheckboxFree.checked && inputCheckboxSoonFree.checked) {
-//         inputSelectStatus.value = "Выбрано несколько";
-//     } else if (inputCheckboxFree.checked) {
-//         inputSelectStatus.value = "Свободен";
-//     } else if (inputCheckboxSoonFree.checked) {
-//         inputSelectStatus.value = "Скоро освободится";
-//     } else {
-//         inputSelectStatus.value = "Все";
-//     }
-//     if (e.target.id === "button-confirm-select-status") {
-//         hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     }
-//     if (e.target.id === "label-select-status" && innerWidth < 1001) {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     }
-//     if (e.target.id !== "input-select-status") {
-//         return;
-//     }
-//     if (
-//         cursorSelectStatus.classList.contains(
-//             "prof-control-panel__cursor_active"
-//         )
-//     ) {
-//         hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     } else {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     }
-// });
-
-// логика работы селекта "Сортировать"
-
-// const LabelSelectSort = document.querySelector("#label-select-sort");
-// const cursorSelectSort = document.querySelector("#cursor-select-sort");
-// const inputSelectSort = document.querySelector("#input-select-sort");
-// const submenuSelectSort = document.querySelector("#submenu-select-sort");
-// const itemsSubmenuSort = document.querySelectorAll(".item-submenu-sort");
-
-// LabelSelectSort.addEventListener("click", (e) => {
-//     if (e.target.ariaLabel === "item-sort-menu") {
-//         inputSelectSort.value = e.target.innerText;
-//         resetActiveClass(itemsSubmenuSort, "main-submenu__item_active");
-//         e.target.classList.add("main-submenu__item_active");
-//         hideSubmenu(submenuSelectSort, cursorSelectSort);
-//     }
-//     if (e.target.id === "label-select-sort" && innerWidth < 1001) {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectSort, cursorSelectSort);
-//     }
-//     if (e.target.id !== "input-select-sort") {
-//         return;
-//     }
-//     if (
-//         cursorSelectSort.classList.contains("prof-control-panel__cursor_active")
-//     ) {
-//         hideSubmenu(submenuSelectSort, cursorSelectSort);
-//     } else {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectSort, cursorSelectSort);
-//     }
-// });
-
-// логика работы селекта "выбор количества карточек"
-
-// const LabelSelectPage = document.querySelector("#label-select-page");
-// const cursorSelectPage = document.querySelector("#cursor-select-page");
-// const inputSelectPage = document.querySelector("#input-select-page");
-// const submenuSelectPage = document.querySelector("#submenu-select-page");
-// const itemsSubmenuPage = document.querySelectorAll(".item-submenu-page");
-
-// LabelSelectPage.addEventListener("click", (e) => {
-//     if (e.target.ariaLabel === "item-page-menu") {
-//         inputSelectPage.value = e.target.innerText;
-//         resetActiveClass(itemsSubmenuPage, "main-submenu__item_active");
-//         e.target.classList.add("main-submenu__item_active");
-//         hideSubmenu(submenuSelectPage, cursorSelectPage);
-//     }
-//     if (e.target.id !== "input-select-page") {
-//         return;
-//     }
-//     if (
-//         cursorSelectPage.classList.contains("prof-control-panel__cursor_active")
-//     ) {
-//         hideSubmenu(submenuSelectPage, cursorSelectPage);
-//     } else {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectPage, cursorSelectPage);
-//     }
-// });
 
 // логика оценка работы менеджера звездочками
 
@@ -765,6 +635,15 @@ buttonsSelect.forEach((i) =>
         const currentLabel = e.target.closest(
             ".prof-control-panel__select-label"
         );
+        if (e.target.closest(".prof-control-panel__label-custom")) {
+            const currentCheckedValue = e.target
+                .closest(".prof-control-panel__label-custom")
+                .textContent.trim();
+            state.inputsSelect[currentLabel.ariaLabel].value =
+                currentCheckedValue;
+            switchContentAnkets(currentCheckedValue);
+            return;
+        }
         if (
             e.target.closest(".label-checkbox") &&
             e.target.closest(".label-checkbox").ariaLabel === "checkbox"
@@ -834,8 +713,38 @@ buttonsSelect.forEach((i) =>
     })
 );
 
+// логика закрытия попапа редактирования аватара
+
 const buttonClose = document.querySelector("#button-close-popup-sign-ind");
 const popoupAvatar = document.querySelector(".modal-edit-avatar");
 buttonClose.addEventListener("click", (e) => {
     popoupAvatar.style = "display-none";
 });
+
+// логика переключения вида анкет
+
+const agentActualCardsContent = document.querySelector("#agents-cards-actual");
+const agentArchiveCardsContent = document.querySelector(
+    "#agents-cards-archive"
+);
+const agentActualListContent = document.querySelector("#agents-list-actual");
+const agentArchiveListContent = document.querySelector("#agents-list-archive");
+
+function switchContentAnkets(currentCheckedValue) {
+    switch (currentCheckedValue) {
+        case "Текущие":
+            removeClassElement(agentActualCardsContent, "mix-display-none");
+            removeClassElement(agentActualListContent, "mix-display-none");
+            addClassElement(agentArchiveCardsContent, "mix-display-none");
+            addClassElement(agentArchiveListContent, "mix-display-none");
+            return;
+        case "В архиве":
+            removeClassElement(agentArchiveCardsContent, "mix-display-none");
+            removeClassElement(agentArchiveListContent, "mix-display-none");
+            addClassElement(agentActualCardsContent, "mix-display-none");
+            addClassElement(agentActualListContent, "mix-display-none");
+            return;
+        default:
+            return;
+    }
+}

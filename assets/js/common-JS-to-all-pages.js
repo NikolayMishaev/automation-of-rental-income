@@ -43,10 +43,12 @@ function switchButtons(
 // 3__добавить кнопке класс "button-open-popup"
 
 const buttonsOpenPopup = document.querySelectorAll(".button-open-popup");
+const inputChangeCity = document.querySelector("#input-change-city");
 
 buttonsOpenPopup.forEach((i) =>
     i.addEventListener("click", (e) => {
-        state[i.ariaLabel].classList.add("mix-visible-scale");
+        inputChangeCity.value = "";
+        removeClassElement(state[i.ariaLabel], "mix-display-none");
     })
 );
 
@@ -61,7 +63,7 @@ overlaysPopup.forEach((i) =>
             e.target.classList.contains("main-popup__close") ||
             e.target.classList.contains("button-close-popup")
         ) {
-            removeClassElement(i, "mix-visible-scale");
+            addClassElement(i, "mix-display-none");
         }
     })
 );
@@ -69,7 +71,6 @@ overlaysPopup.forEach((i) =>
 // логика работы попапа выбора города
 
 const formChangeCity = document.querySelector("#form-change-city");
-const inputChangeCity = document.querySelector("#input-change-city");
 const containersCityName = document.querySelectorAll(
     ".popup-change-city__list"
 );
@@ -88,21 +89,18 @@ containersCityName.forEach((i) => {
                 removeClassElement(i, "popup-change-city__item_type_active")
             );
             addClassElement(e.target, "popup-change-city__item_type_active");
-            if (headerCityName) {
-                headerCityName.textContent = e.target.textContent.trim();
-            }
             sendRequest(e.target);
         }
     });
 });
 
-containersCityName.forEach((i) =>
-    i.addEventListener("mouseover", (e) => {
-        if (e.target.classList.contains("popup-change-city__item")) {
-            inputChangeCity.value = e.target.textContent.trim();
-        }
-    })
-);
+// containersCityName.forEach((i) =>
+//     i.addEventListener("mouseover", (e) => {
+//         if (e.target.classList.contains("popup-change-city__item")) {
+//             inputChangeCity.value = e.target.textContent.trim();
+//         }
+//     })
+// );
 
 function checkAvailabilityCity() {
     return Array.from(itemsCity).find(
@@ -139,8 +137,11 @@ function hideInputError() {
 function sendRequest(target) {
     if (target) {
         inputChangeCity.value = target.id;
+        if (headerCityName) {
+            headerCityName.textContent = target.textContent.trim();
+        }
         formChangeCity.submit();
-        removeClassElement(popupChangeCity, "mix-visible-scale");
+        addClassElement(popupChangeCity, "mix-display-none");
     } else {
         showInputError();
     }

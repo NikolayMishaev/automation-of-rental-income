@@ -5,6 +5,7 @@
     &__item {
         margin-right: rem(16px);
         transition: $transition;
+        height: 32px;
         &:last-child {
             margin-right: 0;
         }
@@ -70,8 +71,8 @@
             background-color: $accent-TCX50;
             color: white;
         }
-        &__link {
-            display: block;
-        }
+    }
+    &__link {
+        display: block;
     }
 }
