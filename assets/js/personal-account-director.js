@@ -790,6 +790,14 @@ buttonsSelect.forEach((i) =>
     })
 );
 
+// логика закрытия попапа редактирования аватара
+
+const buttonClose = document.querySelector("#button-close-popup-sign-ind");
+const popoupAvatar = document.querySelector(".modal-edit-avatar");
+buttonClose.addEventListener("click", (e) => {
+    popoupAvatar.style = "display-none";
+});
+
 // логика переключения вида анкет
 
 const agentActualCardsContent = document.querySelector("#agents-cards-actual");

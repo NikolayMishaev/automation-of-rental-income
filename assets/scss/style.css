@@ -7412,6 +7412,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #cfd4dc;
 }
 
+.prof-aside__wrapper-container-message_type_manager {
+  height: 475px;
+  margin-bottom: 60px;
+}
+
 .prof-aside__feedback {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7474,6 +7479,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-aside__link_type_first {
   bottom: 100px;
+}
+
+.prof-aside__link:hover {
+  text-decoration: none;
+}
+
+.prof-aside__close-appeal {
+  margin-left: 6px;
+  font-size: 20px;
 }
 
 .prof-general {

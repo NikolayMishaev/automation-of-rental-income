@@ -287,6 +287,10 @@
             border-radius: 4px;
             background-color: $grey30;
         }
+        &_type_manager {
+            height: 475px;
+            margin-bottom: 60px;
+        }
     }
     &__feedback {
         display: flex;
@@ -327,5 +331,12 @@
         &_type_first {
             bottom: 100px;
         }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &__close-appeal {
+        margin-left: 6px;
+        font-size: 20px;
     }
 }
