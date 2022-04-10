@@ -8531,6 +8531,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
           transform: rotate(180deg);
 }
 
+.prof-control-panel__cursor_type_structure {
+  background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
+}
+
 @media (max-width: 62.5rem) {
   .prof-control-panel__cursor_type_agent {
     display: none;
@@ -10093,6 +10097,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-structure__label:hover {
   cursor: pointer;
+}
+
+.prof-structure__label.prof-control-panel__select-label_active {
+  background-image: url("./../images/icons/main-page-icon-filters-active.svg");
 }
 
 .form-agent-card {

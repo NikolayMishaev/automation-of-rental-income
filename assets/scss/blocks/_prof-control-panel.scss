@@ -153,8 +153,6 @@
                 overflow: hidden;
                 border-radius: 4px;
                 position: static;
-                &:hover::before {
-                }
                 &:before {
                     content: "";
                     position: absolute;
@@ -345,6 +343,9 @@
         transition: $transition;
         &_active {
             transform: rotate(180deg);
+        }
+        &_type_structure {
+            background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
         }
         &_type_agent {
             @media (max-width: rem(1000px)) {
