@@ -8067,6 +8067,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: relative;
 }
 
+.prof-control-panel_type_mobile {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media (max-width: 111.25rem) {
   .prof-control-panel_type_feedback {
     margin-left: auto;
@@ -8178,8 +8184,51 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 71.875rem) {
   .prof-control-panel__button_type_transfer {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-top: 16px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 62.5rem) {
+  .prof-control-panel__button_type_transfer {
     display: none;
   }
+}
+
+.prof-control-panel__button_type_mobile {
+  background-color: #2a9b43;
+  color: white;
+  border-radius: 4px;
+  margin-left: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 167px;
+  height: 32px;
+}
+
+.prof-control-panel__button_type_cancel {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  color: #222429;
+  border: 1px solid #CFD4DC;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 137px;
+  height: 32px;
 }
 
 .prof-control-panel__checkbox-label {
@@ -8768,6 +8817,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+  }
+}
+
+@media (max-width: 71.875rem) {
+  .prof-control-panel__search_type_director {
+    width: 72%;
   }
 }
 
@@ -10357,5 +10412,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 16px;
   border-radius: 50%;
   background-color: #fff;
+}
+
+.fixed-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 71px;
+  z-index: 100;
+  padding: 20px 0;
+  background-color: #fff;
+  border-top: 1px solid #E1E5EB;
 }
 /*# sourceMappingURL=style.css.map */

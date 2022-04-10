@@ -66,6 +66,9 @@ const state = {
         ),
     },
     submenuSelect: {
+        "structure-director": document.querySelector(
+            "#submenu-structure-director"
+        ),
         "transfer-objects": document.querySelector("#submenu-transfer-objects"),
         ankets: document.querySelector("#submenu-ankets"),
         "type-activity": document.querySelector("#submenu-type-activity"),
@@ -570,6 +573,9 @@ const sturctureWrappers = document.querySelectorAll(
 
 sturctureWrappers.forEach((i) =>
     i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-structure__label")) {
+            return;
+        }
         const wrapperElement = e.target.closest(
             ".prof-structure__wrapper-subtitle"
         );
@@ -874,3 +880,24 @@ popupsBody.forEach((i) =>
         }
     })
 );
+
+// логика работы чекбоксов передать объект на мобильном разрешении
+
+const checkboxesTransferObjects = document.querySelectorAll(
+    ".prof-label-checkbox_type_transfer-objects"
+);
+const fixedPopupTransferObjects = document.querySelector(".fixed-popup");
+
+checkboxesTransferObjects.forEach((i) =>
+    i.addEventListener("click", () => {
+        if (innerWidth < 1001) {
+            removeClassElement(fixedPopupTransferObjects, "mix-display-none");
+        }
+    })
+);
+
+fixedPopupTransferObjects.addEventListener("click", (e) => {
+    if (e.target.classList.contains("prof-control-panel__button_type_cancel")) {
+        addClassElement(fixedPopupTransferObjects, "mix-display-none");
+    }
+});

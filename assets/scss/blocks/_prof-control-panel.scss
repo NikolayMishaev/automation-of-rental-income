@@ -3,6 +3,9 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    &_type_mobile {
+        justify-content: center;
+    }
     &_type_feedback {
         @media (max-width: rem(1780px)) {
             margin-left: auto;
@@ -71,8 +74,34 @@
             min-width: 167px;
             height: 32px;
             @media (max-width: rem(1150px)) {
+                order: 2;
+                margin-top: 16px;
+                margin-left: 0;
+            }
+            @media (max-width: rem(1000px)) {
                 display: none;
             }
+        }
+        &_type_mobile {
+            background-color: $accent-TCX50;
+            color: white;
+            border-radius: 4px;
+            margin-left: 6px;
+            display: flex;
+            align-items: center;
+            min-width: 167px;
+            height: 32px;
+        }
+        &_type_cancel {
+            justify-content: center;
+            background-color: white;
+            color:  #222429;
+            border: 1px solid #CFD4DC;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            min-width: 137px;
+            height: 32px;
         }
     }
     &__checkbox-label {
@@ -529,6 +558,11 @@
             margin-top: 0;
             width: unset;
             flex: 1;
+        }
+        &_type_director {
+            @media (max-width: rem(1150px)) {
+                width: 72%;
+            }
         }
         &_type_offers {
             width: 743px;
