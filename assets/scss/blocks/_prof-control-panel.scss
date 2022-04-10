@@ -110,6 +110,9 @@
                 }
             }
         }
+        &_type_transfer-objects {
+            margin-top: 0;
+        }
         &_type_main {
             margin-top: 0;
             @media (max-width: rem(740px)) {
@@ -307,7 +310,7 @@
         width: 8px;
         height: 8px;
         background: url("./../images/icons/main-cursor-down.svg") no-repeat center/8px;
-
+        transition: $transition;
         &_active {
             transform: rotate(180deg);
         }
@@ -359,6 +362,9 @@
             &:hover {
                 cursor: pointer;
             }
+        }
+        &_type_transfer-objects {
+            width: 120px;
         }
         &_type_about-me {
             width: 105px;

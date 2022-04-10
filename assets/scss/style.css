@@ -8233,6 +8233,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.prof-control-panel__select-label_type_transfer-objects {
+  margin-top: 0;
+}
+
 .prof-control-panel__select-label_type_main {
   margin-top: 0;
 }
@@ -8465,6 +8469,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 8px;
   height: 8px;
   background: url("./../images/icons/main-cursor-down.svg") no-repeat center/8px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .prof-control-panel__cursor_active {
@@ -8530,6 +8536,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__select-input:disabled:hover {
   cursor: pointer;
+}
+
+.prof-control-panel__select-input_type_transfer-objects {
+  width: 120px;
 }
 
 .prof-control-panel__select-input_type_about-me {

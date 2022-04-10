@@ -10,6 +10,7 @@ const state = {
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
     cursorsSelect: {
+        "transfer-objects": document.querySelector("#cursor-transfer-objects"),
         ankets: document.querySelector("#cursor-ankets"),
         "type-activity": document.querySelector("#cursor-type-activity"),
         "ankets-status": document.querySelector("#cursor-ankets-status"),
@@ -65,6 +66,7 @@ const state = {
         ),
     },
     submenuSelect: {
+        "transfer-objects": document.querySelector("#submenu-transfer-objects"),
         ankets: document.querySelector("#submenu-ankets"),
         "type-activity": document.querySelector("#submenu-type-activity"),
         "ankets-status": document.querySelector("#submenu-ankets-status"),
@@ -130,6 +132,7 @@ const state = {
         ),
     },
     inputsSelect: {
+        "transfer-objects": document.querySelector("#input-transfer-objects"),
         ankets: document.querySelector("#input-ankets"),
         "type-activity": document.querySelector("#input-type-activity"),
         "ankets-status": document.querySelector("#input-ankets-status"),
