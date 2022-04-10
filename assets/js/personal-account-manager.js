@@ -703,14 +703,6 @@ buttonsSelect.forEach((i) =>
     })
 );
 
-// логика закрытия попапа редактирования аватара
-
-const buttonClose = document.querySelector("#button-close-popup-sign-ind");
-const popoupAvatar = document.querySelector(".modal-edit-avatar");
-buttonClose.addEventListener("click", (e) => {
-    popoupAvatar.style = "display-none";
-});
-
 // логика переключения вида анкет
 
 const agentActualCardsContent = document.querySelector("#agents-cards-actual");
@@ -765,3 +757,19 @@ objectList.forEach((i, c) => {
         popupEditCardObject.style.display = "flex";
     });
 });
+
+// логика закрытия попапов редактирования аватара, передачи объекта, передачи обращения
+
+const popupsBody = document.querySelectorAll(".modal");
+
+popupsBody.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (
+            e.target.closest(".modal__close-btn") ||
+            e.target.closest(".modal__cancel-btn") ||
+            e.target.classList.contains("modal")
+        ) {
+            e.target.closest(".modal").style.display = "none";
+        }
+    })
+);

@@ -7007,6 +7007,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-aside__header {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7022,6 +7024,45 @@ input[type="date"]::-webkit-calendar-picker-indicator {
           justify-content: space-between;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e3e7e8;
+}
+
+@media (max-width: 100rem) {
+  .prof-aside__header {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 96.875rem) {
+  .prof-aside__header {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (max-width: 45rem) {
+  .prof-aside__header {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -7043,6 +7084,33 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prof-aside__text_type_director {
   margin-left: auto;
   margin-right: 0;
+}
+
+@media (max-width: 111.25rem) {
+  .prof-aside__text_type_director {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 100rem) {
+  .prof-aside__text_type_director {
+    margin-left: 0;
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 96.875rem) {
+  .prof-aside__text_type_director {
+    margin-left: auto;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: 45rem) {
+  .prof-aside__text_type_director {
+    margin-left: 0;
+    margin-top: 2px;
+  }
 }
 
 .prof-aside__total-requests {
@@ -7167,7 +7235,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 40rem) {
   .prof-aside__tasks-container {
-    border: 1px solid #E3E7E8;
+    border: 1px solid #e3e7e8;
     border-radius: 12px;
   }
 }
@@ -7204,7 +7272,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-aside__task-item:hover {
   cursor: pointer;
-  opacity: 0.8;
 }
 
 .prof-aside__photo {
@@ -7221,7 +7288,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-aside__tasks-info_type_director {
-  width: 128px;
+  width: 115px;
 }
 
 .prof-aside__task-name {
@@ -7340,15 +7407,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border: none;
 }
 
-@media (max-width: 45rem) {
-  .prof-aside__button_type_mobile {
-    display: none;
+@media (max-width: 100rem) {
+  .prof-aside__button {
+    margin-left: 0;
   }
 }
 
-@media (max-width: 111.25rem) {
-  .prof-aside__button_type_desktop {
-    display: none;
+@media (max-width: 45rem) {
+  .prof-aside__button_type_mobile {
+    margin-left: 0;
+    margin-top: 4px;
   }
 }
 
@@ -7465,7 +7533,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-aside__link {
-  color: #1565C0;
+  color: #1565c0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7479,6 +7547,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-aside__link_type_first {
   bottom: 100px;
+}
+
+.prof-aside__link:link {
+  text-decoration: none;
+}
+
+.prof-aside__link:visited {
+  text-decoration: none;
+}
+
+.prof-aside__link:active {
+  text-decoration: none;
 }
 
 .prof-aside__link:hover {
@@ -7985,6 +8065,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   position: relative;
+}
+
+@media (max-width: 111.25rem) {
+  .prof-control-panel_type_feedback {
+    margin-left: auto;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 100rem) {
+  .prof-control-panel_type_feedback {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 62.5rem) {

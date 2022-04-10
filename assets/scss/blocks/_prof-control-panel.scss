@@ -3,6 +3,15 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    &_type_feedback {
+        @media (max-width: rem(1780px)) {
+            margin-left: auto;
+            margin-top: 4px;
+        }
+        @media (max-width: rem(1600px)) {
+            margin-left: 0;
+        }
+    }
     &_type_agent {
         @media (max-width: rem(1000px)) {
             flex-wrap: nowrap;

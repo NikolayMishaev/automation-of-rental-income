@@ -465,6 +465,9 @@ const tasksContainer = document.querySelectorAll(
 
 tasksContainer.forEach((i) =>
     i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-label-checkbox_type_feedback")) {
+            return;
+        }
         if (innerWidth > 1780) {
             return;
         }
@@ -780,14 +783,6 @@ buttonsSelect.forEach((i) =>
     })
 );
 
-// логика закрытия попапа редактирования аватара
-
-const buttonClose = document.querySelector("#button-close-popup-sign-ind");
-const popoupAvatar = document.querySelector(".modal-edit-avatar");
-buttonClose.addEventListener("click", (e) => {
-    popoupAvatar.style = "display-none";
-});
-
 // логика переключения вида анкет
 
 const agentActualCardsContent = document.querySelector("#agents-cards-actual");
@@ -842,3 +837,37 @@ objectList.forEach((i, c) => {
         popupEditCardObject.style.display = "flex";
     });
 });
+
+// логика открытия попапа передачи обращения, объекта
+
+const buttonsSendAppeals = document.querySelectorAll(".prof-aside__button");
+const buttonsSendObjects = document.querySelectorAll(
+    ".prof-control-panel__button_type_transfer"
+);
+const popupSendObjects = document.querySelector(".modal-transfer-object");
+
+buttonsSendAppeals.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
+
+buttonsSendObjects.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
+
+function setAddEventListenerOpenPopupSendObjects(i) {
+    i.addEventListener("click", () => {
+        popupSendObjects.style.display = "flex";
+    });
+}
+
+// логика закрытия попапов редактирования аватара, передачи объекта, передачи обращения
+
+const popupsBody = document.querySelectorAll(".modal");
+
+popupsBody.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (
+            e.target.closest(".modal__close-btn") ||
+            e.target.closest(".modal__cancel-btn") ||
+            e.target.classList.contains("modal")
+        ) {
+            e.target.closest(".modal").style.display = "none";
+        }
+    })
+);
