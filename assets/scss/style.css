@@ -5371,6 +5371,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.main-submenu_style_structure {
+  left: 0;
+  right: 0;
+  top: 34px;
+}
+
 .main-submenu_style_prof-status-list {
   left: 0;
   right: 0;
