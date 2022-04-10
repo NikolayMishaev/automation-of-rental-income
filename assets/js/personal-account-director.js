@@ -626,6 +626,7 @@ const checkClickOutsideSelect = (e) => {
     if (!e.target.closest(".prof-control-panel__select-label")) {
         // скрыть текущее подменю
         hideCurrentSubmenu(state.currentOpenSubmenu, true);
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
     }
 };
 
@@ -698,8 +699,7 @@ function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
         }
         // скрыть текущее открытое подменю
         removeClassElement(submenu, "mix-visible");
-        // удалить текущий селект из стейта
-        submenu = null;
+
         if (deleteListenerOverlay) {
             // удалить слушатель document, т.к. все селекты закрыты
             document.removeEventListener("click", checkClickOutsideSelect);
@@ -742,7 +742,12 @@ buttonsSelect.forEach((i) =>
                 e.target.closest(".main-submenu__item"),
                 "main-submenu__item_active"
             );
-            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            if (state.currentOpenSubmenuSecondLevel) {
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+            } else {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            }
+
             return;
         }
         if (e.target.classList.contains("prof-control-panel__button")) {
@@ -768,6 +773,7 @@ buttonsSelect.forEach((i) =>
                 )
             ) {
                 hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
                 addClassElement(
                     state.submenuSelect[currentLabel.ariaLabel],
                     "mix-visible"
@@ -787,6 +793,7 @@ buttonsSelect.forEach((i) =>
                 }
             } else {
                 hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
             }
         }
     })

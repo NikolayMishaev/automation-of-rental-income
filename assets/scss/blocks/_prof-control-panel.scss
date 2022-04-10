@@ -3,6 +3,9 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    &_type_director {
+        display: block;
+    }
     &_type_mobile {
         justify-content: center;
     }
@@ -36,10 +39,10 @@
         border-radius: 50px;
         @include flex-container;
         &_type_analytic {
-            width: 208px;
+            min-width: 208px;
         }
         &_type_diagram {
-            width: 244px;
+            min-width: 243px;
         }
         &_type_agent {
             width: 241px;
@@ -446,6 +449,7 @@
         }
         &_type_division {
             width: 100%;
+            padding-right: 27px;
         }
     }
     &__label-custom {

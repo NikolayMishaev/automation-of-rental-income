@@ -8067,6 +8067,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: relative;
 }
 
+.prof-control-panel_type_director {
+  display: block;
+}
+
 .prof-control-panel_type_mobile {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -8129,11 +8133,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__buttons-container_type_analytic {
-  width: 208px;
+  min-width: 208px;
 }
 
 .prof-control-panel__buttons-container_type_diagram {
-  width: 244px;
+  min-width: 243px;
 }
 
 .prof-control-panel__buttons-container_type_agent {
@@ -8666,6 +8670,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__select-input_type_division {
   width: 100%;
+  padding-right: 27px;
 }
 
 .prof-control-panel__label-custom {
