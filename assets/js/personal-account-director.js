@@ -609,6 +609,9 @@ window.addEventListener("resize", function (e) {
     if (innerWidth < 1551 && innerWidth > 750) {
         panelTasks.classList.remove("mix-display-none");
     }
+    if (this.innerWidth > 1000) {
+        addClassElement(fixedPopupTransferObjects, "mix-display-none");
+    }
 });
 
 // логика смены чата на задачи по клику на кнопку
@@ -803,6 +806,7 @@ const checkClickOutsideSelect = (e) => {
         // скрыть текущее подменю
         hideCurrentSubmenu(state.currentOpenSubmenu, true);
         hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
+        state.currentOpenSubmenuSecondLevel = null;
     }
 };
 
@@ -846,6 +850,7 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
         }
     } else {
         hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+        state.currentOpenSubmenuSecondLevel = null;
     }
 }
 
@@ -972,6 +977,7 @@ buttonsSelect.forEach((i) =>
             } else {
                 hideCurrentSubmenu(state.currentOpenSubmenu, true);
                 hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
+                state.currentOpenSubmenuSecondLevel = null;
             }
         }
     })
@@ -1042,7 +1048,13 @@ const buttonsSendAppeals = document.querySelectorAll(".prof-aside__button");
 const buttonsSendObjects = document.querySelectorAll(
     ".prof-control-panel__button_type_transfer"
 );
+const buttonSendObjectsMobile = document.querySelector(
+    ".prof-control-panel__button_type_mobile"
+);
+
 const popupSendObjects = document.querySelector(".modal-transfer-object");
+
+setAddEventListenerOpenPopupSendObjects(buttonSendObjectsMobile);
 
 buttonsSendAppeals.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
 
