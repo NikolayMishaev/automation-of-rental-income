@@ -3,6 +3,9 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    &_type_director {
+        display: block;
+    }
     &_type_mobile {
         justify-content: center;
     }
@@ -36,10 +39,10 @@
         border-radius: 50px;
         @include flex-container;
         &_type_analytic {
-            width: 208px;
+            min-width: 208px;
         }
         &_type_diagram {
-            width: 244px;
+            min-width: 243px;
         }
         &_type_agent {
             width: 241px;
@@ -150,8 +153,6 @@
                 overflow: hidden;
                 border-radius: 4px;
                 position: static;
-                &:hover::before {
-                }
                 &:before {
                     content: "";
                     position: absolute;
@@ -343,6 +344,9 @@
         &_active {
             transform: rotate(180deg);
         }
+        &_type_structure {
+            background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
+        }
         &_type_agent {
             @media (max-width: rem(1000px)) {
                 display: none;
@@ -446,6 +450,7 @@
         }
         &_type_division {
             width: 100%;
+            padding-right: 27px;
         }
     }
     &__label-custom {

@@ -5371,6 +5371,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.main-submenu_style_structure {
+  left: 0;
+  right: 0;
+  top: 34px;
+}
+
 .main-submenu_style_prof-status-list {
   left: 0;
   right: 0;
@@ -8067,6 +8073,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: relative;
 }
 
+.prof-control-panel_type_director {
+  display: block;
+}
+
 .prof-control-panel_type_mobile {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -8129,11 +8139,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__buttons-container_type_analytic {
-  width: 208px;
+  min-width: 208px;
 }
 
 .prof-control-panel__buttons-container_type_diagram {
-  width: 244px;
+  min-width: 243px;
 }
 
 .prof-control-panel__buttons-container_type_agent {
@@ -8527,6 +8537,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
           transform: rotate(180deg);
 }
 
+.prof-control-panel__cursor_type_structure {
+  background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
+}
+
 @media (max-width: 62.5rem) {
   .prof-control-panel__cursor_type_agent {
     display: none;
@@ -8666,6 +8680,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__select-input_type_division {
   width: 100%;
+  padding-right: 27px;
 }
 
 .prof-control-panel__label-custom {
@@ -10088,6 +10103,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-structure__label:hover {
   cursor: pointer;
+}
+
+.prof-structure__label.prof-control-panel__select-label_active {
+  background-image: url("./../images/icons/main-page-icon-filters-active.svg");
 }
 
 .form-agent-card {
