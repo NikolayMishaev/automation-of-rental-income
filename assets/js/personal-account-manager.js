@@ -529,16 +529,6 @@ function addClassElementStars(arrayStars, currentValue) {
     });
 }
 
-// логика работы чекбоксов в карточках и таблице
-
-const checkboxs = document.querySelectorAll(".prof-table__test-checkbox");
-
-checkboxs.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        e.target.classList.toggle("prof-table__test-checkbox-active");
-    })
-);
-
 // логика по работе селектов
 
 // проверить, где сработал клик, если за пределами тела селекта, то запустить ф-ию для скрытия текущего открытого подменю
@@ -713,14 +703,6 @@ buttonsSelect.forEach((i) =>
     })
 );
 
-// логика закрытия попапа редактирования аватара
-
-const buttonClose = document.querySelector("#button-close-popup-sign-ind");
-const popoupAvatar = document.querySelector(".modal-edit-avatar");
-buttonClose.addEventListener("click", (e) => {
-    popoupAvatar.style = "display-none";
-});
-
 // логика переключения вида анкет
 
 const agentActualCardsContent = document.querySelector("#agents-cards-actual");
@@ -748,3 +730,46 @@ function switchContentAnkets(currentCheckedValue) {
             return;
     }
 }
+
+// логика открытия попапа объека
+
+const objectList = document.querySelectorAll(".prof-table__row_style_objects");
+const objectCards = document.querySelectorAll(".prof-card");
+const popupEditCardObject = document.querySelector(".modal-edit-card-object");
+
+objectCards.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-label-checkbox")) {
+            return;
+        }
+        popupEditCardObject.style.display = "flex";
+    })
+);
+
+objectList.forEach((i, c) => {
+    if (c === 0) {
+        return;
+    }
+    i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-label-checkbox")) {
+            return;
+        }
+        popupEditCardObject.style.display = "flex";
+    });
+});
+
+// логика закрытия попапов редактирования аватара, передачи объекта, передачи обращения
+
+const popupsBody = document.querySelectorAll(".modal");
+
+popupsBody.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (
+            e.target.closest(".modal__close-btn") ||
+            e.target.closest(".modal__cancel-btn") ||
+            e.target.classList.contains("modal")
+        ) {
+            e.target.closest(".modal").style.display = "none";
+        }
+    })
+);

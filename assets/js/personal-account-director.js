@@ -10,6 +10,7 @@ const state = {
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
     cursorsSelect: {
+        "transfer-objects": document.querySelector("#cursor-transfer-objects"),
         ankets: document.querySelector("#cursor-ankets"),
         "type-activity": document.querySelector("#cursor-type-activity"),
         "ankets-status": document.querySelector("#cursor-ankets-status"),
@@ -65,6 +66,10 @@ const state = {
         ),
     },
     submenuSelect: {
+        "structure-director": document.querySelector(
+            "#submenu-structure-director"
+        ),
+        "transfer-objects": document.querySelector("#submenu-transfer-objects"),
         ankets: document.querySelector("#submenu-ankets"),
         "type-activity": document.querySelector("#submenu-type-activity"),
         "ankets-status": document.querySelector("#submenu-ankets-status"),
@@ -130,6 +135,7 @@ const state = {
         ),
     },
     inputsSelect: {
+        "transfer-objects": document.querySelector("#input-transfer-objects"),
         ankets: document.querySelector("#input-ankets"),
         "type-activity": document.querySelector("#input-type-activity"),
         "ankets-status": document.querySelector("#input-ankets-status"),
@@ -465,6 +471,9 @@ const tasksContainer = document.querySelectorAll(
 
 tasksContainer.forEach((i) =>
     i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-label-checkbox_type_feedback")) {
+            return;
+        }
         if (innerWidth > 1780) {
             return;
         }
@@ -556,16 +565,6 @@ function addClassElementStars(arrayStars, currentValue) {
     });
 }
 
-// логика работы чекбоксов в карточках и таблице
-
-const checkboxs = document.querySelectorAll(".prof-table__test-checkbox");
-
-checkboxs.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        e.target.classList.toggle("prof-table__test-checkbox-active");
-    })
-);
-
 // логика работы селектов в табе Структура
 
 const sturctureWrappers = document.querySelectorAll(
@@ -574,6 +573,9 @@ const sturctureWrappers = document.querySelectorAll(
 
 sturctureWrappers.forEach((i) =>
     i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-structure__label")) {
+            return;
+        }
         const wrapperElement = e.target.closest(
             ".prof-structure__wrapper-subtitle"
         );
@@ -790,14 +792,6 @@ buttonsSelect.forEach((i) =>
     })
 );
 
-// логика закрытия попапа редактирования аватара
-
-const buttonClose = document.querySelector("#button-close-popup-sign-ind");
-const popoupAvatar = document.querySelector(".modal-edit-avatar");
-buttonClose.addEventListener("click", (e) => {
-    popoupAvatar.style = "display-none";
-});
-
 // логика переключения вида анкет
 
 const agentActualCardsContent = document.querySelector("#agents-cards-actual");
@@ -825,3 +819,85 @@ function switchContentAnkets(currentCheckedValue) {
             return;
     }
 }
+
+// логика открытия попапа объека
+
+const objectList = document.querySelectorAll(".prof-table__row_style_objects");
+const objectCards = document.querySelectorAll(".prof-card");
+const popupEditCardObject = document.querySelector(".modal-edit-card-object");
+
+objectCards.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-label-checkbox")) {
+            return;
+        }
+        popupEditCardObject.style.display = "flex";
+    })
+);
+
+objectList.forEach((i, c) => {
+    if (c === 0) {
+        return;
+    }
+    i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-label-checkbox")) {
+            return;
+        }
+        popupEditCardObject.style.display = "flex";
+    });
+});
+
+// логика открытия попапа передачи обращения, объекта
+
+const buttonsSendAppeals = document.querySelectorAll(".prof-aside__button");
+const buttonsSendObjects = document.querySelectorAll(
+    ".prof-control-panel__button_type_transfer"
+);
+const popupSendObjects = document.querySelector(".modal-transfer-object");
+
+buttonsSendAppeals.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
+
+buttonsSendObjects.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
+
+function setAddEventListenerOpenPopupSendObjects(i) {
+    i.addEventListener("click", () => {
+        popupSendObjects.style.display = "flex";
+    });
+}
+
+// логика закрытия попапов редактирования аватара, передачи объекта, передачи обращения
+
+const popupsBody = document.querySelectorAll(".modal");
+
+popupsBody.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (
+            e.target.closest(".modal__close-btn") ||
+            e.target.closest(".modal__cancel-btn") ||
+            e.target.classList.contains("modal")
+        ) {
+            e.target.closest(".modal").style.display = "none";
+        }
+    })
+);
+
+// логика работы чекбоксов передать объект на мобильном разрешении
+
+const checkboxesTransferObjects = document.querySelectorAll(
+    ".prof-label-checkbox_type_transfer-objects"
+);
+const fixedPopupTransferObjects = document.querySelector(".fixed-popup");
+
+checkboxesTransferObjects.forEach((i) =>
+    i.addEventListener("click", () => {
+        if (innerWidth < 1001) {
+            removeClassElement(fixedPopupTransferObjects, "mix-display-none");
+        }
+    })
+);
+
+fixedPopupTransferObjects.addEventListener("click", (e) => {
+    if (e.target.classList.contains("prof-control-panel__button_type_cancel")) {
+        addClassElement(fixedPopupTransferObjects, "mix-display-none");
+    }
+});
