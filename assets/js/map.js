@@ -77,9 +77,9 @@ function setMarker(obj) {
         .addTo(map)
         .bindPopup(tooltip(obj))
         .openPopup();
-    L.tileLayer("http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
-        maxZoom: 20,
-        subdomains: ["mt0", "mt1", "mt2", "mt3"],
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+            '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 }
 

@@ -3,12 +3,11 @@ let marker = null;
 let markerArray = [];
 
 function setMap() {
-    // ид объекта
-
     if (map !== null) return;
     const idObjectOnMap = document.querySelector("#map").dataset.id;
 
     // информация о текущем объекте
+    getObjectPoint(idObjectOnMap);
 
     async function getObjectPoint(id) {
         let response = await fetch(
@@ -20,24 +19,19 @@ function setMap() {
             result = {
                 lat: "55.7590447",
                 lon: "37.6175600",
-                price: 50000,
-                photo: "./assets/img/slider-item.jpg",
-                title: "Москва, Ул. Льва Толстого, дом 23, корп.1",
             };
             setMarker(result);
+            getObjectListPoints();
         }
     }
-    getObjectPoint(idObjectOnMap);
-
-    getObjectListPoints();
 }
 // установить начальную точку
 function setMarker(obj) {
     let coord = [+obj.lat, +obj.lon];
     map = L.map("map").setView(coord, 17);
-    L.tileLayer("http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", {
-        maxZoom: 20,
-        subdomains: ["mt0", "mt1", "mt2", "mt3"],
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+            '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 }
 
@@ -62,13 +56,20 @@ async function getObjectListPoints() {
                 title: "Москва, Ул. Льва Толстого, дом 23, корп.1",
                 cost: 60000,
                 street: "Льва Толстого",
-                metro: "metr0",
-                footer: true,
-                spaceSize: "50",
-                city: "Moscow",
+                metro: "Академическая",
+                footer: false,
+                spaceSize: 50,
+                city: "Москва",
                 type: false,
                 floor: 5,
-                classification: false,
+                classification: {
+                    0: false,
+                    1: false,
+                    2: false,
+                    3: false,
+                    4: false,
+                    5: false,
+                },
                 repair: false,
                 state: false,
             },
@@ -80,15 +81,22 @@ async function getObjectListPoints() {
                 title: "Москва, Ул. Льва Толстого, дом 23, корп.1",
                 cost: 60000,
                 street: "Льва Толстого",
-                metro: "metr0",
+                metro: "Академическая",
                 footer: false,
-                spaceSize: "50",
-                city: "Moscow",
-                type: true,
+                spaceSize: 50,
+                city: "Москва",
+                type: false,
                 floor: 6,
-                classification: false,
+                classification: {
+                    0: false,
+                    1: false,
+                    2: false,
+                    3: false,
+                    4: false,
+                    5: false,
+                },
                 repair: false,
-                state: false,
+                state: true,
             },
             2: {
                 lat: "55.7590447",
@@ -98,24 +106,57 @@ async function getObjectListPoints() {
                 title: "Москва, Ул. Льва Толстого, дом 23, корп.1",
                 cost: 60000,
                 street: "Льва Толстого",
-                metro: "metr0",
+                metro: "Академическая",
                 footer: false,
-                spaceSize: "50",
-                city: "Moscow",
-                type: true,
+                spaceSize: 50,
+                city: "Москва",
+                type: false,
                 floor: 6,
-                classification: false,
+                classification: {
+                    0: false,
+                    1: false,
+                    2: false,
+                    3: false,
+                    4: false,
+                    5: false,
+                },
+                repair: false,
+                state: false,
+            },
+            3: {
+                lat: "55.7560447",
+                lon: "37.6145600",
+                price: 30000,
+                photo: "./assets/img/slider-item.jpg",
+                title: "Москва, Ул. Льва Толстого, дом 23, корп.1",
+                cost: 60000,
+                street: "Льва Толстого",
+                metro: "Академическая",
+                footer: false,
+                spaceSize: 50,
+                city: "Москва",
+                type: false,
+                floor: 6,
+                classification: {
+                    0: true,
+                    1: false,
+                    2: false,
+                    3: false,
+                    4: false,
+                    5: false,
+                },
                 repair: false,
                 state: false,
             },
         };
-        setOuterMarkers(listPoint);
+        getFilerValues();
     }
 }
 
 // установить точки
 
 function setOuterMarkers(list) {
+    // удалить старые точки
     if (markerArray.length) {
         markerArray.forEach((v) => map.removeLayer(v));
     }
@@ -146,12 +187,17 @@ let btnFilterSubmit = document.querySelector(".main-form__button_type_submit");
 
 btnFilterSubmit.addEventListener("click", (e) => {
     e.preventDefault();
+    const mapDisplay = document
+        .querySelector(".main__map")
+        .classList.contains("mix-display-none");
+    if (mapDisplay) return;
     getFilerValues();
 });
 
 function getFilerValues() {
     let filters = {
         adress: {
+            title: "",
             city: "",
             street: "",
             metro: "",
@@ -178,6 +224,7 @@ function getFilerValues() {
             to: 0,
         },
         classification: {
+            main: "",
             0: false,
             1: false,
             2: false,
@@ -213,10 +260,10 @@ function getFilerValues() {
     );
     filters.spaceSize.from = +fromToList[0].value;
     filters.spaceSize.to = +fromToList[1].value;
-    filters.cost.from = fromToList[2].value;
-    filters.cost.to = fromToList[3].value;
-    filters.price.from = fromToList[4].value;
-    filters.price.to = fromToList[5].value;
+    filters.cost.from = +fromToList[2].value;
+    filters.cost.to = +fromToList[3].value;
+    filters.price.from = +fromToList[4].value;
+    filters.price.to = +fromToList[5].value;
     const checkboxList = document.querySelectorAll(
         ".main-form__input_type_checkbox"
     );
@@ -225,6 +272,9 @@ function getFilerValues() {
     filters.type[3] = checkboxList[2].checked;
     filters.floor.from = +fromToList[6].value;
     filters.floor.to = +fromToList[7].value;
+    filters.classification.main = document.getElementById(
+        "main-form-filter-input-change-class"
+    ).value;
     filters.classification[0] = checkboxList[3].checked;
     filters.classification[1] = checkboxList[4].checked;
     filters.classification[2] = checkboxList[5].checked;
@@ -237,41 +287,48 @@ function getFilerValues() {
     filters.state[1] = checkboxList[12].checked;
     filters.footer[0] = checkboxList[13].checked;
     filters.footer[1] = checkboxList[14].checked;
-    console.log(filters);
 
     let neWlistPoint = Object.keys(listPoint).map((k) => listPoint[k]);
     neWlistPoint = neWlistPoint.filter((point) => {
-        return point.price >= filters.price.from && filters.price.to
-            ? point.price <= filters.price.to
-            : true && point.cost >= filters.cost.from && filters.cost.to
-            ? point.cost <= filters.cost.to
-            : true && filters.adress.street
-            ? point.street === filters.adress.street
-            : true && filters.adress.metro
-            ? point.metro === filters.adress.metro
-            : true && filters.adress.city
-            ? point.city === filters.adress.city
-            : true && filters.spaceSize.to
-            ? point.spaceSize <= filters.spaceSize.to
-            : true && point.floor >= filters.floor.from && filters.floor.to
-            ? point.floor <= filters.floor.to
-            : true &&
-              point.spaceSize >= filters.spaceSize.from &&
-              (filters.type[0] === point.type ||
-                  filters.type[1] === point.type ||
-                  filters.type[2] === point.type) &&
-              (point.classification === filters.classification[0] ||
-                  point.classification === filters.classification[1] ||
-                  point.classification === filters.classification[2] ||
-                  point.classification === filters.classification[3] ||
-                  point.classification === filters.classification[4] ||
-                  point.classification === filters.classification[5]) &&
-              (point.repair === filters.repair[0] ||
-                  point.repair === filters.repair[1]) &&
-              (point.state === filters.state[0] ||
-                  point.state === filters.state[1]) &&
-              (point.footer === filters.footer[0] ||
-                  point.footer === filters.footer[1]);
+        return (
+            point.price >= filters.price.from &&
+            (filters.price.to ? point.price <= filters.price.to : true) &&
+            point.cost >= filters.cost.from &&
+            (filters.cost.to ? point.cost <= filters.cost.to : true) &&
+            (filters.adress.street
+                ? point.street === filters.adress.street
+                : true) &&
+            (filters.adress.metro
+                ? point.metro === filters.adress.metro
+                : true) &&
+            (filters.adress.title
+                ? point.title === filters.adress.title
+                : true) &&
+            (filters.adress.city ? point.city === filters.adress.city : true) &&
+            (filters.spaceSize.to
+                ? point.spaceSize <= filters.spaceSize.to
+                : true) &&
+            point.floor >= filters.floor.from &&
+            (filters.floor.to ? point.floor <= filters.floor.to : true) &&
+            point.spaceSize >= filters.spaceSize.from &&
+            (filters.type[0] === point.type ||
+                filters.type[1] === point.type ||
+                filters.type[2] === point.type) &&
+            (filters.classification.main
+                ? point.classification[0] === filters.classification[0] &&
+                  point.classification[1] === filters.classification[1] &&
+                  point.classification[2] === filters.classification[2] &&
+                  point.classification[3] === filters.classification[3] &&
+                  point.classification[4] === filters.classification[4] &&
+                  point.classification[5] === filters.classification[5]
+                : true) &&
+            (point.repair === filters.repair[0] ||
+                point.repair !== filters.repair[1]) &&
+            (point.state === filters.state[0] ||
+                point.state !== filters.state[1]) &&
+            (point.footer === filters.footer[0] ||
+                point.footer === filters.footer[1])
+        );
     });
     setOuterMarkers(neWlistPoint);
 }

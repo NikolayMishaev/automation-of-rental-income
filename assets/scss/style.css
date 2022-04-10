@@ -2818,6 +2818,7 @@ main .container {
   border-radius: 4px;
   -webkit-box-shadow: 0 0 1px #222;
           box-shadow: 0 0 1px #222;
+  z-index: 1;
 }
 
 @media (max-width: 40rem) {
