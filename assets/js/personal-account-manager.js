@@ -497,37 +497,89 @@ function closeMobileBlockContacts() {
     generalPanel.classList.remove("mix-display-none");
 }
 
-// логика оценка работы менеджера звездочками
+// логика оценка звездочками во вкладке Аналитика
 
-const mobileStars = document.querySelectorAll(".prof-aside__star_type_mobile");
-const desktopStars = document.querySelectorAll(
-    ".prof-aside__star_type_desktop"
+const analyticalStarsTotal = document.querySelectorAll(".analytics-star-total");
+const analyticalStarsRangeFrom = document.querySelectorAll(
+    ".analytics-star-range-from"
 );
-const containersStars = document.querySelectorAll(
-    ".prof-aside__stars-container"
+const analyticalStarsRangeTo = document.querySelectorAll(
+    ".analytics-star-range-to"
 );
-const inputStars = document.querySelector("#input-stars");
+const containerStars = document.querySelector("#container-analytics-stars");
+const inputAnalyticalStarsTotal = document.querySelector(
+    "#input-analytics-star-total"
+);
+const inputAnalyticalStarsRangeFrom = document.querySelector(
+    "#input-analytics-star-range-from"
+);
+const inputAnalyticalStarsRangeTo = document.querySelector(
+    "#input-analytics-star-range-to"
+);
 
-containersStars.forEach((j) =>
-    j.addEventListener("click", (e) => {
-        if (e.target.ariaLabel) {
-            resetActiveClass(mobileStars, "prof-aside__star_active");
-            resetActiveClass(desktopStars, "prof-aside__star_active");
-            addClassElementStars(mobileStars, +e.target.ariaLabel);
-            addClassElementStars(desktopStars, +e.target.ariaLabel);
+const buttonResetAllStars = document.querySelector(
+    "#analytics-stars-button-reset"
+);
+
+containerStars.addEventListener("click", (e) => {
+    if (e.target.ariaLabel) {
+        if (e.target.classList.contains("analytics-star-total")) {
+            resetActiveClass(
+                analyticalStarsTotal,
+                "prof-control-panel__star_active"
+            );
+            addClassElementStars(
+                analyticalStarsTotal,
+                +e.target.ariaLabel,
+                inputAnalyticalStarsTotal
+            );
         }
-    })
-);
+        if (e.target.classList.contains("analytics-star-range-from")) {
+            resetActiveClass(
+                analyticalStarsRangeFrom,
+                "prof-control-panel__star_active"
+            );
+            addClassElementStars(
+                analyticalStarsRangeFrom,
+                +e.target.ariaLabel,
+                inputAnalyticalStarsRangeFrom
+            );
+        }
+        if (e.target.classList.contains("analytics-star-range-to")) {
+            resetActiveClass(
+                analyticalStarsRangeTo,
+                "prof-control-panel__star_active"
+            );
+            addClassElementStars(
+                analyticalStarsRangeTo,
+                +e.target.ariaLabel,
+                inputAnalyticalStarsRangeTo
+            );
+        }
+    }
+});
 
-function addClassElementStars(arrayStars, currentValue) {
+function resetActiveClass(arrayElements, className) {
+    arrayElements.forEach((i) => i.classList.remove(className));
+}
+
+function addClassElementStars(arrayStars, currentValue, input) {
     arrayStars.forEach((i, c) => {
         if (c < currentValue) {
-            i.classList.add("prof-aside__star_active");
-            inputStars.value = currentValue;
+            i.classList.add("prof-control-panel__star_active");
+            input.value = currentValue;
             return;
         }
     });
 }
+
+buttonResetAllStars.addEventListener("click", () => {
+    [
+        analyticalStarsTotal,
+        analyticalStarsRangeFrom,
+        analyticalStarsRangeTo,
+    ].forEach((i) => resetActiveClass(i, "prof-control-panel__star_active"));
+});
 
 // логика по работе селектов
 
@@ -537,6 +589,8 @@ const checkClickOutsideSelect = (e) => {
     if (!e.target.closest(".prof-control-panel__select-label")) {
         // скрыть текущее подменю
         hideCurrentSubmenu(state.currentOpenSubmenu, true);
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
+        state.currentOpenSubmenuSecondLevel = null;
     }
 };
 
@@ -561,6 +615,7 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
             "prof-control-panel__select-label_active"
         )
     ) {
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
         addClassElement(
             state.submenuSelect[currentLabel.ariaLabel],
             "mix-visible"
@@ -579,6 +634,7 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
         }
     } else {
         hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+        state.currentOpenSubmenuSecondLevel = null;
     }
 }
 
@@ -609,8 +665,8 @@ function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
         }
         // скрыть текущее открытое подменю
         removeClassElement(submenu, "mix-visible");
-        // удалить текущий селект из стейта
-        submenu = null;
+        // очистить стейт
+
         if (deleteListenerOverlay) {
             // удалить слушатель document, т.к. все селекты закрыты
             document.removeEventListener("click", checkClickOutsideSelect);
@@ -653,7 +709,12 @@ buttonsSelect.forEach((i) =>
                 e.target.closest(".main-submenu__item"),
                 "main-submenu__item_active"
             );
-            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            if (state.currentOpenSubmenuSecondLevel) {
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+            } else {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            }
+
             return;
         }
         if (e.target.classList.contains("prof-control-panel__button")) {
@@ -666,7 +727,7 @@ buttonsSelect.forEach((i) =>
             );
             if (
                 currentLabelSecondLevel &&
-                currentLabelSecondLevel.ariaLabel.includes("division")
+                checkSubmenuSecondLevel(currentLabelSecondLevel.ariaLabel)
             ) {
                 toggleVisibleSubmenuSecondLevel(currentLabelSecondLevel);
             }
@@ -679,6 +740,7 @@ buttonsSelect.forEach((i) =>
                 )
             ) {
                 hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
                 addClassElement(
                     state.submenuSelect[currentLabel.ariaLabel],
                     "mix-visible"
@@ -698,11 +760,16 @@ buttonsSelect.forEach((i) =>
                 }
             } else {
                 hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
+                state.currentOpenSubmenuSecondLevel = null;
             }
         }
     })
 );
 
+function checkSubmenuSecondLevel(ariaLabel) {
+    return ariaLabel.includes("division") || ariaLabel.includes("structure");
+}
 // логика переключения вида анкет
 
 const agentActualCardsContent = document.querySelector("#agents-cards-actual");

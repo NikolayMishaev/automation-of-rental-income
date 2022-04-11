@@ -2098,26 +2098,15 @@
                                     id="submenu-division-size"
                                     class="main-submenu main-submenu_style_prof-status"
                                   >
-                                    <ul class="main-submenu__list">
-                                      <li
-                                        aria-label="item"
-                                        class="main-submenu__item main-submenu__item_active"
-                                      >
-                                        Находится внутри торгового зала
-                                      </li>
-                                      <li aria-label="item" class="main-submenu__item">
-                                        Прикассовая зона
-                                      </li>
-                                      <li aria-label="item" class="main-submenu__item">
-                                        Места общего пользования
-                                      </li>
-                                      <li aria-label="item" class="main-submenu__item">
-                                        Не стандарт
-                                      </li>
-                                      <li aria-label="item" class="main-submenu__item">
-                                        Отдельный вход с внешней стороны здания
-                                      </li>
-                                    </ul>
+                                  <ul class="main-submenu__list">
+                                    <li
+                                        aria-label="item" class="main-submenu__item main-submenu__item_active">
+                                        Категория_1</li>
+                                    <li aria-label="item" class="main-submenu__item">Категория_2</li>
+                                    <li aria-label="item" class="main-submenu__item">Категория_3</li>
+                                    <li aria-label="item" class="main-submenu__item">Категория_4</li>
+                                    <li aria-label="item" class="main-submenu__item">Категория_5</li>
+                                </ul>
                                   </div>
                                 </label>
                               </li>
@@ -2442,26 +2431,15 @@
                                     id="submenu-division-views"
                                     class="main-submenu main-submenu_style_prof-status"
                                   >
-                                    <ul class="main-submenu__list">
-                                      <li
-                                        aria-label="item"
-                                        class="main-submenu__item main-submenu__item_active"
-                                      >
-                                        Находится внутри торгового зала
-                                      </li>
-                                      <li aria-label="item" class="main-submenu__item">
-                                        Прикассовая зона
-                                      </li>
-                                      <li aria-label="item" class="main-submenu__item">
-                                        Места общего пользования
-                                      </li>
-                                      <li aria-label="item" class="main-submenu__item">
-                                        Не стандарт
-                                      </li>
-                                      <li aria-label="item" class="main-submenu__item">
-                                        Отдельный вход с внешней стороны здания
-                                      </li>
-                                    </ul>
+                                  <ul class="main-submenu__list">
+                                    <li
+                                        aria-label="item" class="main-submenu__item main-submenu__item_active">
+                                        Категория_1</li>
+                                    <li aria-label="item" class="main-submenu__item">Категория_2</li>
+                                    <li aria-label="item" class="main-submenu__item">Категория_3</li>
+                                    <li aria-label="item" class="main-submenu__item">Категория_4</li>
+                                    <li aria-label="item" class="main-submenu__item">Категория_5</li>
+                                </ul>
                                   </div>
                                 </label>
                               </li>
@@ -2520,7 +2498,7 @@
                                     type="checkbox"
                                   />
                                   <span class="prof-control-panel__visible-checkbox"></span>
-                                  Пункт_1</label
+                                  Пункт_2</label
                                 >
                               </li>
                               <li
@@ -3158,11 +3136,11 @@
                             class="prof-control-panel__input-hidden"
                             value=""
                           />
-                          <div
+                          <form
                             id="submenu-analytics-feedback"
                             class="main-submenu main-submenu_style_division"
                           >
-                            <ul class="main-submenu__list">
+                            <ul class="main-submenu__list" id="container-analytics-stars">
                               <li
                                 class="main-submenu__item main-submenu__item_style_prof-control-panel prof-control-panel__title-submenu"
                               >
@@ -3197,14 +3175,17 @@
                               <li
                                 class="main-submenu__item main-submenu__item_style_prof-control-panel"
                               >
-                                <div class="prof-control-panel__stars-container">
-                                  <input hidden="" type="text" class="prof-control-panel__input" />
-                                  <span aria-label="1" class="prof-control-panel__star"></span>
-                                  <span aria-label="2" class="prof-control-panel__star"></span>
-                                  <span aria-label="3" class="prof-control-panel__star"></span>
-                                  <span aria-label="4" class="prof-control-panel__star"></span>
-                                  <span aria-label="5" class="prof-control-panel__star"></span>
-                                </div>
+
+                                  <div class="prof-control-panel__stars-container">
+                                    <p class="prof-control-panel__stars-caption"></p>
+                                    <input hidden="" type="text" class="prof-control-panel__input" id="input-analytics-star-total" />
+                                    <span aria-label="1" class="prof-control-panel__star analytics-star-total"></span>
+                                    <span aria-label="2" class="prof-control-panel__star analytics-star-total"></span>
+                                    <span aria-label="3" class="prof-control-panel__star analytics-star-total"></span>
+                                    <span aria-label="4" class="prof-control-panel__star analytics-star-total"></span>
+                                    <span aria-label="5" class="prof-control-panel__star analytics-star-total"></span>
+                                  </div>
+
                               </li>
                               <li
                                 class="main-submenu__item main-submenu__item_style_prof-control-panel"
@@ -3223,30 +3204,32 @@
                                 class="main-submenu__item main-submenu__item_style_prof-control-panel"
                               >
                                 <div class="prof-control-panel__stars-container">
-                                  От
-                                  <input hidden="" type="text" class="prof-control-panel__input" />
-                                  <span aria-label="1" class="prof-control-panel__star"></span>
-                                  <span aria-label="2" class="prof-control-panel__star"></span>
-                                  <span aria-label="3" class="prof-control-panel__star"></span>
-                                  <span aria-label="4" class="prof-control-panel__star"></span>
-                                  <span aria-label="5" class="prof-control-panel__star"></span>
+                                  <p class="prof-control-panel__stars-caption">От</p>
+                                  <input hidden="" type="text" class="prof-control-panel__input" id="input-analytics-star-range-from" />
+                                  <span aria-label="1" class="prof-control-panel__star analytics-star-range-from"></span>
+                                  <span aria-label="2" class="prof-control-panel__star analytics-star-range-from"></span>
+                                  <span aria-label="3" class="prof-control-panel__star analytics-star-range-from"></span>
+                                  <span aria-label="4" class="prof-control-panel__star analytics-star-range-from"></span>
+                                  <span aria-label="5" class="prof-control-panel__star analytics-star-range-from"></span>
                                 </div>
                               </li>
                               <li
                                 class="main-submenu__item main-submenu__item_style_prof-control-panel"
                               >
                                 <div class="prof-control-panel__stars-container">
-                                  До
-                                  <input hidden="" type="text" class="prof-control-panel__input" />
-                                  <span aria-label="1" class="prof-control-panel__star"></span>
-                                  <span aria-label="2" class="prof-control-panel__star"></span>
-                                  <span aria-label="3" class="prof-control-panel__star"></span>
-                                  <span aria-label="4" class="prof-control-panel__star"></span>
-                                  <span aria-label="5" class="prof-control-panel__star"></span>
+                                  <p class="prof-control-panel__stars-caption">До</p>
+                                  <input hidden="" type="text" class="prof-control-panel__input" id="input-analytics-star-range-to" />
+                                  <span aria-label="1" class="prof-control-panel__star analytics-star-range-to"></span>
+                                  <span aria-label="2" class="prof-control-panel__star analytics-star-range-to"></span>
+                                  <span aria-label="3" class="prof-control-panel__star analytics-star-range-to"></span>
+                                  <span aria-label="4" class="prof-control-panel__star analytics-star-range-to"></span>
+                                  <span aria-label="5" class="prof-control-panel__star analytics-star-range-to"></span>
                                 </div>
                               </li>
+                              <li class="main-submenu__item main-submenu__item_style_analytics-wide prof-control-panel__title-submenu">
+                                <button id="analytics-stars-button-reset" class="main-submenu__button-reset text-p2" type="reset">Очистить фильтр</button></li>
                             </ul>
-                          </div>
+                          </form>
                         </label>
                       </div>
                     </div>

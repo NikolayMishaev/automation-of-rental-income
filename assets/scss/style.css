@@ -116,6 +116,8 @@ a:active {
 img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 button {
@@ -5630,10 +5632,62 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .main-submenu__item_style_divisor {
+  margin: 2px 12px;
+  padding: 6px 0 !important;
   border-top: 1px solid #e3e7e8;
 }
 
 .main-submenu__item_style_divisor:hover {
+  cursor: auto;
+  background-color: unset;
+  color: unset;
+  opacity: 1;
+}
+
+.main-submenu__item_style_structure {
+  margin: 2px 12px;
+  padding: 6px 0 !important;
+  border-top: 1px solid #e3e7e8;
+}
+
+.main-submenu__item_style_structure:first-child {
+  border-top: none;
+}
+
+.main-submenu__item_style_structure:hover {
+  cursor: auto;
+  background-color: unset;
+  color: unset;
+  opacity: 1;
+}
+
+.main-submenu__item_style_structure-wide {
+  margin: 0;
+  border-top: 1px solid #e3e7e8;
+}
+
+.main-submenu__item_style_structure-wide:first-child {
+  border-top: none;
+}
+
+.main-submenu__item_style_structure-wide:hover {
+  cursor: auto;
+  background-color: unset;
+  color: unset;
+  opacity: 1;
+}
+
+.main-submenu__item_style_analytics-wide {
+  margin: 0;
+  margin-top: 7px;
+  border-top: 1px solid #e3e7e8;
+}
+
+.main-submenu__item_style_analytics-wide:first-child {
+  border-top: none;
+}
+
+.main-submenu__item_style_analytics-wide:hover {
   cursor: auto;
   background-color: unset;
   color: unset;
@@ -5683,6 +5737,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   top: -6px;
   vertical-align: super;
   font-size: 8px;
+}
+
+.main-submenu__button-reset {
+  color: #1565c0;
+  border: none;
+  background-color: transparent;
+  padding-top: 6px;
 }
 
 @media (max-width: 62.5rem) {
@@ -8681,6 +8742,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prof-control-panel__select-input_type_division {
   width: 100%;
   padding-right: 27px;
+  margin-left: 0;
 }
 
 .prof-control-panel__label-custom {
@@ -9062,9 +9124,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__stars-container {
+  margin-left: 7px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -9088,6 +9154,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__star:last-child {
   margin-right: 0;
+}
+
+.prof-control-panel__star_active {
+  background: url("./../images/icons/profile-star-active.svg") no-repeat center/cover;
 }
 
 .prof-control-panel__wrapper {
@@ -9118,6 +9188,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 0;
     margin-left: 16px;
   }
+}
+
+.prof-control-panel__stars-caption {
+  min-width: 20px;
 }
 
 .prof-table__row {
