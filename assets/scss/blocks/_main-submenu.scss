@@ -75,6 +75,15 @@
             right: 48px;
         }
     }
+    &_style_structure-popup {
+        left: 0;
+        right: 0;
+        top: 34px;
+        @media (max-width: rem(640px)) {
+            left: 100px;
+            right: -8px;
+        }
+    }
     &_style_main {
         left: 0;
         right: 0;

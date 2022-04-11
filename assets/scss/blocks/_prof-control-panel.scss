@@ -144,6 +144,27 @@
         }
         &_type_transfer-objects {
             margin-top: 0;
+            @media (max-width: rem(640px)) {
+                width: 32px;
+                height: 32px;
+                overflow: hidden;
+                border-radius: 4px;
+                position: static;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    border-radius: 4px;
+                    z-index: 1;
+                    width: 32px;
+                    height: 32px;
+                    background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
+                    background-color: #fff;
+                }
+            }
+        }
+        &_type_transfer-objects.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+            background-color: white !important;
         }
         &_type_main {
             margin-top: 0;
