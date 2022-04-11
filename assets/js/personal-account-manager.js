@@ -537,6 +537,8 @@ const checkClickOutsideSelect = (e) => {
     if (!e.target.closest(".prof-control-panel__select-label")) {
         // скрыть текущее подменю
         hideCurrentSubmenu(state.currentOpenSubmenu, true);
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
+        state.currentOpenSubmenuSecondLevel = null;
     }
 };
 
@@ -561,6 +563,7 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
             "prof-control-panel__select-label_active"
         )
     ) {
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
         addClassElement(
             state.submenuSelect[currentLabel.ariaLabel],
             "mix-visible"
@@ -579,6 +582,7 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
         }
     } else {
         hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+        state.currentOpenSubmenuSecondLevel = null;
     }
 }
 
@@ -609,8 +613,8 @@ function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
         }
         // скрыть текущее открытое подменю
         removeClassElement(submenu, "mix-visible");
-        // удалить текущий селект из стейта
-        submenu = null;
+        // очистить стейт
+
         if (deleteListenerOverlay) {
             // удалить слушатель document, т.к. все селекты закрыты
             document.removeEventListener("click", checkClickOutsideSelect);
@@ -653,7 +657,12 @@ buttonsSelect.forEach((i) =>
                 e.target.closest(".main-submenu__item"),
                 "main-submenu__item_active"
             );
-            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            if (state.currentOpenSubmenuSecondLevel) {
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+            } else {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            }
+
             return;
         }
         if (e.target.classList.contains("prof-control-panel__button")) {
@@ -666,7 +675,7 @@ buttonsSelect.forEach((i) =>
             );
             if (
                 currentLabelSecondLevel &&
-                currentLabelSecondLevel.ariaLabel.includes("division")
+                checkSubmenuSecondLevel(currentLabelSecondLevel.ariaLabel)
             ) {
                 toggleVisibleSubmenuSecondLevel(currentLabelSecondLevel);
             }
@@ -679,6 +688,7 @@ buttonsSelect.forEach((i) =>
                 )
             ) {
                 hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
                 addClassElement(
                     state.submenuSelect[currentLabel.ariaLabel],
                     "mix-visible"
@@ -698,11 +708,16 @@ buttonsSelect.forEach((i) =>
                 }
             } else {
                 hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
+                state.currentOpenSubmenuSecondLevel = null;
             }
         }
     })
 );
 
+function checkSubmenuSecondLevel(ariaLabel) {
+    return ariaLabel.includes("division") || ariaLabel.includes("structure");
+}
 // логика переключения вида анкет
 
 const agentActualCardsContent = document.querySelector("#agents-cards-actual");
