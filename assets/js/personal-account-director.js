@@ -732,6 +732,10 @@ const inputAnalyticalStarsRangeTo = document.querySelector(
     "#input-analytics-star-range-to"
 );
 
+const buttonResetAllStars = document.querySelector(
+    "#analytics-stars-button-reset"
+);
+
 containerStars.addEventListener("click", (e) => {
     if (e.target.ariaLabel) {
         if (e.target.classList.contains("analytics-star-total")) {
@@ -783,6 +787,14 @@ function addClassElementStars(arrayStars, currentValue, input) {
         }
     });
 }
+
+buttonResetAllStars.addEventListener("click", () => {
+    [
+        analyticalStarsTotal,
+        analyticalStarsRangeFrom,
+        analyticalStarsRangeTo,
+    ].forEach((i) => resetActiveClass(i, "prof-control-panel__star_active"));
+});
 
 // логика работы селектов в табе Структура
 

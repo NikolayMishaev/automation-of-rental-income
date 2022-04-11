@@ -298,6 +298,20 @@
                 opacity: 1;
             }
         }
+        &_style_analytics-wide {
+            margin: 0;
+            margin-top: 7px;
+            border-top: 1px solid #e3e7e8;
+            &:first-child {
+                border-top: none;
+            }
+            &:hover {
+                cursor: auto;
+                background-color: unset;
+                color: unset;
+                opacity: 1;
+            }
+        }
         &_style_align-center {
             text-align: center;
         }

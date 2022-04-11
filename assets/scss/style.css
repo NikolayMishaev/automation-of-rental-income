@@ -5677,6 +5677,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 1;
 }
 
+.main-submenu__item_style_analytics-wide {
+  margin: 0;
+  margin-top: 7px;
+  border-top: 1px solid #e3e7e8;
+}
+
+.main-submenu__item_style_analytics-wide:first-child {
+  border-top: none;
+}
+
+.main-submenu__item_style_analytics-wide:hover {
+  cursor: auto;
+  background-color: unset;
+  color: unset;
+  opacity: 1;
+}
+
 .main-submenu__item_style_align-center {
   text-align: center;
 }
