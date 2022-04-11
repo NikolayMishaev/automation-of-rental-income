@@ -725,7 +725,9 @@
         font-size: 8px;
     }
     &__stars-container {
+        margin-left: 7px;
         display: flex;
+        align-items: flex-end;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -747,6 +749,9 @@
         &:last-child {
             margin-right: 0;
         }
+        &_active {
+            background: url("./../images/icons/profile-star-active.svg") no-repeat center/cover;
+        }
     }
     &__wrapper {
         display: flex;
@@ -762,5 +767,8 @@
             margin-bottom: 0;
             margin-left: 16px;
         }
+    }
+    &__stars-caption {
+        min-width: 20px;
     }
 }

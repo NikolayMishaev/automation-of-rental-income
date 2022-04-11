@@ -712,33 +712,73 @@ function closeMobileBlockContacts() {
     generalPanel.classList.remove("mix-display-none");
 }
 
-// логика оценка работы менеджера звездочками
+// логика оценка звездочками во вкладке Аналитика
 
-const mobileStars = document.querySelectorAll(".prof-aside__star_type_mobile");
-const desktopStars = document.querySelectorAll(
-    ".prof-aside__star_type_desktop"
+const analyticalStarsTotal = document.querySelectorAll(".analytics-star-total");
+const analyticalStarsRangeFrom = document.querySelectorAll(
+    ".analytics-star-range-from"
 );
-const containersStars = document.querySelectorAll(
-    ".prof-aside__stars-container"
+const analyticalStarsRangeTo = document.querySelectorAll(
+    ".analytics-star-range-to"
 );
-const inputStars = document.querySelector("#input-stars");
+const containerStars = document.querySelector("#container-analytics-stars");
+const inputAnalyticalStarsTotal = document.querySelector(
+    "#input-analytics-star-total"
+);
+const inputAnalyticalStarsRangeFrom = document.querySelector(
+    "#input-analytics-star-range-from"
+);
+const inputAnalyticalStarsRangeTo = document.querySelector(
+    "#input-analytics-star-range-to"
+);
 
-containersStars.forEach((j) =>
-    j.addEventListener("click", (e) => {
-        if (e.target.ariaLabel) {
-            resetActiveClass(mobileStars, "prof-aside__star_active");
-            resetActiveClass(desktopStars, "prof-aside__star_active");
-            addClassElementStars(mobileStars, +e.target.ariaLabel);
-            addClassElementStars(desktopStars, +e.target.ariaLabel);
+containerStars.addEventListener("click", (e) => {
+    if (e.target.ariaLabel) {
+        if (e.target.classList.contains("analytics-star-total")) {
+            resetActiveClass(
+                analyticalStarsTotal,
+                "prof-control-panel__star_active"
+            );
+            addClassElementStars(
+                analyticalStarsTotal,
+                +e.target.ariaLabel,
+                inputAnalyticalStarsTotal
+            );
         }
-    })
-);
+        if (e.target.classList.contains("analytics-star-range-from")) {
+            resetActiveClass(
+                analyticalStarsRangeFrom,
+                "prof-control-panel__star_active"
+            );
+            addClassElementStars(
+                analyticalStarsRangeFrom,
+                +e.target.ariaLabel,
+                inputAnalyticalStarsRangeFrom
+            );
+        }
+        if (e.target.classList.contains("analytics-star-range-to")) {
+            resetActiveClass(
+                analyticalStarsRangeTo,
+                "prof-control-panel__star_active"
+            );
+            addClassElementStars(
+                analyticalStarsRangeTo,
+                +e.target.ariaLabel,
+                inputAnalyticalStarsRangeTo
+            );
+        }
+    }
+});
 
-function addClassElementStars(arrayStars, currentValue) {
+function resetActiveClass(arrayElements, className) {
+    arrayElements.forEach((i) => i.classList.remove(className));
+}
+
+function addClassElementStars(arrayStars, currentValue, input) {
     arrayStars.forEach((i, c) => {
         if (c < currentValue) {
-            i.classList.add("prof-aside__star_active");
-            inputStars.value = currentValue;
+            i.classList.add("prof-control-panel__star_active");
+            input.value = currentValue;
             return;
         }
     });
