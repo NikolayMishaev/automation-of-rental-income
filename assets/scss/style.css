@@ -378,6 +378,13 @@ main .container {
   padding: 0 60px 40px;
 }
 
+@media (max-width: 768px) {
+  main .container {
+    display: block;
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 40rem) {
   main .container {
     max-width: 360px;
@@ -397,6 +404,13 @@ main .container {
   margin-right: 32px;
   margin-top: 40px;
   min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-right: 0;
+    margin-top: 16px;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -437,7 +451,7 @@ main .container {
   background-color: white;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .info-card {
     display: none;
   }
@@ -458,9 +472,16 @@ main .container {
   display: none;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .info-card_mobile {
     display: block;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .info-card_mobile {
+    margin-bottom: 0;
   }
 }
 
@@ -665,6 +686,12 @@ main .container {
   text-decoration: none;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card__primary-btn {
+    width: 49.5%;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__favorite-icon {
     margin-right: 0;
@@ -708,6 +735,12 @@ main .container {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card__favorite-btn {
+    width: 49.5%;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__favorite-btn svg {
     -webkit-transform: scale(1.6);
@@ -715,9 +748,22 @@ main .container {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card__favorite-btn svg {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__favorite-btn span {
     display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card__favorite-btn span {
+    display: inline;
   }
 }
 
@@ -738,7 +784,7 @@ main .container {
   display: none;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .info-card__occupied-info_mobile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -865,6 +911,12 @@ main .container {
 @media (max-width: 64rem) {
   .info-card .icon {
     margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card .icon {
+    margin-right: 6px;
   }
 }
 
@@ -1064,13 +1116,13 @@ main .container {
   margin-left: 16px;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form .group-radio-btn label + label {
     margin: 12px 0 0;
   }
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form .group-radio-btn {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1079,7 +1131,7 @@ main .container {
   }
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form .group-radio-btn__inner {
     width: 100%;
   }
@@ -1107,11 +1159,15 @@ main .container {
           flex: auto;
 }
 
+.contact-form .custom-text-input textarea {
+  height: 160px;
+}
+
 .contact-form .custom-text-input + .custom-text-input {
   margin-left: 16px;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form .custom-text-input + .custom-text-input {
     margin: 16px 0 0;
   }
@@ -1137,7 +1193,7 @@ main .container {
   display: flex;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form__row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1189,6 +1245,12 @@ main .container {
 
 .modal-form .modal-content {
   width: 800px;
+}
+
+@media (max-width: 768px) {
+  .modal-form .modal-content {
+    width: 704px;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -2099,6 +2161,10 @@ main .container {
   max-width: 552px;
 }
 
+.registration-form .custom-text-input textarea {
+  height: 120px;
+}
+
 .registration-form .custom-text-input_select {
   position: relative;
   overflow: visible;
@@ -2759,6 +2825,12 @@ main .container {
 .mainSwiper__wrapper .swiper-slide img {
   height: 110px;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .mainSwiper__wrapper .swiper-slide img {
+    height: 90px;
+  }
 }
 
 .mainSwiper__wrapper .swiper-button-next .slider__next-btn_track {

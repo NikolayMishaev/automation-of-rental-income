@@ -112,6 +112,9 @@
     .custom-text-input {
         width: 100%;
         max-width: 552px;
+        textarea {
+            height: 120px;
+        }
         &_select {
             position: relative;
             overflow: visible;
