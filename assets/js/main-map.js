@@ -2,18 +2,17 @@ let map = null;
 let marker = null;
 let markerArray = [];
 let togglerMap = false;
+let formMap = document.querySelector(".main-form");
 
 function setMap() {
     togglerMap = true;
-    if (map !== null) return;
-    const idObjectOnMap = document.querySelector("#map").dataset.id;
 
     // информация о текущем объекте
-    getObjectPoint(idObjectOnMap);
+    getObjectPoint();
 
-    async function getObjectPoint(id) {
+    async function getObjectPoint() {
         let response = await fetch(
-            `https://jsonplaceholder.typicode.com/todos/${id}`
+            `https://jsonplaceholder.typicode.com/todos`
         );
         if (response.ok) {
             let result = await response.json();
@@ -23,7 +22,7 @@ function setMap() {
                 lon: "37.6175600",
             };
             setMarker(result);
-            getObjectListPoints();
+            getObjectListPoints(new FormData(formMap));
         }
     }
 }
@@ -120,7 +119,6 @@ function tooltip(obj) {
 }
 
 let btnFilterSubmit = document.querySelector(".main-form__button_type_submit");
-let formMap = document.querySelector(".main-form");
 
 btnFilterSubmit.addEventListener("click", (e) => {
     if (!togglerMap) return;
