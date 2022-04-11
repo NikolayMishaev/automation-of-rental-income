@@ -1962,6 +1962,12 @@ main .container {
   padding: 8px 0;
   text-align: center;
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.registration-form__tab:hover {
+  background-color: #e1e5eb;
 }
 
 @media (max-width: 40rem) {
@@ -1974,11 +1980,11 @@ main .container {
   background-color: #e6fae9;
 }
 
-.registration-form__tab_filled:nth-child(1) {
+.registration-form__tab:nth-child(1) {
   border-radius: 12px 0 0 0;
 }
 
-.registration-form__tab_filled:nth-last-child(1) {
+.registration-form__tab:nth-last-child(1) {
   border-radius: 0 12px 0 0;
 }
 
