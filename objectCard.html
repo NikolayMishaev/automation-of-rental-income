@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/scss/style.css" />
-    <link rel="stylesheet" href="./assets/leaflet/leaflet.css">
     <link
     rel="stylesheet"
     href="https://unpkg.com/swiper/swiper-bundle.min.css"
@@ -880,6 +879,11 @@
             <div class="slider">
                 <div class="swiper track-swiper">
                     <div class="swiper-wrapper">
+                        <!-- пример видео файла  -->
+                        <div class="swiper-slide">
+                            <!-- поменять ссылки на видео и постер  -->
+                            <video src="./assets/video/VID_20210117_223706.mp4" controls poster="./assets/img/slider-item.jpg"></video>
+                        </div>
                         <!-- Нужны картинки для слайдера. Начало слайда -->
                         <div class="swiper-slide">
                             <picture>
@@ -1395,7 +1399,6 @@
             <div class="map-object map">
                 <h3 class="map-object__title">Объект на карте</h3>
                 <div class="map-container" data-id="1" id="map"></div>
-                <div id="cities"></div>
               </div>
         </div>
         <div class="info-card">
@@ -2138,11 +2141,6 @@
     <script type="module" src="./assets/js/swiper.js"></script>
     <script type="module" defer src="./assets/js/common-JS-to-all-pages.js"></script>
     <script src="./assets/leaflet/leaflet.js"></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=yourkey&libraries=places"
-    ></script>
     <script src="./assets/js/map.js"></script>
 
 </body>
