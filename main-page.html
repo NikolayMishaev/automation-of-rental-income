@@ -939,7 +939,9 @@
                         </div>
                     </nav>
                     <div class="main__column main__column_type_price">
-                        <img aria-label="map" class="main__map mix-display-none" src="./assets/images/main-map.jpg" alt="">
+                        <div aria-label="map" class="map-object map main__map mix-display-none">
+                            <div class="map-container" data-id="1" id="map"></div>
+                        </div>
                         <ul aria-label='list' class="main__cards-container">
                             <!-- активный класс (горящее предложение) для контейнера карточки card-price_style_main-active  -->
                             <li class="card-price card-price_style_main card-price_style_main-active">
@@ -2599,6 +2601,9 @@
             </div>
         </div>
     </div>
+
+    <script src="./assets/leaflet/leaflet.js"></script>
+    <script src='./assets/js/main-map.js'></script>
 
 </body>
 

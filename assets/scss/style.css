@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url(./../normalize.css);
 @import url(./cropper.css);
+@import url(../leaflet/leaflet.css);
 @font-face {
   font-family: "Roboto";
   font-weight: 400;
@@ -2716,6 +2717,13 @@ main .container {
   background-position: center;
 }
 
+.swiper-slide video {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
 .mainSwiper .swiper-slide {
   width: 25%;
   height: 100%;
@@ -2814,6 +2822,7 @@ main .container {
   border-radius: 4px;
   -webkit-box-shadow: 0 0 1px #222;
           box-shadow: 0 0 1px #222;
+  z-index: 1;
 }
 
 @media (max-width: 40rem) {
@@ -2880,6 +2889,10 @@ main .container {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   left: calc(50% - 7px);
+}
+
+.main__map #map {
+  height: 600px;
 }
 
 .modal-login .modal__content,
@@ -3409,6 +3422,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 620px;
 }
 
+@media (max-width: 40rem) {
+  .modal-edit-avatar .modal__content {
+    width: 328px;
+  }
+}
+
 .modal-edit-avatar__download-btn {
   position: relative;
   border-radius: 4px;
@@ -3432,6 +3451,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-decoration: none;
 }
 
+@media (max-width: 40rem) {
+  .modal-edit-avatar__download-btn {
+    max-width: none;
+  }
+}
+
 .modal-edit-avatar__download-btn input {
   width: 100%;
   height: 100%;
@@ -3444,6 +3469,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .modal-edit-avatar__download-btn input::file-selector-button {
   cursor: inherit;
+}
+
+@media (max-width: 40rem) {
+  .modal-edit-avatar .cr-boundary {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 40rem) {
+  .modal-edit-avatar .cr-viewport,
+  .modal-edit-avatar .cr-vp-circle {
+    width: 280px !important;
+    height: 280px !important;
+  }
 }
 
 .body {
