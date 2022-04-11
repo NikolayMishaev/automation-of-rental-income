@@ -1,7 +1,5 @@
 let map = null;
 let marker = null;
-let priceMaxMin = 10000;
-let mainPrice = null;
 
 function myIcon(price) {
     return L.divIcon({
@@ -88,15 +86,10 @@ function setMarker(obj) {
 function setOuterMarkers(list) {
     for (const key in list) {
         const currentItem = list[key];
-        if (
-            currentItem.price <= mainPrice + priceMaxMin &&
-            currentItem.price >= mainPrice - priceMaxMin
-        ) {
-            L.marker([+currentItem.lat, +currentItem.lon], {
-                icon: myIcon(currentItem.price),
-            })
-                .addTo(map)
-                .bindPopup(tooltip(currentItem));
-        }
+        L.marker([+currentItem.lat, +currentItem.lon], {
+            icon: myIcon(currentItem.price),
+        })
+            .addTo(map)
+            .bindPopup(tooltip(currentItem));
     }
 }
