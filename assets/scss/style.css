@@ -10529,6 +10529,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: 4px;
 }
 
+.prof-graph {
+  height: 352px;
+  padding-top: 16px;
+  border-top: 1px solid #e1e5eb;
+}
+
 .popup-notify__title {
   color: #222429;
   padding: 0 24px;
