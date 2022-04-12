@@ -9375,6 +9375,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       -ms-flex-align: center;
           align-items: center;
   border-top: 1px solid #e3e7e8;
+  position: relative;
 }
 
 .prof-table__row:hover {
@@ -9529,7 +9530,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__test-checkbox:hover {
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -9541,7 +9542,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__test-checkbox-active:hover {
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -9560,12 +9561,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .prof-table__button:disabled {
-  background-color: #E1E5EB;
-  color: #B4BBC6;
+  background-color: #e1e5eb;
+  color: #b4bbc6;
 }
 
 .prof-table__link {
@@ -9591,7 +9592,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__icon:hover {
-  opacity: .8;
+  opacity: 0.8;
+}
+
+.prof-table .tooltip {
+  opacity: 1;
+  position: absolute;
+  top: -50%;
+  z-index: 99;
+}
+
+.prof-table .tooltip svg {
+  position: absolute;
+  bottom: -4px;
+  left: 10%;
 }
 
 .prof-card {

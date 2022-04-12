@@ -5,6 +5,7 @@
         column-gap: 16px;
         align-items: center;
         border-top: 1px solid #e3e7e8;
+        position: relative;
         &:hover {
             cursor: pointer;
         }
@@ -24,7 +25,7 @@
             grid-template-columns: 85px 160px 95px 160px 75px 100px 100px 95px;
         }
         &_style_agent-archive {
-            grid-template-columns: 80px 155px 95px 155px 70px 100px 120px 95px
+            grid-template-columns: 80px 155px 95px 155px 70px 100px 120px 95px;
         }
         &_style_users {
             grid-template-columns: 40px 297px 160px 160px 220px;
@@ -104,21 +105,21 @@
     &__test-checkbox {
         width: 32px;
         height: 20px;
-        background: url('./../images/switch-off.jpg') no-repeat center;
+        background: url("./../images/switch-off.jpg") no-repeat center;
         margin-right: 4px;
         transition: $transition;
         &:hover {
-            opacity: .8;
+            opacity: 0.8;
             cursor: pointer;
         }
     }
     &__test-checkbox-active {
         width: 32px;
         height: 20px;
-        background: url('./../images/switch-on.jpg') no-repeat center;
+        background: url("./../images/switch-on.jpg") no-repeat center;
         margin-right: 4px;
         &:hover {
-            opacity: .8;
+            opacity: 0.8;
             cursor: pointer;
         }
     }
@@ -133,11 +134,11 @@
         color: white;
         transition: $transition;
         &:hover {
-            opacity: .8;
+            opacity: 0.8;
         }
         &:disabled {
-            background-color: #E1E5EB;
-            color: #B4BBC6;
+            background-color: #e1e5eb;
+            color: #b4bbc6;
         }
     }
     &__link {
@@ -154,10 +155,22 @@
     &__icon {
         width: 24px;
         height: 24px;
-        background: url("./../images/icons/profile-document-active.svg") no-repeat center;
+        background: url("./../images/icons/profile-document-active.svg")
+            no-repeat center;
         transition: $transition;
         &:hover {
-            opacity: .8;
+            opacity: 0.8;
+        }
+    }
+    .tooltip {
+        opacity: 1;
+        position: absolute;
+        top: -50%;
+        z-index: 99;
+        svg {
+            position: absolute;
+            bottom: -4px;
+            left: 10%;
         }
     }
 }
