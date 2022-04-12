@@ -6,6 +6,9 @@
     border-radius: 12px;
     height: 374px;
     color: #222429;
+    &:hover {
+        cursor: pointer;
+    }
     &_type_director {
         height: unset;
         margin-bottom: 24px;

@@ -45,7 +45,6 @@
         width: rem(40px);
         height: rem(40px);
         border-radius: 50%;
-        background: url("./../images/avatar-photo.png") no-repeat center/cover;
         transition: $transition;
         object-fit: cover;
         @media #{$screen-mobile} {

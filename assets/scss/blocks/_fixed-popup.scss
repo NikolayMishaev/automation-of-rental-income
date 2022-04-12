@@ -1,0 +1,11 @@
+.fixed-popup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 71px;
+    z-index: 100;
+    padding: 20px 0;
+    background-color: #fff;
+    border-top: 1px solid #E1E5EB;
+}

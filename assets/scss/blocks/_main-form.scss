@@ -98,6 +98,7 @@
             margin-right: 16px;
             @media #{$screen-mobile} {
                 margin-right: 8px;
+                padding-right: 12px;
             }
         }
         &_style_no-right-margin {
@@ -269,8 +270,6 @@
     &__caption {
         &_type_general-search {
             padding-left: rem(37px);
-        }
-        &_type_general-address {
         }
     }
     &__visible-input {

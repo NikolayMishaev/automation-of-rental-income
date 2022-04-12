@@ -7,12 +7,23 @@
     &:hover {
         cursor: pointer;
     }
+    &_type_object {
+        width: 32px;
+        height: 20px;
+        margin-right: 8px;
+    }
     &__input {
         opacity: 0;
         visibility: hidden;
         position: absolute;
         &:checked + .prof-label-checkbox__visible-checkbox {
             background: url("./../images/icons/profile-active-checkbox.svg") no-repeat center;
+            border: none;
+        }
+        &:checked + .prof-label-checkbox__visible-checkbox_type_object {
+            background: unset;
+            background-color: #2a9b43;
+            padding-left: 14px;
         }
     }
     &__visible-checkbox {
@@ -21,7 +32,24 @@
         left: 0;
         width: 16px;
         height: 16px;
-        border: 1px solid #cfd4dc;
+        border: 1px solid #E1E5EB;
         border-radius: 2px;
+        &_type_object {
+            border: none;
+            width: 32px;
+            height: 20px;
+            background-color: #cfd4dc;
+            border-radius: 10px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            padding-left: 2px;
+        }
+    }
+    &__visible-checkbox-circle {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #fff;
     }
 }

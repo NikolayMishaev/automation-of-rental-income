@@ -5,8 +5,38 @@ import {
 } from "./common-JS-to-all-pages.js";
 
 // стейты
-const stateMain = {
-    currentOpenLeftBlock: null,
+
+const state = {
+    currentOpenSubmenu: null,
+    cursorsSelect: {
+        "main-page-desktop": document.querySelector(
+            "#cursor-main-page-desktop"
+        ),
+        "main-sort": document.querySelector("#cursor-main-sort"),
+        "main-page-mobile": document.querySelector("#cursor-main-page-mobile"),
+        "main-city": document.querySelector("#cursor-main-city"),
+        "main-street": document.querySelector("#cursor-main-street"),
+        "main-underground": document.querySelector("#cursor-main-underground"),
+    },
+    submenuSelect: {
+        "main-page-desktop": document.querySelector(
+            "#submenu-main-page-desktop"
+        ),
+        "main-sort": document.querySelector("#submenu-main-sort"),
+        "main-page-mobile": document.querySelector("#submenu-main-page-mobile"),
+        "main-city": document.querySelector("#submenu-main-city"),
+        "main-street": document.querySelector("#submenu-main-street"),
+        "main-underground": document.querySelector("#submenu-main-underground"),
+    },
+    inputsSelect: {
+        "main-page-desktop": document.querySelector("#input-main-page-desktop"),
+        "main-sort": document.querySelector("#input-main-sort"),
+        "main-page-mobile": document.querySelector("#input-main-page-mobile"),
+        "main-city": document.querySelector("#input-main-city"),
+        "main-street": document.querySelector("#input-main-street"),
+        "main-underground": document.querySelector("#input-main-underground"),
+    },
+    submenuListPage: document.querySelectorAll(".main-submenu__list_type_page"),
 };
 
 // логика переключения кнопок "Список", "Карта"
@@ -81,119 +111,7 @@ buttonMinimizeFiltersPanel.addEventListener("click", () => {
     }
 });
 
-// логика выбора значения сортировки в полях: "Сортировать" "Кол-во карточек для показа"
-const itemsSubmenuSort = document.querySelectorAll(
-    ".main-submenu__item_type_sort"
-);
-const currentValueSort = document.querySelector("#main-sort-desktop");
-const currentValueNumberCards = document.querySelector("#main-number-cards");
-const currentValueNumberCardsMobile = document.querySelector(
-    "#main-number-cards-mobile"
-);
-
-const mainSubmenuNumberCards = document.querySelector(
-    ".main-submenu_style_number-cards"
-);
-const mainSubmenuNumberCardsMobile = document.querySelector(
-    ".main-submenu_style_number-cards-mobile"
-);
-const mainSubmenuSortDesktop = document.querySelector(
-    ".main-submenu_style_sort"
-);
-const mainSubmenuSortMobile = document.querySelector(
-    ".main-submenu_style_sort-mobile"
-);
-
-// при наведении на контейнеры содерщащие подменю, удаляем миксовый класс у подменю
-const mainContainerNumberCards = document.querySelector(
-    "#main-search-number-cards"
-);
-const mainContainerNumberCardsMobile = document.querySelector(
-    "#main-search-number-cards-mobile"
-);
-const mainContainerSearchDesktop = document.querySelector(
-    "#main-search-sort-cards-desktop"
-);
-const mainContainerSearchMobile = document.querySelector(
-    "#main-search-sort-cards-mobile"
-);
-const arrayWithContainersSort = [
-    mainContainerNumberCards,
-    mainContainerNumberCardsMobile,
-    mainContainerSearchDesktop,
-    mainContainerSearchMobile,
-];
-arrayWithContainersSort.forEach((i) =>
-    i.addEventListener("mouseover", function () {
-        mainSubmenuNumberCards.classList.remove("mix-hidden");
-        mainSubmenuNumberCardsMobile.classList.remove("mix-hidden");
-        mainSubmenuSortDesktop.classList.remove("mix-hidden");
-        mainSubmenuSortMobile.classList.remove("mix-hidden");
-    })
-);
-
-itemsSubmenuSort.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (e.target.ariaLabel === "number-cards") {
-            deleteActiveClass("number-cards");
-            e.target.classList.add("main-submenu__item_active");
-            currentValueNumberCards.textContent = e.target.textContent;
-            mainSubmenuNumberCards.classList.add("mix-hidden");
-            currentValueNumberCardsMobile.textContent = e.target.textContent;
-            mainSubmenuNumberCardsMobile.classList.add("mix-hidden");
-        }
-        if (e.target.ariaLabel === "sort-desktop") {
-            deleteActiveClass("sort-desktop");
-            e.target.classList.add("main-submenu__item_active");
-            addActiveClass(e.target.textContent);
-            currentValueSort.textContent = e.target.textContent;
-            mainSubmenuSortDesktop.classList.add("mix-hidden");
-            mainSubmenuSortMobile.classList.add("mix-hidden");
-        }
-    })
-);
-
-function deleteActiveClass(ariaLabel) {
-    itemsSubmenuSort.forEach((i) => {
-        if (i.ariaLabel === ariaLabel) {
-            i.classList.remove("main-submenu__item_active");
-        }
-    });
-}
-
-function addActiveClass(value) {
-    itemsSubmenuSort.forEach((i) => {
-        if (i.textContent === value) {
-            i.classList.add("main-submenu__item_active");
-        }
-    });
-}
-
-// логика по добавления активного класса иконке с сортировкой при hovere над блоком выбора вариантов сортировки
-const submenuIconSortBlock = document.querySelector(
-    ".main-submenu_style_sort-mobile"
-);
-const iconSortBlock = document.querySelector(
-    ".main__control-panel-icon_search"
-);
-
-iconSortBlock.addEventListener("mouseover", function () {
-    iconSortBlock.classList.add("main__control-panel-icon_search-active");
-});
-
-submenuIconSortBlock.addEventListener("mouseover", function () {
-    iconSortBlock.classList.add("main__control-panel-icon_search-active");
-});
-
-iconSortBlock.addEventListener("mouseout", function () {
-    iconSortBlock.classList.remove("main__control-panel-icon_search-active");
-});
-
-submenuIconSortBlock.addEventListener("mouseout", function () {
-    iconSortBlock.classList.remove("main__control-panel-icon_search-active");
-});
-
-// логика кнопки фильтров по клику на иконку с фильтрами в мобильной версии
+// // логика кнопки фильтров по клику на иконку с фильтрами в мобильной версии
 const iconFilters = document.querySelector(".main__control-panel-icon_filters");
 const leftMainColumnPrice = document.querySelector(".main__column_type_price");
 const rightMainColumnFilters = document.querySelector(
@@ -250,8 +168,13 @@ window.addEventListener("resize", function (e) {
 const mainCardsContainer = document.querySelector(".main__cards-container");
 
 mainCardsContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("card-price__like")) {
-        e.target.classList.toggle("card-price__like_active");
+    const currentTargetLike = e.target.classList.contains("card-price__like");
+    if (currentTargetLike) {
+        if (e.target.classList.contains("card-price__like_active")) {
+            removeClassElement(e.target, "card-price__like_active");
+        } else {
+            addClassElement(e.target, "card-price__like_active");
+        }
     }
 });
 
@@ -283,7 +206,7 @@ cursorAdressMainForm.addEventListener("click", (e) => {
     }
 });
 
-// логика работы всплывающего меню по клике на курсор в фильтре "тип помещения"
+// логика работы всплывающего меню по клику на курсор в фильтре "тип помещения"
 const cursorChangeTypeMainForm = document.querySelector(
     "#main-form-cursor-change-type"
 );
@@ -322,7 +245,17 @@ changeValueInputSelect(labelSelectChangeType, inputChangeType);
 function changeValueInputSelect(items, valueInput) {
     items.forEach((i) =>
         i.addEventListener("click", (e) => {
-            e.target.classList.toggle("custom-select-active");
+            if (
+                e.target.classList.contains("main-form__label-checkbox") ||
+                e.target.classList.contains("main-form__visible-input")
+            ) {
+                return;
+            }
+            if (i.classList.contains("custom-select-active")) {
+                i.classList.remove("custom-select-active");
+            } else {
+                i.classList.add("custom-select-active");
+            }
             let countActiveItmes = 0;
             items.forEach((j) => {
                 if (j.closest(".custom-select-active")) {
@@ -340,7 +273,7 @@ function changeValueInputSelect(items, valueInput) {
     );
 }
 
-// логика работы всплывающего меню по клике на курсор в фильтре "классификация помещения"
+// логика работы всплывающего меню по клику на курсор в фильтре "классификация помещения"
 const cursorChangeClassMainForm = document.querySelector(
     "#main-form-cursor-change-class"
 );
@@ -373,7 +306,6 @@ const cardPriceContainerBigCards = document.querySelector(
 );
 cardPriceContainerBigCards.addEventListener("click", (e) => {
     e.preventDefault();
-    // console.log(e.target);
     const currentLink = e.target.closest(".card-price__link").href;
     if (e.target.closest(".card-price__like")) {
         return;
@@ -385,40 +317,8 @@ cardPriceContainerBigCards.addEventListener("click", (e) => {
         return;
     }
     if (e.target.closest(".card-price_style_main")) {
-        e.target.closest(".card-price_style_main").style.transform =
-            innerWidth < 640
-                ? "scale(3) translateX(0)"
-                : "scale(4) translateX(500px)";
-        e.target.closest(".card-price_style_main").style.opacity = "0.1";
-        e.target.closest(".card-price_style_main").style.zIndex = "10";
-        setTimeout(() => {
-            location.href = currentLink;
-        }, 250);
+        location.href = currentLink;
     }
-});
-
-// логика открытия селектов город улица метро
-
-const cursorCity = document.querySelector("#submenu-city");
-const cursorStreet = document.querySelector("#submenu-street");
-const cursorUnderground = document.querySelector("#submenu-underground");
-const submenuCityBody = document.querySelector("#submenu-city-body");
-const submenuStreetBody = document.querySelector("#submenu-street-body");
-const submenuUndergroundBody = document.querySelector(
-    "#submenu-underground-body"
-);
-
-cursorCity.addEventListener("click", (e) => {
-    containerFiltersAdress.classList.toggle("mix-visible");
-    submenuCityBody.classList.toggle("mix-visible");
-});
-cursorStreet.addEventListener("click", (e) => {
-    containerFiltersAdress.classList.toggle("mix-visible");
-    submenuStreetBody.classList.toggle("mix-visible");
-});
-cursorUnderground.addEventListener("click", (e) => {
-    containerFiltersAdress.classList.toggle("mix-visible");
-    submenuUndergroundBody.classList.toggle("mix-visible");
 });
 
 // логика закрытия подменю селектов выбора типа помещения и классификация помещения по кнопке "Выбрать"
@@ -478,3 +378,194 @@ sumbenuAdressContainers.forEach((i) =>
         }
     })
 );
+
+// логика по работе селектов
+
+// проверить, где сработал клик, если за пределами тела селекта, то запустить ф-ию для скрытия текущего открытого подменю
+const checkClickOutsideSelect = (e) => {
+    // если клик произошел за пределами селекта(label)
+    if (!e.target.closest(".prof-control-panel__select-label")) {
+        // скрыть текущее подменю
+        hideCurrentSubmenu(state.currentOpenSubmenu, true);
+    }
+};
+
+function setInputValueByValueActiveCheckbox() {
+    if (
+        state.inputsSelect["checkbox-free"].checked &&
+        state.inputsSelect["checkbox-free-soon"].checked
+    ) {
+        state.inputsSelect["objects-status"].value = "Выбрано несколько";
+    } else if (state.inputsSelect["checkbox-free"].checked) {
+        state.inputsSelect["objects-status"].value = "Свободен";
+    } else if (state.inputsSelect["checkbox-free-soon"].checked) {
+        state.inputsSelect["objects-status"].value = "Скоро освободится";
+    } else {
+        state.inputsSelect["objects-status"].value = "Все";
+    }
+}
+
+function toggleVisibleSubmenuSecondLevel(currentLabel) {
+    if (
+        !currentLabel.classList.contains(
+            "prof-control-panel__select-label_active"
+        )
+    ) {
+        addClassElement(
+            state.submenuSelect[currentLabel.ariaLabel],
+            "mix-visible"
+        );
+        addClassElement(
+            currentLabel,
+            "prof-control-panel__select-label_active"
+        );
+        state.currentOpenSubmenuSecondLevel =
+            state.submenuSelect[currentLabel.ariaLabel];
+        if (state.cursorsSelect[currentLabel.ariaLabel]) {
+            addClassElement(
+                state.cursorsSelect[currentLabel.ariaLabel],
+                "prof-control-panel__cursor_active"
+            );
+        }
+    } else {
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+    }
+}
+
+// установить слушатель клика на весь документ и отслеживать клик вне тела селекта
+function setListenerClickOutsideSelect() {
+    document.addEventListener("click", checkClickOutsideSelect);
+}
+
+// скрыть текущее открытое подменю селекта
+function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
+    // если в стейте есть текущее открытое подменю
+    if (submenu) {
+        // найти по подменю текущий селект
+        const currentSelectLabel = submenu.closest(
+            ".prof-control-panel__select-label"
+        );
+        // удалить активный класс у текущего селекта
+        removeClassElement(
+            currentSelectLabel,
+            "prof-control-panel__select-label_active"
+        );
+        // удалить активный класс у текущего курсора
+        if (state.cursorsSelect[currentSelectLabel.ariaLabel]) {
+            removeClassElement(
+                state.cursorsSelect[currentSelectLabel.ariaLabel],
+                "prof-control-panel__cursor_active"
+            );
+        }
+        // скрыть текущее открытое подменю
+        removeClassElement(submenu, "mix-visible");
+        // удалить текущий селект из стейта
+        submenu = null;
+        if (deleteListenerOverlay) {
+            // удалить слушатель document, т.к. все селекты закрыты
+            document.removeEventListener("click", checkClickOutsideSelect);
+        }
+    }
+}
+
+const buttonsSelect = document.querySelectorAll(".button-toggle-select");
+
+buttonsSelect.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        const currentLabel = e.target.closest(
+            ".prof-control-panel__select-label"
+        );
+        if (
+            e.target.classList.contains(
+                "prof-control-panel__select-input_type_main"
+            )
+        ) {
+            return;
+        }
+        if (
+            e.target.closest(".label-checkbox") &&
+            e.target.closest(".label-checkbox").ariaLabel === "checkbox"
+        ) {
+            setInputValueByValueActiveCheckbox();
+            return;
+        }
+        if (e.target.ariaLabel === "linked") {
+            const currentValue = e.target.textContent.trim();
+            state.inputsSelect["main-page-desktop"].value = currentValue;
+            state.inputsSelect["main-page-mobile"].value = currentValue;
+            replaceActiveClass(state.submenuListPage, currentValue);
+            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            return;
+        }
+        if (e.target.ariaLabel === "item") {
+            state.inputsSelect[currentLabel.ariaLabel].value =
+                e.target.textContent.trim();
+            Array.from(
+                e.target.closest(".main-submenu__list").children
+            ).forEach((i) =>
+                removeClassElement(i, "main-submenu__item_active")
+            );
+            addClassElement(
+                e.target.closest(".main-submenu__item"),
+                "main-submenu__item_active"
+            );
+            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            return;
+        }
+        if (e.target.classList.contains("prof-control-panel__button")) {
+            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            return;
+        }
+        if (e.target.closest(".main-submenu")) {
+            const currentLabelSecondLevel = e.target.closest(
+                ".prof-control-panel__select-label"
+            );
+            if (
+                currentLabelSecondLevel &&
+                currentLabelSecondLevel.ariaLabel.includes("division")
+            ) {
+                toggleVisibleSubmenuSecondLevel(currentLabelSecondLevel);
+            }
+            return;
+        }
+        if (currentLabel) {
+            if (
+                !currentLabel.classList.contains(
+                    "prof-control-panel__select-label_active"
+                )
+            ) {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                addClassElement(
+                    state.submenuSelect[currentLabel.ariaLabel],
+                    "mix-visible"
+                );
+                state.currentOpenSubmenu =
+                    state.submenuSelect[currentLabel.ariaLabel];
+                setListenerClickOutsideSelect();
+                addClassElement(
+                    currentLabel,
+                    "prof-control-panel__select-label_active"
+                );
+                if (state.cursorsSelect[currentLabel.ariaLabel]) {
+                    addClassElement(
+                        state.cursorsSelect[currentLabel.ariaLabel],
+                        "prof-control-panel__cursor_active"
+                    );
+                }
+            } else {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            }
+        }
+    })
+);
+
+function replaceActiveClass(array, currentValue) {
+    array.forEach((i) =>
+        Array.from(i.children).forEach((j) => {
+            removeClassElement(j, "main-submenu__item_active");
+            if (j.textContent.trim() === currentValue) {
+                addClassElement(j, "main-submenu__item_active");
+            }
+        })
+    );
+}

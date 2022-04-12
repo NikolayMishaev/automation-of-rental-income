@@ -65,7 +65,6 @@
         }
         &:hover {
             cursor: pointer;
-            transform: scale(1.010);
         }
         padding: rem(15px);
         height: unset;
@@ -334,7 +333,6 @@
         z-index: 1;
         &:hover{
             cursor: pointer;
-            transform: scale(1.1)
         }
         @include flex-container;
         background: url("./../images/icons/card-like.svg") no-repeat center;

@@ -34,7 +34,7 @@ async function getObjectPoint(id) {
             title: "Москва, Ул. Льва Толстого, дом 23, корп.1",
         };
         setMarker(result);
-        getObjectListPoints();
+        mainPrice = result.price;
     }
 }
 getObjectPoint(idObjectOnMap);
@@ -64,6 +64,7 @@ async function getObjectListPoints() {
         setOuterMarkers(result);
     }
 }
+getObjectListPoints();
 
 // установить начальную точку
 

@@ -10,17 +10,21 @@ const state = {
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
     cursorsSelect: {
+        ankets: document.querySelector("#cursor-ankets"),
+        "type-activity": document.querySelector("#cursor-type-activity"),
+        "ankets-status": document.querySelector("#cursor-ankets-status"),
+        "ankets-views": document.querySelector("#cursor-ankets-views"),
         "objects-status": document.querySelector("#cursor-objects-status"),
         "objects-sort": document.querySelector("#cursor-objects-sort"),
         "objects-page": document.querySelector("#cursor-objects-page"),
-        "agents-status": document.querySelector("#cursor-agents-status"),
-        "agents-period": document.querySelector("#cursor-agents-period"),
+        // "agents-status": document.querySelector("#cursor-agents-status"),
+        // "agents-period": document.querySelector("#cursor-agents-period"),
         "agents-page-actual": document.querySelector(
             "#cursor-agents-page-actual"
         ),
-        "agents-page-archive": document.querySelector(
-            "#cursor-agents-page-archive"
-        ),
+        // "agents-page-archive": document.querySelector(
+        //     "#cursor-agents-page-archive"
+        // ),
         "analytics-period-users": document.querySelector(
             "#cursor-analytics-period-users"
         ),
@@ -62,17 +66,21 @@ const state = {
         "structure-offers": document.querySelector("#cursor-structure-offers"),
     },
     submenuSelect: {
+        ankets: document.querySelector("#submenu-ankets"),
+        "type-activity": document.querySelector("#submenu-type-activity"),
+        "ankets-status": document.querySelector("#submenu-ankets-status"),
+        "ankets-views": document.querySelector("#submenu-ankets-views"),
         "objects-status": document.querySelector("#submenu-objects-status"),
         "objects-sort": document.querySelector("#submenu-objects-sort"),
         "objects-page": document.querySelector("#submenu-objects-page"),
-        "agents-status": document.querySelector("#submenu-agents-status"),
-        "agents-period": document.querySelector("#submenu-agents-period"),
+        // "agents-status": document.querySelector("#submenu-agents-status"),
+        // "agents-period": document.querySelector("#submenu-agents-period"),
         "agents-page-actual": document.querySelector(
             "#submenu-agents-page-actual"
         ),
-        "agents-page-archive": document.querySelector(
-            "#submenu-agents-page-archive"
-        ),
+        // "agents-page-archive": document.querySelector(
+        //     "#submenu-agents-page-archive"
+        // ),
         "analytics-period-users": document.querySelector(
             "#submenu-analytics-period-users"
         ),
@@ -124,6 +132,10 @@ const state = {
         "structure-offers": document.querySelector("#submenu-structure-offers"),
     },
     inputsSelect: {
+        ankets: document.querySelector("#input-ankets"),
+        "type-activity": document.querySelector("#input-type-activity"),
+        "ankets-status": document.querySelector("#input-ankets-status"),
+        "ankets-views": document.querySelector("#input-ankets-views"),
         "checkbox-free": document.querySelector("#input-objects-checkobx-free"),
         "checkbox-free-soon": document.querySelector(
             "#input-objects-checkobx-free-soon"
@@ -131,14 +143,14 @@ const state = {
         "objects-status": document.querySelector("#input-objects-status"),
         "objects-sort": document.querySelector("#input-objects-sort"),
         "objects-page": document.querySelector("#input-objects-page"),
-        "agents-status": document.querySelector("#input-agents-status"),
-        "agents-period": document.querySelector("#input-agents-period"),
+        // "agents-status": document.querySelector("#input-agents-status"),
+        // "agents-period": document.querySelector("#input-agents-period"),
         "agents-page-actual": document.querySelector(
             "#input-agents-page-actual"
         ),
-        "agents-page-archive": document.querySelector(
-            "#input-agents-page-archive"
-        ),
+        // "agents-page-archive": document.querySelector(
+        //     "#input-agents-page-archive"
+        // ),
         "analytics-period-users": document.querySelector(
             "#input-analytics-period-users"
         ),
@@ -244,19 +256,19 @@ objectsButtons.forEach((i) =>
 
 const agentButtons = document.querySelectorAll(".agent-button");
 
-const contentActual = document.querySelector("#agent-actual");
-const contentArchive = document.querySelector("#agent-archive");
+const agentContentTable = document.querySelector("#agent-list");
+const agentContentCards = document.querySelector("#agent-cards");
 
 agentButtons.forEach((i) =>
-    i.addEventListener("click", (e) =>
+    i.addEventListener("click", (e) => {
         switchButtons(
             e.target,
             agentButtons,
-            [contentActual, contentArchive],
+            [agentContentTable, agentContentCards],
             "prof-control-panel__button_active",
             "mix-display-none"
-        )
-    )
+        );
+    })
 );
 
 // логика переключения кнопок на вкладке "Аналитические данные"
@@ -343,6 +355,7 @@ appealsButtons.forEach((i) =>
 
 if (window.innerWidth < 1151) {
     removeClassElement(contentCards, "mix-display-none");
+    removeClassElement(agentContentCards, "mix-display-none");
 }
 
 // логика действий при ресайзе
@@ -366,6 +379,12 @@ window.addEventListener("resize", function (e) {
             removeClassElement(contentCards, "mix-display-none");
             addClassElement(contentTable, "mix-display-none");
             resetActiveClassButton(objectsButtons);
+        }
+        if (!agentContentTable.classList.contains("mix-display-none")) {
+            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
+            removeClassElement(agentContentCards, "mix-display-none");
+            addClassElement(agentContentTable, "mix-display-none");
+            resetActiveClassButton(agentButtons);
         }
     }
 
@@ -478,184 +497,89 @@ function closeMobileBlockContacts() {
     generalPanel.classList.remove("mix-display-none");
 }
 
-// скрыть подменю селектов если клик сработал за их пределами
+// логика оценка звездочками во вкладке Аналитика
 
-// function listenClickOutsideSelect() {
-//     document.addEventListener("click", (e) => {
-//         if (!e.target.closest(".prof-control-panel__select-label")) {
-//             hideAllSubmenu();
-//         }
-//     });
-// }
-
-// логика работы селектов общие функции:
-
-// function showSubmenu(submenu, cursor) {
-//     submenu.classList.add("mix-visible");
-//     cursor.classList.add("prof-control-panel__cursor_active");
-// }
-
-// function hideSubmenu(submenu, cursor) {
-//     submenu.classList.remove("mix-visible");
-//     cursor.classList.remove("prof-control-panel__cursor_active");
-// }
-
-// function hideAllSubmenu() {
-//     hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     hideSubmenu(submenuSelectSort, cursorSelectSort);
-//     hideSubmenu(submenuSelectPage, cursorSelectPage);
-// }
-
-// function resetActiveClass(arrayElements, className) {
-//     arrayElements.forEach((i) => i.classList.remove(className));
-// }
-
-// логика работы селекта "Статус"
-
-// const LabelSelectStatus = document.querySelector("#label-select-status");
-// const cursorSelectStatus = document.querySelector("#cursor-select-status");
-// const inputSelectStatus = document.querySelector("#input-select-status");
-// const submenuSelectStatus = document.querySelector("#submenu-select-status");
-// const inputCheckboxFree = document.querySelector(
-//     "#input-select-status-checkbox-free"
-// );
-// const inputCheckboxSoonFree = document.querySelector(
-//     "#input-select-status-checkbox-soon-free"
-// );
-
-// LabelSelectStatus.addEventListener("click", (e) => {
-//     if (inputCheckboxFree.checked && inputCheckboxSoonFree.checked) {
-//         inputSelectStatus.value = "Выбрано несколько";
-//     } else if (inputCheckboxFree.checked) {
-//         inputSelectStatus.value = "Свободен";
-//     } else if (inputCheckboxSoonFree.checked) {
-//         inputSelectStatus.value = "Скоро освободится";
-//     } else {
-//         inputSelectStatus.value = "Все";
-//     }
-//     if (e.target.id === "button-confirm-select-status") {
-//         hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     }
-//     if (e.target.id === "label-select-status" && innerWidth < 1001) {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     }
-//     if (e.target.id !== "input-select-status") {
-//         return;
-//     }
-//     if (
-//         cursorSelectStatus.classList.contains(
-//             "prof-control-panel__cursor_active"
-//         )
-//     ) {
-//         hideSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     } else {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectStatus, cursorSelectStatus);
-//     }
-// });
-
-// логика работы селекта "Сортировать"
-
-// const LabelSelectSort = document.querySelector("#label-select-sort");
-// const cursorSelectSort = document.querySelector("#cursor-select-sort");
-// const inputSelectSort = document.querySelector("#input-select-sort");
-// const submenuSelectSort = document.querySelector("#submenu-select-sort");
-// const itemsSubmenuSort = document.querySelectorAll(".item-submenu-sort");
-
-// LabelSelectSort.addEventListener("click", (e) => {
-//     if (e.target.ariaLabel === "item-sort-menu") {
-//         inputSelectSort.value = e.target.innerText;
-//         resetActiveClass(itemsSubmenuSort, "main-submenu__item_active");
-//         e.target.classList.add("main-submenu__item_active");
-//         hideSubmenu(submenuSelectSort, cursorSelectSort);
-//     }
-//     if (e.target.id === "label-select-sort" && innerWidth < 1001) {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectSort, cursorSelectSort);
-//     }
-//     if (e.target.id !== "input-select-sort") {
-//         return;
-//     }
-//     if (
-//         cursorSelectSort.classList.contains("prof-control-panel__cursor_active")
-//     ) {
-//         hideSubmenu(submenuSelectSort, cursorSelectSort);
-//     } else {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectSort, cursorSelectSort);
-//     }
-// });
-
-// логика работы селекта "выбор количества карточек"
-
-// const LabelSelectPage = document.querySelector("#label-select-page");
-// const cursorSelectPage = document.querySelector("#cursor-select-page");
-// const inputSelectPage = document.querySelector("#input-select-page");
-// const submenuSelectPage = document.querySelector("#submenu-select-page");
-// const itemsSubmenuPage = document.querySelectorAll(".item-submenu-page");
-
-// LabelSelectPage.addEventListener("click", (e) => {
-//     if (e.target.ariaLabel === "item-page-menu") {
-//         inputSelectPage.value = e.target.innerText;
-//         resetActiveClass(itemsSubmenuPage, "main-submenu__item_active");
-//         e.target.classList.add("main-submenu__item_active");
-//         hideSubmenu(submenuSelectPage, cursorSelectPage);
-//     }
-//     if (e.target.id !== "input-select-page") {
-//         return;
-//     }
-//     if (
-//         cursorSelectPage.classList.contains("prof-control-panel__cursor_active")
-//     ) {
-//         hideSubmenu(submenuSelectPage, cursorSelectPage);
-//     } else {
-//         hideAllSubmenu();
-//         showSubmenu(submenuSelectPage, cursorSelectPage);
-//     }
-// });
-
-// логика оценка работы менеджера звездочками
-
-const mobileStars = document.querySelectorAll(".prof-aside__star_type_mobile");
-const desktopStars = document.querySelectorAll(
-    ".prof-aside__star_type_desktop"
+const analyticalStarsTotal = document.querySelectorAll(".analytics-star-total");
+const analyticalStarsRangeFrom = document.querySelectorAll(
+    ".analytics-star-range-from"
 );
-const containersStars = document.querySelectorAll(
-    ".prof-aside__stars-container"
+const analyticalStarsRangeTo = document.querySelectorAll(
+    ".analytics-star-range-to"
 );
-const inputStars = document.querySelector("#input-stars");
+const containerStars = document.querySelector("#container-analytics-stars");
+const inputAnalyticalStarsTotal = document.querySelector(
+    "#input-analytics-star-total"
+);
+const inputAnalyticalStarsRangeFrom = document.querySelector(
+    "#input-analytics-star-range-from"
+);
+const inputAnalyticalStarsRangeTo = document.querySelector(
+    "#input-analytics-star-range-to"
+);
 
-containersStars.forEach((j) =>
-    j.addEventListener("click", (e) => {
-        if (e.target.ariaLabel) {
-            resetActiveClass(mobileStars, "prof-aside__star_active");
-            resetActiveClass(desktopStars, "prof-aside__star_active");
-            addClassElementStars(mobileStars, +e.target.ariaLabel);
-            addClassElementStars(desktopStars, +e.target.ariaLabel);
+const buttonResetAllStars = document.querySelector(
+    "#analytics-stars-button-reset"
+);
+
+containerStars.addEventListener("click", (e) => {
+    if (e.target.ariaLabel) {
+        if (e.target.classList.contains("analytics-star-total")) {
+            resetActiveClass(
+                analyticalStarsTotal,
+                "prof-control-panel__star_active"
+            );
+            addClassElementStars(
+                analyticalStarsTotal,
+                +e.target.ariaLabel,
+                inputAnalyticalStarsTotal
+            );
         }
-    })
-);
+        if (e.target.classList.contains("analytics-star-range-from")) {
+            resetActiveClass(
+                analyticalStarsRangeFrom,
+                "prof-control-panel__star_active"
+            );
+            addClassElementStars(
+                analyticalStarsRangeFrom,
+                +e.target.ariaLabel,
+                inputAnalyticalStarsRangeFrom
+            );
+        }
+        if (e.target.classList.contains("analytics-star-range-to")) {
+            resetActiveClass(
+                analyticalStarsRangeTo,
+                "prof-control-panel__star_active"
+            );
+            addClassElementStars(
+                analyticalStarsRangeTo,
+                +e.target.ariaLabel,
+                inputAnalyticalStarsRangeTo
+            );
+        }
+    }
+});
 
-function addClassElementStars(arrayStars, currentValue) {
+function resetActiveClass(arrayElements, className) {
+    arrayElements.forEach((i) => i.classList.remove(className));
+}
+
+function addClassElementStars(arrayStars, currentValue, input) {
     arrayStars.forEach((i, c) => {
         if (c < currentValue) {
-            i.classList.add("prof-aside__star_active");
-            inputStars.value = currentValue;
+            i.classList.add("prof-control-panel__star_active");
+            input.value = currentValue;
             return;
         }
     });
 }
 
-// логика работы чекбоксов в карточках и таблице
-
-const checkboxs = document.querySelectorAll(".prof-table__test-checkbox");
-
-checkboxs.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        e.target.classList.toggle("prof-table__test-checkbox-active");
-    })
-);
+buttonResetAllStars.addEventListener("click", () => {
+    [
+        analyticalStarsTotal,
+        analyticalStarsRangeFrom,
+        analyticalStarsRangeTo,
+    ].forEach((i) => resetActiveClass(i, "prof-control-panel__star_active"));
+});
 
 // логика по работе селектов
 
@@ -665,6 +589,8 @@ const checkClickOutsideSelect = (e) => {
     if (!e.target.closest(".prof-control-panel__select-label")) {
         // скрыть текущее подменю
         hideCurrentSubmenu(state.currentOpenSubmenu, true);
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
+        state.currentOpenSubmenuSecondLevel = null;
     }
 };
 
@@ -689,6 +615,7 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
             "prof-control-panel__select-label_active"
         )
     ) {
+        hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
         addClassElement(
             state.submenuSelect[currentLabel.ariaLabel],
             "mix-visible"
@@ -707,6 +634,7 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
         }
     } else {
         hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+        state.currentOpenSubmenuSecondLevel = null;
     }
 }
 
@@ -737,8 +665,8 @@ function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
         }
         // скрыть текущее открытое подменю
         removeClassElement(submenu, "mix-visible");
-        // удалить текущий селект из стейта
-        submenu = null;
+        // очистить стейт
+
         if (deleteListenerOverlay) {
             // удалить слушатель document, т.к. все селекты закрыты
             document.removeEventListener("click", checkClickOutsideSelect);
@@ -753,6 +681,15 @@ buttonsSelect.forEach((i) =>
         const currentLabel = e.target.closest(
             ".prof-control-panel__select-label"
         );
+        if (e.target.closest(".prof-control-panel__label-custom")) {
+            const currentCheckedValue = e.target
+                .closest(".prof-control-panel__label-custom")
+                .textContent.trim();
+            state.inputsSelect[currentLabel.ariaLabel].value =
+                currentCheckedValue;
+            switchContentAnkets(currentCheckedValue);
+            return;
+        }
         if (
             e.target.closest(".label-checkbox") &&
             e.target.closest(".label-checkbox").ariaLabel === "checkbox"
@@ -768,8 +705,16 @@ buttonsSelect.forEach((i) =>
             ).forEach((i) =>
                 removeClassElement(i, "main-submenu__item_active")
             );
-            addClassElement(e.target, "main-submenu__item_active");
-            hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            addClassElement(
+                e.target.closest(".main-submenu__item"),
+                "main-submenu__item_active"
+            );
+            if (state.currentOpenSubmenuSecondLevel) {
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, false);
+            } else {
+                hideCurrentSubmenu(state.currentOpenSubmenu, true);
+            }
+
             return;
         }
         if (e.target.classList.contains("prof-control-panel__button")) {
@@ -782,7 +727,7 @@ buttonsSelect.forEach((i) =>
             );
             if (
                 currentLabelSecondLevel &&
-                currentLabelSecondLevel.ariaLabel.includes("division")
+                checkSubmenuSecondLevel(currentLabelSecondLevel.ariaLabel)
             ) {
                 toggleVisibleSubmenuSecondLevel(currentLabelSecondLevel);
             }
@@ -795,6 +740,7 @@ buttonsSelect.forEach((i) =>
                 )
             ) {
                 hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
                 addClassElement(
                     state.submenuSelect[currentLabel.ariaLabel],
                     "mix-visible"
@@ -814,7 +760,83 @@ buttonsSelect.forEach((i) =>
                 }
             } else {
                 hideCurrentSubmenu(state.currentOpenSubmenu, true);
+                hideCurrentSubmenu(state.currentOpenSubmenuSecondLevel, true);
+                state.currentOpenSubmenuSecondLevel = null;
             }
+        }
+    })
+);
+
+function checkSubmenuSecondLevel(ariaLabel) {
+    return ariaLabel.includes("division") || ariaLabel.includes("structure");
+}
+// логика переключения вида анкет
+
+const agentActualCardsContent = document.querySelector("#agents-cards-actual");
+const agentArchiveCardsContent = document.querySelector(
+    "#agents-cards-archive"
+);
+const agentActualListContent = document.querySelector("#agents-list-actual");
+const agentArchiveListContent = document.querySelector("#agents-list-archive");
+
+function switchContentAnkets(currentCheckedValue) {
+    switch (currentCheckedValue) {
+        case "Текущие":
+            removeClassElement(agentActualCardsContent, "mix-display-none");
+            removeClassElement(agentActualListContent, "mix-display-none");
+            addClassElement(agentArchiveCardsContent, "mix-display-none");
+            addClassElement(agentArchiveListContent, "mix-display-none");
+            return;
+        case "В архиве":
+            removeClassElement(agentArchiveCardsContent, "mix-display-none");
+            removeClassElement(agentArchiveListContent, "mix-display-none");
+            addClassElement(agentActualCardsContent, "mix-display-none");
+            addClassElement(agentActualListContent, "mix-display-none");
+            return;
+        default:
+            return;
+    }
+}
+
+// логика открытия попапа объека
+
+const objectList = document.querySelectorAll(".prof-table__row_style_objects");
+const objectCards = document.querySelectorAll(".prof-card");
+const popupEditCardObject = document.querySelector(".modal-edit-card-object");
+
+objectCards.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-label-checkbox")) {
+            return;
+        }
+        popupEditCardObject.style.display = "flex";
+    })
+);
+
+objectList.forEach((i, c) => {
+    if (c === 0) {
+        return;
+    }
+    i.addEventListener("click", (e) => {
+        if (e.target.closest(".prof-label-checkbox")) {
+            return;
+        }
+        popupEditCardObject.style.display = "flex";
+    });
+});
+
+// логика закрытия попапов редактирования аватара, передачи объекта, передачи обращения
+
+const popupsBody = document.querySelectorAll(".modal");
+
+popupsBody.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (
+            e.target.closest(".modal__close-btn") ||
+            e.target.closest(".modal__cancel-btn") ||
+            e.target.classList.contains("modal")
+        ) {
+            e.target.closest(".modal").style.display = "none";
         }
     })
 );

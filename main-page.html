@@ -20,7 +20,7 @@
 
         <header class="header">
             <div class="header__content">
-                <a class="logo logo_place_header" href="#">
+                <a class="logo logo_place_header" href="./main-page.html">
                     <svg class="icon icon_logo" viewBox="0 0 198 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M156.581 26.9354H148.802V29.1138H151.559V35.7226H153.824V29.1138H156.581V26.9354Z"
                             fill="#65B32E" />
@@ -111,7 +111,7 @@
                     <a class="menu__profile mix-display-none" href="./personal-account-private-person.html">
                         <span class="menu__profile-name">
                             <!-- данные с сервера имя пользователя -->Иван Иванов</span>
-                        <div class="menu__profile-avatar"></div>
+                        <img src='./assets/images/avatar-photo.png' class="menu__profile-avatar"></img>
                     </a>
                     <ul class="menu__links">
                         <li class="menu__list">
@@ -829,87 +829,102 @@
                             <div class="control-panel__column main__control-panel-column-two">
                                 <div class="main__control-panel-desktop main__control-panel-desktop-left">
                                     <div class="main__navigation-wrapper main__navigation-wrapper_type_sort">
-                                        <p class="main-text">Сортировать: </p>
-                                        <div id="main-search-sort-cards-desktop"
-                                            class="main-search main-search_style_main main-search_style_sort"> <span
-                                                id="main-sort-desktop">Сначала выгодные</span>
-                                            <div class="main-submenu main-submenu_style_sort">
-                                                <ul class="main-submenu__list">
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Все</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                        выгодные</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">От
-                                                        меньшей
-                                                        площади</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                                        От большей площади</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                        дорогие</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                        дешевые</li>
-                                                    <li aria-label="sort-desktop"
-                                                        class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                        популярные</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main__navigation-wrapper main__navigation-wrapper_type_number-cards">
-                                        <p class="main-text main__control-panel-text">Показывать объектов на странице:
-                                        </p>
-                                        <div id="main-search-number-cards" class="main-search main-search_style_main">
-                                            <span id="main-number-cards">10</span>
-                                            <div class="main-submenu main-submenu_style_number-cards">
-                                                <ul class="main-submenu__list">
-                                                    <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">5</a></li>
-                                                    <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                                        <a href="" class="main-submenu__link">10</a></li>
-                                                    <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">20</a></li>
-                                                    <li aria-label="number-cards"
-                                                        class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">50</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="main__control-panel-mobile">
-                                    <div id="main-search-sort-cards-mobile"
-                                        class="main__control-panel-icon main__control-panel-icon_search">
-                                        <div class="main-submenu main-submenu_style_sort-mobile">
+                                        <label
+                                        aria-label="main-sort"
+                                        class="prof-control-panel__select-label prof-control-panel__select-label_type_main text-p2 button-toggle-select"
+                                        >Сортировать:
+                                        <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor prof-control-panel__cursor_type_main" id="cursor-main-sort"></div>
+                                            <input
+                                            id="input-main-sort"
+                                            type="text"
+                                            disabled="true"
+                                            class="prof-control-panel__select-input prof-control-panel__select-input_type_sort"
+                                            value="Сначала выгодные"
+                                            />
+                                            <div
+                                            class="main-submenu main-submenu_style_main"
+                                            id="submenu-main-sort"
+                                            >
                                             <ul class="main-submenu__list">
-                                                <li class="main-submenu__item main-submenu__item_title">Сортировка</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Все</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                    выгодные</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">От меньшей
-                                                    площади</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                                    От большей площади</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                    дорогие</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                    дешевые</li>
-                                                <li aria-label="sort-desktop"
-                                                    class="main-submenu__item main-submenu__item_type_sort">Сначала
-                                                    популярные</li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu"
+                                                >
+                                                Сортировка
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Все</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Сначала выгодные</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">От меньшей площади</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">От большей площади</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Сначала дорогие</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Сначала дешевые</a>
+                                                </li>
+                                                <li
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                >
+                                                    <a aria-label="item" href="#" class="main-submenu__link">Сначала популярные</a>
+                                                </li>
                                             </ul>
                                         </div>
+                                    </label>
                                     </div>
+                                    <div class="main__navigation-wrapper main__navigation-wrapper_type_number-cards">
+                                        <div class="prof-control-panel">
+                                            <label aria-label="main-page-desktop" class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать объектов на
+                                                странице:
+                                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                <div class="prof-control-panel__cursor" id="cursor-main-page-desktop"></div>
+                                                <input id="input-main-page-desktop" type="text" disabled="true"
+                                                    class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                                    value="5">
+                                                <div class="main-submenu main-submenu_style_prof-page" id="submenu-main-page-desktop">
+                                                    <ul class="main-submenu__list main-submenu__list_type_page">
+                                                        <li
+                                                            class="main-submenu__item main-submenu__item_active">
+                                                            <a aria-label="linked" href="#" class="main-submenu__link">5</a>
+                                                        </li>
+                                                        <li class="main-submenu__item">
+                                                            <a aria-label="linked" href="#" class="main-submenu__link">10</a>
+                                                        </li>
+                                                        <li class="main-submenu__item">
+                                                            <a aria-label="linked" href="#" class="main-submenu__link">20</a></li>
+                                                        <li class="main-submenu__item">
+                                                            <a aria-label="linked" href="#" class="main-submenu__link">50</a></li>
+                                                    </ul>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+                                <div class="main__control-panel-mobile">
                                     <div class="main__control-panel-icon main__control-panel-icon_filters"></div>
                                 </div>
                             </div>
@@ -919,9 +934,6 @@
                                 <div class="main__control-panel-desktop">
                                     <div class="main-search main-search_style_main main-search_style_main-filters">
                                         Фильтры: </div>
-                                </div>
-                                <div class="main__control-panel-mobile">
-
                                 </div>
                             </div>
                         </div>
@@ -1801,24 +1813,30 @@
                         </ul>
 
                         <div class="main__change-page">
-                            <p class="main-text main__control-panel-text main__control-panel-text_style_mobile">
-                                Показывать объектов на странице:</p>
-                            <div id="main-search-number-cards-mobile" class="main-search main-search_style_main"> <span
-                                    id="main-number-cards-mobile">10</span>
-                                <div
-                                    class="main-submenu main-submenu_style_number-cards main-submenu_style_number-cards-mobile">
-                                    <ul class="main-submenu__list">
-                                        <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">5</a></li>
-                                        <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort main-submenu__item_active">
-                                            <a href="" class="main-submenu__link">10</a></li>
-                                        <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">20</a></li>
-                                        <li aria-label="number-cards"
-                                            class="main-submenu__item main-submenu__item_type_sort"><a href="" class="main-submenu__link">50</a></li>
-                                    </ul>
-                                </div>
+                            <div class="prof-control-panel">
+                                <label aria-label="main-page-mobile" class="prof-control-panel__select-label text-p2 button-toggle-select">Показывать объектов на
+                                    странице:
+                                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                    <div class="prof-control-panel__cursor" id="cursor-main-page-mobile"></div>
+                                    <input id="input-main-page-mobile" type="text" disabled="true"
+                                        class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
+                                        value="5">
+                                    <div class="main-submenu main-submenu_style_prof-page" id="submenu-main-page-mobile">
+                                        <ul class="main-submenu__list main-submenu__list_type_page">
+                                            <li
+                                                class="main-submenu__item main-submenu__item_active">
+                                                <a aria-label="linked" href="#" class="main-submenu__link">5</a>
+                                            </li>
+                                            <li class="main-submenu__item">
+                                                <a aria-label="linked" href="#" class="main-submenu__link">10</a>
+                                            </li>
+                                            <li class="main-submenu__item">
+                                                <a aria-label="linked" href="#" class="main-submenu__link">20</a></li>
+                                            <li class="main-submenu__item">
+                                                <a aria-label="linked" href="#" class="main-submenu__link">50</a></li>
+                                        </ul>
+                                    </div>
+                                </label>
                             </div>
                         </div>
 
@@ -1826,39 +1844,39 @@
                             <nav class="pagination">
                                     <ul class="pagination__list">
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" disabled class="pagination__button pagination__button_type_arrow-left"></button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button pagination__button_active">1</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button">2</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button">...</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button">12</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button">13</button>
                                             </a>
                                         </li>
                                         <li class="pagination__item">
                                             <!-- активные классы для стрелок пагинации вправо: pagination__button_type_arrow-right-active
                                                                                       и влево: pagination__button_type_arrow-left-active -->
-                                            <a href="#">
+                                            <a class="pagination__link" href="#">
                                                 <button type="button" class="pagination__button pagination__button_type_arrow-right pagination__button_type_arrow-right-active"></button>
                                             </a>
                                         </li>
@@ -1889,99 +1907,211 @@
                                             <li class="main-form__item">
                                                 <div class="main-form__wrapper-input">
 
-                                                    <label class="mix-mt16 mix-label">
-                                                        <div id="submenu-city"
-                                                            class="main-form__cursor main-form__cursor_style_label">
-                                                        </div>
-                                                        <input type="text" id="main-form-adress-city"
-                                                            class="main-form__input mix-input" placeholder=" ">
+                                                    <label
+                                                    aria-label="main-city"
+                                                    class="prof-control-panel__select-label prof-control-panel__select-label_type_main-big text-p2 button-toggle-select mix-label"
+                                                    >
+                                                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                        <div class="prof-control-panel__cursor prof-control-panel__cursor_type_main-big" id="cursor-main-city"></div>
+                                                        <input
+                                                        id="input-main-city"
+                                                        type="text"
+                                                        class="prof-control-panel__select-input prof-control-panel__select-input_type_main mix-input text-p1"
+                                                        placeholder=" "
+                                                        />
                                                         <span class="mix-caption">Город</span>
-                                                    </label>
-
-                                                    <div id="submenu-city-body"
-                                                        class="main-submenu main-submenu_style_filters-adress mix-scrollbar-only-vertical">
+                                                        <div
+                                                        class="main-submenu main-submenu_style_main-big"
+                                                        id="submenu-main-city"
+                                                        >
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="city" class="main-submenu__item">Москва</li>
-                                                            <li aria-label="city" class="main-submenu__item">
-                                                                Санкт-Петербург</li>
-                                                            <li aria-label="city" class="main-submenu__item">Воронеж
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Москва
                                                             </li>
-                                                            <li aria-label="city" class="main-submenu__item">Липецк</li>
-                                                            <li aria-label="city" class="main-submenu__item">Ногинск
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_active main-submenu__item_style_wide"
+                                                            >
+                                                                Санкт-Петербург
                                                             </li>
-                                                            <li aria-label="city" class="main-submenu__item">Смоленск
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Воронеж
                                                             </li>
-                                                            <li aria-label="city" class="main-submenu__item">Тула</li>
-                                                            <li aria-label="city" class="main-submenu__item">Ярославль
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Липецк
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Ногинск
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Смоленск
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Тула
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Ярославль
                                                             </li>
                                                         </ul>
                                                     </div>
+                                                </label>
                                                 </div>
                                             </li>
                                             <li class="main-form__item">
                                                 <div class="main-form__wrapper-input">
                                                     <div class="main-form__cursor main-form__cursor_style_input"></div>
-                                                    <label class="mix-mt16 mix-label">
-                                                        <div id="submenu-street"
-                                                            class="main-form__cursor main-form__cursor_style_label">
-                                                        </div>
-                                                        <input id="main-form-adress-street" type="text"
-                                                            class="main-form__input mix-input" placeholder=" ">
+
+                                                    <label
+                                                    aria-label="main-street"
+                                                    class="prof-control-panel__select-label prof-control-panel__select-label_type_main-big text-p2 button-toggle-select mix-label"
+                                                    >
+                                                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                        <div class="prof-control-panel__cursor prof-control-panel__cursor_type_main-big" id="cursor-main-street"></div>
+                                                        <input
+                                                        id="input-main-street"
+                                                        type="text"
+                                                        class="prof-control-panel__select-input prof-control-panel__select-input_type_main mix-input text-p1"
+                                                        placeholder=" "
+                                                        />
                                                         <span class="mix-caption">Улица</span>
-                                                    </label>
-                                                    <div id="submenu-street-body"
-                                                        class="main-submenu main-submenu_style_filters-adress mix-scrollbar-only-vertical">
+                                                        <div
+                                                        class="main-submenu main-submenu_style_main-big"
+                                                        id="submenu-main-street"
+                                                        >
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="street" class="main-submenu__item">9 Мая</li>
-                                                            <li aria-label="street" class="main-submenu__item">Авиамоторная</li>
-                                                            <li aria-label="street" class="main-submenu__item">Бирюлёвская</li>
-                                                            <li aria-label="street" class="main-submenu__item">Винницкая</li>
-                                                            <li aria-label="street" class="main-submenu__item">Заречная</li>
-                                                            <li aria-label="street" class="main-submenu__item">Керченская</li>
-                                                            <li aria-label="street" class="main-submenu__item">Нагорная</li>
-                                                            <li aria-label="street" class="main-submenu__item">Парковая 11-я</li>
-                                                            <li aria-label="street" class="main-submenu__item">Сумская/li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                9 Мая
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_active main-submenu__item_style_wide"
+                                                            >
+                                                                Авиамоторная
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Бирюлёвская
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Винницкая
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Заречная
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Керченская
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Нагорная
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Парковая
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Широкая
+                                                            </li>
                                                         </ul>
                                                     </div>
+                                                </label>
                                                 </div>
                                             </li>
                                             <li class="main-form__item">
                                                 <div class="main-form__wrapper-input">
                                                     <div class="main-form__cursor main-form__cursor_style_input"></div>
-                                                    <label class="mix-mt16 mix-label">
-                                                        <div id="submenu-underground"
-                                                            class="main-form__cursor main-form__cursor_style_label">
-                                                        </div>
-                                                        <input id="main-form-adress-underground" type="text"
-                                                            class="main-form__input mix-input" placeholder=" ">
-                                                        <span class="mix-caption">Метро</span>
-                                                    </label>
 
-                                                    <div id="submenu-underground-body"
-                                                        class="main-submenu main-submenu_style_filters-adress mix-scrollbar-only-vertical">
+                                                    <label
+                                                    aria-label="main-underground"
+                                                    class="prof-control-panel__select-label prof-control-panel__select-label_type_main-big text-p2 button-toggle-select mix-label"
+                                                    >
+                                                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                                        <div class="prof-control-panel__cursor prof-control-panel__cursor_type_main-big" id="cursor-main-underground"></div>
+                                                        <input
+                                                        id="input-main-underground"
+                                                        type="text"
+                                                        class="prof-control-panel__select-input prof-control-panel__select-input_type_main mix-input text-p1"
+                                                        placeholder=" "
+                                                        />
+                                                        <span class="mix-caption">Метро</span>
+                                                        <div
+                                                        class="main-submenu main-submenu_style_main-big"
+                                                        id="submenu-main-underground"
+                                                        >
                                                         <ul class="main-submenu__list">
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Академическая</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Станция 2</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Бабушкинская</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Варшавская</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Говорово</li>
-                                                            <li aria-label="underground" class="main-submenu__item">ВДНХ
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Алтуфьево
                                                             </li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Киевская</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Лубянка</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Медведково</li>
-                                                            <li aria-label="underground" class="main-submenu__item">
-                                                                Южная</li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_active main-submenu__item_style_wide"
+                                                            >
+                                                                Бибирево
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Владыкино
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Дмитровская
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Лубянка
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Медведково
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Пражская
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Сокольники
+                                                            </li>
+                                                            <li aria-label="item"
+                                                            class="main-submenu__item main-submenu__item_style_wide"
+                                                            >
+                                                                Ясенево
+                                                            </li>
                                                         </ul>
                                                     </div>
+                                                </label>
                                                 </div>
                                             </li>
                                         </ul>
@@ -2288,7 +2418,7 @@
     </div>
 
     <!-- модальное окно для выбора города "Ваш город" в блоке Header  -->
-    <div id="popup-city" class="main-popup main-popup_type_change-city">
+    <div id="popup-city" class="main-popup main-popup_type_change-city mix-display-none">
         <div class="main-popup__container main-popup__container_type_change-city">
             <button class="main-popup__close"></button>
             <div class="popup-change-city">
@@ -2298,20 +2428,21 @@
                         <input name="city_code" id="input-change-city" class="popup-change-city__input mix-input" type="text" maxlength="50"
                             placeholder=" " />
                         <span class="popup-change-city__caption mix-caption"></span>
+                        <span class="popup-change-city__error text-p2">такого города нет в списке!</span>
                     </label>
                 </form>
                 <div class="popup-change-city__column">
                     <ul class="popup-change-city__list">
                         <!-- текущий активный город модификатор: popup-change-city__item_type_active -->
                         <li
-                            class="popup-change-city__item popup-change-city__item_type_favorite popup-change-city__item_type_active">
+                            id="25" class="popup-change-city__item popup-change-city__item_type_favorite popup-change-city__item_type_active">
                             Москва</li>
                         <li
-                            class="popup-change-city__item popup-change-city__item_type_favorite">
+                            id="26" class="popup-change-city__item popup-change-city__item_type_favorite">
                             Санкт-Петербург
                         </li>
                         <li
-                            class="popup-change-city__item popup-change-city__item_type_favorite">
+                            id="27" class="popup-change-city__item popup-change-city__item_type_favorite">
                             Тула</li>
                     </ul>
                     <ul class="popup-change-city__list">
@@ -2470,8 +2601,10 @@
             </div>
         </div>
     </div>
+
     <script src="./assets/leaflet/leaflet.js"></script>
     <script src='./assets/js/main-map.js'></script>
+
 </body>
 
 </html>

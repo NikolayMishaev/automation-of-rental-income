@@ -1,307 +1,299 @@
 .registration-form {
-    margin-top: 40px;
+  margin-top: 40px;
+  @media #{$screen-mobile} {
+    margin-top: 16px;
+  }
+  &__select-icon {
+    position: absolute;
+    transition: $transition;
+    right: 10px;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+    @include flex-container;
     @media #{$screen-mobile} {
-        margin-top: 16px;
+      top: 4px;
     }
-    &__select-icon {
-        position: absolute;
-        transition: $transition;
-        right: 10px;
-        top: 12px;
-        width: 24px;
-        height: 24px;
-        @include flex-container;
-        @media #{$screen-mobile} {
-            top: 4px;
-        }
+  }
+  &__tabs {
+    display: flex;
+    border-radius: 12px 12px 0 0;
+    border: 1px solid $grey-20;
+    background-color: $grey-5;
+    @media #{$screen-mobile} {
+      display: inline-flex;
+      overflow-x: scroll;
+      width: 100%;
     }
-    &__tabs {
-        display: flex;
-        border-radius: 12px 12px 0 0;
-        border: 1px solid $grey-20;
-        background-color: $grey-5;
-        @media #{$screen-mobile} {
-            display: inline-flex;
-            overflow-x: scroll;
-            width: 100%;
-        }
+  }
+  &__tab {
+    color: $grey60;
+    flex: auto;
+    padding: 8px 0;
+    text-align: center;
+    cursor: pointer;
+    @media #{$screen-mobile} {
+      min-width: 76px;
     }
-    &__tab {
-        color: $grey60;
-        flex: auto;
-        padding: 8px 0;
-        text-align: center;
-        cursor: pointer;
-        transition: $transition;
-        &:hover {
-            background-color: $grey-20;
-        }
-        @media #{$screen-mobile} {
-            min-width: 76px;
-        }
-        &_filled {
-            background-color: $accent-TCX5;
-        }
-        &:nth-child(1) {
-            border-radius: 12px 0 0 0;
-        }
-        &:nth-last-child(1) {
-            border-radius: 0 12px 0 0;
-        }
+    &_filled {
+      background-color: $accent-TCX5;
+      &:nth-child(1) {
+        border-radius: 12px 0 0 0;
+      }
+      &:nth-last-child(1) {
+        border-radius: 0 12px 0 0;
+      }
     }
-    .active {
-        color: $grey100;
-        border-bottom: 1px solid $accent-TCX50;
+  }
+  .active {
+    color: $grey100;
+    border-bottom: 1px solid $accent-TCX50;
+  }
+  &__content {
+    padding: 24px 24px;
+    border: 1px solid $grey-20;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    margin-bottom: 40px;
+    @media #{$screen-mobile} {
+      padding: 16px;
     }
-    &__content {
-        padding: 24px 24px;
-        border: 1px solid $grey-20;
-        border-top: none;
-        border-radius: 0 0 12px 12px;
-        margin-bottom: 40px;
-        @media #{$screen-mobile} {
-            padding: 16px;
-        }
 
-        h3 {
-            padding-bottom: 16px;
-            border-bottom: 1px solid $grey-20;
-        }
+    h3 {
+      padding-bottom: 16px;
+      border-bottom: 1px solid $grey-20;
     }
-    .custom-text-input_text {
-        @media #{$screen-mobile} {
-            margin-top: 4px;
-        }
+  }
+  .custom-text-input_text {
+    @media #{$screen-mobile} {
+      margin-top: 4px;
     }
-    &__row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 16px;
-        &_textarea {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 16px;
-            @media #{$screen-mobile} {
-                flex-direction: column;
-                align-items: baseline;
-            }
-        }
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    &_textarea {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      @media #{$screen-mobile} {
+        flex-direction: column;
+        align-items: baseline;
+      }
+    }
+    @media #{$screen-mobile} {
+      flex-direction: column;
+      align-items: baseline;
+    }
+  }
+  &__label {
+    flex: 336px;
+    line-height: 24px;
+    color: $grey80;
+    @media #{$screen-mobile} {
+      flex: auto;
+      margin-bottom: 4px;
+    }
+    &_textarea {
+      width: 100%;
+      max-width: 204px;
+      line-height: 24px;
+      @media #{$screen-mobile} {
+        max-width: 100%;
+      }
+    }
+  }
+  .custom-text-input {
+    width: 100%;
+    max-width: 552px;
+    &_select {
+      position: relative;
+      overflow: visible;
+      input {
+        cursor: pointer;
+      }
+      span {
+        cursor: pointer;
+      }
+    }
+    &__error {
+      border: 2px solid $error !important;
+    }
+    &__option-list {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      transition: $transition;
+      margin-top: 4px;
+      width: calc(100%);
+      z-index: 1;
+      padding: 12px 0;
+      background-color: white;
+      box-shadow: 0px 6px 10px rgba(80, 86, 94, 0.02), 0px 2px 18px rgba(80, 86, 94, 0.12),
+        0px 4px 5px rgba(80, 86, 94, 0.12);
+      border-radius: 8px;
+    }
+    .custom-text-input__option-list_active {
+      opacity: 1;
+      visibility: visible;
+    }
+    &__option {
+      padding: 0 12px;
+      &:hover {
+        transition: $transition;
+        background-color: $accent-TCX50;
+        color: white;
+      }
+    }
+    input {
+      @media #{$screen-mobile} {
+        padding: 4px 12px;
+        height: 32px;
+      }
+      &:focus + span {
         @media #{$screen-mobile} {
-            flex-direction: column;
-            align-items: baseline;
+          display: none;
         }
+      }
     }
     &__label {
-        flex: 336px;
-        line-height: 24px;
-        color: $grey80;
-        @media #{$screen-mobile} {
-            flex: auto;
-            margin-bottom: 4px;
-        }
-        &_textarea {
-            width: 100%;
-            max-width: 204px;
-            line-height: 24px;
-            @media #{$screen-mobile} {
-                max-width: 100%;
-            }
-        }
+      @media #{$screen-mobile} {
+        top: 4px;
+      }
     }
-    .custom-text-input {
-        width: 100%;
-        max-width: 552px;
-        textarea {
-            height: 120px;
-        }
-        &_select {
-            position: relative;
-            overflow: visible;
-            input {
-                cursor: pointer;
-            }
-            span {
-                cursor: pointer;
-            }
-        }
-        &__error {
-            border: 2px solid $error !important;
-        }
-        &__option-list {
-            position: absolute;
-            opacity: 0;
-            visibility: hidden;
-            transition: $transition;
-            margin-top: 4px;
-            width: calc(100%);
-            z-index: 1;
-            padding: 12px 0;
-            background-color: white;
-            box-shadow: 0px 6px 10px rgba(80, 86, 94, 0.02),
-                0px 2px 18px rgba(80, 86, 94, 0.12),
-                0px 4px 5px rgba(80, 86, 94, 0.12);
-            border-radius: 8px;
-        }
-        .custom-text-input__option-list_active {
-            opacity: 1;
-            visibility: visible;
-        }
-        &__option {
-            padding: 0 12px;
-            &:hover {
-                transition: $transition;
-                background-color: $accent-TCX50;
-                color: white;
-            }
-        }
-        input {
-            @media #{$screen-mobile} {
-                padding: 4px 12px;
-                height: 32px;
-            }
-            &:focus + span {
-                @media #{$screen-mobile} {
-                    display: none;
-                }
-            }
-        }
-        &__label {
-            @media #{$screen-mobile} {
-                top: 4px;
-            }
-        }
+  }
+  &__input {
+    flex: 428px;
+    border-radius: 4px;
+    line-height: 24px;
+    overflow: hidden;
+    @media #{$screen-mobile} {
+      flex: auto;
+      width: 100%;
     }
-    &__input {
-        flex: 428px;
-        border-radius: 4px;
-        line-height: 24px;
-        overflow: hidden;
-        @media #{$screen-mobile} {
-            flex: auto;
-            width: 100%;
-        }
+  }
+  &__btn-group {
+    display: flex;
+  }
+  &__cancel-btn {
+    @include secondary-btn;
+    margin-right: 16px;
+    width: 205px;
+    height: 40px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: none;
     }
-    &__btn-group {
-        display: flex;
+    @include flex-container;
+    @media #{$screen-mobile} {
+      height: 32px;
     }
-    &__cancel-btn {
-        @include secondary-btn;
-        margin-right: 16px;
-        width: 205px;
-        height: 40px;
-        cursor: pointer;
-        &:hover {
-            text-decoration: none;
-        }
-        @include flex-container;
-        @media #{$screen-mobile} {
-            height: 32px;
-        }
+  }
+  &__next-btn {
+    @include primary-btn($accent-TCX50);
+    width: 205px;
+    height: 40px;
+    cursor: pointer;
+    @include flex-container;
+    @media #{$screen-mobile} {
+      height: 32px;
     }
-    &__next-btn {
-        @include primary-btn($accent-TCX50);
-        width: 205px;
-        height: 40px;
-        cursor: pointer;
-        @include flex-container;
-        @media #{$screen-mobile} {
-            height: 32px;
-        }
+  }
+  &__submit-btn {
+    @include primary-btn($accent-TCX50);
+    cursor: pointer;
+    display: none;
+    width: 205px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    @media #{$screen-mobile} {
+      height: 32px;
     }
-    &__submit-btn {
-        @include primary-btn($accent-TCX50);
-        cursor: pointer;
-        display: none;
-        width: 205px;
-        height: 40px;
-        align-items: center;
-        justify-content: center;
-        @media #{$screen-mobile} {
-            height: 32px;
-        }
+  }
+  &__add-btn,
+  &__del-btn {
+    @include secondary-btn;
+    width: 100%;
+    margin-top: 16px;
+    padding: 4px;
+    text-align: center;
+    cursor: pointer;
+  }
+  &__del-btn {
+    margin-right: 16px;
+    display: none;
+  }
+  &__link {
+    color: $accent90;
+  }
+  &__user-agreement {
+    display: none;
+    font-size: $font-size-small;
+    margin-bottom: 24px;
+    @media #{$screen-mobile} {
+      display: none !important;
     }
-    &__add-btn,
-    &__del-btn {
-        @include secondary-btn;
-        width: 100%;
-        margin-top: 16px;
-        padding: 4px;
-        text-align: center;
-        cursor: pointer;
-    }
-    &__del-btn {
-        margin-right: 16px;
-        display: none;
-    }
-    &__link {
-        color: $accent90;
-    }
-    &__user-agreement {
-        display: none;
-        font-size: $font-size-small;
-        margin-bottom: 24px;
-        @media #{$screen-mobile} {
-            display: none !important;
-        }
-    }
-    input:focus {
-        outline: none;
-    }
+  }
+  input:focus {
+    outline: none;
+  }
 
-    &__download-btn {
-        display: inline-flex;
-        align-items: center;
-        @include secondary-btn;
-        padding: 8px 16px 8px 8px;
-        cursor: pointer;
-        @media #{$screen-mobile} {
-            padding: 4px 12px 4px 4px;
-        }
+  &__download-btn {
+    display: inline-flex;
+    align-items: center;
+    @include secondary-btn;
+    padding: 8px 16px 8px 8px;
+    cursor: pointer;
+    @media #{$screen-mobile} {
+      padding: 4px 12px 4px 4px;
     }
-    &__download-icon {
-        width: 16px;
-        height: 16px;
-        margin-right: 6px;
-        @include flex-container;
-    }
-    &__subtitle {
-        font-size: $font-size-small;
-        font-weight: 500;
-        margin-bottom: 8px;
-    }
-    &__download-container {
-        margin-top: 16px;
-    }
-    &__label-subtitle {
-        display: block;
-        font-size: $font-size-very-small;
-        color: $grey60;
-    }
-    &__benif {
-        margin-bottom: 16px;
-    }
+  }
+  &__download-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    @include flex-container;
+  }
+  &__subtitle {
+    font-size: $font-size-small;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  &__download-container {
+    margin-top: 16px;
+  }
+  &__label-subtitle {
+    display: block;
+    font-size: $font-size-very-small;
+    color: $grey60;
+  }
+  &__benif {
+    margin-bottom: 16px;
+  }
 
-    .file-input {
-        @include file-input;
+  .file-input {
+    @include file-input;
+  }
+  .modal {
+    h3 {
+      border: none;
     }
-    .modal {
-        h3 {
-            border: none;
-        }
+  }
+  &__error-text {
+    color: $error;
+    font-size: $font-size-small;
+    margin-bottom: 40px;
+  }
+  .modal-file-input {
+    .modal__content {
+      width: 800px;
     }
-    &__error-text {
-        color: $error;
-        font-size: $font-size-small;
-        margin-bottom: 40px;
-    }
-    .modal-file-input {
-        .modal__content {
-            width: 800px;
-        }
-    }
+  }
 }
 
 .registration-form_juridical {
-    display: none;
+  display: none;
 }

@@ -166,9 +166,6 @@
     .swiper-slide img {
         height: 110px;
         cursor: pointer;
-        @media (max-width: 1024px) {
-            height: 90px;
-        }
     }
     .swiper-button-next .slider__next-btn_track {
         height: 100%;

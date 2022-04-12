@@ -8,6 +8,7 @@
     &-visible {
         opacity: 1 !important;
         visibility: visible !important;
+        clip: unset !important;
     }
     &-hidden {
         opacity: 0 !important;
@@ -107,6 +108,7 @@
     }
     &-mt16 {
         margin-top: rem(16px);
+        width: 100%;
         @media #{$screen-mobile} {
             margin-top: rem(12px);
         }

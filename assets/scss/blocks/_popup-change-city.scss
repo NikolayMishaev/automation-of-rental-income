@@ -13,12 +13,14 @@
     &__label {
         border: 1px solid #cfd4dc;
         margin-bottom: rem(20px);
-
+        &_error {
+            border-color: red;
+        }
     }
     &__caption:before {
-        content: 'Введите название города';
+        content: "Введите название города";
         @media #{$screen-mobile} {
-            content: 'Название города';
+            content: "Название города";
         }
     }
     &__column {
@@ -35,6 +37,9 @@
         &:last-child {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            @media (max-width: rem(900px)) {
+                grid-template-columns: 1fr 1fr;
+            }
             @media #{$screen-mobile} {
                 grid-template-columns: 1fr;
             }
@@ -62,7 +67,6 @@
         color: $grey100;
         padding: rem(4px) rem(12px);
         transition: $transition;
-        white-space: nowrap;
         &:hover {
             cursor: pointer;
             background-color: $accent-TCX50;
@@ -74,6 +78,29 @@
         &_type_active {
             background-color: $accent-TCX50;
             color: white;
+        }
+    }
+    &__error {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        color: red;
+        top: 47px;
+        left: 5px;
+        transition: $transition;
+        @media #{$screen-mobile} {
+            top: 31px;
+        }
+        &_active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__input {
+        &_error {
+            &:focus {
+                outline-color: red;
+            }
         }
     }
 }

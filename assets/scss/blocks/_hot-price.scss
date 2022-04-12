@@ -16,7 +16,7 @@
 
 .hot-price {
     position: relative;
-    overflow: scroll;
+    overflow: hidden;
     padding: rem(20px) 0;
     width: 100%;
     background-color: $grey-5;

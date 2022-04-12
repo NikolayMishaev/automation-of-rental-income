@@ -1,15 +1,30 @@
 .prof-table {
     &__row {
         display: grid;
-        grid-template-columns: 199px 90px 110px 180px 152px 149px;
+        grid-template-columns: 199px 90px 110px 180px 152px 172px;
         column-gap: 16px;
         align-items: center;
         border-top: 1px solid #e3e7e8;
+        &:hover {
+            cursor: pointer;
+        }
+        @media (max-width: rem(1550px)) {
+            grid-template-columns: 199px 90px 110px 180px 152px 203px;
+        }
         &:first-child {
             margin-top: 16px;
+            &:hover {
+                cursor: auto;
+            }
         }
         &_style_objects {
             grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
+        }
+        &_style_agent {
+            grid-template-columns: 85px 160px 95px 160px 75px 100px 100px 95px;
+        }
+        &_style_agent-archive {
+            grid-template-columns: 80px 155px 95px 155px 70px 100px 120px 95px
         }
         &_style_users {
             grid-template-columns: 40px 297px 160px 160px 220px;
@@ -75,8 +90,14 @@
         &_type_wrap {
             white-space: unset;
         }
+        &_type_agent {
+            padding: 12px 0;
+        }
     }
     &__index {
+        position: absolute;
+        right: -4px;
+        top: -4px;
         vertical-align: super;
         font-size: 8px;
     }
@@ -103,5 +124,40 @@
     }
     &__number {
         margin-left: 4px;
+    }
+    &__button {
+        border-radius: 4px;
+        border: none;
+        background-color: #2a9b43;
+        padding: 4px 8px;
+        color: white;
+        transition: $transition;
+        &:hover {
+            opacity: .8;
+        }
+        &:disabled {
+            background-color: #E1E5EB;
+            color: #B4BBC6;
+        }
+    }
+    &__link {
+        color: #1565c0;
+        font-weight: 400;
+    }
+    &__caption {
+        font-weight: 400;
+    }
+    &__text {
+        position: relative;
+        display: inline;
+    }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        background: url("./../images/icons/profile-document-active.svg") no-repeat center;
+        transition: $transition;
+        &:hover {
+            opacity: .8;
+        }
     }
 }
