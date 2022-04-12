@@ -6944,11 +6944,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .modal-transfer-object .modal__content {
   width: 600px;
+  max-height: calc(100vh - 40px);
 }
 
 @media (max-width: 40rem) {
   .modal-transfer-object .modal__content {
     width: 328px;
+    overflow: hidden;
   }
 }
 
@@ -7033,7 +7035,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: all 0.5s;
 }
 
-.modal-transfer-object__manager-container input:checked + .modal-transfer-object__radio .modal-transfer-object__radio-point {
+.modal-transfer-object__manager-container input:checked + .modal-transfer-object__radio
+.modal-transfer-object__radio-point {
   background-color: white;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -7145,9 +7148,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .modal-transfer-object__manager-list {
+  padding-right: 5px;
   overflow-y: auto;
   scrollbar-width: thin;
-  height: calc(100vh - 423px);
+  max-height: calc(100vh - 255px);
 }
 
 @media (min-width: 640px) {
@@ -7162,7 +7166,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 40rem) {
   .modal-transfer-object__manager-list {
-    height: 50vh;
+    max-height: calc(100vh - 246px);
   }
 }
 
