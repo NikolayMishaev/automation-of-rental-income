@@ -13,6 +13,9 @@ const swiper = new Swiper(".mainSwiper", {
         768: {
             slidesPerView: 3,
         },
+        328: {
+            slidesPerView: 3,
+        },
     },
     freeMode: true,
     watchSlidesProgress: true,

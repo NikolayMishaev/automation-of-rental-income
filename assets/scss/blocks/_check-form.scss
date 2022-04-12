@@ -1,157 +1,164 @@
 .check-form-page {
-  margin: 40px 0;
-  .container {
-    display: flex;
-    max-width: 1920px;
-    margin: auto;
-    padding: 0 60px;
-    @media #{$screen-mobile} {
-      max-width: 360px;
-      flex-direction: column;
-      padding: 0 16px;
-    }
-  }
-  &__inner {
-    max-width: 884px;
-    width: 100%;
-  }
-  &__row {
-    display: flex;
-    align-items: center;
-    margin-top: 16px;
-    line-height: 24px;
-    @media #{$screen-mobile} {
-      display: block;
-      line-height: 20px;
-    }
-  }
-
-  &__label {
-    color: $grey60;
-    flex: 438px;
-    line-height: 24px;
-    @media #{$screen-mobile} {
-      margin-bottom: 4px;
-    }
-    &_small {
-      margin-bottom: 8px;
-      font-size: $font-size-small;
-      color: $grey60;
-      font-weight: 500;
-    }
-  }
-  &__value {
-    font-weight: 500;
-    flex: 426px;
-  }
-  &__block {
-    margin-top: 40px;
-    @media #{$screen-mobile} {
-      margin-top: 24px;
-    }
-    h3 {
-      padding-bottom: 16px;
-      border-bottom: 1px solid $grey-20;
-    }
-  }
-  &__file-block {
     margin: 40px 0;
-    @media #{$screen-mobile} {
-      margin: 24px 0;
+    .container {
+        display: flex;
+        max-width: 1920px;
+        margin: auto;
+        padding: 0 60px;
+        @media #{$screen-mobile} {
+            max-width: 360px;
+            flex-direction: column;
+            padding: 0 16px;
+        }
     }
-  }
-  &__file {
-    display: inline-flex;
-    padding: 16px;
-    line-height: 24px;
-    border-radius: 12px;
-    border: 1px solid $grey30;
-    cursor: pointer;
-    &:hover {
-      text-decoration: none;
+    &__inner {
+        max-width: 884px;
+        width: 100%;
     }
-    span {
-      color: $grey100;
+    &__row {
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+        line-height: 24px;
+        @media #{$screen-mobile} {
+            display: block;
+            line-height: 20px;
+        }
     }
-  }
-  &__file-icon {
-    @include flex-container;
-    height: 24px;
-    width: 24px;
-    margin-right: 8px;
-  }
-  &__item {
-    margin-top: 16px;
-  }
-  &__secondary-btn {
-    @include secondary-btn;
-    padding: 8px;
-    margin-right: 16px;
-    flex: 205px;
-    @media #{$screen-mobile} {
-      flex: 47%;
-    }
-  }
-  &__reject-btn {
-    @media #{$screen-mobile} {
-      margin-right: 0;
-    }
-  }
 
-  &__primary-btn {
-    max-width: 300px;
-    width: 100%;
-    @include primary-btn($accent-TCX50);
-    padding: 8px;
-    @media #{$screen-mobile} {
-      flex: 100%;
-      margin-top: 24px;
-      max-width: 100%;
+    &__label {
+        color: $grey60;
+        flex: 438px;
+        line-height: 24px;
+        @media #{$screen-mobile} {
+            margin-bottom: 4px;
+        }
+        &_small {
+            margin-bottom: 8px;
+            font-size: $font-size-small;
+            color: $grey60;
+            font-weight: 500;
+        }
     }
-  }
-  &__btn-group {
-    display: flex;
-    padding-top: 40px;
-    border-top: 1px solid $grey-20;
-    @media #{$screen-mobile} {
-      padding-top: 24px;
-      flex-wrap: wrap;
+    &__value {
+        font-weight: 500;
+        flex: 426px;
     }
-  }
+    &__block {
+        margin-top: 40px;
+        @media #{$screen-mobile} {
+            margin-top: 24px;
+        }
+        h3 {
+            padding-bottom: 16px;
+            border-bottom: 1px solid $grey-20;
+        }
+    }
+    &__file-block {
+        margin: 40px 0;
+        @media #{$screen-mobile} {
+            margin: 24px 0;
+        }
+    }
+    &__file {
+        display: inline-flex;
+        padding: 16px;
+        line-height: 24px;
+        border-radius: 12px;
+        border: 1px solid $grey30;
+        cursor: pointer;
+        &:hover {
+            text-decoration: none;
+        }
+        span {
+            color: $grey100;
+        }
+    }
+    &__file-icon {
+        @include flex-container;
+        height: 24px;
+        width: 24px;
+        margin-right: 8px;
+    }
+    &__item {
+        margin-top: 16px;
+    }
+    &__secondary-btn {
+        @include secondary-btn;
+        padding: 8px;
+        margin-right: 16px;
+        flex: 205px;
+        @media #{$screen-mobile} {
+            flex: 47%;
+        }
+    }
+    &__reject-btn {
+        @media #{$screen-mobile} {
+            margin-right: 0;
+        }
+    }
+
+    &__primary-btn {
+        max-width: 300px;
+        width: 100%;
+        @include primary-btn($accent-TCX50);
+        padding: 8px;
+        @media #{$screen-mobile} {
+            flex: 100%;
+            margin-top: 24px;
+            max-width: 100%;
+        }
+    }
+    &__btn-group {
+        display: flex;
+        padding-top: 40px;
+        border-top: 1px solid $grey-20;
+        @media #{$screen-mobile} {
+            padding-top: 24px;
+            flex-wrap: wrap;
+        }
+    }
 }
 .modal-reject-form {
-  .modal__content {
-    width: 600px;
-  }
-  .modal__footer {
-    border-top: none;
-    padding-top: 0;
-  }
-  .custom-text-input_text {
-    @media #{$screen-mobile} {
-      width: 100%;
+    .modal__content {
+        width: 600px;
     }
-  }
+    .modal__footer {
+        border-top: none;
+        padding-top: 0;
+    }
+    .custom-text-input_text {
+        @media #{$screen-mobile} {
+            width: 100%;
+        }
+    }
 }
 .modal-file-form {
-  .modal__body {
-    position: relative;
-    img {
-      @media #{$screen-mobile} {
-        max-height: none;
-      }
+    .modal__content {
+        width: 792px;
+        overflow: hidden;
     }
-    object {
-      position: absolute;
-      top: 16px;
-      right: 40px;
+    .modal__body {
+        position: relative;
+        max-height: calc(100vh - 132px);
+        overflow: auto;
+
+        img {
+            @media #{$screen-mobile} {
+                max-height: none;
+            }
+        }
+        object {
+            position: absolute;
+            top: 16px;
+            right: 40px;
+        }
     }
-  }
-  .download-img-btn {
-    width: 24px;
-    height: 24px;
-    background-color: white;
-    border-radius: 4px;
-    @include flex-container;
-  }
+    .download-img-btn {
+        width: 24px;
+        height: 24px;
+        background-color: white;
+        border-radius: 4px;
+        @include flex-container;
+    }
 }
