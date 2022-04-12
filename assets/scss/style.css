@@ -1977,6 +1977,10 @@ main .container {
   }
 }
 
+.registration-form_juridical {
+  display: none;
+}
+
 .registration-form__select-icon {
   position: absolute;
   -webkit-transition: all 0.5s;
@@ -2552,6 +2556,7 @@ main .container {
 .registration-form .file-input__name a {
   line-height: 24px;
   font-size: 20px;
+  color: inherit;
 }
 
 .registration-form .file-input__name a:hover {
@@ -2607,10 +2612,6 @@ main .container {
 
 .registration-form .modal-file-input .modal__content {
   width: 800px;
-}
-
-.registration-form_juridical {
-  display: none;
 }
 
 .slider {
@@ -3287,6 +3288,7 @@ main .container {
 .modal-support .file-input__name a {
   line-height: 24px;
   font-size: 20px;
+  color: inherit;
 }
 
 .modal-support .file-input__name a:hover {
@@ -6659,7 +6661,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-.modal-edit-card-object .modal-body {
+.modal-edit-card-object .modal__body {
   height: calc(100vh - 181px);
   overflow: auto;
 }
@@ -9500,7 +9502,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       -ms-flex-align: center;
           align-items: center;
   color: #3c4142;
-  overflow: scroll;
+  overflow: hidden;
   white-space: nowrap;
 }
 

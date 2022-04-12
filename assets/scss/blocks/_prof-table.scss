@@ -83,7 +83,7 @@
         display: flex;
         align-items: center;
         color: #3c4142;
-        overflow: scroll;
+        overflow: hidden;
         white-space: nowrap;
         &::-webkit-scrollbar {
             display: none;

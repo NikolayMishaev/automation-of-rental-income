@@ -3,6 +3,9 @@
     @media #{$screen-mobile} {
         margin-top: 16px;
     }
+    &_juridical {
+        display: none;
+    }
     &__select-icon {
         position: absolute;
         transition: $transition;
@@ -300,8 +303,4 @@
             width: 800px;
         }
     }
-}
-
-.registration-form_juridical {
-    display: none;
 }
