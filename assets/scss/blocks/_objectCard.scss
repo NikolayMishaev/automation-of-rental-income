@@ -1,551 +1,584 @@
 @import "../abstracts/mixins";
 
 main .container {
-  display: flex;
-  max-width: 1920px;
-  padding: 0 60px 40px;
-  @media #{$screen-mobile} {
-    max-width: 360px;
-    flex-direction: column;
-    padding: 0 16px;
-    margin: auto;
-  }
+    display: flex;
+    max-width: 1920px;
+    padding: 0 60px 40px;
+    @media (max-width: 768px) {
+        display: block;
+        margin-right: 0;
+    }
+    @media #{$screen-mobile} {
+        max-width: 360px;
+        flex-direction: column;
+        padding: 0 16px;
+        margin: auto;
+    }
 }
 
 .main-content {
-  flex: 1037px;
-  margin-right: 32px;
-  margin-top: 40px;
-  min-width: 0;
-  @media #{$screen-mobile} {
-    width: 100%;
-    margin: 0;
-    order: 3;
-    flex: auto;
-  }
-  .slider {
-    @media #{$screen-mobile} {
-      margin-bottom: 12px;
+    flex: 1037px;
+    margin-right: 32px;
+    margin-top: 40px;
+    min-width: 0;
+    @media (max-width: 768px) {
+        margin-right: 0;
+        margin-top: 16px;
     }
-  }
+    @media #{$screen-mobile} {
+        width: 100%;
+        margin: 0;
+        order: 3;
+        flex: auto;
+    }
+    .slider {
+        @media #{$screen-mobile} {
+            margin-bottom: 12px;
+        }
+    }
 }
 
 .info-card {
-  padding: 24px;
-  flex: 731px;
-  font-size: 14px;
-  height: fit-content;
-  position: sticky;
-  margin-top: 40px;
-  top: 40px;
-  z-index: 1;
-  @media #{$screen-mobile} {
-    display: none;
-  }
-  &_mobile {
-    position: static;
-    width: 100%;
-    border: none;
-    padding: 0;
-    order: 2;
-    margin-top: 0;
-    flex: auto;
-    display: none;
-    @media #{$screen-mobile} {
-      display: block;
-    }
-  }
-  @include block-border;
-  &__title {
-    margin-bottom: 8px;
-    @media #{$screen-mobile} {
-      margin-bottom: 12px;
-    }
-  }
-  &__subtitle {
-    display: flex;
-    margin-bottom: 16px;
+    padding: 24px;
+    flex: 731px;
     font-size: 14px;
-    color: $grey60;
-    @media #{$screen-mobile} {
-      margin-bottom: 12px;
-    }
-  }
-  &__view {
-    display: flex;
-  }
-  &__number {
-    margin-right: 16px;
-    @media #{$screen-mobile} {
-      margin-left: 4px;
-    }
-  }
-  &__icon {
-    margin-right: 4px;
-    width: 16px;
-    height: 16px;
-    @include flex-container;
-  }
-  &__price-block {
-    @media #{$screen-mobile} {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 12px;
-    }
-  }
-
-  &__price {
-    margin-bottom: 8px;
-  }
-  &__price-per-meter {
-    margin-bottom: 12px;
-    color: $grey60;
-  }
-  &__price,
-  &__price-per-meter {
-    @media #{$screen-mobile} {
-      margin: 0;
-    }
-  }
-
-  &__price-icon {
-    display: none;
-    width: 16px;
-    height: 16px;
-    text-align: center;
-    margin-right: 4px;
-    color: $accent-TCX50;
-    @media #{$screen-mobile} {
-      display: inline;
-    }
-    &_desk {
-      @media #{$screen-mobile} {
+    height: fit-content;
+    position: sticky;
+    margin-top: 40px;
+    top: 40px;
+    z-index: 1;
+    @media (max-width: 768px) {
         display: none;
-      }
     }
-  }
-  &__contact {
-    margin: 25px 0 32px;
-    @media #{$screen-mobile} {
-      display: flex;
-      margin: 20px 0;
-    }
-  }
-  &__contact-text {
-    @media #{$screen-mobile} {
-      display: block;
-      margin-left: 12px;
-    }
-  }
-  &__avatar {
-    vertical-align: middle;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-  }
-  &__link {
-    color: $accent90;
-    line-height: 24px;
-    @media #{$screen-mobile} {
-      font-size: $font-size-normal;
-    }
-  }
-  &__position,
-  &__avatar,
-  &__name,
-  &__tel {
-    margin-bottom: 8px;
-    @media #{$screen-mobile} {
-      margin-bottom: 4px;
-    }
-  }
-  &__position,
-  &__email {
-    @media #{$screen-mobile} {
-      font-size: 12px;
-    }
-  }
-  &__btns {
-    display: flex;
-    font-size: 16px;
-    button {
-      padding: 12px 0;
-      flex: 50%;
-      @media #{$screen-tablet} {
-        padding: 4px 0;
-        flex: none;
-      }
-    }
-  }
-  &__primary-btn {
-    @include primary-btn($accent-TCX50);
-    width: calc(100% - 40px);
-  }
-  &__favorite-icon {
-    @media #{$screen-tablet} {
-      margin-right: 0;
-    }
-  }
-
-  &__favorite-btn {
-    margin-right: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @include secondary-btn;
-    width: 50%;
-    @media #{$screen-tablet} {
-      width: 32px;
-      height: 32px;
-      margin-right: 8px;
-    }
-
-    svg {
-      @media #{$screen-tablet} {
-        transform: scale(1.6);
-      }
-    }
-    span {
-      @media #{$screen-tablet} {
-        display: none;
-      }
-    }
-  }
-  &__occupied-info {
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     &_mobile {
-      display: none;
-      @media #{$screen-mobile} {
+        position: static;
+        width: 100%;
+        border: none;
+        padding: 0;
+        order: 2;
+        margin-top: 0;
+        flex: auto;
+        display: none;
+        @media (max-width: 768px) {
+            display: block;
+            margin-bottom: 40px;
+        }
+        @media #{$screen-mobile} {
+            margin-bottom: 0;
+        }
+    }
+    @include block-border;
+    &__title {
+        margin-bottom: 8px;
+        @media #{$screen-mobile} {
+            margin-bottom: 12px;
+        }
+    }
+    &__subtitle {
         display: flex;
-        margin-top: 16px;
-      }
+        margin-bottom: 16px;
+        font-size: 14px;
+        color: $grey60;
+        @media #{$screen-mobile} {
+            margin-bottom: 12px;
+        }
     }
-  }
+    &__view {
+        display: flex;
+    }
+    &__number {
+        margin-right: 16px;
+        @media #{$screen-mobile} {
+            margin-left: 4px;
+        }
+    }
+    &__icon {
+        margin-right: 4px;
+        width: 16px;
+        height: 16px;
+        @include flex-container;
+    }
+    &__price-block {
+        @media #{$screen-mobile} {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 12px;
+        }
+    }
 
-  &__error-label {
-    display: inline-flex;
-    padding: 8px;
-    margin-right: 40px;
-    font-weight: 500;
-    text-align: center;
-    border-radius: 8px;
-    background-color: $red10;
-    color: $error;
-    @media #{$screen-mobile} {
-      width: fit-content;
-      margin-bottom: 12px;
+    &__price {
+        margin-bottom: 8px;
     }
-  }
-  &__offer-btn {
-    font-size: 16px;
-    line-height: 24px;
-    display: inline-flex;
-    align-items: center;
-    color: $accent-TCX50;
-    background-color: transparent;
-    border: none;
-    padding: 4px;
+    &__price-per-meter {
+        margin-bottom: 12px;
+        color: $grey60;
+    }
+    &__price,
+    &__price-per-meter {
+        @media #{$screen-mobile} {
+            margin: 0;
+        }
+    }
+
+    &__price-icon {
+        display: none;
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        margin-right: 4px;
+        color: $accent-TCX50;
+        @media #{$screen-mobile} {
+            display: inline;
+        }
+        &_desk {
+            @media #{$screen-mobile} {
+                display: none;
+            }
+        }
+    }
+    &__contact {
+        margin: 25px 0 32px;
+        @media #{$screen-mobile} {
+            display: flex;
+            margin: 20px 0;
+        }
+    }
+    &__contact-text {
+        @media #{$screen-mobile} {
+            display: block;
+            margin-left: 12px;
+        }
+    }
+    &__avatar {
+        vertical-align: middle;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    &__link {
+        color: $accent90;
+        line-height: 24px;
+        @media #{$screen-mobile} {
+            font-size: $font-size-normal;
+        }
+    }
+    &__position,
+    &__avatar,
+    &__name,
+    &__tel {
+        margin-bottom: 8px;
+        @media #{$screen-mobile} {
+            margin-bottom: 4px;
+        }
+    }
+    &__position,
+    &__email {
+        @media #{$screen-mobile} {
+            font-size: 12px;
+        }
+    }
+    &__btns {
+        display: flex;
+        font-size: 16px;
+        button {
+            padding: 12px 0;
+            flex: 50%;
+            @media #{$screen-tablet} {
+                padding: 4px 0;
+                flex: none;
+            }
+        }
+    }
+    &__primary-btn {
+        @include primary-btn($accent-TCX50);
+        width: calc(100% - 40px);
+        @media (min-width: 768px) and (max-width: 1023px) {
+            width: 49.5%;
+        }
+    }
+    &__favorite-icon {
+        @media #{$screen-tablet} {
+            margin-right: 0;
+        }
+    }
+
+    &__favorite-btn {
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include secondary-btn;
+        width: 50%;
+        @media #{$screen-tablet} {
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            width: 49.5%;
+        }
+
+        svg {
+            @media #{$screen-tablet} {
+                transform: scale(1.6);
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                transform: none;
+            }
+        }
+        span {
+            @media #{$screen-tablet} {
+                display: none;
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                display: inline;
+            }
+        }
+    }
+    &__occupied-info {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_mobile {
+            display: none;
+            @media (max-width: 768px) {
+                display: flex;
+                margin-top: 16px;
+            }
+        }
+    }
+
+    &__error-label {
+        display: inline-flex;
+        padding: 8px;
+        margin-right: 40px;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 8px;
+        background-color: $red10;
+        color: $error;
+        @media #{$screen-mobile} {
+            width: fit-content;
+            margin-bottom: 12px;
+        }
+    }
+    &__offer-btn {
+        font-size: 16px;
+        line-height: 24px;
+        display: inline-flex;
+        align-items: center;
+        color: $accent-TCX50;
+        background-color: transparent;
+        border: none;
+        padding: 4px;
+        .icon {
+            margin: 0 0 0 6px;
+            cursor: pointer;
+            position: relative;
+            @include flex-container;
+            & svg:hover + .tooltip {
+                opacity: 1;
+            }
+        }
+        .tooltip {
+            opacity: 0;
+            width: 346px;
+            bottom: 100%;
+            margin-bottom: 5px;
+            left: calc(50%);
+            transform: translateX(-50%);
+            text-align: left;
+            svg {
+                position: absolute;
+                bottom: -4px;
+                right: calc(50% - 4px);
+            }
+            @media (max-width: 1600px) {
+                left: -10vh;
+                svg {
+                    right: 18.5%;
+                }
+            }
+            @media (max-width: 1330px) {
+                left: -15vh;
+                svg {
+                    right: 4.5%;
+                }
+            }
+        }
+
+        @media #{$screen-mobile} {
+            text-align: left;
+            display: inline-flex;
+        }
+    }
     .icon {
-      margin: 0 0 0 6px;
-      cursor: pointer;
-      position: relative;
-      @include flex-container;
-      & svg:hover + .tooltip {
-        opacity: 1;
-      }
-    }
-    .tooltip {
-      opacity: 0;
-      width: 346px;
-      bottom: 100%;
-      margin-bottom: 5px;
-      left: calc(50%);
-      transform: translateX(-50%);
-      text-align: left;
-      svg {
-        position: absolute;
-        bottom: -4px;
-        right: calc(50% - 4px);
-      }
-      @media (max-width: 1600px) {
-        left: -10vh;
-        svg {
-          right: 18.5%;
+        @include flex-container;
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        @media #{$screen-tablet} {
+            margin-right: 0;
         }
-      }
-      @media (max-width: 1330px) {
-        left: -15vh;
-        svg {
-          right: 4.5%;
+        @media (min-width: 768px) and (max-width: 1023px) {
+            margin-right: 6px;
         }
-      }
     }
+    &__icon-bell {
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        &:hover {
+            svg {
+                transition: $transition;
+                fill: $accent-TCX50;
+            }
+        }
 
-    @media #{$screen-mobile} {
-      text-align: left;
-      display: inline-flex;
+        svg {
+            fill: $grey-50;
+        }
+        @include flex-container;
+        justify-self: end;
+        cursor: pointer;
+        &.active svg {
+            fill: $accent-TCX50;
+        }
+        @media #{$screen-mobile} {
+            align-self: flex-start;
+            padding: 4px 0;
+            width: 32px;
+            height: 32px;
+        }
     }
-  }
-  .icon {
-    @include flex-container;
-    width: 16px;
-    height: 16px;
-    margin-right: 6px;
-    @media #{$screen-tablet} {
-      margin-right: 0;
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        @media #{$screen-mobile} {
+            flex-direction: column;
+        }
     }
-  }
-  &__icon-bell {
-    width: 24px;
-    height: 24px;
-    border-radius: 100%;
-    &:hover {
-      svg {
-        transition: $transition;
-        fill: $accent-TCX50;
-      }
+    sup {
+        font-size: 8px;
     }
-
-    svg {
-      fill: $grey-50;
-    }
-    @include flex-container;
-    justify-self: end;
-    cursor: pointer;
-    &.active svg {
-      fill: $accent-TCX50;
-    }
-    @media #{$screen-mobile} {
-      align-self: flex-start;
-      padding: 4px 0;
-      width: 32px;
-      height: 32px;
-    }
-  }
-  &__row {
-    display: flex;
-    flex-wrap: wrap;
-    @media #{$screen-mobile} {
-      flex-direction: column;
-    }
-  }
-  sup {
-    font-size: 8px;
-  }
 }
 
 .basic-info {
-  padding: 24px 32px 24px;
-  margin-bottom: 40px;
-  @include block-border;
-  @media #{$screen-mobile} {
-    padding: 16px;
-    margin: 24px 0;
-  }
+    padding: 24px 32px 24px;
+    margin-bottom: 40px;
+    @include block-border;
+    @media #{$screen-mobile} {
+        padding: 16px;
+        margin: 24px 0;
+    }
 
-  &__title {
-    margin-bottom: 24px;
-  }
-  &__card-icon {
-    @include flex-container;
-    width: 24px;
-    height: 24px;
-  }
-  &__card-row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    @media #{$screen-mobile} {
-      flex-direction: column;
+    &__title {
+        margin-bottom: 24px;
     }
-  }
-  &__card {
-    display: flex;
-    padding: 8px;
-    margin: 0 26px 32px 0;
-    @media #{$screen-mobile} {
-      padding: 3px;
-      margin: 0 0 16px;
+    &__card-icon {
+        @include flex-container;
+        width: 24px;
+        height: 24px;
     }
-  }
-  &__card-title {
-    margin-bottom: 4px;
-  }
-  &__card-icon {
-    margin-right: 11px;
-  }
-  &__card-text {
-    font-size: 14px;
-    color: $grey60;
-  }
+    &__card-row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        @media #{$screen-mobile} {
+            flex-direction: column;
+        }
+    }
+    &__card {
+        display: flex;
+        padding: 8px;
+        margin: 0 26px 32px 0;
+        @media #{$screen-mobile} {
+            padding: 3px;
+            margin: 0 0 16px;
+        }
+    }
+    &__card-title {
+        margin-bottom: 4px;
+    }
+    &__card-icon {
+        margin-right: 11px;
+    }
+    &__card-text {
+        font-size: 14px;
+        color: $grey60;
+    }
 }
 
 .additional-information {
-  padding: 24px;
-  margin-bottom: 24px;
-  @include block-border;
-  &__title {
-    margin-bottom: 16px;
-  }
-  @media #{$screen-mobile} {
-    padding: 16px;
+    padding: 24px;
     margin-bottom: 24px;
-  }
+    @include block-border;
+    &__title {
+        margin-bottom: 16px;
+    }
+    @media #{$screen-mobile} {
+        padding: 16px;
+        margin-bottom: 24px;
+    }
 }
 .map-object {
-  @include block-border;
-  padding: 24px;
-  &__title {
-    margin-bottom: 16px;
-  }
-  @media #{$screen-mobile} {
-    padding: 16px;
-    margin-bottom: 24px;
-  }
+    @include block-border;
+    padding: 24px;
+    &__title {
+        margin-bottom: 16px;
+    }
+    @media #{$screen-mobile} {
+        padding: 16px;
+        margin-bottom: 24px;
+    }
 }
 
 .contact-form {
-  .group-radio-btn {
-    padding: 24px 0;
-    border-bottom: 1px solid $grey30;
-    @media #{$screen-mobile} {
-      padding: 16px 0;
+    .group-radio-btn {
+        padding: 24px 0;
+        border-bottom: 1px solid $grey30;
+        @media #{$screen-mobile} {
+            padding: 16px 0;
+        }
+        label + label {
+            margin-left: 16px;
+            @media (max-width: 768px) {
+                margin: 12px 0 0;
+            }
+        }
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+        &__inner {
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
     }
-    label + label {
-      margin-left: 16px;
-      @media #{$screen-mobile} {
-        margin: 12px 0 0;
-      }
+    &__first-option,
+    &__second-option,
+    &__third-option {
+        margin-top: 24px;
+        @media #{$screen-mobile} {
+            margin-top: 16px;
+        }
     }
-    @media #{$screen-mobile} {
-      flex-direction: column;
+    &__title {
+        @media #{$screen-mobile} {
+            font-size: 14px;
+        }
     }
-    &__inner {
-      @media #{$screen-mobile} {
-        width: 100%;
-      }
+    .custom-text-input {
+        flex: auto;
+        textarea {
+            height: 160px;
+        }
     }
-  }
-  &__first-option,
-  &__second-option,
-  &__third-option {
-    margin-top: 24px;
-    @media #{$screen-mobile} {
-      margin-top: 16px;
+    .custom-text-input + .custom-text-input {
+        margin-left: 16px;
+        @media (max-width: 768px) {
+            margin: 16px 0 0;
+        }
     }
-  }
-  &__title {
-    @media #{$screen-mobile} {
-      font-size: 14px;
+    &__time-info {
+        color: $grey60;
+        margin-top: 8px;
+        font-size: 12px;
     }
-  }
-  .custom-text-input {
-    flex: auto;
-  }
-  .custom-text-input + .custom-text-input {
-    margin-left: 16px;
-    @media #{$screen-mobile} {
-      margin: 16px 0 0;
+    &__time-info {
+        display: block;
     }
-  }
-  &__time-info {
-    color: $grey60;
-    margin-top: 8px;
-    font-size: 12px;
-  }
-  &__time-info {
-    display: block;
-  }
-  &__first-option {
-    display: block;
-  }
-  &__row {
-    display: flex;
-    @media #{$screen-mobile} {
-      flex-direction: column;
+    &__first-option {
+        display: block;
     }
-  }
-  &__second-option,
-  &__third-option {
-    display: none;
-  }
-  &__route-to-btn {
-    @include primary-btn($accent-TCX50);
-    padding: 4px 0;
-    width: 200px;
-    display: block;
-    text-align: center;
-    margin: 16px 0;
-    &:hover {
-      text-decoration: none;
+    &__row {
+        display: flex;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
     }
-    @media #{$screen-mobile} {
-      width: 100%;
+    &__second-option,
+    &__third-option {
+        display: none;
     }
-  }
-  &__text {
-    @media #{$screen-mobile} {
-      font-size: 14px;
+    &__route-to-btn {
+        @include primary-btn($accent-TCX50);
+        padding: 4px 0;
+        width: 200px;
+        display: block;
+        text-align: center;
+        margin: 16px 0;
+        &:hover {
+            text-decoration: none;
+        }
+        @media #{$screen-mobile} {
+            width: 100%;
+        }
     }
-  }
+    &__text {
+        @media #{$screen-mobile} {
+            font-size: 14px;
+        }
+    }
 }
 
 .modal-form {
-  .modal-content {
-    width: 800px;
-    @media #{$screen-mobile} {
-      width: 328px;
+    .modal-content {
+        width: 800px;
+        @media (max-width: 768px) {
+            width: 704px;
+        }
+        @media #{$screen-mobile} {
+            width: 328px;
+        }
     }
-  }
-  .custom-text-input_text {
-    margin-top: 24px;
-  }
+    .custom-text-input_text {
+        margin-top: 24px;
+    }
 }
 
 .content-offer-price {
-  width: 600px;
-  &__row {
-    margin-top: 16px;
-    line-height: 24px;
-    color: $grey60;
-    @media #{$screen-mobile} {
-      font-size: 14px;
+    width: 600px;
+    &__row {
+        margin-top: 16px;
+        line-height: 24px;
+        color: $grey60;
+        @media #{$screen-mobile} {
+            font-size: 14px;
+        }
     }
-  }
-  &__price {
-    font-weight: 500;
-    color: $grey100;
-    font-size: 16px;
-  }
-  &__text {
-    @media #{$screen-mobile} {
-      font-size: 14px;
-      margin: 8px 0 16px;
+    &__price {
+        font-weight: 500;
+        color: $grey100;
+        font-size: 16px;
     }
-  }
-  .custom-text-input {
-    @media #{$screen-mobile} {
-      width: calc(100% - 42px);
+    &__text {
+        @media #{$screen-mobile} {
+            font-size: 14px;
+            margin: 8px 0 16px;
+        }
     }
-  }
-  .input-container {
-    @media #{$screen-mobile} {
-      width: 100%;
+    .custom-text-input {
+        @media #{$screen-mobile} {
+            width: calc(100% - 42px);
+        }
     }
-  }
-  &__price-container {
-    @media #{$screen-mobile} {
-      display: flex;
-      justify-content: space-between;
+    .input-container {
+        @media #{$screen-mobile} {
+            width: 100%;
+        }
     }
-  }
-  &__aside {
-    @media #{$screen-mobile} {
-      font-size: 12px;
+    &__price-container {
+        @media #{$screen-mobile} {
+            display: flex;
+            justify-content: space-between;
+        }
     }
-  }
+    &__aside {
+        @media #{$screen-mobile} {
+            font-size: 12px;
+        }
+    }
 }
