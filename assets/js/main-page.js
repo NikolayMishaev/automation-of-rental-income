@@ -232,7 +232,10 @@ function toggleActiveClass(submenu, cursor) {
         submenu.classList.add("mix-visible");
         cursor.classList.add("main-form__cursor_active");
         setListenerClickOutsideSelect();
-        if (state.currentOpenSubmenuSelectClassType) {
+        if (
+            state.currentOpenSubmenuSelectClassType &&
+            state.currentOpenSubmenuSelectClassType.submenu !== submenu
+        ) {
             state.currentOpenSubmenuSelectClassType.submenu.classList.remove(
                 "mix-visible"
             );
