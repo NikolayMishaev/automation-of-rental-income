@@ -10,6 +10,9 @@ const state = {
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
     cursorsSelect: {
+        "analytics-period-ankets": document.querySelector(
+            "#cursor-analytics-period-ankets"
+        ),
         "structure-director-first": document.querySelector(
             "#cursor-structure-director-first"
         ),
@@ -120,6 +123,9 @@ const state = {
         ),
     },
     submenuSelect: {
+        "analytics-period-ankets": document.querySelector(
+            "#submenu-analytics-period-ankets"
+        ),
         "structure-director-first": document.querySelector(
             "#submenu-structure-director-first"
         ),
@@ -258,6 +264,9 @@ const state = {
         ),
     },
     inputsSelect: {
+        "analytics-period-ankets": document.querySelector(
+            "#input-analytics-period-ankets"
+        ),
         "structure-director-first": document.querySelector(
             "#input-structure-director-first"
         ),

@@ -8,6 +8,7 @@ import {
 
 const state = {
     currentOpenSubmenu: null,
+    currentOpenSubmenuSelectClassType: null,
     cursorsSelect: {
         "main-page-desktop": document.querySelector(
             "#cursor-main-page-desktop"
@@ -227,9 +228,26 @@ function toggleActiveClass(submenu, cursor) {
     if (submenu.closest(".mix-visible")) {
         submenu.classList.remove("mix-visible");
         cursor.classList.remove("main-form__cursor_active");
+        document.removeEventListener("click", checkClickOutsideSelect);
     } else {
         submenu.classList.add("mix-visible");
         cursor.classList.add("main-form__cursor_active");
+        setListenerClickOutsideSelect();
+        if (
+            state.currentOpenSubmenuSelectClassType &&
+            state.currentOpenSubmenuSelectClassType.submenu !== submenu
+        ) {
+            state.currentOpenSubmenuSelectClassType.submenu.classList.remove(
+                "mix-visible"
+            );
+            state.currentOpenSubmenuSelectClassType.cursor.classList.remove(
+                "main-form__cursor_active"
+            );
+        }
+        state.currentOpenSubmenuSelectClassType = {
+            submenu: submenu,
+            cursor: cursor,
+        };
     }
 }
 
@@ -288,6 +306,7 @@ const submenuFilterChangeClass = document.querySelector(
 
 wrapperInputChangeClass.addEventListener("click", () => {
     toggleActiveClass(submenuFilterChangeClass, cursorChangeClassMainForm);
+    setListenerClickOutsideSelect();
 });
 
 // изменение значения value инпута после клика по значению поля селекта в фильтре "классификация помещения"
@@ -388,6 +407,16 @@ const checkClickOutsideSelect = (e) => {
         // скрыть текущее подменю
         hideCurrentSubmenu(state.currentOpenSubmenu, true);
     }
+    if (!e.target.closest(".main-form__label_type_select")) {
+        // скрыть текущее подменю
+        state.currentOpenSubmenuSelectClassType.submenu.classList.remove(
+            "mix-visible"
+        );
+        state.currentOpenSubmenuSelectClassType.cursor.classList.remove(
+            "main-form__cursor_active"
+        );
+        document.removeEventListener("click", checkClickOutsideSelect);
+    }
 };
 
 function setInputValueByValueActiveCheckbox() {
@@ -460,7 +489,7 @@ function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
         // скрыть текущее открытое подменю
         removeClassElement(submenu, "mix-visible");
         // удалить текущий селект из стейта
-        submenu = null;
+        state.currentOpenSubmenu = null;
         if (deleteListenerOverlay) {
             // удалить слушатель document, т.к. все селекты закрыты
             document.removeEventListener("click", checkClickOutsideSelect);

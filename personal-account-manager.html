@@ -927,6 +927,32 @@
                         <span class="prof-control-panel__caption mix-caption">Поиск</span>
                       </label>
                     </div>
+                    <label aria-label="analytics-period-ankets" class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
+                        <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                        <div id="cursor-analytics-period-ankets" class="prof-control-panel__cursor prof-control-panel__cursor_type_about-me"></div>
+                        <input id="input-analytics-period-ankets" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_period" value="Месяц">
+                        <div id="submenu-analytics-period-ankets" class="main-submenu main-submenu_style_date-ankets">
+                          <ul class="main-submenu__list">
+                            <li aria-label="item" class="main-submenu__item">Январь</li>
+                            <li aria-label="item" class="main-submenu__item">Февраль</li>
+                            <li aria-label="item" class="main-submenu__item">Март</li>
+                            <li aria-label="item" class="main-submenu__item">Апрель</li>
+                            <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                              <p class="prof-control-panel__text text-p2">
+                                От<input type="date" class="prof-control-panel__input-date">
+                              </p>
+                              <p class="prof-control-panel__text text-p2">
+                                До<input type="date" class="prof-control-panel__input-date">
+                              </p>
+                            </li>
+                            <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                              <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
+                                Выбрать
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </label>
                     <div class="prof-control-panel__wrapper">
                         <label aria-label="ankets" class="prof-control-panel__select-label prof-control-panel__select-label_type_about-me text-p2 button-toggle-select">Вид анкеты:
                             <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
@@ -4071,6 +4097,11 @@
                             >
                               №12345678
                             </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
+                          </p>
                           </div>
                           <div class="prof-aside__icon icon icon_message"></div>
                         </li>
@@ -4089,6 +4120,11 @@
                             >
                               скролл длинного номера ...................
                             </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
+                          </p>
                           </div>
                           <div class="prof-aside__icon icon icon_ring_active"></div>
                         </li>
@@ -4107,6 +4143,11 @@
                             >
                               №12345678
                             </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
+                          </p>
                           </div>
                           <div class="prof-aside__icon icon icon_document"></div>
                         </li>
@@ -4125,6 +4166,11 @@
                             >
                               №12345678
                             </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
+                          </p>
                           </div>
                           <div class="prof-aside__icon icon icon_document_active"></div>
                         </li>
@@ -4143,6 +4189,11 @@
                             >
                               №12345678
                             </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
+                          </p>
                           </div>
                           <div class="prof-aside__icon icon icon_document"></div>
                         </li>
@@ -4161,6 +4212,11 @@
                             >
                               №12345678
                             </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
+                          </p>
                           </div>
                           <div class="prof-aside__icon icon icon_ring_active"></div>
                         </li>
@@ -4179,6 +4235,11 @@
                             >
                               №12345678
                             </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
+                          </p>
                           </div>
                           <div class="prof-aside__icon icon icon_message_active"></div>
                         </li>
@@ -4197,6 +4258,11 @@
                             >
                               №12345678
                             </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
+                          </p>
                           </div>
                           <div class="prof-aside__icon icon icon_ring"></div>
                         </li>
@@ -4215,6 +4281,11 @@
                             >
                               №12345678
                             </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
+                          </p>
                           </div>
                           <div class="prof-aside__icon icon icon_message"></div>
                         </li>
@@ -4242,6 +4313,11 @@
                           <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
                             скролл длинного номера ...................
                           </p>
+                          <p
+                          class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                        >
+                          02.02.2022
+                        </p>
                         </div>
                       </div>
                       <div class="prof-aside__wrapper-container-message prof-aside__wrapper-container-message_type_manager">
@@ -4380,151 +4456,214 @@
                       placeholder="Поиск"
                     />
                     <ul class="prof-aside__tasks-container">
-                      <li class="prof-aside__task-item prof-aside__task-item_active">
-                        <img
-                          src="./assets/images/avatar-photo.png"
-                          alt="Аватар"
-                          class="prof-aside__photo"
-                        />
-                        <div class="prof-aside__tasks-info">
-                          <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
-                            скролл длинной задачи ...................
+                        <li class="prof-aside__task-item prof-aside__task-item_active">
+                          <img
+                            src="./assets/images/avatar-photo.png"
+                            alt="Аватар"
+                            class="prof-aside__photo"
+                          />
+                          <div class="prof-aside__tasks-info">
+                            <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                              скролл длинной задачи ...................
+                            </p>
+                            <p
+                              class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                            >
+                              №12345678
+                            </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
                           </p>
-                          <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
-                            №12345678
+                          </div>
+                          <div class="prof-aside__icon icon icon_message"></div>
+                        </li>
+                        <li class="prof-aside__task-item">
+                          <img
+                            src="./assets/images/avatar-photo.png"
+                            alt="Аватар"
+                            class="prof-aside__photo"
+                          />
+                          <div class="prof-aside__tasks-info">
+                            <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                              TASK111111
+                            </p>
+                            <p
+                              class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                            >
+                              скролл длинного номера ...................
+                            </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
                           </p>
-                        </div>
-                        <div class="prof-aside__icon icon icon_message"></div>
-                      </li>
-                      <li class="prof-aside__task-item">
-                        <img
-                          src="./assets/images/avatar-photo.png"
-                          alt="Аватар"
-                          class="prof-aside__photo"
-                        />
-                        <div class="prof-aside__tasks-info">
-                          <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
-                            TASK111111
+                          </div>
+                          <div class="prof-aside__icon icon icon_ring_active"></div>
+                        </li>
+                        <li class="prof-aside__task-item">
+                          <img
+                            src="./assets/images/other-user.jpg"
+                            alt="Аватар"
+                            class="prof-aside__photo"
+                          />
+                          <div class="prof-aside__tasks-info">
+                            <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                              TASK111111
+                            </p>
+                            <p
+                              class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                            >
+                              №12345678
+                            </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
                           </p>
-                          <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
-                            скролл длинного номера ...................
+                          </div>
+                          <div class="prof-aside__icon icon icon_document"></div>
+                        </li>
+                        <li class="prof-aside__task-item prof-aside__task-item_active">
+                          <img
+                            src="./assets/images/avatar-photo.png"
+                            alt="Аватар"
+                            class="prof-aside__photo"
+                          />
+                          <div class="prof-aside__tasks-info">
+                            <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                              TASK111111
+                            </p>
+                            <p
+                              class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                            >
+                              №12345678
+                            </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
                           </p>
-                        </div>
-                        <div class="prof-aside__icon icon icon_ring_active"></div>
-                      </li>
-                      <li class="prof-aside__task-item">
-                        <img
-                          src="./assets/images/other-user.jpg"
-                          alt="Аватар"
-                          class="prof-aside__photo"
-                        />
-                        <div class="prof-aside__tasks-info">
-                          <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
-                            TASK111111
+                          </div>
+                          <div class="prof-aside__icon icon icon_document_active"></div>
+                        </li>
+                        <li class="prof-aside__task-item">
+                          <img
+                            src="./assets/images/avatar-photo.png"
+                            alt="Аватар"
+                            class="prof-aside__photo"
+                          />
+                          <div class="prof-aside__tasks-info">
+                            <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                              TASK111111
+                            </p>
+                            <p
+                              class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                            >
+                              №12345678
+                            </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
                           </p>
-                          <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
-                            №12345678
+                          </div>
+                          <div class="prof-aside__icon icon icon_document"></div>
+                        </li>
+                        <li class="prof-aside__task-item prof-aside__task-item_active">
+                          <img
+                            src="./assets/images/other-user.jpg"
+                            alt="Аватар"
+                            class="prof-aside__photo"
+                          />
+                          <div class="prof-aside__tasks-info">
+                            <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                              TASK111111
+                            </p>
+                            <p
+                              class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                            >
+                              №12345678
+                            </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
                           </p>
-                        </div>
-                        <div class="prof-aside__icon icon icon_document"></div>
-                      </li>
-                      <li class="prof-aside__task-item prof-aside__task-item_active">
-                        <img
-                          src="./assets/images/avatar-photo.png"
-                          alt="Аватар"
-                          class="prof-aside__photo"
-                        />
-                        <div class="prof-aside__tasks-info">
-                          <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
-                            TASK111111
+                          </div>
+                          <div class="prof-aside__icon icon icon_ring_active"></div>
+                        </li>
+                        <li class="prof-aside__task-item">
+                          <img
+                            src="./assets/images/avatar-photo.png"
+                            alt="Аватар"
+                            class="prof-aside__photo"
+                          />
+                          <div class="prof-aside__tasks-info">
+                            <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                              TASK111111
+                            </p>
+                            <p
+                              class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                            >
+                              №12345678
+                            </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
                           </p>
-                          <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
-                            №12345678
+                          </div>
+                          <div class="prof-aside__icon icon icon_message_active"></div>
+                        </li>
+                        <li class="prof-aside__task-item">
+                          <img
+                            src="./assets/images/other-user.jpg"
+                            alt="Аватар"
+                            class="prof-aside__photo"
+                          />
+                          <div class="prof-aside__tasks-info">
+                            <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                              TASK111111
+                            </p>
+                            <p
+                              class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                            >
+                              №12345678
+                            </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
                           </p>
-                        </div>
-                        <div class="prof-aside__icon icon icon_document_active"></div>
-                      </li>
-                      <li class="prof-aside__task-item">
-                        <img
-                          src="./assets/images/avatar-photo.png"
-                          alt="Аватар"
-                          class="prof-aside__photo"
-                        />
-                        <div class="prof-aside__tasks-info">
-                          <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
-                            TASK111111
+                          </div>
+                          <div class="prof-aside__icon icon icon_ring"></div>
+                        </li>
+                        <li class="prof-aside__task-item">
+                          <img
+                            src="./assets/images/hot-price-photo.jpg"
+                            alt="Аватар"
+                            class="prof-aside__photo"
+                          />
+                          <div class="prof-aside__tasks-info">
+                            <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
+                              TASK111111
+                            </p>
+                            <p
+                              class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                            >
+                              №12345678
+                            </p>
+                            <p
+                            class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                          >
+                            02.02.2022
                           </p>
-                          <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
-                            №12345678
-                          </p>
-                        </div>
-                        <div class="prof-aside__icon icon icon_document"></div>
-                      </li>
-                      <li class="prof-aside__task-item prof-aside__task-item_active">
-                        <img
-                          src="./assets/images/other-user.jpg"
-                          alt="Аватар"
-                          class="prof-aside__photo"
-                        />
-                        <div class="prof-aside__tasks-info">
-                          <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
-                            TASK111111
-                          </p>
-                          <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
-                            №12345678
-                          </p>
-                        </div>
-                        <div class="prof-aside__icon icon icon_ring_active"></div>
-                      </li>
-                      <li class="prof-aside__task-item">
-                        <img
-                          src="./assets/images/avatar-photo.png"
-                          alt="Аватар"
-                          class="prof-aside__photo"
-                        />
-                        <div class="prof-aside__tasks-info">
-                          <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
-                            TASK111111
-                          </p>
-                          <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
-                            №12345678
-                          </p>
-                        </div>
-                        <div class="prof-aside__icon icon icon_message_active"></div>
-                      </li>
-                      <li class="prof-aside__task-item">
-                        <img
-                          src="./assets/images/other-user.jpg"
-                          alt="Аватар"
-                          class="prof-aside__photo"
-                        />
-                        <div class="prof-aside__tasks-info">
-                          <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
-                            TASK111111
-                          </p>
-                          <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
-                            №12345678
-                          </p>
-                        </div>
-                        <div class="prof-aside__icon icon icon_ring"></div>
-                      </li>
-                      <li class="prof-aside__task-item">
-                        <img
-                          src="./assets/images/hot-price-photo.jpg"
-                          alt="Аватар"
-                          class="prof-aside__photo"
-                        />
-                        <div class="prof-aside__tasks-info">
-                          <p class="prof-aside__task-name text-p2 mix-scrollbar-only-horizontal">
-                            TASK111111
-                          </p>
-                          <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
-                            №12345678
-                          </p>
-                        </div>
-                        <div class="prof-aside__icon icon icon_message"></div>
-                      </li>
-                    </ul>
+                          </div>
+                          <div class="prof-aside__icon icon icon_message"></div>
+                        </li>
+                      </ul>
                   </div>
                   <div id="prof-aside__right-panel-main" class="prof-aside__right-panel">
                     <div class="prof-aside__task-item prof-aside__task-item_type_message">
@@ -4549,6 +4688,11 @@
                         <p class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal">
                           скролл длинного номера ...................
                         </p>
+                        <p
+                        class="prof-aside__task-number text-p3 mix-scrollbar-only-horizontal"
+                      >
+                        02.02.2022
+                      </p>
                       </div>
                     </div>
                     <div class="prof-aside__wrapper-container-message prof-aside__wrapper-container-message_type_manager">
