@@ -787,6 +787,32 @@
                                   <span class="prof-control-panel__caption mix-caption">Поиск</span>
                                 </label>
                               </div>
+                              <label aria-label="analytics-period-ankets" class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select">Период:
+                                <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                <div id="cursor-analytics-period-ankets" class="prof-control-panel__cursor prof-control-panel__cursor_type_about-me"></div>
+                                <input id="input-analytics-period-ankets" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_period" value="Месяц">
+                                <div id="submenu-analytics-period-ankets" class="main-submenu main-submenu_style_date-ankets">
+                                  <ul class="main-submenu__list">
+                                    <li aria-label="item" class="main-submenu__item">Январь</li>
+                                    <li aria-label="item" class="main-submenu__item">Февраль</li>
+                                    <li aria-label="item" class="main-submenu__item">Март</li>
+                                    <li aria-label="item" class="main-submenu__item">Апрель</li>
+                                    <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                                      <p class="prof-control-panel__text text-p2">
+                                        От<input type="date" class="prof-control-panel__input-date">
+                                      </p>
+                                      <p class="prof-control-panel__text text-p2">
+                                        До<input type="date" class="prof-control-panel__input-date">
+                                      </p>
+                                    </li>
+                                    <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                                      <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
+                                        Выбрать
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </label>
                               <div class="prof-control-panel__wrapper">
                                   <label aria-label="ankets" class="prof-control-panel__select-label prof-control-panel__select-label_type_about-me text-p2 button-toggle-select">Вид анкеты:
                                       <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
