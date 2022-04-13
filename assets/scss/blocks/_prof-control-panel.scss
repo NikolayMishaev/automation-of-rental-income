@@ -377,6 +377,10 @@
                 margin-left: auto;
             }
         }
+        &_type_period.prof-control-panel__select-label_active:before {
+            background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+            background-color: white !important;
+        }
         &_type_division {
             display: block;
             width: 100%;

@@ -10,6 +10,9 @@ const state = {
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
     cursorsSelect: {
+        "analytics-period-ankets": document.querySelector(
+            "#cursor-analytics-period-ankets"
+        ),
         ankets: document.querySelector("#cursor-ankets"),
         "type-activity": document.querySelector("#cursor-type-activity"),
         "ankets-status": document.querySelector("#cursor-ankets-status"),
@@ -66,6 +69,9 @@ const state = {
         "structure-offers": document.querySelector("#cursor-structure-offers"),
     },
     submenuSelect: {
+        "analytics-period-ankets": document.querySelector(
+            "#submenu-analytics-period-ankets"
+        ),
         ankets: document.querySelector("#submenu-ankets"),
         "type-activity": document.querySelector("#submenu-type-activity"),
         "ankets-status": document.querySelector("#submenu-ankets-status"),
@@ -132,6 +138,9 @@ const state = {
         "structure-offers": document.querySelector("#submenu-structure-offers"),
     },
     inputsSelect: {
+        "analytics-period-ankets": document.querySelector(
+            "#input-analytics-period-ankets"
+        ),
         ankets: document.querySelector("#input-ankets"),
         "type-activity": document.querySelector("#input-type-activity"),
         "ankets-status": document.querySelector("#input-ankets-status"),

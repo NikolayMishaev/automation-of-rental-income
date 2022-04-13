@@ -191,11 +191,27 @@
         }
     }
     &_style_date {
+        min-width: 200px;
         left: -33px;
         right: 0;
         top: 34px;
         @media (max-width: rem(1000px)) {
             left: unset;
+        }
+    }
+    &_style_date-ankets {
+        min-width: 200px;
+        left: -33px;
+        right: 0;
+        top: 34px;
+        @media (max-width: rem(1000px)) {
+            left: unset;
+            right: 192px;
+            top: 50px;
+        }
+        @media (max-width: rem(500px)) {
+            top: 99px;
+            right: 29px;
         }
     }
     &__item {

@@ -5665,6 +5665,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .main-submenu_style_date {
+  min-width: 200px;
   left: -33px;
   right: 0;
   top: 34px;
@@ -5673,6 +5674,28 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @media (max-width: 62.5rem) {
   .main-submenu_style_date {
     left: unset;
+  }
+}
+
+.main-submenu_style_date-ankets {
+  min-width: 200px;
+  left: -33px;
+  right: 0;
+  top: 34px;
+}
+
+@media (max-width: 62.5rem) {
+  .main-submenu_style_date-ankets {
+    left: unset;
+    right: 192px;
+    top: 50px;
+  }
+}
+
+@media (max-width: 31.25rem) {
+  .main-submenu_style_date-ankets {
+    top: 99px;
+    right: 29px;
   }
 }
 
@@ -8886,6 +8909,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-top: 16px;
     margin-left: auto;
   }
+}
+
+.prof-control-panel__select-label_type_period.prof-control-panel__select-label_active:before {
+  background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
+  background-color: white !important;
 }
 
 .prof-control-panel__select-label_type_division {
