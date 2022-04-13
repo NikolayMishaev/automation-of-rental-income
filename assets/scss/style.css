@@ -4711,13 +4711,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-animation: animation-hot-price linear 150s infinite;
-          animation: animation-hot-price linear 150s infinite;
+}
+
+.hot-price__animation {
+  -webkit-animation: animation-hot-price linear 200s infinite;
+          animation: animation-hot-price linear 200s infinite;
   -webkit-animation-delay: .5s;
           animation-delay: .5s;
 }
 
-.hot-price__wrapper:hover {
+.hot-price__animation:hover {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
@@ -8464,17 +8467,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @media (max-width: 71.875rem) {
-  .prof-control-panel__button_type_transfer {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    margin-top: 16px;
-    margin-left: 0;
+  .prof-control-panel__checkbox-label {
+    margin-left: unset;
+    margin-right: auto;
   }
 }
 
 @media (max-width: 62.5rem) {
-  .prof-control-panel__button_type_transfer {
+  .prof-control-panel__checkbox-label {
     display: none;
   }
 }
@@ -9385,17 +9385,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
           align-items: center;
   border-top: 1px solid #e3e7e8;
   position: relative;
-}
-
-.prof-table__row:hover {
-  cursor: pointer;
-}
-
-@media (max-width: 96.875rem) {
-  .prof-table__row {
-    -ms-grid-columns: 199px 90px 110px 180px 152px 203px;
-        grid-template-columns: 199px 90px 110px 180px 152px 203px;
-  }
 }
 
 .prof-table__row:hover {
@@ -10735,3 +10724,4 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #fff;
   border-top: 1px solid #E1E5EB;
 }
+/*# sourceMappingURL=style.css.map */

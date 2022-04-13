@@ -1,5 +1,12 @@
 export { addClassElement, removeClassElement, switchButtons };
 
+// добавление класса анимации для бегущей строки горящих предложений при загрузке страницы
+const containerHotPrice = document.querySelector(".hot-price__wrapper");
+
+onload = function () {
+    addClassElement(containerHotPrice, "hot-price__animation");
+};
+
 // стейты
 
 const state = {
