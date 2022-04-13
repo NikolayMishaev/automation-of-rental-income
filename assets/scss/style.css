@@ -3763,6 +3763,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   text-decoration: none;
+  margin-right: 16px;
 }
 
 .menu__profile:hover {
