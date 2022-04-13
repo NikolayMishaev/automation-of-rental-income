@@ -1,151 +1,156 @@
 .modal-transfer-object {
-  .modal__content {
-    width: 600px;
-    @media #{$screen-mobile} {
-      width: 328px;
+    .modal__content {
+        width: 600px;
+        max-height: calc(100vh - 40px);
+        @media #{$screen-mobile} {
+            width: 328px;
+            overflow: hidden;
+        }
     }
-  }
-  &__row {
-      position: relative;
-    display: flex;
-    margin-bottom: 16px;
-    justify-content: space-between;
-    .custom-text-input {
-      &_search {
+    &__row {
+        position: relative;
+        display: flex;
+        margin-bottom: 16px;
+        justify-content: space-between;
+        .custom-text-input {
+            &_search {
+                margin-right: 16px;
+                flex: 342px;
+            }
+            &_select {
+                width: 120px;
+                @media #{$screen-mobile} {
+                    width: 32px;
+                }
+            }
+            &__select-icon {
+                @media #{$screen-mobile} {
+                    top: 8px;
+                    left: 8px;
+                }
+                &_mobile {
+                    display: none;
+                    @media #{$screen-mobile} {
+                        display: flex;
+                    }
+                }
+                &_desktop {
+                    @media #{$screen-mobile} {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    &__manager-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid $grey30;
+        border-radius: 0 12px 12px 0;
+        padding: 12px;
+        margin-left: 8px;
+        input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            &:checked + .modal-transfer-object__radio {
+                background-color: $accent-TCX50;
+                border: none;
+                transition: $transition;
+            }
+            &:checked
+                + .modal-transfer-object__radio
+                .modal-transfer-object__radio-point {
+                background-color: white;
+                transition: $transition;
+            }
+        }
+    }
+    &__avatar {
+        vertical-align: middle;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
         margin-right: 16px;
-        flex: 342px;
-      }
-      &_select {
-        width: 120px;
+    }
+    &__radio {
+        width: 16px;
+        height: 16px;
+        border: 1px solid $grey30;
+        border-radius: 50%;
+        @include flex-container;
+    }
+    &__manager-border {
+        background-color: $grey30;
+        width: 8px;
+        height: calc(100% + 2px);
+        position: absolute;
+        border-radius: 12px 0 0 12px;
+        top: -1px;
+        left: -8px;
+    }
+    &__manager-subtitle {
+        font-size: $font-size-small;
+    }
+    &__department {
+        font-size: $font-size-very-small;
         @media #{$screen-mobile} {
-          width: 32px;
-        }
-      }
-      &__select-icon {
-        @media #{$screen-mobile} {
-          top: 8px;
-          left: 8px;
-        }
-        &_mobile {
-          display: none;
-          @media #{$screen-mobile} {
-            display: flex;
-          }
-        }
-        &_desktop {
-          @media #{$screen-mobile} {
             display: none;
-          }
         }
-      }
     }
-  }
-  &__manager-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    border: 1px solid $grey30;
-    border-radius: 0 12px 12px 0;
-    padding: 12px;
-    margin-left: 8px;
-    input {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      opacity: 0;
-      &:checked + .modal-transfer-object__radio {
-        background-color: $accent-TCX50;
-        border: none;
-        transition: $transition;
-      }
-      &:checked + .modal-transfer-object__radio .modal-transfer-object__radio-point {
-        background-color: white;
-        transition: $transition;
-      }
+    h3,
+    &__manager-subtitle {
+        margin-bottom: 4px;
     }
-  }
-  &__avatar {
-    vertical-align: middle;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 16px;
-  }
-  &__radio {
-    width: 16px;
-    height: 16px;
-    border: 1px solid $grey30;
-    border-radius: 50%;
-    @include flex-container;
-  }
-  &__manager-border {
-    background-color: $grey30;
-    width: 8px;
-    height: calc(100% + 2px);
-    position: absolute;
-    border-radius: 12px 0 0 12px;
-    top: -1px;
-    left: -8px;
-  }
-  &__manager-subtitle {
-    font-size: $font-size-small;
-  }
-  &__department {
-    font-size: $font-size-very-small;
-    @media #{$screen-mobile} {
-      display: none;
+    &__radio {
+        margin-left: 16px;
     }
-  }
-  h3,
-  &__manager-subtitle {
-    margin-bottom: 4px;
-  }
-  &__radio {
-    margin-left: 16px;
-  }
-  &__text-content {
-    flex: auto;
-    @media #{$screen-mobile} {
-      flex: 139px;
+    &__text-content {
+        flex: auto;
+        @media #{$screen-mobile} {
+            flex: 139px;
+        }
     }
-  }
-  &__radio-point {
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
-  }
-  &__filter {
-    display: flex;
-    align-items: center;
-  }
-  .custom-text-input {
-    height: 32px;
-    input {
-      height: 100%;
+    &__radio-point {
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
     }
-  }
-  &__filter-title {
-    font-size: $font-size-small;
-    color: $grey60;
-    margin-right: 4px;
-    @media #{$screen-mobile} {
-      display: none;
+    &__filter {
+        display: flex;
+        align-items: center;
     }
-  }
-  &__manager-list {
-    overflow-y: auto;
-    @include scrollbar;
-    height: calc(100vh - 423px);
-    @media #{$screen-mobile} {
-      height: 50vh;
+    .custom-text-input {
+        height: 32px;
+        input {
+            height: 100%;
+        }
     }
-  }
-  &__manager-list-item {
-    margin-top: 16px;
-  }
-  .modal__hidden-text {
-    @media #{$screen-mobile} {
-      display: none;
+    &__filter-title {
+        font-size: $font-size-small;
+        color: $grey60;
+        margin-right: 4px;
+        @media #{$screen-mobile} {
+            display: none;
+        }
     }
-  }
+    &__manager-list {
+        padding-right: 5px;
+        overflow-y: auto;
+        @include scrollbar;
+        max-height: calc(100vh - 255px);
+        @media #{$screen-mobile} {
+            max-height: calc(100vh - 246px);
+        }
+    }
+    &__manager-list-item {
+        margin-top: 16px;
+    }
+    .modal__hidden-text {
+        @media #{$screen-mobile} {
+            display: none;
+        }
+    }
 }

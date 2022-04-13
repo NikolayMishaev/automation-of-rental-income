@@ -382,6 +382,13 @@ main .container {
   padding: 0 60px 40px;
 }
 
+@media (max-width: 768px) {
+  main .container {
+    display: block;
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 40rem) {
   main .container {
     max-width: 360px;
@@ -401,6 +408,13 @@ main .container {
   margin-right: 32px;
   margin-top: 40px;
   min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-right: 0;
+    margin-top: 16px;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -441,7 +455,7 @@ main .container {
   background-color: white;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .info-card {
     display: none;
   }
@@ -462,9 +476,16 @@ main .container {
   display: none;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .info-card_mobile {
     display: block;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .info-card_mobile {
+    margin-bottom: 0;
   }
 }
 
@@ -669,6 +690,12 @@ main .container {
   text-decoration: none;
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card__primary-btn {
+    width: 49.5%;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__favorite-icon {
     margin-right: 0;
@@ -712,6 +739,12 @@ main .container {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card__favorite-btn {
+    width: 49.5%;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__favorite-btn svg {
     -webkit-transform: scale(1.6);
@@ -719,9 +752,22 @@ main .container {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card__favorite-btn svg {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__favorite-btn span {
     display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card__favorite-btn span {
+    display: inline;
   }
 }
 
@@ -742,7 +788,7 @@ main .container {
   display: none;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .info-card__occupied-info_mobile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -869,6 +915,12 @@ main .container {
 @media (max-width: 64rem) {
   .info-card .icon {
     margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .info-card .icon {
+    margin-right: 6px;
   }
 }
 
@@ -1068,13 +1120,13 @@ main .container {
   margin-left: 16px;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form .group-radio-btn label + label {
     margin: 12px 0 0;
   }
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form .group-radio-btn {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1083,7 +1135,7 @@ main .container {
   }
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form .group-radio-btn__inner {
     width: 100%;
   }
@@ -1111,11 +1163,15 @@ main .container {
           flex: auto;
 }
 
+.contact-form .custom-text-input textarea {
+  height: 160px;
+}
+
 .contact-form .custom-text-input + .custom-text-input {
   margin-left: 16px;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form .custom-text-input + .custom-text-input {
     margin: 16px 0 0;
   }
@@ -1141,7 +1197,7 @@ main .container {
   display: flex;
 }
 
-@media (max-width: 40rem) {
+@media (max-width: 768px) {
   .contact-form__row {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1193,6 +1249,12 @@ main .container {
 
 .modal-form .modal-content {
   width: 800px;
+}
+
+@media (max-width: 768px) {
+  .modal-form .modal-content {
+    width: 704px;
+  }
 }
 
 @media (max-width: 40rem) {
@@ -1370,6 +1432,7 @@ main .container {
   -webkit-box-shadow: 0px 24px 38px rgba(80, 86, 94, 0.04), 0px 9px 46px rgba(80, 86, 94, 0.04), 0px 11px 15px rgba(80, 86, 94, 0.1);
           box-shadow: 0px 24px 38px rgba(80, 86, 94, 0.04), 0px 9px 46px rgba(80, 86, 94, 0.04), 0px 11px 15px rgba(80, 86, 94, 0.1);
   max-height: calc(100vh - 40px);
+  overflow: auto;
 }
 
 @media (max-width: 40rem) {
@@ -1914,6 +1977,10 @@ main .container {
   }
 }
 
+.registration-form_juridical {
+  display: none;
+}
+
 .registration-form__select-icon {
   position: absolute;
   -webkit-transition: all 0.5s;
@@ -1966,6 +2033,12 @@ main .container {
   padding: 8px 0;
   text-align: center;
   cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.registration-form__tab:hover {
+  background-color: #e1e5eb;
 }
 
 @media (max-width: 40rem) {
@@ -1978,11 +2051,11 @@ main .container {
   background-color: #e6fae9;
 }
 
-.registration-form__tab_filled:nth-child(1) {
+.registration-form__tab:nth-child(1) {
   border-radius: 12px 0 0 0;
 }
 
-.registration-form__tab_filled:nth-last-child(1) {
+.registration-form__tab:nth-last-child(1) {
   border-radius: 0 12px 0 0;
 }
 
@@ -2095,6 +2168,10 @@ main .container {
 .registration-form .custom-text-input {
   width: 100%;
   max-width: 552px;
+}
+
+.registration-form .custom-text-input textarea {
+  height: 120px;
 }
 
 .registration-form .custom-text-input_select {
@@ -2479,6 +2556,7 @@ main .container {
 .registration-form .file-input__name a {
   line-height: 24px;
   font-size: 20px;
+  color: inherit;
 }
 
 .registration-form .file-input__name a:hover {
@@ -2534,10 +2612,6 @@ main .container {
 
 .registration-form .modal-file-input .modal__content {
   width: 800px;
-}
-
-.registration-form_juridical {
-  display: none;
 }
 
 .slider {
@@ -2757,6 +2831,12 @@ main .container {
 .mainSwiper__wrapper .swiper-slide img {
   height: 110px;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .mainSwiper__wrapper .swiper-slide img {
+    height: 90px;
+  }
 }
 
 .mainSwiper__wrapper .swiper-button-next .slider__next-btn_track {
@@ -3208,6 +3288,7 @@ main .container {
 .modal-support .file-input__name a {
   line-height: 24px;
   font-size: 20px;
+  color: inherit;
 }
 
 .modal-support .file-input__name a:hover {
@@ -4630,13 +4711,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-animation: animation-hot-price linear 150s infinite;
-          animation: animation-hot-price linear 150s infinite;
+}
+
+.hot-price__animation {
+  -webkit-animation: animation-hot-price linear 200s infinite;
+          animation: animation-hot-price linear 200s infinite;
   -webkit-animation-delay: .5s;
           animation-delay: .5s;
 }
 
-.hot-price__wrapper:hover {
+.hot-price__animation:hover {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
@@ -6580,6 +6664,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.modal-edit-card-object .modal__body {
+  height: calc(100vh - 181px);
+  overflow: auto;
+}
+
 @media (max-width: 40rem) {
   .modal-edit-card-object h3 {
     margin-right: 16px;
@@ -6731,7 +6820,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .modal-edit-card-object__photo-container {
     display: block;
     padding: 0;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
     height: 230px;
   }
@@ -6804,6 +6893,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+@media (max-width: 40rem) {
+  .modal-edit-card-object__media-content {
+    overflow: hidden;
+    height: auto;
+    padding-right: 0;
+  }
+}
+
 .checkbox-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6852,11 +6949,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .modal-transfer-object .modal__content {
   width: 600px;
+  max-height: calc(100vh - 40px);
 }
 
 @media (max-width: 40rem) {
   .modal-transfer-object .modal__content {
     width: 328px;
+    overflow: hidden;
   }
 }
 
@@ -6941,7 +7040,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: all 0.5s;
 }
 
-.modal-transfer-object__manager-container input:checked + .modal-transfer-object__radio .modal-transfer-object__radio-point {
+.modal-transfer-object__manager-container input:checked + .modal-transfer-object__radio
+.modal-transfer-object__radio-point {
   background-color: white;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -7053,9 +7153,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .modal-transfer-object__manager-list {
+  padding-right: 5px;
   overflow-y: auto;
   scrollbar-width: thin;
-  height: calc(100vh - 423px);
+  max-height: calc(100vh - 255px);
 }
 
 @media (min-width: 640px) {
@@ -7070,7 +7171,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 40rem) {
   .modal-transfer-object__manager-list {
-    height: 50vh;
+    max-height: calc(100vh - 246px);
   }
 }
 
@@ -9283,6 +9384,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       -ms-flex-align: center;
           align-items: center;
   border-top: 1px solid #e3e7e8;
+  position: relative;
 }
 
 .prof-table__row:hover {
@@ -9403,7 +9505,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       -ms-flex-align: center;
           align-items: center;
   color: #3c4142;
-  overflow: scroll;
+  overflow: hidden;
   white-space: nowrap;
 }
 
@@ -9437,7 +9539,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__test-checkbox:hover {
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -9449,7 +9551,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__test-checkbox-active:hover {
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -9468,12 +9570,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .prof-table__button:disabled {
-  background-color: #E1E5EB;
-  color: #B4BBC6;
+  background-color: #e1e5eb;
+  color: #b4bbc6;
 }
 
 .prof-table__link {
@@ -9499,7 +9601,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__icon:hover {
-  opacity: .8;
+  opacity: 0.8;
+}
+
+.prof-table .tooltip {
+  opacity: 1;
+  position: absolute;
+  top: -50%;
+  z-index: 99;
+}
+
+.prof-table .tooltip svg {
+  position: absolute;
+  bottom: -4px;
+  left: 10%;
 }
 
 .prof-card {
@@ -10058,8 +10173,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.modal-file-form .modal__content {
+  width: 792px;
+  overflow: hidden;
+}
+
 .modal-file-form .modal__body {
   position: relative;
+  max-height: calc(100vh - 132px);
+  overflow: auto;
 }
 
 @media (max-width: 40rem) {
@@ -10410,6 +10532,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .form-agent-card__date {
   color: #3C4142;
   margin-left: 4px;
+}
+
+.prof-graph {
+  height: 352px;
+  padding-top: 16px;
+  border-top: 1px solid #e1e5eb;
 }
 
 .popup-notify__title {
