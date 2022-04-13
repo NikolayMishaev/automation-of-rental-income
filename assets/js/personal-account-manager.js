@@ -840,3 +840,266 @@ popupsBody.forEach((i) =>
         }
     })
 );
+
+// логика наведения на текст в списке
+
+const listTable = document.querySelectorAll(
+    "#objects .prof-table__row-content.heading-h5, #offers .prof-table__row-content.heading-h5"
+);
+
+listTable.forEach((i) =>
+    i.addEventListener("mouseenter", (e) => {
+        const tooltip = document.createElement("div");
+        tooltip.classList.add("tooltip");
+        tooltip.innerHTML = `
+    <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.6364 3.3636L8 4.76837e-07L3.49691e-07 -2.22545e-07L3.3636 3.3636C3.71508 3.71508 4.28492 3.71508 4.6364 3.3636Z" fill="#2A2E33"></path>
+    </svg>
+
+    <p class="tooltip__inner">${e.target.textContent}
+    </p>`;
+        e.target.prepend(tooltip);
+    })
+);
+
+listTable.forEach((i) =>
+    i.addEventListener("mouseleave", (e) => {
+        const tooltip = e.target.querySelector(".tooltip");
+        if (tooltip) tooltip.remove();
+    })
+);
+
+// диаграммы
+
+var canvas = document.getElementById("graph1");
+var ctx = canvas.getContext("2d");
+
+var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+gradient.addColorStop(0, "#E6FAE9");
+gradient.addColorStop(1, "#E6FAE900");
+
+var data = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+    datasets: [
+        {
+            label: false,
+            backgroundColor: gradient,
+            borderColor: "#00796B",
+            borderWidth: 2,
+            hoverBackgroundColor: "rgba(255,99,132,0.4)",
+            hoverBorderColor: "rgba(255,99,132,1)",
+            data: [65, 59, 20, 81, 56, 55, 40],
+            fill: true,
+            pointRadius: 0,
+        },
+    ],
+};
+
+var options = {
+    maintainAspectRatio: false,
+    scales: {
+        y: {
+            stacked: true,
+            grid: {
+                display: false,
+                color: "rgba(255,99,132,0.2)",
+            },
+        },
+        x: {
+            grid: {
+                display: false,
+            },
+        },
+    },
+};
+
+var data2 = {
+    labels: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+    ],
+    datasets: [
+        {
+            label: false,
+            backgroundColor: "#9CCC65",
+            borderRadius: 4,
+            hoverBackgroundColor: "rgba(156, 204, 101, 0.8)",
+            data: [
+                65, 59, 20, 81, 56, 55, 40, 65, 59, 20, 81, 56, 55, 40, 65, 59,
+                20, 81, 56, 55, 40,
+            ],
+            fill: true,
+        },
+    ],
+};
+
+var data3 = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+    datasets: [
+        {
+            label: false,
+            backgroundColor: "#9CCC65",
+            borderRadius: 4,
+            hoverBackgroundColor: "rgba(156, 204, 101, 0.8)",
+            data: [65, 59, 20, 81, 56, 55, 40],
+            fill: true,
+        },
+    ],
+};
+
+var data4 = {
+    labels: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+    ],
+    datasets: [
+        {
+            label: "Обработано",
+            backgroundColor: "#55B465",
+            borderRadius: 4,
+            hoverBackgroundColor: "rgba(156, 204, 101, 0.8)",
+            data: [
+                65, 59, 20, 81, 56, 55, 40, 65, 59, 20, 81, 56, 55, 40, 65, 59,
+                20, 81, 56, 55, 40,
+            ],
+        },
+        {
+            label: "Отправлено менеджеру",
+            backgroundColor: "#FFEE58",
+            borderRadius: 4,
+            hoverBackgroundColor: "rgba(156, 204, 101, 0.8)",
+            pointStyle: "vircle",
+            data: [
+                36, 72, 40, 81, 96, 45, 10, 95, 39, 30, 41, 96, 55, 80, 75, 39,
+                10, 61, 86, 35, 55,
+            ],
+        },
+        {
+            label: "В работе у менеджера",
+            backgroundColor: "#5C6BC0",
+            borderRadius: 4,
+            hoverBackgroundColor: "rgba(156, 204, 101, 0.8)",
+            data: [
+                56, 52, 50, 71, 46, 35, 20, 65, 79, 60, 91, 36, 65, 50, 95, 19,
+                80, 21, 36, 75, 45,
+            ],
+        },
+    ],
+};
+
+var options = {
+    maintainAspectRatio: false,
+    plugins: {
+        legend: {
+            display: false,
+            labels: {
+                color: "rgb(255, 99, 132)",
+            },
+        },
+    },
+    scales: {
+        y: {
+            stacked: true,
+            grid: {
+                display: false,
+                color: "rgba(255,99,132,0.2)",
+            },
+        },
+        x: {
+            grid: {
+                display: false,
+            },
+        },
+    },
+};
+var options2 = {
+    maintainAspectRatio: false,
+    plugins: {
+        legend: {
+            display: true,
+            labels: {
+                color: "#3C4142",
+            },
+            position: "bottom",
+            align: "start",
+            labels: { usePointStyle: true },
+        },
+    },
+    scales: {
+        y: {
+            stacked: true,
+            grid: {
+                display: false,
+                color: "rgba(255,99,132,0.2)",
+            },
+        },
+        x: {
+            stacked: true,
+            grid: {
+                display: false,
+            },
+        },
+    },
+};
+
+new Chart("graph1", {
+    type: "line",
+    options: options,
+    data: data,
+});
+
+new Chart("graph2", {
+    type: "bar",
+    options: options,
+    data: data2,
+});
+
+new Chart("graph3", {
+    type: "bar",
+    options: options,
+    data: data3,
+});
+
+new Chart("graph4", {
+    type: "bar",
+    options: options2,
+    data: data4,
+});
