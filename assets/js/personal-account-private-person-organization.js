@@ -224,8 +224,37 @@ const containersStars = document.querySelectorAll(
 );
 const inputStars = document.querySelector("#input-stars");
 
+const elementsmarkConfirm = document.querySelectorAll(
+    ".prof-aside__mark-confirm"
+);
+
+const blocksFeedback = document.querySelectorAll(".prof-aside__feedback");
+
+const containersChat = document.querySelectorAll(
+    ".prof-aside__wrapper-container-message"
+);
+
+let timerMark = undefined;
+let timerFeedback = undefined;
+
 containersStars.forEach((j) =>
     j.addEventListener("click", (e) => {
+        clearTimeout(timerMark);
+        clearTimeout(timerFeedback);
+        timerMark = setTimeout(
+            () =>
+                elementsmarkConfirm.forEach((i) => (i.style.display = "flex")),
+            2000
+        );
+        timerFeedback = setTimeout(() => {
+            blocksFeedback.forEach((i) => (i.style.display = "none"));
+            containersChat.forEach((i) =>
+                addClassElement(
+                    i,
+                    "prof-aside__wrapper-container-message_type_full"
+                )
+            );
+        }, 4000);
         if (e.target.ariaLabel) {
             resetActiveClass(mobileStars, "prof-aside__star_active");
             resetActiveClass(desktopStars, "prof-aside__star_active");

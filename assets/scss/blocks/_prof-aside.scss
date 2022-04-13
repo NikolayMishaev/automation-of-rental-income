@@ -322,6 +322,10 @@
             height: 475px;
             margin-bottom: 60px;
         }
+        &_type_full {
+            height: 500px;
+            margin-bottom: 10px;
+        }
     }
     &__feedback {
         display: flex;
@@ -336,7 +340,21 @@
         margin-left: 4px;
         border: 1px solid #e3e7e8;
         border-radius: 12px;
+        position: relative;
         @include flex-container;
+    }
+    &__mark-confirm {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 12px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
     }
     &__star {
         width: 12px;

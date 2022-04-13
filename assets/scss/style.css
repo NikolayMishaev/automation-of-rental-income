@@ -7773,6 +7773,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-bottom: 60px;
 }
 
+.prof-aside__wrapper-container-message_type_full {
+  height: 500px;
+  margin-bottom: 10px;
+}
+
 .prof-aside__feedback {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7791,6 +7796,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: 4px;
   border: 1px solid #e3e7e8;
   border-radius: 12px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7800,6 +7806,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.prof-aside__mark-confirm {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
 .prof-aside__star {
