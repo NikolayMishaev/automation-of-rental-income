@@ -17,7 +17,7 @@
         background: transparent;
      }
      62.5% {
-        transform: translateX(-150px);
+        transform: translateX(-40%);
         background: rgb(255, 191, 138);
      }
     75% {
@@ -37,11 +37,11 @@
 .card-price {
     position: relative;
     height: rem(84px);
-    margin-left: 40px;
+    margin-left: 36px;
     margin-right: 40px;
     width: rem(461px);
     background-color: white;
-    padding: rem(6px) rem(12px);
+    padding: rem(12px);
     border-radius: 12px;
     @include flex-container;
     border: 1px solid $grey-20_2;
@@ -50,6 +50,7 @@
     transition: all 1s;
     @media #{$screen-mobile} {
         padding: rem(8px);
+        height: rem(76px);
     }
     &:after {
         content: "";

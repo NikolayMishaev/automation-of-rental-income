@@ -4,7 +4,9 @@ export { addClassElement, removeClassElement, switchButtons };
 const containerHotPrice = document.querySelector(".hot-price__wrapper");
 
 onload = function () {
-    addClassElement(containerHotPrice, "hot-price__animation");
+    if (containerHotPrice) {
+        addClassElement(containerHotPrice, "hot-price__animation");
+    }
 };
 
 // стейты
