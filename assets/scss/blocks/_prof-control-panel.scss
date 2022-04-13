@@ -23,6 +23,9 @@
             flex-wrap: nowrap;
             align-items: flex-end;
         }
+        @media (max-width: rem(500px)) {
+            flex-wrap: wrap;
+        }
     }
     &_type_about-me {
         @media (max-width: rem(1150px)) {
@@ -345,8 +348,33 @@
             }
         }
         &_type_period {
+            margin-left: 16px;
             @media (max-width: rem(1000px)) {
-                display: none;
+                width: 32px;
+                height: 32px;
+                position: static;
+                overflow: hidden;
+                margin-right: 0;
+                flex-shrink: 0;
+                margin-top: auto;
+                margin-left: 16px;
+                &:hover {
+                    cursor: pointer;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    border-radius: 4px;
+                    z-index: 1;
+                    width: 32px;
+                    height: 32px;
+                    background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
+                    background-color: #fff;
+                }
+            }
+            @media (max-width: rem(500px)) {
+                margin-top: 16px;
+                margin-left: auto;
             }
         }
         &_type_division {
@@ -659,6 +687,8 @@
             margin-top: 16px;
         }
         &_type_agent {
+            width: unset;
+            flex: 1;
             border: none;
             padding: 0;
             height: 32px;
@@ -676,6 +706,9 @@
                 margin-top: 0;
                 padding-top: 0;
                 padding-bottom: 0;
+            }
+            @media (max-width: rem(500px)) {
+                flex: unset;
             }
         }
     }
@@ -776,7 +809,7 @@
     }
     &__wrapper {
         display: flex;
-        flex: 1;
+        width: 100%;
         margin-top: 16px;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -787,6 +820,8 @@
             flex-wrap: nowrap;
             margin-bottom: 0;
             margin-left: 16px;
+            width: unset;
+            justify-content: flex-end;
         }
     }
     &__stars-caption {
