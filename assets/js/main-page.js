@@ -8,6 +8,7 @@ import {
 
 const state = {
     currentOpenSubmenu: null,
+    currentOpenSubmenuSelectClassType: null,
     cursorsSelect: {
         "main-page-desktop": document.querySelector(
             "#cursor-main-page-desktop"
@@ -230,6 +231,19 @@ function toggleActiveClass(submenu, cursor) {
     } else {
         submenu.classList.add("mix-visible");
         cursor.classList.add("main-form__cursor_active");
+        setListenerClickOutsideSelect();
+        if (state.currentOpenSubmenuSelectClassType) {
+            state.currentOpenSubmenuSelectClassType.submenu.classList.remove(
+                "mix-visible"
+            );
+            state.currentOpenSubmenuSelectClassType.cursor.classList.remove(
+                "main-form__cursor_active"
+            );
+        }
+        state.currentOpenSubmenuSelectClassType = {
+            submenu: submenu,
+            cursor: cursor,
+        };
     }
 }
 
@@ -288,6 +302,7 @@ const submenuFilterChangeClass = document.querySelector(
 
 wrapperInputChangeClass.addEventListener("click", () => {
     toggleActiveClass(submenuFilterChangeClass, cursorChangeClassMainForm);
+    setListenerClickOutsideSelect();
 });
 
 // изменение значения value инпута после клика по значению поля селекта в фильтре "классификация помещения"
@@ -387,6 +402,15 @@ const checkClickOutsideSelect = (e) => {
     if (!e.target.closest(".prof-control-panel__select-label")) {
         // скрыть текущее подменю
         hideCurrentSubmenu(state.currentOpenSubmenu, true);
+    }
+    if (!e.target.closest(".main-form__label_type_select")) {
+        // скрыть текущее подменю
+        state.currentOpenSubmenuSelectClassType.submenu.classList.remove(
+            "mix-visible"
+        );
+        state.currentOpenSubmenuSelectClassType.cursor.classList.remove(
+            "main-form__cursor_active"
+        );
     }
 };
 
