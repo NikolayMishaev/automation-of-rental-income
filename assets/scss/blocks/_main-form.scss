@@ -51,7 +51,7 @@
             @media #{$screen-mobile} {
                 padding-right: 0;
                 margin: rem(12px) 0 0 0;
-                height: rem(32px);
+                min-height: rem(32px);
             }
             &:first-child {
                 margin-right: 16px;

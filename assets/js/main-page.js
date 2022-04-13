@@ -401,8 +401,10 @@ sumbenuAdressContainers.forEach((i) =>
 
 // проверить, где сработал клик, если за пределами тела селекта, то запустить ф-ию для скрытия текущего открытого подменю
 const checkClickOutsideSelect = (e) => {
+    console.log("listener work");
     // если клик произошел за пределами селекта(label)
     if (!e.target.closest(".prof-control-panel__select-label")) {
+        console.log("here");
         // скрыть текущее подменю
         hideCurrentSubmenu(state.currentOpenSubmenu, true);
     }
@@ -461,6 +463,7 @@ function toggleVisibleSubmenuSecondLevel(currentLabel) {
 
 // установить слушатель клика на весь документ и отслеживать клик вне тела селекта
 function setListenerClickOutsideSelect() {
+    console.log("set");
     document.addEventListener("click", checkClickOutsideSelect);
 }
 
@@ -489,6 +492,7 @@ function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
         // удалить текущий селект из стейта
         submenu = null;
         if (deleteListenerOverlay) {
+            console.log("delete listener");
             // удалить слушатель document, т.к. все селекты закрыты
             document.removeEventListener("click", checkClickOutsideSelect);
         }
