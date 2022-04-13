@@ -1,69 +1,68 @@
-const modalOfferPrice = document.querySelector(".modal-offer-price");
-const offerBtn = document.querySelectorAll(".info-card__offer-btn");
-const modalForm = document.querySelector(".modal-form");
-const contactBtn = document.querySelectorAll(".info-card__primary-btn");
+// const modalOfferPrice = document.querySelector(".modal-offer-price");
+// const offerBtn = document.querySelectorAll(".info-card__offer-btn");
+// const modalForm = document.querySelector(".modal-form");
+// const contactBtn = document.querySelectorAll(".info-card__primary-btn");
 
 // откурыть модалку
-for (let index = 0; index < offerBtn.length; index++) {
-    offerBtn[index].addEventListener("click", function () {
-        modalOfferPrice.style.display = "flex";
-    });
-}
+// for (let index = 0; index < offerBtn.length; index++) {
+//     offerBtn[index].addEventListener("click", function () {
+//         modalOfferPrice.style.display = "flex";
+//     });
+// }
 
 // открыть модалку
-for (let index = 0; index < contactBtn.length; index++) {
-    contactBtn[index].addEventListener("click", function () {
-        modalForm.style.display = "flex";
-    });
-}
+// for (let index = 0; index < contactBtn.length; index++) {
+//     contactBtn[index].addEventListener("click", function () {
+//         modalForm.style.display = "flex";
+//     });
+// }
 
 // закрыть модалку
-if (modalOfferPrice) {
-    modalOfferPrice.addEventListener("click", (e) =>
-        closeModalWindow(modalOfferPrice, e)
-    );
-}
+// if (modalOfferPrice) {
+//     modalOfferPrice.addEventListener("click", (e) =>
+//         closeModalWindow(modalOfferPrice, e)
+//     );
+// }
 
-function closeModalWindow(modal, e) {
-    if (
-        e.target.closest(".modal__close-btn") ||
-        e.target.closest(".modal__cancel-btn")
-    ) {
-        modal.style.display = "none";
-    }
-}
+// function closeModalWindow(modal, e) {
+//     if (
+//         e.target.closest(".modal__close-btn") ||
+//         e.target.closest(".modal__cancel-btn")
+//     ) {
+//         modal.style.display = "none";
+//     }
+// }
 
 // закрыть модалку
-if (modalForm) {
-    modalForm.addEventListener("click", (e) => closeModalWindow(modalForm, e));
-}
+// if (modalForm) {
+//     modalForm.addEventListener("click", (e) => closeModalWindow(modalForm, e));
+// }
 
 // открыть модалку
-contactBtn.onclick = function () {
-    modalForm.style.display = "flex";
-};
+// contactBtn.onclick = function () {
+//     modalForm.style.display = "flex";
+// };
 
 // модальное окно "Вход"
 
 const modalLogin = document.querySelector(".modal-login");
 
-const signInBtn = document.querySelector("#link-signIn");
+// const signInBtn = document.querySelector("#link-signIn");
 
-if (signInBtn) {
-    signInBtn.onclick = function () {
-        modalLogin.style.display = "flex";
-    };
-}
-if (modalLogin) {
-    modalLogin.addEventListener("click", (e) =>
-        closeModalWindow(modalLogin, e)
-    );
-    const modalBtnLog = modalLogin.querySelector(".modal-login__login-btn");
-    const modalLoginInputList = modalLogin.querySelectorAll("input");
-    modalBtnLog.addEventListener("click", () =>
-        checkRequiredInput(modalLoginInputList)
-    );
-}
+// if (signInBtn) {
+//     signInBtn.onclick = function () {
+//         modalLogin.style.display = "flex";
+//     };
+// }
+// if (modalLogin) {
+//     modalLogin.addEventListener("click", (e) =>
+//         closeModalWindow(modalLogin, e)
+//     );
+const modalBtnLog = modalLogin.querySelector(".modal-login__login-btn");
+const modalLoginInputList = modalLogin.querySelectorAll("input");
+modalBtnLog.addEventListener("click", () =>
+    checkRequiredInput(modalLoginInputList)
+);
 
 // логика работы поля "пароль"
 

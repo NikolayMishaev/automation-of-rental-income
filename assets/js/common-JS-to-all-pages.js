@@ -12,8 +12,10 @@ onload = function () {
 // стейты
 
 const state = {
+    currentOpenPopup: null,
     "popup-city": document.querySelector("#popup-city"),
     "popup-notify": document.querySelector("#popup-notify"),
+    "modal-reset-password": document.querySelector("#modal-reset-password"),
 };
 
 // общие функции
@@ -57,6 +59,10 @@ const inputChangeCity = document.querySelector("#input-change-city");
 buttonsOpenPopup.forEach((i) =>
     i.addEventListener("click", (e) => {
         inputChangeCity.value = "";
+        if (state.currentOpenPopup) {
+            addClassElement(state.currentOpenPopup, "mix-display-none");
+        }
+        state.currentOpenPopup = state[i.ariaLabel];
         removeClassElement(state[i.ariaLabel], "mix-display-none");
     })
 );
@@ -73,6 +79,7 @@ overlaysPopup.forEach((i) =>
             e.target.classList.contains("button-close-popup")
         ) {
             addClassElement(i, "mix-display-none");
+            state.currentOpenPopup = null;
         }
     })
 );

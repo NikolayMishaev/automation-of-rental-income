@@ -1408,7 +1408,9 @@ main .container {
 
 @use "./prop-mix" as *;
 .modal {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1585,6 +1587,12 @@ main .container {
   .modal__text-info {
     font-size: 14px;
   }
+}
+
+.modal__cancel-btn_type_reset-password {
+  width: 100%;
+  height: 40px;
+  background-color: white;
 }
 
 .custom-text-input {
@@ -3095,6 +3103,11 @@ main .container {
   }
 }
 
+.modal-login__login-btn_type_reset-password,
+.modal-registration__login-btn_type_reset-password {
+  margin-bottom: 16px;
+}
+
 .modal-login__registration-btn,
 .modal-registration__registration-btn {
   border-radius: 4px;
@@ -3129,6 +3142,12 @@ main .container {
 .modal-login__registration-link,
 .modal-registration__registration-link {
   margin: auto;
+  display: block;
+}
+
+.modal-login__registration-link:last-child,
+.modal-registration__registration-link:last-child {
+  margin-top: 10px;
 }
 
 @media (max-width: 40rem) {
