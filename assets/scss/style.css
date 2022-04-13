@@ -6254,7 +6254,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .main-form__wrapper-fields_active {
-  height: 950px;
+  height: 925px;
   overflow: unset;
 }
 
@@ -6277,6 +6277,82 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 16px;
   top: auto;
   left: 12px;
+}
+
+.main-form__visible-input__checkbox-floor-left:after {
+  content: 'Подземный этаж';
+  position: absolute;
+  min-width: 140px;
+  top: -3px;
+  left: 24px;
+}
+
+@media (max-width: 100.9375rem) {
+  .main-form__visible-input__checkbox-floor-left:after {
+    content: 'Подземный';
+  }
+}
+
+@media (max-width: 93.75rem) {
+  .main-form__visible-input__checkbox-floor-left:after {
+    content: 'Подземный этаж';
+  }
+}
+
+@media (max-width: 87.5rem) {
+  .main-form__visible-input__checkbox-floor-left:after {
+    content: 'Подземный';
+  }
+}
+
+@media (max-width: 80rem) {
+  .main-form__visible-input__checkbox-floor-left:after {
+    content: 'Подземный этаж';
+  }
+}
+
+@media (max-width: 34.375rem) {
+  .main-form__visible-input__checkbox-floor-left:after {
+    content: 'Подземный';
+  }
+}
+
+.main-form__visible-input__checkbox-floor-right:after {
+  content: 'Цокольный этаж';
+  position: absolute;
+  min-width: 140px;
+  top: -3px;
+  left: 24px;
+}
+
+@media (max-width: 100.9375rem) {
+  .main-form__visible-input__checkbox-floor-right:after {
+    content: 'Цокольный';
+  }
+}
+
+@media (max-width: 93.75rem) {
+  .main-form__visible-input__checkbox-floor-right:after {
+    content: 'Цокольный этаж';
+  }
+}
+
+@media (max-width: 87.5rem) {
+  .main-form__visible-input__checkbox-floor-right:after {
+    content: 'Цокольный';
+  }
+}
+
+@media (max-width: 80rem) {
+  .main-form__visible-input__checkbox-floor-right:after {
+    content: 'Цокольный этаж';
+  }
+}
+
+@media (max-width: 34.375rem) {
+  .main-form__visible-input__checkbox-floor-right:after {
+    content: 'Цокольный';
+  }
 }
 
 .pagination__list {

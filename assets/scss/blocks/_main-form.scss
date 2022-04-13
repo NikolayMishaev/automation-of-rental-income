@@ -260,7 +260,7 @@
         overflow: hidden;
         transition: $transition;
         &_active {
-            height: 950px;
+            height: 925px;
             overflow: unset;
             @media #{$screen-mobile} {
                 height: rem(683px);
@@ -280,5 +280,53 @@
         height: 16px;
         top: auto;
         left: 12px;
+        &__checkbox-floor-left {
+            &:after {
+                content: 'Подземный этаж';
+                position: absolute;
+                min-width: 140px;
+                top: -3px;
+                left: 24px;
+                @media (max-width: rem(1615px)) {
+                    content: 'Подземный';
+                }
+                @media (max-width: rem(1500px)) {
+                    content: 'Подземный этаж';
+                }
+                @media (max-width: rem(1400px)) {
+                    content: 'Подземный';
+                }
+                @media (max-width: rem(1280px)) {
+                    content: 'Подземный этаж';
+                }
+                @media (max-width: rem(550px)) {
+                    content: 'Подземный';
+                }
+            }
+        }
+        &__checkbox-floor-right {
+            &:after {
+                content: 'Цокольный этаж';
+                position: absolute;
+                min-width: 140px;
+                top: -3px;
+                left: 24px;
+                @media (max-width: rem(1615px)) {
+                    content: 'Цокольный';
+                }
+                @media (max-width: rem(1500px)) {
+                    content: 'Цокольный этаж';
+                }
+                @media (max-width: rem(1400px)) {
+                    content: 'Цокольный';
+                }
+                @media (max-width: rem(1280px)) {
+                    content: 'Цокольный этаж';
+                }
+                @media (max-width: rem(550px)) {
+                    content: 'Цокольный';
+                }
+            }
+        }
     }
 }
