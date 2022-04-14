@@ -1089,6 +1089,8 @@ objectCards.forEach((i) =>
             return;
         }
         popupEditCardObject.style.display = "flex";
+        state.currentOpenPopup = popupEditCardObject;
+        document.addEventListener("keydown", handleEscClose);
     })
 );
 
