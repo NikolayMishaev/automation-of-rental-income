@@ -1,4 +1,8 @@
 .prof-table {
+    &_type_waiting-list {
+        display: flex;
+        flex-direction: column;
+    }
     &__row {
         display: grid;
         grid-template-columns: 199px 90px 110px 180px 152px 172px;
@@ -20,6 +24,15 @@
         }
         &_style_objects {
             grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
+        }
+        &_style_waiting-list {
+            grid-template-columns: 200px 200px 200px 336px;
+            &:last-of-type {
+                border-bottom: 1px solid #e3e7e8;
+            }
+            @media (max-width: rem(1550px)) {
+                grid-template-columns: 200px 200px 200px 368px;
+            }
         }
         &_style_agent {
             grid-template-columns: 85px 160px 95px 160px 75px 100px 100px 95px;
@@ -140,6 +153,10 @@
             background-color: #e1e5eb;
             color: #b4bbc6;
         }
+        &_type_waiting-list {
+            margin-left: auto;
+            margin-top: 14px;
+        }
     }
     &__link {
         color: #1565c0;
@@ -172,5 +189,12 @@
             bottom: -4px;
             left: 10%;
         }
+    }
+    &__input {
+        border: 1px solid #e1e5eb;
+        min-height: 32px;
+        padding: 4px 12px;
+        border-radius: 4px;
+        width: 100%;
     }
 }
