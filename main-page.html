@@ -2528,7 +2528,7 @@
                     </div>
                     <div class="main__column  main__column_type_filters">
                         <div class="main-filters">
-                            <form class="main-form">
+                            <form class="main-form" action="http://foo.com" method="get">
                                 <label class="mix-label">
                                     <input type="text" class="main-form__input main-form__input_type_search mix-input"
                                         placeholder=" ">
@@ -2829,13 +2829,13 @@
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input
-                                                            type="checkbox"
+                                                            type="checkbox" name='space-one' value='id23'
                                                             class="main-form__input main-form__input_type_checkbox"><span class="main-form__visible-input"></span>Торговый центр</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input
-                                                            type="checkbox"
+                                                            type="checkbox" name='space-one' value='id45'
                                                             class="main-form__input main-form__input_type_checkbox"><span class="main-form__visible-input"></span>Отдельно стоящее здание</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
@@ -3124,7 +3124,7 @@
     </div>
 
     <!-- модальное окно для входа в аккаунт  -->
-    <div id="modal-login" class="modal modal-login mix-display-none">
+    <div id="modal-login" class="modal modal-login ">
         <div class="modal__content">
             <div class="modal__header">
                 <h3>Вход</h3>
@@ -3180,11 +3180,11 @@
     </div>
 
     <!-- модальное окно для сброса пароля  -->
-    <div id='modal-reset-password' class="modal modal-login mix-display-none">
+    <div id='modal-reset-password' class="modal modal-login modal_type_reset-password mix-display-none">
         <div class="modal__content">
             <div class="modal__header">
                 <h3>Сброс пароля</h3>
-                <button id="button-close-popup-log-in" class="modal__close-btn">
+                <button class="modal__close-btn">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
@@ -3193,7 +3193,7 @@
                 </button>
             </div>
             <div class="modal__body">
-                <form id="form-log-in" action="">
+                <form id="form-reset-password" action="">
                     <div class="modal-login__password-container">
                         <label class="custom-text-input modal-login__password">
                             <input type="password" class="input-password" required minlength="5" maxlength="100" />
@@ -3255,14 +3255,14 @@
                         </div>
                     </div>
                     <button type="submit" class="modal-login__login-btn modal-login__login-btn_type_reset-password">Войти</button>
-                    <button class="modal__cancel-btn modal__cancel-btn_type_reset-password">Отмена</button>
+                    <button type='button' class="modal__cancel-btn modal__cancel-btn_type_reset-password">Отмена</button>
                 </form>
             </div>
         </div>
     </div>
 
     <!-- модальное окно для регистрации  -->
-    <div class="modal modal-registration mix-display-none">
+    <div class="modal modal-registration ">
         <div class="modal__content">
             <div class="modal__header">
                 <h3>Регистрация</h3>

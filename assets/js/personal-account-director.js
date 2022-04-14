@@ -7,6 +7,7 @@ import {
 // стейты
 
 const state = {
+    currentOpenPopup: null,
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
     cursorsSelect: {
@@ -1100,8 +1101,22 @@ objectList.forEach((i, c) => {
             return;
         }
         popupEditCardObject.style.display = "flex";
+        state.currentOpenPopup = popupEditCardObject;
+        document.addEventListener("keydown", handleEscClose);
     });
 });
+
+// логика закрытия попапов по клавише Escape
+
+function handleEscClose(e) {
+    if (e.key === "Escape") {
+        if (state.currentOpenPopup) {
+            state.currentOpenPopup.style.display = "none";
+            state.currentOpenPopup = null;
+            document.removeEventListener("keydown", handleEscClose);
+        }
+    }
+}
 
 // логика открытия попапа передачи обращения, объекта
 
@@ -1124,6 +1139,8 @@ buttonsSendObjects.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
 function setAddEventListenerOpenPopupSendObjects(i) {
     i.addEventListener("click", () => {
         popupSendObjects.style.display = "flex";
+        state.currentOpenPopup = popupSendObjects;
+        document.addEventListener("keydown", handleEscClose);
     });
 }
 

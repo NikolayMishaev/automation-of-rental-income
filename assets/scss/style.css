@@ -1408,9 +1408,7 @@ main .container {
 
 @use "./prop-mix" as *;
 .modal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1427,6 +1425,16 @@ main .container {
   background-color: rgba(60, 65, 66, 0.6);
 }
 
+.modal:hover {
+  cursor: pointer;
+}
+
+.modal_type_reset-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .modal__content {
   border-radius: 12px;
   background-color: white;
@@ -1435,6 +1443,10 @@ main .container {
           box-shadow: 0px 24px 38px rgba(80, 86, 94, 0.04), 0px 9px 46px rgba(80, 86, 94, 0.04), 0px 11px 15px rgba(80, 86, 94, 0.1);
   max-height: calc(100vh - 40px);
   overflow: auto;
+}
+
+.modal__content:hover {
+  cursor: auto;
 }
 
 @media (max-width: 40rem) {

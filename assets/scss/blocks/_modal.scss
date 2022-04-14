@@ -1,7 +1,7 @@
 @use "./prop-mix" as *;
 
 .modal {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -12,6 +12,12 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(60, 65, 66, 0.6);
+    &:hover {
+        cursor: pointer;
+    }
+    &_type_reset-password {
+        display: flex;
+    }
     &__content {
         border-radius: 12px;
         background-color: white;
@@ -19,6 +25,9 @@
         box-shadow: $shadow-100;
         max-height: calc(100vh - 40px);
         overflow: auto;
+        &:hover {
+            cursor: auto;
+        }
         @media #{$screen-mobile} {
             width: 100%;
             margin: 0 16px;
