@@ -450,3 +450,31 @@ const popoupAvatar = document.querySelector(".modal-edit-avatar");
 buttonClose.addEventListener("click", (e) => {
     popoupAvatar.style = "display-none";
 });
+
+// логика наведения на текст в списке
+
+const listTable = document.querySelectorAll(
+    "#favourites .prof-table__row-content.heading-h5"
+);
+
+listTable.forEach((i) =>
+    i.addEventListener("mouseenter", (e) => {
+        const tooltip = document.createElement("div");
+        tooltip.classList.add("tooltip");
+        tooltip.innerHTML = `
+    <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.6364 3.3636L8 4.76837e-07L3.49691e-07 -2.22545e-07L3.3636 3.3636C3.71508 3.71508 4.28492 3.71508 4.6364 3.3636Z" fill="#2A2E33"></path>
+    </svg>
+
+    <p class="tooltip__inner">${e.target.textContent}
+    </p>`;
+        e.target.prepend(tooltip);
+    })
+);
+
+listTable.forEach((i) =>
+    i.addEventListener("mouseleave", (e) => {
+        const tooltip = e.target.querySelector(".tooltip");
+        if (tooltip) tooltip.remove();
+    })
+);
