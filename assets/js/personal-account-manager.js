@@ -222,6 +222,7 @@ const generalContentCounterpartyQuestionnaires = document.querySelector(
 const generalContentAnalyticalData = document.querySelector("#analytical-data");
 const generalContentStructure = document.querySelector("#structure");
 const generalContentOffers = document.querySelector("#offers");
+const generalContentWaitingList = document.querySelector("#waiting-list");
 
 const arrayGeneralContent = [
     generalContentObjects,
@@ -229,6 +230,7 @@ const arrayGeneralContent = [
     generalContentAnalyticalData,
     generalContentStructure,
     generalContentOffers,
+    generalContentWaitingList,
 ];
 
 tabButtons.forEach((i) =>
