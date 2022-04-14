@@ -197,13 +197,43 @@ margin-top: 16px;
     }
     &__row {
         display: flex;
+        &_type_about-me {
+            @media (max-width: 800px) {
+               flex-wrap: wrap;
+            }
+        }
     }
     &__submit-btn {
         flex-shrink: 0;
+        margin-right: 200px;
         @include primary-btn($accent-TCX50);
         height: 48px;
         padding: 4px 12px;
         margin-top: 16px;
         width: 208px;
+        @media (max-width: 1100px) {
+            margin-right: 0;
+         }
+         @media (max-width: 800px) {
+            width: 100%;
+         }
+         @media (max-width: 640px) {
+            height: 32px;
+         }
+    }
+    &__label {
+        margin-right: 16px;
+        @media (max-width: 800px) {
+            width: unset;
+            flex:1;
+            &:last-of-type {
+                margin-right: 0;
+            }
+         }
+    }
+    &__input {
+        margin-right: 0;
+        @media (max-width: 800px) {
+         }
     }
 }
