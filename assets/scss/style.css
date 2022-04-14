@@ -1603,8 +1603,14 @@ main .container {
 
 .modal__cancel-btn_type_reset-password {
   width: 100%;
-  height: 40px;
+  min-height: 40px;
   background-color: white;
+}
+
+@media (max-width: 40rem) {
+  .modal__cancel-btn_type_reset-password {
+    min-height: 32px;
+  }
 }
 
 .custom-text-input {
@@ -3777,6 +3783,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: -ms-flexbox;
   display: flex;
   margin-left: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .menu__profile {
@@ -3911,7 +3920,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   width: 467px;
-  background-color: #050505;
+  background-color: #2A2E33;
   border-radius: 4px;
   color: white;
   font-style: normal;
@@ -3920,7 +3929,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   line-height: 16px;
   letter-spacing: 0.08px;
   padding: 10px 12px;
-  z-index: 1;
+  z-index: 2;
 }
 
 @media (max-width: 40rem) {
@@ -5667,9 +5676,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .main-submenu_style_division {
-  left: -268px;
+  left: -270px;
   right: 0;
-  top: 34px;
+  top: 32px;
 }
 
 .main-submenu_style_prof-page {
@@ -6570,9 +6579,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .main-popup__container_type_change-city {
-  height: 24.5rem;
+  height: 24.0625rem;
   min-width: 16.25rem;
   overflow: auto;
+}
+
+@media (max-width: 40rem) {
+  .main-popup__container_type_change-city {
+    margin: 20px 0;
+  }
 }
 
 .main-popup__container_type_notify {

@@ -38,9 +38,12 @@
             background-color: $grey30;
         }
         &_type_change-city {
-            height: rem(392px);
+            height: rem(385px);
             min-width: rem(260px);
             overflow: auto;
+            @media #{$screen-mobile} {
+                margin: 20px 0;
+            }
         }
         &_type_notify {
             min-width: 600px;

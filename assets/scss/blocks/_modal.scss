@@ -100,8 +100,11 @@
     &__cancel-btn {
         &_type_reset-password {
             width: 100%;
-            height: 40px;
+            min-height: 40px;
             background-color: white;
+            @media #{$screen-mobile} {
+                min-height: 32px;
+            }
         }
     }
 }
