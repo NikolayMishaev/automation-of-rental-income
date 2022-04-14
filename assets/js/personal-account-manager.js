@@ -7,6 +7,7 @@ import {
 // стейты
 
 const state = {
+    currentOpenPopup: null,
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
     cursorsSelect: {
@@ -831,24 +832,22 @@ objectList.forEach((i, c) => {
             return;
         }
         popupEditCardObject.style.display = "flex";
+        state.currentOpenPopup = popupEditCardObject;
+        document.addEventListener("keydown", handleEscClose);
     });
 });
 
-// логика закрытия попапов редактирования аватара, передачи объекта, передачи обращения
+// логика закрытия попапов по клавише Escape
 
-const popupsBody = document.querySelectorAll(".modal");
-
-popupsBody.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (
-            e.target.closest(".modal__close-btn") ||
-            e.target.closest(".modal__cancel-btn") ||
-            e.target.classList.contains("modal")
-        ) {
-            e.target.closest(".modal").style.display = "none";
+function handleEscClose(e) {
+    if (e.key === "Escape") {
+        if (state.currentOpenPopup) {
+            state.currentOpenPopup.style.display = "none";
+            state.currentOpenPopup = null;
+            document.removeEventListener("keydown", handleEscClose);
         }
-    })
-);
+    }
+}
 
 // логика наведения на текст в списке
 

@@ -61,6 +61,9 @@
       padding: 4px;
       margin-bottom: 28px;
     }
+    &_type_reset-password {
+        margin-bottom: 16px;
+    }
   }
   &__registration-btn {
     @include primary-btn($accent-TCX50);
@@ -76,6 +79,10 @@
   }
   &__registration-link {
     margin: auto;
+    display: block;
+    &:last-child {
+        margin-top: 10px;
+    }
   }
   .custom-text-input {
     @media #{$screen-mobile} {

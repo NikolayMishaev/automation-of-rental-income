@@ -2528,7 +2528,7 @@
                     </div>
                     <div class="main__column  main__column_type_filters">
                         <div class="main-filters">
-                            <form class="main-form">
+                            <form class="main-form" action="http://foo.com" method="get">
                                 <label class="mix-label">
                                     <input type="text" class="main-form__input main-form__input_type_search mix-input"
                                         placeholder=" ">
@@ -2829,13 +2829,13 @@
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input
-                                                            type="checkbox"
+                                                            type="checkbox" name='space-one' value='id23'
                                                             class="main-form__input main-form__input_type_checkbox"><span class="main-form__visible-input"></span>Торговый центр</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
                                                     <label
                                                         class="main-form__label-checkbox main-form__label-checkbox_type_select select-change-type"><input
-                                                            type="checkbox"
+                                                            type="checkbox" name='space-one' value='id45'
                                                             class="main-form__input main-form__input_type_checkbox"><span class="main-form__visible-input"></span>Отдельно стоящее здание</label>
                                                 </li>
                                                 <li class="main-submenu__item main-submenu__item_type_change-type">
@@ -3124,7 +3124,7 @@
     </div>
 
     <!-- модальное окно для входа в аккаунт  -->
-    <div class="modal modal-login">
+    <div id="modal-login" class="modal modal-login ">
         <div class="modal__content">
             <div class="modal__header">
                 <h3>Вход</h3>
@@ -3174,12 +3174,95 @@
                 </form>
                 <!-- поменять ссылку -->
                 <a class="modal-login__registration-link" href="#">Зарегистрироваться</a>
+                <a aria-label="modal-reset-password" class="modal-login__registration-link button-open-popup" href="#">Сбросить пароль</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- модальное окно для сброса пароля  -->
+    <div id='modal-reset-password' class="modal modal-login modal_type_reset-password mix-display-none">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3>Сброс пароля</h3>
+                <button class="modal__close-btn">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.3002 0.709971C12.9102 0.319971 12.2802 0.319971 11.8902 0.709971L7.00022 5.58997L2.11022 0.699971C1.72022 0.309971 1.09021 0.309971 0.700215 0.699971C0.310215 1.08997 0.310215 1.71997 0.700215 2.10997L5.59022 6.99997L0.700215 11.89C0.310215 12.28 0.310215 12.91 0.700215 13.3C1.09021 13.69 1.72022 13.69 2.11022 13.3L7.00022 8.40997L11.8902 13.3C12.2802 13.69 12.9102 13.69 13.3002 13.3C13.6902 12.91 13.6902 12.28 13.3002 11.89L8.41021 6.99997L13.3002 2.10997C13.6802 1.72997 13.6802 1.08997 13.3002 0.709971Z"
+                            fill="#6C737D" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <form id="form-reset-password" action="">
+                    <div class="modal-login__password-container">
+                        <label class="custom-text-input modal-login__password">
+                            <input type="password" class="input-password" required minlength="5" maxlength="100" />
+                            <span class="custom-text-input__label">Старый пароль</span>
+                        </label>
+                        <div class="modal-login__password-icon">
+                            <svg class="modal-login__password-icon_active" width="20" height="11" viewBox="0 0 20 11"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.88579 0.536197C1.62953 0.0469655 1.02518 -0.141892 0.535953 0.114372C0.0467214 0.370636 -0.142136 0.97498 0.114128 1.46421C0.60982 2.41053 1.26362 3.36662 2.07615 4.23713L0.292893 6.02039C-0.0976311 6.41091 -0.0976311 7.04408 0.292893 7.4346C0.683417 7.82513 1.31658 7.82513 1.70711 7.4346L3.56143 5.58028C4.39829 6.21382 5.34943 6.74822 6.41522 7.12542L5.75714 9.75772C5.6232 10.2935 5.94896 10.8365 6.48475 10.9704C7.02055 11.1044 7.56348 10.7786 7.69743 10.2428L8.35626 7.60747C8.88199 7.68584 9.42988 7.72748 9.99996 7.72748C10.5701 7.72748 11.118 7.68583 11.6437 7.60746L12.3026 10.2428C12.4365 10.7786 12.9795 11.1044 13.5152 10.9704C14.051 10.8365 14.3768 10.2935 14.2429 9.75772L13.5848 7.1254C14.6506 6.74819 15.6017 6.21379 16.4385 5.58024L18.2929 7.4346C18.6834 7.82513 19.3166 7.82513 19.7071 7.4346C20.0976 7.04408 20.0976 6.41091 19.7071 6.02039L17.9238 4.23708C18.7363 3.36658 19.3901 2.41052 19.8858 1.46421C20.1421 0.97498 19.9532 0.370636 19.464 0.114372C18.9747 -0.141892 18.3704 0.0469655 18.1141 0.536197C16.7274 3.18355 14.0155 5.72748 9.99996 5.72748C5.98444 5.72748 3.2725 3.18355 1.88579 0.536197Z"
+                                    fill="#6C737D" />
+                            </svg>
+                            <svg width="22" height="15" viewBox="0 0 22 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11 2C14.79 2 18.17 4.13 19.82 7.5C18.17 10.87 14.79 13 11 13C7.21 13 3.83 10.87 2.18 7.5C3.83 4.13 7.21 2 11 2ZM11 0C6 0 1.73 3.11 0 7.5C1.73 11.89 6 15 11 15C16 15 20.27 11.89 22 7.5C20.27 3.11 16 0 11 0ZM11 5C12.38 5 13.5 6.12 13.5 7.5C13.5 8.88 12.38 10 11 10C9.62 10 8.5 8.88 8.5 7.5C8.5 6.12 9.62 5 11 5ZM11 3C8.52 3 6.5 5.02 6.5 7.5C6.5 9.98 8.52 12 11 12C13.48 12 15.5 9.98 15.5 7.5C15.5 5.02 13.48 3 11 3Z"
+                                    fill="#6C737D" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="modal-login__password-container">
+                        <label class="custom-text-input modal-login__password">
+                            <input type="password" class="input-password" required minlength="5" maxlength="100" />
+                            <span class="custom-text-input__label">Новый пароль</span>
+                        </label>
+                        <div class="modal-login__password-icon">
+                            <svg class="modal-login__password-icon_active" width="20" height="11" viewBox="0 0 20 11"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.88579 0.536197C1.62953 0.0469655 1.02518 -0.141892 0.535953 0.114372C0.0467214 0.370636 -0.142136 0.97498 0.114128 1.46421C0.60982 2.41053 1.26362 3.36662 2.07615 4.23713L0.292893 6.02039C-0.0976311 6.41091 -0.0976311 7.04408 0.292893 7.4346C0.683417 7.82513 1.31658 7.82513 1.70711 7.4346L3.56143 5.58028C4.39829 6.21382 5.34943 6.74822 6.41522 7.12542L5.75714 9.75772C5.6232 10.2935 5.94896 10.8365 6.48475 10.9704C7.02055 11.1044 7.56348 10.7786 7.69743 10.2428L8.35626 7.60747C8.88199 7.68584 9.42988 7.72748 9.99996 7.72748C10.5701 7.72748 11.118 7.68583 11.6437 7.60746L12.3026 10.2428C12.4365 10.7786 12.9795 11.1044 13.5152 10.9704C14.051 10.8365 14.3768 10.2935 14.2429 9.75772L13.5848 7.1254C14.6506 6.74819 15.6017 6.21379 16.4385 5.58024L18.2929 7.4346C18.6834 7.82513 19.3166 7.82513 19.7071 7.4346C20.0976 7.04408 20.0976 6.41091 19.7071 6.02039L17.9238 4.23708C18.7363 3.36658 19.3901 2.41052 19.8858 1.46421C20.1421 0.97498 19.9532 0.370636 19.464 0.114372C18.9747 -0.141892 18.3704 0.0469655 18.1141 0.536197C16.7274 3.18355 14.0155 5.72748 9.99996 5.72748C5.98444 5.72748 3.2725 3.18355 1.88579 0.536197Z"
+                                    fill="#6C737D" />
+                            </svg>
+                            <svg width="22" height="15" viewBox="0 0 22 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11 2C14.79 2 18.17 4.13 19.82 7.5C18.17 10.87 14.79 13 11 13C7.21 13 3.83 10.87 2.18 7.5C3.83 4.13 7.21 2 11 2ZM11 0C6 0 1.73 3.11 0 7.5C1.73 11.89 6 15 11 15C16 15 20.27 11.89 22 7.5C20.27 3.11 16 0 11 0ZM11 5C12.38 5 13.5 6.12 13.5 7.5C13.5 8.88 12.38 10 11 10C9.62 10 8.5 8.88 8.5 7.5C8.5 6.12 9.62 5 11 5ZM11 3C8.52 3 6.5 5.02 6.5 7.5C6.5 9.98 8.52 12 11 12C13.48 12 15.5 9.98 15.5 7.5C15.5 5.02 13.48 3 11 3Z"
+                                    fill="#6C737D" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="modal-login__password-container">
+                        <label class="custom-text-input modal-login__password">
+                            <input type="password" class="input-password" required minlength="5" maxlength="100" />
+                            <span class="custom-text-input__label">Подтвердить пароль</span>
+                        </label>
+                        <div class="modal-login__password-icon">
+                            <svg class="modal-login__password-icon_active" width="20" height="11" viewBox="0 0 20 11"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.88579 0.536197C1.62953 0.0469655 1.02518 -0.141892 0.535953 0.114372C0.0467214 0.370636 -0.142136 0.97498 0.114128 1.46421C0.60982 2.41053 1.26362 3.36662 2.07615 4.23713L0.292893 6.02039C-0.0976311 6.41091 -0.0976311 7.04408 0.292893 7.4346C0.683417 7.82513 1.31658 7.82513 1.70711 7.4346L3.56143 5.58028C4.39829 6.21382 5.34943 6.74822 6.41522 7.12542L5.75714 9.75772C5.6232 10.2935 5.94896 10.8365 6.48475 10.9704C7.02055 11.1044 7.56348 10.7786 7.69743 10.2428L8.35626 7.60747C8.88199 7.68584 9.42988 7.72748 9.99996 7.72748C10.5701 7.72748 11.118 7.68583 11.6437 7.60746L12.3026 10.2428C12.4365 10.7786 12.9795 11.1044 13.5152 10.9704C14.051 10.8365 14.3768 10.2935 14.2429 9.75772L13.5848 7.1254C14.6506 6.74819 15.6017 6.21379 16.4385 5.58024L18.2929 7.4346C18.6834 7.82513 19.3166 7.82513 19.7071 7.4346C20.0976 7.04408 20.0976 6.41091 19.7071 6.02039L17.9238 4.23708C18.7363 3.36658 19.3901 2.41052 19.8858 1.46421C20.1421 0.97498 19.9532 0.370636 19.464 0.114372C18.9747 -0.141892 18.3704 0.0469655 18.1141 0.536197C16.7274 3.18355 14.0155 5.72748 9.99996 5.72748C5.98444 5.72748 3.2725 3.18355 1.88579 0.536197Z"
+                                    fill="#6C737D" />
+                            </svg>
+                            <svg width="22" height="15" viewBox="0 0 22 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11 2C14.79 2 18.17 4.13 19.82 7.5C18.17 10.87 14.79 13 11 13C7.21 13 3.83 10.87 2.18 7.5C3.83 4.13 7.21 2 11 2ZM11 0C6 0 1.73 3.11 0 7.5C1.73 11.89 6 15 11 15C16 15 20.27 11.89 22 7.5C20.27 3.11 16 0 11 0ZM11 5C12.38 5 13.5 6.12 13.5 7.5C13.5 8.88 12.38 10 11 10C9.62 10 8.5 8.88 8.5 7.5C8.5 6.12 9.62 5 11 5ZM11 3C8.52 3 6.5 5.02 6.5 7.5C6.5 9.98 8.52 12 11 12C13.48 12 15.5 9.98 15.5 7.5C15.5 5.02 13.48 3 11 3Z"
+                                    fill="#6C737D" />
+                            </svg>
+                        </div>
+                    </div>
+                    <button type="submit" class="modal-login__login-btn modal-login__login-btn_type_reset-password">Войти</button>
+                    <button type='button' class="modal__cancel-btn modal__cancel-btn_type_reset-password">Отмена</button>
+                </form>
             </div>
         </div>
     </div>
 
     <!-- модальное окно для регистрации  -->
-    <div class="modal modal-registration">
+    <div class="modal modal-registration ">
         <div class="modal__content">
             <div class="modal__header">
                 <h3>Регистрация</h3>

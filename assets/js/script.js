@@ -1,3 +1,4 @@
+const state = { currentOpenPopup: null };
 const modalOfferPrice = document.querySelector(".modal-offer-price");
 const offerBtn = document.querySelectorAll(".info-card__offer-btn");
 const modalForm = document.querySelector(".modal-form");
@@ -7,6 +8,8 @@ const contactBtn = document.querySelectorAll(".info-card__primary-btn");
 for (let index = 0; index < offerBtn.length; index++) {
     offerBtn[index].addEventListener("click", function () {
         modalOfferPrice.style.display = "flex";
+        state.currentOpenPopup = modalOfferPrice;
+        document.addEventListener("keydown", handleEscClose);
     });
 }
 
@@ -14,6 +17,8 @@ for (let index = 0; index < offerBtn.length; index++) {
 for (let index = 0; index < contactBtn.length; index++) {
     contactBtn[index].addEventListener("click", function () {
         modalForm.style.display = "flex";
+        state.currentOpenPopup = modalForm;
+        document.addEventListener("keydown", handleEscClose);
     });
 }
 
@@ -41,6 +46,8 @@ if (modalForm) {
 // открыть модалку
 contactBtn.onclick = function () {
     modalForm.style.display = "flex";
+    state.currentOpenPopup = modalForm;
+    document.addEventListener("keydown", handleEscClose);
 };
 
 // модальное окно "Вход"
@@ -52,6 +59,8 @@ const signInBtn = document.querySelector("#link-signIn");
 if (signInBtn) {
     signInBtn.onclick = function () {
         modalLogin.style.display = "flex";
+        state.currentOpenPopup = modalLogin;
+        document.addEventListener("keydown", handleEscClose);
     };
 }
 if (modalLogin) {
@@ -666,6 +675,8 @@ const registerBtn = document.querySelector("#link-register");
 if (registerBtn) {
     registerBtn.onclick = function () {
         modalRegistration.style.display = "flex";
+        state.currentOpenPopup = modalRegistration;
+        document.addEventListener("keydown", handleEscClose);
     };
 }
 
@@ -691,4 +702,16 @@ for (let index = 0; index < submitRegBtn.length; index++) {
         } else return;
         modalRWarningReg[index].style.display = "flex";
     });
+}
+
+// логика закрытия попапов по клавише Escape
+
+function handleEscClose(e) {
+    if (e.key === "Escape") {
+        if (state.currentOpenPopup) {
+            state.currentOpenPopup.style.display = "none";
+            state.currentOpenPopup = null;
+            document.removeEventListener("keydown", handleEscClose);
+        }
+    }
 }

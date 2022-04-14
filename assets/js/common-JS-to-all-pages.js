@@ -12,8 +12,10 @@ onload = function () {
 // стейты
 
 const state = {
+    currentOpenPopup: null,
     "popup-city": document.querySelector("#popup-city"),
     "popup-notify": document.querySelector("#popup-notify"),
+    "modal-reset-password": document.querySelector("#modal-reset-password"),
 };
 
 // общие функции
@@ -53,11 +55,20 @@ function switchButtons(
 
 const buttonsOpenPopup = document.querySelectorAll(".button-open-popup");
 const inputChangeCity = document.querySelector("#input-change-city");
+const modalLogin = document.querySelector(".modal-login");
 
 buttonsOpenPopup.forEach((i) =>
     i.addEventListener("click", (e) => {
+        document.addEventListener("keydown", handleEscClose);
         inputChangeCity.value = "";
+        if (state.currentOpenPopup) {
+            addClassElement(state.currentOpenPopup, "mix-display-none");
+        }
+        state.currentOpenPopup = state[i.ariaLabel];
         removeClassElement(state[i.ariaLabel], "mix-display-none");
+        if (i.ariaLabel === "modal-reset-password") {
+            modalLogin.style = "none";
+        }
     })
 );
 
@@ -73,9 +84,22 @@ overlaysPopup.forEach((i) =>
             e.target.classList.contains("button-close-popup")
         ) {
             addClassElement(i, "mix-display-none");
+            state.currentOpenPopup = null;
         }
     })
 );
+if (state["modal-reset-password"]) {
+    state["modal-reset-password"].addEventListener("click", (e) => {
+        if (
+            e.target.classList.contains("modal") ||
+            e.target.classList.contains("modal__cancel-btn") ||
+            e.target.closest(".modal__close-btn")
+        ) {
+            addClassElement(state["modal-reset-password"], "mix-display-none");
+            state.currentOpenPopup = null;
+        }
+    });
+}
 
 // логика работы попапа выбора города
 
@@ -153,5 +177,31 @@ function sendRequest(target) {
         addClassElement(popupChangeCity, "mix-display-none");
     } else {
         showInputError();
+    }
+}
+
+// логика закрытия модалок по оверлею
+
+const modalAll = document.querySelectorAll(".modal");
+
+modalAll.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (
+            e.target.classList.contains("modal") ||
+            e.target.classList.contains("modal__cancel-btn") ||
+            e.target.closest(".modal__close-btn")
+        ) {
+            e.target.style = "none";
+        }
+    })
+);
+
+function handleEscClose(e) {
+    if (e.key === "Escape") {
+        if (state.currentOpenPopup) {
+            addClassElement(state.currentOpenPopup, "mix-display-none");
+            state.currentOpenPopup = null;
+            document.removeEventListener("keydown", handleEscClose);
+        }
     }
 }

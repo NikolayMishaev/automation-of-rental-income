@@ -1941,10 +1941,13 @@ const avatarContainer = document.querySelector(
 const modalAvatar = document.querySelector(".modal-edit-avatar");
 const editAvatarBtn = document.querySelector(".icon_edit-avatar");
 
-editAvatarBtn.addEventListener(
-    "click",
-    () => (modalAvatar.style.display = "flex")
-);
+const state = { currentOpenPopup: null };
+
+editAvatarBtn.addEventListener("click", () => {
+    modalAvatar.style.display = "flex";
+    state.currentOpenPopup = modalAvatar;
+    document.addEventListener("keydown", handleEscClose);
+});
 
 avatarDownloadBtn.addEventListener("change", (e) => downloadAvatar(e));
 let avatarCropp = null;
@@ -1999,6 +2002,7 @@ function uploadAvatar(avatar) {
     let url = URL.createObjectURL(avatar);
     currentAvatar.src = url;
     modalAvatar.style.display = "none";
+    document.removeEventListener("keydown", handleEscClose);
 }
 
 const saveAvatarBtn = document.querySelector(".modal-edit-avatar__save-btn");
@@ -2011,7 +2015,35 @@ function closeModalWindow(modal, e) {
         e.target.closest(".modal__cancel-btn")
     ) {
         modal.style.display = "none";
+        document.removeEventListener("keydown", handleEscClose);
     }
 }
 
 modalAvatar.addEventListener("click", (e) => closeModalWindow(modalAvatar, e));
+
+function handleEscClose(e) {
+    if (e.key === "Escape") {
+        if (state.currentOpenPopup) {
+            state.currentOpenPopup.style.display = "none";
+            state.currentOpenPopup = null;
+            document.removeEventListener("keydown", handleEscClose);
+        }
+    }
+}
+
+// логика закрытия попапов редактирования аватара, передачи объекта, передачи обращения
+
+const popupsBody = document.querySelectorAll(".modal");
+
+popupsBody.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (
+            e.target.closest(".modal__close-btn") ||
+            e.target.closest(".modal__cancel-btn") ||
+            e.target.classList.contains("modal")
+        ) {
+            e.target.closest(".modal").style.display = "none";
+            document.removeEventListener("keydown", handleEscClose);
+        }
+    })
+);
