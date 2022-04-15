@@ -1613,6 +1613,31 @@ main .container {
   }
 }
 
+.modal__question {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: url("./../images/icons/modal-question.svg") no-repeat center;
+  width: 16px;
+  height: 16px;
+}
+
+.modal__question-outer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal__question-outer:hover {
+  cursor: pointer;
+}
+
+.modal__question-outer:hover + .tooltip {
+  opacity: 1;
+}
+
 .custom-text-input {
   background-color: white;
   position: relative;
@@ -1623,12 +1648,25 @@ main .container {
   border: 1px solid #b4bbc6;
 }
 
+.custom-text-input__caption {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  opacity: 0;
+  color: red;
+}
+
+.custom-text-input__caption_active {
+  opacity: 1;
+}
+
 .custom-text-input input {
   width: 100%;
   height: 48px;
   border: 1px solid #cfd4dc;
   border-radius: 4px;
   padding: 20px 12px 4px;
+  padding-right: 25px;
   font-size: 16px;
   color: #222429;
   background-color: transparent;
@@ -1680,6 +1718,10 @@ main .container {
 }
 
 .custom-text-input__error {
+  border: 2px solid #f44336 !important;
+}
+
+.custom-text-input__error-border {
   border: 2px solid #f44336 !important;
 }
 
@@ -2920,6 +2962,18 @@ main .container {
   line-height: 16px;
   letter-spacing: 0.08px;
   padding: 10px 12px;
+}
+
+.tooltip_type_register {
+  right: 0px;
+  bottom: 22px;
+  width: 250px;
+}
+
+.tooltip__icon {
+  position: absolute;
+  bottom: -4px;
+  right: 4px;
 }
 
 #map {

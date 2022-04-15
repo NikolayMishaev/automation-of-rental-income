@@ -107,4 +107,24 @@
             }
         }
     }
+    &__question {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        background: url('./../images/icons/modal-question.svg') no-repeat center;
+        width: 16px;
+        height: 16px;
+    }
+    &__question-outer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__question-outer:hover + .tooltip {
+        opacity: 1;
+    }
 }

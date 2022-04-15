@@ -613,3 +613,23 @@ fieldsSort.forEach((i) => {
             i.children[0].textContent.trim();
     }
 });
+
+// логина регистрации
+
+const inputPassword = document.querySelector(".input-register-password");
+const captionInputPassword = document.querySelector(
+    ".custom-text-input__caption"
+);
+
+inputPassword.addEventListener("input", () => {
+    console.log("here");
+    if (inputPassword.value.length < 8) {
+        inputPassword.classList.add("custom-text-input__error-border");
+        captionInputPassword.classList.add("custom-text-input__caption_active");
+    } else {
+        inputPassword.classList.remove("custom-text-input__error-border");
+        captionInputPassword.classList.remove(
+            "custom-text-input__caption_active"
+        );
+    }
+});

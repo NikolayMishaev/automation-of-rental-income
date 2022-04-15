@@ -11,4 +11,14 @@
   line-height: 16px;
   letter-spacing: 0.08px;
   padding: 10px 12px;
+  &_type_register {
+    right: 0px;
+    bottom: 22px;
+    width: 250px;
+  }
+  &__icon {
+      position: absolute;
+      bottom: -4px;
+      right: 4px;
+  }
 }

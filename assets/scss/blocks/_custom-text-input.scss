@@ -5,13 +5,23 @@
   &:hover input {
     border: 1px solid $grey-40;
   }
-
+  &__caption {
+      position: absolute;
+      bottom: -16px;
+      left: 0;
+      opacity: 0;
+      color: red;
+      &_active {
+          opacity: 1;
+      }
+  }
   input {
     width: 100%;
     height: 48px;
     border: 1px solid $grey30;
     border-radius: 4px;
     padding: 20px 12px 4px;
+    padding-right: 25px;
     font-size: 16px;
     color: $grey100;
     background-color: transparent;
@@ -54,6 +64,9 @@
     }
   }
   &__error {
+    border: 2px solid $error !important;
+  }
+  &__error-border {
     border: 2px solid $error !important;
   }
   textarea {
