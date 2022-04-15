@@ -409,13 +409,15 @@ const checkClickOutsideSelect = (e) => {
     }
     if (!e.target.closest(".main-form__label_type_select")) {
         // скрыть текущее подменю
-        state.currentOpenSubmenuSelectClassType.submenu.classList.remove(
-            "mix-visible"
-        );
-        state.currentOpenSubmenuSelectClassType.cursor.classList.remove(
-            "main-form__cursor_active"
-        );
-        document.removeEventListener("click", checkClickOutsideSelect);
+        if (state.currentOpenSubmenuSelectClassType) {
+            state.currentOpenSubmenuSelectClassType.submenu.classList.remove(
+                "mix-visible"
+            );
+            state.currentOpenSubmenuSelectClassType.cursor.classList.remove(
+                "main-form__cursor_active"
+            );
+            document.removeEventListener("click", checkClickOutsideSelect);
+        }
     }
 };
 
@@ -598,3 +600,16 @@ function replaceActiveClass(array, currentValue) {
         })
     );
 }
+
+// логика работы селекта Сортировать, установка значения в инпут при загрузке страницы по активному классу
+
+const fieldsSort = document.querySelectorAll(
+    ".main-submenu__item_style_prof-control-panel-sort"
+);
+
+fieldsSort.forEach((i) => {
+    if (i.classList.contains("main-submenu__item_active")) {
+        state.inputsSelect["main-sort"].value =
+            i.children[0].textContent.trim();
+    }
+});
