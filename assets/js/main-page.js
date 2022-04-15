@@ -614,7 +614,7 @@ fieldsSort.forEach((i) => {
     }
 });
 
-// логина регистрации
+// логика регистрации
 
 const inputPassword = document.querySelector(".input-register-password");
 const captionInputPassword = document.querySelector(
@@ -622,7 +622,6 @@ const captionInputPassword = document.querySelector(
 );
 
 inputPassword.addEventListener("input", () => {
-    console.log("here");
     if (inputPassword.value.length < 8) {
         inputPassword.classList.add("custom-text-input__error-border");
         captionInputPassword.classList.add("custom-text-input__caption_active");
@@ -632,4 +631,31 @@ inputPassword.addEventListener("input", () => {
             "custom-text-input__caption_active"
         );
     }
+});
+
+// проверка логина в окне регистрации
+
+const formRegistration = document.querySelector("#form-registration");
+const inputRegistrationLogin = document.querySelector(
+    "#input-registraion-login"
+);
+
+formRegistration.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log(location.href);
+    console.log(inputRegistrationLogin.value);
+    // fetch("", {
+    // 	method: "POST",
+    //     body: data_body,
+    // 	headers:{"content-type": "application/json"}
+    // 	})
+
+    // .then( (response) => {
+    //         if (response.status !== 200) {
+    // 			return Promise.reject();
+    //         }
+    // return response.text()
+    // })
+    // .then(i => console.log(i))
+    // .catch(() => console.log('ошибка'));
 });
