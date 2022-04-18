@@ -297,7 +297,7 @@ buttonsSelect.forEach((i) =>
 // логика наведения на текст в списке
 
 const listTable = document.querySelectorAll(
-    "#favourites .prof-table__row-content.heading-h5"
+    ".prof-table__row-content.heading-h5"
 );
 
 listTable.forEach((i) =>

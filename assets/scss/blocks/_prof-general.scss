@@ -128,10 +128,10 @@
         }
         &_type_iframe {
             padding-right: 0;
-            &::-webkit-scrollbar-thumb {
-                border-radius: 4px;
-                background-color: $grey30;
-            }
+        }
+        &_type_iframe-offers {
+            padding-right: 0;
+            min-height: 745px;
         }
     }
     &__message {

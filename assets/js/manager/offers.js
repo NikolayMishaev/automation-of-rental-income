@@ -211,55 +211,32 @@ const state = {
     },
 };
 
-// логика переключения кнопок на вкладке "Объекты": "Список", "Карточки"
+// логика наведения на текст в списке
 
-const objectsButtons = document.querySelectorAll(".objects-button");
+const listTable = document.querySelectorAll(
+    ".prof-table__row-content.heading-h5"
+);
+listTable.forEach((i) =>
+    i.addEventListener("mouseenter", (e) => {
+        const tooltip = document.createElement("div");
+        tooltip.classList.add("tooltip");
+        tooltip.innerHTML = `
+    <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.6364 3.3636L8 4.76837e-07L3.49691e-07 -2.22545e-07L3.3636 3.3636C3.71508 3.71508 4.28492 3.71508 4.6364 3.3636Z" fill="#2A2E33"></path>
+    </svg>
 
-const contentTable = document.querySelector("#objects-table");
-const contentCards = document.querySelector("#objects-cards");
-
-objectsButtons.forEach((i) =>
-    i.addEventListener("click", (e) =>
-        switchButtons(
-            e.target,
-            objectsButtons,
-            [contentTable, contentCards],
-            "prof-control-panel__button_active",
-            "mix-display-none"
-        )
-    )
+    <p class="tooltip__inner">${e.target.textContent}
+    </p>`;
+        e.target.prepend(tooltip);
+    })
 );
 
-// логика действий при загрузе страницы на определенном разрешении
-
-if (window.innerWidth < 1005) {
-    removeClassElement(contentCards, "mix-display-none");
-}
-
-// логика действий при ресайзе
-// общие функции для этого блока логики
-
-function resetActiveClassButton(arrayButtons) {
-    arrayButtons.forEach((i) => {
-        if (i.ariaLabel === "list") {
-            removeClassElement(i, "prof-control-panel__button_active");
-        } else {
-            addClassElement(i, "prof-control-panel__button_active");
-        }
-    });
-}
-
-window.addEventListener("resize", function (e) {
-    // если таблица скрыта, то ничего не делаем
-    if (e.target.innerWidth < 1005) {
-        if (!contentTable.classList.contains("mix-display-none")) {
-            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
-            removeClassElement(contentCards, "mix-display-none");
-            addClassElement(contentTable, "mix-display-none");
-            resetActiveClassButton(objectsButtons);
-        }
-    }
-});
+listTable.forEach((i) =>
+    i.addEventListener("mouseleave", (e) => {
+        const tooltip = e.target.querySelector(".tooltip");
+        if (tooltip) tooltip.remove();
+    })
+);
 
 // логика по работе селектов
 
@@ -441,72 +418,3 @@ buttonsSelect.forEach((i) =>
 function checkSubmenuSecondLevel(ariaLabel) {
     return ariaLabel.includes("division") || ariaLabel.includes("structure");
 }
-
-// логика открытия попапа объека
-
-const objectList = document.querySelectorAll(".prof-table__row_style_objects");
-const objectCards = document.querySelectorAll(".prof-card");
-const popupEditCardObject = document.querySelector(".modal-edit-card-object");
-
-objectCards.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (e.target.closest(".prof-label-checkbox")) {
-            return;
-        }
-        popupEditCardObject.style.display = "flex";
-    })
-);
-
-objectList.forEach((i, c) => {
-    if (c === 0) {
-        return;
-    }
-    i.addEventListener("click", (e) => {
-        if (e.target.closest(".prof-label-checkbox")) {
-            return;
-        }
-        popupEditCardObject.style.display = "flex";
-        state.currentOpenPopup = popupEditCardObject;
-        document.addEventListener("keydown", handleEscClose);
-    });
-});
-
-// логика закрытия попапов по клавише Escape
-
-function handleEscClose(e) {
-    if (e.key === "Escape") {
-        if (state.currentOpenPopup) {
-            state.currentOpenPopup.style.display = "none";
-            state.currentOpenPopup = null;
-            document.removeEventListener("keydown", handleEscClose);
-        }
-    }
-}
-
-// логика наведения на текст в списке
-
-const listTable = document.querySelectorAll(
-    ".prof-table__row-content.heading-h5"
-);
-
-listTable.forEach((i) =>
-    i.addEventListener("mouseenter", (e) => {
-        const tooltip = document.createElement("div");
-        tooltip.classList.add("tooltip");
-        tooltip.innerHTML = `
-    <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4.6364 3.3636L8 4.76837e-07L3.49691e-07 -2.22545e-07L3.3636 3.3636C3.71508 3.71508 4.28492 3.71508 4.6364 3.3636Z" fill="#2A2E33"></path>
-    </svg>
-
-    <p class="tooltip__inner">${e.target.textContent}
-    </p>`;
-        e.target.prepend(tooltip);
-    })
-);
-
-listTable.forEach((i) =>
-    i.addEventListener("mouseleave", (e) => {
-        const tooltip = e.target.querySelector(".tooltip");
-        if (tooltip) tooltip.remove();
-    })
-);

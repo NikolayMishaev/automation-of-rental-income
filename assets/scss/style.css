@@ -8224,9 +8224,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding-right: 0;
 }
 
-.prof-general__content_type_iframe::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: #cfd4dc;
+.prof-general__content_type_iframe-offers {
+  padding-right: 0;
+  min-height: 745px;
 }
 
 .prof-general__message {
