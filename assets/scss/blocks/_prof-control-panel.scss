@@ -252,7 +252,7 @@
         }
         &_type_sort {
             margin-top: 16px;
-            @media (max-width: rem(1010px)) {
+            @media (max-width: rem(980px)) {
                 margin-top: 0;
                 margin-left: 20px;
             }
@@ -285,7 +285,7 @@
             background-color: white !important;
         }
         &_type_filters {
-            @media (max-width: rem(1010px)) {
+            @media (max-width: rem(980px)) {
                 margin-left: auto;
             }
             @media (max-width: rem(861px)) {
@@ -544,7 +544,7 @@
             &:hover {
                 cursor: pointer;
             }
-            @media (max-width: rem(1010px)) {
+            @media (max-width: rem(980px)) {
                 margin-left: unset;
                 margin-right: auto;
             }
@@ -626,7 +626,7 @@
         border: 1px solid #e1e5eb;
         margin-right: auto;
         margin-top: 16px;
-        @media (max-width: rem(1010px)) {
+        @media (max-width: rem(980px)) {
             width: 100%;
             order: 1;
         }
