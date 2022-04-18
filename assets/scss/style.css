@@ -374,8 +374,8 @@ button {
   }
 }
 
-@media (max-width: 980px) {
-  .mix-only-desktop-980px {
+@media (max-width: 1004px) {
+  .mix-only-desktop-1004px {
     display: none !important;
   }
 }
@@ -9756,8 +9756,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prof-table__row {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 199px 90px 110px 180px 152px 172px;
-      grid-template-columns: 199px 90px 110px 180px 152px 172px;
+  -ms-grid-columns: 199px 90px 110px 180px 152px 210px;
+      grid-template-columns: 199px 90px 110px 180px 152px 210px;
   -webkit-column-gap: 16px;
           column-gap: 16px;
   -webkit-box-align: center;
@@ -9771,7 +9771,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-@media (max-width: 96.875rem) {
+@media (max-width: 63.125rem) {
   .prof-table__row {
     -ms-grid-columns: 199px 90px 110px 180px 152px 180px;
         grid-template-columns: 199px 90px 110px 180px 152px 180px;
@@ -9787,8 +9787,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__row_style_objects {
-  -ms-grid-columns: 327px 70px 120px 80px 90px 146px 56px;
-      grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
+  -ms-grid-columns: 327px 70px 120px 80px 90px 176px 56px;
+      grid-template-columns: 327px 70px 120px 80px 90px 176px 56px;
+}
+
+@media (max-width: 63.125rem) {
+  .prof-table__row_style_objects {
+    -ms-grid-columns: 327px 70px 120px 80px 90px 146px 56px;
+        grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
+  }
 }
 
 .prof-table__row_style_waiting-list {

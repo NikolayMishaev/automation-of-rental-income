@@ -5,7 +5,7 @@
     }
     &__row {
         display: grid;
-        grid-template-columns: 199px 90px 110px 180px 152px 172px;
+        grid-template-columns: 199px 90px 110px 180px 152px 210px;
         column-gap: 16px;
         align-items: center;
         border-top: 1px solid #e3e7e8;
@@ -13,7 +13,7 @@
         &:hover {
             cursor: pointer;
         }
-        @media (max-width: rem(1550px)) {
+        @media (max-width: rem(1010px)) {
             grid-template-columns: 199px 90px 110px 180px 152px 180px;
         }
         &:first-child {
@@ -23,7 +23,10 @@
             }
         }
         &_style_objects {
-            grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
+            grid-template-columns: 327px 70px 120px 80px 90px 176px 56px;
+            @media (max-width: rem(1010px)) {
+                grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
+            }
         }
         &_style_waiting-list {
             grid-template-columns: 200px 200px 200px 336px;
