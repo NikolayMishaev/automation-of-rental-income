@@ -1186,7 +1186,7 @@ fixedPopupTransferObjects.addEventListener("click", (e) => {
 // логика наведения на текст в списке
 
 const listTable = document.querySelectorAll(
-    "#objects .prof-table__row-content.heading-h5, #offers .prof-table__row-content.heading-h5"
+    "#objects .prof-table__row-content.heading-h5, #offers .prof-table__row-content.heading-h5, #analytical-data .prof-table__row-content.heading-h5, .prof-table__row-content_type_agent.heading-h5"
 );
 
 listTable.forEach((i) =>

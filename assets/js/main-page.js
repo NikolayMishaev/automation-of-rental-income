@@ -409,13 +409,15 @@ const checkClickOutsideSelect = (e) => {
     }
     if (!e.target.closest(".main-form__label_type_select")) {
         // скрыть текущее подменю
-        state.currentOpenSubmenuSelectClassType.submenu.classList.remove(
-            "mix-visible"
-        );
-        state.currentOpenSubmenuSelectClassType.cursor.classList.remove(
-            "main-form__cursor_active"
-        );
-        document.removeEventListener("click", checkClickOutsideSelect);
+        if (state.currentOpenSubmenuSelectClassType) {
+            state.currentOpenSubmenuSelectClassType.submenu.classList.remove(
+                "mix-visible"
+            );
+            state.currentOpenSubmenuSelectClassType.cursor.classList.remove(
+                "main-form__cursor_active"
+            );
+            document.removeEventListener("click", checkClickOutsideSelect);
+        }
     }
 };
 
@@ -598,3 +600,62 @@ function replaceActiveClass(array, currentValue) {
         })
     );
 }
+
+// логика работы селекта Сортировать, установка значения в инпут при загрузке страницы по активному классу
+
+const fieldsSort = document.querySelectorAll(
+    ".main-submenu__item_style_prof-control-panel-sort"
+);
+
+fieldsSort.forEach((i) => {
+    if (i.classList.contains("main-submenu__item_active")) {
+        state.inputsSelect["main-sort"].value =
+            i.children[0].textContent.trim();
+    }
+});
+
+// логика регистрации
+
+const inputPassword = document.querySelector(".input-register-password");
+const captionInputPassword = document.querySelector(
+    ".custom-text-input__caption"
+);
+
+inputPassword.addEventListener("input", () => {
+    if (inputPassword.value.length < 8) {
+        inputPassword.classList.add("custom-text-input__error-border");
+        captionInputPassword.classList.add("custom-text-input__caption_active");
+    } else {
+        inputPassword.classList.remove("custom-text-input__error-border");
+        captionInputPassword.classList.remove(
+            "custom-text-input__caption_active"
+        );
+    }
+});
+
+// проверка логина в окне регистрации
+
+const formRegistration = document.querySelector("#form-registration");
+const inputRegistrationLogin = document.querySelector(
+    "#input-registraion-login"
+);
+
+formRegistration.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log(location.href);
+    console.log(inputRegistrationLogin.value);
+    // fetch("", {
+    // 	method: "POST",
+    //     body: data_body,
+    // 	headers:{"content-type": "application/json"}
+    // 	})
+
+    // .then( (response) => {
+    //         if (response.status !== 200) {
+    // 			return Promise.reject();
+    //         }
+    // return response.text()
+    // })
+    // .then(i => console.log(i))
+    // .catch(() => console.log('ошибка'));
+});

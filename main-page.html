@@ -1499,7 +1499,7 @@
                                                     <a aria-label="item" href="#" class="main-submenu__link">Все</a>
                                                 </li>
                                                 <li
-                                                class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
                                                 >
                                                     <a aria-label="item" href="#" class="main-submenu__link">Сначала выгодные</a>
                                                 </li>
@@ -1514,7 +1514,7 @@
                                                     <a aria-label="item" href="#" class="main-submenu__link">От большей площади</a>
                                                 </li>
                                                 <li
-                                                class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                                                class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
                                                 >
                                                     <a aria-label="item" href="#" class="main-submenu__link">Сначала дорогие</a>
                                                 </li>
@@ -3275,23 +3275,35 @@
                 </button>
             </div>
             <div class="modal__body">
-                <form action="">
-                    <label class="custom-text-input modal-login__email">
+                <form id="form-registration" action="">
+                    <!-- <label class="custom-text-input modal-login__email">
                         <input class="input-email" required maxlength="100" />
                         <span class="custom-text-input__label">Введите имя</span>
-                    </label>
+                    </label> -->
                     <label class="custom-text-input modal-login__email">
                         <input class="input-email" maxlength="100" />
-                        <span class="custom-text-input__label">Введите фамилию</span>
+                        <span class="custom-text-input__label">Наименование организации</span>
+                        <div class="modal__question">
+                            <div class="modal__question-outer">
+                            </div>
+                            <div class="tooltip tooltip_type_register">
+                                <svg class="tooltip__icon" width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.6364 3.3636L8 4.76837e-07L3.49691e-07 -2.22545e-07L3.3636 3.3636C3.71508 3.71508 4.28492 3.71508 4.6364 3.3636Z" fill="#2A2E33"></path>
+                                </svg>
+
+                                <p class="tooltip__inner">Укажите название организации или ФИО, если вы являетесть ИП</p>
+                                </div>
+                        </div>
                     </label>
                     <label class="custom-text-input modal-login__email">
-                        <input class="input-email" required maxlength="100" />
+                        <input id="input-registraion-login" class="input-email" required maxlength="100" type="email" />
                         <span class="custom-text-input__label">E-mail или логин X5</span>
                     </label>
                     <div class="modal-login__password-container">
                         <label class="custom-text-input modal-login__password">
-                            <input type="password" class="input-password" required minlength="5" maxlength="50" />
+                            <input type="password" class="input-password input-register-password" required minlength="8" maxlength="50" />
                             <span class="custom-text-input__label">Пароль</span>
+                            <span class="custom-text-input__caption text-p3">минимальная длина пароля 8 символов</span>
                         </label>
                         <div class="modal-login__password-icon">
                             <svg class="modal-login__password-icon_active" width="20" height="11" viewBox="0 0 20 11"
