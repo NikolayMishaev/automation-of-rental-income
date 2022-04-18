@@ -8808,6 +8808,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.prof-control-panel__select-label_type_register {
+  color: #3C4142;
+  width: 100%;
+  -webkit-box-flex: 428px;
+      -ms-flex: 428px;
+          flex: 428px;
+}
+
 .prof-control-panel__select-label_type_transfer-objects.prof-control-panel__select-label_active:before {
   background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
   background-color: white !important;
@@ -9091,6 +9099,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
           transform: rotate(180deg);
 }
 
+.prof-control-panel__cursor_type_register {
+  top: 20px;
+  right: 15px;
+}
+
 .prof-control-panel__cursor_type_structure {
   background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
 }
@@ -9157,6 +9170,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__select-input_type_transfer-objects {
   width: 120px;
+}
+
+.prof-control-panel__select-input_type_register {
+  width: 100%;
+  margin-left: 0;
+  min-height: 48px;
+  color: #6C737D;
+}
+
+.prof-control-panel__select-input_type_register:disabled {
+  color: #6C737D;
 }
 
 .prof-control-panel__select-input_type_about-me {
