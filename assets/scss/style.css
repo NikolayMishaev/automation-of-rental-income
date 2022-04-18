@@ -8220,6 +8220,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.prof-general__content_type_iframe {
+  padding-right: 0;
+}
+
+.prof-general__content_type_iframe::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
+}
+
 .prof-general__message {
   margin-top: 1rem;
 }
@@ -9764,8 +9773,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 96.875rem) {
   .prof-table__row {
-    -ms-grid-columns: 199px 90px 110px 180px 152px 203px;
-        grid-template-columns: 199px 90px 110px 180px 152px 203px;
+    -ms-grid-columns: 199px 90px 110px 180px 152px 180px;
+        grid-template-columns: 199px 90px 110px 180px 152px 180px;
   }
 }
 

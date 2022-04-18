@@ -126,6 +126,13 @@
         @media #{$screen-mobile} {
             padding: 16px;
         }
+        &_type_iframe {
+            padding-right: 0;
+            &::-webkit-scrollbar-thumb {
+                border-radius: 4px;
+                background-color: $grey30;
+            }
+        }
     }
     &__message {
         margin-top: rem(16px);

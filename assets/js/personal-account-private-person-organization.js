@@ -95,14 +95,14 @@ function resetActiveClassButton(arrayButtons) {
 
 window.addEventListener("resize", function (e) {
     // если таблица скрыта, то ничего не делаем
-    if (e.target.innerWidth < 1151) {
-        if (!contentTable.classList.contains("mix-display-none")) {
-            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
-            removeClassElement(contentCards, "mix-display-none");
-            addClassElement(contentTable, "mix-display-none");
-            resetActiveClassButton(favouritesButtons);
-        }
-    }
+    // if (e.target.innerWidth < 1151) {
+    //     if (!contentTable.classList.contains("mix-display-none")) {
+    //         // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
+    //         removeClassElement(contentCards, "mix-display-none");
+    //         addClassElement(contentTable, "mix-display-none");
+    //         resetActiveClassButton(favouritesButtons);
+    //     }
+    // }
 
     if (e.target.innerWidth > 750) {
         resetVisibleDymanicClassAsideBlockMobile();
