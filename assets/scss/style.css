@@ -374,6 +374,12 @@ button {
   }
 }
 
+@media (max-width: 1010px) {
+  .mix-only-desktop-1010px {
+    display: none !important;
+  }
+}
+
 main .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8202,6 +8208,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-general__content {
+  width: 100%;
+  min-height: 645px;
+  border: 0;
   padding: 1.5rem;
 }
 
@@ -8918,14 +8927,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 16px;
 }
 
-@media (max-width: 71.875rem) {
+@media (max-width: 63.125rem) {
   .prof-control-panel__select-label_type_sort {
     margin-top: 0;
     margin-left: 20px;
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 53.8125rem) {
   .prof-control-panel__select-label_type_sort {
     position: static;
     margin-left: 16px;
@@ -8957,13 +8966,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: white !important;
 }
 
-@media (max-width: 71.875rem) {
+@media (max-width: 63.125rem) {
   .prof-control-panel__select-label_type_filters {
     margin-left: auto;
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 53.8125rem) {
   .prof-control-panel__select-label_type_filters {
     position: static;
     margin-left: 16px;
@@ -9291,14 +9300,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-@media (max-width: 71.875rem) {
+@media (max-width: 63.125rem) {
   .prof-control-panel__label-custom_type_alone {
     margin-left: unset;
     margin-right: auto;
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 53.8125rem) {
   .prof-control-panel__label-custom_type_alone {
     display: none;
   }
@@ -9392,7 +9401,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 16px;
 }
 
-@media (max-width: 71.875rem) {
+@media (max-width: 63.125rem) {
   .prof-control-panel__search {
     width: 100%;
     -webkit-box-ordinal-group: 2;
@@ -9401,7 +9410,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 53.8125rem) {
   .prof-control-panel__search {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;

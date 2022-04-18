@@ -119,6 +119,9 @@
         }
     }
     &__content {
+        width: 100%;
+        min-height: 645px;
+        border: 0;
         padding: rem(24px);
         @media #{$screen-mobile} {
             padding: 16px;
