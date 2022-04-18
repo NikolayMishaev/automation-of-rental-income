@@ -1478,6 +1478,7 @@ main .container {
 .modal__close-btn {
   width: 32px;
   height: 32px;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1624,6 +1625,10 @@ main .container {
   height: 16px;
 }
 
+.modal__question:hover {
+  z-index: 2;
+}
+
 .modal__question-outer {
   position: relative;
   width: 100%;
@@ -1636,6 +1641,7 @@ main .container {
 
 .modal__question-outer:hover + .tooltip {
   opacity: 1;
+  z-index: 2;
 }
 
 .custom-text-input {
