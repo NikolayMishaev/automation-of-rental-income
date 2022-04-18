@@ -155,6 +155,7 @@
         }
     }
     &__adress {
+        width: 100%;
         animation: animation-scroll-adress 10s infinite backwards;
         animation-play-state: paused;
         animation-play-state: running;
