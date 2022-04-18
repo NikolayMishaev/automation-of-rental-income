@@ -12,7 +12,7 @@
     <section class="prof-general__section">
         <div class="prof-control-panel">
           <h3 class="prof-control-panel__title heading-h3">
-            Количество зарегистрированных пользователей (контрагентов)
+            Количество просмотров объектов
           </h3>
           <a
             class="prof-control-panel__download-excel text-p1"
@@ -23,19 +23,19 @@
 
           <div class="prof-control-panel__row">
             <div
-              class="prof-control-panel__buttons-container prof-control-panel__buttons-container_type_analytic"
+              class="prof-control-panel__buttons-container prof-control-panel__buttons-container_type_diagram"
             >
               <button
                 aria-label="list"
-                class="prof-control-panel__button prof-control-panel__button_active heading-h4 user-button"
+                class="prof-control-panel__button prof-control-panel__button_active heading-h4 views-button"
               >
                 Список
               </button>
               <button
                 aria-label="graph"
-                class="prof-control-panel__button heading-h4 user-button"
+                class="prof-control-panel__button heading-h4 views-button"
               >
-                График
+                Диаграмма
               </button>
             </div>
             <label
@@ -49,23 +49,23 @@
               <span class="prof-control-panel__caption mix-caption">Поиск</span>
             </label>
             <label
-              aria-label="analytics-period-users"
+              aria-label="analytics-period-views"
               class="prof-control-panel__select-label prof-control-panel__select-label_type_period text-p2 button-toggle-select"
               >Период:
               <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
               <div
-                id="cursor-analytics-period-users"
+                id="cursor-analytics-period-views"
                 class="prof-control-panel__cursor"
               ></div>
               <input
-                id="input-analytics-period-users"
+                id="input-analytics-period-views"
                 type="text"
                 disabled="true"
                 class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
                 value="Месяц"
               />
               <div
-                id="submenu-analytics-period-users"
+                id="submenu-analytics-period-views"
                 class="main-submenu main-submenu_style_date"
               >
                 <ul class="main-submenu__list">
@@ -96,20 +96,20 @@
               </div>
             </label>
             <label
-              aria-label="analytics-users"
+              aria-label="analytics-views"
               class="prof-control-panel__select-label prof-control-panel__select-label_type_filters-analytic text-p2 button-toggle-select"
             >
               <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
 
               <input
-                id="input-analytics-users"
+                id="input-analytics-views"
                 type="text"
                 disabled="true"
                 class="prof-control-panel__input-hidden"
                 value=""
               />
               <div
-                id="submenu-analytics-users"
+                id="submenu-analytics-views"
                 class="main-submenu main-submenu_style_division"
               >
                 <ul class="main-submenu__list">
@@ -130,71 +130,191 @@
                       <span class="prof-control-panel__caption mix-caption">Поиск</span>
                     </label>
                   </li>
+                  <li
+                    class="main-submenu__item main-submenu__item_style_divisor prof-control-panel__title-submenu"
+                  >
+                    Категория объекта
+                  </li>
+                  <li class="main-submenu__item main-submenu__item_style_division">
+                    <label
+                      aria-label="division-views"
+                      class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2"
+                    >
+                      <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                      <div
+                        id="cursor-division-views"
+                        class="prof-control-panel__cursor prof-control-panel__cursor_type_agent"
+                      ></div>
+                      <input
+                        id="input-division-views"
+                        type="text"
+                        disabled="true"
+                        class="prof-control-panel__select-input prof-control-panel__select-input_type_division"
+                        value="Выберите категорию"
+                      />
+                      <div
+                        id="submenu-division-views"
+                        class="main-submenu main-submenu_style_prof-status"
+                      >
+                      <ul class="main-submenu__list">
+                        <li
+                            aria-label="item" class="main-submenu__item main-submenu__item_active">
+                            Категория_1</li>
+                        <li aria-label="item" class="main-submenu__item">Категория_2</li>
+                        <li aria-label="item" class="main-submenu__item">Категория_3</li>
+                        <li aria-label="item" class="main-submenu__item">Категория_4</li>
+                        <li aria-label="item" class="main-submenu__item">Категория_5</li>
+                    </ul>
+                      </div>
+                    </label>
+                  </li>
+                  <li
+                    class="main-submenu__item main-submenu__item_style_divisor prof-control-panel__title-submenu"
+                  >
+                  <p class="main-submenu__text">Площадь объекта, м<span class="main-submenu__index">2</span></p>
+                  </li>
+                  <li class="main-submenu__item main-submenu__item_style_division">
+                    <label class="prof-control-panel__label-number text-p2">
+                      От
+                      <input
+                        type="number"
+                        step="5"
+                        min="0"
+                        class="prof-control-panel__input-number"
+                        placeholder="0"
+                      />
+                    </label>
+                    <label class="prof-control-panel__label-number text-p2">
+                      До
+                      <input
+                        type="number"
+                        step="5"
+                        min="0"
+                        class="prof-control-panel__input-number"
+                        placeholder="0"
+                      />
+                    </label>
+                  </li>
+                  <li
+                    class="main-submenu__item main-submenu__item_style_divisor prof-control-panel__title-submenu"
+                  >
+                    Статус объекта
+                  </li>
+                  <li
+                    class="main-submenu__item main-submenu__item_style_prof-control-panel"
+                  >
+                    <label class="prof-control-panel__label-custom">
+                      <input
+                        id="input-select-status-checkbox-free"
+                        class="prof-control-panel__input-hidden"
+                        type="checkbox"
+                      />
+                      <span class="prof-control-panel__visible-checkbox"></span>
+                      Пункт_1</label
+                    >
+                  </li>
+                  <li
+                    class="main-submenu__item main-submenu__item_style_prof-control-panel"
+                  >
+                    <label class="prof-control-panel__label-custom">
+                      <input
+                        id="input-select-status-checkbox-free"
+                        class="prof-control-panel__input-hidden"
+                        type="checkbox"
+                      />
+                      <span class="prof-control-panel__visible-checkbox"></span>
+                      Пункт_2</label
+                    >
+                  </li>
+                  <li
+                    class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel"
+                  >
+                    <button
+                      class="prof-control-panel__button prof-control-panel__button_type_confirm"
+                    >
+                      Выбрать
+                    </button>
+                  </li>
                 </ul>
               </div>
             </label>
           </div>
         </div>
-
-        <div class="prof-general__analytics-container" aria-label="list" id="user-list">
+        <div
+          class="prof-general__analytics-container"
+          aria-label="list"
+          id="views-list"
+        >
           <div class="prof-table">
-            <div class="prof-table__row prof-table__row_style_one-row">
-              <p class="prof-table__text text-p2">
-                Новых пользователей:<span class="prof-table__number heading-h5"
-                  >142</span
-                >
-              </p>
-            </div>
-            <ul class="prof-table__row prof-table__row_style_users">
+            <ul class="prof-table__row prof-table__row_style_views">
               <li class="prof-table__row-heading text-p2">
                 №<span class="prof-marker prof-marker_type_sort"></span>
               </li>
               <li class="prof-table__row-heading text-p2">
-                Контрагент<span class="prof-marker prof-marker_type_sort"></span>
+                Просмотры<span class="prof-marker prof-marker_type_sort"></span>
               </li>
-              <li class="prof-table__row-heading text-p2">
-                Дата регистрации<span class="prof-marker prof-marker_type_sort"></span>
-              </li>
+              <li class="prof-table__row-heading text-p2">Номер</li>
               <li class="prof-table__row-heading text-p2">Город</li>
-              <li class="prof-table__row-heading text-p2">Вид деятельности</li>
+              <li class="prof-table__row-heading text-p2">Дата</li>
+              <li class="prof-table__row-heading text-p2">Статус</li>
+              <li class="prof-table__row-heading text-p2">Добавлено в избранное</li>
             </ul>
-            <ul class="prof-table__row prof-table__row_style_users">
+            <ul class="prof-table__row prof-table__row_style_views">
               <li class="prof-table__row-heading text-p2">1</li>
-              <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
-              <li class="prof-table__row-content heading-h5">02.02.2022</li>
-              <li class="prof-table__row-content heading-h5">Москва</li>
-              <li class="prof-table__row-content heading-h5">Продаю орехи</li>
+              <li class="prof-table__row-content heading-h5">203</li>
+              <li class="prof-table__row-content heading-h5">123456</li>
+              <li class="prof-table__row-content heading-h5">Нижний Новгород</li>
+              <li class="prof-table__row-content heading-h5">01.01.2022</li>
+              <li class="prof-table__row-content text-p3">
+                <span class="prof-marker prof-marker_type_green"></span> Свободно
+              </li>
+              <li class="prof-table__row-content heading-h5">12</li>
             </ul>
-            <ul class="prof-table__row prof-table__row_style_users">
+            <ul class="prof-table__row prof-table__row_style_views">
               <li class="prof-table__row-heading text-p2">2</li>
-              <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
-              <li class="prof-table__row-content heading-h5">02.02.2022</li>
-              <li class="prof-table__row-content heading-h5">Москва</li>
-              <li class="prof-table__row-content heading-h5">Продаю орехи</li>
+              <li class="prof-table__row-content heading-h5">203</li>
+              <li class="prof-table__row-content heading-h5">123456</li>
+              <li class="prof-table__row-content heading-h5">Нижний Новгород</li>
+              <li class="prof-table__row-content heading-h5">01.01.2022</li>
+              <li class="prof-table__row-content text-p3">
+                <span class="prof-marker prof-marker_type_green"></span> Свободно
+              </li>
+              <li class="prof-table__row-content heading-h5">12</li>
             </ul>
-            <ul class="prof-table__row prof-table__row_style_users">
+            <ul class="prof-table__row prof-table__row_style_views">
               <li class="prof-table__row-heading text-p2">3</li>
-              <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
-              <li class="prof-table__row-content heading-h5">02.02.2022</li>
-              <li class="prof-table__row-content heading-h5">Москва</li>
-              <li class="prof-table__row-content heading-h5">Продаю орехи</li>
+              <li class="prof-table__row-content heading-h5">203</li>
+              <li class="prof-table__row-content heading-h5">123456</li>
+              <li class="prof-table__row-content heading-h5">Нижний Новгород</li>
+              <li class="prof-table__row-content heading-h5">01.01.2022</li>
+              <li class="prof-table__row-content text-p3">
+                <span class="prof-marker prof-marker_type_red"></span>Скоро освободится
+              </li>
+              <li class="prof-table__row-content heading-h5">12</li>
             </ul>
-            <ul class="prof-table__row prof-table__row_style_users">
+            <ul class="prof-table__row prof-table__row_style_views">
               <li class="prof-table__row-heading text-p2">4</li>
-              <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
-              <li class="prof-table__row-content heading-h5">02.02.2022</li>
-              <li class="prof-table__row-content heading-h5">Москва</li>
-              <li class="prof-table__row-content heading-h5">Продаю орехи</li>
+              <li class="prof-table__row-content heading-h5">203</li>
+              <li class="prof-table__row-content heading-h5">123456</li>
+              <li class="prof-table__row-content heading-h5">Нижний Новгород</li>
+              <li class="prof-table__row-content heading-h5">01.01.2022</li>
+              <li class="prof-table__row-content text-p3">
+                <span class="prof-marker prof-marker_type_red"></span>Скоро освободится
+              </li>
+              <li class="prof-table__row-content heading-h5">12</li>
             </ul>
-            <ul class="prof-table__row prof-table__row_style_users">
+            <ul class="prof-table__row prof-table__row_style_views">
               <li class="prof-table__row-heading text-p2">5</li>
-              <li class="prof-table__row-content heading-h5">Фомина Анастасия</li>
-              <li class="prof-table__row-content heading-h5">02.02.2022</li>
-              <li class="prof-table__row-content heading-h5">Москва</li>
-              <li class="prof-table__row-content heading-h5">Продаю орехи</li>
+              <li class="prof-table__row-content heading-h5">203</li>
+              <li class="prof-table__row-content heading-h5">123456</li>
+              <li class="prof-table__row-content heading-h5">Нижний Новгород</li>
+              <li class="prof-table__row-content heading-h5">01.01.2022</li>
+              <li class="prof-table__row-content text-p3">
+                <span class="prof-marker prof-marker_type_green"></span> Свободно
+              </li>
+              <li class="prof-table__row-content heading-h5">12</li>
             </ul>
           </div>
-
           <div class="main main_page_profile">
             <div class="main__pagination">
                 <nav class="pagination">
@@ -242,23 +362,23 @@
 
             <div class="prof-control-panel">
               <label
-                aria-label="analytics-page-users"
+                aria-label="analytics-page-views"
                 class="prof-control-panel__select-label text-p2 button-toggle-select"
                 >Показывать строк:
                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                 <div
-                  id="cursor-analytics-page-users"
+                  id="cursor-analytics-page-views"
                   class="prof-control-panel__cursor"
                 ></div>
                 <input
-                  id="input-analytics-page-users"
+                  id="input-analytics-page-views"
                   type="text"
                   disabled="true"
                   class="prof-control-panel__select-input prof-control-panel__select-input_type_page"
                   value="5"
                 />
                 <div
-                  id="submenu-analytics-page-users"
+                  id="submenu-analytics-page-views"
                   class="main-submenu main-submenu_style_prof-page-second"
                 >
                 <ul class="main-submenu__list">
@@ -285,7 +405,7 @@
           <canvas id="graph2" width="400" height="400"></canvas>
         </div>
         <div
-        class="prof-graph mix-display-none mix-display-none"
+        class="prof-graph-small mix-display-none mix-display-none"
         aria-label="graph"
         id="views-graph"
       >

@@ -355,7 +355,7 @@
         }
         &_type_period {
             margin-left: 16px;
-            @media (max-width: rem(1000px)) {
+            @media (max-width: rem(900px)) {
                 width: 32px;
                 height: 32px;
                 position: static;
@@ -651,6 +651,10 @@
             width: unset;
             flex: 1;
             margin: 0 24px;
+            @media (max-width: rem(1004px)) {
+                width: unset;
+                order: unset;
+            }
         }
         &_type_agent {
             width: unset;

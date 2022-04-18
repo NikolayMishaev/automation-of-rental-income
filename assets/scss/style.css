@@ -8229,6 +8229,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   min-height: 745px;
 }
 
+.prof-general__content_type_analytics {
+  padding: 0;
+  min-height: 540px;
+  margin-bottom: 24px;
+}
+
+.prof-general__content_type_analytics-small {
+  padding: 0;
+  min-height: 495px;
+  margin-bottom: 24px;
+}
+
 .prof-general__message {
   margin-top: 1rem;
 }
@@ -9058,7 +9070,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: 16px;
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 56.25rem) {
   .prof-control-panel__select-label_type_period {
     width: 32px;
     height: 32px;
@@ -9451,6 +9463,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       -ms-flex: 1;
           flex: 1;
   margin: 0 24px;
+}
+
+@media (max-width: 62.75rem) {
+  .prof-control-panel__search_type_analytic {
+    width: unset;
+    -webkit-box-ordinal-group: unset;
+        -ms-flex-order: unset;
+            order: unset;
+  }
 }
 
 .prof-control-panel__search_type_agent {
@@ -9901,6 +9922,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__row-content {
+  max-height: 48px;
   padding: 16px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10952,9 +10974,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-graph {
-  height: 352px;
+  height: 392px;
   padding-top: 16px;
   border-top: 1px solid #e1e5eb;
+}
+
+.prof-graph-small {
+  height: 347px;
 }
 
 .popup-notify__title {
