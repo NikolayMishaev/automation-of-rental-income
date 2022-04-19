@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-    <div class="prof-control-panel prof-control-panel_type_agent">
+    <form id="form-ankets" action="" method="" class="prof-control-panel prof-control-panel_type_agent">
       <h3
         class="prof-control-panel__title prof-control-panel__title_type_agent heading-h3"
       >
@@ -23,12 +23,14 @@
           class="prof-control-panel__buttons-container mix-only-desktop-1004px"
         >
           <button
+            type="button"
             aria-label="list"
             class="prof-control-panel__button prof-control-panel__button_active heading-h4 agent-button"
           >
             Список
           </button>
           <button
+            type="button"
             aria-label="cards"
             class="prof-control-panel__button heading-h4 agent-button"
           >
@@ -128,12 +130,12 @@
                       Вид деятельности
                     </li>
                     <li aria-label="item" class="main-submenu__item main-submenu__item_active">
-                      Вид_1
+                      <a aria-label="item" href="#" class="main-submenu__link">Вид_1</a>
                     </li>
-                    <li aria-label="item" class="main-submenu__item">Пункт_1</li>
-                    <li aria-label="item" class="main-submenu__item">Пункт_2</li>
-                    <li aria-label="item" class="main-submenu__item">Пункт_3</li>
-                    <li aria-label="item" class="main-submenu__item">Пункт_4</li>
+                    <li aria-label="item" class="main-submenu__item"><a aria-label="item" href="#" class="main-submenu__link">Пункт_1</a></li>
+                    <li aria-label="item" class="main-submenu__item"><a aria-label="item" href="#" class="main-submenu__link">Пункт_2</a></li>
+                    <li aria-label="item" class="main-submenu__item"><a aria-label="item" href="#" class="main-submenu__link">Пункт_3</a></li>
+                    <li aria-label="item" class="main-submenu__item"><a aria-label="item" href="#" class="main-submenu__link">Пункт_4</a></li>
                   </ul>
                 </div>
               </label>
@@ -241,11 +243,11 @@
                 </div>
               </label>
       </div>
-    </div>
+    </form>
 
     <div class="prof-general__agent-container mix-only-desktop-1004px" aria-label="list" id="agent-list">
 
-      <div class="prof-table" id="agents-list-actual">
+      <div class="prof-table prof-table_type_ankets" id="agents-list-actual">
         <ul class="prof-table__row prof-table__row_style_agent">
           <li class="prof-table__row-heading text-p2">Статус просмотра</li>
           <li class="prof-table__row-heading text-p2">Наименование контрагента</li>
@@ -262,7 +264,7 @@
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html' target="_blank">Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button class="prof-table__button heading-h5">
@@ -281,7 +283,7 @@
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html' target="_blank">Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button class="prof-table__button heading-h5">
@@ -300,7 +302,7 @@
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html' target="_blank">Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button class="prof-table__button heading-h5">
@@ -319,7 +321,7 @@
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html' target="_blank">Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_red"></span>Отказано</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button class="prof-table__button heading-h5">
@@ -338,7 +340,7 @@
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html'>Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+          <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button class="prof-table__button heading-h5">
@@ -353,7 +355,7 @@
         </ul>
       </div>
 
-      <div class="prof-table mix-display-none" id="agents-list-archive">
+      <div class="prof-table prof-table_type_ankets mix-display-none" id="agents-list-archive">
           <ul class="prof-table__row prof-table__row_style_agent-archive">
             <li class="prof-table__row-heading text-p2">Статус просмотра</li>
             <li class="prof-table__row-heading text-p2">Наименование контрагента</li>
@@ -370,7 +372,7 @@
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html' target="_blank">Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent">
@@ -385,7 +387,7 @@
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html' target="_blank">Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent">
@@ -400,7 +402,7 @@
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html' target="_blank">Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent">
@@ -415,7 +417,7 @@
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html' target="_blank">Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_red"></span>Отказано</p></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent">
@@ -430,7 +432,7 @@
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./about-me.html'>Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
+            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent">
@@ -453,7 +455,7 @@
       <li class="form-agent-card">
         <div class="form-agent-card__info">
           <p class="form-agent-card__title heading-h3">
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__caption text-p2">
             <span class="prof-marker prof-marker_type_yellow"></span>Новая
@@ -464,7 +466,7 @@
       <li class="form-agent-card">
         <div class="form-agent-card__info">
           <p class="form-agent-card__title heading-h3">
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__caption text-p2">
             <span class="prof-marker prof-marker_type_green"></span>Одобрено
@@ -485,7 +487,7 @@
       <li class="form-agent-card">
         <div class="form-agent-card__info">
           <p class="form-agent-card__title heading-h3">
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__caption text-p2">
             <span class="prof-marker prof-marker_type_red"></span>Отказано
@@ -501,7 +503,7 @@
       <li class="form-agent-card">
         <div class="form-agent-card__info">
           <p class="form-agent-card__title heading-h3">
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__caption text-p2">
             <span class="prof-marker prof-marker_type_yellow"></span>Новая
@@ -512,7 +514,7 @@
       <li class="form-agent-card">
         <div class="form-agent-card__info">
           <p class="form-agent-card__title heading-h3">
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__caption text-p2">
             <span class="prof-marker prof-marker_type_yellow"></span>Новая
@@ -523,7 +525,7 @@
       <li class="form-agent-card">
         <div class="form-agent-card__info">
           <p class="form-agent-card__title heading-h3">
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__caption text-p2">
             <span class="prof-marker prof-marker_type_yellow"></span>Новая
@@ -541,7 +543,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__caption text-p2">
             <span class="prof-marker prof-marker_type_yellow"></span>Новая
@@ -562,7 +564,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -574,7 +576,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -586,7 +588,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -598,7 +600,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -610,7 +612,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -622,7 +624,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -634,7 +636,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -646,7 +648,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -658,7 +660,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -670,7 +672,7 @@
           <p
             class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
           >
-            <a href="./manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
+            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
           </p>
           <p class="form-agent-card__status text-p3">
             В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
@@ -764,6 +766,41 @@
     </div>
 
   </div>
+
+    <!-- модальное окно "Уведомление о результате проверки"  -->
+    <div id="popup-notify" class="main-popup  mix-display-none">
+        <div class="main-popup__container main-popup__container_type_notify">
+          <button class="main-popup__close main-popup__close_type_notify"></button>
+          <div class="popup-notify">
+            <h3 class="popup-notify__title heading-h3">Уведомление о результате проверки</h3>
+            <form class="popup-notify__form">
+              <div class="popup-notify__wrapper-textarea">
+                <label class="popup-notify__label mix-label">
+                  <textarea
+                    class="popup-notify__textarea mix-input text-p1"
+                    placeholder=" "
+                  ></textarea>
+                  <span class="mix-caption text-p1">Комментарий*</span>
+                </label>
+              </div>
+              <div class="popup-notify__buttons">
+                <button
+                  type="reset"
+                  class="popup-notify__button popup-notify__button_type_cancel text-p1 button-close-popup"
+                >
+                  Отмена
+                </button>
+                <button
+                  type="submit"
+                  class="popup-notify__button popup-notify__button_type_submit text-p1"
+                >
+                  Завершить
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
 </body>
 </html>

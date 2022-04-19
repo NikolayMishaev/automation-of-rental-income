@@ -225,9 +225,21 @@
 margin-top: 16px;
     }
     &__forms-agent-container {
+        height: 328px;
+        overflow: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
+        &::-webkit-scrollbar {
+            width: 5px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
         @media (max-width: 930px) {
             grid-template-columns: 1fr;
         }

@@ -121,7 +121,7 @@
         left: 0;
         right: 0;
         top: 34px;
-        @media (max-width: rem(1000px)) {
+        @media (max-width: rem(900px)) {
             left: unset;
             top: 50px;
         }
@@ -204,7 +204,7 @@
         left: -33px;
         right: 0;
         top: 34px;
-        @media (max-width: rem(1000px)) {
+        @media (max-width: rem(980px)) {
             left: unset;
             right: 192px;
             top: 50px;

@@ -5677,7 +5677,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   top: 34px;
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 56.25rem) {
   .main-submenu_style_agents {
     left: unset;
     top: 50px;
@@ -5792,7 +5792,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   top: 34px;
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .main-submenu_style_date-ankets {
     left: unset;
     right: 192px;
@@ -8363,11 +8363,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-general__forms-agent-container {
+  height: 328px;
+  overflow: auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+.prof-general__forms-agent-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.prof-general__forms-agent-container::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+.prof-general__forms-agent-container::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
 }
 
 @media (max-width: 930px) {
@@ -8657,7 +8672,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel_type_about-me {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -8745,7 +8760,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__button_type_transfer {
     display: none;
   }
@@ -8801,7 +8816,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__checkbox-label {
     display: none;
   }
@@ -8819,7 +8834,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
           align-items: center;
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__select-label {
     border-radius: 4px;
   }
@@ -8829,7 +8844,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__select-label_active:before {
     background-color: white !important;
   }
@@ -8919,7 +8934,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__select-label_type_about-me {
     width: 32px;
     height: 32px;
@@ -9091,7 +9106,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: 16px;
 }
 
-@media (max-width: 56.25rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__select-label_type_period {
     width: 32px;
     height: 32px;
@@ -9166,7 +9181,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__cursor_type_about-me {
     display: none;
   }
@@ -9418,7 +9433,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: default;
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__title-submenu:nth-of-type(2n) {
     border-top: 1px solid #e3e7e8;
     margin-top: 14px;
@@ -9430,7 +9445,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__title-submenu_type_sort {
     display: list-item;
   }
@@ -9769,7 +9784,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .prof-control-panel__wrapper {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -9812,6 +9827,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.prof-table_type_ankets {
+  height: 326px;
 }
 
 .prof-table__row {
@@ -10864,7 +10883,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .form-agent-card {
   border: 1px solid #D0D7D9;
   border-radius: 12px;
-  min-height: 80px;
+  min-height: 127px;
   padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;

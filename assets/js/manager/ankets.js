@@ -10,6 +10,7 @@ const state = {
     currentOpenPopup: null,
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
+    "popup-notify": document.querySelector("#popup-notify"),
     cursorsSelect: {
         "analytics-period-ankets": document.querySelector(
             "#cursor-analytics-period-ankets"
@@ -547,3 +548,23 @@ function switchContentAnkets(currentCheckedValue) {
             return;
     }
 }
+
+const inputSearch = document.querySelector(".prof-control-panel__input-search");
+const formAnkets = document.querySelector("#form-ankets");
+
+inputSearch.addEventListener("blur", () => {
+    formAnkets.submit();
+});
+
+// логика работы селекта Сортировать, установка значения в инпут при загрузке страницы по активному классу
+
+const fieldsSort = document.querySelectorAll(
+    "#submenu-type-activity .main-submenu__item"
+);
+console.log(fieldsSort);
+fieldsSort.forEach((i) => {
+    if (i.classList.contains("main-submenu__item_active")) {
+        state.inputsSelect["type-activity"].value =
+            i.children[0].textContent.trim();
+    }
+});
