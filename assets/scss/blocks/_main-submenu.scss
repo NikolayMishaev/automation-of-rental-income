@@ -125,6 +125,9 @@
             left: unset;
             top: 67px;
         }
+        @media (max-width: rem(861px)) {
+            top: 50px;
+        }
         @media (max-width: rem(500px)) {
             top: 99px;
         }
@@ -208,6 +211,9 @@
             left: unset;
             right: 192px;
             top: 67px;
+        }
+        @media (max-width: rem(861px)) {
+            top: 50px;
         }
         @media (max-width: rem(500px)) {
             top: 99px;
@@ -385,5 +391,20 @@
     @media (max-width: rem(1000px)) {
         left: unset;
         right: 48px;
+    }
+}
+
+#submenu-division-size {
+    height: 96px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        width: 8px;
+        &:horizontal {
+            display: none;
+        }
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: $grey30;
     }
 }
