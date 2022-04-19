@@ -120,14 +120,14 @@
     }
     &__content {
         width: 100%;
-        min-height: 645px;
+        min-height: 595px;
         border: 0;
         padding: rem(24px);
         @media #{$screen-mobile} {
             padding: 16px;
         }
         &_type_iframe {
-            padding-right: 0;
+            padding-right: 24px;
         }
         &_type_iframe-offers {
             padding-right: 0;
@@ -172,8 +172,20 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(296px, 318px));
         justify-content: center;
-        gap: 16px;
+        gap: 12px;
         margin: 16px 0;
+        height: 380px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
     }
     &__contacts {
         display: none;

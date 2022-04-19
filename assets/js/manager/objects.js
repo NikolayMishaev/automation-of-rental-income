@@ -232,7 +232,7 @@ objectsButtons.forEach((i) =>
 
 // логика действий при загрузе страницы на определенном разрешении
 
-if (window.innerWidth < 1005) {
+if (window.innerWidth < 985) {
     removeClassElement(contentCards, "mix-display-none");
 }
 
@@ -371,6 +371,10 @@ buttonsSelect.forEach((i) =>
         if (e.target.ariaLabel === "item") {
             state.inputsSelect[currentLabel.ariaLabel].value =
                 e.target.textContent.trim();
+            localStorage.setItem(
+                currentLabel.ariaLabel,
+                e.target.textContent.trim()
+            );
             Array.from(
                 e.target.closest(".main-submenu__list").children
             ).forEach((i) =>
@@ -516,36 +520,42 @@ listTable.forEach((i) =>
 const formObjects = document.querySelector("#form-objects");
 const inputSearch = document.querySelector(".prof-control-panel__input-search");
 const inputProfit = document.querySelector("#input-profit");
-const inputFree = document.querySelector("#input-objects-checkobx-free");
-const inputFreeSoon = document.querySelector(
-    "#input-objects-checkobx-free-soon"
-);
 
 inputSearch.addEventListener("blur", () => {
-    localStorage.setItem("search", inputSearch.value);
     formObjects.submit();
 });
 
-inputProfit.addEventListener("click", () => {
-    localStorage.setItem("profitCheckbox", inputProfit.checked);
+inputProfit.addEventListener("click", () => formObjects.submit());
+
+// логика работы селекта Сортировать, установка значения в инпут при загрузке страницы по активному классу
+
+const fieldsSort = document.querySelectorAll(
+    ".main-submenu__item_style_prof-control-panel-sort"
+);
+
+fieldsSort.forEach((i) => {
+    if (i.classList.contains("main-submenu__item_active")) {
+        state.inputsSelect["objects-sort"].value =
+            i.children[0].textContent.trim();
+    }
 });
 
-inputFree.addEventListener("click", () => {
-    localStorage.setItem("freeCheckbox", inputFree.checked);
-});
-
-inputFreeSoon.addEventListener("click", () => {
-    localStorage.setItem("freeSoonCheckbox", inputFreeSoon.checked);
-});
-
-formObjects.addEventListener("submit", (e) => {
-    localStorage.setItem("search", inputSearch.value);
-});
-
-// установка значений инпутов при загрузке фрейма
-
-inputSearch.value = localStorage.getItem("search");
-inputProfit.checked = localStorage.getItem("profitCheckbox") === "true";
-inputFree.checked = localStorage.getItem("freeCheckbox") === "true";
-inputFreeSoon.checked = localStorage.getItem("freeSoonCheckbox") === "true";
 setInputValueByValueActiveCheckbox();
+
+const checkboxInput = document.querySelectorAll(".prof-label-checkbox__input");
+
+checkboxInput.forEach((i) =>
+    i.addEventListener("click", () => {
+        const data = { is_hot: i.checked };
+        i.checked = !i.checked;
+        fetch(i.getAttribute("data-url"), {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "content-type": "application/json" },
+        }).then((response) => {
+            if (response.ok) {
+                i.checked = !i.checked;
+            }
+        });
+    })
+);
