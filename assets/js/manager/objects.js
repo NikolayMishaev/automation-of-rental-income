@@ -510,3 +510,42 @@ listTable.forEach((i) =>
         if (tooltip) tooltip.remove();
     })
 );
+
+// логика работы формы
+
+const formObjects = document.querySelector("#form-objects");
+const inputSearch = document.querySelector(".prof-control-panel__input-search");
+const inputProfit = document.querySelector("#input-profit");
+const inputFree = document.querySelector("#input-objects-checkobx-free");
+const inputFreeSoon = document.querySelector(
+    "#input-objects-checkobx-free-soon"
+);
+
+inputSearch.addEventListener("blur", () => {
+    localStorage.setItem("search", inputSearch.value);
+    formObjects.submit();
+});
+
+inputProfit.addEventListener("click", () => {
+    localStorage.setItem("profitCheckbox", inputProfit.checked);
+});
+
+inputFree.addEventListener("click", () => {
+    localStorage.setItem("freeCheckbox", inputFree.checked);
+});
+
+inputFreeSoon.addEventListener("click", () => {
+    localStorage.setItem("freeSoonCheckbox", inputFreeSoon.checked);
+});
+
+formObjects.addEventListener("submit", (e) => {
+    localStorage.setItem("search", inputSearch.value);
+});
+
+// установка значений инпутов при загрузке фрейма
+
+inputSearch.value = localStorage.getItem("search");
+inputProfit.checked = localStorage.getItem("profitCheckbox") === "true";
+inputFree.checked = localStorage.getItem("freeCheckbox") === "true";
+inputFreeSoon.checked = localStorage.getItem("freeSoonCheckbox") === "true";
+setInputValueByValueActiveCheckbox();

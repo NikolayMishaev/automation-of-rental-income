@@ -9,15 +9,15 @@
 </head>
 <body>
     <div>
-        <div class="prof-control-panel">
+        <form id="form-objects" action="" method="" class="prof-control-panel">
           <div class="prof-control-panel__buttons-container mix-only-desktop-1004px">
-            <button
+            <button type="button"
               aria-label="list"
               class="prof-control-panel__button prof-control-panel__button_active heading-h4 objects-button"
             >
               Список
             </button>
-            <button
+            <button type="button"
               aria-label="cards"
               class="prof-control-panel__button heading-h4 objects-button"
             >
@@ -25,7 +25,7 @@
             </button>
           </div>
           <label class="prof-control-panel__label-custom prof-control-panel__label-custom_type_alone text-p2">
-              <input
+              <input id="input-profit"
                   class="prof-control-panel__input-hidden" type="checkbox">
               <span class="prof-control-panel__visible-checkbox prof-control-panel__visible-checkbox_type_alone"></span>Только выгодные предложения</label>
           <label
@@ -197,7 +197,7 @@
               </ul>
             </div>
           </label>
-        </div>
+        </form>
 
         <div
           class="prof-table mix-only-desktop-1004px"
