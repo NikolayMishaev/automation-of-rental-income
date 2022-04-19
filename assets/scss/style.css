@@ -8209,7 +8209,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-general__content {
   width: 100%;
-  min-height: 595px;
+  min-height: 601px;
   border: 0;
   padding: 1.5rem;
 }

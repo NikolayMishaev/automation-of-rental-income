@@ -76,9 +76,9 @@ favouritesButtons.forEach((i) =>
 
 // логика действий при загрузе страницы на определенном разрешении
 
-if (window.innerWidth < 1151) {
-    removeClassElement(contentCards, "mix-display-none");
-}
+// if (window.innerWidth < 1151) {
+//     removeClassElement(contentCards, "mix-display-none");
+// }
 
 // логика действий при ресайзе
 // общие функции для этого блока логики

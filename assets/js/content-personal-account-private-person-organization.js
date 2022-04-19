@@ -100,10 +100,14 @@ favouritesButtons.forEach((i) =>
 
 // логика действий при загрузе страницы на определенном разрешении
 
-if (window.innerWidth < 1151) {
-    removeClassElement(contentCards, "mix-display-none");
-}
-
+let interval = setInterval(() => {
+    if (innerWidth > 310) {
+        if (innerWidth < 981) {
+            removeClassElement(contentCards, "mix-display-none");
+        }
+        clearInterval(interval);
+    }
+}, 1000);
 // логика действий при ресайзе
 // общие функции для этого блока логики
 
@@ -119,7 +123,7 @@ function resetActiveClassButton(arrayButtons) {
 
 window.addEventListener("resize", function (e) {
     // если таблица скрыта, то ничего не делаем
-    if (e.target.innerWidth < 1151) {
+    if (e.target.innerWidth < 981) {
         if (!contentTable.classList.contains("mix-display-none")) {
             // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
             removeClassElement(contentCards, "mix-display-none");
