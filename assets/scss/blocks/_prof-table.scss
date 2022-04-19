@@ -29,7 +29,7 @@
     }
     &__row {
         display: grid;
-        grid-template-columns: 199px 90px 110px 180px 152px 210px;
+        grid-template-columns: 199px 90px 110px 180px 152px 200px;
         column-gap: 16px;
         align-items: center;
         border-top: 1px solid #e3e7e8;
@@ -38,7 +38,7 @@
             cursor: pointer;
         }
         @media (max-width: rem(1010px)) {
-            grid-template-columns: 199px 90px 110px 180px 152px 180px;
+            grid-template-columns: 199px 90px 110px 180px 152px 170px;
         }
         &:first-child {
             margin-top: 16px;

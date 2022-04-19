@@ -321,3 +321,16 @@ listTable.forEach((i) =>
         if (tooltip) tooltip.remove();
     })
 );
+
+// логика работы селекта Сортировать, установка значения в инпут при загрузке страницы по активному классу
+
+const fieldsSort = document.querySelectorAll(
+    ".main-submenu__item_style_prof-control-panel-sort"
+);
+
+fieldsSort.forEach((i) => {
+    if (i.classList.contains("main-submenu__item_active")) {
+        state.inputsSelect["objects-sort"].value =
+            i.children[0].textContent.trim();
+    }
+});
