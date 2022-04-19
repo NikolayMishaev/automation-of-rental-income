@@ -9819,6 +9819,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #cfd4dc;
 }
 
+.prof-table_type_users {
+  height: 339px;
+}
+
+.prof-table_type_size {
+  height: 294px;
+}
+
 .prof-table_type_waiting-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9923,8 +9931,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__row_style_views {
-  -ms-grid-columns: 40px 120px 70px 180px 90px 150px 160px;
-      grid-template-columns: 40px 120px 70px 180px 90px 150px 160px;
+  -ms-grid-columns: 40px 120px 70px 180px 90px 150px 220px;
+      grid-template-columns: 40px 120px 70px 180px 90px 150px 220px;
 }
 
 .prof-table__row_style_views:first-child {

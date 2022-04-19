@@ -10,7 +10,7 @@
 </head>
 <body>
     <section class="prof-general__section">
-        <div class="prof-control-panel">
+        <form class="prof-control-panel">
           <h3 class="prof-control-panel__title heading-h3">
             Количество зарегистрированных пользователей (контрагентов)
           </h3>
@@ -26,12 +26,14 @@
               class="prof-control-panel__buttons-container prof-control-panel__buttons-container_type_analytic"
             >
               <button
+              type="button"
                 aria-label="list"
                 class="prof-control-panel__button prof-control-panel__button_active heading-h4 user-button"
               >
                 Список
               </button>
               <button
+              type="button"
                 aria-label="graph"
                 class="prof-control-panel__button heading-h4 user-button"
               >
@@ -134,10 +136,10 @@
               </div>
             </label>
           </div>
-        </div>
+        </form>
 
         <div class="prof-general__analytics-container" aria-label="list" id="user-list">
-          <div class="prof-table">
+          <div class="prof-table prof-table_type_users">
             <div class="prof-table__row prof-table__row_style_one-row">
               <p class="prof-table__text text-p2">
                 Новых пользователей:<span class="prof-table__number heading-h5"
