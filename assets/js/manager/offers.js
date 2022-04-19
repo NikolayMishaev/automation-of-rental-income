@@ -418,3 +418,10 @@ buttonsSelect.forEach((i) =>
 function checkSubmenuSecondLevel(ariaLabel) {
     return ariaLabel.includes("division") || ariaLabel.includes("structure");
 }
+
+const inputSearch = document.querySelector(".prof-control-panel__input-search");
+const formOffers = document.querySelector("#form-offers");
+
+inputSearch.addEventListener("blur", () => {
+    formOffers.submit();
+});
