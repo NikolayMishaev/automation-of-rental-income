@@ -5677,10 +5677,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   top: 34px;
 }
 
-@media (max-width: 56.25rem) {
+@media (max-width: 61.25rem) {
   .main-submenu_style_agents {
     left: unset;
-    top: 50px;
+    top: 67px;
   }
 }
 
@@ -5696,7 +5696,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .main-submenu_style_agents-first {
     left: unset;
     right: 145px;
@@ -5709,7 +5709,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .main-submenu_style_agents-second {
     left: unset;
     right: 97px;
@@ -5722,7 +5722,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .main-submenu_style_agents-third {
     left: unset;
     right: 48px;
@@ -5735,7 +5735,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
-@media (max-width: 62.5rem) {
+@media (max-width: 61.25rem) {
   .main-submenu_style_agents-fourth {
     left: unset;
     right: 1px;
@@ -5796,7 +5796,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .main-submenu_style_date-ankets {
     left: unset;
     right: 192px;
-    top: 50px;
+    top: 67px;
   }
 }
 
