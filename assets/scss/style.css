@@ -9827,6 +9827,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 294px;
 }
 
+.prof-table_type_appeals {
+  height: 310px;
+}
+
 .prof-table_type_waiting-list {
   display: -webkit-box;
   display: -ms-flexbox;
