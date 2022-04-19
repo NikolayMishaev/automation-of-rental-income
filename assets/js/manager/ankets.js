@@ -368,7 +368,6 @@ buttonsSelect.forEach((i) =>
                 .textContent.trim();
             state.inputsSelect[currentLabel.ariaLabel].value =
                 currentCheckedValue;
-            switchContentAnkets(currentCheckedValue);
             return;
         }
         if (
@@ -521,34 +520,6 @@ listTable.forEach((i) =>
     })
 );
 
-// логика переключения вида анкет
-
-const agentActualCardsContent = document.querySelector("#agents-cards-actual");
-const agentArchiveCardsContent = document.querySelector(
-    "#agents-cards-archive"
-);
-const agentActualListContent = document.querySelector("#agents-list-actual");
-const agentArchiveListContent = document.querySelector("#agents-list-archive");
-
-function switchContentAnkets(currentCheckedValue) {
-    switch (currentCheckedValue) {
-        case "Текущие":
-            removeClassElement(agentActualCardsContent, "mix-display-none");
-            removeClassElement(agentActualListContent, "mix-display-none");
-            addClassElement(agentArchiveCardsContent, "mix-display-none");
-            addClassElement(agentArchiveListContent, "mix-display-none");
-            return;
-        case "В архиве":
-            removeClassElement(agentArchiveCardsContent, "mix-display-none");
-            removeClassElement(agentArchiveListContent, "mix-display-none");
-            addClassElement(agentActualCardsContent, "mix-display-none");
-            addClassElement(agentActualListContent, "mix-display-none");
-            return;
-        default:
-            return;
-    }
-}
-
 const inputSearch = document.querySelector(".prof-control-panel__input-search");
 const formAnkets = document.querySelector("#form-ankets");
 
@@ -561,7 +532,6 @@ inputSearch.addEventListener("blur", () => {
 const fieldsSort = document.querySelectorAll(
     "#submenu-type-activity .main-submenu__item"
 );
-console.log(fieldsSort);
 fieldsSort.forEach((i) => {
     if (i.classList.contains("main-submenu__item_active")) {
         state.inputsSelect["type-activity"].value =
