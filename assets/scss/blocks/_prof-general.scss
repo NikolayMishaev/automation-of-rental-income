@@ -126,6 +126,10 @@
         @media #{$screen-mobile} {
             padding: 16px;
         }
+        &_type_waiting-list {
+            display: flex;
+            flex-direction: column;
+        }
         &_type_iframe {
             padding-right: 24px;
         }
