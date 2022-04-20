@@ -584,3 +584,32 @@ function setValueInput(value) {
             return;
     }
 }
+
+// логика открытия попапа Уведомлений
+
+const buttonsOpenPopup = document.querySelectorAll(".button-open-popup");
+
+buttonsOpenPopup.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (state.currentOpenPopup) {
+            addClassElement(state.currentOpenPopup, "mix-display-none");
+        }
+        state.currentOpenPopup = state[i.ariaLabel];
+        removeClassElement(state[i.ariaLabel], "mix-display-none");
+    })
+);
+
+const overlaysPopup = document.querySelectorAll(".main-popup");
+
+overlaysPopup.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (
+            e.target.classList.contains("main-popup") ||
+            e.target.classList.contains("main-popup__close") ||
+            e.target.classList.contains("button-close-popup")
+        ) {
+            addClassElement(i, "mix-display-none");
+            state.currentOpenPopup = null;
+        }
+    })
+);
