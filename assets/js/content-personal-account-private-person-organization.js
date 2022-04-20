@@ -1,10 +1,34 @@
-import {
-    addClassElement,
-    removeClassElement,
-    switchButtons,
-} from "./common-JS-to-all-pages.js";
-
 // стейты
+
+// общие функции
+function addClassElement(element, className) {
+    element.classList.add(className);
+}
+
+function removeClassElement(element, className) {
+    element.classList.remove(className);
+}
+
+function switchButtons(
+    eventTarget,
+    arrayButtons,
+    arrayContent,
+    activeClassButton,
+    notActiveClassContent
+) {
+    if (eventTarget.closest(`.${activeClassButton}`)) {
+        return;
+    }
+    arrayButtons.forEach((i) => removeClassElement(i, activeClassButton));
+    addClassElement(eventTarget, activeClassButton);
+    arrayContent.forEach((i) => {
+        if (i.ariaLabel === eventTarget.ariaLabel) {
+            removeClassElement(i, notActiveClassContent);
+        } else {
+            addClassElement(i, notActiveClassContent);
+        }
+    });
+}
 
 const state = {
     currentOpenSubmenu: null,
@@ -76,10 +100,14 @@ favouritesButtons.forEach((i) =>
 
 // логика действий при загрузе страницы на определенном разрешении
 
-// if (window.innerWidth < 1151) {
-//     removeClassElement(contentCards, "mix-display-none");
-// }
-
+let interval = setInterval(() => {
+    if (innerWidth > 300) {
+        if (innerWidth < 981) {
+            removeClassElement(contentCards, "mix-display-none");
+        }
+        clearInterval(interval);
+    }
+}, 1000);
 // логика действий при ресайзе
 // общие функции для этого блока логики
 
@@ -95,188 +123,15 @@ function resetActiveClassButton(arrayButtons) {
 
 window.addEventListener("resize", function (e) {
     // если таблица скрыта, то ничего не делаем
-    // if (e.target.innerWidth < 1151) {
-    //     if (!contentTable.classList.contains("mix-display-none")) {
-    //         // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
-    //         removeClassElement(contentCards, "mix-display-none");
-    //         addClassElement(contentTable, "mix-display-none");
-    //         resetActiveClassButton(favouritesButtons);
-    //     }
-    // }
-
-    if (e.target.innerWidth > 750) {
-        resetVisibleDymanicClassAsideBlockMobile();
-    }
-    if (e.target.innerWidth > 1550) {
-        closeMobileBlockContacts();
-    }
-    if (e.target.innerWidth > 1780) {
-        resetVisibleDymanicClassAsideBlock();
-    }
-    if (innerWidth < 1551 && innerWidth > 750) {
-        panelTasks.classList.remove("mix-display-none");
+    if (e.target.innerWidth < 981) {
+        if (!contentTable.classList.contains("mix-display-none")) {
+            // показываем карточки, скрываем таблицу, переключаем активную кнопку на карточки
+            removeClassElement(contentCards, "mix-display-none");
+            addClassElement(contentTable, "mix-display-none");
+            resetActiveClassButton(favouritesButtons);
+        }
     }
 });
-
-// логика смены чата на задачи по клику на кнопку
-
-const buttonBackToTasks = document.querySelector(
-    ".prof-aside__button-back-tasks"
-);
-
-const buttonBackToTasksMain = document.querySelector(
-    "#prof-aside__button-back-tasks-main"
-);
-
-const panelChat = document.querySelector(".prof-aside__right-panel");
-const panelTasks = document.querySelector(".prof-aside__left-panel");
-
-const panelChatMain = document.querySelector("#prof-aside__right-panel-main");
-const panelTasksMain = document.querySelector("#prof-aside__left-panel-main");
-
-buttonBackToTasks.addEventListener("click", (e) => {
-    panelChat.classList.add("mix-display-none");
-    panelChat.classList.remove("mix-display-flex");
-    panelTasks.classList.remove("mix-display-none");
-});
-
-buttonBackToTasksMain.addEventListener("click", (e) => {
-    panelChatMain.classList.add("mix-display-none");
-    panelChatMain.classList.remove("mix-display-flex");
-    panelTasksMain.classList.remove("mix-display-none");
-});
-
-// логика открытия чата по клику на таску
-
-const tasksContainer = document.querySelectorAll(
-    ".prof-aside__tasks-container"
-);
-
-tasksContainer.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (innerWidth > 1780) {
-            return;
-        }
-        if (innerWidth < 1551 && innerWidth > 750) {
-            return;
-        }
-        if (e.target.closest(".prof-aside__task-item")) {
-            panelTasks.classList.add("mix-display-none");
-            panelChat.classList.add("mix-display-flex");
-
-            panelTasksMain.classList.add("mix-display-none");
-            panelChatMain.classList.add("mix-display-flex");
-        }
-    })
-);
-
-function resetVisibleDymanicClassAsideBlock() {
-    panelTasksMain.classList.remove("mix-display-none");
-    panelTasksMain.classList.remove("mix-display-flex");
-    panelChatMain.classList.remove("mix-display-none");
-    panelChatMain.classList.remove("mix-display-flex");
-}
-
-function resetVisibleDymanicClassAsideBlockMobile() {
-    panelTasks.classList.remove("mix-display-none");
-    panelTasks.classList.remove("mix-display-flex");
-    panelChat.classList.remove("mix-display-none");
-    panelChat.classList.remove("mix-display-flex");
-}
-
-// Логика открытия контактов (таски, чат) для планшетной / мобильной версий
-
-const buttonContacts = document.querySelector(".prof-general__contacts");
-
-const generalPanel = document.querySelector("#general-panel");
-const mobilePanelContacts = document.querySelector(
-    ".prof-general__body_type_contacts"
-);
-
-buttonContacts.addEventListener("click", (e) => {
-    if (!buttonContacts.classList.contains("prof-general__contacts_active")) {
-        openMobileBlockContacts();
-    } else {
-        closeMobileBlockContacts();
-    }
-});
-
-function openMobileBlockContacts() {
-    buttonContacts.classList.add("prof-general__contacts_active");
-    mobilePanelContacts.classList.remove("mix-display-none");
-    generalPanel.classList.add("mix-display-none");
-}
-
-function closeMobileBlockContacts() {
-    buttonContacts.classList.remove("prof-general__contacts_active");
-    mobilePanelContacts.classList.add("mix-display-none");
-    generalPanel.classList.remove("mix-display-none");
-}
-
-// логика оценка работы менеджера звездочками
-
-const mobileStars = document.querySelectorAll(".prof-aside__star_type_mobile");
-const desktopStars = document.querySelectorAll(
-    ".prof-aside__star_type_desktop"
-);
-const containersStars = document.querySelectorAll(
-    ".prof-aside__stars-container"
-);
-const inputStars = document.querySelector("#input-stars");
-
-const elementsmarkConfirm = document.querySelectorAll(
-    ".prof-aside__mark-confirm"
-);
-
-const blocksFeedback = document.querySelectorAll(".prof-aside__feedback");
-
-const containersChat = document.querySelectorAll(
-    ".prof-aside__wrapper-container-message"
-);
-
-let timerMark = undefined;
-let timerFeedback = undefined;
-
-containersStars.forEach((j) =>
-    j.addEventListener("click", (e) => {
-        clearTimeout(timerMark);
-        clearTimeout(timerFeedback);
-        timerMark = setTimeout(
-            () =>
-                elementsmarkConfirm.forEach((i) => (i.style.display = "flex")),
-            2000
-        );
-        timerFeedback = setTimeout(() => {
-            blocksFeedback.forEach((i) => (i.style.display = "none"));
-            containersChat.forEach((i) =>
-                addClassElement(
-                    i,
-                    "prof-aside__wrapper-container-message_type_full"
-                )
-            );
-        }, 4000);
-        if (e.target.ariaLabel) {
-            resetActiveClass(mobileStars, "prof-aside__star_active");
-            resetActiveClass(desktopStars, "prof-aside__star_active");
-            addActiveClassStars(mobileStars, +e.target.ariaLabel);
-            addActiveClassStars(desktopStars, +e.target.ariaLabel);
-        }
-    })
-);
-
-function resetActiveClass(arrayElements, className) {
-    arrayElements.forEach((i) => i.classList.remove(className));
-}
-
-function addActiveClassStars(arrayStars, currentValue) {
-    arrayStars.forEach((i, c) => {
-        if (c < currentValue) {
-            i.classList.add("prof-aside__star_active");
-            inputStars.value = currentValue;
-            return;
-        }
-    });
-}
 
 // логика по работе селектов
 
@@ -443,18 +298,10 @@ buttonsSelect.forEach((i) =>
     })
 );
 
-// логика закрытия попапа редактирования аватара
-
-const buttonClose = document.querySelector("#button-close-popup-sign-ind");
-const popoupAvatar = document.querySelector(".modal-edit-avatar");
-buttonClose.addEventListener("click", (e) => {
-    popoupAvatar.style = "display-none";
-});
-
 // логика наведения на текст в списке
 
 const listTable = document.querySelectorAll(
-    "#favourites .prof-table__row-content.heading-h5"
+    ".prof-table__row-content.heading-h5"
 );
 
 listTable.forEach((i) =>
@@ -478,3 +325,16 @@ listTable.forEach((i) =>
         if (tooltip) tooltip.remove();
     })
 );
+
+// логика работы селекта Сортировать, установка значения в инпут при загрузке страницы по активному классу
+
+const fieldsSort = document.querySelectorAll(
+    ".main-submenu__item_style_prof-control-panel-sort"
+);
+
+fieldsSort.forEach((i) => {
+    if (i.classList.contains("main-submenu__item_active")) {
+        state.inputsSelect["objects-sort"].value =
+            i.children[0].textContent.trim();
+    }
+});

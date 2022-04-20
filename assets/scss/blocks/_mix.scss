@@ -131,5 +131,10 @@
             display: none !important;
         }
     }
+    &-only-desktop-1004px {
+        @media (max-width: 984px) {
+            display: none !important;
+        }
+    }
 
 }

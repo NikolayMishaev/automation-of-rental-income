@@ -1,11 +1,35 @@
 .prof-table {
+    height: 412px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        width: 5px;
+        &:horizontal {
+            display: none;
+        }
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: $grey30;
+    }
+    &_type_users {
+        height: 339px;
+    }
+    &_type_size {
+        height: 294px;
+    }
+    &_type_appeals {
+        height: 310px;
+    }
     &_type_waiting-list {
         display: flex;
         flex-direction: column;
     }
+    &_type_ankets {
+        height: 326px;
+    }
     &__row {
         display: grid;
-        grid-template-columns: 199px 90px 110px 180px 152px 172px;
+        grid-template-columns: 199px 90px 110px 180px 152px 200px;
         column-gap: 16px;
         align-items: center;
         border-top: 1px solid #e3e7e8;
@@ -13,8 +37,8 @@
         &:hover {
             cursor: pointer;
         }
-        @media (max-width: rem(1550px)) {
-            grid-template-columns: 199px 90px 110px 180px 152px 203px;
+        @media (max-width: rem(1010px)) {
+            grid-template-columns: 199px 90px 110px 180px 152px 170px;
         }
         &:first-child {
             margin-top: 16px;
@@ -23,7 +47,10 @@
             }
         }
         &_style_objects {
-            grid-template-columns: 327px 70px 120px 80px 90px 146px 56px;
+            grid-template-columns: 327px 70px 120px 80px 90px 170px 56px;
+            @media (max-width: rem(1010px)) {
+                grid-template-columns: 327px 70px 120px 80px 90px 140px 56px;
+            }
         }
         &_style_waiting-list {
             grid-template-columns: 200px 200px 200px 336px;
@@ -53,7 +80,7 @@
             }
         }
         &_style_views {
-            grid-template-columns: 40px 120px 70px 180px 90px 150px 160px;
+            grid-template-columns: 40px 120px 70px 180px 90px 150px 220px;
             &:first-child {
                 margin-top: 0;
             }
@@ -92,6 +119,7 @@
         padding: 16px 0;
     }
     &__row-content {
+        max-height: 48px;
         padding: 16px 0;
         display: flex;
         align-items: center;

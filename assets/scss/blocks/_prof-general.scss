@@ -119,9 +119,34 @@
         }
     }
     &__content {
+        width: 100%;
+        min-height: 601px;
+        border: 0;
         padding: rem(24px);
         @media #{$screen-mobile} {
             padding: 16px;
+        }
+        &_type_iframe {
+            padding-right: 24px;
+        }
+        &_type_iframe-offers {
+            padding-right: 24px;
+            min-height: 545px;
+        }
+        &_type_analytics {
+            padding: 0;
+            min-height: 540px;
+            margin-bottom: 24px;
+        }
+        &_type_analytics-small {
+            padding: 0;
+            min-height: 495px;
+            margin-bottom: 24px;
+        }
+        &_type_analytics-medium {
+            padding: 0;
+            min-height: 511px;
+            margin-bottom: 24px;
         }
     }
     &__message {
@@ -147,8 +172,20 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(296px, 318px));
         justify-content: center;
-        gap: 16px;
+        gap: 12px;
         margin: 16px 0;
+        height: 380px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
     }
     &__contacts {
         display: none;
@@ -188,9 +225,21 @@
 margin-top: 16px;
     }
     &__forms-agent-container {
+        height: 328px;
+        overflow: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
+        &::-webkit-scrollbar {
+            width: 5px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
         @media (max-width: 930px) {
             grid-template-columns: 1fr;
         }

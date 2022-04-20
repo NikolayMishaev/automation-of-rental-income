@@ -1,5 +1,11 @@
 .prof-graph {
-    height: 352px;
+    height: 392px;
     padding-top: 16px;
     border-top: 1px solid $grey-20;
+    &-small {
+        height: 347px;
+    }
+    &_type_appeals {
+        height: 363px;
+    }
 }

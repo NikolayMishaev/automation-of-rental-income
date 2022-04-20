@@ -45,6 +45,7 @@
     &__close-btn {
         width: 32px;
         height: 32px;
+        z-index: 1;
         @include flex-container;
         background-color: transparent;
         border: none;
@@ -115,6 +116,9 @@
         background: url('./../images/icons/modal-question.svg') no-repeat center;
         width: 16px;
         height: 16px;
+        &:hover {
+            z-index: 2;
+        }
     }
     &__question-outer {
         position: relative;
@@ -126,5 +130,6 @@
     }
     &__question-outer:hover + .tooltip {
         opacity: 1;
+        z-index: 2;
     }
 }
