@@ -613,3 +613,21 @@ overlaysPopup.forEach((i) =>
         }
     })
 );
+
+const checkboxInput = document.querySelectorAll(".prof-label-checkbox__input");
+
+checkboxInput.forEach((i) =>
+    i.addEventListener("click", () => {
+        const data = { in_await_list: i.checked };
+        i.checked = !i.checked;
+        fetch(i.getAttribute("data-url"), {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "content-type": "application/json" },
+        }).then((response) => {
+            if (response.ok) {
+                i.checked = !i.checked;
+            }
+        });
+    })
+);

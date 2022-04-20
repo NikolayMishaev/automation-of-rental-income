@@ -693,6 +693,17 @@ function sendRequestWaitingList(i) {
         headers: { "content-type": "application/json" },
     }).then((response) => {
         if (response.ok) {
+            removeClassElement(i, "prof-table__input-error");
+            removeClassElement(
+                i.closest(".prof-table__row-content").children[1],
+                "prof-table__caption-error_active"
+            );
+        } else {
+            addClassElement(i, "prof-table__input-error");
+            addClassElement(
+                i.closest(".prof-table__row-content").children[1],
+                "prof-table__caption-error_active"
+            );
         }
     });
 }
