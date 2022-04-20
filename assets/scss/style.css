@@ -5614,6 +5614,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.main-submenu_style_register {
+  left: 0;
+  right: 0;
+  top: 48px;
+}
+
+@media (max-width: 40rem) {
+  .main-submenu_style_register {
+    top: 33px;
+  }
+}
+
 .main-submenu_style_structure-popup {
   left: 0;
   right: 0;
@@ -8912,6 +8924,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
           flex: 428px;
 }
 
+@media (max-width: 40rem) {
+  .prof-control-panel__select-label_type_register {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+  }
+}
+
 .prof-control-panel__select-label_type_transfer-objects.prof-control-panel__select-label_active:before {
   background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
   background-color: white !important;
@@ -9201,6 +9221,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   right: 15px;
 }
 
+@media (max-width: 40rem) {
+  .prof-control-panel__cursor_type_register {
+    top: 12px;
+    right: 10px;
+  }
+}
+
 .prof-control-panel__cursor_type_structure {
   background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
 }
@@ -9278,6 +9305,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__select-input_type_register:disabled {
   color: #6C737D;
+}
+
+@media (max-width: 40rem) {
+  .prof-control-panel__select-input_type_register {
+    min-height: unset;
+  }
 }
 
 .prof-control-panel__select-input_type_about-me {

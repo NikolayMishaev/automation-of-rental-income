@@ -75,6 +75,14 @@
             right: 48px;
         }
     }
+    &_style_register {
+        left: 0;
+        right: 0;
+        top: 48px;
+        @media (max-width: rem(640px)) {
+            top: 33px;
+        }
+    }
     &_style_structure-popup {
         left: 0;
         right: 0;

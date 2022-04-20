@@ -169,6 +169,9 @@
             color: #3C4142;
             width: 100%;
             flex: 428px;
+            @media (max-width: rem(640px)) {
+                flex: auto;
+            }
         }
         &_type_transfer-objects.prof-control-panel__select-label_active:before {
             background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
@@ -406,6 +409,10 @@
         &_type_register {
             top: 20px;
             right: 15px;
+            @media (max-width: rem(640px)) {
+                top: 12px;
+                right: 10px;
+            }
         }
         &_type_structure {
             background: url("./../images/icons/main-cursor-mobile.svg") no-repeat center;
@@ -469,6 +476,9 @@
             color: #6C737D;
             &:disabled {
                 color: #6C737D;
+            }
+            @media (max-width: rem(640px)) {
+                min-height: unset;
             }
         }
         &_type_about-me {
