@@ -431,12 +431,14 @@
                 id="offers"
                 class="prof-general__content mix-display-none mix-only-desktop-1150px prof-general__content_type_iframe-offers" src="./manager/content-offers.html"></iframe>
 
-                <form action="http://foo.com" method="get"
+                <div
                 aria-label="waiting-list"
                 id="waiting-list"
                 class="prof-general__content prof-general__content_type_waiting-list mix-display-none mix-only-desktop-1150px"
               >
-                <div class="prof-control-panel">
+
+                <form action="http://foo.com" method="get" class="prof-control-panel">
+                    <button type="submit" class="prof-table__button prof-table__button_type_waiting-list text-p1"></button>
                   <h3 class="prof-control-panel__title heading-h3">Общий поиск</h3>
                   <label
                     class="prof-control-panel__search prof-control-panel__search_type_offers mix-label"
@@ -448,7 +450,7 @@
                     />
                     <span class="prof-control-panel__caption mix-caption">Поиск</span>
                   </label>
-                </div>
+                </form>
 
                 <div class="prof-table prof-table_type_waiting-list">
                   <ul class="prof-table__row prof-table__row_style_waiting-list">
@@ -461,43 +463,43 @@
                     <li class="prof-table__row-content heading-h5">Иванов Иван</li>
                     <li class="prof-table__row-content heading-h5">132132</li>
                     <li class="prof-table__row-content heading-h5">119021. Ул. Льва Толстого, дом 23, корп.1</li>
-                    <li class="prof-table__row-content"><input class="prof-table__input text-p2" type="text"></li>
+                    <li class="prof-table__row-content"><input data-url="http://foo.com" class="prof-table__input text-p2" type="text"></li>
                   </ul>
                   <ul class="prof-table__row prof-table__row_style_waiting-list">
                     <li class="prof-table__row-content heading-h5">Иванов Иван</li>
                     <li class="prof-table__row-content heading-h5">132132</li>
                     <li class="prof-table__row-content heading-h5">119021. Ул. Льва Толстого, дом 23, корп.1</li>
-                    <li class="prof-table__row-content"><input class="prof-table__input text-p2" type="text"></li>
+                    <li class="prof-table__row-content"><input data-url="http://foo.com" class="prof-table__input text-p2 3" type="text"></li>
                   </ul>
                   <ul class="prof-table__row prof-table__row_style_waiting-list">
                     <li class="prof-table__row-content heading-h5">Иванов Иван</li>
                     <li class="prof-table__row-content heading-h5">132132</li>
                     <li class="prof-table__row-content heading-h5">119021. Ул. Льва Толстого, дом 23, корп.1</li>
-                    <li class="prof-table__row-content"><input class="prof-table__input text-p2" type="text"></li>
+                    <li class="prof-table__row-content"><input data-url="http://foo.com" class="prof-table__input text-p2" type="text"></li>
                   </ul>
                   <ul class="prof-table__row prof-table__row_style_waiting-list">
                     <li class="prof-table__row-content heading-h5">Иванов Иван</li>
                     <li class="prof-table__row-content heading-h5">132132</li>
                     <li class="prof-table__row-content heading-h5">119021. Ул. Льва Толстого, дом 23, корп.1</li>
-                    <li class="prof-table__row-content"><input class="prof-table__input text-p2" type="text"></li>
+                    <li class="prof-table__row-content"><input data-url="http://foo.com" class="prof-table__input text-p2" type="text"></li>
                   </ul>
                   <ul class="prof-table__row prof-table__row_style_waiting-list">
                     <li class="prof-table__row-content heading-h5">Иванов Иван</li>
                     <li class="prof-table__row-content heading-h5">132132</li>
                     <li class="prof-table__row-content heading-h5">119021. Ул. Льва Толстого, дом 23, корп.1</li>
-                    <li class="prof-table__row-content"><input class="prof-table__input text-p2" type="text"></li>
+                    <li class="prof-table__row-content"><input data-url="http://foo.com" class="prof-table__input text-p2" type="text"></li>
                   </ul>
                   <ul class="prof-table__row prof-table__row_style_waiting-list">
                     <li class="prof-table__row-content heading-h5">Иванов Иван</li>
                     <li class="prof-table__row-content heading-h5">132132</li>
                     <li class="prof-table__row-content heading-h5">119021. Ул. Льва Толстого, дом 23, корп.1</li>
-                    <li class="prof-table__row-content"><input class="prof-table__input text-p2" type="text"></li>
+                    <li class="prof-table__row-content"><input data-url="http://foo.com" class="prof-table__input text-p2" type="text"></li>
                   </ul>
                   <ul class="prof-table__row prof-table__row_style_waiting-list">
                     <li class="prof-table__row-content heading-h5">Иванов Иван</li>
                     <li class="prof-table__row-content heading-h5">132132</li>
                     <li class="prof-table__row-content heading-h5">119021. Ул. Льва Толстого, дом 23, корп.1</li>
-                    <li class="prof-table__row-content"><input class="prof-table__input text-p2" type="text"></li>
+                    <li class="prof-table__row-content"><input data-url="http://foo.com" class="prof-table__input text-p2" type="text"></li>
                   </ul>
               </div>
 
@@ -565,7 +567,7 @@
                 </div>
               </div>
 
-              </form>
+              </div>
 
             </div>
             <div class="prof-general__body prof-general__body_type_contacts mix-display-none">

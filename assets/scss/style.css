@@ -10146,9 +10146,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__button_type_waiting-list {
-  margin-left: auto;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  display: none;
 }
 
 .prof-table__link {

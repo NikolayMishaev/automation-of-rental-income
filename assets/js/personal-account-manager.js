@@ -666,3 +666,33 @@ buttonsSelect.forEach((i) =>
 function checkSubmenuSecondLevel(ariaLabel) {
     return ariaLabel.includes("division") || ariaLabel.includes("structure");
 }
+
+// логика отправки запроса на вкладке Лист ожидания при изменении комментария
+
+const inputTable = document.querySelectorAll(".prof-table__input");
+
+inputTable.forEach((i) =>
+    i.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            sendRequestWaitingList(i);
+        }
+    })
+);
+
+inputTable.forEach((i) =>
+    i.addEventListener("blur", () => {
+        sendRequestWaitingList(i);
+    })
+);
+
+function sendRequestWaitingList(i) {
+    const data = { comment: i.value };
+    fetch(i.getAttribute("data-url"), {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+    }).then((response) => {
+        if (response.ok) {
+        }
+    });
+}
