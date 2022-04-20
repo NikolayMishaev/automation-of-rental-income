@@ -544,3 +544,43 @@ fieldsSort.forEach((i) => {
             i.children[0].textContent.trim();
     }
 });
+
+// логика выставления значений в инпуты при загрузке страницы
+
+const customLabels = document.querySelectorAll(
+    ".prof-control-panel__label-custom"
+);
+
+customLabels.forEach((i) => {
+    if (i.children[0].checked) {
+        setValueInput(i.textContent.trim());
+    }
+});
+
+function setValueInput(value) {
+    switch (value) {
+        case "Текущие":
+            state.inputsSelect.ankets.value = value;
+            return;
+        case "В архиве":
+            state.inputsSelect.ankets.value = value;
+            return;
+        case "Новое":
+            state.inputsSelect["ankets-status"].value = value;
+            return;
+        case "Одобрено":
+            state.inputsSelect["ankets-status"].value = value;
+            return;
+        case "Отказано":
+            state.inputsSelect["ankets-status"].value = value;
+            return;
+        case "Просмотрено":
+            state.inputsSelect["ankets-views"].value = value;
+            return;
+        case "Не просмотрено":
+            state.inputsSelect["ankets-views"].value = value;
+            return;
+        default:
+            return;
+    }
+}
