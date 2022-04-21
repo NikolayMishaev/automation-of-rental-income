@@ -165,17 +165,29 @@ window.addEventListener("resize", function (e) {
     }
 });
 
-// тоггл лайка по клику на сердечко в карточке
+// отправка AJAX запроса на лайк карточки
 const mainCardsContainer = document.querySelector(".main__cards-container");
 
 mainCardsContainer.addEventListener("click", (e) => {
     const currentTargetLike = e.target.classList.contains("card-price__like");
     if (currentTargetLike) {
-        if (e.target.classList.contains("card-price__like_active")) {
-            removeClassElement(e.target, "card-price__like_active");
-        } else {
-            addClassElement(e.target, "card-price__like_active");
-        }
+        const currentLike = e.target.classList.contains(
+            "card-price__like_active"
+        );
+        const data = { "card-like": !currentLike };
+        fetch(e.target.getAttribute("data-url"), {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "content-type": "application/json" },
+        }).then((response) => {
+            if (response.ok) {
+                if (currentLike) {
+                    removeClassElement(e.target, "card-price__like_active");
+                } else {
+                    addClassElement(e.target, "card-price__like_active");
+                }
+            }
+        });
     }
 });
 
