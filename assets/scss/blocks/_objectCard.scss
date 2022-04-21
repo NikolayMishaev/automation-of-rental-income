@@ -181,20 +181,35 @@ main .container {
     &__btns {
         display: flex;
         font-size: 16px;
+        @media (max-width: 1300px) {
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            flex-wrap: nowrap;
+        }
         button {
             padding: 12px 0;
             flex: 50%;
+            @media (max-width: 1300px) {
+                flex: unset;
+                width: 100%;
+            }
             @media #{$screen-tablet} {
-                padding: 4px 0;
+                padding: 5px;
                 flex: none;
+                width: unset;
+                height: 32px;
             }
         }
     }
     &__primary-btn {
         @include primary-btn($accent-TCX50);
         width: calc(100% - 40px);
-        @media (min-width: 768px) and (max-width: 1023px) {
+        @media (min-width: 768px) and (max-width: 1024px) {
             width: 49.5%;
+        }
+        @media (max-width: 768px) {
+            padding: 4px 46px !important;
         }
     }
     &__favorite-icon {
@@ -210,13 +225,21 @@ main .container {
         justify-content: center;
         @include secondary-btn;
         width: 50%;
+        @media (max-width: 1300px) {
+            margin-right: 0;
+            margin-bottom: 16px;
+        }
         @media #{$screen-tablet} {
             width: 32px;
             height: 32px;
             margin-right: 8px;
+
         }
         @media (min-width: 768px) and (max-width: 1023px) {
             width: 49.5%;
+        }
+        &_active {
+
         }
 
         svg {
@@ -231,7 +254,7 @@ main .container {
             @media #{$screen-tablet} {
                 display: none;
             }
-            @media (min-width: 768px) and (max-width: 1023px) {
+            @media (min-width: 769px) and (max-width: 1023px) {
                 display: inline;
             }
         }
@@ -581,4 +604,20 @@ main .container {
             font-size: 12px;
         }
     }
+}
+
+.icon-like {
+        background: url("./../images/icons/card-like.svg") no-repeat center/contain;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        transition: $transition;
+        @media (max-width: 768px) {
+            margin-right: 0;
+            width: 20px;
+            height: 20px;
+        }
+        &_active {
+            background-image: url("./../images/icons/card-like-active.svg")
+        }
 }

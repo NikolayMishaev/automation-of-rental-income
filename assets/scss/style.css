@@ -663,6 +663,20 @@ main .container {
   font-size: 16px;
 }
 
+@media (max-width: 1300px) {
+  .info-card__btns {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-card__btns {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
 .info-card__btns button {
   padding: 12px 0;
   -webkit-box-flex: 50%;
@@ -670,12 +684,23 @@ main .container {
           flex: 50%;
 }
 
+@media (max-width: 1300px) {
+  .info-card__btns button {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+    width: 100%;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__btns button {
-    padding: 4px 0;
+    padding: 5px;
     -webkit-box-flex: 0;
         -ms-flex: none;
             flex: none;
+    width: unset;
+    height: 32px;
   }
 }
 
@@ -696,9 +721,15 @@ main .container {
   text-decoration: none;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .info-card__primary-btn {
     width: 49.5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-card__primary-btn {
+    padding: 4px 46px !important;
   }
 }
 
@@ -737,6 +768,13 @@ main .container {
   text-decoration: none;
 }
 
+@media (max-width: 1300px) {
+  .info-card__favorite-btn {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__favorite-btn {
     width: 32px;
@@ -771,7 +809,7 @@ main .container {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1023px) {
   .info-card__favorite-btn span {
     display: inline;
   }
@@ -1329,6 +1367,27 @@ main .container {
   .content-offer-price__aside {
     font-size: 12px;
   }
+}
+
+.icon-like {
+  background: url("./../images/icons/card-like.svg") no-repeat center/contain;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media (max-width: 768px) {
+  .icon-like {
+    margin-right: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.icon-like_active {
+  background-image: url("./../images/icons/card-like-active.svg");
 }
 
 .group-radio-btn {
