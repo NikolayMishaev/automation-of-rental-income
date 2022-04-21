@@ -986,13 +986,14 @@ buttonsLikeCard.forEach((i) =>
 );
 
 // Установка значения для кнопки при отрисовке страницы
-
-if (iconsLike[0].classList.contains("icon-like_active")) {
-    buttonsLikeCard.forEach(
-        (i) => (i.children[1].textContent = "Удалить из избранного")
-    );
-} else {
-    buttonsLikeCard.forEach(
-        (i) => (i.children[1].textContent = "Добавить в избранное")
-    );
+if (iconsLike.length) {
+    if (iconsLike[0].classList.contains("icon-like_active")) {
+        buttonsLikeCard.forEach(
+            (i) => (i.children[1].textContent = "Удалить из избранного")
+        );
+    } else {
+        buttonsLikeCard.forEach(
+            (i) => (i.children[1].textContent = "Добавить в избранное")
+        );
+    }
 }

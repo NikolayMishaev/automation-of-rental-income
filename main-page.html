@@ -3196,7 +3196,7 @@
                 <form id="form-reset-password" action="">
                     <div class="modal-login__password-container">
                         <label class="custom-text-input modal-login__password">
-                            <input type="password" class="input-password" required minlength="5" maxlength="100" />
+                            <input type="password" class="input-password" required minlength="8" maxlength="100" />
                             <span class="custom-text-input__label">Старый пароль</span>
                         </label>
                         <div class="modal-login__password-icon">
@@ -3216,7 +3216,7 @@
                     </div>
                     <div class="modal-login__password-container">
                         <label class="custom-text-input modal-login__password">
-                            <input type="password" class="input-password" required minlength="5" maxlength="100" />
+                            <input type="password" class="input-password" required minlength="8" maxlength="100" />
                             <span class="custom-text-input__label">Новый пароль</span>
                         </label>
                         <div class="modal-login__password-icon">
@@ -3236,7 +3236,7 @@
                     </div>
                     <div class="modal-login__password-container">
                         <label class="custom-text-input modal-login__password">
-                            <input type="password" class="input-password" required minlength="5" maxlength="100" />
+                            <input type="password" class="input-password" required minlength="8" maxlength="100" />
                             <span class="custom-text-input__label">Подтвердить пароль</span>
                         </label>
                         <div class="modal-login__password-icon">
@@ -3296,14 +3296,15 @@
                         </div>
                     </label>
                     <label class="custom-text-input modal-login__email">
-                        <input id="input-registraion-login" class="input-email" required maxlength="100" type="email" />
+                        <input data-url='http://foo.com' id="input-registraion-login" class="input-email" required maxlength="100" type="email" />
                         <span class="custom-text-input__label">E-mail или логин X5</span>
+                        <span id="caption-error-register" class="custom-text-input__caption text-p3"></span>
                     </label>
                     <div class="modal-login__password-container">
                         <label class="custom-text-input modal-login__password">
                             <input type="password" class="input-password input-register-password" required minlength="8" maxlength="50" />
                             <span class="custom-text-input__label">Пароль</span>
-                            <span class="custom-text-input__caption text-p3">минимальная длина пароля 8 символов</span>
+                            <span id="caption-error-password" class="custom-text-input__caption text-p3">минимальная длина пароля 8 символов</span>
                         </label>
                         <div class="modal-login__password-icon">
                             <svg class="modal-login__password-icon_active" width="20" height="11" viewBox="0 0 20 11"

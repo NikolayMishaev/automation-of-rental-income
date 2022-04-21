@@ -1682,7 +1682,7 @@ main .container {
 .modal__question {
   position: absolute;
   top: 50%;
-  right: 5px;
+  right: 15px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background: url("./../images/icons/modal-question.svg") no-repeat center;
@@ -1725,6 +1725,8 @@ main .container {
   left: 0;
   opacity: 0;
   color: red;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .custom-text-input__caption_active {
@@ -1737,7 +1739,7 @@ main .container {
   border: 1px solid #cfd4dc;
   border-radius: 4px;
   padding: 20px 12px 4px;
-  padding-right: 25px;
+  padding-right: 35px;
   font-size: 16px;
   color: #222429;
   background-color: transparent;
