@@ -165,17 +165,29 @@ window.addEventListener("resize", function (e) {
     }
 });
 
-// тоггл лайка по клику на сердечко в карточке
+// отправка AJAX запроса на лайк карточки
 const mainCardsContainer = document.querySelector(".main__cards-container");
 
 mainCardsContainer.addEventListener("click", (e) => {
     const currentTargetLike = e.target.classList.contains("card-price__like");
     if (currentTargetLike) {
-        if (e.target.classList.contains("card-price__like_active")) {
-            removeClassElement(e.target, "card-price__like_active");
-        } else {
-            addClassElement(e.target, "card-price__like_active");
-        }
+        const currentLike = e.target.classList.contains(
+            "card-price__like_active"
+        );
+        const data = { "card-like": !currentLike };
+        fetch(e.target.getAttribute("data-url"), {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "content-type": "application/json" },
+        }).then((response) => {
+            if (response.ok) {
+                if (currentLike) {
+                    removeClassElement(e.target, "card-price__like_active");
+                } else {
+                    addClassElement(e.target, "card-price__like_active");
+                }
+            }
+        });
     }
 });
 
@@ -617,9 +629,10 @@ fieldsSort.forEach((i) => {
 // логика регистрации
 
 const inputPassword = document.querySelector(".input-register-password");
-const captionInputPassword = document.querySelector(
-    ".custom-text-input__caption"
-);
+const captionInputPassword = document.querySelector("#caption-error-password");
+
+const inputEmail = document.querySelector("#input-registraion-login");
+const captionInputEmail = document.querySelector("#caption-error-register");
 
 inputPassword.addEventListener("input", () => {
     if (inputPassword.value.length < 8) {
@@ -633,29 +646,45 @@ inputPassword.addEventListener("input", () => {
     }
 });
 
-// проверка логина в окне регистрации
+// логика работы модального окна Регистрации, валидация полей
 
-const formRegistration = document.querySelector("#form-registration");
 const inputRegistrationLogin = document.querySelector(
     "#input-registraion-login"
 );
 
-formRegistration.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log(location.href);
-    console.log(inputRegistrationLogin.value);
-    // fetch("", {
-    // 	method: "POST",
-    //     body: data_body,
-    // 	headers:{"content-type": "application/json"}
-    // 	})
+inputRegistrationLogin.addEventListener("input", () => {
+    inputEmail.classList.remove("custom-text-input__error-border");
+    captionInputEmail.classList.remove("custom-text-input__caption_active");
+});
 
-    // .then( (response) => {
-    //         if (response.status !== 200) {
-    // 			return Promise.reject();
-    //         }
-    // return response.text()
-    // })
-    // .then(i => console.log(i))
-    // .catch(() => console.log('ошибка'));
+inputRegistrationLogin.addEventListener("blur", () => {
+    const data = { "register-email": inputRegistrationLogin.value };
+    fetch(inputRegistrationLogin.getAttribute("data-url"), {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+    })
+        .then((response) => {
+            if (!response.ok) {
+                inputEmail.classList.add("custom-text-input__error-border");
+                captionInputEmail.textContent =
+                    "такой пользователь уже существует";
+                captionInputEmail.classList.add(
+                    "custom-text-input__caption_active"
+                );
+            } else {
+                inputEmail.classList.remove("custom-text-input__error-border");
+                captionInputEmail.classList.remove(
+                    "custom-text-input__caption_active"
+                );
+            }
+        })
+        .catch(() => {
+            inputEmail.classList.add("custom-text-input__error-border");
+            captionInputEmail.textContent =
+                "произошла ошибка, повторите запрос.";
+            captionInputEmail.classList.add(
+                "custom-text-input__caption_active"
+            );
+        });
 });

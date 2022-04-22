@@ -945,3 +945,55 @@ buttonsSelect.forEach((i) =>
 function checkSubmenuSecondLevel(ariaLabel) {
     return ariaLabel.includes("division") || ariaLabel.includes("structure");
 }
+
+// логика добавления карточки в избранное
+
+const buttonsLikeCard = document.querySelectorAll(".info-card__favorite-btn");
+const iconsLike = document.querySelectorAll(".icon-like");
+
+buttonsLikeCard.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        const currentLike = iconsLike[0].classList.contains("icon-like_active");
+        const data = { "card-like": !currentLike };
+        const currentButton = e.target.closest(".info-card__favorite-btn");
+        fetch(currentButton.getAttribute("data-url"), {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "content-type": "application/json" },
+        }).then((response) => {
+            if (response.ok) {
+                if (currentLike) {
+                    iconsLike.forEach((i) =>
+                        removeClassElement(i, "icon-like_active")
+                    );
+                    buttonsLikeCard.forEach(
+                        (i) =>
+                            (i.children[1].textContent = "Добавить в избранное")
+                    );
+                } else {
+                    iconsLike.forEach((i) =>
+                        addClassElement(i, "icon-like_active")
+                    );
+                    buttonsLikeCard.forEach(
+                        (i) =>
+                            (i.children[1].textContent =
+                                "Удалить из избранного")
+                    );
+                }
+            }
+        });
+    })
+);
+
+// Установка значения для кнопки при отрисовке страницы
+if (iconsLike.length) {
+    if (iconsLike[0].classList.contains("icon-like_active")) {
+        buttonsLikeCard.forEach(
+            (i) => (i.children[1].textContent = "Удалить из избранного")
+        );
+    } else {
+        buttonsLikeCard.forEach(
+            (i) => (i.children[1].textContent = "Добавить в избранное")
+        );
+    }
+}

@@ -663,6 +663,20 @@ main .container {
   font-size: 16px;
 }
 
+@media (max-width: 1300px) {
+  .info-card__btns {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-card__btns {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
 .info-card__btns button {
   padding: 12px 0;
   -webkit-box-flex: 50%;
@@ -670,12 +684,23 @@ main .container {
           flex: 50%;
 }
 
+@media (max-width: 1300px) {
+  .info-card__btns button {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+    width: 100%;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__btns button {
-    padding: 4px 0;
+    padding: 5px;
     -webkit-box-flex: 0;
         -ms-flex: none;
             flex: none;
+    width: unset;
+    height: 32px;
   }
 }
 
@@ -696,9 +721,15 @@ main .container {
   text-decoration: none;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .info-card__primary-btn {
     width: 49.5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-card__primary-btn {
+    padding: 4px 46px !important;
   }
 }
 
@@ -737,6 +768,13 @@ main .container {
   text-decoration: none;
 }
 
+@media (max-width: 1300px) {
+  .info-card__favorite-btn {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}
+
 @media (max-width: 64rem) {
   .info-card__favorite-btn {
     width: 32px;
@@ -771,7 +809,7 @@ main .container {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1023px) {
   .info-card__favorite-btn span {
     display: inline;
   }
@@ -1331,6 +1369,27 @@ main .container {
   }
 }
 
+.icon-like {
+  background: url("./../images/icons/card-like.svg") no-repeat center/contain;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media (max-width: 768px) {
+  .icon-like {
+    margin-right: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.icon-like_active {
+  background-image: url("./../images/icons/card-like-active.svg");
+}
+
 .group-radio-btn {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1623,7 +1682,7 @@ main .container {
 .modal__question {
   position: absolute;
   top: 50%;
-  right: 5px;
+  right: 15px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background: url("./../images/icons/modal-question.svg") no-repeat center;
@@ -1666,6 +1725,8 @@ main .container {
   left: 0;
   opacity: 0;
   color: red;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .custom-text-input__caption_active {
@@ -1678,7 +1739,7 @@ main .container {
   border: 1px solid #cfd4dc;
   border-radius: 4px;
   padding: 20px 12px 4px;
-  padding-right: 25px;
+  padding-right: 35px;
   font-size: 16px;
   color: #222429;
   background-color: transparent;
@@ -3008,6 +3069,15 @@ main .container {
   display: -ms-flexbox;
   display: flex;
   font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+  color: #3C4142;
+}
+
+#map .map__tooltip_current:link {
+  text-decoration: none;
+}
+
+#map .map__tooltip_current:hover {
+  text-decoration: none;
 }
 
 #map .leaflet-popup-content {
@@ -6055,6 +6125,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #cfd4dc;
 }
 
+.main__control-panel-section-one .main-submenu_style_prof-page, .main__change-page .main-submenu_style_prof-page {
+  left: 240px;
+  right: 0;
+  top: 34px;
+}
+
 .main-filters {
   background: #f5f7f7;
   border: 1px solid #e3e7e8;
@@ -6201,6 +6277,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main-form__input_style_two-column {
   margin-right: 16px;
+}
+
+.main-form__input_style_two-column::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media (max-width: 40rem) {
@@ -6560,7 +6641,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .pagination__button {
-  width: 2rem;
+  min-width: 2rem;
   height: 2rem;
   background: #ffffff;
   border: 1px solid #cfd4dc;
@@ -6582,7 +6663,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .pagination__button:hover {
   background-color: #2a9b43;
-  border: none;
+  border-color: #2a9b43;
   color: white;
 }
 
@@ -8262,6 +8343,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.prof-general__content_type_waiting-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .prof-general__content_type_iframe {
   padding-right: 24px;
 }
@@ -9902,6 +9993,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 412px;
+  overflow: auto;
 }
 
 .prof-table_type_ankets {
@@ -9954,12 +10047,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__row_style_waiting-list {
-  -ms-grid-columns: 200px 200px 200px 336px;
-      grid-template-columns: 200px 200px 200px 336px;
-}
-
-.prof-table__row_style_waiting-list:last-of-type {
-  border-bottom: 1px solid #e3e7e8;
+  -ms-grid-columns: 200px 160px 236px 336px;
+      grid-template-columns: 200px 160px 236px 336px;
 }
 
 @media (max-width: 96.875rem) {
@@ -9970,8 +10059,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__row_style_agent {
-  -ms-grid-columns: 85px 160px 95px 160px 75px 100px 100px 95px;
-      grid-template-columns: 85px 160px 95px 160px 75px 100px 100px 95px;
+  -ms-grid-columns: 75px 100px 95px 120px 75px 100px 100px 115px 75px;
+      grid-template-columns: 75px 100px 95px 120px 75px 100px 100px 115px 75px;
 }
 
 .prof-table__row_style_agent-archive {
@@ -10138,8 +10227,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-table__button_type_waiting-list {
-  margin-left: auto;
-  margin-top: 14px;
+  display: none;
 }
 
 .prof-table__link {
@@ -10187,6 +10275,27 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 4px 12px;
   border-radius: 4px;
   width: 100%;
+}
+
+.prof-table__input-error {
+  border-color: red;
+}
+
+.prof-table__input-error:focus {
+  outline-color: red;
+}
+
+.prof-table__caption-error {
+  opacity: 0;
+  position: absolute;
+  bottom: -1px;
+  right: 24px;
+  color: red;
+  font-size: 10px;
+}
+
+.prof-table__caption-error_active {
+  opacity: 1;
 }
 
 .prof-card {
@@ -10434,7 +10543,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .pagination__button {
-  width: 2rem;
+  min-width: 2rem;
   height: 2rem;
   background: #ffffff;
   border: 1px solid #cfd4dc;
@@ -10456,7 +10565,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .pagination__button:hover {
   background-color: #2a9b43;
-  border: none;
+  border-color: #2a9b43;
   color: white;
 }
 

@@ -16,7 +16,7 @@
         }
     }
     &__button {
-        width: rem(32px);
+        min-width: rem(32px);
         height: rem(32px);
         background: #ffffff;
         border: 1px solid #cfd4dc;
@@ -35,7 +35,7 @@
         }
         &:hover {
             background-color: $accent-TCX50;
-            border: none;
+            border-color: $accent-TCX50;
             color: white;
         }
         &_type_arrow-left {

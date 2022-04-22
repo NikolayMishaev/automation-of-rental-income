@@ -48,25 +48,21 @@
                 type="text"
                 disabled="true"
                 class="prof-control-panel__select-input prof-control-panel__select-input_type_period"
-                value="Месяц"
+                value="Интервал"
               />
               <div
                 id="submenu-analytics-period-portal"
                 class="main-submenu main-submenu_style_date"
               >
                 <ul class="main-submenu__list">
-                  <li aria-label="item" class="main-submenu__item">Январь</li>
-                  <li aria-label="item" class="main-submenu__item">Февраль</li>
-                  <li aria-label="item" class="main-submenu__item">Март</li>
-                  <li aria-label="item" class="main-submenu__item">Апрель</li>
                   <li
                     class="main-submenu__item main-submenu__item_style_prof-control-panel"
                   >
                     <p class="prof-control-panel__text text-p2">
-                      От<input type="date" class="prof-control-panel__input-date" />
+                      От<input name="date-min" type="date" class="prof-control-panel__input-date" />
                     </p>
                     <p class="prof-control-panel__text text-p2">
-                      До<input type="date" class="prof-control-panel__input-date" />
+                      До<input name="date-max" type="date" class="prof-control-panel__input-date" />
                     </p>
                   </li>
                   <li
