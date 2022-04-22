@@ -997,3 +997,19 @@ if (iconsLike.length) {
         );
     }
 }
+
+// Логика прокрутки до карты по клику на кнопку "Посмотреть на карте"
+
+const buttonsLookMap = document.querySelectorAll(".info-card__link");
+const mapObject = document.querySelector(".map-object");
+
+buttonsLookMap.forEach((i) =>
+    i.addEventListener("click", () => {
+        const elementPosition = mapObject.getBoundingClientRect().top;
+        const offsetPosition = elementPosition;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+        });
+    })
+);
