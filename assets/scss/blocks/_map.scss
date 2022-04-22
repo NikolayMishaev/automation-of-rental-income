@@ -11,6 +11,13 @@
         &_current {
             display: flex;
             font-family: $font-family-custom, $font-family-default;
+            color: #3C4142;
+            &:link {
+                text-decoration: none;
+            }
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
     .leaflet-popup-content {

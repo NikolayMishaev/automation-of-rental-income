@@ -3069,6 +3069,15 @@ main .container {
   display: -ms-flexbox;
   display: flex;
   font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+  color: #3C4142;
+}
+
+#map .map__tooltip_current:link {
+  text-decoration: none;
+}
+
+#map .map__tooltip_current:hover {
+  text-decoration: none;
 }
 
 #map .leaflet-popup-content {
@@ -6116,6 +6125,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #cfd4dc;
 }
 
+.main__control-panel-section-one .main-submenu_style_prof-page, .main__change-page .main-submenu_style_prof-page {
+  left: 240px;
+  right: 0;
+  top: 34px;
+}
+
 .main-filters {
   background: #f5f7f7;
   border: 1px solid #e3e7e8;
@@ -6262,6 +6277,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main-form__input_style_two-column {
   margin-right: 16px;
+}
+
+.main-form__input_style_two-column::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media (max-width: 40rem) {
@@ -6621,7 +6641,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .pagination__button {
-  width: 2rem;
+  min-width: 2rem;
   height: 2rem;
   background: #ffffff;
   border: 1px solid #cfd4dc;
@@ -6643,7 +6663,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .pagination__button:hover {
   background-color: #2a9b43;
-  border: none;
+  border-color: #2a9b43;
   color: white;
 }
 
@@ -10523,7 +10543,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .pagination__button {
-  width: 2rem;
+  min-width: 2rem;
   height: 2rem;
   background: #ffffff;
   border: 1px solid #cfd4dc;
@@ -10545,7 +10565,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .pagination__button:hover {
   background-color: #2a9b43;
-  border: none;
+  border-color: #2a9b43;
   color: white;
 }
 

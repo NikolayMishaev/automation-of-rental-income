@@ -115,7 +115,7 @@ function myIcon(price) {
 }
 
 function tooltip(obj) {
-    return `<div class="map__tooltip_current"><div class="map__img"><img src="${obj.photo}" alt="" /></div><div class="map__tooltip-info"><h4>${obj.title}</h4><h5>${obj.price} ₽ в месяц</h5></div></div>`;
+    return `<a href="./../../objectCard.html" class="map__tooltip_current"><div class="map__img"><img src="${obj.photo}" alt="" /></div><div class="map__tooltip-info"><h4>${obj.title}</h4><h5>${obj.price} ₽ в месяц</h5></div></a>`;
 }
 
 let btnFilterSubmit = document.querySelector(".main-form__button_type_submit");
