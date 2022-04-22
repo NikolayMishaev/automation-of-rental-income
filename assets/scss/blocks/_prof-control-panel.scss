@@ -653,9 +653,10 @@
             }
         }
         &_type_offers {
-            width: 743px;
+            width: unset;
             margin: 0;
-            margin-left: 37px;
+            margin-left: 40px;
+            flex: 1;
         }
         &_type_analytic {
             width: unset;
