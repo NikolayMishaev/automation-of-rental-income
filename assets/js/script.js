@@ -1013,3 +1013,84 @@ buttonsLookMap.forEach((i) =>
         });
     })
 );
+
+// логика регистрации
+
+const inputPassword = document.querySelector(".input-register-password");
+const captionInputPassword = document.querySelector("#caption-error-password");
+
+const inputEmail = document.querySelector("#input-registraion-login");
+const captionInputEmail = document.querySelector("#caption-error-register");
+
+inputPassword.addEventListener("input", () => {
+    if (inputPassword.value.length < 8) {
+        inputPassword.classList.add("custom-text-input__error-border");
+        captionInputPassword.classList.add("custom-text-input__caption_active");
+    } else {
+        inputPassword.classList.remove("custom-text-input__error-border");
+        captionInputPassword.classList.remove(
+            "custom-text-input__caption_active"
+        );
+    }
+});
+
+// логика работы модального окна Регистрации, валидация полей
+
+const inputRegistrationLogin = document.querySelector(
+    "#input-registraion-login"
+);
+
+inputRegistrationLogin.addEventListener("input", () => {
+    inputEmail.classList.remove("custom-text-input__error-border");
+    captionInputEmail.classList.remove("custom-text-input__caption_active");
+});
+
+inputRegistrationLogin.addEventListener("blur", () => {
+    const data = { "register-email": inputRegistrationLogin.value };
+    fetch(inputRegistrationLogin.getAttribute("data-url"), {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+    })
+        .then((response) => {
+            if (!response.ok) {
+                inputEmail.classList.add("custom-text-input__error-border");
+                captionInputEmail.textContent =
+                    "такой пользователь уже существует";
+                captionInputEmail.classList.add(
+                    "custom-text-input__caption_active"
+                );
+            } else {
+                inputEmail.classList.remove("custom-text-input__error-border");
+                captionInputEmail.classList.remove(
+                    "custom-text-input__caption_active"
+                );
+            }
+        })
+        .catch(() => {
+            inputEmail.classList.add("custom-text-input__error-border");
+            captionInputEmail.textContent =
+                "произошла ошибка, повторите запрос";
+            captionInputEmail.classList.add(
+                "custom-text-input__caption_active"
+            );
+        });
+});
+
+// логика изменения текста в зависимости от статуса колокольчика
+
+const buttonsBell = document.querySelector(".info-card__icon-bell");
+const containersTextTooltipBell = document.querySelectorAll(
+    ".tooltip__inner_type_bell"
+);
+
+if (buttonsBell.classList.contains("active")) {
+    containersTextTooltipBell.forEach(
+        (i) =>
+            (i.textContent = "Выключить рассылку уведомлений об освобождении")
+    );
+} else {
+    containersTextTooltipBell.forEach(
+        (i) => (i.textContent = "Включить рассылку уведомлений об освобождении")
+    );
+}

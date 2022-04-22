@@ -191,7 +191,7 @@ modalAll.forEach((i) =>
             e.target.classList.contains("modal__cancel-btn") ||
             e.target.closest(".modal__close-btn")
         ) {
-            e.target.style = "none";
+            e.target.style.display = "none";
         }
     })
 );
@@ -204,4 +204,18 @@ function handleEscClose(e) {
             document.removeEventListener("keydown", handleEscClose);
         }
     }
+}
+
+// логика перехода в модальное окно регистрации из модального окна Входа
+
+const linkRegister = document.querySelector(".modal-login__registration-link");
+const modalRegistration = document.querySelector(".modal-registration");
+const formRegistration = document.querySelector("#form-registration");
+
+if (linkRegister) {
+    linkRegister.addEventListener("click", (e) => {
+        e.target.closest(".modal").style.display = "none";
+        modalRegistration.style.display = "flex";
+        formRegistration.reset();
+    });
 }

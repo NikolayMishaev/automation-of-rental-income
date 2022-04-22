@@ -969,6 +969,7 @@ main .container {
 }
 
 .info-card__icon-bell {
+  position: relative;
   width: 24px;
   height: 24px;
   border-radius: 100%;
@@ -988,7 +989,10 @@ main .container {
 .info-card__icon-bell:hover svg {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  fill: #2a9b43;
+}
+
+.info-card__icon-bell:hover svg:hover + .tooltip {
+  opacity: 1;
 }
 
 .info-card__icon-bell svg {
@@ -3041,6 +3045,28 @@ main .container {
   right: 0px;
   bottom: 22px;
   width: 250px;
+}
+
+.tooltip_type_bell {
+  right: -1px;
+  bottom: 28px;
+  width: 270px;
+}
+
+.tooltip_type_bell svg {
+  position: absolute;
+  bottom: -4px;
+  right: 7px;
+}
+
+.tooltip_type_bell-mobile {
+  right: 5px;
+  bottom: 31px;
+}
+
+.tooltip_type_info-card-mobile {
+  left: -100px !important;
+  width: 210px !important;
 }
 
 .tooltip__icon {

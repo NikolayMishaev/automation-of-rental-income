@@ -682,7 +682,7 @@ inputRegistrationLogin.addEventListener("blur", () => {
         .catch(() => {
             inputEmail.classList.add("custom-text-input__error-border");
             captionInputEmail.textContent =
-                "произошла ошибка, повторите запрос.";
+                "произошла ошибка, повторите запрос";
             captionInputEmail.classList.add(
                 "custom-text-input__caption_active"
             );

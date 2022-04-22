@@ -16,6 +16,24 @@
     bottom: 22px;
     width: 250px;
   }
+  &_type_bell {
+    right: -1px;
+    bottom: 28px;
+    width: 270px;
+    svg {
+        position: absolute;
+        bottom: -4px;
+        right: 7px;
+    }
+    &-mobile {
+        right: 5px;
+        bottom: 31px;
+    }
+  }
+  &_type_info-card-mobile {
+      left: -100px !important;
+      width: 210px !important;
+  }
   &__icon {
       position: absolute;
       bottom: -4px;
