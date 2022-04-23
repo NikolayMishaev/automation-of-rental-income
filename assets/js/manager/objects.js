@@ -540,8 +540,10 @@ const fieldsSort = document.querySelectorAll(
 
 fieldsSort.forEach((i) => {
     if (i.classList.contains("main-submenu__item_active")) {
-        state.inputsSelect["objects-sort"].value =
-            i.children[0].textContent.trim();
+        if (i.children[0]) {
+            state.inputsSelect["objects-sort"].value =
+                i.children[0].textContent.trim();
+        }
     }
 });
 
@@ -564,3 +566,83 @@ checkboxInput.forEach((i) =>
         });
     })
 );
+
+// логика открытия попапа передачи обращения, объекта
+
+const buttonsSendAppeals = document.querySelectorAll(".prof-aside__button");
+const buttonsSendObjects = document.querySelectorAll(
+    ".prof-control-panel__button_type_transfer"
+);
+const buttonSendObjectsMobile = document.querySelector(
+    ".prof-control-panel__button_type_mobile"
+);
+
+const popupSendObjects = document.querySelector(".modal-transfer-object");
+
+if (buttonSendObjectsMobile) {
+    setAddEventListenerOpenPopupSendObjects(buttonSendObjectsMobile);
+
+    buttonsSendAppeals.forEach((i) =>
+        setAddEventListenerOpenPopupSendObjects(i)
+    );
+
+    buttonsSendObjects.forEach((i) =>
+        setAddEventListenerOpenPopupSendObjects(i)
+    );
+
+    function setAddEventListenerOpenPopupSendObjects(i) {
+        i.addEventListener("click", () => {
+            popupSendObjects.style.display = "flex";
+            state.currentOpenPopup = popupSendObjects;
+            document.addEventListener("keydown", handleEscClose);
+        });
+    }
+}
+
+// логика закрытия попапов редактирования аватара, передачи объекта, передачи обращения
+
+const popupsBody = document.querySelectorAll(".modal");
+
+if (popupsBody.length) {
+    popupsBody.forEach((i) =>
+        i.addEventListener("click", (e) => {
+            if (
+                e.target.closest(".modal__close-btn") ||
+                e.target.closest(".modal__cancel-btn") ||
+                e.target.classList.contains("modal")
+            ) {
+                e.target.closest(".modal").style.display = "none";
+            }
+        })
+    );
+}
+
+// логика работы чекбоксов передать объект на мобильном разрешении
+
+const checkboxesTransferObjects = document.querySelectorAll(
+    ".prof-label-checkbox_type_transfer-objects"
+);
+const fixedPopupTransferObjects = document.querySelector(".fixed-popup");
+
+if (checkboxesTransferObjects) {
+    checkboxesTransferObjects.forEach((i) =>
+        i.addEventListener("click", () => {
+            if (innerWidth < 1001) {
+                removeClassElement(
+                    fixedPopupTransferObjects,
+                    "mix-display-none"
+                );
+            }
+        })
+    );
+
+    fixedPopupTransferObjects.addEventListener("click", (e) => {
+        if (
+            e.target.classList.contains(
+                "prof-control-panel__button_type_cancel"
+            )
+        ) {
+            addClassElement(fixedPopupTransferObjects, "mix-display-none");
+        }
+    });
+}

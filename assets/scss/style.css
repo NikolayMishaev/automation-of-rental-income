@@ -8909,17 +8909,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 32px;
 }
 
-@media (max-width: 71.875rem) {
-  .prof-control-panel__button_type_transfer {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    margin-top: 16px;
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 61.25rem) {
+@media (max-width: 53.8125rem) {
   .prof-control-panel__button_type_transfer {
     display: none;
   }
