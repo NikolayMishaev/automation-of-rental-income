@@ -23,7 +23,7 @@
             flex-wrap: nowrap;
             align-items: flex-end;
         }
-        @media (max-width: rem(495px)) {
+        @media (max-width: rem(505px)) {
             flex-wrap: wrap;
         }
     }
@@ -389,7 +389,7 @@
                     background-color: #fff;
                 }
             }
-            @media (max-width: rem(500px)) {
+            @media (max-width: rem(505px)) {
                 margin-top: 16px;
                 margin-left: auto;
             }
@@ -753,7 +753,7 @@
                 padding-top: 0;
                 padding-bottom: 0;
             }
-            @media (max-width: rem(495px)) {
+            @media (max-width: rem(505px)) {
                 flex: unset;
             }
         }
@@ -870,6 +870,7 @@
             margin-top: 0;
         }
         @media (max-width: rem(980px)) {
+            height: unset !important;
             flex-wrap: nowrap;
             margin-bottom: 0;
             margin-left: 16px;
