@@ -553,6 +553,9 @@ const checkboxInput = document.querySelectorAll(".prof-label-checkbox__input");
 
 checkboxInput.forEach((i) =>
     i.addEventListener("click", () => {
+        if (!i.getAttribute("data-url")) {
+            return;
+        }
         const data = { is_hot: i.checked };
         i.checked = !i.checked;
         fetch(i.getAttribute("data-url"), {
@@ -645,4 +648,19 @@ if (checkboxesTransferObjects.length) {
             addClassElement(fixedPopupTransferObjects, "mix-display-none");
         }
     });
+}
+
+// логика отправки формы из попапа оъектов
+
+const buttonSendTransferMobile = document.querySelector(
+    ".prof-control-panel__button_type_mobile"
+);
+
+const buttonSendTransfer = document.querySelector("#transfer-objects-submit");
+
+if (buttonSendTransferMobile) {
+    buttonSendTransferMobile.addEventListener("click", () =>
+        formObjects.submit()
+    );
+    buttonSendTransfer.addEventListener("click", () => formObjects.submit());
 }
