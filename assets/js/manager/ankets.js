@@ -140,6 +140,15 @@ const state = {
         "structure-offers": document.querySelector("#submenu-structure-offers"),
     },
     inputsSelect: {
+        "ankets-status-new": document.querySelector("#input-ankets-status-new"),
+        "ankets-status-approved": document.querySelector(
+            "#input-ankets-status-approved"
+        ),
+
+        "ankets-status-denied": document.querySelector(
+            "#input-ankets-status-denied"
+        ),
+
         "analytics-period-ankets": document.querySelector(
             "#input-analytics-period-ankets"
         ),
@@ -282,18 +291,25 @@ const checkClickOutsideSelect = (e) => {
 };
 
 function setInputValueByValueActiveCheckbox() {
-    if (
-        state.inputsSelect["checkbox-free"].checked &&
-        state.inputsSelect["checkbox-free-soon"].checked
-    ) {
-        state.inputsSelect["objects-status"].value = "Выбрано несколько";
-    } else if (state.inputsSelect["checkbox-free"].checked) {
-        state.inputsSelect["objects-status"].value = "Свободен";
-    } else if (state.inputsSelect["checkbox-free-soon"].checked) {
-        state.inputsSelect["objects-status"].value = "Скоро освободится";
-    } else {
-        state.inputsSelect["objects-status"].value = "Все";
-    }
+    const arrayInputAnketStatus = [
+        state.inputsSelect["ankets-status-new"],
+        state.inputsSelect["ankets-status-approved"],
+        state.inputsSelect["ankets-status-denied"],
+    ];
+    let count = 0;
+    arrayInputAnketStatus.forEach((i) => {
+        if (i.checked) {
+            ++count;
+            state.inputsSelect["ankets-status"].value = i
+                .closest(".label-checkbox")
+                .textContent.trim();
+        }
+        if (count > 1) {
+            state.inputsSelect["ankets-status"].value =
+                "Выбрано несколько значений";
+            return;
+        }
+    });
 }
 
 function toggleVisibleSubmenuSecondLevel(currentLabel) {
@@ -368,19 +384,19 @@ buttonsSelect.forEach((i) =>
         const currentLabel = e.target.closest(
             ".prof-control-panel__select-label"
         );
+        if (
+            e.target.closest(".label-checkbox") &&
+            e.target.closest(".label-checkbox").ariaLabel === "checkbox"
+        ) {
+            setInputValueByValueActiveCheckbox();
+            return;
+        }
         if (e.target.closest(".prof-control-panel__label-custom")) {
             const currentCheckedValue = e.target
                 .closest(".prof-control-panel__label-custom")
                 .textContent.trim();
             state.inputsSelect[currentLabel.ariaLabel].value =
                 currentCheckedValue;
-            return;
-        }
-        if (
-            e.target.closest(".label-checkbox") &&
-            e.target.closest(".label-checkbox").ariaLabel === "checkbox"
-        ) {
-            setInputValueByValueActiveCheckbox();
             return;
         }
         if (e.target.ariaLabel === "item") {
