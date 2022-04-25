@@ -1295,6 +1295,14 @@ main .container {
   }
 }
 
+.contact-form__text_type_section {
+  margin-top: 16px;
+}
+
+.contact-form__number {
+  margin-right: 30px;
+}
+
 .modal-form .modal-content {
   width: 800px;
 }

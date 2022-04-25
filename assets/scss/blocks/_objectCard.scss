@@ -547,6 +547,12 @@ main .container {
         @media #{$screen-mobile} {
             font-size: 14px;
         }
+        &_type_section {
+            margin-top: 16px;
+        }
+    }
+    &__number {
+        margin-right: 30px;
     }
 }
 
