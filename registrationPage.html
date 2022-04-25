@@ -81,6 +81,8 @@
                         type="date"
                         class="registration-form__input"
                         placeholder="Дата рождения"
+                        min="1900-01-01"
+                        max="2022-04-01"
                       />
                       <span class="label-date">Дата рождения</span>
                     </label>
@@ -217,10 +219,10 @@
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
                       <input
-                        data-required="true"
-                        maxlength="11"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                        type="text"
+                      required
+                      class="tel"
+                      type="tel"
+                      pattern="2-[0-9]{3}-[0-9]{3}"
                       />
                       <span class="custom-text-input__label">Введите телефон*</span>
                     </label>
@@ -239,7 +241,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" data-required="true" />
+                      <input id="input-email-personal" type="text" data-required="true" />
                       <span class="custom-text-input__label">Введите E-mail*</span>
                     </label>
                   </div>
@@ -291,7 +293,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input aria-label="bik" type="text" />
                       <span class="custom-text-input__label">Введите БИК</span>
                     </label>
                   </div>
@@ -300,7 +302,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input aria-label="bank-account" type="text" />
                       <span class="custom-text-input__label">Введите расчетный счет</span>
                     </label>
                   </div>
@@ -309,7 +311,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input aria-label="corr-account" type="text" />
                       <span class="custom-text-input__label">Введите корр счет</span>
                     </label>
                   </div>
@@ -318,7 +320,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input type="text" data-name="SWIFT"/>
                       <span class="custom-text-input__label">Введите SWIFT</span>
                     </label>
                   </div>
@@ -327,7 +329,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input data-name="IBAN" type="text" />
                       <span class="custom-text-input__label">Введите IBAN</span>
                     </label>
                   </div>
@@ -336,7 +338,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input data-name="ABA" type="text" />
                       <span class="custom-text-input__label">Введите ABA</span>
                     </label>
                   </div>
@@ -770,7 +772,7 @@
                       <input
                         type="date"
                         class="registration-form__input"
-                        placeholder="Дата рождения"
+                        placeholder="Дата регистрации"
                       />
                       <span class="label-date">Дата регистрации</span>
                     </label>
@@ -792,10 +794,10 @@
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
                       <input
-                        data-required="true"
-                        type="text"
-                        maxlength="11"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                      required
+                      class="tel"
+                      type="tel"
+                      pattern="2-[0-9]{3}-[0-9]{3}"
                       />
                       <span class="custom-text-input__label">Введите телефон*</span>
                     </label>
@@ -814,7 +816,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" data-required="true" />
+                      <input id="input-email-ip" type="text" data-required="true" />
                       <span class="custom-text-input__label">Введите E-mail*</span>
                     </label>
                   </div>
@@ -886,7 +888,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input aria-label="bik" type="text" />
                       <span class="custom-text-input__label">Введите БИК</span>
                     </label>
                   </div>
@@ -895,7 +897,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input aria-label="bank-account" type="text" />
                       <span class="custom-text-input__label">Введите расчетный счет</span>
                     </label>
                   </div>
@@ -904,7 +906,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input aria-label="corr-account" type="text" />
                       <span class="custom-text-input__label">Введите корр счет</span>
                     </label>
                   </div>
@@ -913,7 +915,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input type="text" data-name="SWIFT"/>
                       <span class="custom-text-input__label">Введите SWIFT</span>
                     </label>
                   </div>
@@ -922,7 +924,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input data-name="IBAN" type="text" />
                       <span class="custom-text-input__label">Введите IBAN</span>
                     </label>
                   </div>
@@ -931,7 +933,7 @@
                     <label
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
-                      <input type="text" />
+                      <input data-name="ABA" type="text" />
                       <span class="custom-text-input__label">Введите ABA</span>
                     </label>
                   </div>
@@ -1270,7 +1272,7 @@
                         <input
                           type="date"
                           class="registration-form__input"
-                          placeholder="Дата рождения"
+                          placeholder="Дата регистрации"
                         />
                         <span class="label-date">Дата регистрации</span>
                       </label>
@@ -1292,10 +1294,10 @@
                         class="custom-text-input custom-text-input_name registration-form__input"
                       >
                         <input
-                          type="text"
-                          data-required="true"
-                          maxlength="20"
-                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        required
+                        class="tel"
+                        type="tel"
+                        pattern="2-[0-9]{3}-[0-9]{3}"
                         />
                         <span class="custom-text-input__label">Введите телефон*</span>
                       </label>
@@ -1314,7 +1316,7 @@
                       <label
                         class="custom-text-input custom-text-input_name registration-form__input"
                       >
-                        <input type="text" data-required="true" />
+                        <input id="input-email-org"type="text" data-required="true" />
                         <span class="custom-text-input__label">Введите E-mail*</span>
                       </label>
                     </div>
@@ -1809,6 +1811,8 @@
         </div>
       </div>
     </div>
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/inputmask.js"></script>
     <script type="module" src="./assets/js/script.js"></script>
   </body>
 </html>

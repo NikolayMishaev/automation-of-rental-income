@@ -355,12 +355,61 @@ function navigateTabs(stepList, tabList, idx, radio) {
 
 function checkRequiredInput(step) {
     let findInput = false;
+    let inputBik = null;
+    let inputBankAccount = null;
+    let inputCorrAccount = null;
+    let inputIBAN = false;
     for (let index = 0; index < step.length; index++) {
         const element = step[index];
+        if (element.ariaLabel && element.ariaLabel === "bik") {
+            inputBik = element;
+        }
+        if (element.ariaLabel && element.ariaLabel === "bank-account") {
+            inputBankAccount = element;
+        }
+        if (element.ariaLabel && element.ariaLabel === "corr-account") {
+            inputCorrAccount = element;
+        }
         if ((element.dataset.required || element.required) && !element.value) {
             findInput = true;
             if (element.type !== "file")
                 element.classList.add("custom-text-input__error");
+        }
+        if (element.getAttribute("data-name") === "SWIFT") {
+            if (!element.value) {
+                inputBik.classList.add("custom-text-input__error");
+            } else {
+                inputBik.classList.remove("custom-text-input__error");
+            }
+        }
+        if (element.getAttribute("data-name") === "IBAN") {
+            if (!element.value) {
+                inputBankAccount.classList.add("custom-text-input__error");
+            } else {
+                inputBankAccount.classList.remove("custom-text-input__error");
+                inputIBAN = true;
+            }
+        }
+        if (element.getAttribute("data-name") === "ABA") {
+            if (!element.value && !inputIBAN) {
+                inputBankAccount.classList.add("custom-text-input__error");
+            } else {
+                inputBankAccount.classList.remove("custom-text-input__error");
+            }
+        }
+        if (
+            inputBankAccount &&
+            inputBankAccount.value &&
+            inputBik &&
+            inputBik.value
+        ) {
+            if (inputCorrAccount) {
+                inputCorrAccount.classList.remove("custom-text-input__error");
+            }
+        } else {
+            if (inputCorrAccount) {
+                inputCorrAccount.classList.add("custom-text-input__error");
+            }
         }
     }
     if (findInput) return false;
@@ -1137,3 +1186,73 @@ if (buttonsBell) {
         );
     }
 }
+
+const inputsDate = document.querySelectorAll("input[type=date]");
+
+inputsDate.forEach((i) => {
+    let timer = undefined;
+    i.addEventListener("input", (e) => {
+        clearInterval(timer);
+        timer = setTimeout(() => {
+            let inputValue = e.target.value;
+            if (
+                new Date(inputValue) > new Date() ||
+                new Date(inputValue) < new Date("1900-01-01")
+            ) {
+                e.target.value = "2000-01-01";
+            }
+        }, 1000);
+    });
+});
+
+// маска для ввода номера телефонов
+
+window.addEventListener("DOMContentLoaded", function () {
+    [].forEach.call(document.querySelectorAll(".tel"), function (input) {
+        var keyCode;
+        function mask(event) {
+            event.keyCode && (keyCode = event.keyCode);
+            var pos = this.selectionStart;
+            if (pos < 3) event.preventDefault();
+            var matrix = "+7 (___) ___-__-__",
+                i = 0,
+                def = matrix.replace(/\D/g, ""),
+                val = this.value.replace(/\D/g, ""),
+                new_value = matrix.replace(/[_\d]/g, function (a) {
+                    return i < val.length
+                        ? val.charAt(i++) || def.charAt(i)
+                        : a;
+                });
+            i = new_value.indexOf("_");
+            if (i != -1) {
+                i < 5 && (i = 3);
+                new_value = new_value.slice(0, i);
+            }
+            var reg = matrix
+                .substr(0, this.value.length)
+                .replace(/_+/g, function (a) {
+                    return "\\d{1," + a.length + "}";
+                })
+                .replace(/[+()]/g, "\\$&");
+            reg = new RegExp("^" + reg + "$");
+            if (
+                !reg.test(this.value) ||
+                this.value.length < 5 ||
+                (keyCode > 47 && keyCode < 58)
+            )
+                this.value = new_value;
+            if (event.type == "blur" && this.value.length < 5) this.value = "";
+        }
+
+        input.addEventListener("input", mask, false);
+        input.addEventListener("focus", mask, false);
+        input.addEventListener("blur", mask, false);
+        input.addEventListener("keydown", mask, false);
+    });
+});
+
+// маска для email
+
+$("#input-email-personal").inputmask("email");
+$("#input-email-ip").inputmask("email");
+$("#input-email-org").inputmask("email");
