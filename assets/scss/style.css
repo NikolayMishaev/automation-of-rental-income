@@ -9228,6 +9228,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
 }
 
+.prof-control-panel__select-label_type_ankets-switch {
+  width: 32px;
+  height: 32px;
+  margin-left: 16px;
+  background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
+  border-radius: 4px;
+}
+
+.prof-control-panel__select-label_type_ankets-switch-active {
+  background-image: url(./../images/icons/main-page-icon-filters-active.svg);
+}
+
+@media (max-width: 61.25rem) {
+  .prof-control-panel__select-label_type_ankets-switch {
+    display: none;
+  }
+}
+
 .prof-control-panel__select-label_type_status-agent {
   margin-right: 40px;
 }
@@ -9944,6 +9962,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__wrapper {
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  height: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

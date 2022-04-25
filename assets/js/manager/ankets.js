@@ -671,3 +671,31 @@ buttonsEye.forEach((i) =>
         });
     })
 );
+
+// логика кнопки свернуть/развернуть фильтры
+
+const buttonSwitchFilters = document.querySelector(
+    ".prof-control-panel__select-label_type_ankets-switch"
+);
+
+const buttonsContainer = document.querySelector(".prof-control-panel__wrapper");
+
+buttonSwitchFilters.addEventListener("click", () => {
+    if (
+        buttonSwitchFilters.classList.contains(
+            "prof-control-panel__select-label_type_ankets-switch-active"
+        )
+    ) {
+        removeClassElement(
+            buttonSwitchFilters,
+            "prof-control-panel__select-label_type_ankets-switch-active"
+        );
+        buttonsContainer.style.height = 0;
+    } else {
+        addClassElement(
+            buttonSwitchFilters,
+            "prof-control-panel__select-label_type_ankets-switch-active"
+        );
+        buttonsContainer.style.height = "84px";
+    }
+});
