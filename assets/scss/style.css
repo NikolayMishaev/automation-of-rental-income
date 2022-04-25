@@ -8079,6 +8079,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-aside__stars-container {
+  position: relative;
   width: 128px;
   height: 32px;
   margin-left: 4px;
@@ -8107,10 +8108,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: white;
   border-radius: 12px;
   position: absolute;
+  left: 140px;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 2;
 }
 
