@@ -582,7 +582,7 @@ checkboxInput.forEach((i) =>
             credentials: "same-origin",
             body: JSON.stringify(data),
             headers: {
-                Accept: "application/json",
+                "content-type": "application/json",
                 "X-Requested-With": "XMLHttpRequest",
                 "X-CSRFToken": csrftoken,
             },
