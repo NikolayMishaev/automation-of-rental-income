@@ -691,11 +691,13 @@ buttonSwitchFilters.addEventListener("click", () => {
             "prof-control-panel__select-label_type_ankets-switch-active"
         );
         buttonsContainer.style.height = 0;
+        buttonsContainer.style.overflow = "hidden";
     } else {
         addClassElement(
             buttonSwitchFilters,
             "prof-control-panel__select-label_type_ankets-switch-active"
         );
         buttonsContainer.style.height = "84px";
+        setTimeout(() => (buttonsContainer.style.overflow = "unset"), 500);
     }
 });
