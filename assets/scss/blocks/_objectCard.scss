@@ -350,13 +350,16 @@ main .container {
         }
     }
     &__icon-bell {
+        position: relative;
         width: 24px;
         height: 24px;
         border-radius: 100%;
         &:hover {
             svg {
                 transition: $transition;
-                fill: $accent-TCX50;
+                &:hover + .tooltip {
+                    opacity: 1;
+                }
             }
         }
 

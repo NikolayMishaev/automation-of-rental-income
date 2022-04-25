@@ -425,3 +425,27 @@ const formOffers = document.querySelector("#form-offers");
 inputSearch.addEventListener("blur", () => {
     formOffers.submit();
 });
+
+// логика нажатия по значку глаза
+
+const buttonsEye = document.querySelectorAll(".prof-marker_type_eye");
+
+buttonsEye.forEach((i) =>
+    i.addEventListener("click", () => {
+        const viewed = i.classList.contains("prof-marker_type_eye-active");
+        const data = { viewed: !viewed };
+        fetch(i.getAttribute("data-url"), {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "content-type": "application/json" },
+        }).then((response) => {
+            if (response.ok) {
+                if (viewed) {
+                    removeClassElement(i, "prof-marker_type_eye-active");
+                } else {
+                    addClassElement(i, "prof-marker_type_eye-active");
+                }
+            }
+        });
+    })
+);

@@ -181,14 +181,29 @@
                         </nav>
 
                         <div aria-label="about-me" id="about-me" class="prof-general__content">
-
                             <div class="prof-general__section">
                                 <h3 class="prof-general__subtitle heading-h3">Вид деятельности</h3>
                                 <p class="prof-general__text text-p1">Продаю орехи. В свободное время делаю ключи
                                 </p>
                             </div>
+                            <div action="" method="post">
+                                <div class="prof-general__section">
+                                    <h3 class="prof-general__subtitle heading-h3">Предпочтительная площадь</h3>
+                                    <div class="prof-general__row prof-general__row_type_about-me">
+                                        <label class="prof-general__label mix-mt16 mix-label">
+                                            <!-- нужно value  -->
+                                            <input disabled type="number" value="5" class="prof-general__input main-form__input main-form__input_style_two-column mix-input" min="0" step="5" placeholder=" ">
+                                            <span class="mix-caption">От</span>
+                                        </label>
+                                        <label class="prof-general__label mix-mt16 mix-label">
+                                            <!-- нужно value  -->
+                                            <input disabled value="10" type="number" class="prof-general__input main-form__input main-form__input_style_two-column mix-input" min="0" step="5" placeholder=" ">
+                                            <span class="mix-caption">До</span>
+                                        </label>
+                                    </div>
+                                </div></div>
                             <div class="prof-general__section">
-                                <h3 class="prof-general__subtitle heading-h3">Вид деятельности</h3>
+                                <h3 class="prof-general__subtitle heading-h3">Подробнее о себе</h3>
                                 <p class="prof-general__text text-p1">Предлагаем Вам снять в аренду офисное
                                     помещение в Москве: 0т 52 м2 до 738 м2, в трехэтажном полностью функционирующем
                                     здании, со всеми инженерными коммуникациями.</p>
@@ -207,24 +222,7 @@
                                     47, строение 13 (округ ЗАО, район Очаково-Матвеевское, ближайшие станции метро
                                     Озерная и Кунцевская).</p>
                                 <p class="prof-general__text text-p1">Добро пожаловать!</p>
-
                             </div>
-                            <form action="" method="post">
-                                <div class="prof-general__section">
-                                    <h3 class="prof-general__subtitle heading-h3">Предпочтительная площадь</h3>
-                                    <div class="prof-general__row prof-general__row_type_about-me">
-                                        <label class="prof-general__label mix-mt16 mix-label">
-                                            <!-- нужно value  -->
-                                            <input type="number" value="5" class="prof-general__input main-form__input main-form__input_style_two-column mix-input" min="0" step="5" placeholder=" ">
-                                            <span class="mix-caption">От</span>
-                                        </label>
-                                        <label class="prof-general__label mix-mt16 mix-label">
-                                            <!-- нужно value  -->
-                                            <input value="10" type="number" class="prof-general__input main-form__input main-form__input_style_two-column mix-input" min="0" step="5" placeholder=" ">
-                                            <span class="mix-caption">До</span>
-                                        </label><button class="prof-general__submit-btn" type="submit">Сохранить</button>
-                                    </div>
-                                </div></form>
                             <h3 class="prof-general__subtitle heading-h3">Дополнительные вложения</h3>
                             <ul
                                 class="prof-general__list-sections prof-general__list-sections_size_small prof-general__list-sections_direction_row">
@@ -350,7 +348,9 @@
                     <a href="#" class="footer__link">маганзинах Пятёрочка</a>
                 </li>
                 <li class="footer__item">
-                    <a href="#" class="footer__link">Служба поддержки</a>
+                    <a href="#" class="footer__link">Служба поддержки
+                        <br> +7 (495) 660-54-88
+                    </a>
                 </li>
                 <li class="footer__item">
                     <a href="#" class="footer__link">Пользовательское соглашение</a>

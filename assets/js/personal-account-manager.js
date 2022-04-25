@@ -715,3 +715,29 @@ function sendRequestWaitingList(i) {
             );
         });
 }
+
+// логика по клику на "Завершить заявку"
+
+const buttonsCloseAppeal = document.querySelectorAll(".prof-aside__link");
+
+buttonsCloseAppeal.forEach((i) =>
+    i.addEventListener("click", sendRequestCloseAppeal)
+);
+
+function sendRequestCloseAppeal(e) {
+    const data = { "close-appeal": true };
+    fetch(e.target.getAttribute("data-url"), {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+    }).then((response) => {
+        if (response.ok) {
+            buttonsCloseAppeal.forEach(
+                (i) => (i.textContent = "Работа над заявкой завершена")
+            );
+            buttonsCloseAppeal.forEach((i) =>
+                i.removeEventListener("click", sendRequestCloseAppeal)
+            );
+        }
+    });
+}

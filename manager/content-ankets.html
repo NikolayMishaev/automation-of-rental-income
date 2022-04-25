@@ -145,7 +145,7 @@
                   <ul class="main-submenu__list">
                     <li class="main-submenu__item main-submenu__item_style_prof-control-panel-sort prof-control-panel__title-submenu">
                       Статус анкеты
-                    </li>
+                    <!-- </li>
                     <li
                     class="main-submenu__item main-submenu__item_style_prof-control-panel"
                   >
@@ -185,7 +185,53 @@
                     <span class="prof-control-panel__visible-radio"></span>
                     Отказано</label
                   >
-                </li>
+                </li> -->
+                <li
+                class="main-submenu__item main-submenu__item_style_prof-control-panel"
+              >
+                <label
+                  aria-label="checkbox"
+                  class="prof-control-panel__label-custom label-checkbox"
+                >
+                  <input
+                    id="input-ankets-status-new"
+                    class="prof-control-panel__input-hidden"
+                    type="checkbox"
+                    checked
+                  />
+                  <span class="prof-control-panel__visible-checkbox"></span>Новая</label
+                >
+              </li>
+              <li
+              class="main-submenu__item main-submenu__item_style_prof-control-panel"
+            >
+              <label
+                aria-label="checkbox"
+                class="prof-control-panel__label-custom label-checkbox"
+              >
+                <input
+                  id="input-ankets-status-approved"
+                  class="prof-control-panel__input-hidden"
+                  type="checkbox"
+                />
+                <span class="prof-control-panel__visible-checkbox"></span>Одобрено</label
+              >
+            </li>
+            <li
+            class="main-submenu__item main-submenu__item_style_prof-control-panel"
+          >
+            <label
+              aria-label="checkbox"
+              class="prof-control-panel__label-custom label-checkbox"
+            >
+              <input
+                id="input-ankets-status-denied"
+                class="prof-control-panel__input-hidden"
+                type="checkbox"
+              />
+              <span class="prof-control-panel__visible-checkbox"></span>Отказано</label
+            >
+          </li>
                 <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
                   <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
                     Выбрать
@@ -252,22 +298,25 @@
           <li class="prof-table__row-heading text-p2">Вид деятельности контрагента</li>
           <li class="prof-table__row-heading text-p2">Ссылка на анкету</li>
           <li class="prof-table__row-heading text-p2">Статус анкеты</li>
-          <li class="prof-table__row-heading text-p2">Переместить в архив</li>
+          <li class="prof-table__row-heading text-p2">Архив</li>
           <li class="prof-table__row-heading text-p2">Уведомить</li>
           <li class="prof-table__row-heading text-p2">Лист ожидания</li>
         </ul>
         <ul class="prof-table__row prof-table__row_style_agent">
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-            <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
+            <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <button class="prof-table__button heading-h5">
-                  Архив
-              </button>
+            <label class="prof-label-checkbox prof-label-checkbox_type_object">
+                <input data-url="http://foo.com" class="prof-label-checkbox__input" type="checkbox">
+                <span class="prof-label-checkbox__visible-checkbox prof-label-checkbox__visible-checkbox_type_object">
+                    <span class="prof-label-checkbox__visible-checkbox-circle"></span>
+                </span>
+              </label>
           </li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
@@ -285,16 +334,19 @@
         </ul>
         <ul class="prof-table__row prof-table__row_style_agent">
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-            <span class="prof-marker prof-marker_type_eye-close"></span><span class="prof-marker"></span></li>
+            <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye prof-marker_type_eye-active"></span><span class="prof-marker"></span></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <button class="prof-table__button heading-h5">
-                  Архив
-              </button>
+            <label class="prof-label-checkbox prof-label-checkbox_type_object">
+                <input data-url="http://foo.com" class="prof-label-checkbox__input" type="checkbox">
+                <span class="prof-label-checkbox__visible-checkbox prof-label-checkbox__visible-checkbox_type_object">
+                    <span class="prof-label-checkbox__visible-checkbox-circle"></span>
+                </span>
+              </label>
           </li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
@@ -312,16 +364,19 @@
         </ul>
         <ul class="prof-table__row prof-table__row_style_agent">
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-            <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
+            <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <button class="prof-table__button heading-h5">
-                  Архив
-              </button>
+            <label class="prof-label-checkbox prof-label-checkbox_type_object">
+                <input data-url="http://foo.com" class="prof-label-checkbox__input" type="checkbox">
+                <span class="prof-label-checkbox__visible-checkbox prof-label-checkbox__visible-checkbox_type_object">
+                    <span class="prof-label-checkbox__visible-checkbox-circle"></span>
+                </span>
+              </label>
           </li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
@@ -339,16 +394,19 @@
         </ul>
         <ul class="prof-table__row prof-table__row_style_agent">
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-            <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
+            <span data-url="http://foo.com"  class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_red"></span>Отказано</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <button class="prof-table__button heading-h5">
-                  Архив
-              </button>
+            <label class="prof-label-checkbox prof-label-checkbox_type_object">
+                <input data-url="http://foo.com" class="prof-label-checkbox__input" type="checkbox">
+                <span class="prof-label-checkbox__visible-checkbox prof-label-checkbox__visible-checkbox_type_object">
+                    <span class="prof-label-checkbox__visible-checkbox-circle"></span>
+                </span>
+              </label>
           </li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
@@ -366,16 +424,19 @@
         </ul>
         <ul class="prof-table__row prof-table__row_style_agent">
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-            <span class="prof-marker prof-marker_type_eye-close"></span><span class="prof-marker"></span></li>
+            <span data-url="http://foo.com"  class="prof-marker prof-marker_type_eye prof-marker_type_eye-active"></span><span class="prof-marker"></span></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <button class="prof-table__button heading-h5">
-                  Архив
-              </button>
+            <label class="prof-label-checkbox prof-label-checkbox_type_object">
+                <input data-url="http://foo.com" class="prof-label-checkbox__input" type="checkbox">
+                <span class="prof-label-checkbox__visible-checkbox prof-label-checkbox__visible-checkbox_type_object">
+                    <span class="prof-label-checkbox__visible-checkbox-circle"></span>
+                </span>
+              </label>
           </li>
           <li class="prof-table__row-content prof-table__row-content_type_agent">
               <button aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
@@ -406,7 +467,7 @@
           </ul>
           <ul class="prof-table__row prof-table__row_style_agent-archive">
             <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
+              <span data-url="http://foo.com"  class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
@@ -421,7 +482,7 @@
           </ul>
           <ul class="prof-table__row prof-table__row_style_agent-archive">
             <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span class="prof-marker prof-marker_type_eye-close"></span><span class="prof-marker"></span></li>
+              <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye prof-marker_type_eye-active"></span><span class="prof-marker"></span></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
@@ -436,7 +497,7 @@
           </ul>
           <ul class="prof-table__row prof-table__row_style_agent-archive">
             <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
+              <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
@@ -451,7 +512,7 @@
           </ul>
           <ul class="prof-table__row prof-table__row_style_agent-archive">
             <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
+              <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
@@ -466,7 +527,7 @@
           </ul>
           <ul class="prof-table__row prof-table__row_style_agent-archive">
             <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span class="prof-marker prof-marker_type_eye-close"></span><span class="prof-marker"></span></li>
+              <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye prof-marker_type_eye-active"></span><span class="prof-marker"></span></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html'>Иван Иванов</a></li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
             <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>

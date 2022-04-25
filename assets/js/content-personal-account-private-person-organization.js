@@ -338,3 +338,31 @@ fieldsSort.forEach((i) => {
             i.children[0].textContent.trim();
     }
 });
+
+// логика запроса по нажатию на колокольчик
+
+const buttonsRing = document.querySelectorAll(".prof-marker_type_ring");
+
+if (buttonsRing.length) {
+    buttonsRing.forEach((i) => i.addEventListener("click", sendRequestRing));
+}
+
+function sendRequestRing(e) {
+    const ringActive = e.target.classList.contains(
+        "prof-marker_type_ring-active"
+    );
+    const data = { is_ring: !ringActive };
+    fetch(e.target.getAttribute("data-url"), {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+    }).then((response) => {
+        if (response.ok) {
+            if (ringActive) {
+                removeClassElement(e.target, "prof-marker_type_ring-active");
+            } else {
+                addClassElement(e.target, "prof-marker_type_ring-active");
+            }
+        }
+    });
+}

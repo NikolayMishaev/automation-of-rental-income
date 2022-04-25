@@ -79,12 +79,7 @@
             align-items: center;
             min-width: 167px;
             height: 32px;
-            @media (max-width: rem(1150px)) {
-                order: 2;
-                margin-top: 16px;
-                margin-left: 0;
-            }
-            @media (max-width: rem(980px)) {
+            @media (max-width: rem(861px)) {
                 display: none;
             }
         }
@@ -653,9 +648,10 @@
             }
         }
         &_type_offers {
-            width: 743px;
+            width: unset;
             margin: 0;
-            margin-left: 37px;
+            margin-left: 40px;
+            flex: 1;
         }
         &_type_analytic {
             width: unset;
