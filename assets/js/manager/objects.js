@@ -624,7 +624,7 @@ const checkboxesTransferObjects = document.querySelectorAll(
 );
 const fixedPopupTransferObjects = document.querySelector(".fixed-popup");
 
-if (checkboxesTransferObjects) {
+if (checkboxesTransferObjects.length) {
     checkboxesTransferObjects.forEach((i) =>
         i.addEventListener("click", () => {
             if (innerWidth < 1001) {

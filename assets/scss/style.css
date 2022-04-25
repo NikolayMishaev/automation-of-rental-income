@@ -8074,7 +8074,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  bottom: 65px;
+  bottom: 90px;
   left: 20px;
 }
 
@@ -8163,6 +8163,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-aside__link:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .prof-aside__close-appeal {
