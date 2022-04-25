@@ -473,3 +473,63 @@ buttonsEye.forEach((i) =>
         });
     })
 );
+
+// логика сортировки
+
+const table = document.querySelector(".prof-table");
+const rowsOffer = document.querySelectorAll(".offer");
+const rowsDateOffer = document.querySelectorAll(".date-offer");
+const buttonsSort = document.querySelectorAll(".prof-marker_type_sort");
+
+buttonsSort.forEach((i) =>
+    i.addEventListener("click", (e) => {
+        if (e.target.classList.contains("prof-marker_type_sort-active")) {
+            e.target.classList.remove("prof-marker_type_sort-active");
+            sortTableRow(e, false);
+        } else {
+            e.target.classList.add("prof-marker_type_sort-active");
+            sortTableRow(e, true);
+        }
+    })
+);
+
+function sortTableRow(e, abc = true) {
+    const rowHeading = e.target.closest(".prof-table__row");
+    const rowAriaLabel = e.target.closest(".prof-table__row-heading").ariaLabel;
+    table.innerHTML = "";
+    Array.from(determineRow(rowAriaLabel))
+        .sort((a, b) => {
+            if (rowAriaLabel.includes("date")) {
+                return new Date(a.textContent) < new Date(b.textContent)
+                    ? determineOrderSort(abc)
+                    : determineOrderSort(!abc);
+            } else {
+                return +a.textContent < +b.textContent
+                    ? determineOrderSort(abc)
+                    : determineOrderSort(!abc);
+            }
+        })
+        .forEach((i, c) =>
+            c === 0
+                ? table.append(rowHeading) ||
+                  table.append(i.closest(".prof-table__row"))
+                : table.append(i.closest(".prof-table__row"))
+        );
+}
+
+function determineOrderSort(abc) {
+    return abc ? -1 : 1;
+}
+
+function determineRow(value) {
+    switch (value) {
+        case "offer": {
+            return rowsOffer;
+        }
+        case "date-offer": {
+            return rowsDateOffer;
+        }
+        default:
+            return;
+    }
+}

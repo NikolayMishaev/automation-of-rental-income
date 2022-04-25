@@ -32,8 +32,8 @@
             <p class="prof-table__text">Площадь, м<span class="prof-table__index">2</span></p>
         </li>
         <li class="prof-table__row-heading text-p2">Текущая арендная ставка</li>
-        <li class="prof-table__row-heading text-p2">Предложенная арендная ставка<span class="prof-marker prof-marker_type_sort"></span></li>
-        <li class="prof-table__row-heading text-p2">Поступление предложения<span class="prof-marker prof-marker_type_sort"></span></li>
+        <li aria-label="offer" class="prof-table__row-heading text-p2">Предложенная арендная ставка<span class="prof-marker prof-marker_type_sort"></span></li>
+        <li aria-label="date-offer" class="prof-table__row-heading text-p2">Поступление предложения<span class="prof-marker prof-marker_type_sort"></span></li>
       </ul>
       <ul class="prof-table__row prof-table__row_style_offers">
         <li class="prof-table__row-content heading-h5">
@@ -44,8 +44,8 @@
         <li class="prof-table__row-content heading-h5">Иван Иванов</li>
         <li class="prof-table__row-content heading-h5">100</li>
         <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
+        <li class="prof-table__row-content heading-h5 offer">40</li>
+        <li class="prof-table__row-content heading-h5 date-offer">02.02.2022</li>
       </ul>
       <ul class="prof-table__row prof-table__row_style_offers">
         <li class="prof-table__row-content heading-h5">
@@ -55,47 +55,10 @@
         </li>
         <li class="prof-table__row-content heading-h5">123132</li>
         <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-        <li class="prof-table__row-content heading-h5">100</li>
+        <li class="prof-table__row-content heading-h5">300</li>
         <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
-      </ul>
-      <ul class="prof-table__row prof-table__row_style_offers">
-        <li class="prof-table__row-content heading-h5">
-          <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye prof-marker_type_eye-active"></span
-          ><span class="prof-marker prof-marker_type_hot"></span>119021. Ул. Льва
-          Толстого, дом 23, корп.1
-        </li>
-        <li class="prof-table__row-content heading-h5">12653132</li>
-        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-        <li class="prof-table__row-content heading-h5">100</li>
-        <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
-      </ul>
-      <ul class="prof-table__row prof-table__row_style_offers">
-        <li class="prof-table__row-content heading-h5">
-          <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span
-          ><span class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
-        </li>
-        <li class="prof-table__row-content heading-h5">123132</li>
-        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-        <li class="prof-table__row-content heading-h5">100</li>
-        <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
-      </ul>
-      <ul class="prof-table__row prof-table__row_style_offers">
-        <li class="prof-table__row-content heading-h5">
-          <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span
-          ><span class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
-        </li>
-        <li class="prof-table__row-content heading-h5">123132</li>
-        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-        <li class="prof-table__row-content heading-h5">100</li>
-        <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
+        <li class="prof-table__row-content heading-h5 offer">20</li>
+        <li class="prof-table__row-content heading-h5 date-offer">01.02.2017</li>
       </ul>
       <ul class="prof-table__row prof-table__row_style_offers">
         <li class="prof-table__row-content heading-h5">
@@ -105,10 +68,47 @@
         </li>
         <li class="prof-table__row-content heading-h5">12653132</li>
         <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-        <li class="prof-table__row-content heading-h5">100</li>
+        <li class="prof-table__row-content heading-h5">200</li>
         <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
+        <li class="prof-table__row-content heading-h5 offer">70</li>
+        <li class="prof-table__row-content heading-h5 date-offer">05.07.2014</li>
+      </ul>
+      <ul class="prof-table__row prof-table__row_style_offers">
+        <li class="prof-table__row-content heading-h5">
+          <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span
+          ><span class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+        </li>
+        <li class="prof-table__row-content heading-h5">123132</li>
+        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+        <li class="prof-table__row-content heading-h5">150</li>
+        <li class="prof-table__row-content heading-h5">1100</li>
+        <li class="prof-table__row-content heading-h5 offer">70</li>
+        <li class="prof-table__row-content heading-h5 date-offer">12.20.2014</li>
+      </ul>
+      <ul class="prof-table__row prof-table__row_style_offers">
+        <li class="prof-table__row-content heading-h5">
+          <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span
+          ><span class="prof-marker"></span>119021. Ул. Льва Толстого, дом 23, корп.1
+        </li>
+        <li class="prof-table__row-content heading-h5">123132</li>
+        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+        <li class="prof-table__row-content heading-h5">115</li>
+        <li class="prof-table__row-content heading-h5">1100</li>
+        <li class="prof-table__row-content heading-h5 offer">70</li>
+        <li class="prof-table__row-content heading-h5 date-offer">02.28.2021</li>
+      </ul>
+      <ul class="prof-table__row prof-table__row_style_offers">
+        <li class="prof-table__row-content heading-h5">
+          <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye prof-marker_type_eye-active"></span
+          ><span class="prof-marker prof-marker_type_hot"></span>119021. Ул. Льва
+          Толстого, дом 23, корп.1
+        </li>
+        <li class="prof-table__row-content heading-h5">12653132</li>
+        <li class="prof-table__row-content heading-h5">Иван Иванов</li>
+        <li class="prof-table__row-content heading-h5">80</li>
+        <li class="prof-table__row-content heading-h5">1100</li>
+        <li class="prof-table__row-content heading-h5 offer">30</li>
+        <li class="prof-table__row-content heading-h5 date-offer">02.27.2021</li>
       </ul>
       <ul class="prof-table__row prof-table__row_style_offers">
         <li class="prof-table__row-content heading-h5">
@@ -117,10 +117,10 @@
         </li>
         <li class="prof-table__row-content heading-h5">12653132</li>
         <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-        <li class="prof-table__row-content heading-h5">100</li>
+        <li class="prof-table__row-content heading-h5">10</li>
         <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
+        <li class="prof-table__row-content heading-h5 offer">100</li>
+        <li class="prof-table__row-content heading-h5 date-offer">02.02.2022</li>
       </ul>
       <ul class="prof-table__row prof-table__row_style_offers">
         <li class="prof-table__row-content heading-h5">
@@ -129,10 +129,10 @@
         </li>
         <li class="prof-table__row-content heading-h5">123132</li>
         <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-        <li class="prof-table__row-content heading-h5">100</li>
+        <li class="prof-table__row-content heading-h5">12</li>
         <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
+        <li class="prof-table__row-content heading-h5 offer">90</li>
+        <li class="prof-table__row-content heading-h5 date-offer">02.29.2020</li>
       </ul>
       <ul class="prof-table__row prof-table__row_style_offers">
         <li class="prof-table__row-content heading-h5">
@@ -142,10 +142,10 @@
         </li>
         <li class="prof-table__row-content heading-h5">123132</li>
         <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-        <li class="prof-table__row-content heading-h5">100</li>
+        <li class="prof-table__row-content heading-h5">80</li>
         <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
+        <li class="prof-table__row-content heading-h5 offer">200</li>
+        <li class="prof-table__row-content heading-h5 date-offer">02.02.2022</li>
       </ul>
       <ul class="prof-table__row prof-table__row_style_offers">
         <li class="prof-table__row-content heading-h5">
@@ -154,10 +154,10 @@
         </li>
         <li class="prof-table__row-content heading-h5">123132</li>
         <li class="prof-table__row-content heading-h5">Иван Иванов</li>
-        <li class="prof-table__row-content heading-h5">100</li>
+        <li class="prof-table__row-content heading-h5">214</li>
         <li class="prof-table__row-content heading-h5">1100</li>
-        <li class="prof-table__row-content heading-h5">1200</li>
-        <li class="prof-table__row-content heading-h5">02.02.2022</li>
+        <li class="prof-table__row-content heading-h5 offer">150</li>
+        <li class="prof-table__row-content heading-h5 date-offer">11.05.2002</li>
       </ul>
     </div>
 

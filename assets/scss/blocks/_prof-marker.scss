@@ -79,5 +79,11 @@
         height: 12px;
         background: url('./../images/icons/profile-analytics-sort.svg') no-repeat center;
         margin-left: 8px;
+        &:hover {
+            cursor: pointer;
+        }
+        &-active {
+            transform: rotate(180deg);
+        }
     }
 }
