@@ -81,6 +81,8 @@
                         type="date"
                         class="registration-form__input"
                         placeholder="Дата рождения"
+                        min="1900-01-01"
+                        max="2022-04-01"
                       />
                       <span class="label-date">Дата рождения</span>
                     </label>
@@ -217,10 +219,10 @@
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
                       <input
-                        data-required="true"
-                        maxlength="11"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                        type="text"
+                      required
+                      class="tel"
+                      type="tel"
+                      pattern="2-[0-9]{3}-[0-9]{3}"
                       />
                       <span class="custom-text-input__label">Введите телефон*</span>
                     </label>
@@ -770,7 +772,7 @@
                       <input
                         type="date"
                         class="registration-form__input"
-                        placeholder="Дата рождения"
+                        placeholder="Дата регистрации"
                       />
                       <span class="label-date">Дата регистрации</span>
                     </label>
@@ -792,10 +794,10 @@
                       class="custom-text-input custom-text-input_name registration-form__input"
                     >
                       <input
-                        data-required="true"
-                        type="text"
-                        maxlength="11"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                      required
+                      class="tel"
+                      type="tel"
+                      pattern="2-[0-9]{3}-[0-9]{3}"
                       />
                       <span class="custom-text-input__label">Введите телефон*</span>
                     </label>
@@ -1270,7 +1272,7 @@
                         <input
                           type="date"
                           class="registration-form__input"
-                          placeholder="Дата рождения"
+                          placeholder="Дата регистрации"
                         />
                         <span class="label-date">Дата регистрации</span>
                       </label>
@@ -1292,10 +1294,10 @@
                         class="custom-text-input custom-text-input_name registration-form__input"
                       >
                         <input
-                          type="text"
-                          data-required="true"
-                          maxlength="20"
-                          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                        required
+                        class="tel"
+                        type="tel"
+                        pattern="2-[0-9]{3}-[0-9]{3}"
                         />
                         <span class="custom-text-input__label">Введите телефон*</span>
                       </label>
