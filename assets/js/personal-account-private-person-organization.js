@@ -228,41 +228,25 @@ const elementsmarkConfirm = document.querySelectorAll(
     ".prof-aside__mark-confirm"
 );
 
-const blocksFeedback = document.querySelectorAll(".prof-aside__feedback");
-
-const containersChat = document.querySelectorAll(
-    ".prof-aside__wrapper-container-message"
-);
-
 let timerMark = undefined;
-let timerFeedback = undefined;
 
-containersStars.forEach((j) =>
-    j.addEventListener("click", (e) => {
-        clearTimeout(timerMark);
-        clearTimeout(timerFeedback);
-        timerMark = setTimeout(
-            () =>
-                elementsmarkConfirm.forEach((i) => (i.style.display = "flex")),
-            2000
+containersStars.forEach((j) => j.addEventListener("click", markStar));
+
+function markStar(e) {
+    clearTimeout(timerMark);
+    timerMark = setTimeout(() => {
+        elementsmarkConfirm.forEach((i) => (i.style.display = "flex"));
+        containersStars.forEach((j) =>
+            j.removeEventListener("click", markStar)
         );
-        timerFeedback = setTimeout(() => {
-            blocksFeedback.forEach((i) => (i.style.display = "none"));
-            containersChat.forEach((i) =>
-                addClassElement(
-                    i,
-                    "prof-aside__wrapper-container-message_type_full"
-                )
-            );
-        }, 4000);
-        if (e.target.ariaLabel) {
-            resetActiveClass(mobileStars, "prof-aside__star_active");
-            resetActiveClass(desktopStars, "prof-aside__star_active");
-            addActiveClassStars(mobileStars, +e.target.ariaLabel);
-            addActiveClassStars(desktopStars, +e.target.ariaLabel);
-        }
-    })
-);
+    }, 2000);
+    if (e.target.ariaLabel) {
+        resetActiveClass(mobileStars, "prof-aside__star_active");
+        resetActiveClass(desktopStars, "prof-aside__star_active");
+        addActiveClassStars(mobileStars, +e.target.ariaLabel);
+        addActiveClassStars(desktopStars, +e.target.ariaLabel);
+    }
+}
 
 function resetActiveClass(arrayElements, className) {
     arrayElements.forEach((i) => i.classList.remove(className));
@@ -504,3 +488,23 @@ function sendRequestCloseAppeal(e) {
         }
     });
 }
+
+// логика изменения названия кнопки в блоке "Предпочтительная площадь"
+
+const inputsSquare = document.querySelectorAll(".prof-general__input");
+const buttonSubmitSquare = document.querySelector(".prof-general__submit-btn");
+
+inputsSquare.forEach((i) => {
+    if (i.value > 0) {
+        inputsSquare.forEach((i) => (i.disabled = true));
+        buttonSubmitSquare.textContent = "Изменить";
+    }
+});
+
+buttonSubmitSquare.addEventListener("click", (e) => {
+    if (inputsSquare[0].disabled) {
+        inputsSquare.forEach((i) => (i.disabled = false));
+    } else {
+        e.target.closest("form").submit();
+    }
+});

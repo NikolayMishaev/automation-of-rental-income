@@ -325,6 +325,19 @@
         &_type_filters-analytic.prof-control-panel__select-label_active {
             background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
         }
+        &_type_ankets-switch {
+            width: 32px;
+            height: 32px;
+            margin-left: 16px;
+            background: url(./../images/icons/main-page-icon-filters.svg) no-repeat center;
+            border-radius: 4px;
+            &-active {
+                background-image: url(./../images/icons/main-page-icon-filters-active.svg);
+            }
+            @media (max-width: rem(980px)) {
+                display: none;
+            }
+        }
         &_type_status-agent {
             margin-right: 40px;
             @media (max-width: rem(861px)) {
@@ -801,6 +814,10 @@
         }
     }
     &__input-number {
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
         width: 106px;
         height: 32px;
         border: 1px solid #cfd4dc;
@@ -841,6 +858,9 @@
         }
     }
     &__wrapper {
+        overflow: hidden;
+        transition: $transition;
+        height: 0;
         display: flex;
         width: 100%;
         margin-top: 16px;

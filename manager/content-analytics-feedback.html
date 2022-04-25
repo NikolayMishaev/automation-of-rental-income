@@ -126,24 +126,34 @@
                         checked
                       />
                       <span class="prof-control-panel__visible-radio"></span>
-                      Оценка</label
+                      Рейтинг</label
                     >
                   </li>
-                  <li
-                    class="main-submenu__item main-submenu__item_style_prof-control-panel"
-                  >
 
-                      <div class="prof-control-panel__stars-container">
-                        <p class="prof-control-panel__stars-caption"></p>
-                        <input hidden="" type="text" class="prof-control-panel__input" id="input-analytics-star-total" />
-                        <span aria-label="1" class="prof-control-panel__star analytics-star-total"></span>
-                        <span aria-label="2" class="prof-control-panel__star analytics-star-total"></span>
-                        <span aria-label="3" class="prof-control-panel__star analytics-star-total"></span>
-                        <span aria-label="4" class="prof-control-panel__star analytics-star-total"></span>
-                        <span aria-label="5" class="prof-control-panel__star analytics-star-total"></span>
-                      </div>
-
+                  <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                    <label class="prof-control-panel__label-number text-p2">
+                      От
+                      <input
+                        type="number"
+                        min="0"
+                        max="5"
+                        class="prof-control-panel__input-number"
+                        placeholder="0"
+                      />
+                    </label>
+                    <label class="prof-control-panel__label-number text-p2">
+                      До
+                      <input
+                        type="number"
+                        min="0"
+                        max="5"
+                        class="prof-control-panel__input-number"
+                        placeholder="0"
+                      />
+                    </label>
                   </li>
+
+
                   <li
                     class="main-submenu__item main-submenu__item_style_prof-control-panel"
                   >
