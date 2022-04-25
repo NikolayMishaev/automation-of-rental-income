@@ -10096,8 +10096,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 63.125rem) {
   .prof-table__row_style_objects {
-    -ms-grid-columns: 327px 70px 120px 80px 90px 140px 56px;
-        grid-template-columns: 327px 70px 120px 80px 90px 140px 56px;
+    -ms-grid-columns: 317px 70px 120px 80px 90px 150px 56px;
+        grid-template-columns: 317px 70px 120px 80px 90px 150px 56px;
   }
 }
 
