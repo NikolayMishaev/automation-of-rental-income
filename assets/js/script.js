@@ -355,12 +355,61 @@ function navigateTabs(stepList, tabList, idx, radio) {
 
 function checkRequiredInput(step) {
     let findInput = false;
+    let inputBik = null;
+    let inputBankAccount = null;
+    let inputCorrAccount = null;
+    let inputIBAN = false;
     for (let index = 0; index < step.length; index++) {
         const element = step[index];
+        if (element.ariaLabel && element.ariaLabel === "bik") {
+            inputBik = element;
+        }
+        if (element.ariaLabel && element.ariaLabel === "bank-account") {
+            inputBankAccount = element;
+        }
+        if (element.ariaLabel && element.ariaLabel === "corr-account") {
+            inputCorrAccount = element;
+        }
         if ((element.dataset.required || element.required) && !element.value) {
             findInput = true;
             if (element.type !== "file")
                 element.classList.add("custom-text-input__error");
+        }
+        if (element.getAttribute("data-name") === "SWIFT") {
+            if (!element.value) {
+                inputBik.classList.add("custom-text-input__error");
+            } else {
+                inputBik.classList.remove("custom-text-input__error");
+            }
+        }
+        if (element.getAttribute("data-name") === "IBAN") {
+            if (!element.value) {
+                inputBankAccount.classList.add("custom-text-input__error");
+            } else {
+                inputBankAccount.classList.remove("custom-text-input__error");
+                inputIBAN = true;
+            }
+        }
+        if (element.getAttribute("data-name") === "ABA") {
+            if (!element.value && !inputIBAN) {
+                inputBankAccount.classList.add("custom-text-input__error");
+            } else {
+                inputBankAccount.classList.remove("custom-text-input__error");
+            }
+        }
+        if (
+            inputBankAccount &&
+            inputBankAccount.value &&
+            inputBik &&
+            inputBik.value
+        ) {
+            if (inputCorrAccount) {
+                inputCorrAccount.classList.remove("custom-text-input__error");
+            }
+        } else {
+            if (inputCorrAccount) {
+                inputCorrAccount.classList.add("custom-text-input__error");
+            }
         }
     }
     if (findInput) return false;
@@ -1201,3 +1250,9 @@ window.addEventListener("DOMContentLoaded", function () {
         input.addEventListener("keydown", mask, false);
     });
 });
+
+// маска для email
+
+$("#input-email-personal").inputmask("email");
+$("#input-email-ip").inputmask("email");
+$("#input-email-org").inputmask("email");
