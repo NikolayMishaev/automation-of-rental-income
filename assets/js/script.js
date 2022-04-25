@@ -850,7 +850,9 @@ function hideCurrentSubmenu(submenu, deleteListenerOverlay) {
     }
 }
 
-const buttonsSelect = document.querySelectorAll(".button-toggle-select");
+const buttonsSelect = document.querySelectorAll(
+    ".button-toggle-select-register"
+);
 
 buttonsSelect.forEach((i) =>
     i.addEventListener("click", (e) => {
@@ -951,6 +953,25 @@ function checkSubmenuSecondLevel(ariaLabel) {
 const buttonsLikeCard = document.querySelectorAll(".info-card__favorite-btn");
 const iconsLike = document.querySelectorAll(".icon-like");
 
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+                cookieValue = decodeURIComponent(
+                    cookie.substring(name.length + 1)
+                );
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie("csrftoken");
+
 buttonsLikeCard.forEach((i) =>
     i.addEventListener("click", (e) => {
         const currentLike = iconsLike[0].classList.contains("icon-like_active");
@@ -958,8 +979,13 @@ buttonsLikeCard.forEach((i) =>
         const currentButton = e.target.closest(".info-card__favorite-btn");
         fetch(currentButton.getAttribute("data-url"), {
             method: "POST",
+            credentials: "same-origin",
             body: JSON.stringify(data),
-            headers: { "content-type": "application/json" },
+            headers: {
+                "content-type": "application/json",
+                "X-Requested-With": "XMLHttpRequest",
+                "X-CSRFToken": csrftoken,
+            },
         }).then((response) => {
             if (response.ok) {
                 if (currentLike) {
@@ -1022,17 +1048,21 @@ const captionInputPassword = document.querySelector("#caption-error-password");
 const inputEmail = document.querySelector("#input-registraion-login");
 const captionInputEmail = document.querySelector("#caption-error-register");
 
-inputPassword.addEventListener("input", () => {
-    if (inputPassword.value.length < 8) {
-        inputPassword.classList.add("custom-text-input__error-border");
-        captionInputPassword.classList.add("custom-text-input__caption_active");
-    } else {
-        inputPassword.classList.remove("custom-text-input__error-border");
-        captionInputPassword.classList.remove(
-            "custom-text-input__caption_active"
-        );
-    }
-});
+if (inputPassword) {
+    inputPassword.addEventListener("input", () => {
+        if (inputPassword.value.length < 8) {
+            inputPassword.classList.add("custom-text-input__error-border");
+            captionInputPassword.classList.add(
+                "custom-text-input__caption_active"
+            );
+        } else {
+            inputPassword.classList.remove("custom-text-input__error-border");
+            captionInputPassword.classList.remove(
+                "custom-text-input__caption_active"
+            );
+        }
+    });
+}
 
 // логика работы модального окна Регистрации, валидация полей
 
@@ -1040,42 +1070,50 @@ const inputRegistrationLogin = document.querySelector(
     "#input-registraion-login"
 );
 
-inputRegistrationLogin.addEventListener("input", () => {
-    inputEmail.classList.remove("custom-text-input__error-border");
-    captionInputEmail.classList.remove("custom-text-input__caption_active");
-});
-
-inputRegistrationLogin.addEventListener("blur", () => {
-    const data = { "register-email": inputRegistrationLogin.value };
-    fetch(inputRegistrationLogin.getAttribute("data-url"), {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "content-type": "application/json" },
-    })
-        .then((response) => {
-            if (!response.ok) {
+if (inputRegistrationLogin) {
+    inputRegistrationLogin.addEventListener("input", () => {
+        inputEmail.classList.remove("custom-text-input__error-border");
+        captionInputEmail.classList.remove("custom-text-input__caption_active");
+    });
+    inputRegistrationLogin.addEventListener("blur", () => {
+        const data = { "register-email": inputRegistrationLogin.value };
+        fetch(inputRegistrationLogin.getAttribute("data-url"), {
+            method: "POST",
+            credentials: "same-origin",
+            body: JSON.stringify(data),
+            headers: {
+                "content-type": "application/json",
+                "X-Requested-With": "XMLHttpRequest",
+                "X-CSRFToken": csrftoken,
+            },
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    inputEmail.classList.add("custom-text-input__error-border");
+                    captionInputEmail.textContent =
+                        "такой пользователь уже существует";
+                    captionInputEmail.classList.add(
+                        "custom-text-input__caption_active"
+                    );
+                } else {
+                    inputEmail.classList.remove(
+                        "custom-text-input__error-border"
+                    );
+                    captionInputEmail.classList.remove(
+                        "custom-text-input__caption_active"
+                    );
+                }
+            })
+            .catch(() => {
                 inputEmail.classList.add("custom-text-input__error-border");
                 captionInputEmail.textContent =
-                    "такой пользователь уже существует";
+                    "произошла ошибка, повторите запрос";
                 captionInputEmail.classList.add(
                     "custom-text-input__caption_active"
                 );
-            } else {
-                inputEmail.classList.remove("custom-text-input__error-border");
-                captionInputEmail.classList.remove(
-                    "custom-text-input__caption_active"
-                );
-            }
-        })
-        .catch(() => {
-            inputEmail.classList.add("custom-text-input__error-border");
-            captionInputEmail.textContent =
-                "произошла ошибка, повторите запрос";
-            captionInputEmail.classList.add(
-                "custom-text-input__caption_active"
-            );
-        });
-});
+            });
+    });
+}
 
 // логика изменения текста в зависимости от статуса колокольчика
 
@@ -1084,13 +1122,18 @@ const containersTextTooltipBell = document.querySelectorAll(
     ".tooltip__inner_type_bell"
 );
 
-if (buttonsBell.classList.contains("active")) {
-    containersTextTooltipBell.forEach(
-        (i) =>
-            (i.textContent = "Выключить рассылку уведомлений об освобождении")
-    );
-} else {
-    containersTextTooltipBell.forEach(
-        (i) => (i.textContent = "Включить рассылку уведомлений об освобождении")
-    );
+if (buttonsBell) {
+    if (buttonsBell.classList.contains("active")) {
+        containersTextTooltipBell.forEach(
+            (i) =>
+                (i.textContent =
+                    "Выключить рассылку уведомлений об освобождении")
+        );
+    } else {
+        containersTextTooltipBell.forEach(
+            (i) =>
+                (i.textContent =
+                    "Включить рассылку уведомлений об освобождении")
+        );
+    }
 }
