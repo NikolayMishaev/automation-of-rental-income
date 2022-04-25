@@ -103,7 +103,10 @@
             }
         }
         &_style_offers {
-            grid-template-columns: 255px 70px 120px 85px 120px 140px 120px;
+            grid-template-columns: 260px 70px 120px 85px 120px 140px 117px;
+            @media (max-width: rem(986px)) {
+                grid-template-columns: 230px 70px 120px 85px 120px 140px 117px;
+            }
         }
         &_style_one-row {
             padding: 14px 0;

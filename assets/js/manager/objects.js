@@ -11,6 +11,7 @@ const state = {
     currentOpenSubmenu: null,
     currentOpenSubmenuSecondLevel: null,
     cursorsSelect: {
+        "transfer-objects": document.querySelector("#cursor-transfer-objects"),
         "analytics-period-ankets": document.querySelector(
             "#cursor-analytics-period-ankets"
         ),
@@ -70,6 +71,7 @@ const state = {
         "structure-offers": document.querySelector("#cursor-structure-offers"),
     },
     submenuSelect: {
+        "transfer-objects": document.querySelector("#submenu-transfer-objects"),
         "analytics-period-ankets": document.querySelector(
             "#submenu-analytics-period-ankets"
         ),
@@ -139,6 +141,7 @@ const state = {
         "structure-offers": document.querySelector("#submenu-structure-offers"),
     },
     inputsSelect: {
+        "transfer-objects": document.querySelector("#input-transfer-objects"),
         "analytics-period-ankets": document.querySelector(
             "#input-analytics-period-ankets"
         ),
