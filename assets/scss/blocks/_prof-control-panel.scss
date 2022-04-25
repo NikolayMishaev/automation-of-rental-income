@@ -801,6 +801,10 @@
         }
     }
     &__input-number {
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
         width: 106px;
         height: 32px;
         border: 1px solid #cfd4dc;

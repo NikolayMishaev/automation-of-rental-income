@@ -9897,6 +9897,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 4px 12px;
 }
 
+.prof-control-panel__input-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .prof-control-panel__index {
   vertical-align: super;
   font-size: 8px;
