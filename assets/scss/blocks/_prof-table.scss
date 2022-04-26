@@ -55,9 +55,9 @@
             }
         }
         &_style_waiting-list {
-            grid-template-columns: 150px 80px 140px 175px 368px;
-            @media (max-width: rem(1550px)) {
-                grid-template-columns: 160px 90px 150px 175px 368px;
+            grid-template-columns: 160px 90px 150px 175px 368px;
+            @media (max-width: rem(986px)) {
+                grid-template-columns: 150px 80px 140px 175px 368px;
             }
         }
         &_style_agent {

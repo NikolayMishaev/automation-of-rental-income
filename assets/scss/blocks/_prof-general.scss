@@ -129,6 +129,7 @@
         &_type_waiting-list {
             display: flex;
             flex-direction: column;
+            min-height: 546px;
         }
         &_type_iframe {
             padding-right: 24px;

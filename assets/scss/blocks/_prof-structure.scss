@@ -1,6 +1,20 @@
 .prof-structure {
     padding-top: 17px;
     border-top: 1px solid #e3e7e8;
+    &__content {
+        height: 485px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
     &__title {
         margin-bottom: 24px;
     }

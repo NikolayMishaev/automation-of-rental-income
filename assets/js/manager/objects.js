@@ -655,7 +655,7 @@ const fixedPopupTransferObjects = document.querySelector(".fixed-popup");
 if (checkboxesTransferObjects.length) {
     checkboxesTransferObjects.forEach((i) =>
         i.addEventListener("click", () => {
-            if (innerWidth < 1001) {
+            if (innerWidth < 862) {
                 removeClassElement(
                     fixedPopupTransferObjects,
                     "mix-display-none"
