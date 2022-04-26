@@ -53,6 +53,9 @@
     }
     &__link {
         color: $accent90;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &__year {
         @media (max-width: 1660px) {

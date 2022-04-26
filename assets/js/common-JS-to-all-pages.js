@@ -16,6 +16,7 @@ const state = {
     "popup-city": document.querySelector("#popup-city"),
     "popup-notify": document.querySelector("#popup-notify"),
     "modal-reset-password": document.querySelector("#modal-reset-password"),
+    "popup-docs": document.querySelector("#popup-docs"),
 };
 
 // общие функции

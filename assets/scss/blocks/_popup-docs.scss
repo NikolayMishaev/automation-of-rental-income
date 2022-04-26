@@ -1,0 +1,10 @@
+.popup-docs {
+    &__item {
+        margin-top: 8px;
+        margin-left: 18px;
+        list-style-type: disc;
+        &:first-child {
+            margin-top: 16px;
+        }
+    }
+}

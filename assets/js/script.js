@@ -1252,7 +1252,8 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 // маска для email
-
-$("#input-email-personal").inputmask("email");
-$("#input-email-ip").inputmask("email");
-$("#input-email-org").inputmask("email");
+if (document.querySelector(".regisrtation-page")) {
+    $("#input-email-personal").inputmask("email");
+    $("#input-email-ip").inputmask("email");
+    $("#input-email-org").inputmask("email");
+}
