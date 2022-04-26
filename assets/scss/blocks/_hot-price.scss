@@ -67,7 +67,7 @@
         @include flex-container;
     }
     &__animation {
-        animation: animation-hot-price linear 200s infinite;
+        animation: animation-hot-price linear 400s infinite;
         animation-delay: 1s;
         &:hover {
             animation-play-state: paused;
