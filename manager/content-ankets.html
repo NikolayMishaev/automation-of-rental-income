@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-    <form id="form-ankets" action="" method="" class="prof-control-panel prof-control-panel_type_agent">
+    <form id="form-ankets" action="http://foo.com" method="get" class="prof-control-panel prof-control-panel_type_agent">
       <h3
         class="prof-control-panel__title prof-control-panel__title_type_agent heading-h3"
       >
@@ -86,10 +86,11 @@
                   >
                     <label class="prof-control-panel__label-custom">
                       <input
-                        name="ankets"
+                        name="archive"
                         class="prof-control-panel__input-hidden"
                         type="radio"
                         checked
+                        value="false"
                       />
                       <span class="prof-control-panel__visible-radio"></span>
                       Текущие</label
@@ -100,9 +101,10 @@
                   >
                     <label class="prof-control-panel__label-custom">
                       <input
-                        name="ankets"
+                        name="archive"
                         class="prof-control-panel__input-hidden"
                         type="radio"
+                        value="true"
 
                       />
                       <span class="prof-control-panel__visible-radio"></span>
@@ -256,10 +258,11 @@
                   >
                     <label class="prof-control-panel__label-custom">
                       <input
-                        name="ankets-views"
+                        name="views"
                         class="prof-control-panel__input-hidden"
                         type="radio"
                         checked
+                        value="true"
                       />
                       <span class="prof-control-panel__visible-radio"></span>
                       Просмотрено</label
@@ -270,9 +273,10 @@
                   >
                     <label class="prof-control-panel__label-custom">
                       <input
-                        name="ankets-views"
+                        name="views"
                         class="prof-control-panel__input-hidden"
                         type="radio"
+                        value="false"
                       />
                       <span class="prof-control-panel__visible-radio"></span>
                       Не просмотрено</label
@@ -455,94 +459,6 @@
         </ul>
       </div>
 
-      <div class="prof-table prof-table_type_ankets mix-display-none" id="agents-list-archive">
-          <ul class="prof-table__row prof-table__row_style_agent-archive">
-            <li class="prof-table__row-heading text-p2">Статус просмотра</li>
-            <li class="prof-table__row-heading text-p2">Наименование контрагента</li>
-            <li class="prof-table__row-heading text-p2">Дата поступления</li>
-            <li class="prof-table__row-heading text-p2">Вид деятельности контрагента</li>
-            <li class="prof-table__row-heading text-p2">Ссылка на анкету</li>
-            <li class="prof-table__row-heading text-p2">Статус анкеты</li>
-            <li class="prof-table__row-heading text-p2">Дата добавления в архив</li>
-            <li class="prof-table__row-heading text-p2">Уведомить</li>
-          </ul>
-          <ul class="prof-table__row prof-table__row_style_agent-archive">
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span data-url="http://foo.com"  class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-                <button disabled aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
-                    Уведомить
-                </button>
-            </li>
-          </ul>
-          <ul class="prof-table__row prof-table__row_style_agent-archive">
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye prof-marker_type_eye-active"></span><span class="prof-marker"></span></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-                <button disabled aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
-                    Уведомить
-                </button>
-            </li>
-          </ul>
-          <ul class="prof-table__row prof-table__row_style_agent-archive">
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_green"></span>Одобрено</p></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-                <button disabled aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
-                    Уведомить
-                </button>
-            </li>
-          </ul>
-          <ul class="prof-table__row prof-table__row_style_agent-archive">
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye"></span><span class="prof-marker"></span></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html' target="_blank">Иван Иванов</a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_red"></span>Отказано</p></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-                <button disabled aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
-                    Уведомить
-                </button>
-            </li>
-          </ul>
-          <ul class="prof-table__row prof-table__row_style_agent-archive">
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-              <span data-url="http://foo.com" class="prof-marker prof-marker_type_eye prof-marker_type_eye-active"></span><span class="prof-marker"></span></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5"><a class="prof-table__link" href='./../about-me.html'>Иван Иванов</a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">02.02.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">деятельность</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><a href="./../manager-form.html" target="_blank" class="prof-table__link"><div class="prof-table__icon"></div></a></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent"><p class="prof-table__caption heading-h5"><span class="prof-marker prof-marker_type_yellow"></span>Новая</p></li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent heading-h5">10.03.2022</li>
-            <li class="prof-table__row-content prof-table__row-content_type_agent">
-                <button disabled aria-label="popup-notify" class="prof-table__button heading-h5 button-open-popup">
-                    Уведомить
-                </button>
-            </li>
-          </ul>
-        </div>
-
     </div>
 
     <div
@@ -655,129 +571,6 @@
         >
           Уведомить
         </button>
-      </li>
-    </ul>
-
-    <ul class="prof-general__forms-agent-container mix-display-none" id="agents-cards-archive">
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
-      </li>
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
-      </li>
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
-      </li>
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
-      </li>
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
-      </li>
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
-      </li>
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
-      </li>
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
-      </li>
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
-      </li>
-      <li class="form-agent-card">
-        <div class="form-agent-card__info">
-          <p
-            class="form-agent-card__title heading-h3 mix-scrollbar-only-horizontal"
-          >
-            <a href="./../manager-form.html" target="_blank" class="form-agent-card__link"><span class="form-agent-card__icon"></span></a>Иванов Иван, 16.02.2022
-          </p>
-          <p class="form-agent-card__status text-p3">
-            В архиве с:<span class="form-agent-card__date text-p2">16.02.2022</span>
-          </p>
-        </div>
       </li>
     </ul>
 
