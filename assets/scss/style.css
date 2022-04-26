@@ -11175,7 +11175,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-structure__wrapper-subtitle:first-of-type {
-  margin-top: 24px;
+  margin-top: 0;
 }
 
 .prof-structure__wrapper-subtitle_active {

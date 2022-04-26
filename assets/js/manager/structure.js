@@ -1,8 +1,4 @@
-import {
-    addClassElement,
-    removeClassElement,
-    switchButtons,
-} from "./common-JS-to-all-pages.js";
+import { addClassElement, removeClassElement } from "./../common functions.js";
 
 // стейты
 
@@ -422,150 +418,59 @@ const state = {
         ),
     },
 };
-// логика переключения табов: "Объекты", "Анкеты контрагентов", "Аналитические данные", "Структура", "Предложения"
 
-const tabButtons = document.querySelectorAll(".prof-general__button");
+// логика работы селектов в табе Структура
 
-const generalContentObjects = document.querySelector("#objects");
-const generalContentCounterpartyQuestionnaires = document.querySelector(
-    "#counterparty-questionnaires"
-);
-const generalContentAnalyticalData = document.querySelector("#analytical-data");
-const generalContentStructure = document.querySelector("#structure");
-
-const arrayGeneralContent = [
-    generalContentObjects,
-    generalContentCounterpartyQuestionnaires,
-    generalContentAnalyticalData,
-    generalContentStructure,
-];
-
-tabButtons.forEach((i) =>
-    i.addEventListener("click", (e) =>
-        switchButtons(
-            e.target,
-            tabButtons,
-            arrayGeneralContent,
-            "prof-general__button_active",
-            "mix-display-none"
-        )
-    )
+const sturctureWrappers = document.querySelectorAll(
+    ".prof-structure__wrapper-subtitle"
 );
 
-// логика действий при ресайзе
-
-window.addEventListener("resize", function (e) {
-    if (e.target.innerWidth > 750) {
-        resetVisibleDymanicClassAsideBlockMobile();
-    }
-    if (e.target.innerWidth > 1550) {
-        closeMobileBlockContacts();
-    }
-    if (e.target.innerWidth > 1780) {
-        resetVisibleDymanicClassAsideBlock();
-    }
-    if (innerWidth < 1551 && innerWidth > 750) {
-        panelTasks.classList.remove("mix-display-none");
-    }
-});
-
-// логика смены чата на задачи по клику на кнопку
-
-const buttonBackToTasks = document.querySelector(
-    ".prof-aside__button-back-tasks"
-);
-
-const buttonBackToTasksMain = document.querySelector(
-    "#prof-aside__button-back-tasks-main"
-);
-
-const panelChat = document.querySelector(".prof-aside__right-panel");
-const panelTasks = document.querySelector(".prof-aside__left-panel");
-
-const panelChatMain = document.querySelector("#prof-aside__right-panel-main");
-const panelTasksMain = document.querySelector("#prof-aside__left-panel-main");
-
-buttonBackToTasks.addEventListener("click", (e) => {
-    panelChat.classList.add("mix-display-none");
-    panelChat.classList.remove("mix-display-flex");
-    panelTasks.classList.remove("mix-display-none");
-});
-
-buttonBackToTasksMain.addEventListener("click", (e) => {
-    panelChatMain.classList.add("mix-display-none");
-    panelChatMain.classList.remove("mix-display-flex");
-    panelTasksMain.classList.remove("mix-display-none");
-});
-
-// логика открытия чата по клику на таску
-
-const tasksContainer = document.querySelectorAll(
-    ".prof-aside__tasks-container"
-);
-
-tasksContainer.forEach((i) =>
+sturctureWrappers.forEach((i) =>
     i.addEventListener("click", (e) => {
-        if (e.target.closest(".prof-label-checkbox_type_feedback")) {
+        if (e.target.closest(".prof-structure__label")) {
             return;
         }
-        if (innerWidth > 1780) {
-            return;
-        }
-        if (innerWidth < 1551 && innerWidth > 750) {
-            return;
-        }
-        if (e.target.closest(".prof-aside__task-item")) {
-            panelTasks.classList.add("mix-display-none");
-            panelChat.classList.add("mix-display-flex");
-
-            panelTasksMain.classList.add("mix-display-none");
-            panelChatMain.classList.add("mix-display-flex");
+        const wrapperElement = e.target.closest(
+            ".prof-structure__wrapper-subtitle"
+        );
+        const wrapperElementActive = wrapperElement.classList.contains(
+            "prof-structure__wrapper-subtitle_active"
+        );
+        if (wrapperElementActive) {
+            wrapperElement.style.height = `16px`;
+            removeClassElement(
+                wrapperElement,
+                "prof-structure__wrapper-subtitle_active"
+            );
+            removeClassElement(
+                state.cursorsStructure[`${wrapperElement.ariaLabel}`],
+                "prof-structure__cursor_active"
+            );
+            removeClassElement(
+                state.labelsStructure[wrapperElement.ariaLabel],
+                "mix-visible"
+            );
+        } else {
+            const currentHeight =
+                state.cardsStructure[wrapperElement.ariaLabel].clientHeight;
+            wrapperElement.style.height = `${currentHeight + 32}px`;
+            setTimeout(() => {
+                addClassElement(
+                    wrapperElement,
+                    "prof-structure__wrapper-subtitle_active"
+                );
+            }, 300);
+            addClassElement(
+                state.cursorsStructure[wrapperElement.ariaLabel],
+                "prof-structure__cursor_active"
+            );
+            addClassElement(
+                state.labelsStructure[wrapperElement.ariaLabel],
+                "mix-visible"
+            );
         }
     })
 );
-
-function resetVisibleDymanicClassAsideBlock() {
-    panelTasksMain.classList.remove("mix-display-none");
-    panelTasksMain.classList.remove("mix-display-flex");
-    panelChatMain.classList.remove("mix-display-none");
-    panelChatMain.classList.remove("mix-display-flex");
-}
-
-function resetVisibleDymanicClassAsideBlockMobile() {
-    panelTasks.classList.remove("mix-display-none");
-    panelTasks.classList.remove("mix-display-flex");
-    panelChat.classList.remove("mix-display-none");
-    panelChat.classList.remove("mix-display-flex");
-}
-
-// Логика открытия контактов (таски, чат) для планшетной / мобильной версий
-
-const buttonContacts = document.querySelector(".prof-general__contacts");
-
-const generalPanel = document.querySelector("#general-panel");
-const mobilePanelContacts = document.querySelector(
-    ".prof-general__body_type_contacts"
-);
-
-buttonContacts.addEventListener("click", (e) => {
-    if (!buttonContacts.classList.contains("prof-general__contacts_active")) {
-        openMobileBlockContacts();
-    } else {
-        closeMobileBlockContacts();
-    }
-});
-
-function openMobileBlockContacts() {
-    buttonContacts.classList.add("prof-general__contacts_active");
-    mobilePanelContacts.classList.remove("mix-display-none");
-    generalPanel.classList.add("mix-display-none");
-}
-
-function closeMobileBlockContacts() {
-    buttonContacts.classList.remove("prof-general__contacts_active");
-    mobilePanelContacts.classList.add("mix-display-none");
-    generalPanel.classList.remove("mix-display-none");
-}
 
 // логика по работе селектов
 
@@ -756,57 +661,3 @@ buttonsSelect.forEach((i) =>
 function checkSubmenuSecondLevel(ariaLabel) {
     return ariaLabel.includes("division") || ariaLabel.includes("structure");
 }
-
-// логика закрытия попапов по клавише Escape
-
-function handleEscClose(e) {
-    if (e.key === "Escape") {
-        if (state.currentOpenPopup) {
-            state.currentOpenPopup.style.display = "none";
-            state.currentOpenPopup = null;
-            document.removeEventListener("keydown", handleEscClose);
-        }
-    }
-}
-
-// логика открытия попапа передачи обращения, объекта
-
-const buttonsSendAppeals = document.querySelectorAll(".prof-aside__button");
-const buttonsSendObjects = document.querySelectorAll(
-    ".prof-control-panel__button_type_transfer"
-);
-const buttonSendObjectsMobile = document.querySelector(
-    ".prof-control-panel__button_type_mobile"
-);
-
-const popupSendObjects = document.querySelector(".modal-transfer-object");
-
-setAddEventListenerOpenPopupSendObjects(buttonSendObjectsMobile);
-
-buttonsSendAppeals.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
-
-buttonsSendObjects.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
-
-function setAddEventListenerOpenPopupSendObjects(i) {
-    i.addEventListener("click", () => {
-        popupSendObjects.style.display = "flex";
-        state.currentOpenPopup = popupSendObjects;
-        document.addEventListener("keydown", handleEscClose);
-    });
-}
-
-// логика закрытия попапов редактирования аватара, передачи объекта, передачи обращения
-
-const popupsBody = document.querySelectorAll(".modal");
-
-popupsBody.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (
-            e.target.closest(".modal__close-btn") ||
-            e.target.closest(".modal__cancel-btn") ||
-            e.target.classList.contains("modal")
-        ) {
-            e.target.closest(".modal").style.display = "none";
-        }
-    })
-);

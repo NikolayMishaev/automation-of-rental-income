@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../assets/scss/style.css" />
+    <script type="module" defer src="./../assets/js/manager/structure.js"></script>
+</head>
+<body>
+    <div">
+        <div class="prof-structure">
+            <h3 class="prof-structure__title heading-h3">Структура</h3>
+            <div class="prof-structure__content">
+                <div class="prof-control-panel prof-control-panel_type_director">
+                    <div aria-label="director" class="prof-structure__wrapper-subtitle">
+                        <div id='structure-cursor-director' class="prof-structure__cursor"></div>
+                        <label aria-label="structure-director" id="structure-label-director" class="prof-control-panel__select-label prof-structure__label button-toggle-select">
+                            <form class="main-submenu main-submenu_style_division" id='submenu-structure-director'>
+                                <ul class="main-submenu__list">
+                                    <li class="main-submenu__item main-submenu__item_style_structure prof-control-panel__title-submenu">
+                                        Дивизион</li>
+                                    <li class="main-submenu__item main-submenu__item_style_division">
+                                        <label aria-label="structure-director-first" class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2">
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor prof-control-panel__cursor_type_structure" id="cursor-structure-director-first">
+                                            </div>
+                                            <input type="text" disabled="true" id="input-structure-director-first" class="prof-control-panel__select-input prof-control-panel__select-input_type_division" value="Выберите категорию">
+                                            <div id="submenu-structure-director-first" class="main-submenu main-submenu_style_structure">
+                                                <ul class="main-submenu__list">
+                                                    <li aria-label="item" class="main-submenu__item main-submenu__item_active">
+                                                        Категория 1</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 2</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 3</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 4</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 5</li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="main-submenu__item main-submenu__item_style_structure-wide prof-control-panel__title-submenu">
+                                        <button class="main-submenu__button-reset text-p2" type="reset">Очистить фильтр</button></li>
+                                </ul>
+                            </form>
+                        </label>
+                        <p class="prof-structure__subtitle prof-structure__subtitle_type_director heading-h5">Директор</p>
+                        <div class="prof-structure__card prof-structure__card_type_director">
+                            <div class="prof-structure__marker prof-structure__marker_type_director"></div>
+                            <img src="./../assets/images/other-user.jpg" alt="Аватар"
+                                class="prof-structure__photo">
+                            <div class="prof-structure__description">
+                                <h4 class="prof-structure__card-title heading-h3">Шохин Роман</h4>
+                                <p class="prof-structure__card-subtitle heading-h5">Директор по развитию</p>
+                                <p class="prof-structure__card-department text-p3">Департамент развития</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div aria-label="direction"  class="prof-structure__wrapper-subtitle">
+                        <p class="prof-structure__subtitle prof-structure__subtitle_type_director heading-h5">Руководители направлений</p>
+                        <div id='structure-cursor-direction' class="prof-structure__cursor"></div>
+                        <label aria-label="structure-direction" id="structure-label-direction" class="prof-control-panel__select-label prof-structure__label button-toggle-select">
+                            <form class="main-submenu main-submenu_style_division" id='submenu-structure-direction'>
+                                <ul class="main-submenu__list">
+                                    <li class="main-submenu__item main-submenu__item_style_structure prof-control-panel__title-submenu">
+                                        Дивизион</li>
+                                    <li class="main-submenu__item main-submenu__item_style_division">
+                                        <label aria-label="structure-direction-first" class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2">
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor prof-control-panel__cursor_type_structure" id="cursor-structure-direction-first">
+                                            </div>
+                                            <input type="text" disabled="true" id="input-structure-direction-first" class="prof-control-panel__select-input prof-control-panel__select-input_type_division" value="Выберите категорию">
+                                            <div id="submenu-structure-direction-first" class="main-submenu main-submenu_style_structure">
+                                                <ul class="main-submenu__list">
+                                                    <li aria-label="item" class="main-submenu__item main-submenu__item_active">
+                                                        Категория 1</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 2</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 3</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 4</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 5</li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="main-submenu__item main-submenu__item_style_structure-wide prof-control-panel__title-submenu">
+                                        <button class="main-submenu__button-reset text-p2" type="reset">Очистить фильтр</button></li>
+                                </ul>
+                            </form>
+                        </label>
+                        <ul class="prof-structure__cards-container structure-cards-container-direction">
+                            <li class="prof-structure__card prof-structure__card_type_direction">
+                                <div class="prof-structure__marker prof-structure__marker_type_direction"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div aria-label="management" class="prof-structure__wrapper-subtitle">
+                        <p class="prof-structure__subtitle prof-structure__subtitle_type_director heading-h5">Руководители управлений</p>
+                        <div id='structure-cursor-management' class="prof-structure__cursor"></div>
+                        <label aria-label="structure-management" id="structure-label-management" class="prof-control-panel__select-label prof-structure__label button-toggle-select">
+                            <form class="main-submenu main-submenu_style_division" id='submenu-structure-management'>
+                                <ul class="main-submenu__list">
+                                    <li class="main-submenu__item main-submenu__item_style_structure prof-control-panel__title-submenu">
+                                        Дивизион</li>
+                                    <li class="main-submenu__item main-submenu__item_style_division">
+                                        <label aria-label="structure-management-first" class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2">
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor prof-control-panel__cursor_type_structure" id="cursor-structure-management-first">
+                                            </div>
+                                            <input type="text" disabled="true" id="input-structure-management-first" class="prof-control-panel__select-input prof-control-panel__select-input_type_division" value="Выберите категорию">
+                                            <div id="submenu-structure-management-first" class="main-submenu main-submenu_style_structure">
+                                                <ul class="main-submenu__list">
+                                                    <li aria-label="item" class="main-submenu__item main-submenu__item_active">
+                                                        Категория 1</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 2</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 3</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 4</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 5</li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="main-submenu__item main-submenu__item_style_structure-wide prof-control-panel__title-submenu">
+                                        <button class="main-submenu__button-reset text-p2" type="reset">Очистить фильтр</button></li>
+                                </ul>
+                            </form>
+                        </label>
+                        <ul class="prof-structure__cards-container structure-cards-container-management">
+                            <li class="prof-structure__card prof-structure__card_type_management">
+                                <div class="prof-structure__marker prof-structure__marker_type_management"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_management">
+                                <div class="prof-structure__marker prof-structure__marker_type_management"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_management">
+                                <div class="prof-structure__marker prof-structure__marker_type_management"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_management">
+                                <div class="prof-structure__marker prof-structure__marker_type_management"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div aria-label="department" class="prof-structure__wrapper-subtitle">
+                        <p class="prof-structure__subtitle prof-structure__subtitle_type_director heading-h5">Руководители отделов</p>
+                        <div id='structure-cursor-department' class="prof-structure__cursor"></div>
+                        <label aria-label="structure-department" id="structure-label-department" class="prof-control-panel__select-label prof-structure__label button-toggle-select">
+                            <form class="main-submenu main-submenu_style_division" id='submenu-structure-department'>
+                                <ul class="main-submenu__list">
+                                    <li class="main-submenu__item main-submenu__item_style_structure prof-control-panel__title-submenu">
+                                        Дивизион</li>
+                                    <li class="main-submenu__item main-submenu__item_style_division">
+                                        <label aria-label="structure-department-first" class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2">
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor prof-control-panel__cursor_type_structure" id="cursor-structure-department-first">
+                                            </div>
+                                            <input type="text" disabled="true" id="input-structure-department-first" class="prof-control-panel__select-input prof-control-panel__select-input_type_division" value="Выберите категорию">
+                                            <div id="submenu-structure-department-first" class="main-submenu main-submenu_style_structure">
+                                                <ul class="main-submenu__list">
+                                                    <li aria-label="item" class="main-submenu__item main-submenu__item_active">
+                                                        Категория 1</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 2</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 3</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 4</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 5</li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="main-submenu__item main-submenu__item_style_structure-wide prof-control-panel__title-submenu">
+                                        <button class="main-submenu__button-reset text-p2" type="reset">Очистить фильтр</button></li>
+                                </ul>
+                            </form>
+                        </label>
+                        <ul class="prof-structure__cards-container structure-cards-container-department">
+                            <li class="prof-structure__card prof-structure__card_type_department">
+                                <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_department">
+                                <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_department">
+                                <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_department">
+                                <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_department">
+                                <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_department">
+                                <div class="prof-structure__marker prof-structure__marker_type_department"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div aria-label="manager" class="prof-structure__wrapper-subtitle">
+                        <p class="prof-structure__subtitle prof-structure__subtitle_type_director heading-h5">Менеджеры</p>
+                        <div id='structure-cursor-manager' class="prof-structure__cursor"></div>
+                        <label aria-label="structure-manager" id="structure-label-manager" class="prof-control-panel__select-label prof-structure__label button-toggle-select">
+                            <form class="main-submenu main-submenu_style_division" id='submenu-structure-manager'>
+                                <ul class="main-submenu__list">
+                                    <li class="main-submenu__item main-submenu__item_style_structure prof-control-panel__title-submenu">
+                                        Дивизион</li>
+                                    <li class="main-submenu__item main-submenu__item_style_division">
+                                        <label aria-label="structure-manager-first" class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2">
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor prof-control-panel__cursor_type_structure" id="cursor-structure-manager-first">
+                                            </div>
+                                            <input type="text" disabled="true" id="input-structure-manager-first" class="prof-control-panel__select-input prof-control-panel__select-input_type_division" value="Выберите категорию">
+                                            <div id="submenu-structure-manager-first" class="main-submenu main-submenu_style_structure">
+                                                <ul class="main-submenu__list">
+                                                    <li aria-label="item" class="main-submenu__item main-submenu__item_active">
+                                                        Категория 1</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 2</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 3</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 4</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 5</li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="main-submenu__item main-submenu__item_style_structure-wide prof-control-panel__title-submenu">
+                                        <button class="main-submenu__button-reset text-p2" type="reset">Очистить фильтр</button></li>
+                                </ul>
+                            </form>
+                        </label>
+                        <ul class="prof-structure__cards-container structure-cards-container-manager">
+                            <li class="prof-structure__card prof-structure__card_type_manager">
+                                <div class="prof-structure__marker prof-structure__marker_type_manager"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_manager">
+                                <div class="prof-structure__marker prof-structure__marker_type_manager"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                            <li class="prof-structure__card prof-structure__card_type_manager">
+                                <div class="prof-structure__marker prof-structure__marker_type_manager"></div>
+                                <img src="./../assets/images/profile-avatar-structure.jpg" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div aria-label="analytics" class="prof-structure__wrapper-subtitle">
+                        <p class="prof-structure__subtitle prof-structure__subtitle_type_director heading-h5">Аналитики</p>
+                        <div id='structure-cursor-analytics' class="prof-structure__cursor"></div>
+                        <label aria-label="structure-analytics" id="structure-label-analytics" class="prof-control-panel__select-label prof-structure__label button-toggle-select">
+                            <form class="main-submenu main-submenu_style_division" id='submenu-structure-analytics'>
+                                <ul class="main-submenu__list">
+                                    <li class="main-submenu__item main-submenu__item_style_structure prof-control-panel__title-submenu">
+                                        Дивизион</li>
+                                    <li class="main-submenu__item main-submenu__item_style_division">
+                                        <label aria-label="structure-analytics-first" class="prof-control-panel__select-label prof-control-panel__select-label_type_division text-p2">
+                                            <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                                            <div class="prof-control-panel__cursor prof-control-panel__cursor_type_structure" id="cursor-structure-analytics-first">
+                                            </div>
+                                            <input type="text" disabled="true" id="input-structure-analytics-first" class="prof-control-panel__select-input prof-control-panel__select-input_type_division" value="Выберите категорию">
+                                            <div id="submenu-structure-analytics-first" class="main-submenu main-submenu_style_structure">
+                                                <ul class="main-submenu__list">
+                                                    <li aria-label="item" class="main-submenu__item main-submenu__item_active">
+                                                        Категория 1</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 2</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 3</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 4</li>
+                                                    <li aria-label="item" class="main-submenu__item">Категория 5</li>
+                                                </ul>
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="main-submenu__item main-submenu__item_style_structure-wide prof-control-panel__title-submenu">
+                                        <button class="main-submenu__button-reset text-p2" type="reset">Очистить фильтр</button></li>
+                                </ul>
+                            </form>
+                        </label>
+                        <ul class="prof-structure__cards-container structure-cards-container-analytics">
+                            <li class="prof-structure__card prof-structure__card_type_analytics">
+                                <div class="prof-structure__marker prof-structure__marker_type_analytics"></div>
+                                <img src="./../assets/images/profile-avatar-default.png" alt="Аватар"
+                                    class="prof-structure__photo">
+                                <div class="prof-structure__description">
+                                    <h4 class="prof-structure__card-title heading-h3">Чугунова Светлана</h4>
+                                    <p class="prof-structure__card-subtitle heading-h5">Руководитель направления</p>
+                                    <p class="prof-structure__card-department text-p3">Направление брокериджа</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
