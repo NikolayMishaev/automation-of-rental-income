@@ -828,6 +828,7 @@ if (containerStars) {
 const table = document.querySelector(".prof-table");
 const rowsAgent = document.querySelectorAll(".agent");
 const rowsNumber = document.querySelectorAll(".number");
+const rowsNumberSecond = document.querySelectorAll(".number-second");
 const rowsDateOffer = document.querySelectorAll(".date-offer");
 const buttonsSort = document.querySelectorAll(".prof-marker_type_sort");
 const rowHeadingFirstLine = document.querySelector(
@@ -868,7 +869,7 @@ function sortTableRow(e, abc = true) {
         })
         .forEach((i, c) =>
             c === 0
-                ? table.append(rowHeadingFirstLine) ||
+                ? table.append(rowHeadingFirstLine || "") ||
                   table.append(rowHeading) ||
                   table.append(i.closest(".prof-table__row"))
                 : table.append(i.closest(".prof-table__row"))
@@ -886,6 +887,9 @@ function determineRow(value) {
         }
         case "number": {
             return rowsNumber;
+        }
+        case "number-second": {
+            return rowsNumberSecond;
         }
         case "date-offer": {
             return rowsDateOffer;
