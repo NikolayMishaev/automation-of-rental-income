@@ -236,8 +236,7 @@ objectsButtons.forEach((i) =>
 // логика действий при загрузе страницы на определенном разрешении
 
 let interval = setInterval(() => {
-    console.log(innerWidth);
-    if (innerWidth < 981) {
+    if (innerWidth < 981 && innerWidth > 10) {
         removeClassElement(contentCards, "mix-display-none");
     }
     clearInterval(interval);

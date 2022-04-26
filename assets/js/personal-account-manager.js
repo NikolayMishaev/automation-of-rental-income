@@ -248,57 +248,6 @@ tabButtons.forEach((i) =>
     )
 );
 
-// логика переключения кнопок на вкладке "Объекты": "Список", "Карточки"
-
-const objectsButtons = document.querySelectorAll(".objects-button");
-
-const contentTable = document.querySelector("#objects-table");
-const contentCards = document.querySelector("#objects-cards");
-
-objectsButtons.forEach((i) =>
-    i.addEventListener("click", (e) =>
-        switchButtons(
-            e.target,
-            objectsButtons,
-            [contentTable, contentCards],
-            "prof-control-panel__button_active",
-            "mix-display-none"
-        )
-    )
-);
-
-// логика переключения кнопок на вкладке "Анкеты контрагентов": "Актуальные", "Архив"
-
-const agentButtons = document.querySelectorAll(".agent-button");
-
-const agentContentTable = document.querySelector("#agent-list");
-const agentContentCards = document.querySelector("#agent-cards");
-
-agentButtons.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        switchButtons(
-            e.target,
-            agentButtons,
-            [agentContentTable, agentContentCards],
-            "prof-control-panel__button_active",
-            "mix-display-none"
-        );
-    })
-);
-
-// логика действий при ресайзе
-// общие функции для этого блока логики
-
-function resetActiveClassButton(arrayButtons) {
-    arrayButtons.forEach((i) => {
-        if (i.ariaLabel === "list") {
-            removeClassElement(i, "prof-control-panel__button_active");
-        } else {
-            addClassElement(i, "prof-control-panel__button_active");
-        }
-    });
-}
-
 window.addEventListener("resize", function (e) {
     if (e.target.innerWidth > 750) {
         resetVisibleDymanicClassAsideBlockMobile();
