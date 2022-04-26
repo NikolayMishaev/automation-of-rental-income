@@ -103,6 +103,7 @@ a {
   transition: all 0.5s;
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+  color: #1565c0;
 }
 
 a:hover, a:focus {
@@ -4773,6 +4774,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: #1565c0;
 }
 
+.footer__link:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 1660px) {
   .footer__year {
     width: 50%;
@@ -6802,6 +6807,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #cfd4dc;
 }
 
+.main-popup__container_type_docs {
+  padding: 25px;
+  min-width: 350px;
+}
+
 .main-popup__container_type_change-city {
   height: 24.0625rem;
   min-width: 16.25rem;
@@ -7546,6 +7556,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .modal-transfer-object .modal__hidden-text {
     display: none;
   }
+}
+
+.popup-docs__item {
+  margin-top: 8px;
+  margin-left: 18px;
+  list-style-type: disc;
+}
+
+.popup-docs__item:first-child {
+  margin-top: 16px;
 }
 
 .prof-aside {
@@ -10008,6 +10028,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__stars-caption {
   min-width: 20px;
+}
+
+#input-ankets {
+  margin-left: 25px;
 }
 
 .prof-table {

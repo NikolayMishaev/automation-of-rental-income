@@ -37,6 +37,10 @@
             border-radius: 4px;
             background-color: $grey30;
         }
+        &_type_docs {
+            padding: 25px;
+            min-width: 350px;
+        }
         &_type_change-city {
             height: rem(385px);
             min-width: rem(260px);

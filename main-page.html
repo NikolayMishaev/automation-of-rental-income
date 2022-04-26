@@ -3053,7 +3053,7 @@
                     </a>
                 </li>
                 <li class="footer__item">
-                    <a href="#" class="footer__link">Пользовательское соглашение</a>
+                    <p aria-label='popup-docs' class="footer__link button-open-popup">Правовые документы</p>
                 </li>
             </ul>
         </footer>
@@ -3322,23 +3322,46 @@
                         </div>
                     </div>
                     <div class="modal-registration__checkbox-list">
-                        <label class="checkbox-container"><input required class="checkbox-container__checkbox"
+                        <label class="checkbox-container"><input required checked class="checkbox-container__checkbox"
                                 type="checkbox">
-                            <p>Принять <a href="#">Пользовательское соглашение</a></p>
+                            <p>Принять <a download href="./assets/docs/Политика конфиденциальности_21.04.docx">Политику конфиденциальности</a></p>
                         </label>
-                        <label class="checkbox-container"><input class="checkbox-container__checkbox" required
+                        <label class="checkbox-container"><input checked class="checkbox-container__checkbox" required
                                 type="checkbox">
-                            <p>Запомнить пароль <a href="#">Ссылка</a></p>
+                            <p>Принять <a download href="./assets/docs/Пользовательское соглашение_21.04.docx">Пользовательское соглашение</a></p>
                         </label>
-                        <label class="checkbox-container"><input required class="checkbox-container__checkbox"
+                        <label class="checkbox-container"><input checked required class="checkbox-container__checkbox"
                                 type="checkbox">
-                            <p>Запомнить пароль <a href="#">Ссылка</a></p>
+                            <p>Принять <a download href="./assets/docs/Согласие на обработку персональных данных_21.04.docx">Согласие на обработку персональных данных</a></p>
                         </label>
                     </div>
                     <button type="submit" class="modal-login__registration-btn">Зарегистрироваться</button>
                 </form>
             </div>
         </div>
+    </div>
+
+    <!-- модальное окно Правовые документы  -->
+    <div id="popup-docs" class="main-popup main-popup_type_docs mix-display-none">
+        <div class="main-popup__container main-popup__container_type_docs">
+            <button class="main-popup__close"></button>
+            <div class="popup-docs">
+                <h3 class="popup-docs__title">Правовые документы</h3>
+                <ul class="popup-docs__list">
+                    <li class="popup-docs__item">
+                        <a href="./assets/docs/Политика конфиденциальности_21.04.docx" class="popup-docs__link">Политика конфиденциальности</a>
+                    </li>
+                    <li class="popup-docs__item">
+                        <a href="./assets/docs/Пользовательское соглашение_21.04.docx" class="popup-docs__link">Пользовательское соглашение</a>
+                    </li>
+                    <li class="popup-docs__item">
+                        <a href="./assets/docs/Согласие на обработку персональных данных_21.04.docx" class="popup-docs__link">Согласие на обработку персональных данных</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
     </div>
 
     <script src="./assets/leaflet/leaflet.js"></script>
