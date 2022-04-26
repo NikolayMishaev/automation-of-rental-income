@@ -245,12 +245,10 @@ agentButtons.forEach((i) =>
 // логика действий при загрузе страницы на определенном разрешении
 
 let interval = setInterval(() => {
-    if (innerWidth > 300) {
-        if (innerWidth < 981) {
-            removeClassElement(agentContentCards, "mix-display-none");
-        }
-        clearInterval(interval);
+    if (innerWidth < 981) {
+        removeClassElement(agentContentCards, "mix-display-none");
     }
+    clearInterval(interval);
 }, 1000);
 
 // логика действий при ресайзе
