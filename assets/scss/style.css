@@ -2263,6 +2263,11 @@ main .container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 16px;
 }
 
@@ -2316,12 +2321,19 @@ main .container {
 @media (max-width: 40rem) {
   .registration-form__label_textarea {
     max-width: 100%;
+    margin-bottom: 10px;
   }
 }
 
 .registration-form .custom-text-input {
   width: 100%;
   max-width: 552px;
+}
+
+.registration-form .custom-text-input_type_select {
+  max-width: 570px;
+  margin-left: auto;
+  margin-top: 16px;
 }
 
 .registration-form .custom-text-input textarea {
@@ -5634,6 +5646,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.main-submenu_style_view-acitvity {
+  height: 144px;
+  overflow: auto;
+}
+
+.main-submenu_style_view-acitvity::-webkit-scrollbar {
+  width: 5px;
+}
+
+.main-submenu_style_view-acitvity::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+.main-submenu_style_view-acitvity::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
 }
 
 .main-submenu_style_sort {
@@ -9065,6 +9095,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-box-flex: 1;
         -ms-flex: auto;
             flex: auto;
+  }
+}
+
+@media (max-width: 50.0625rem) {
+  .prof-control-panel__select-label_type_view-activity {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .prof-control-panel__select-label_type_view-activity {
+    margin-top: 0;
   }
 }
 
