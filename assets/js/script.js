@@ -30,14 +30,28 @@ function switchButtons(
 
 const state = {
     currentOpenPopup: null,
+    "view-activity-personal": document.querySelector(
+        ".custom-text-input_type_select"
+    ),
+    "view-activity-organization": document.querySelector(".organization"),
     cursorsSelect: {
         "view-document": document.querySelector("#cursor-view-document"),
+        "view-activity": document.querySelector("#cursor-view-activity"),
+        "view-activity-org": document.querySelector(
+            "#cursor-view-activity-org"
+        ),
     },
     submenuSelect: {
         "view-document": document.querySelector("#submenu-view-document"),
+        "view-activity": document.querySelector("#submenu-view-activity"),
+        "view-activity-org": document.querySelector(
+            "#submenu-view-activity-org"
+        ),
     },
     inputsSelect: {
         "view-document": document.querySelector("#input-view-document"),
+        "view-activity": document.querySelector("#input-view-activity"),
+        "view-activity-org": document.querySelector("#input-view-activity-org"),
     },
 };
 const modalOfferPrice = document.querySelector(".modal-offer-price");
@@ -410,6 +424,9 @@ function checkRequiredInput(step) {
             if (inputCorrAccount) {
                 inputCorrAccount.classList.add("custom-text-input__error");
             }
+        }
+        if (element.value) {
+            element.classList.remove("custom-text-input__error");
         }
     }
     if (findInput) return false;
@@ -923,7 +940,36 @@ buttonsSelect.forEach((i) =>
             setInputValueByValueActiveCheckbox();
             return;
         }
+        if (
+            e.target.ariaLabel === "item" &&
+            e.target.textContent.trim() === "Иное"
+        ) {
+            if (currentLabel.ariaLabel === "view-activity") {
+                removeClassElement(
+                    state["view-activity-personal"],
+                    "mix-display-none"
+                );
+            } else {
+                removeClassElement(
+                    state["view-activity-organization"],
+                    "mix-display-none"
+                );
+            }
+        }
         if (e.target.ariaLabel === "item") {
+            if (e.target.textContent.trim() !== "Иное") {
+                if (currentLabel.ariaLabel === "view-activity") {
+                    addClassElement(
+                        state["view-activity-personal"],
+                        "mix-display-none"
+                    );
+                } else {
+                    addClassElement(
+                        state["view-activity-organization"],
+                        "mix-display-none"
+                    );
+                }
+            }
             state.inputsSelect[currentLabel.ariaLabel].value =
                 e.target.textContent.trim();
             Array.from(

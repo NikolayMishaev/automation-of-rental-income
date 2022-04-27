@@ -351,9 +351,169 @@
                   <h3>Вид деятельности контрагента</h3>
                   <div class="registration-form__row_textarea">
                     <span class="registration-form__label_textarea">Вид деятельности</span>
-                    <div class="custom-text-input custom-text-input_text">
+                    <label
+                    aria-label="view-activity"
+                    class="prof-control-panel__select-label prof-control-panel__select-label_type_register prof-control-panel__select-label_type_view-activity button-toggle-select-register text-p1"
+                    >
+                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                    <div class="prof-control-panel__cursor prof-control-panel__cursor_type_register" id="cursor-view-activity"></div>
+                    <input
+                      id="input-view-activity"
+                      type="text"
+                      disabled="true"
+                      class="prof-control-panel__select-input prof-control-panel__select-input_type_register"
+                      placeholder="Выберите вид деятельности"
+                      required
+                    />
+                    <div
+                      class="main-submenu main-submenu_style_view-acitvity"
+                      id="submenu-view-activity"
+                    >
+                      <ul class="main-submenu__list">
+                        <li
+                          aria-label="item"
+                          class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                        >
+                          Аптека
+                        </li>
+                        <li
+                          aria-label="item"
+                          class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                        >
+                          Сотовый ритейл
+                        </li>
+                        <li
+                          aria-label="item"
+                          class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                        >
+                          Отделение банка
+                        </li>
+                        <li
+                          aria-label="item"
+                          class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                        >
+                          Цветочный салон
+                        </li>
+                        <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Зоомагазин
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Ювелирный магазин
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Химчистка
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Бытовые услуги
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Банкоматы
+                      </li>
+                      <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Терминалы по  приему  платежей
+                    </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Вендинговая торговля (цветоматы, линзы и т.п.)
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        “Острова” (развесной чай, фотоателье, туристическое агенство)
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        МФЦ, точки приёма платежей
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Парфюмерный магазин
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Салон оптики
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Салон  ортопедии
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Магазин посуды
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Гипермаркеты электроники, детских и спортивных товаров
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Магазин одежды и обуви, в т.ч. спортивной
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Магазины  по продаже  товаров  для дома  и  сада
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Детские развлекательные центры
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                      Магазин кожгалантереи
+                      </li>
+                      <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Иное
+                    </li>
+                      </ul>
+                    </div>
+                  </label>
+                    <div class="custom-text-input custom-text-input_text custom-text-input_type_select mix-display-none">
                       <textarea cols="30" rows="4" data-required="true"></textarea>
-                      <span class="custom-text-input__label">Введите вид деятельности*</span>
+                      <span class="custom-text-input__label">Иной вид деятельности*</span>
                     </div>
                   </div>
                 </div>
@@ -1336,9 +1496,169 @@
                   <h3>Вид деятельности контрагента</h3>
                   <div class="registration-form__row_textarea">
                     <span class="registration-form__label_textarea">Вид деятельности</span>
-                    <div class="custom-text-input custom-text-input_text">
-                      <textarea data-required cols="30" rows="4"></textarea>
-                      <span class="custom-text-input__label">Введите вид деятельности*</span>
+                    <label
+                    aria-label="view-activity-org"
+                    class="prof-control-panel__select-label prof-control-panel__select-label_type_register prof-control-panel__select-label_type_view-activity button-toggle-select-register text-p1"
+                    >
+                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                    <div class="prof-control-panel__cursor prof-control-panel__cursor_type_register" id="cursor-view-activity-org"></div>
+                    <input
+                      id="input-view-activity-org"
+                      type="text"
+                      disabled="true"
+                      class="prof-control-panel__select-input prof-control-panel__select-input_type_register"
+                      placeholder="Выберите вид деятельности"
+                      required
+                    />
+                    <div
+                      class="main-submenu main-submenu_style_view-acitvity"
+                      id="submenu-view-activity-org"
+                    >
+                      <ul class="main-submenu__list">
+                        <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Аптека
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Сотовый ритейл
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Отделение банка
+                      </li>
+                      <li
+                        aria-label="item"
+                        class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                      >
+                        Цветочный салон
+                      </li>
+                      <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Зоомагазин
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Ювелирный магазин
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Химчистка
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Бытовые услуги
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Банкоматы
+                    </li>
+                    <li
+                    aria-label="item"
+                    class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                  >
+                    Терминалы по  приему  платежей
+                  </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Вендинговая торговля (цветоматы, линзы и т.п.)
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      “Острова” (развесной чай, фотоателье, туристическое агенство)
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      МФЦ, точки приёма платежей
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Парфюмерный магазин
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Салон оптики
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Салон  ортопедии
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Магазин посуды
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Гипермаркеты электроники, детских и спортивных товаров
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Магазин одежды и обуви, в т.ч. спортивной
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Магазины  по продаже  товаров  для дома  и  сада
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Детские развлекательные центры
+                    </li>
+                    <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                    Магазин кожгалантереи
+                    </li>
+                      <li
+                      aria-label="item"
+                      class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort"
+                    >
+                      Иное
+                    </li>
+                      </ul>
+                    </div>
+                  </label>
+                    <div class="custom-text-input custom-text-input_text custom-text-input_type_select organization mix-display-none">
+                      <textarea cols="30" rows="4" data-required="true"></textarea>
+                      <span class="custom-text-input__label">Иной вид деятельности*</span>
                     </div>
                   </div>
                 </div>

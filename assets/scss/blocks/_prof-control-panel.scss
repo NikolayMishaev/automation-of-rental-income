@@ -168,6 +168,14 @@
                 flex: auto;
             }
         }
+        &_type_view-activity {
+            @media (max-width: rem(801px)) {
+                margin-top: 16px;
+            }
+            @media (max-width: rem(640px)) {
+                margin-top: 0;
+            }
+        }
         &_type_transfer-objects.prof-control-panel__select-label_active:before {
             background: url(./../images/icons/main-page-icon-filters-active.svg) no-repeat center;
             background-color: white !important;

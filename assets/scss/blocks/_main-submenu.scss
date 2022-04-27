@@ -13,6 +13,20 @@
     left: 0;
     display: flex;
     flex-direction: column;
+    &_style_view-acitvity {
+        height: 144px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
     &_style_sort {
         min-width: 230px;
         &-mobile {

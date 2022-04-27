@@ -84,6 +84,8 @@
         &_textarea {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
             margin-top: 16px;
             @media #{$screen-mobile} {
                 flex-direction: column;
@@ -109,12 +111,18 @@
             line-height: 24px;
             @media #{$screen-mobile} {
                 max-width: 100%;
+                margin-bottom: 10px;
             }
         }
     }
     .custom-text-input {
         width: 100%;
         max-width: 552px;
+        &_type_select {
+            max-width: 570px;
+            margin-left: auto;
+            margin-top: 16px;
+        }
         textarea {
             height: 120px;
         }
