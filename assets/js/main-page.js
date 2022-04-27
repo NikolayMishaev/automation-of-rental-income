@@ -193,7 +193,7 @@ mainCardsContainer.addEventListener("click", (e) => {
         const currentLike = e.target.classList.contains(
             "card-price__like_active"
         );
-        const data = { "card-like": !currentLike };
+        const data = { is_like: !currentLike };
         fetch(e.target.getAttribute("data-url"), {
             method: "POST",
             credentials: "same-origin",
