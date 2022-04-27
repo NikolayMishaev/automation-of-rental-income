@@ -5651,6 +5651,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .main-submenu_style_view-acitvity {
   height: 144px;
   overflow: auto;
+  right: 0;
+  top: 48px;
+}
+
+@media (max-width: 40rem) {
+  .main-submenu_style_view-acitvity {
+    top: 33px;
+  }
 }
 
 .main-submenu_style_view-acitvity::-webkit-scrollbar {

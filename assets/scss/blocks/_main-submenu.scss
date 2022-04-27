@@ -16,6 +16,11 @@
     &_style_view-acitvity {
         height: 144px;
         overflow: auto;
+        right: 0;
+        top:48px;
+        @media #{$screen-mobile} {
+            top: 33px;
+        }
         &::-webkit-scrollbar {
             width: 5px;
             &:horizontal {
