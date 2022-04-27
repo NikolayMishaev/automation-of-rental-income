@@ -1257,3 +1257,7 @@ if (document.querySelector(".regisrtation-page")) {
     $("#input-email-ip").inputmask("email");
     $("#input-email-org").inputmask("email");
 }
+
+if (document.querySelector("#contact-form2")) {
+    $("#contact-form2 .input-email").inputmask("email");
+}

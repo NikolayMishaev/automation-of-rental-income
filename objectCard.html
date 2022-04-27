@@ -2504,8 +2504,9 @@
                 <label class="custom-text-input custom-text-input_tel">
                 <input
                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                    type="text"
-                    class="input-tel"
+                    type="tel"
+                    pattern="2-[0-9]{3}-[0-9]{3}"
+                    class="input-tel tel"
                     maxlength="11"
                 /><span class="custom-text-input__label">Ваш телефон</span>
                 </label>
@@ -2528,15 +2529,16 @@
                 <label class="custom-text-input custom-text-input_tel">
                 <input
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                type="text"
-                class="input-tel"
+                type="tel"
+                pattern="2-[0-9]{3}-[0-9]{3}"
+                class="input-tel tel"
                 maxlength="11"
                 />
                 <span class="custom-text-input__label">Ваш телефон</span>
                 </label>
                 <label class="custom-text-input">
                 <input
-                type="email"
+                type="text"
                 class="input-email"
                 required
                 maxlength="100"
@@ -2910,6 +2912,8 @@
     </div>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/inputmask.js"></script>
     <script type="module" src="./assets/js/script.js"></script>
     <script type="module" src="./assets/js/swiper.js"></script>
     <script type="module" defer src="./assets/js/common-JS-to-all-pages.js"></script>
