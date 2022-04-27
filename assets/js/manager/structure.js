@@ -1,8 +1,4 @@
-import {
-    addClassElement,
-    removeClassElement,
-    switchButtons,
-} from "./common-JS-to-all-pages.js";
+import { addClassElement, removeClassElement } from "./../common functions.js";
 
 // стейты
 
@@ -14,11 +10,65 @@ const state = {
         "analytics-period-ankets": document.querySelector(
             "#cursor-analytics-period-ankets"
         ),
+        "structure-director-first": document.querySelector(
+            "#cursor-structure-director-first"
+        ),
+        "structure-director-second": document.querySelector(
+            "#cursor-structure-director-second"
+        ),
+        "structure-director-third": document.querySelector(
+            "#cursor-structure-director-third"
+        ),
+        "structure-direction-first": document.querySelector(
+            "#cursor-structure-direction-first"
+        ),
+        "structure-direction-second": document.querySelector(
+            "#cursor-structure-direction-second"
+        ),
+        "structure-direction-third": document.querySelector(
+            "#cursor-structure-direction-third"
+        ),
+        "structure-management-first": document.querySelector(
+            "#cursor-structure-management-first"
+        ),
+        "structure-management-second": document.querySelector(
+            "#cursor-structure-management-second"
+        ),
+        "structure-management-third": document.querySelector(
+            "#cursor-structure-management-third"
+        ),
+        "structure-department-first": document.querySelector(
+            "#cursor-structure-department-first"
+        ),
+        "structure-department-second": document.querySelector(
+            "#cursor-structure-department-second"
+        ),
+        "structure-department-third": document.querySelector(
+            "#cursor-structure-department-third"
+        ),
+        "structure-manager-first": document.querySelector(
+            "#cursor-structure-manager-first"
+        ),
+        "structure-manager-second": document.querySelector(
+            "#cursor-structure-manager-second"
+        ),
+        "structure-manager-third": document.querySelector(
+            "#cursor-structure-manager-third"
+        ),
+        "structure-analytics-first": document.querySelector(
+            "#cursor-structure-analytics-first"
+        ),
+        "structure-analytics-second": document.querySelector(
+            "#cursor-structure-analytics-second"
+        ),
+        "structure-analytics-third": document.querySelector(
+            "#cursor-structure-analytics-third"
+        ),
+        "transfer-objects": document.querySelector("#cursor-transfer-objects"),
         ankets: document.querySelector("#cursor-ankets"),
         "type-activity": document.querySelector("#cursor-type-activity"),
         "ankets-status": document.querySelector("#cursor-ankets-status"),
         "ankets-views": document.querySelector("#cursor-ankets-views"),
-        "waiting-list": document.querySelector("#cursor-waiting-list"),
         "objects-status": document.querySelector("#cursor-objects-status"),
         "objects-sort": document.querySelector("#cursor-objects-sort"),
         "objects-page": document.querySelector("#cursor-objects-page"),
@@ -68,17 +118,88 @@ const state = {
         "analytics-page-portal": document.querySelector(
             "#cursor-analytics-page-portal"
         ),
-        "structure-offers": document.querySelector("#cursor-structure-offers"),
     },
     submenuSelect: {
         "analytics-period-ankets": document.querySelector(
             "#submenu-analytics-period-ankets"
         ),
+        "structure-director-first": document.querySelector(
+            "#submenu-structure-director-first"
+        ),
+        "structure-director-second": document.querySelector(
+            "#submenu-structure-director-second"
+        ),
+        "structure-director-third": document.querySelector(
+            "#submenu-structure-director-third"
+        ),
+        "structure-direction-first": document.querySelector(
+            "#submenu-structure-direction-first"
+        ),
+        "structure-direction-second": document.querySelector(
+            "#submenu-structure-direction-second"
+        ),
+        "structure-direction-third": document.querySelector(
+            "#submenu-structure-direction-third"
+        ),
+        "structure-management-first": document.querySelector(
+            "#submenu-structure-management-first"
+        ),
+        "structure-management-second": document.querySelector(
+            "#submenu-structure-management-second"
+        ),
+        "structure-management-third": document.querySelector(
+            "#submenu-structure-management-third"
+        ),
+        "structure-department-first": document.querySelector(
+            "#submenu-structure-department-first"
+        ),
+        "structure-department-second": document.querySelector(
+            "#submenu-structure-department-second"
+        ),
+        "structure-department-third": document.querySelector(
+            "#submenu-structure-department-third"
+        ),
+        "structure-manager-first": document.querySelector(
+            "#submenu-structure-manager-first"
+        ),
+        "structure-manager-second": document.querySelector(
+            "#submenu-structure-manager-second"
+        ),
+        "structure-manager-third": document.querySelector(
+            "#submenu-structure-manager-third"
+        ),
+        "structure-analytics-first": document.querySelector(
+            "#submenu-structure-analytics-first"
+        ),
+        "structure-analytics-second": document.querySelector(
+            "#submenu-structure-analytics-second"
+        ),
+        "structure-analytics-third": document.querySelector(
+            "#submenu-structure-analytics-third"
+        ),
+        "structure-director": document.querySelector(
+            "#submenu-structure-director"
+        ),
+        "structure-direction": document.querySelector(
+            "#submenu-structure-direction"
+        ),
+        "structure-management": document.querySelector(
+            "#submenu-structure-management"
+        ),
+        "structure-department": document.querySelector(
+            "#submenu-structure-department"
+        ),
+        "structure-manager": document.querySelector(
+            "#submenu-structure-manager"
+        ),
+        "structure-analytics": document.querySelector(
+            "#submenu-structure-analytics"
+        ),
+        "transfer-objects": document.querySelector("#submenu-transfer-objects"),
         ankets: document.querySelector("#submenu-ankets"),
         "type-activity": document.querySelector("#submenu-type-activity"),
         "ankets-status": document.querySelector("#submenu-ankets-status"),
         "ankets-views": document.querySelector("#submenu-ankets-views"),
-        "waiting-list": document.querySelector("#submenu-waiting-list"),
         "objects-status": document.querySelector("#submenu-objects-status"),
         "objects-sort": document.querySelector("#submenu-objects-sort"),
         "objects-page": document.querySelector("#submenu-objects-page"),
@@ -138,17 +259,70 @@ const state = {
         "analytics-page-portal": document.querySelector(
             "#submenu-analytics-page-portal"
         ),
-        "structure-offers": document.querySelector("#submenu-structure-offers"),
     },
     inputsSelect: {
         "analytics-period-ankets": document.querySelector(
             "#input-analytics-period-ankets"
         ),
+        "structure-director-first": document.querySelector(
+            "#input-structure-director-first"
+        ),
+        "structure-director-second": document.querySelector(
+            "#input-structure-director-second"
+        ),
+        "structure-director-third": document.querySelector(
+            "#input-structure-director-third"
+        ),
+        "structure-direction-first": document.querySelector(
+            "#input-structure-direction-first"
+        ),
+        "structure-direction-second": document.querySelector(
+            "#input-structure-direction-second"
+        ),
+        "structure-direction-third": document.querySelector(
+            "#input-structure-direction-third"
+        ),
+        "structure-management-first": document.querySelector(
+            "#input-structure-management-first"
+        ),
+        "structure-management-second": document.querySelector(
+            "#input-structure-management-second"
+        ),
+        "structure-management-third": document.querySelector(
+            "#input-structure-management-third"
+        ),
+        "structure-department-first": document.querySelector(
+            "#input-structure-department-first"
+        ),
+        "structure-department-second": document.querySelector(
+            "#input-structure-department-second"
+        ),
+        "structure-department-third": document.querySelector(
+            "#input-structure-department-third"
+        ),
+        "structure-manager-first": document.querySelector(
+            "#input-structure-manager-first"
+        ),
+        "structure-manager-second": document.querySelector(
+            "#input-structure-manager-second"
+        ),
+        "structure-manager-third": document.querySelector(
+            "#input-structure-manager-third"
+        ),
+        "structure-analytics-first": document.querySelector(
+            "#input-structure-analytics-first"
+        ),
+        "structure-analytics-second": document.querySelector(
+            "#input-structure-analytics-second"
+        ),
+        "structure-analytics-third": document.querySelector(
+            "#input-structure-analytics-third"
+        ),
+        "transfer-objects": document.querySelector("#input-transfer-objects"),
         ankets: document.querySelector("#input-ankets"),
         "type-activity": document.querySelector("#input-type-activity"),
         "ankets-status": document.querySelector("#input-ankets-status"),
         "ankets-views": document.querySelector("#input-ankets-views"),
-        "waiting-list": document.querySelector("#input-waiting-list"),
         "checkbox-free": document.querySelector("#input-objects-checkobx-free"),
         "checkbox-free-soon": document.querySelector(
             "#input-objects-checkobx-free-soon"
@@ -210,220 +384,91 @@ const state = {
         "analytics-page-portal": document.querySelector(
             "#input-analytics-page-portal"
         ),
-        "structure-offers": document.querySelector("#input-structure-offers"),
+    },
+    labelsStructure: {
+        director: document.querySelector("#structure-label-director"),
+        direction: document.querySelector("#structure-label-direction"),
+        management: document.querySelector("#structure-label-management"),
+        department: document.querySelector("#structure-label-department"),
+        manager: document.querySelector("#structure-label-manager"),
+        analytics: document.querySelector("#structure-label-analytics"),
+    },
+    cursorsStructure: {
+        director: document.querySelector("#structure-cursor-director"),
+        direction: document.querySelector("#structure-cursor-direction"),
+        management: document.querySelector("#structure-cursor-management"),
+        department: document.querySelector("#structure-cursor-department"),
+        manager: document.querySelector("#structure-cursor-manager"),
+        analytics: document.querySelector("#structure-cursor-analytics"),
+    },
+    cardsStructure: {
+        director: document.querySelector(".prof-structure__card_type_director"),
+        direction: document.querySelector(
+            ".structure-cards-container-direction"
+        ),
+        management: document.querySelector(
+            ".structure-cards-container-management"
+        ),
+        department: document.querySelector(
+            ".structure-cards-container-department"
+        ),
+        manager: document.querySelector(".structure-cards-container-manager"),
+        analytics: document.querySelector(
+            ".structure-cards-container-analytics"
+        ),
     },
 };
 
-// логика переключения табов: "Объекты", "Анкеты контрагентов", "Аналитические данные", "Структура", "Предложения"
+// логика работы селектов в табе Структура
 
-const tabButtons = document.querySelectorAll(".prof-general__button");
-
-const generalContentObjects = document.querySelector("#objects");
-const generalContentCounterpartyQuestionnaires = document.querySelector(
-    "#counterparty-questionnaires"
-);
-const generalContentAnalyticalData = document.querySelector("#analytical-data");
-const generalContentStructure = document.querySelector("#structure");
-const generalContentOffers = document.querySelector("#offers");
-const generalContentWaitingList = document.querySelector("#waiting-list");
-
-const arrayGeneralContent = [
-    generalContentObjects,
-    generalContentCounterpartyQuestionnaires,
-    generalContentAnalyticalData,
-    generalContentStructure,
-    generalContentOffers,
-    generalContentWaitingList,
-];
-
-tabButtons.forEach((i) =>
-    i.addEventListener("click", (e) =>
-        switchButtons(
-            e.target,
-            tabButtons,
-            arrayGeneralContent,
-            "prof-general__button_active",
-            "mix-display-none"
-        )
-    )
+const sturctureWrappers = document.querySelectorAll(
+    ".prof-structure__wrapper-subtitle"
 );
 
-window.addEventListener("resize", function (e) {
-    if (e.target.innerWidth > 750) {
-        resetVisibleDymanicClassAsideBlockMobile();
-    }
-    if (e.target.innerWidth > 1550) {
-        closeMobileBlockContacts();
-    }
-    if (e.target.innerWidth > 1780) {
-        resetVisibleDymanicClassAsideBlock();
-    }
-    if (innerWidth < 1551 && innerWidth > 750) {
-        panelTasks.classList.remove("mix-display-none");
-    }
-});
-
-// логика смены чата на задачи по клику на кнопку
-
-const buttonBackToTasks = document.querySelector(
-    ".prof-aside__button-back-tasks"
-);
-
-const buttonBackToTasksMain = document.querySelector(
-    "#prof-aside__button-back-tasks-main"
-);
-
-const panelChat = document.querySelector(".prof-aside__right-panel");
-const panelTasks = document.querySelector(".prof-aside__left-panel");
-
-const panelChatMain = document.querySelector("#prof-aside__right-panel-main");
-const panelTasksMain = document.querySelector("#prof-aside__left-panel-main");
-
-buttonBackToTasks.addEventListener("click", (e) => {
-    panelChat.classList.add("mix-display-none");
-    panelChat.classList.remove("mix-display-flex");
-    panelTasks.classList.remove("mix-display-none");
-});
-
-buttonBackToTasksMain.addEventListener("click", (e) => {
-    panelChatMain.classList.add("mix-display-none");
-    panelChatMain.classList.remove("mix-display-flex");
-    panelTasksMain.classList.remove("mix-display-none");
-});
-
-// логика открытия чата по клику на таску
-
-const tasksContainer = document.querySelectorAll(
-    ".prof-aside__tasks-container"
-);
-
-tasksContainer.forEach((i) =>
+sturctureWrappers.forEach((i) =>
     i.addEventListener("click", (e) => {
-        if (innerWidth > 1780) {
+        if (e.target.closest(".prof-structure__label")) {
             return;
         }
-        if (innerWidth < 1551 && innerWidth > 750) {
-            return;
+        const wrapperElement = e.target.closest(
+            ".prof-structure__wrapper-subtitle"
+        );
+        const wrapperElementActive = wrapperElement.classList.contains(
+            "prof-structure__wrapper-subtitle_active"
+        );
+        if (wrapperElementActive) {
+            wrapperElement.style.height = `16px`;
+            removeClassElement(
+                wrapperElement,
+                "prof-structure__wrapper-subtitle_active"
+            );
+            removeClassElement(
+                state.cursorsStructure[`${wrapperElement.ariaLabel}`],
+                "prof-structure__cursor_active"
+            );
+            removeClassElement(
+                state.labelsStructure[wrapperElement.ariaLabel],
+                "mix-visible"
+            );
+        } else {
+            const currentHeight =
+                state.cardsStructure[wrapperElement.ariaLabel].clientHeight;
+            wrapperElement.style.height = `${currentHeight + 32}px`;
+            setTimeout(() => {
+                addClassElement(
+                    wrapperElement,
+                    "prof-structure__wrapper-subtitle_active"
+                );
+            }, 300);
+            addClassElement(
+                state.cursorsStructure[wrapperElement.ariaLabel],
+                "prof-structure__cursor_active"
+            );
+            addClassElement(
+                state.labelsStructure[wrapperElement.ariaLabel],
+                "mix-visible"
+            );
         }
-        if (e.target.closest(".prof-aside__task-item")) {
-            panelTasks.classList.add("mix-display-none");
-            panelChat.classList.add("mix-display-flex");
-
-            panelTasksMain.classList.add("mix-display-none");
-            panelChatMain.classList.add("mix-display-flex");
-        }
-    })
-);
-
-function resetVisibleDymanicClassAsideBlock() {
-    panelTasksMain.classList.remove("mix-display-none");
-    panelTasksMain.classList.remove("mix-display-flex");
-    panelChatMain.classList.remove("mix-display-none");
-    panelChatMain.classList.remove("mix-display-flex");
-}
-
-function resetVisibleDymanicClassAsideBlockMobile() {
-    panelTasks.classList.remove("mix-display-none");
-    panelTasks.classList.remove("mix-display-flex");
-    panelChat.classList.remove("mix-display-none");
-    panelChat.classList.remove("mix-display-flex");
-}
-
-// Логика открытия контактов (таски, чат) для планшетной / мобильной версий
-
-const buttonContacts = document.querySelector(".prof-general__contacts");
-
-const generalPanel = document.querySelector("#general-panel");
-const mobilePanelContacts = document.querySelector(
-    ".prof-general__body_type_contacts"
-);
-
-buttonContacts.addEventListener("click", (e) => {
-    if (!buttonContacts.classList.contains("prof-general__contacts_active")) {
-        openMobileBlockContacts();
-    } else {
-        closeMobileBlockContacts();
-    }
-});
-
-function openMobileBlockContacts() {
-    buttonContacts.classList.add("prof-general__contacts_active");
-    mobilePanelContacts.classList.remove("mix-display-none");
-    generalPanel.classList.add("mix-display-none");
-}
-
-function closeMobileBlockContacts() {
-    buttonContacts.classList.remove("prof-general__contacts_active");
-    mobilePanelContacts.classList.add("mix-display-none");
-    generalPanel.classList.remove("mix-display-none");
-}
-
-// логика открытия попапа объека
-
-const objectList = document.querySelectorAll(".prof-table__row_style_objects");
-const objectCards = document.querySelectorAll(".prof-card");
-const popupEditCardObject = document.querySelector(".modal-edit-card-object");
-
-objectCards.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (e.target.closest(".prof-label-checkbox")) {
-            return;
-        }
-        popupEditCardObject.style.display = "flex";
-    })
-);
-
-objectList.forEach((i, c) => {
-    if (c === 0) {
-        return;
-    }
-    i.addEventListener("click", (e) => {
-        if (e.target.closest(".prof-label-checkbox")) {
-            return;
-        }
-        popupEditCardObject.style.display = "flex";
-        state.currentOpenPopup = popupEditCardObject;
-        document.addEventListener("keydown", handleEscClose);
-    });
-});
-
-// логика закрытия попапов по клавише Escape
-
-function handleEscClose(e) {
-    if (e.key === "Escape") {
-        if (state.currentOpenPopup) {
-            state.currentOpenPopup.style.display = "none";
-            state.currentOpenPopup = null;
-            document.removeEventListener("keydown", handleEscClose);
-        }
-    }
-}
-
-// логика наведения на текст в списке
-
-const listTable = document.querySelectorAll(
-    ".prof-table__row-content.heading-h5"
-);
-
-listTable.forEach((i) =>
-    i.addEventListener("mouseenter", (e) => {
-        const tooltip = document.createElement("div");
-        tooltip.classList.add("tooltip");
-        tooltip.innerHTML = `
-    <svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4.6364 3.3636L8 4.76837e-07L3.49691e-07 -2.22545e-07L3.3636 3.3636C3.71508 3.71508 4.28492 3.71508 4.6364 3.3636Z" fill="#2A2E33"></path>
-    </svg>
-
-    <p class="tooltip__inner">${e.target.textContent}
-    </p>`;
-        e.target.prepend(tooltip);
-    })
-);
-
-listTable.forEach((i) =>
-    i.addEventListener("mouseleave", (e) => {
-        const tooltip = e.target.querySelector(".tooltip");
-        if (tooltip) tooltip.remove();
     })
 );
 
@@ -533,6 +578,7 @@ buttonsSelect.forEach((i) =>
                 .textContent.trim();
             state.inputsSelect[currentLabel.ariaLabel].value =
                 currentCheckedValue;
+            switchContentAnkets(currentCheckedValue);
             return;
         }
         if (
@@ -614,54 +660,4 @@ buttonsSelect.forEach((i) =>
 
 function checkSubmenuSecondLevel(ariaLabel) {
     return ariaLabel.includes("division") || ariaLabel.includes("structure");
-}
-
-// логика по клику на "Завершить заявку"
-
-const buttonsCloseAppeal = document.querySelectorAll(".prof-aside__link");
-
-buttonsCloseAppeal.forEach((i) =>
-    i.addEventListener("click", sendRequestCloseAppeal)
-);
-
-function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== "") {
-        const cookies = document.cookie.split(";");
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === name + "=") {
-                cookieValue = decodeURIComponent(
-                    cookie.substring(name.length + 1)
-                );
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-const csrftoken = getCookie("csrftoken");
-
-function sendRequestCloseAppeal(e) {
-    const data = { "close-appeal": true };
-    fetch(e.target.getAttribute("data-url"), {
-        method: "POST",
-        credentials: "same-origin",
-        body: JSON.stringify(data),
-        headers: {
-            "content-type": "application/json",
-            "X-Requested-With": "XMLHttpRequest",
-            "X-CSRFToken": csrftoken,
-        },
-    }).then((response) => {
-        if (response.ok) {
-            buttonsCloseAppeal.forEach(
-                (i) => (i.textContent = "Работа над заявкой завершена")
-            );
-            buttonsCloseAppeal.forEach((i) =>
-                i.removeEventListener("click", sendRequestCloseAppeal)
-            );
-        }
-    });
 }

@@ -305,3 +305,12 @@ function sendRequestWaitingList(i) {
             );
         });
 }
+
+// сабмит при потере фокуса на форме
+
+const formWaitingList = document.querySelector("form.prof-control-panel");
+const inputSearch = document.querySelector(".prof-control-panel__input-search");
+
+inputSearch.addEventListener("blur", () => {
+    formWaitingList.submit();
+});

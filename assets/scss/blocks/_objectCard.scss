@@ -238,9 +238,6 @@ main .container {
         @media (min-width: 768px) and (max-width: 1023px) {
             width: 49.5%;
         }
-        &_active {
-
-        }
 
         svg {
             @media #{$screen-tablet} {

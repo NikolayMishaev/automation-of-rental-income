@@ -1509,7 +1509,7 @@
             </button>
             </div>
             <!-- Нужно ставить класс active, если включены уведомления  -->
-            <div class="info-card__icon-bell">
+            <div  data-url="http://foo.com" class="info-card__icon-bell">
             <svg
                 width="16"
                 height="20"
@@ -1852,7 +1852,7 @@
                 <!-- все поля temlate  -->
                 <p class="info-card__position">Менеджер</p>
                 <h5 class="info-card__name">Фомина Анастасия</h5>
-                <h3 class="info-card__tel">8-495-139-26-13 <span class="heading-h4">доб(38039)</h3>
+                <h3 class="info-card__tel">8-495-139-26-13 доб(38039)</h3>
                 <p class="info-card__email">email@email.email</p>
                 <!-- end  -->
                 </div>
@@ -2122,7 +2122,7 @@
                 </button>
             </div>
             <!-- Нужно ставить класс active, если включены уведомления  -->
-            <div class="info-card__icon-bell">
+            <div data-url="http://foo.com" class="info-card__icon-bell">
                 <!-- end  -->
                 <svg
                 width="16"
@@ -2204,7 +2204,7 @@
                 <!-- template  -->
                 <p class="info-card__position">Менеджер</p>
                 <h5 class="info-card__name">Фомина Анастасия</h5>
-                <h3 class="info-card__tel">8-495-139-26-13 <span class="heading-h4">доб(38039)</span></h3>
+                <h3 class="info-card__tel">8-495-139-26-13 доб(38039)</h3>
                 <p class="info-card__email">email@email.email</p>
                 <!-- end  -->
             </div>
@@ -2305,7 +2305,7 @@
             <ul class="footer__links">
                 <li class="footer__item">
                     <span class="footer__text">Аренда помещений в </span>
-                    <a href="#" class="footer__link">маганзинах Пятёрочка</a>
+                    <a href="#" class="footer__link">магазинах Пятёрочка</a>
                 </li>
                 <li class="footer__item">
                     <a href="#" class="footer__link">Служба поддержки
@@ -2503,9 +2503,9 @@
                 </label>
                 <label class="custom-text-input custom-text-input_tel">
                 <input
-                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                    type="text"
-                    class="input-tel"
+                    type="tel"
+                    pattern="2-[0-9]{3}-[0-9]{3}"
+                    class="input-tel tel"
                     maxlength="11"
                 /><span class="custom-text-input__label">Ваш телефон</span>
                 </label>
@@ -2527,16 +2527,16 @@
                 </label>
                 <label class="custom-text-input custom-text-input_tel">
                 <input
-                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
-                type="text"
-                class="input-tel"
+                type="tel"
+                pattern="2-[0-9]{3}-[0-9]{3}"
+                class="input-tel tel"
                 maxlength="11"
                 />
                 <span class="custom-text-input__label">Ваш телефон</span>
                 </label>
                 <label class="custom-text-input">
                 <input
-                type="email"
+                type="text"
                 class="input-email"
                 required
                 maxlength="100"
@@ -2910,6 +2910,8 @@
     </div>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/inputmask.js"></script>
     <script type="module" src="./assets/js/script.js"></script>
     <script type="module" src="./assets/js/swiper.js"></script>
     <script type="module" defer src="./assets/js/common-JS-to-all-pages.js"></script>

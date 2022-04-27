@@ -453,17 +453,6 @@ tabButtons.forEach((i) =>
 );
 
 // логика действий при ресайзе
-// общие функции для этого блока логики
-
-function resetActiveClassButton(arrayButtons) {
-    arrayButtons.forEach((i) => {
-        if (i.ariaLabel === "list") {
-            removeClassElement(i, "prof-control-panel__button_active");
-        } else {
-            addClassElement(i, "prof-control-panel__button_active");
-        }
-    });
-}
 
 window.addEventListener("resize", function (e) {
     if (e.target.innerWidth > 750) {
@@ -477,9 +466,6 @@ window.addEventListener("resize", function (e) {
     }
     if (innerWidth < 1551 && innerWidth > 750) {
         panelTasks.classList.remove("mix-display-none");
-    }
-    if (this.innerWidth > 1000) {
-        addClassElement(fixedPopupTransferObjects, "mix-display-none");
     }
 });
 
@@ -580,59 +566,6 @@ function closeMobileBlockContacts() {
     mobilePanelContacts.classList.add("mix-display-none");
     generalPanel.classList.remove("mix-display-none");
 }
-
-// логика работы селектов в табе Структура
-
-const sturctureWrappers = document.querySelectorAll(
-    ".prof-structure__wrapper-subtitle"
-);
-
-sturctureWrappers.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (e.target.closest(".prof-structure__label")) {
-            return;
-        }
-        const wrapperElement = e.target.closest(
-            ".prof-structure__wrapper-subtitle"
-        );
-        const wrapperElementActive = wrapperElement.classList.contains(
-            "prof-structure__wrapper-subtitle_active"
-        );
-        if (wrapperElementActive) {
-            wrapperElement.style.height = `16px`;
-            removeClassElement(
-                wrapperElement,
-                "prof-structure__wrapper-subtitle_active"
-            );
-            removeClassElement(
-                state.cursorsStructure[`${wrapperElement.ariaLabel}`],
-                "prof-structure__cursor_active"
-            );
-            removeClassElement(
-                state.labelsStructure[wrapperElement.ariaLabel],
-                "mix-visible"
-            );
-        } else {
-            const currentHeight =
-                state.cardsStructure[wrapperElement.ariaLabel].clientHeight;
-            wrapperElement.style.height = `${currentHeight + 32}px`;
-            setTimeout(() => {
-                addClassElement(
-                    wrapperElement,
-                    "prof-structure__wrapper-subtitle_active"
-                );
-            }, 300);
-            addClassElement(
-                state.cursorsStructure[wrapperElement.ariaLabel],
-                "prof-structure__cursor_active"
-            );
-            addClassElement(
-                state.labelsStructure[wrapperElement.ariaLabel],
-                "mix-visible"
-            );
-        }
-    })
-);
 
 // логика по работе селектов
 
@@ -824,65 +757,6 @@ function checkSubmenuSecondLevel(ariaLabel) {
     return ariaLabel.includes("division") || ariaLabel.includes("structure");
 }
 
-// логика переключения вида анкет
-
-const agentActualCardsContent = document.querySelector("#agents-cards-actual");
-const agentArchiveCardsContent = document.querySelector(
-    "#agents-cards-archive"
-);
-const agentActualListContent = document.querySelector("#agents-list-actual");
-const agentArchiveListContent = document.querySelector("#agents-list-archive");
-
-function switchContentAnkets(currentCheckedValue) {
-    switch (currentCheckedValue) {
-        case "Текущие":
-            removeClassElement(agentActualCardsContent, "mix-display-none");
-            removeClassElement(agentActualListContent, "mix-display-none");
-            addClassElement(agentArchiveCardsContent, "mix-display-none");
-            addClassElement(agentArchiveListContent, "mix-display-none");
-            return;
-        case "В архиве":
-            removeClassElement(agentArchiveCardsContent, "mix-display-none");
-            removeClassElement(agentArchiveListContent, "mix-display-none");
-            addClassElement(agentActualCardsContent, "mix-display-none");
-            addClassElement(agentActualListContent, "mix-display-none");
-            return;
-        default:
-            return;
-    }
-}
-
-// логика открытия попапа объека
-
-const objectList = document.querySelectorAll(".prof-table__row_style_objects");
-const objectCards = document.querySelectorAll(".prof-card");
-const popupEditCardObject = document.querySelector(".modal-edit-card-object");
-
-objectCards.forEach((i) =>
-    i.addEventListener("click", (e) => {
-        if (e.target.closest(".prof-label-checkbox")) {
-            return;
-        }
-        popupEditCardObject.style.display = "flex";
-        state.currentOpenPopup = popupEditCardObject;
-        document.addEventListener("keydown", handleEscClose);
-    })
-);
-
-objectList.forEach((i, c) => {
-    if (c === 0) {
-        return;
-    }
-    i.addEventListener("click", (e) => {
-        if (e.target.closest(".prof-label-checkbox")) {
-            return;
-        }
-        popupEditCardObject.style.display = "flex";
-        state.currentOpenPopup = popupEditCardObject;
-        document.addEventListener("keydown", handleEscClose);
-    });
-});
-
 // логика закрытия попапов по клавише Escape
 
 function handleEscClose(e) {
@@ -936,24 +810,3 @@ popupsBody.forEach((i) =>
         }
     })
 );
-
-// логика работы чекбоксов передать объект на мобильном разрешении
-
-const checkboxesTransferObjects = document.querySelectorAll(
-    ".prof-label-checkbox_type_transfer-objects"
-);
-const fixedPopupTransferObjects = document.querySelector(".fixed-popup");
-
-checkboxesTransferObjects.forEach((i) =>
-    i.addEventListener("click", () => {
-        if (innerWidth < 1001) {
-            removeClassElement(fixedPopupTransferObjects, "mix-display-none");
-        }
-    })
-);
-
-fixedPopupTransferObjects.addEventListener("click", (e) => {
-    if (e.target.classList.contains("prof-control-panel__button_type_cancel")) {
-        addClassElement(fixedPopupTransferObjects, "mix-display-none");
-    }
-});

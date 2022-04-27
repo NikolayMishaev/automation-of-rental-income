@@ -101,12 +101,10 @@ favouritesButtons.forEach((i) =>
 // логика действий при загрузе страницы на определенном разрешении
 
 let interval = setInterval(() => {
-    if (innerWidth > 300) {
-        if (innerWidth < 981) {
-            removeClassElement(contentCards, "mix-display-none");
-        }
-        clearInterval(interval);
+    if (innerWidth < 981 && innerWidth > 10) {
+        removeClassElement(contentCards, "mix-display-none");
     }
+    clearInterval(interval);
 }, 1000);
 // логика действий при ресайзе
 // общие функции для этого блока логики
@@ -391,3 +389,17 @@ function sendRequestRing(e) {
         }
     });
 }
+
+// логика работы формы
+
+const formObjects = document.querySelector("form.prof-control-panel");
+const inputSearch = document.querySelector(".prof-control-panel__input-search");
+const inputProfit = formObjects.querySelector(
+    ".prof-control-panel__input-hidden"
+);
+
+inputSearch.addEventListener("blur", () => {
+    formObjects.submit();
+});
+
+inputProfit.addEventListener("click", () => formObjects.submit());

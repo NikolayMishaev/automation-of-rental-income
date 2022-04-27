@@ -1257,3 +1257,56 @@ if (document.querySelector(".regisrtation-page")) {
     $("#input-email-ip").inputmask("email");
     $("#input-email-org").inputmask("email");
 }
+
+if (document.querySelector("#contact-form2")) {
+    $("#contact-form2 .input-email").inputmask("email");
+}
+
+// логика запроса по нажатию на колокольчик
+
+const buttonsRing = document.querySelectorAll(".info-card__icon-bell");
+
+if (buttonsRing.length) {
+    buttonsRing.forEach((i) => i.addEventListener("click", sendRequestRing));
+}
+
+function sendRequestRing(e) {
+    const ringActive = e.target
+        .closest(".info-card__icon-bell")
+        .classList.contains("active");
+    const data = { is_ring: !ringActive };
+    fetch(e.target.closest(".info-card__icon-bell").getAttribute("data-url"), {
+        method: "POST",
+        credentials: "same-origin",
+        body: JSON.stringify(data),
+        headers: {
+            "content-type": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRFToken": csrftoken,
+        },
+    }).then((response) => {
+        if (response.ok) {
+            if (ringActive) {
+                removeClassElement(
+                    e.target.closest(".info-card__icon-bell"),
+                    "active"
+                );
+                containersTextTooltipBell.forEach(
+                    (i) =>
+                        (i.textContent =
+                            "Включить рассылку уведомлений об освобождении")
+                );
+            } else {
+                addClassElement(
+                    e.target.closest(".info-card__icon-bell"),
+                    "active"
+                );
+                containersTextTooltipBell.forEach(
+                    (i) =>
+                        (i.textContent =
+                            "Выключить рассылку уведомлений об освобождении")
+                );
+            }
+        }
+    });
+}
