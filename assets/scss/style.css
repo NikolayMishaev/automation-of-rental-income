@@ -2336,6 +2336,20 @@ main .container {
   margin-top: 16px;
 }
 
+@media (max-width: 944px) {
+  .registration-form .custom-text-input_type_select {
+    margin-left: 204px;
+    width: 100%;
+    max-width: unset;
+  }
+}
+
+@media (max-width: 800px) {
+  .registration-form .custom-text-input_type_select {
+    margin-left: unset;
+  }
+}
+
 .registration-form .custom-text-input textarea {
   height: 120px;
 }

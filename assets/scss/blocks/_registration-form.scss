@@ -122,6 +122,14 @@
             max-width: 570px;
             margin-left: auto;
             margin-top: 16px;
+            @media (max-width: 944px) {
+                margin-left: 204px;
+                width: 100%;
+                max-width: unset;
+            }
+            @media (max-width: 800px) {
+                margin-left: unset;
+            }
         }
         textarea {
             height: 120px;
