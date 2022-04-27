@@ -102,7 +102,7 @@ favouritesButtons.forEach((i) =>
 
 let interval = setInterval(() => {
     if (innerWidth < 981 && innerWidth > 10) {
-        removeClassElement(agentContentCards, "mix-display-none");
+        removeClassElement(contentCards, "mix-display-none");
     }
     clearInterval(interval);
 }, 1000);
@@ -389,3 +389,17 @@ function sendRequestRing(e) {
         }
     });
 }
+
+// логика работы формы
+
+const formObjects = document.querySelector("form.prof-control-panel");
+const inputSearch = document.querySelector(".prof-control-panel__input-search");
+const inputProfit = formObjects.querySelector(
+    ".prof-control-panel__input-hidden"
+);
+
+inputSearch.addEventListener("blur", () => {
+    formObjects.submit();
+});
+
+inputProfit.addEventListener("click", () => formObjects.submit());
