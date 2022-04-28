@@ -71,6 +71,7 @@
             color: white;
         }
         &_type_personal-offers {
+            height: 32px;
             background-color: #2a9b43;
             color: white;
             border-radius: 4px;
@@ -958,6 +959,10 @@
         background-size: 32px !important;
         margin-right: 12px;
         margin-left: auto;
+        &:hover {
+            cursor: pointer;
+            opacity: .8;
+        }
     }
 }
 

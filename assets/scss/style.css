@@ -8688,7 +8688,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 630px) {
   .prof-general__row_type_about-me {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -8718,21 +8718,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-decoration: none;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 930px) {
   .prof-general__submit-btn {
     margin-right: 0;
-  }
-}
-
-@media (max-width: 800px) {
-  .prof-general__submit-btn {
-    width: 100%;
   }
 }
 
 @media (max-width: 640px) {
   .prof-general__submit-btn {
     height: 32px;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 540px) {
+  .prof-general__submit-btn {
+    width: 100%;
   }
 }
 
@@ -8740,13 +8741,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-right: 16px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 630px) {
   .prof-general__label {
     width: unset;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
   }
+}
+
+@media (max-width: 630px) and (max-width: 540px) {
   .prof-general__label:last-of-type {
     margin-right: 0;
   }
@@ -8754,6 +8758,24 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-general__input {
   margin-right: 0;
+}
+
+.prof-general__wrapper {
+  height: 555px;
+  overflow: auto;
+}
+
+.prof-general__wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+
+.prof-general__wrapper::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+.prof-general__wrapper::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
 }
 
 .prof-item {
@@ -9026,6 +9048,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__button_type_personal-offers {
+  height: 32px;
   background-color: #2a9b43;
   color: white;
   border-radius: 4px;
@@ -10245,6 +10268,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: auto;
 }
 
+.prof-control-panel__icon-save:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
 #input-ankets {
   margin-left: 25px;
 }
@@ -10335,8 +10363,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 61.625rem) {
   .prof-table__row_type_personal-offers {
-    -ms-grid-columns: 85px 115px 300px 80px 100px 100px 100px;
-        grid-template-columns: 85px 115px 300px 80px 100px 100px 100px;
+    -ms-grid-columns: 85px 130px 285px 80px 100px 100px 100px;
+        grid-template-columns: 85px 130px 285px 80px 100px 100px 100px;
   }
 }
 
