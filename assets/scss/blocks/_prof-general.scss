@@ -252,7 +252,7 @@ margin-top: 16px;
     &__row {
         display: flex;
         &_type_about-me {
-            @media (max-width: 800px) {
+            @media (max-width: 630px) {
                flex-wrap: wrap;
             }
         }
@@ -265,29 +265,46 @@ margin-top: 16px;
         padding: 4px 12px;
         margin-top: 16px;
         width: 208px;
-        @media (max-width: 1100px) {
+        @media (max-width: 930px) {
             margin-right: 0;
-         }
-         @media (max-width: 800px) {
-            width: 100%;
          }
          @media (max-width: 640px) {
             height: 32px;
+            margin-top: 12px;
+         }
+         @media (max-width: 540px) {
+            width: 100%;
          }
     }
     &__label {
         margin-right: 16px;
-        @media (max-width: 800px) {
+        @media (max-width: 630px) {
             width: unset;
             flex:1;
-            &:last-of-type {
-                margin-right: 0;
+            @media (max-width: 540px) {
+                &:last-of-type {
+                    margin-right: 0;
+                }
             }
          }
     }
     &__input {
         margin-right: 0;
-        @media (max-width: 800px) {
+        @media (max-width: 630px) {
          }
+    }
+    &__wrapper {
+        height: 550px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
     }
 }

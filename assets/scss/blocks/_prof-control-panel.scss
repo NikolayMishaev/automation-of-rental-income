@@ -70,6 +70,12 @@
             background-color: #2a9b43;
             color: white;
         }
+        &_type_personal-offers {
+            height: 32px;
+            background-color: #2a9b43;
+            color: white;
+            border-radius: 4px;
+        }
         &_type_transfer {
             background-color: $accent-TCX50;
             color: white;
@@ -420,6 +426,11 @@
             display: block;
             width: 100%;
         }
+        &_type_personal-offers {
+            height: 32px;
+            margin-top: 0;
+            margin-right: 12px;
+        }
     }
     &__cursor {
         position: absolute;
@@ -431,6 +442,11 @@
         transition: $transition;
         &_active {
             transform: rotate(180deg);
+        }
+        &_type_personal-offers {
+            top: 12px;
+            right: 11px;
+            background-size: 8px;
         }
         &_type_register {
             top: 20px;
@@ -561,6 +577,10 @@
             padding-right: 27px;
             margin-left: 0;
         }
+        &_type_personal-offers {
+            height: 32px;
+            padding: 15px 12px 5px;
+        }
     }
     &__label-custom {
         position: relative;
@@ -672,6 +692,13 @@
             margin-top: 0;
             width: unset;
             flex: 1;
+        }
+        &_type_personal-offers {
+            order: unset;
+            width: unset;
+            flex: 1;
+            margin-right: 45px;
+            min-width: 250px;
         }
         &_type_direct {
             @media (max-width: rem(980px)) {
@@ -843,6 +870,12 @@
         &:first-of-type {
             margin-right: 16px;
         }
+        &_type_personal-offers {
+            height: 32px;
+            &:nth-of-type(odd) {
+                margin-right: 12px;
+            }
+        }
     }
     &__input-number {
         &::-webkit-inner-spin-button {
@@ -854,6 +887,14 @@
         border: 1px solid #cfd4dc;
         border-radius: 4px;
         padding: 4px 12px;
+        &_type_personal-offers {
+            padding: 15px 12px 5px;
+            margin-left: 4px;
+            width: 60px;
+            &-bet {
+                width: 75px;
+            }
+        }
     }
     &__index {
         vertical-align: super;
@@ -911,6 +952,17 @@
     }
     &__stars-caption {
         min-width: 20px;
+    }
+    &__icon-save {
+        width: 32px;
+        height: 32px;
+        background-size: 32px !important;
+        margin-right: 12px;
+        margin-left: auto;
+        &:hover {
+            cursor: pointer;
+            opacity: .8;
+        }
     }
 }
 

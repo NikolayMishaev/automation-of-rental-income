@@ -29,18 +29,20 @@ const state = {
     },
 };
 
-// логика переключения табов: "Документы", "Избранные объекты", "О себе"
+// логика переключения табов: "Документы", "Избранные объекты", "Персональные предложения" "О себе"
 
 const tabButtons = document.querySelectorAll(".prof-general__button");
 
 const generalContentDocuments = document.querySelector("#documents");
 const generalContentFavourites = document.querySelector("#favourites");
+const generalContentPersonalOffers = document.querySelector("#personal-offers");
 const generalContentAboutMe = document.querySelector("#about-me");
 
 const arrayGeneralContent = [
     generalContentDocuments,
     generalContentFavourites,
     generalContentAboutMe,
+    generalContentPersonalOffers,
 ];
 
 tabButtons.forEach((i) =>
@@ -301,23 +303,3 @@ function sendRequestCloseAppeal(e) {
         }
     });
 }
-
-// логика изменения названия кнопки в блоке "Предпочтительная площадь"
-
-const inputsSquare = document.querySelectorAll(".prof-general__input");
-const buttonSubmitSquare = document.querySelector(".prof-general__submit-btn");
-
-inputsSquare.forEach((i) => {
-    if (i.value > 0) {
-        inputsSquare.forEach((i) => (i.disabled = true));
-        buttonSubmitSquare.textContent = "Изменить";
-    }
-});
-
-buttonSubmitSquare.addEventListener("click", (e) => {
-    if (inputsSquare[0].disabled) {
-        inputsSquare.forEach((i) => (i.disabled = false));
-    } else {
-        e.target.closest("form").submit();
-    }
-});
