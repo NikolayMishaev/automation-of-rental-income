@@ -9718,6 +9718,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prof-control-panel__select-input_type_personal-offers {
   height: 32px;
   padding: 15px 12px 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .prof-control-panel__label-custom {
@@ -10271,6 +10273,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prof-control-panel__icon-save:hover {
   cursor: pointer;
   opacity: .8;
+}
+
+.prof-control-panel__caption-error {
+  position: absolute;
+  top: 32px;
+  left: 204px;
+  width: 400px;
+  opacity: 0;
+  color: red;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.prof-control-panel__caption-error_active {
+  opacity: 1;
+}
+
+.prof-control-panel__error {
+  border: 2px solid red;
 }
 
 #input-ankets {

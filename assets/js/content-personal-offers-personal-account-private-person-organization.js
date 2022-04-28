@@ -31,7 +31,12 @@ function switchButtons(
 }
 
 const state = {
+    blockSendForm: false,
     currentOpenSubmenu: null,
+    currentNumberSelectedCities: [],
+    cityCaptionError: document.querySelector(
+        ".prof-control-panel__caption-error"
+    ),
     cursorsSelect: {
         "main-city": document.querySelector("#cursor-main-city"),
         "objects-status": document.querySelector("#cursor-objects-status"),
@@ -67,18 +72,49 @@ const checkClickOutsideSelect = (e) => {
     }
 };
 
-function setInputValueByValueActiveCheckbox() {
-    if (
-        state.inputsSelect["checkbox-free"].checked &&
-        state.inputsSelect["checkbox-free-soon"].checked
-    ) {
-        state.inputsSelect["objects-status"].value = "Выбрано несколько";
-    } else if (state.inputsSelect["checkbox-free"].checked) {
-        state.inputsSelect["objects-status"].value = "Свободен";
-    } else if (state.inputsSelect["checkbox-free-soon"].checked) {
-        state.inputsSelect["objects-status"].value = "Скоро освободится";
+function setInputValueByValueActiveCheckbox(currentInput) {
+    const currentSelectValue = currentInput
+        .closest(".prof-control-panel__label-custom")
+        .textContent.trim();
+    if (!currentInput.checked) {
+        state.currentNumberSelectedCities.push(currentSelectValue);
+        setGeneralInputValue();
     } else {
-        state.inputsSelect["objects-status"].value = "Все";
+        state.currentNumberSelectedCities =
+            state.currentNumberSelectedCities.filter(
+                (i) => i !== currentSelectValue
+            );
+        setGeneralInputValue();
+    }
+}
+
+function setGeneralInputValue() {
+    state.blockSendForm = false;
+    removeClassElement(
+        state.cityCaptionError,
+        "prof-control-panel__caption-error_active"
+    );
+    removeClassElement(
+        state.inputsSelect["main-city"],
+        "prof-control-panel__error"
+    );
+    if (!state.currentNumberSelectedCities.length) {
+        state.inputsSelect["main-city"].value = "Город";
+    } else if (state.currentNumberSelectedCities.length === 1) {
+        state.inputsSelect["main-city"].value =
+            state.currentNumberSelectedCities;
+    } else if (state.currentNumberSelectedCities.length > 3) {
+        state.blockSendForm = true;
+        addClassElement(
+            state.cityCaptionError,
+            "prof-control-panel__caption-error_active"
+        );
+        addClassElement(
+            state.inputsSelect["main-city"],
+            "prof-control-panel__error"
+        );
+    } else {
+        state.inputsSelect["main-city"].value = "Выбрано несколько";
     }
 }
 
@@ -149,14 +185,20 @@ const buttonsSelect = document.querySelectorAll(".button-toggle-select");
 
 buttonsSelect.forEach((i) =>
     i.addEventListener("click", (e) => {
+        if (
+            e.target.classList.contains(
+                "prof-control-panel__select-input_type_personal-offers"
+            )
+        ) {
+            return;
+        }
         const currentLabel = e.target.closest(
             ".prof-control-panel__select-label"
         );
-        if (
-            e.target.closest(".label-checkbox") &&
-            e.target.closest(".label-checkbox").ariaLabel === "checkbox"
-        ) {
-            setInputValueByValueActiveCheckbox();
+        if (e.target.classList.contains("label-checkbox")) {
+            setInputValueByValueActiveCheckbox(
+                e.target.closest(".label-checkbox").children[0]
+            );
             return;
         }
         if (e.target.ariaLabel === "item") {
@@ -268,5 +310,24 @@ const formObjects = document.querySelector("form.prof-control-panel");
 const inputSearch = document.querySelector(".prof-control-panel__input-search");
 
 inputSearch.addEventListener("blur", () => {
-    formObjects.submit();
+    if (!state.blockSendForm) {
+        formObjects.submit();
+    }
 });
+
+formObjects.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!state.blockSendForm) {
+        formObjects.submit();
+    }
+});
+
+const inputsNumber = document.querySelectorAll("input[type=number]");
+
+inputsNumber.forEach((i) =>
+    i.addEventListener("input", (e) => {
+        if (e.target.value < 0) {
+            e.target.value = 0;
+        }
+    })
+);

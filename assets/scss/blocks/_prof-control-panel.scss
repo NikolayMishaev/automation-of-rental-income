@@ -580,6 +580,7 @@
         &_type_personal-offers {
             height: 32px;
             padding: 15px 12px 5px;
+            transition: $transition;
         }
     }
     &__label-custom {
@@ -963,6 +964,21 @@
             cursor: pointer;
             opacity: .8;
         }
+    }
+    &__caption-error {
+        position: absolute;
+        top: 32px;
+        left: 204px;
+        width: 400px;
+        opacity: 0;
+        color: red;
+        transition: $transition;
+        &_active {
+            opacity: 1;
+        }
+    }
+    &__error {
+        border: 2px solid red;
     }
 }
 
