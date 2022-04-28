@@ -85,6 +85,9 @@
         @media #{$screen-mobile} {
             top: 0;
         }
+        &_type_personal-offers {
+            top:0
+        }
     }
     &-input {
         border: 1px solid #cfd4dc;
@@ -104,6 +107,21 @@
         }
         @media #{$screen-mobile} {
             padding: rem(4px) rem(12px);
+        }
+        &_type_personal-offers {
+            &:focus + .mix-caption,
+            &:not(:placeholder-shown) + .mix-caption {
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.08px;
+                top: -4px;
+                @media #{$screen-mobile} {
+                    opacity: 0;
+                }
+            }
+            @media #{$screen-mobile} {
+                padding: rem(4px) rem(12px);
+            }
         }
     }
     &-mt16 {

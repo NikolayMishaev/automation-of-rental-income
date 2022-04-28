@@ -29,18 +29,20 @@ const state = {
     },
 };
 
-// логика переключения табов: "Документы", "Избранные объекты", "О себе"
+// логика переключения табов: "Документы", "Избранные объекты", "Персональные предложения" "О себе"
 
 const tabButtons = document.querySelectorAll(".prof-general__button");
 
 const generalContentDocuments = document.querySelector("#documents");
 const generalContentFavourites = document.querySelector("#favourites");
+const generalContentPersonalOffers = document.querySelector("#personal-offers");
 const generalContentAboutMe = document.querySelector("#about-me");
 
 const arrayGeneralContent = [
     generalContentDocuments,
     generalContentFavourites,
     generalContentAboutMe,
+    generalContentPersonalOffers,
 ];
 
 tabButtons.forEach((i) =>

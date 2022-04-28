@@ -48,6 +48,12 @@
                 cursor: auto;
             }
         }
+        &_type_personal-offers {
+            grid-template-columns: 85px 145px 300px 80px 100px 100px 100px;
+            @media (max-width: rem(986px)) {
+                grid-template-columns: 85px 115px 300px 80px 100px 100px 100px;
+            }
+        }
         &_style_objects {
             grid-template-columns: 327px 70px 120px 80px 90px 170px 56px;
             @media (max-width: rem(1010px)) {
@@ -144,6 +150,12 @@
         top: -4px;
         vertical-align: super;
         font-size: 8px;
+        &_type_personal-offers-square {
+            top: -6px;
+        }
+        &_type_personal-offers-bet {
+            top: 10px;
+        }
     }
     &__test-checkbox {
         width: 32px;

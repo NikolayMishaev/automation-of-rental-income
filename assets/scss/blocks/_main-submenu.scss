@@ -32,6 +32,23 @@
             background-color: $grey30;
         }
     }
+    &_style_personal-offers {
+        top: 34px;
+        left: 0;
+        right: 0;
+        height: 200px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+            &:horizontal {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
     &_style_sort {
         min-width: 230px;
         &-mobile {
