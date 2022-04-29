@@ -1732,6 +1732,12 @@ main .container {
   z-index: 2;
 }
 
+@media (max-width: 640px) {
+  .modal__question {
+    right: 6px;
+  }
+}
+
 .modal__question-outer {
   position: relative;
   width: 100%;
@@ -2350,6 +2356,22 @@ main .container {
   }
 }
 
+.registration-form__label_type_link {
+  color: #1565c0;
+  margin-right: 10px;
+  -webkit-box-flex: 326px;
+      -ms-flex: 326px;
+          flex: 326px;
+}
+
+@media (max-width: 40rem) {
+  .registration-form__label_type_link {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+  }
+}
+
 .registration-form .custom-text-input {
   width: 100%;
   max-width: 552px;
@@ -2819,6 +2841,21 @@ main .container {
   width: 800px;
 }
 
+.registration-form__label-agreement {
+  -webkit-box-flex: 428px;
+      -ms-flex: 428px;
+          flex: 428px;
+  min-height: 44px;
+}
+
+@media (max-width: 640px) {
+  .registration-form__label-agreement {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+  }
+}
+
 .slider {
   margin-bottom: 40px;
 }
@@ -3090,7 +3127,7 @@ main .container {
   position: absolute;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  background-color: #2A2E33;
+  background-color: #2a2e33;
   border-radius: 4px;
   color: white;
   font-style: normal;
@@ -3104,7 +3141,19 @@ main .container {
 .tooltip_type_register {
   right: 0px;
   bottom: 22px;
-  width: 250px;
+  width: 280px;
+}
+
+@media (max-width: 40rem) {
+  .tooltip_type_register {
+    right: -10px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .tooltip_type_register .tooltip__icon {
+    right: 14px;
+  }
 }
 
 .tooltip_type_bell {

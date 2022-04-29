@@ -314,9 +314,11 @@ for (let index = 0; index < tabList.length; index++) {
     );
 }
 for (let index = 0; index < tabListJur.length; index++) {
-    tabListJur[index].addEventListener("click", () =>
-        navigateTabs(stepListJur, tabListJur, index, 1)
-    );
+    tabListJur[index].addEventListener("click", () => {
+        if (stepListJur && tabListJur && index) {
+            navigateTabs(stepListJur, tabListJur, index, 1);
+        }
+    });
 }
 
 function checkLastStep(radio) {
@@ -333,13 +335,17 @@ function checkLastStep(radio) {
     }
     if (radio === 1) {
         if (currentTabJur === 8) {
-            userAgreement[radio].style.display = "block";
+            if (userAgreement[radio]) {
+                userAgreement[radio].style.display = "block";
+            }
             submitRegBtn[radio].style.display = "flex";
             tabNextBtn[radio].style.display = "none";
         } else {
-            userAgreement[radio].style.display = "none";
-            submitRegBtn[radio].style.display = "none";
-            tabNextBtn[radio].style.display = "flex";
+            if (userAgreement[radio]) {
+                userAgreement[radio].style.display = "none";
+                submitRegBtn[radio].style.display = "none";
+                tabNextBtn[radio].style.display = "flex";
+            }
         }
     }
 }
