@@ -34,6 +34,7 @@
         margin-left: rem(8px);
     }
     &__button {
+        color: #222429;
         white-space: nowrap;
         margin-left: auto;
         padding: rem(12px) rem(20px);
@@ -49,7 +50,11 @@
             width: 100%;
             margin-top: 16px;
         }
+        &:link {
+            text-decoration: none;
+        }
         &:hover {
+            text-decoration: none;
             cursor: pointer;
             opacity: 0.7;
         }

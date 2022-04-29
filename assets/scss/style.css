@@ -641,6 +641,10 @@ main .container {
   }
 }
 
+.info-card__contact-text {
+  position: relative;
+}
+
 @media (max-width: 40rem) {
   .info-card__contact-text {
     display: block;
@@ -674,6 +678,14 @@ main .container {
   .info-card__position, .info-card__avatar, .info-card__name, .info-card__tel {
     margin-bottom: 4px;
   }
+}
+
+.info-card__tel:hover {
+  cursor: pointer;
+}
+
+.info-card__tel:hover + .tooltip {
+  opacity: 1;
 }
 
 @media (max-width: 40rem) {
@@ -3173,6 +3185,38 @@ main .container {
   bottom: 31px;
 }
 
+.tooltip_type_tel {
+  right: 0;
+  left: 0;
+  top: -8px;
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .tooltip_type_tel {
+    right: 0;
+    width: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tooltip_type_tel {
+    left: 0;
+    top: -20px;
+  }
+}
+
+.tooltip_type_tel svg {
+  position: absolute;
+  bottom: -4px;
+  right: 90px;
+}
+
+.tooltip_type_tel-mobile {
+  right: 5px;
+  bottom: 31px;
+}
+
 .tooltip_type_info-card-mobile {
   left: -100px !important;
   width: 210px !important;
@@ -4880,6 +4924,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .footer__link:hover {
   cursor: pointer;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 @media (max-width: 1660px) {
@@ -8887,6 +8933,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-item__button {
+  color: #222429;
   white-space: nowrap;
   margin-left: auto;
   padding: 0.75rem 1.25rem;
@@ -8908,7 +8955,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.prof-item__button:link {
+  text-decoration: none;
+}
+
 .prof-item__button:hover {
+  text-decoration: none;
   cursor: pointer;
   opacity: 0.7;
 }

@@ -38,6 +38,29 @@
             bottom: 31px;
         }
     }
+    &_type_tel {
+        right: 0;
+        left: 0;
+        top: -8px;
+        width: 200px;
+        @media (max-width: 768px) {
+        right: 0;
+        width: 200px;
+        }
+        @media (max-width: 640px) {
+            left: 0;
+            top: -20px;
+        }
+        svg {
+            position: absolute;
+            bottom: -4px;
+            right: 90px;
+        }
+        &-mobile {
+            right: 5px;
+            bottom: 31px;
+        }
+    }
     &_type_info-card-mobile {
         left: -100px !important;
         width: 210px !important;
