@@ -591,12 +591,16 @@
                                     <div class="prof-control-panel"><button class="prof-aside__button prof-aside__button_type_mobile text-p1">Передать обращения</button></div>
                                 </header>
                                 <div class="prof-aside__body">
-                                    <div class="prof-aside__left-panel prof-aside__left-panel_type_mobile">
+                                    <form class="prof-aside__left-panel prof-aside__left-panel_type_mobile">
                                         <input type="text"
                                             class="prof-aside__input prof-aside__input_type_search text-p1"
                                             placeholder="Поиск">
                                             <ul class="prof-aside__tasks-container">
                                                 <li class="prof-aside__task-item prof-aside__task-item_active">
+                                                    <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                        <input class="prof-label-checkbox__input" type="checkbox">
+                                                                        <span class="prof-label-checkbox__visible-checkbox"></span>
+                                                </label>
                                                   <img
                                                     src="./assets/images/avatar-photo.png"
                                                     alt="Аватар"
@@ -620,6 +624,10 @@
                                                   <div class="prof-aside__icon icon icon_message"></div>
                                                 </li>
                                                 <li class="prof-aside__task-item">
+                                                    <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                        <input class="prof-label-checkbox__input" type="checkbox">
+                                                                        <span class="prof-label-checkbox__visible-checkbox"></span>
+                                                </label>
                                                   <img
                                                     src="./assets/images/avatar-photo.png"
                                                     alt="Аватар"
@@ -643,6 +651,10 @@
                                                   <div class="prof-aside__icon icon icon_ring_active"></div>
                                                 </li>
                                                 <li class="prof-aside__task-item">
+                                                    <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                        <input class="prof-label-checkbox__input" type="checkbox">
+                                                                        <span class="prof-label-checkbox__visible-checkbox"></span>
+                                                </label>
                                                   <img
                                                     src="./assets/images/other-user.jpg"
                                                     alt="Аватар"
@@ -666,6 +678,10 @@
                                                   <div class="prof-aside__icon icon icon_document"></div>
                                                 </li>
                                                 <li class="prof-aside__task-item prof-aside__task-item_active">
+                                                    <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                        <input class="prof-label-checkbox__input" type="checkbox">
+                                                                        <span class="prof-label-checkbox__visible-checkbox"></span>
+                                                </label>
                                                   <img
                                                     src="./assets/images/avatar-photo.png"
                                                     alt="Аватар"
@@ -689,6 +705,10 @@
                                                   <div class="prof-aside__icon icon icon_document_active"></div>
                                                 </li>
                                                 <li class="prof-aside__task-item">
+                                                    <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                        <input class="prof-label-checkbox__input" type="checkbox">
+                                                                        <span class="prof-label-checkbox__visible-checkbox"></span>
+                                                </label>
                                                   <img
                                                     src="./assets/images/avatar-photo.png"
                                                     alt="Аватар"
@@ -712,6 +732,10 @@
                                                   <div class="prof-aside__icon icon icon_document"></div>
                                                 </li>
                                                 <li class="prof-aside__task-item prof-aside__task-item_active">
+                                                    <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                        <input class="prof-label-checkbox__input" type="checkbox">
+                                                                        <span class="prof-label-checkbox__visible-checkbox"></span>
+                                                </label>
                                                   <img
                                                     src="./assets/images/other-user.jpg"
                                                     alt="Аватар"
@@ -735,6 +759,10 @@
                                                   <div class="prof-aside__icon icon icon_ring_active"></div>
                                                 </li>
                                                 <li class="prof-aside__task-item">
+                                                    <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                        <input class="prof-label-checkbox__input" type="checkbox">
+                                                                        <span class="prof-label-checkbox__visible-checkbox"></span>
+                                                </label>
                                                   <img
                                                     src="./assets/images/avatar-photo.png"
                                                     alt="Аватар"
@@ -758,6 +786,10 @@
                                                   <div class="prof-aside__icon icon icon_message_active"></div>
                                                 </li>
                                                 <li class="prof-aside__task-item">
+                                                    <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                        <input class="prof-label-checkbox__input" type="checkbox">
+                                                                        <span class="prof-label-checkbox__visible-checkbox"></span>
+                                                </label>
                                                   <img
                                                     src="./assets/images/other-user.jpg"
                                                     alt="Аватар"
@@ -781,6 +813,10 @@
                                                   <div class="prof-aside__icon icon icon_ring"></div>
                                                 </li>
                                                 <li class="prof-aside__task-item">
+                                                    <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                        <input class="prof-label-checkbox__input" type="checkbox">
+                                                                        <span class="prof-label-checkbox__visible-checkbox"></span>
+                                                </label>
                                                   <img
                                                     src="./assets/images/hot-price-photo.jpg"
                                                     alt="Аватар"
@@ -804,7 +840,7 @@
                                                   <div class="prof-aside__icon icon icon_message"></div>
                                                 </li>
                                               </ul>
-                                    </div>
+                                    </form>
                                     <div class="prof-aside__right-panel prof-aside__right-panel_type_mobile">
                                         <div class="prof-aside__task-item prof-aside__task-item_type_message">
                                             <button
@@ -910,7 +946,7 @@
                                                     сообщение входящее сообщение входящее сообщение</p>
                                                 <p class="prof-aside__time text-p4">19:48</p>
                                             </div>
-                                            <a href="#" class="prof-aside__link text-p1">Завершить обращение &#215;</a>
+                                            <p data-url="http://foo.com" class="prof-aside__link text-p1">Завершить заявку <span class="prof-aside__close-appeal">&#215;</span></p>
 
                                         </div>
                                         <form class="prof-aside__send-message">
@@ -938,11 +974,15 @@
                                 <div class="prof-control-panel prof-control-panel_type_feedback"><button class="prof-aside__button prof-aside__button_type_desktop text-p1">Передать обращения</button></div>
                             </header>
                             <div class="prof-aside__body">
-                                <div id="prof-aside__left-panel-main" class="prof-aside__left-panel">
+                                <form id="prof-aside__left-panel-main" class="prof-aside__left-panel">
                                     <input type="text" class="prof-aside__input prof-aside__input_type_search text-p1"
                                         placeholder="Поиск">
                                         <ul class="prof-aside__tasks-container">
                                             <li class="prof-aside__task-item prof-aside__task-item_active">
+                                                <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                    <input class="prof-label-checkbox__input" type="checkbox">
+                                                                    <span class="prof-label-checkbox__visible-checkbox"></span>
+                                            </label>
                                               <img
                                                 src="./assets/images/avatar-photo.png"
                                                 alt="Аватар"
@@ -966,6 +1006,10 @@
                                               <div class="prof-aside__icon icon icon_message"></div>
                                             </li>
                                             <li class="prof-aside__task-item">
+                                                <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                    <input class="prof-label-checkbox__input" type="checkbox">
+                                                                    <span class="prof-label-checkbox__visible-checkbox"></span>
+                                            </label>
                                               <img
                                                 src="./assets/images/avatar-photo.png"
                                                 alt="Аватар"
@@ -989,6 +1033,10 @@
                                               <div class="prof-aside__icon icon icon_ring_active"></div>
                                             </li>
                                             <li class="prof-aside__task-item">
+                                                <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                    <input class="prof-label-checkbox__input" type="checkbox">
+                                                                    <span class="prof-label-checkbox__visible-checkbox"></span>
+                                            </label>
                                               <img
                                                 src="./assets/images/other-user.jpg"
                                                 alt="Аватар"
@@ -1012,6 +1060,10 @@
                                               <div class="prof-aside__icon icon icon_document"></div>
                                             </li>
                                             <li class="prof-aside__task-item prof-aside__task-item_active">
+                                                <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                    <input class="prof-label-checkbox__input" type="checkbox">
+                                                                    <span class="prof-label-checkbox__visible-checkbox"></span>
+                                            </label>
                                               <img
                                                 src="./assets/images/avatar-photo.png"
                                                 alt="Аватар"
@@ -1035,6 +1087,10 @@
                                               <div class="prof-aside__icon icon icon_document_active"></div>
                                             </li>
                                             <li class="prof-aside__task-item">
+                                                <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                    <input class="prof-label-checkbox__input" type="checkbox">
+                                                                    <span class="prof-label-checkbox__visible-checkbox"></span>
+                                            </label>
                                               <img
                                                 src="./assets/images/avatar-photo.png"
                                                 alt="Аватар"
@@ -1058,6 +1114,10 @@
                                               <div class="prof-aside__icon icon icon_document"></div>
                                             </li>
                                             <li class="prof-aside__task-item prof-aside__task-item_active">
+                                                <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                    <input class="prof-label-checkbox__input" type="checkbox">
+                                                                    <span class="prof-label-checkbox__visible-checkbox"></span>
+                                            </label>
                                               <img
                                                 src="./assets/images/other-user.jpg"
                                                 alt="Аватар"
@@ -1081,6 +1141,10 @@
                                               <div class="prof-aside__icon icon icon_ring_active"></div>
                                             </li>
                                             <li class="prof-aside__task-item">
+                                                <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                    <input class="prof-label-checkbox__input" type="checkbox">
+                                                                    <span class="prof-label-checkbox__visible-checkbox"></span>
+                                            </label>
                                               <img
                                                 src="./assets/images/avatar-photo.png"
                                                 alt="Аватар"
@@ -1104,6 +1168,10 @@
                                               <div class="prof-aside__icon icon icon_message_active"></div>
                                             </li>
                                             <li class="prof-aside__task-item">
+                                                <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                    <input class="prof-label-checkbox__input" type="checkbox">
+                                                                    <span class="prof-label-checkbox__visible-checkbox"></span>
+                                            </label>
                                               <img
                                                 src="./assets/images/other-user.jpg"
                                                 alt="Аватар"
@@ -1127,6 +1195,10 @@
                                               <div class="prof-aside__icon icon icon_ring"></div>
                                             </li>
                                             <li class="prof-aside__task-item">
+                                                <label class="prof-label-checkbox prof-label-checkbox_type_feedback">
+                                                    <input class="prof-label-checkbox__input" type="checkbox">
+                                                                    <span class="prof-label-checkbox__visible-checkbox"></span>
+                                            </label>
                                               <img
                                                 src="./assets/images/hot-price-photo.jpg"
                                                 alt="Аватар"
@@ -1150,7 +1222,7 @@
                                               <div class="prof-aside__icon icon icon_message"></div>
                                             </li>
                                           </ul>
-                                </div>
+                                </form>
                                 <div id="prof-aside__right-panel-main" class="prof-aside__right-panel">
                                     <div class="prof-aside__task-item prof-aside__task-item_type_message">
                                         <button id="prof-aside__button-back-tasks-main"
@@ -1251,7 +1323,7 @@
                                                 сообщение входящее сообщение входящее сообщение</p>
                                             <p class="prof-aside__time text-p4">19:48</p>
                                         </div>
-                                        <a href="#" class="prof-aside__link text-p1">Завершить обращение <span class="prof-aside__close-appeal">&#215;</span></a>
+                                        <p data-url="http://foo.com" class="prof-aside__link text-p1">Завершить заявку <span class="prof-aside__close-appeal">&#215;</span></p>
                                     </div>
                                     <form class="prof-aside__send-message">
                                         <input type="text"
@@ -1271,7 +1343,7 @@
         </main>
 
         <footer class="footer">
-            <a class="logo logo_place_footer" href="#">
+            <a class="logo logo_place_footer" href="./main-page.html">
                 <svg class="icon icon_logo" viewBox="0 0 198 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M156.581 26.9354H148.802V29.1138H151.559V35.7226H153.824V29.1138H156.581V26.9354Z"
                         fill="#65B32E" />
@@ -2034,6 +2106,9 @@
                     </li>
                     <li class="popup-docs__item">
                         <a href="./assets/docs/Согласие на обработку персональных данных_21.04.docx" class="popup-docs__link">Согласие на обработку персональных данных</a>
+                    </li>
+                    <li class="popup-docs__item">
+                        <a href="./assets/docs/Политика в отношении обработки персональных данных_11.04.pdf" class="popup-docs__link">Политика в отношении обработки персональных данных</a>
                     </li>
                 </ul>
             </div>

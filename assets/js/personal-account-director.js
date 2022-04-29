@@ -810,3 +810,53 @@ popupsBody.forEach((i) =>
         }
     })
 );
+
+// логика по клику на "Завершить заявку"
+
+const buttonsCloseAppeal = document.querySelectorAll(".prof-aside__link");
+
+buttonsCloseAppeal.forEach((i) =>
+    i.addEventListener("click", sendRequestCloseAppeal)
+);
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+                cookieValue = decodeURIComponent(
+                    cookie.substring(name.length + 1)
+                );
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie("csrftoken");
+
+function sendRequestCloseAppeal(e) {
+    const data = { "close-appeal": true };
+    fetch(e.target.getAttribute("data-url"), {
+        method: "POST",
+        credentials: "same-origin",
+        body: JSON.stringify(data),
+        headers: {
+            "content-type": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRFToken": csrftoken,
+        },
+    }).then((response) => {
+        if (response.ok) {
+            buttonsCloseAppeal.forEach(
+                (i) => (i.textContent = "Работа над заявкой завершена")
+            );
+            buttonsCloseAppeal.forEach((i) =>
+                i.removeEventListener("click", sendRequestCloseAppeal)
+            );
+        }
+    });
+}

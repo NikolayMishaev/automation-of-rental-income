@@ -145,6 +145,7 @@ main .container {
         }
     }
     &__contact-text {
+        position: relative;
         @media #{$screen-mobile} {
             display: block;
             margin-left: 12px;
@@ -170,6 +171,14 @@ main .container {
         margin-bottom: 8px;
         @media #{$screen-mobile} {
             margin-bottom: 4px;
+        }
+    }
+    &__tel {
+        &:hover {
+            cursor: pointer;
+        }
+        &:hover +.tooltip{
+            opacity: 1;
         }
     }
     &__position,

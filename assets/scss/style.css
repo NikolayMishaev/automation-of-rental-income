@@ -641,6 +641,10 @@ main .container {
   }
 }
 
+.info-card__contact-text {
+  position: relative;
+}
+
 @media (max-width: 40rem) {
   .info-card__contact-text {
     display: block;
@@ -674,6 +678,14 @@ main .container {
   .info-card__position, .info-card__avatar, .info-card__name, .info-card__tel {
     margin-bottom: 4px;
   }
+}
+
+.info-card__tel:hover {
+  cursor: pointer;
+}
+
+.info-card__tel:hover + .tooltip {
+  opacity: 1;
 }
 
 @media (max-width: 40rem) {
@@ -1732,6 +1744,12 @@ main .container {
   z-index: 2;
 }
 
+@media (max-width: 640px) {
+  .modal__question {
+    right: 6px;
+  }
+}
+
 .modal__question-outer {
   position: relative;
   width: 100%;
@@ -2350,6 +2368,22 @@ main .container {
   }
 }
 
+.registration-form__label_type_link {
+  color: #1565c0;
+  margin-right: 10px;
+  -webkit-box-flex: 326px;
+      -ms-flex: 326px;
+          flex: 326px;
+}
+
+@media (max-width: 40rem) {
+  .registration-form__label_type_link {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+  }
+}
+
 .registration-form .custom-text-input {
   width: 100%;
   max-width: 552px;
@@ -2819,6 +2853,21 @@ main .container {
   width: 800px;
 }
 
+.registration-form__label-agreement {
+  -webkit-box-flex: 428px;
+      -ms-flex: 428px;
+          flex: 428px;
+  min-height: 44px;
+}
+
+@media (max-width: 640px) {
+  .registration-form__label-agreement {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+  }
+}
+
 .slider {
   margin-bottom: 40px;
 }
@@ -3090,7 +3139,7 @@ main .container {
   position: absolute;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  background-color: #2A2E33;
+  background-color: #2a2e33;
   border-radius: 4px;
   color: white;
   font-style: normal;
@@ -3104,7 +3153,19 @@ main .container {
 .tooltip_type_register {
   right: 0px;
   bottom: 22px;
-  width: 250px;
+  width: 280px;
+}
+
+@media (max-width: 40rem) {
+  .tooltip_type_register {
+    right: -10px;
+  }
+}
+
+@media (max-width: 40rem) {
+  .tooltip_type_register .tooltip__icon {
+    right: 14px;
+  }
 }
 
 .tooltip_type_bell {
@@ -3120,6 +3181,38 @@ main .container {
 }
 
 .tooltip_type_bell-mobile {
+  right: 5px;
+  bottom: 31px;
+}
+
+.tooltip_type_tel {
+  right: 0;
+  left: 0;
+  top: -8px;
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .tooltip_type_tel {
+    right: 0;
+    width: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tooltip_type_tel {
+    left: 0;
+    top: -20px;
+  }
+}
+
+.tooltip_type_tel svg {
+  position: absolute;
+  bottom: -4px;
+  right: 90px;
+}
+
+.tooltip_type_tel-mobile {
   right: 5px;
   bottom: 31px;
 }
@@ -4311,7 +4404,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .icon_save {
-  background: url("./../images/save.png");
+  background: url("./../images/icons/profile-edit-avatar.svg");
 }
 
 .list-positions {
@@ -4831,6 +4924,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .footer__link:hover {
   cursor: pointer;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 @media (max-width: 1660px) {
@@ -7989,7 +8084,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-aside__tasks-info {
-  width: 9.5rem;
+  width: 7.625rem;
   margin: 0 0.5rem;
 }
 
@@ -8838,6 +8933,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-item__button {
+  color: #222429;
   white-space: nowrap;
   margin-left: auto;
   padding: 0.75rem 1.25rem;
@@ -8859,7 +8955,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.prof-item__button:link {
+  text-decoration: none;
+}
+
 .prof-item__button:hover {
+  text-decoration: none;
   cursor: pointer;
   opacity: 0.7;
 }
@@ -9718,6 +9819,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prof-control-panel__select-input_type_personal-offers {
   height: 32px;
   padding: 15px 12px 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-left: 0;
 }
 
 .prof-control-panel__label-custom {
@@ -10150,10 +10254,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 32px;
 }
 
-.prof-control-panel__label-number_type_personal-offers:nth-of-type(odd) {
-  margin-right: 12px;
-}
-
 .prof-control-panel__input-number {
   width: 106px;
   height: 32px;
@@ -10169,8 +10269,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__input-number_type_personal-offers {
   padding: 15px 12px 5px;
-  margin-left: 4px;
   width: 60px;
+  margin-left: 4px;
 }
 
 .prof-control-panel__input-number_type_personal-offers-bet {
@@ -10261,9 +10361,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__icon-save {
-  width: 32px;
-  height: 32px;
-  background-size: 32px !important;
+  width: 20px;
+  height: 20px;
+  background-size: 20px !important;
   margin-right: 12px;
   margin-left: auto;
 }
@@ -10271,6 +10371,41 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prof-control-panel__icon-save:hover {
   cursor: pointer;
   opacity: .8;
+}
+
+.prof-control-panel__caption-error {
+  position: absolute;
+  top: 32px;
+  left: 204px;
+  width: 400px;
+  opacity: 0;
+  color: red;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.prof-control-panel__caption-error_active {
+  opacity: 1;
+}
+
+.prof-control-panel__error {
+  border: 2px solid red;
+}
+
+.prof-control-panel__unit {
+  margin: 0 3px;
+  color: #6d7678;
+  padding-bottom: 5px;
+}
+
+.prof-control-panel__unit-super {
+  vertical-align: super;
+  font-size: 10px;
+}
+
+.prof-control-panel__unit_type_count {
+  padding-bottom: 0;
+  font-size: 18px;
 }
 
 #input-ankets {

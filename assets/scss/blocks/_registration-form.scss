@@ -114,6 +114,14 @@
                 margin-bottom: 10px;
             }
         }
+        &_type_link {
+            color:#1565c0;
+            margin-right: 10px;
+            flex: 326px;
+            @media #{$screen-mobile} {
+                flex: auto;
+            }
+        }
     }
     .custom-text-input {
         width: 100%;
@@ -317,6 +325,13 @@
     .modal-file-input {
         .modal__content {
             width: 800px;
+        }
+    }
+    &__label-agreement {
+        flex: 428px;
+        min-height: 44px;
+        @media (max-width: 640px) {
+            flex: unset;
         }
     }
 }

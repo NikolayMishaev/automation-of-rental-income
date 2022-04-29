@@ -11,36 +11,66 @@
     <div class="prof-general">
         <form action="" method="" class="prof-control-panel">
             <label aria-label="main-city" class="prof-control-panel__select-label prof-control-panel__select-label_type_main-big prof-control-panel__select-label_type_personal-offers text-p2 button-toggle-select mix-label">
+                <span class="prof-control-panel__caption-error text-p2">поиск может быть задан по не более трем городам</span>
                 <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
                     <div class="prof-control-panel__cursor prof-control-panel__cursor_type_personal-offers" id="cursor-main-city"></div>
                     <input id="input-main-city" type="text" class="prof-control-panel__select-input prof-control-panel__select-input_type_personal-offers mix-input mix-input_type_personal-offers text-p1" placeholder=" ">
                     <span class="mix-caption mix-caption_type_personal-offers">Город</span>
                     <div class="main-submenu main-submenu_style_personal-offers" id="submenu-main-city">
                     <ul class="main-submenu__list">
-                        <li aria-label="item" class="main-submenu__item main-submenu__item_style_wide">
-                            Москва
-                        </li>
-                        <li aria-label="item" class="main-submenu__item main-submenu__item_active main-submenu__item_style_wide">
-                            Санкт-Петербург
-                        </li>
-                        <li aria-label="item" class="main-submenu__item main-submenu__item_style_wide">
-                            Воронеж
-                        </li>
-                        <li aria-label="item" class="main-submenu__item main-submenu__item_style_wide">
-                            Липецк
-                        </li>
-                        <li aria-label="item" class="main-submenu__item main-submenu__item_style_wide">
-                            Ногинск
-                        </li>
-                        <li aria-label="item" class="main-submenu__item main-submenu__item_style_wide">
-                            Смоленск
-                        </li>
-                        <li aria-label="item" class="main-submenu__item main-submenu__item_style_wide">
-                            Тула
-                        </li>
-                        <li aria-label="item" class="main-submenu__item main-submenu__item_style_wide">
-                            Ярославль
-                        </li>
+                        <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                            <label aria-label="checkbox" class="prof-control-panel__label-custom label-checkbox">
+                              <input id="input-objects-checkobx-free" class="prof-control-panel__input-hidden" type="checkbox">
+                              <span class="prof-control-panel__visible-checkbox"></span>
+                              Москва</label>
+                          </li>
+                          <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                            <label aria-label="checkbox" class="prof-control-panel__label-custom label-checkbox">
+                              <input id="input-objects-checkobx-free" class="prof-control-panel__input-hidden" type="checkbox">
+                              <span class="prof-control-panel__visible-checkbox"></span>
+                              Санкт-Петербург</label>
+                          </li>
+                          <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                            <label aria-label="checkbox" class="prof-control-panel__label-custom label-checkbox">
+                              <input id="input-objects-checkobx-free" class="prof-control-panel__input-hidden" type="checkbox">
+                              <span class="prof-control-panel__visible-checkbox"></span>
+                              Воронеж</label>
+                          </li>
+                          <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                            <label aria-label="checkbox" class="prof-control-panel__label-custom label-checkbox">
+                              <input id="input-objects-checkobx-free" class="prof-control-panel__input-hidden" type="checkbox">
+                              <span class="prof-control-panel__visible-checkbox"></span>
+                              Липецк</label>
+                          </li>
+                          <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                            <label aria-label="checkbox" class="prof-control-panel__label-custom label-checkbox">
+                              <input id="input-objects-checkobx-free" class="prof-control-panel__input-hidden" type="checkbox">
+                              <span class="prof-control-panel__visible-checkbox"></span>
+                              Ногинск</label>
+                          </li>
+                          <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                            <label aria-label="checkbox" class="prof-control-panel__label-custom label-checkbox">
+                              <input id="input-objects-checkobx-free" class="prof-control-panel__input-hidden" type="checkbox">
+                              <span class="prof-control-panel__visible-checkbox"></span>
+                              Смоленск</label>
+                          </li>
+                          <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                            <label aria-label="checkbox" class="prof-control-panel__label-custom label-checkbox">
+                              <input id="input-objects-checkobx-free" class="prof-control-panel__input-hidden" type="checkbox">
+                              <span class="prof-control-panel__visible-checkbox"></span>
+                              Тула</label>
+                          </li>
+                          <li class="main-submenu__item main-submenu__item_style_prof-control-panel">
+                            <label aria-label="checkbox" class="prof-control-panel__label-custom label-checkbox">
+                              <input id="input-objects-checkobx-free" class="prof-control-panel__input-hidden" type="checkbox">
+                              <span class="prof-control-panel__visible-checkbox"></span>
+                              Ярославль</label>
+                          </li>
+                          <li class="main-submenu__item main-submenu__item_style_align-center main-submenu__item_style_prof-control-panel">
+                            <button class="prof-control-panel__button prof-control-panel__button_type_confirm">
+                              Выбрать
+                            </button>
+                          </li>
                     </ul>
                 </div>
             </label>
@@ -53,6 +83,7 @@
                 <input type="number" step="5" min="0" class="prof-control-panel__input-number prof-control-panel__input-number_type_personal-offers mix-input mix-input_type_personal-offers" placeholder=" ">
                 <span class="mix-caption mix-caption_type_personal-offers">До</span>
               </label>
+              <p class="prof-control-panel__unit heading-h4">м<span class="prof-control-panel__unit-super">2</span></p>
               <p class="prof-control-panel__select-label text-p2">Размер арендной ставки:</p>
               <label class="prof-control-panel__label-number prof-control-panel__label-number_type_personal-offers text-p2 mix-label">
                   <input type="number" step="1000" min="0" class="prof-control-panel__input-number prof-control-panel__input-number_type_personal-offers prof-control-panel__input-number_type_personal-offers-bet mix-input mix-input_type_personal-offers" placeholder=" ">
@@ -62,6 +93,7 @@
                   <input type="number" step="1000" min="0" class="prof-control-panel__input-number prof-control-panel__input-number_type_personal-offers prof-control-panel__input-number_type_personal-offers-bet mix-input mix-input_type_personal-offers" placeholder=" ">
                   <span class="mix-caption mix-caption_type_personal-offers">До</span>
                 </label>
+                <p class="prof-control-panel__unit prof-control-panel__unit_type_count heading-h4">&#8381;</p>
                 <div class="prof-control-panel__icon-save icon icon_save"></div>
                 <button class="prof-control-panel__button prof-control-panel__button_type_personal-offers">
                     Включить

@@ -55,6 +55,7 @@
         color: $accent90;
         &:hover {
             cursor: pointer;
+            text-decoration-line: underline;
         }
     }
     &__year {
