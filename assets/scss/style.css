@@ -4360,7 +4360,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .icon_save {
-  background: url("./../images/save.png");
+  background: url("./../images/icons/profile-edit-avatar.svg");
 }
 
 .list-positions {
@@ -9769,6 +9769,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 15px 12px 5px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  margin-left: 0;
 }
 
 .prof-control-panel__label-custom {
@@ -10201,10 +10202,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 32px;
 }
 
-.prof-control-panel__label-number_type_personal-offers:nth-of-type(odd) {
-  margin-right: 12px;
-}
-
 .prof-control-panel__input-number {
   width: 106px;
   height: 32px;
@@ -10220,8 +10217,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__input-number_type_personal-offers {
   padding: 15px 12px 5px;
-  margin-left: 4px;
   width: 60px;
+  margin-left: 4px;
 }
 
 .prof-control-panel__input-number_type_personal-offers-bet {
@@ -10312,9 +10309,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .prof-control-panel__icon-save {
-  width: 32px;
-  height: 32px;
-  background-size: 32px !important;
+  width: 20px;
+  height: 20px;
+  background-size: 20px !important;
   margin-right: 12px;
   margin-left: auto;
 }
@@ -10341,6 +10338,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__error {
   border: 2px solid red;
+}
+
+.prof-control-panel__unit {
+  margin: 0 3px;
+  color: #6d7678;
+  padding-bottom: 5px;
+}
+
+.prof-control-panel__unit-super {
+  vertical-align: super;
+  font-size: 10px;
+}
+
+.prof-control-panel__unit_type_count {
+  padding-bottom: 0;
+  font-size: 18px;
 }
 
 #input-ankets {

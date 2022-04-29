@@ -581,6 +581,7 @@
             height: 32px;
             padding: 15px 12px 5px;
             transition: $transition;
+            margin-left: 0;
         }
     }
     &__label-custom {
@@ -873,9 +874,6 @@
         }
         &_type_personal-offers {
             height: 32px;
-            &:nth-of-type(odd) {
-                margin-right: 12px;
-            }
         }
     }
     &__input-number {
@@ -890,8 +888,8 @@
         padding: 4px 12px;
         &_type_personal-offers {
             padding: 15px 12px 5px;
-            margin-left: 4px;
             width: 60px;
+            margin-left: 4px;
             &-bet {
                 width: 75px;
             }
@@ -955,9 +953,9 @@
         min-width: 20px;
     }
     &__icon-save {
-        width: 32px;
-        height: 32px;
-        background-size: 32px !important;
+        width: 20px;
+        height: 20px;
+        background-size: 20px !important;
         margin-right: 12px;
         margin-left: auto;
         &:hover {
@@ -979,6 +977,19 @@
     }
     &__error {
         border: 2px solid red;
+    }
+    &__unit {
+        margin: 0 3px;
+        color: #6d7678;
+        padding-bottom: 5px;
+        &-super {
+            vertical-align: super;
+            font-size: 10px;
+        }
+     &_type_count {
+         padding-bottom: 0;
+         font-size: 18px;
+     }
     }
 }
 
