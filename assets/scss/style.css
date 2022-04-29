@@ -6367,6 +6367,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   top: 34px;
 }
 
+#submenu-division-views, #submenu-division-size {
+  left: 0;
+}
+
+.main-submenu_style_structure .main-submenu__item .main-submenu__link {
+  color: #222429;
+}
+
+.main-submenu_style_structure .main-submenu__item_active .main-submenu__link {
+  color: white;
+}
+
+.main-submenu_style_structure .main-submenu__item:hover .main-submenu__link {
+  color: white;
+}
+
 .main-filters {
   background: #f5f7f7;
   border: 1px solid #e3e7e8;
@@ -9814,6 +9830,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 100%;
   padding-right: 27px;
   margin-left: 0;
+}
+
+.prof-control-panel__select-input_type_division:hover {
+  opacity: 1;
 }
 
 .prof-control-panel__select-input_type_personal-offers {

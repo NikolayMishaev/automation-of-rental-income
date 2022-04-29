@@ -576,6 +576,9 @@
             width: 100%;
             padding-right: 27px;
             margin-left: 0;
+            &:hover {
+                opacity: 1;
+            }
         }
         &_type_personal-offers {
             height: 32px;

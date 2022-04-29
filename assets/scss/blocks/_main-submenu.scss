@@ -458,3 +458,19 @@
     right: 0;
     top: 34px;
 }
+
+#submenu-division-views, #submenu-division-size {
+    left: 0;
+}
+
+.main-submenu_style_structure .main-submenu__item .main-submenu__link  {
+    color: #222429;
+}
+
+.main-submenu_style_structure .main-submenu__item_active .main-submenu__link  {
+    color: white;
+}
+
+.main-submenu_style_structure .main-submenu__item:hover .main-submenu__link  {
+    color: white;
+}
