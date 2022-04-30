@@ -7328,6 +7328,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-bottom: 16px;
 }
 
+.modal-registration .checkbox-container__checkbox {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.modal-registration .checkbox-container p {
+  text-align: start;
+}
+
 .modal-edit-card-object .modal__content {
   width: 984px;
   max-height: calc(100vh - 40px);
@@ -8715,6 +8724,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding-right: 24px;
 }
 
+@media (max-width: 400px) {
+  .prof-general__content_type_iframe {
+    padding: 16px 0;
+  }
+}
+
 .prof-general__content_type_iframe-offers {
   padding-right: 24px;
   min-height: 545px;
@@ -8856,6 +8871,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-general__agent-container {
   margin-top: 16px;
+}
+
+@media (max-width: 366px) {
+  .prof-general__agent-container {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }
 
 .prof-general__forms-agent-container {
@@ -9146,6 +9168,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   position: relative;
+}
+
+@media (max-width: 366px) {
+  .prof-control-panel {
+    margin: 0 16px;
+  }
 }
 
 .prof-control-panel_type_director {
