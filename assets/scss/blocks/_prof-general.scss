@@ -133,6 +133,9 @@
         }
         &_type_iframe {
             padding-right: 24px;
+            @media (max-width: 400px) {
+                padding: 16px 0;
+            }
         }
         &_type_iframe-offers {
             padding-right: 24px;
@@ -232,6 +235,10 @@
     }
     &__agent-container {
 margin-top: 16px;
+@media (max-width: 366px) {
+    margin-left: 16px;
+    margin-right: 16px;
+}
     }
     &__forms-agent-container {
         height: 328px;
