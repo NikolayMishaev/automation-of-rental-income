@@ -7,6 +7,7 @@ import {
 // стейты
 
 const state = {
+    formMainSubmit: true,
     currentOpenSubmenu: null,
     currentOpenSubmenuSelectClassType: null,
     cursorsSelect: {
@@ -682,6 +683,7 @@ inputRegistrationLogin.addEventListener("input", () => {
 });
 
 inputRegistrationLogin.addEventListener("blur", () => {
+    state.formMainSubmit = true;
     const data = { "register-email": inputRegistrationLogin.value };
     fetch(inputRegistrationLogin.getAttribute("data-url"), {
         method: "POST",
@@ -695,6 +697,7 @@ inputRegistrationLogin.addEventListener("blur", () => {
     })
         .then((response) => {
             if (!response.ok) {
+                state.formMainSubmit = false;
                 inputEmail.classList.add("custom-text-input__error-border");
                 captionInputEmail.textContent =
                     "такой пользователь уже существует";
@@ -709,6 +712,7 @@ inputRegistrationLogin.addEventListener("blur", () => {
             }
         })
         .catch(() => {
+            state.formMainSubmit = false;
             inputEmail.classList.add("custom-text-input__error-border");
             captionInputEmail.textContent =
                 "произошла ошибка, повторите запрос";
@@ -716,4 +720,15 @@ inputRegistrationLogin.addEventListener("blur", () => {
                 "custom-text-input__caption_active"
             );
         });
+});
+
+// если запрос по проверке почты вернул ошибку, т.е. пользователь с таким email уже есть в базе, тогда не делать сабмит
+
+const formMain = document.querySelector(".main-form");
+
+formMain.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (state.formMainSubmit) {
+        formMain.submit();
+    }
 });
