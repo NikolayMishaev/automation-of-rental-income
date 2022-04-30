@@ -772,20 +772,10 @@ function handleEscClose(e) {
 // логика открытия попапа передачи обращения, объекта
 
 const buttonsSendAppeals = document.querySelectorAll(".prof-aside__button");
-const buttonsSendObjects = document.querySelectorAll(
-    ".prof-control-panel__button_type_transfer"
-);
-const buttonSendObjectsMobile = document.querySelector(
-    ".prof-control-panel__button_type_mobile"
-);
 
 const popupSendObjects = document.querySelector(".modal-transfer-object");
 
-setAddEventListenerOpenPopupSendObjects(buttonSendObjectsMobile);
-
 buttonsSendAppeals.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
-
-buttonsSendObjects.forEach((i) => setAddEventListenerOpenPopupSendObjects(i));
 
 function setAddEventListenerOpenPopupSendObjects(i) {
     i.addEventListener("click", () => {

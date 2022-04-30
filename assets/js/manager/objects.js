@@ -674,18 +674,3 @@ if (checkboxesTransferObjects.length) {
         }
     });
 }
-
-// логика отправки формы из попапа оъектов
-
-const buttonSendTransferMobile = document.querySelector(
-    ".prof-control-panel__button_type_mobile"
-);
-
-const buttonSendTransfer = document.querySelector("#transfer-objects-submit");
-
-if (buttonSendTransferMobile) {
-    buttonSendTransferMobile.addEventListener("click", () =>
-        formObjects.submit()
-    );
-    buttonSendTransfer.addEventListener("click", () => formObjects.submit());
-}
