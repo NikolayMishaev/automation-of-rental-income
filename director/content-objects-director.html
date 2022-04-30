@@ -721,7 +721,7 @@
             </button>
           </div>
           <div class="modal__body">
-            <form enctype="multipart/form-data" action="">
+            <form id="form-send-object" enctype="multipart/form-data" action="">
               <label class="custom-text-input custom-text-input_text">
                 <textarea class="modal-edit-card-object__info">
     Предлагаем Вам снять в аренду офисное помещение в Москве: 0т 52 м2 до 738 м2, в трехэтажном полностью функционирующем здании, со всеми инженерными коммуникациями.
@@ -744,7 +744,7 @@
                   <div class="modal-edit-card-object__row">
                     <h4>Фотографии торгового центра</h4>
                     <div class="modal-edit-card-object__btn-container">
-                      <div class="modal-edit-card-object__btn modal-edit-card-object__btn_delete">
+                      <button form="form-send-object" type="submit" class="modal-edit-card-object__btn modal-edit-card-object__btn_delete">
                         <div class="modal-edit-card-object__icon-btn">
                           <svg
                             width="14"
@@ -762,7 +762,7 @@
                           </svg>
                         </div>
                         <span>Удалить выбранные</span>
-                      </div>
+                      </button>
                       <div class="modal-edit-card-object__btn modal-edit-card-object__add-btn">
                         <div class="modal-edit-card-object__icon-btn">
                           <svg
@@ -805,7 +805,7 @@
                   <div class="modal-edit-card-object__row">
                     <h4>Фотографии зоны субаренды</h4>
                     <div class="modal-edit-card-object__btn-container">
-                      <div class="modal-edit-card-object__btn modal-edit-card-object__btn_delete">
+                      <button form="form-send-object" type="submit" class="modal-edit-card-object__btn modal-edit-card-object__btn_delete">
                         <div class="modal-edit-card-object__icon-btn">
                           <svg
                             width="14"
@@ -823,7 +823,7 @@
                           </svg>
                         </div>
                         <span>Удалить выбранные</span>
-                      </div>
+                      </button>
                       <div class="modal-edit-card-object__btn modal-edit-card-object__add-btn">
                         <div class="modal-edit-card-object__icon-btn">
                           <svg
@@ -866,7 +866,7 @@
                   <div class="modal-edit-card-object__row">
                     <h4>Видео</h4>
                     <div class="modal-edit-card-object__btn-container">
-                      <div class="modal-edit-card-object__btn modal-edit-card-object__btn_delete">
+                      <button form="form-send-object" type="submit" class="modal-edit-card-object__btn modal-edit-card-object__btn_delete">
                         <div class="modal-edit-card-object__icon-btn">
                           <svg
                             width="14"
@@ -884,7 +884,7 @@
                           </svg>
                         </div>
                         <span>Удалить выбранные</span>
-                      </div>
+                      </button>
                       <div class="modal-edit-card-object__btn modal-edit-card-object__add-btn">
                         <div class="modal-edit-card-object__icon-btn">
                           <svg
@@ -930,7 +930,7 @@
                   <div class="modal-edit-card-object__row">
                     <h4>Планировка</h4>
                     <div class="modal-edit-card-object__btn-container">
-                      <div class="modal-edit-card-object__btn modal-edit-card-object__btn_delete">
+                      <button form="form-send-object" type="submit" class="modal-edit-card-object__btn modal-edit-card-object__btn_delete">
                         <div class="modal-edit-card-object__icon-btn">
                           <svg
                             width="14"
@@ -948,7 +948,7 @@
                           </svg>
                         </div>
                         <span>Удалить выбранные</span>
-                      </div>
+                      </button>
                       <div class="modal-edit-card-object__btn modal-edit-card-object__add-btn">
                         <div class="modal-edit-card-object__icon-btn">
                           <svg
@@ -992,7 +992,7 @@
           </div>
           <div class="modal__footer">
             <button class="modal__cancel-btn">Отмена</button>
-            <button form="contact-form1" type="submit" class="modal__login-btn">Сохранить</button>
+            <button form="form-send-object" type="submit" class="modal__login-btn">Сохранить</button>
           </div>
         </div>
       </div>
@@ -1002,7 +1002,7 @@
         <div class="modal__content">
             <div class="modal__header">
             <h3>Структура</h3>
-            <button id="button-close-popup-sign-in" class="modal__close-btn">
+            <button form="form-objects" type="submit" id="button-close-popup-sign-in" class="modal__close-btn">
                 <svg
                 width="14"
                 height="14"
@@ -1018,53 +1018,53 @@
             </button>
             </div>
             <div class="modal__body">
-            <div class="modal-transfer-object__row">
-                <label class="custom-text-input custom-text-input_search">
-                <input type="text" />
-                <span class="custom-text-input__label">Поиск</span>
-                <div class="custom-text-input__icon">
-                    <svg
-                    width="13"
-                    height="13"
-                    viewBox="0 0 13 13"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    >
-                    <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M2.06506 5.50055C2.06506 3.60345 3.60296 2.06555 5.50006 2.06555C7.39716 2.06555 8.93506 3.60345 8.93506 5.50055C8.93506 7.39764 7.39716 8.93555 5.50006 8.93555C3.60296 8.93555 2.06506 7.39764 2.06506 5.50055ZM5.50006 0.935547C2.97888 0.935547 0.935059 2.97937 0.935059 5.50055C0.935059 8.02173 2.97888 10.0655 5.50006 10.0655C6.55702 10.0655 7.53007 9.70634 8.30381 9.10333L11.6005 12.4001C11.8212 12.6207 12.1789 12.6207 12.3996 12.4001C12.6202 12.1794 12.6202 11.8217 12.3996 11.601L9.10285 8.3043C9.70585 7.53056 10.0651 6.5575 10.0651 5.50055C10.0651 2.97937 8.02124 0.935547 5.50006 0.935547Z"
-                        fill="#6C737D"
-                    />
-                    </svg>
-                </div>
-                </label>
-
-                <label aria-label="transfer-objects" class="prof-control-panel__select-label prof-control-panel__select-label_type_transfer-objects text-p2 button-toggle-select">Дивизон:
-                    <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
-                    <div class="prof-control-panel__cursor" id="cursor-transfer-objects"></div>
-                    <input id="input-transfer-objects" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_transfer-objects" value="Центр">
-                    <div class="main-submenu main-submenu_style_structure-popup" id="submenu-transfer-objects">
-                        <ul class="main-submenu__list">
-                            <li aria-label="item" class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
-                                Центр
-                            </li>
-                            <li aria-label="item" class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
-                                Пункт_1</li>
-                            <li aria-label="item" class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
-                                Пункт_2</li>
-                            <li aria-label="item" class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
-                                Пункт_3
-                            </li>
-                            <li aria-label="item" class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
-                                Пункт_4
-                            </li>
-                        </ul>
+            <form id='send-object-structure' action="" method="post">
+                <div class="modal-transfer-object__row">
+                    <label class="custom-text-input custom-text-input_search">
+                    <input type="text" />
+                    <span class="custom-text-input__label">Поиск</span>
+                    <div class="custom-text-input__icon">
+                        <svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 13 13"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M2.06506 5.50055C2.06506 3.60345 3.60296 2.06555 5.50006 2.06555C7.39716 2.06555 8.93506 3.60345 8.93506 5.50055C8.93506 7.39764 7.39716 8.93555 5.50006 8.93555C3.60296 8.93555 2.06506 7.39764 2.06506 5.50055ZM5.50006 0.935547C2.97888 0.935547 0.935059 2.97937 0.935059 5.50055C0.935059 8.02173 2.97888 10.0655 5.50006 10.0655C6.55702 10.0655 7.53007 9.70634 8.30381 9.10333L11.6005 12.4001C11.8212 12.6207 12.1789 12.6207 12.3996 12.4001C12.6202 12.1794 12.6202 11.8217 12.3996 11.601L9.10285 8.3043C9.70585 7.53056 10.0651 6.5575 10.0651 5.50055C10.0651 2.97937 8.02124 0.935547 5.50006 0.935547Z"
+                            fill="#6C737D"
+                        />
+                        </svg>
                     </div>
-                </label>
+                    </label>
 
-            </div>
-            <form action="" method="post">
+                    <label aria-label="transfer-objects" class="prof-control-panel__select-label prof-control-panel__select-label_type_transfer-objects text-p2 button-toggle-select">Дивизон:
+                        <!-- активный класс для курсора(стрелка вверх) prof-control-panel__cursor_active -->
+                        <div class="prof-control-panel__cursor" id="cursor-transfer-objects"></div>
+                        <input id="input-transfer-objects" type="text" disabled="true" class="prof-control-panel__select-input prof-control-panel__select-input_type_transfer-objects" value="Центр">
+                        <div class="main-submenu main-submenu_style_structure-popup" id="submenu-transfer-objects">
+                            <ul class="main-submenu__list">
+                                <li aria-label="item" class="main-submenu__item main-submenu__item_active main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                    Центр
+                                </li>
+                                <li aria-label="item" class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                    Пункт_1</li>
+                                <li aria-label="item" class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                    Пункт_2</li>
+                                <li aria-label="item" class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                    Пункт_3
+                                </li>
+                                <li aria-label="item" class="main-submenu__item main-submenu__item_style_prof-control-panel-sort item-submenu-sort">
+                                    Пункт_4
+                                </li>
+                            </ul>
+                        </div>
+                    </label>
+
+                </div>
                 <!-- заполнить список менеджерами -->
                 <ul class="modal-transfer-object__manager-list">
                 <li class="modal-transfer-object__manager-list-item">
@@ -1210,21 +1210,20 @@
             </div>
             <div class="modal__footer">
             <button class="modal__cancel-btn">Отмена</button>
-            <button id="transfer-objects-submit" type="submit" class="modal__login-btn">
+            <button id="send-object-structure" form="form-objects" type="submit" class="modal__login-btn">
                 Передать <span class="modal__hidden-text">объекты</span>
             </button>
             </div>
         </div>
         </div>
 
-        <!-- модальное окно "Передача объектов мобильная версия"  -->
-        <div class="fixed-popup mix-display-none">
-            <div class="prof-control-panel prof-control-panel_type_mobile">
-                <button class="prof-control-panel__button prof-control-panel__button_type_cancel text-p1">Отмена</button>
-                <button class="prof-control-panel__button prof-control-panel__button_type_mobile text-p1">Передать объекты</button>
-            </div>
+    <!-- модальное окно "Передача объектов мобильная версия"  -->
+    <div class="fixed-popup mix-display-none">
+        <div class="prof-control-panel prof-control-panel_type_mobile">
+            <button class="prof-control-panel__button prof-control-panel__button_type_cancel text-p1">Отмена</button>
+            <button type="button" class="prof-control-panel__button prof-control-panel__button_type_mobile text-p1">Передать объекты</button>
         </div>
-
+    </div>
 </body>
 </html>
 
