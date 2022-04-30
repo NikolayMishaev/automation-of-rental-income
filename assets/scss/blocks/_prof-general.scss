@@ -157,6 +157,10 @@
     &__message {
         margin-top: rem(16px);
     }
+    &__message-nothing-found {
+        margin: 50px;
+        text-align: center;
+    }
     &__section {
         padding: rem(24px);
         border: $border-E3E7E8;

@@ -3168,6 +3168,18 @@ main .container {
   }
 }
 
+.tooltip_type_personal-offers {
+  right: 0;
+  bottom: 32px;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  color: black;
+  background-color: white;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
 .tooltip_type_anket {
   z-index: -1;
   width: 290px;
@@ -8730,6 +8742,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-top: 1rem;
 }
 
+.prof-general__message-nothing-found {
+  margin: 50px;
+  text-align: center;
+}
+
 .prof-general__section {
   padding: 1.5rem;
   border: 1px solid #e3e7e8;
@@ -9253,6 +9270,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-control-panel__button_type_personal-offers:hover {
   opacity: 0.8;
+}
+
+.prof-control-panel__button_type_personal-offers:hover + .tooltip {
+  opacity: 1;
 }
 
 .prof-control-panel__button_type_transfer {

@@ -345,6 +345,10 @@ const buttonSubmitPersonalOffers = document.querySelector(
     ".prof-control-panel__button_type_personal-offers"
 );
 
+const tooltipButtonSubmitPersonalOffers = document.querySelector(
+    ".tooltip__inner_type_personal-offers"
+);
+
 buttonEditPersonalOffers.addEventListener("click", () => {
     if (
         buttonEditPersonalOffers.classList.contains(
@@ -373,6 +377,8 @@ buttonSubmitPersonalOffers.addEventListener("click", (e) => {
 function toggleStateButtonSumitPersonalOffers() {
     if (buttonSubmitPersonalOffers.textContent.trim() === "Отключить") {
         buttonSubmitPersonalOffers.textContent = "Включить";
+        tooltipButtonSubmitPersonalOffers.textContent =
+            "Включить персональный поиск";
         removeClassElement(
             overlaySettingsPersonalOffers,
             "prof-control-panel__overlay_type_wide"
@@ -384,6 +390,8 @@ function toggleStateButtonSumitPersonalOffers() {
             return;
         }
         buttonSubmitPersonalOffers.textContent = "Отключить";
+        tooltipButtonSubmitPersonalOffers.textContent =
+            "Отключить персональный поиск";
         addClassElement(
             overlaySettingsPersonalOffers,
             "prof-control-panel__overlay_type_wide"
@@ -393,13 +401,65 @@ function toggleStateButtonSumitPersonalOffers() {
 }
 
 if (buttonSubmitPersonalOffers.textContent.trim() === "Отключить") {
+    tooltipButtonSubmitPersonalOffers.textContent =
+        "Отлючить персональный поиск";
     addClassElement(
         overlaySettingsPersonalOffers,
         "prof-control-panel__overlay_type_wide"
     );
 } else {
+    tooltipButtonSubmitPersonalOffers.textContent =
+        "Включить персональный поиск";
     removeClassElement(
         overlaySettingsPersonalOffers,
         "prof-control-panel__overlay_type_wide"
     );
 }
+
+// логика нажатия по значку глаза
+
+const buttonsEye = document.querySelectorAll(".prof-marker_type_eye");
+
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+                cookieValue = decodeURIComponent(
+                    cookie.substring(name.length + 1)
+                );
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie("csrftoken");
+
+buttonsEye.forEach((i) =>
+    i.addEventListener("click", () => {
+        const viewed = i.classList.contains("prof-marker_type_eye-active");
+        const data = { viewed: !viewed };
+        fetch(i.getAttribute("data-url"), {
+            method: "POST",
+            credentials: "same-origin",
+            body: JSON.stringify(data),
+            headers: {
+                "content-type": "application/json",
+                "X-Requested-With": "XMLHttpRequest",
+                "X-CSRFToken": csrftoken,
+            },
+        }).then((response) => {
+            if (response.ok) {
+                if (viewed) {
+                    removeClassElement(i, "prof-marker_type_eye-active");
+                } else {
+                    addClassElement(i, "prof-marker_type_eye-active");
+                }
+            }
+        });
+    })
+);
