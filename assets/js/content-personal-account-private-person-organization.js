@@ -403,3 +403,33 @@ inputSearch.addEventListener("blur", () => {
 });
 
 inputProfit.addEventListener("click", () => formObjects.submit());
+
+// логика запроса по нажатию на кнопку "Удалить из избранного" в карточках
+
+const buttonsCardDelete = document.querySelectorAll(
+    ".prof-card__button-delete"
+);
+
+if (buttonsCardDelete.length) {
+    buttonsCardDelete.forEach((i) =>
+        i.addEventListener("click", sendRequestCardDelete)
+    );
+}
+
+function sendRequestCardDelete(e) {
+    const data = { card_delete: true };
+    fetch(e.target.getAttribute("data-url"), {
+        method: "POST",
+        credentials: "same-origin",
+        body: JSON.stringify(data),
+        headers: {
+            "content-type": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRFToken": csrftoken,
+        },
+    }).then((response) => {
+        if (response.ok) {
+            e.target.closest(".prof-card").remove();
+        }
+    });
+}
