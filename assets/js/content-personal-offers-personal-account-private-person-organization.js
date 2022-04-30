@@ -331,3 +331,75 @@ inputsNumber.forEach((i) =>
         }
     })
 );
+
+// логика работы вкладки "Персональные предложения"
+
+const buttonEditPersonalOffers = document.querySelector(
+    ".prof-control-panel__icon-save"
+);
+const overlaySettingsPersonalOffers = document.querySelector(
+    ".prof-control-panel__overlay"
+);
+
+const buttonSubmitPersonalOffers = document.querySelector(
+    ".prof-control-panel__button_type_personal-offers"
+);
+
+buttonEditPersonalOffers.addEventListener("click", () => {
+    if (
+        buttonEditPersonalOffers.classList.contains(
+            "prof-control-panel__icon-save_active"
+        )
+    ) {
+        removeClassElement(overlaySettingsPersonalOffers, "mix-display-none");
+        removeClassElement(
+            buttonEditPersonalOffers,
+            "prof-control-panel__icon-save_active"
+        );
+    } else {
+        addClassElement(overlaySettingsPersonalOffers, "mix-display-none");
+        addClassElement(
+            buttonEditPersonalOffers,
+            "prof-control-panel__icon-save_active"
+        );
+    }
+});
+
+buttonSubmitPersonalOffers.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleStateButtonSumitPersonalOffers();
+});
+
+function toggleStateButtonSumitPersonalOffers() {
+    if (buttonSubmitPersonalOffers.textContent.trim() === "Отключить") {
+        buttonSubmitPersonalOffers.textContent = "Включить";
+        removeClassElement(
+            overlaySettingsPersonalOffers,
+            "prof-control-panel__overlay_type_wide"
+        );
+    } else {
+        if (
+            overlaySettingsPersonalOffers.classList.contains("mix-display-none")
+        ) {
+            return;
+        }
+        buttonSubmitPersonalOffers.textContent = "Отключить";
+        addClassElement(
+            overlaySettingsPersonalOffers,
+            "prof-control-panel__overlay_type_wide"
+        );
+        formObjects.submit();
+    }
+}
+
+if (buttonSubmitPersonalOffers.textContent.trim() === "Отключить") {
+    addClassElement(
+        overlaySettingsPersonalOffers,
+        "prof-control-panel__overlay_type_wide"
+    );
+} else {
+    removeClassElement(
+        overlaySettingsPersonalOffers,
+        "prof-control-panel__overlay_type_wide"
+    );
+}
