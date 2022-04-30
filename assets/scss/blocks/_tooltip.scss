@@ -24,6 +24,16 @@
             }
         }
     }
+    &_type_anket {
+        z-index: -1;
+        width: 290px;
+        top: -85px;
+        svg {
+            bottom: -4px;
+            left: 145px;
+            position: absolute;
+        }
+    }
     &_type_bell {
         right: -1px;
         bottom: 28px;

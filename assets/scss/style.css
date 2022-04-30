@@ -2281,6 +2281,7 @@ main .container {
 }
 
 .registration-form__row {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2376,6 +2377,11 @@ main .container {
         -ms-flex: auto;
             flex: auto;
   }
+}
+
+.registration-form__label_type_link:hover + .tooltip {
+  opacity: 1;
+  z-index: 2;
 }
 
 .registration-form .custom-text-input {
@@ -3160,6 +3166,18 @@ main .container {
   .tooltip_type_register .tooltip__icon {
     right: 14px;
   }
+}
+
+.tooltip_type_anket {
+  z-index: -1;
+  width: 290px;
+  top: -85px;
+}
+
+.tooltip_type_anket svg {
+  bottom: -4px;
+  left: 145px;
+  position: absolute;
 }
 
 .tooltip_type_bell {

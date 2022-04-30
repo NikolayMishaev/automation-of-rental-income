@@ -77,6 +77,7 @@
         }
     }
     &__row {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -120,6 +121,10 @@
             flex: 326px;
             @media #{$screen-mobile} {
                 flex: auto;
+            }
+            &:hover + .tooltip {
+                opacity: 1;
+                z-index: 2;
             }
         }
     }
