@@ -69,6 +69,7 @@ buttonsOpenPopup.forEach((i) =>
         removeClassElement(state[i.ariaLabel], "mix-display-none");
         if (i.ariaLabel === "modal-reset-password") {
             modalLogin.style = "none";
+            state["modal-reset-password"].style.display = "flex";
         }
     })
 );
@@ -96,7 +97,7 @@ if (state["modal-reset-password"]) {
             e.target.classList.contains("modal__cancel-btn") ||
             e.target.closest(".modal__close-btn")
         ) {
-            addClassElement(state["modal-reset-password"], "mix-display-none");
+            state["modal-reset-password"].style.display = "none";
             state.currentOpenPopup = null;
         }
     });

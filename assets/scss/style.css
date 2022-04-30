@@ -1544,12 +1544,6 @@ main .container {
   cursor: pointer;
 }
 
-.modal_type_reset-password {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .modal__content {
   border-radius: 12px;
   background-color: white;
