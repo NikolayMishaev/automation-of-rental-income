@@ -69,6 +69,26 @@
                     height: unset;
                 }
             }
+            &_type_narrow {
+                @media (max-width: 1750px) {
+                    width: 100%;
+                    &:first-child {
+                        margin-right: 0;
+                    }
+                }
+                @media (max-width: 1280px) {
+                    width: 50%;
+                    &:first-child {
+                        margin-right: 16px;
+                    }
+                }
+                @media (max-width: 720px) {
+                    width: 100%;
+                    &:first-child {
+                        margin-right: 0;
+                    }
+                }
+            }
         }
         &_type_select {
             overflow: unset;
@@ -99,7 +119,7 @@
             &::-webkit-inner-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
-              }
+            }
             @media #{$screen-mobile} {
                 margin-right: 8px;
                 padding-right: 12px;
@@ -118,7 +138,7 @@
                 margin: 7px 8px 7px 12px;
             }
             &:checked + .main-form__visible-input {
-                background-image: url('./../images/icons/profile-active-checkbox.svg')
+                background-image: url("./../images/icons/profile-active-checkbox.svg");
             }
         }
         &_style_select {
@@ -133,6 +153,17 @@
         @include flex-container;
         &_style_buttons {
             border-top: 1px solid #e3e7e8;
+        }
+        &_type_narrow {
+            @media (max-width: 1750px) {
+                flex-wrap: wrap;
+            }
+            @media (max-width: 1280px) {
+                flex-wrap: nowrap;
+            }
+            @media (max-width: 720px) {
+                flex-wrap: wrap;
+            }
         }
     }
     &__text-value {
@@ -266,8 +297,17 @@
         &_active {
             height: 925px;
             overflow: unset;
+            @media (max-width: 1750px) {
+                height: rem(987px);
+            }
+            @media (max-width: 1280px) {
+                height: rem(925px);
+            }
+            @media (max-width: 720px) {
+                height: rem(990px);
+            }
             @media #{$screen-mobile} {
-                height: rem(683px);
+                height: rem(720px);
             }
         }
     }
@@ -279,56 +319,56 @@
     &__visible-input {
         transition: $transition;
         position: absolute;
-        background: url('./../images/icons/checkbox-empty.svg') no-repeat center;
+        background: url("./../images/icons/checkbox-empty.svg") no-repeat center;
         width: 16px;
         height: 16px;
         top: auto;
         left: 12px;
         &__checkbox-floor-left {
             &:after {
-                content: 'Подземный этаж';
+                content: "Подземный этаж";
                 position: absolute;
                 min-width: 140px;
                 top: -3px;
                 left: 24px;
                 @media (max-width: rem(1615px)) {
-                    content: 'Подземный';
+                    content: "Подземный";
                 }
                 @media (max-width: rem(1500px)) {
-                    content: 'Подземный этаж';
+                    content: "Подземный этаж";
                 }
                 @media (max-width: rem(1400px)) {
-                    content: 'Подземный';
+                    content: "Подземный";
                 }
                 @media (max-width: rem(1280px)) {
-                    content: 'Подземный этаж';
+                    content: "Подземный этаж";
                 }
                 @media (max-width: rem(550px)) {
-                    content: 'Подземный';
+                    content: "Подземный";
                 }
             }
         }
         &__checkbox-floor-right {
             &:after {
-                content: 'Цокольный этаж';
+                content: "Цокольный этаж";
                 position: absolute;
                 min-width: 140px;
                 top: -3px;
                 left: 24px;
                 @media (max-width: rem(1615px)) {
-                    content: 'Цокольный';
+                    content: "Цокольный";
                 }
                 @media (max-width: rem(1500px)) {
-                    content: 'Цокольный этаж';
+                    content: "Цокольный этаж";
                 }
                 @media (max-width: rem(1400px)) {
-                    content: 'Цокольный';
+                    content: "Цокольный";
                 }
                 @media (max-width: rem(1280px)) {
-                    content: 'Цокольный этаж';
+                    content: "Цокольный этаж";
                 }
                 @media (max-width: rem(550px)) {
-                    content: 'Цокольный';
+                    content: "Цокольный";
                 }
             }
         }
