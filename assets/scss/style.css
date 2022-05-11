@@ -4169,7 +4169,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 40rem) {
   .menu__profile-name {
-    opacity: 0;
+    display: none;
   }
 }
 
@@ -6092,8 +6092,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main-submenu_style_division {
   left: -270px;
-  right: 0;
+  right: 1px;
   top: 32px;
+}
+
+@media (max-width: 25rem) {
+  .main-submenu_style_division {
+    left: -248px;
+  }
 }
 
 .main-submenu_style_prof-page {
@@ -8809,6 +8815,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prof-general__cards-container::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: #cfd4dc;
+}
+
+@media (max-width: 25rem) {
+  .prof-general__cards-container {
+    margin: 16px 12px;
+  }
 }
 
 .prof-general__contacts {
@@ -11618,8 +11630,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .prof-structure__card_type_director {
@@ -11651,6 +11661,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 100%;
   border-radius: 12px 0 0 12px;
   margin-right: 12px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .prof-structure__marker_type_director {
@@ -11686,14 +11698,62 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-right: 16px;
 }
 
+.prof-structure__card-title {
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.prof-structure__card-title::-webkit-scrollbar {
+  height: 3px;
+}
+
+.prof-structure__card-title::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+.prof-structure__card-title::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
+}
+
 .prof-structure__card-subtitle {
   color: #6D7678;
   margin-top: 4px;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.prof-structure__card-subtitle::-webkit-scrollbar {
+  height: 3px;
+}
+
+.prof-structure__card-subtitle::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+.prof-structure__card-subtitle::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
 }
 
 .prof-structure__card-department {
   color: #6D7678;
   margin-top: 4px;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.prof-structure__card-department::-webkit-scrollbar {
+  height: 3px;
+}
+
+.prof-structure__card-department::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+.prof-structure__card-department::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #cfd4dc;
 }
 
 .prof-structure__wrapper-subtitle {
@@ -11751,6 +11811,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .prof-structure__label.prof-control-panel__select-label_active {
   background-image: url("./../images/icons/main-page-icon-filters-active.svg");
+}
+
+.prof-structure__description {
+  padding-right: 10px;
+  overflow: auto;
 }
 
 .form-agent-card {

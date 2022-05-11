@@ -214,8 +214,11 @@
     }
     &_style_division {
         left: -270px;
-        right: 0;
+        right: 1px;
         top: 32px;
+        @media (max-width: rem(400px)) {
+            left: -248px;
+        }
     }
     &_style_prof-page {
         left: 240px;

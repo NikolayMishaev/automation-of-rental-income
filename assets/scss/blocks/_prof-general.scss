@@ -198,6 +198,9 @@
             border-radius: 4px;
             background-color: $grey30;
         }
+        @media (max-width: rem(400px)) {
+            margin: 16px 12px;
+        }
     }
     &__contacts {
         display: none;
