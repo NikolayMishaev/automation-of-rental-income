@@ -4169,7 +4169,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 @media (max-width: 40rem) {
   .menu__profile-name {
-    opacity: 0;
+    display: none;
   }
 }
 
@@ -6092,8 +6092,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .main-submenu_style_division {
   left: -270px;
-  right: 0;
+  right: 1px;
   top: 32px;
+}
+
+@media (max-width: 25rem) {
+  .main-submenu_style_division {
+    left: -248px;
+  }
 }
 
 .main-submenu_style_prof-page {
@@ -8809,6 +8815,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .prof-general__cards-container::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: #cfd4dc;
+}
+
+@media (max-width: 25rem) {
+  .prof-general__cards-container {
+    margin: 16px 12px;
+  }
 }
 
 .prof-general__contacts {
