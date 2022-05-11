@@ -38,7 +38,6 @@
         border-radius: 12px;
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
         &_type_director {
             background-color: #E6FAE9;
         }
@@ -63,6 +62,7 @@
         height: 100%;
         border-radius: 12px 0 0 12px;
         margin-right: 12px;
+        flex-shrink: 0;
         &_type_director {
             background-color: #55B465;
         }
@@ -89,13 +89,51 @@
         border-radius: 50%;
         margin-right: 16px;
     }
+    &__card-title {
+        white-space: nowrap;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:vertical {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
+    }
     &__card-subtitle {
         color:  #6D7678;
         margin-top: 4px;
+        white-space: nowrap;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:vertical {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
     }
     &__card-department {
         color:  #6D7678;
         margin-top: 4px;
+        white-space: nowrap;
+        overflow: auto;
+        &::-webkit-scrollbar {
+            height: 3px;
+            &:vertical {
+                display: none;
+            }
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: $grey30;
+        }
     }
     &__wrapper-subtitle {
         position: relative;
@@ -141,5 +179,9 @@
     }
     &__label.prof-control-panel__select-label_active {
         background-image: url('./../images/icons/main-page-icon-filters-active.svg')
+    }
+    &__description {
+        padding-right: 10px;
+        overflow: auto;
     }
 }
