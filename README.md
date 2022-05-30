@@ -1,13 +1,19 @@
-# Верстка сайта: "Автоматизация доходной аренды"
+# Приложение: "Автоматизация доходной аренды"
 ***
 
-- [макет](https://www.figma.com/file/VZItDerjD0q4k85SuBVheu/Доходная-аренда?node-id=281%3A21447)
-- [БТ](https://wiki.x5.ru/pages/viewpage.action?pageId=442636058)
+- [демонстрация](https://grade-nmishaev.herokuapp.com/)
+- [макет](https://www.figma.com/file/KGcPsp9R7mr2WOlmNgYa6h/%D0%94%D0%BE%D1%85%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F-%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D0%B0-28%2C03?node-id=281%3A21447)
 
 ## Описание
-- адаптивная верстка для проекта: "Автоматизация доходной аренды"
+- приложение, в котором можно будет размещать информацию об объектах аренды недвижимости
+- по ссылке представлен деплой для демонстрации визуальной части до интеграции в Django. Коммерческая разработка велась в GitLab
 
 ## Скриншоты
+![главная](https://github.com/NikolayMishaev/automation-of-rental-income/raw/main/assets/readme/01.jpg)
+![карточка объекта](https://github.com/NikolayMishaev/automation-of-rental-income/raw/main/assets/readme/02.jpg)
+![ЛК ФЛ](https://github.com/NikolayMishaev/automation-of-rental-income/raw/main/assets/readme/03.jpg)
+![ЛК менеджер](https://github.com/NikolayMishaev/automation-of-rental-income/raw/main/assets/readme/04.jpg)
+![регистрация](https://github.com/NikolayMishaev/automation-of-rental-income/raw/main/assets/readme/05.jpg)
 
 ## Технологии
 - HTML
@@ -15,7 +21,13 @@
 - JS
 - Sass
 - БЭМ
+- используемые библиотеки: jQuery, Chart.js, Swiper,js и др.
 
 ## Функциональность
+- сортировака и пагинация реализованы на стороне Django
+- страница адаптивна под разные устройства
+- богатый функционал в ЛК: таблицы, диаграммы
+- модальные окна, фильтрация
 
 ## Планы по доработке
+исправления багов после тестирования по завершению интеграции на Django и подключения к базе данных
